@@ -60,17 +60,17 @@ game installation is not modified by preparing this snapshot.
 # Legal Disclaimer & Notice
 
 ## Notice to Copyright Holders
-This repository is dedicated to the historical preservation and educational study of the client-side architecture of **Darkfall: Rise of Agon**. 
+This repository is dedicated to the historical preservation and educational study of the client-side architecture of **Darkfall: Unholy Wars**. 
 
-If you are a copyright holder—including **Big Picture Games**, **Toxic Rain Studios**, or associated entities—and object to the hosting of these decompiled files or extracted assets, please contact the repository maintainer directly or submit a formal request. The material will be **removed immediately**. This project has no commercial intent and wishes to fully respect your intellectual property rights.
+If you are a copyright holder—including **Aventurine S.A.** or associated intellectual property entities—and object to the hosting of these decompiled files or extracted assets, please contact the repository maintainer directly or submit a formal request. The material will be **removed immediately**. This project has no commercial intent, operates entirely as a non-profit archive, and wishes to fully respect your intellectual property rights.
 
 ## Source & Scope of Material
 * **Third-Party Provenance:** The repository maintainer is **merely sharing these files** as an archival resource. The maintainer **did not perform the reverse engineering, extraction, or decompilation** of the source code or assets contained herein. 
 * **Client-Side Only:** The files consist strictly of extracted client-side configurations, assets, and decompiled Java source code from the public, end-user client. This repository does **not** contain server-side code or proprietary backend architecture.
-* **Archival Purpose:** This code is shared strictly as a **static snapshot for educational research, archival purposes, and analysis** regarding MMO engine structures.
+* **Archival Status:** **Darkfall: Unholy Wars** officially discontinued operations and **shut down its servers permanently in May 2016**. Because there is no longer an active, official live server available to the public, this repository functions exclusively as a static snapshot for historical preservation, retro-analysis, and educational research regarding MMO engine structures.
 
 ## No Affiliation or Endorsement
-This project is an independent, third-party archival effort. It is **not** affiliated with, endorsed by, sponsored by, or officially connected to Big Picture Games, Toxic Rain Studios, Aventurine S.A., or any of their past or present affiliates. All trademarks, game titles, logos, and proprietary assets are the sole property of their respective owners.
+This project is an independent, third-party archival effort. It is **not** affiliated with, endorsed by, sponsored by, or officially connected to Aventurine S.A., or any of its past or present affiliates, subsidiaries, or licensors. All trademarks, game titles, logos, and proprietary assets are the sole property of their respective owners.
 
 ## Non-Commercial & Educational Fair Use
 All materials here are provided strictly for non-commercial, non-profit educational and research purposes under the principles of historical software preservation. This project does not offer any playable services, monetization, or commercial alternatives to official software. 
