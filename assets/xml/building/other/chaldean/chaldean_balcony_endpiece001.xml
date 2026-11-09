@@ -1,0 +1,143 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="chaldean_balcony_endpiece001.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shadernormalspecularsnow.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="6.000000" />
+<Texture0>
+<SFString Value="tex_chaldean_marble_wall2.tga" />
+</Texture0>
+<Texture1>
+<SFString Value="tex_chaldean_marble_wall2.normalmap.tga" />
+</Texture1>
+</Subset0>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.2489098907" Y="-0.2205791622" Z="-3.229878664" />
+</Min>
+<Max>
+<SFVector3 X="0.2310776114" Y="1.613007784" Z="-2.768922329" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-4.656612873e-009" Y="0.846802175" Z="-3" />
+</Center>
+<Radius>
+<SFFloat Value="1.117402911" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-4.656612873e-009" Y="0.846802175" Z="-3" />
+</Center>
+<Radius>
+<SFFloat Value="1.117402911" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="-0.2075249672" />
+<Surface Value="0.2075249672" />
+<Touching Value="0.6225749016" />
+<Floating Value="0.0" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.2489098161" Y="-.2205790877" Z="-3.2298777103" />
+</Min>
+<Max>
+<SFVector3 X=".2310775220" Y="1.6130073071" Z="-2.7689211369" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.0004245702876" Y="0.7523177266" Z="-2.999971151" />
+</Center>
+<Radius>
+<SFFloat Value="1.037625194" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="chaldean_balcony_endpiece001.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

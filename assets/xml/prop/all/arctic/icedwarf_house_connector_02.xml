@@ -1,0 +1,136 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="icedwarf_house_connector_02.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="shaderice.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="iceblock02.bmp" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-4.463004112" Y="-0.9917014241" Z="-8.352588654" />
+</Min>
+<Max>
+<SFVector3 X="4.730924129" Y="8.309814453" Z="8.031843185" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.04543238133" Y="4.008906841" Z="-0.9556946754" />
+</Center>
+<Radius>
+<SFFloat Value="11.12448883" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.04543238133" Y="4.008906841" Z="-0.9556946754" />
+</Center>
+<Radius>
+<SFFloat Value="11.12448883" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="8.873596192" />
+<Surface Value="4.436798096" />
+<Touching Value="-6.655197144" />
+<Floating Value="6.655197144" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1355289221" Y="4.086241245" Z="-0.9026229978" />
+</Center>
+<Radius>
+<SFFloat Value="11.09199524" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="icedwarf_house_connector_02.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

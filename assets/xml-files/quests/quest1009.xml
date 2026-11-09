@@ -1,0 +1,267 @@
+<quest quest_id="1009" category="side_quest" tag="Isaac's Vengeance" published="False" valid="True">
+	<title>Isaac&apos;s Vengeance</title>
+	<description>This is a quest based on Pro Pain&apos;s entry for our 2014 quest contest.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="talk to an Agent of the Five Beards">
+			<conditions>
+				<condition type="vendor_interaction" id="10" value="1" tag="A Vendor Interaction Condition" vendor_id="j18_dungeon_merchant" />
+				<condition type="vendor_interaction" id="11" value="1" tag="A Vendor Interaction Condition" vendor_id="p08_dungeon_merchant" />
+				<condition type="vendor_interaction" id="12" value="1" tag="A Vendor Interaction Condition" vendor_id="s17_dungeon_merchant" />
+				<condition type="vendor_interaction" id="13" value="1" tag="A Vendor Interaction Condition" vendor_id="u11_dungeon_merchant" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="45" tag="">
+			<journal_entry>The Agonian decided to keep the cipher in order to try and decipher it later himself. He was convinced that there was something spurious behind all these secretive dealings. The Five Beards Trading Company seemed to have some dark, costly secrets.</journal_entry>
+		</node>
+		<node type="event_branch" id="2" tag="">
+			<journal_entry>Once the lockbox was recovered, the contents would need to remain intact in order for the reward to be paid in full. Discretion was more than advised.</journal_entry>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<instruction>Find the shipwreck</instruction>
+			<tasks>
+				<task type="go_to_area" id="18" value="1" tag="A Go To Area Task" area_id="45" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<instruction>Find the shipwreck</instruction>
+			<tasks>
+				<task type="go_to_area" id="19" value="1" tag="A Go To Area Task" area_id="44" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<instruction>Find the shipwreck</instruction>
+			<tasks>
+				<task type="go_to_area" id="20" value="1" tag="A Go To Area Task" area_id="43" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<instruction>Find the shipwreck</instruction>
+			<tasks>
+				<task type="go_to_area" id="21" value="1" tag="A Go To Area Task" area_id="42" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<instruction>Find the shipwreck</instruction>
+			<tasks>
+				<task type="go_to_area" id="22" value="1" tag="A Go To Area Task" area_id="41" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<instruction>Find the shipwreck</instruction>
+			<tasks>
+				<task type="go_to_area" id="23" value="1" tag="A Go To Area Task" area_id="40" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="60" tag="" optional_tasks="True">
+			<instruction>Search for the lockbox</instruction>
+			<tasks>
+				<task type="go_to_area" id="35" value="1" tag="A Go To Area Task" area_id="40" />
+				<task type="use_skill" id="42" value="1" tag="A Use Skill Task" skill_name="s_Digging">
+					<task_instruction>Dig for the lockbox</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="59" tag="" optional_tasks="True">
+			<instruction>Search for the lockbox</instruction>
+			<tasks>
+				<task type="go_to_area" id="34" value="1" tag="A Go To Area Task" area_id="41" />
+				<task type="use_skill" id="41" value="1" tag="A Use Skill Task" skill_name="s_Digging">
+					<task_instruction>Dig for the lockbox</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="58" tag="" optional_tasks="True">
+			<instruction>Search for the lockbox</instruction>
+			<tasks>
+				<task type="go_to_area" id="33" value="1" tag="A Go To Area Task" area_id="42" />
+				<task type="use_skill" id="40" value="1" tag="A Use Skill Task" skill_name="s_Digging">
+					<task_instruction>Dig for the lockbox</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="57" tag="" optional_tasks="True">
+			<instruction>Search for the lockbox</instruction>
+			<tasks>
+				<task type="go_to_area" id="32" value="1" tag="A Go To Area Task" area_id="43" />
+				<task type="use_skill" id="39" value="1" tag="A Use Skill Task" skill_name="s_Digging">
+					<task_instruction>Dig for the lockbox</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="56" tag="" optional_tasks="True">
+			<instruction>Search for the lockbox</instruction>
+			<tasks>
+				<task type="go_to_area" id="31" value="1" tag="A Go To Area Task" area_id="44" />
+				<task type="use_skill" id="38" value="1" tag="A Use Skill Task" skill_name="s_Digging">
+					<task_instruction>Dig for the lockbox</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="55" tag="" optional_tasks="True">
+			<instruction>Search for the lockbox</instruction>
+			<tasks>
+				<task type="go_to_area" id="30" value="1" tag="A Go To Area Task" area_id="45" />
+				<task type="use_skill" id="36" value="1" tag="A Use Skill Task" skill_name="s_Digging">
+					<task_instruction>Dig for the lockbox</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="20" tag="">
+			<journal_entry>The last of the shipwrecks&apos; proved to be the lucky one, the one where the lockbox was to be found. It was sadly, locked. The Agonian put it aside and tried to pry it open but it was not possible. While the lockbox had the initials I.B. carved on it, it had the markings of Khamset upon it - if there was a key to open it, it would be found among the Khamset.</journal_entry>
+		</node>
+		<node type="event_simple" id="21" tag="need quest item key icon">
+			<journal_entry>The stench from the bodies of the Khamset hang heavy and thick in the dry Rubaiyat air. As the Agonian fought, a gleam caught his eye. Nearby, there lay a key in the bloodied sand. The Agonian lost no time and tried it on the lockbox. It seemed like a perfect fit. When the lockbox came open, all it contained was a note that explained that the actual contents were hidden elsewhere, on the dead-end of an unfinished mine shaft on Ardanat. The note ended with a strange piece of advice: sunlight does not reach every nook and cranny.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="6" value="1" tag="A Kill Object(s) Task" resource_name="r_Khamsets" quantity="12">
+					<task_instruction>Search for the lockbox key among the dead Khamset</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="39" tag="" optional_tasks="True">
+			<tasks>
+				<task type="go_to_area" id="14" value="1" tag="A Go To Area Task" area_id="46" />
+				<task type="use_skill" id="15" value="1" tag="A Use Skill Task" skill_name="s_Light">
+					<task_instruction>Find the hidden contents in Ardanat</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="23" tag="">
+			<journal_entry>Under all the grime in the mine shaft lay a very tiny tin box that was difficult to spot, but easy to open. Within, lay a small piece of paper with an unintelligible message - although the letters used were the familiar common variety, the words made no sense. This was most probably a cipher of some sort. Nothing at all made any sense. Perhaps the Agents of Five Beards would know better.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="3" tag="An Unlock Quest Item Within The Quest Action" item_id="1" />
+			</actions>
+		</node>
+		<node type="event_simple" id="62" tag="back to the agents" optional_tasks="True">
+			<instruction>Bring the cipher back to an Agent of the Five Beards</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="43" value="1" tag="An Interact With Vendor Task" vendor_id="j18_dungeon_merchant" />
+				<task type="interact_with_vendor" id="44" value="1" tag="An Interact With Vendor Task" vendor_id="p08_dungeon_merchant" />
+				<task type="interact_with_vendor" id="45" value="1" tag="An Interact With Vendor Task" vendor_id="s17_dungeon_merchant" />
+				<task type="interact_with_vendor" id="46" value="1" tag="An Interact With Vendor Task" vendor_id="u11_dungeon_merchant" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="25" tag="" optional_tasks="True">
+			<tasks>
+				<task type="choose" id="9" value="1" tag="keep the reward" end_node_id="-1">
+					<task_instruction>Don&apos;t run the errand</task_instruction>
+				</task>
+				<task type="choose" id="10" value="2" tag="continue" end_node_id="-1">
+					<task_instruction>Run the errand</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="29" tag="">
+			<journal_entry>All that was required of the Agonian, was to go back to Ardanat and leave the note where he first found it.</journal_entry>
+		</node>
+		<node type="event_branch" id="27" tag="" optional_tasks="True">
+			<instruction>Choose whether to really complete Thelsa&apos;s task</instruction>
+			<tasks>
+				<task type="choose" id="16" value="1" tag="do the job" end_node_id="-1">
+					<task_instruction>Place the gold and the cipher back in the box</task_instruction>
+				</task>
+				<task type="choose" id="17" value="2" tag="run with the money" end_node_id="-1">
+					<task_instruction>Grab the gold for yourself</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="28" tag="">
+			<journal_entry>The Agonian was temped by the $[Resource.G.r_gold_NameSingular] offer, but he decided that he wanted to do nothing more with all that smoke and mirrors. He turned around and never looked back.</journal_entry>
+		</node>
+		<node type="event_simple" id="30" tag="">
+			<instruction>Return the cipher to the location it was found</instruction>
+			<tasks>
+				<task type="go_to_area" id="12" value="1" tag="go back to the lockbox" area_id="46" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="34" tag="">
+			<journal_entry>It was as if once the Agonian placed the cipher inside the small tin box and tucked it under a layer of grime and dirt, the backpack became suddenly heavier. Double the amount of gold was now in the backpack in a manner that was seemingly magic.</journal_entry>
+		</node>
+		<node type="event_simple" id="35" tag="">
+			<journal_entry>The Five Beards Trading Company seemed like a fruitful venture. Perhaps in the future, being associated further with their likes would bring in more wealth for the Agonian.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="7" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="4500" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="end_node" id="36" tag="" />
+		<node type="event_simple" id="64" tag="back to realbox">
+			<instruction>Return the cipher to the designated place</instruction>
+			<tasks>
+				<task type="go_to_area" id="47" value="1" tag="A Go To Area Task" area_id="46" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="38" tag="">
+			<actions>
+				<action type="unlock_quest_item" id="8" tag="An Unlock Quest Item Within The Quest Action" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="40" tag="">
+			<journal_entry>The merchant thanked the Agonian for his efforts so far in obtaining the cipher and compensated him for his work. He hurriedly took the cipher in his hands and wrapped it around a strange hexagonal piece of wood. He began reading it slowly, mouthing the words without making a sound. He then turned the piece of paper on its back, and began scribbling the same kind of phrases with no apparent meaning. This time they were different though.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="9" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="4500" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="41" tag="">
+			<journal_entry>All that remained was for someone to take her message back into that place where the Agonian first found it. It was up to him to go on or just take his reward and leave. Others could be found, more willing, but there would be more of the same gold if the Agonian would be successful in his task.</journal_entry>
+		</node>
+		<node type="end_node" id="46" tag="" />
+		<node type="event_simple" id="47" tag="">
+			<journal_entry>The merchant was adamant that Isaac Balar would pay well in order for the contents of the lockbox to be recovered. It was a family heirloom that was lost in one of the shipwrecks at the time the Rubiyat river dried up. It was small enough for a person to carry around easily - it was quite probable that whoever searched for it would need to dig in the muddy riverbed.</journal_entry>
+		</node>
+		<node type="event_simple" id="48" tag="">
+			<journal_entry>The shady merchant was rather keen on identifying himself as an agent of the Five Beards Trading Company. Skipping his usual guise, he offered the Agonian a very interesting proposition which entailed the recovery of a certain lockbox belonging to a certain powerful individual by the name of Isaac Balar.</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="64" from="0" to="48" value="1" />
+		<edge id="1" from="2" to="8" value="0" />
+		<edge id="11" from="2" to="13" value="0" />
+		<edge id="10" from="2" to="12" value="0" />
+		<edge id="9" from="2" to="11" value="0" />
+		<edge id="8" from="2" to="10" value="0" />
+		<edge id="7" from="2" to="9" value="0" />
+		<edge id="77" from="55" to="20" value="1" />
+		<edge id="67" from="12" to="56" value="1" />
+		<edge id="69" from="10" to="58" value="1" />
+		<edge id="71" from="8" to="60" value="1" />
+		<edge id="73" from="59" to="20" value="1" />
+		<edge id="75" from="57" to="20" value="1" />
+		<edge id="76" from="56" to="20" value="1" />
+		<edge id="74" from="58" to="20" value="1" />
+		<edge id="72" from="60" to="20" value="1" />
+		<edge id="70" from="9" to="59" value="1" />
+		<edge id="68" from="11" to="57" value="1" />
+		<edge id="66" from="13" to="55" value="1" />
+		<edge id="24" from="20" to="21" value="0" />
+		<edge id="43" from="21" to="38" value="1" />
+		<edge id="46" from="38" to="39" value="0" />
+		<edge id="79" from="62" to="40" value="1" />
+		<edge id="78" from="23" to="62" value="0" />
+		<edge id="29" from="25" to="28" value="1" />
+		<edge id="31" from="25" to="29" value="2" />
+		<edge id="32" from="29" to="30" value="0" />
+		<edge id="81" from="27" to="64" value="1" />
+		<edge id="58" from="27" to="45" value="2" />
+		<edge id="80" from="30" to="27" value="1" />
+		<edge id="39" from="34" to="35" value="0" />
+		<edge id="40" from="35" to="36" value="0" />
+		<edge id="82" from="64" to="34" value="1" />
+		<edge id="59" from="45" to="46" value="0" />
+		<edge id="47" from="39" to="23" value="1" />
+		<edge id="50" from="40" to="41" value="0" />
+		<edge id="51" from="41" to="25" value="0" />
+		<edge id="63" from="47" to="2" value="0" />
+		<edge id="65" from="48" to="47" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="IB note" image_locked="qc_1009_ib_note_locked.png" image_unlocked="qc_1009_ib_note_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>A note</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>Has the initials I.B.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="1" tag="IB cipher" image_locked="qc_1009_ib_cipher_locked.png" image_unlocked="qc_1009_ib_cipher_unlocked.png">
+		<name_locked>A note</name_locked>
+		<name_unlocked>A note</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A note containing a message that only makes sense for a select few</description_unlocked>
+	</quest_item>
+</quest>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="ATTRIBUTE">
+    <Counter Value="300"/>
+    <BelongToEnemyClan Value="true"/>
+    <IsEventSource Value="true"/>
+    <ThereIsActiveChallenge Value="true"/>
+    <StructureInChallengedCity Value="true"/>
+    <WeaponName Value="r_improved Siege Hammer"/>
+    <ResourceName Value="r_Clan Structures"/>
+    <AttributeName Value="Health"/>
+    <EffectName Value="DAMAGE"/>
+    <Active Value="false"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_Clan Structures" Value="50"/>
+  <Rewards>
+    <Item Name="cq_enemystructuredmg_3000" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

@@ -1,0 +1,180 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="giant_prop_trash_pile_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="tex_rock004.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="divTrash.bmp" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="barrel.bmp" />
+</Texture0>
+</Subset2>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-2.533046007" Y="-0.792858839" Z="-2.034449816" />
+</Min>
+<Max>
+<SFVector3 X="2.601481915" Y="1.738600492" Z="1.939025879" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.1989263594" Y="0.4261966944" Z="0.05865553766" />
+</Center>
+<Radius>
+<SFFloat Value="2.740643978" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1006048545" Y="0.3404822946" Z="-0.296530664" />
+</Center>
+<Radius>
+<SFFloat Value="2.060450077" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.9001082182" Y="0.3007420599" Z="-0.2601870894" />
+</Center>
+<Radius>
+<SFFloat Value="2.293106318" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.3421024382" Y="0.5890479088" Z="0.5376592278" />
+</Center>
+<Radius>
+<SFFloat Value="2.292539597" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="static" />
+<WaterTransition>
+<Submerged Value="2.147459412" />
+<Surface Value="1.073729706" />
+<Touching Value="-1.610594559" />
+<Floating Value="1.610594559" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-2.5330460072" Y="-.7928588390" Z="-2.0344498158" />
+</Min>
+<Max>
+<SFVector3 X="2.6014819145" Y="1.7386004925" Z="1.9390258789" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.1081467941" Y="0.4677559733" Z="0.06150325015" />
+</Center>
+<Radius>
+<SFFloat Value="2.684324265" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="giant_prop_trash_pile_01.sfm.static.SFAABBTREECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

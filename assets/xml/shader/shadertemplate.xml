@@ -1,0 +1,154 @@
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<SFShader>
+	<Version_Info Minor="1" Major="0"/>
+	<Description>
+		<SFString Value="This shader is TEH r0xx"/>
+	</Description>
+	<Shader>
+		<RenderEffect>
+			<SFString Value="default.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="TRUE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="TRUE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="0"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="0"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqVSInput>
+				<SFBool Value="FALSE"/>
+			</ReqVSInput>
+			<ReqPSInput>
+				<SFBool Value="FALSE"/>
+			</ReqPSInput>
+			<ReqVarInput>
+				<SFBool Value="FALSE"/>
+			</ReqVarInput>
+			<ReqTexture>
+				<SFBool Value="FALSE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+		<TextureReqs>
+			<GlobalTextureReq>
+				<SFBool Value="TRUE"/>
+			</GlobalTextureReq>
+			<GlobalTexture>
+				<Texture0>
+					<TextureIndex>
+						<SFInteger Value="0"/>
+					</TextureIndex>
+					<Procedural>
+						<SFBool Value="TRUE"/>
+					</Procedural>
+					<TextureName>
+						<SFString Value="blablabla"/>
+					</TextureName>
+				</Texture0>
+				<Texture1>
+					<TextureName>
+						<SFString Value="blablabla"/>
+					</TextureName>
+					<Procedural>
+						<SFBool Value="TRUE"/>
+					</Procedural>
+					<TextureIndex>
+						<SFInteger Value="1"/>
+					</TextureIndex>
+				</Texture1>
+			</GlobalTexture>
+			<TechniqueTextures>
+				<Technique0>
+					<TechniqueNumber>
+						<SFInteger Value="0"/>
+					</TechniqueNumber>
+					<Texture0>
+						<TextureIndex>
+							<SFInteger Value="0"/>
+						</TextureIndex>
+						<Procedural>
+							<SFBool Value="TRUE"/>
+						</Procedural>
+						<TextureName>
+							<SFString Value="blablabla"/>
+						</TextureName>
+					</Texture0>
+					<Texture1>
+						<TextureIndex>
+							<SFInteger Value="0"/>
+						</TextureIndex>
+						<Procedural>
+							<SFBool Value="TRUE"/>
+						</Procedural>
+						<TextureName>
+							<SFString Value="blablabla"/>
+						</TextureName>
+					</Texture1>
+				</Technique0>
+				<Technique1>
+					<TechniqueNumber>
+						<SFInteger Value="1"/>
+					</TechniqueNumber>
+					<Texture0>
+						<TextureIndex>
+							<SFInteger Value="0"/>
+						</TextureIndex>
+						<Procedural>
+							<SFBool Value="TRUE"/>
+						</Procedural>
+						<TextureName>
+							<SFString Value="blablabla"/>
+						</TextureName>
+					</Texture0>
+					<Texture1>
+						<TextureIndex>
+							<SFInteger Value="0"/>
+						</TextureIndex>
+						<Procedural>
+							<SFBool Value="TRUE"/>
+						</Procedural>
+						<TextureName>
+							<SFString Value="blablabla"/>
+						</TextureName>
+					</Texture1>
+				</Technique1>
+			</TechniqueTextures>
+		</TextureReqs>
+		<VSReqs>
+			<GlobalVSReq>
+				<SFBool Value="TRUE"/>
+			</GlobalVSReq>
+			<GlobalVSInput WORLDMAT="TRUE" VIEWMAT="TRUE" PROJMAT="TRUE"/>
+		</VSReqs>
+		<PSReqs>
+			<GlobalPSReq>
+				<SFBool Value="TRUE"/>
+			</GlobalPSReq>
+		</PSReqs>
+		<VarReqs>
+			<GlobalVarReq>
+				<SFBool Value="TRUE"/>
+			</GlobalVarReq>
+		</VarReqs>
+		<MeshReqs>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+	</Shader>
+</SFShader>

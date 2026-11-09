@@ -1,0 +1,132 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="barbarian_mahirim_f_girdle_r.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderprop_alphametal.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="220888.750000" B="206872.625000" G="0.000299" R="3459418488022838000000000000000000.000000" />
+<Ambient A="0.000000" B="45635840.000000" G="0.000304" R="3965567604245215800000000000000000.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="barbarian_armour_01.psd" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.2182880044" Y="-0.2655400932" Z="-0.1808686256" />
+</Min>
+<Max>
+<SFVector3 X="0.003056318033" Y="0.1871966273" Z="0.1772012413" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1149536446" Y="-0.05428503826" Z="-0.008692601696" />
+</Center>
+<Radius>
+<SFFloat Value="0.2571927607" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1149536446" Y="-0.05428503826" Z="-0.008692601696" />
+</Center>
+<Radius>
+<SFFloat Value="0.2571927607" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1125841737" Y="-0.06132717058" Z="-0.0100036161" />
+</Center>
+<Radius>
+<SFFloat Value="0.271484971" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="barbarian_mahirim_f_girdle_r.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

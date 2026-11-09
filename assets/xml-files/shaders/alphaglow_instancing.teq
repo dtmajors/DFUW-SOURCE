@@ -1,0 +1,87 @@
+// Note: Frequently used shader
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "cloudground.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+STD_VS_INSTANCE_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE(Input);
+	float Time = abs(sin((TOTAL_TIME + Input.Pos.y + Input.Pos.x + Input.Pos.z) * 1.31f));
+    Output.Glow = Time * Time * Time * Time;
+    return Output;
+}
+
+STD_PS_OUTPUT_3 PS(STD_VS_INSTANCE_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+	float Specular = SurfaceColor.y;
+	
+	float3 Nn = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldEyeVec);
+	
+	float VertexPaint = lerp(Input.Misc.z,0,Input.Misc.w);
+	float4 Weather = applyAtmosphere(SurfaceColor.xyz,Input.WorldPos,Vn,Nn,Nn,Input.Tc*0.2,Specular,1);
+	Weather = lerp(Weather,SurfaceColor,VertexPaint); //Black->Weather White->No Weather
+	
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, STANDARD_PROP_SPECULAR_EXPONENT, STANDARD_PROP_DIFFUSE_WRAP, STANDARD_PROP_SPECULAR_CONTRIBUTION * Specular);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, STANDARD_PROP_SPECULAR_EXPONENT, 
+			STANDARD_PROP_DIFFUSE_WRAP, STANDARD_PROP_SPECULAR_CONTRIBUTION * SurfaceColor.y, Vn, LightParams[i]);
+	}
+#endif
+	
+	Output.Color.xyz = combineWeatherIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight, SurfaceColor.a, Weather.xyz, 0);
+	Output.Color.a = SurfaceColor.a * Input.Glow * (1.0 - smoothstep(0,1,Input.Fog));
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, STANDARD_PROP_SPECULAR_CONTRIBUTION * SurfaceColor.y);
+#endif
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

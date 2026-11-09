@@ -1,0 +1,184 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="sarkih_camp_chopping_block_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="clay_hut_wood01a.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="metal.bmp" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="tex_building_special_wood_planks023.bmp" />
+</Texture0>
+</Subset2>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.4705823064" Y="-0.015427473" Z="-0.2202571481" />
+</Min>
+<Max>
+<SFVector3 X="0.5464773774" Y="0.7835111022" Z="0.3182426989" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.0459886007" Y="0.4110901654" Z="0.07355176657" />
+</Center>
+<Radius>
+<SFFloat Value="0.7043118477" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1582709849" Y="0.3221943676" Z="0.1476884186" />
+</Center>
+<Radius>
+<SFFloat Value="0.772679925" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.02225458808" Y="0.4694844484" Z="-0.04966083542" />
+</Center>
+<Radius>
+<SFFloat Value="0.1761600226" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.272705555" Y="0.6568590403" Z="-0.01964184642" />
+</Center>
+<Radius>
+<SFFloat Value="0.3732833862" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="-0.13273540736" />
+<Surface Value="0.13273540736" />
+<Touching Value="0.39820622208" />
+<Floating Value="0.0" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.4705822468" Y="-.154274786" Z="-.2202571034" />
+</Min>
+<Max>
+<SFVector3 X=".5464772582" Y=".7835109830" Z=".2425448895" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.07805412263" Y="0.3940907121" Z="0.09434149414" />
+</Center>
+<Radius>
+<SFFloat Value="0.7474164367" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="sarkih_camp_chopping_block_01.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

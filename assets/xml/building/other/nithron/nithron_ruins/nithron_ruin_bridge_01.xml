@@ -1,0 +1,162 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Generic Prop" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="nithron_ruin_bridge_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="nithron_stone_06.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="nithron_stone_04.bmp" />
+</Texture0>
+</Subset1>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="2" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-4.521732807" Y="-1.517318368" Z="-4.716843605" />
+</Min>
+<Max>
+<SFVector3 X="4.521736622" Y="5.753050327" Z="8.949903488" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1567034572" Y="2.987277031" Z="1.472890854" />
+</Center>
+<Radius>
+<SFFloat Value="8.97173214" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.09552057832" Y="3.13117075" Z="0.8511767983" />
+</Center>
+<Radius>
+<SFFloat Value="8.676907539" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.4787182808" Y="2.229941368" Z="4.74506855" />
+</Center>
+<Radius>
+<SFFloat Value="11.33905888" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="-1.7963830948" />
+<Surface Value="1.7963830948" />
+<Touching Value="5.3891492844" />
+<Floating Value="0.0" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-4.5217328072" Y="-1.5173183680" Z="-4.7168436050" />
+</Min>
+<Max>
+<SFVector3 X="4.5217366219" Y="5.7530503273" Z="8.9499034882" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.1294009686" Y="2.944478989" Z="1.524515033" />
+</Center>
+<Radius>
+<SFFloat Value="8.981915474" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="nithron_ruin_bridge_01.sfm.static.SFAABBTREECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

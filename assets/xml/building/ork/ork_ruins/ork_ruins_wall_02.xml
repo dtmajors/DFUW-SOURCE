@@ -1,0 +1,180 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Generic Prop" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="ork_ruins_wall_02.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="ShaderDefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="tex_ruin_cityofdead007a.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="tex_building_module_ork_temple002_51.bmp" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="tex_building_module_ork_house001_51.bmp" />
+</Texture0>
+</Subset2>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-3.703704834" Y="-0.002835556166" Z="-0.3507751524" />
+</Min>
+<Max>
+<SFVector3 X="3.70369792" Y="2.550528288" Z="0.350775212" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.05113419518" Y="1.27974546" Z="6.311080369e-008" />
+</Center>
+<Radius>
+<SFFloat Value="3.983317852" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.05325641111" Y="1.318611622" Z="4.605813686e-008" />
+</Center>
+<Radius>
+<SFFloat Value="3.997996092" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.04724321887" Y="1.208490849" Z="0.350775212" />
+</Center>
+<Radius>
+<SFFloat Value="3.941683769" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.04724375531" Y="1.20849061" Z="-0.3507750928" />
+</Center>
+<Radius>
+<SFFloat Value="3.941683769" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="-0.7894382954" />
+<Surface Value="0.7894382954" />
+<Touching Value="2.3683148862" />
+<Floating Value="0.0" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-3.7037048340" Y="-.28355562" Z="-.3507751524" />
+</Min>
+<Max>
+<SFVector3 X="3.7036979198" Y="2.5505282879" Z=".3507752120" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.03404576704" Y="1.183632493" Z="5.41645413e-008" />
+</Center>
+<Radius>
+<SFFloat Value="3.947191477" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="ork_ruins_wall_02.sfm.static.SFAABBTREECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

@@ -1,0 +1,176 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="sign_ork_nerzok_flaming_skull.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="False" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderprop_alphametal.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="tex_building_module_ork_temple004_25.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="tex_prop_ork_metal_rough001_25.tga" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="sign_villages_ork02.bmp" />
+</Texture0>
+</Subset2>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-2.349144697" Y="0" Z="-0.6346262693" />
+</Min>
+<Max>
+<SFVector3 X="2.47652483" Y="3.419689894" Z="0.3596789837" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.02646901831" Y="2.622048855" Z="-0.1213598177" />
+</Center>
+<Radius>
+<SFFloat Value="2.852407217" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.01067136228" Y="2.232419968" Z="-0.1328308135" />
+</Center>
+<Radius>
+<SFFloat Value="2.584016085" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.03138590232" Y="2.74187851" Z="-0.1177927181" />
+</Center>
+<Radius>
+<SFFloat Value="2.467035532" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.03124791384" Y="2.773267746" Z="-0.117821537" />
+</Center>
+<Radius>
+<SFFloat Value="2.405754089" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.01871030219" Y="2.61418891" Z="-0.1219628528" />
+</Center>
+<Radius>
+<SFFloat Value="2.85235858" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="sign_ork_nerzok_flaming_skull.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

@@ -1,0 +1,132 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Acid" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="n24_acid_lake_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderwateracid.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="32409485879783914000000000.000000" B="0.000000" G="8168213087691818700000000.000000" R="0.000000" />
+<Specular A="0.896190" B="0.000000" G="2483327618728551500000.000000" R="15617797133962475000000000000000.000000" SpecPow="0.884466" />
+<Texture0>
+<SFString Value="WATER_acid_01.bmp" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-117.028656" Y="228.8318634" Z="-131.6572266" />
+</Min>
+<Max>
+<SFVector3 X="468.1140442" Y="228.8318634" Z="468.1140442" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="147.394043" Y="228.8293152" Z="164.1300507" />
+</Center>
+<Radius>
+<SFFloat Value="354.3821716" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="147.394043" Y="228.8293152" Z="164.1300507" />
+</Center>
+<Radius>
+<SFFloat Value="354.3821716" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Liquid" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="144.7984619" Y="228.8246307" Z="162.8655548" />
+</Center>
+<Radius>
+<SFFloat Value="357.24646" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="n24_acid_lake_01.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

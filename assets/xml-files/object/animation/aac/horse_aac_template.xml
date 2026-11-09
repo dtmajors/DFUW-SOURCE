@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFAnimationAACTemplate>
+
+	<!-- 	
+			Type: 0 is run
+			Type: 1	is walk
+			Type: 2 is swim
+	-->
+	<!--RUN-->
+	<MaterialGroup Category="default" Type="1">
+		<Sound Name="Audio/footsteps/mounts/horse_run_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_run_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_run_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_run_04.xml"/>
+	</MaterialGroup>
+	<!--
+	<MaterialGroup Category="swamp" Type="1">
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_04.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_05.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_06.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_07.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="water" Type="1">
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_04.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_05.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_06.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_07.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_run_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="tar" Type="1">
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_04.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_05.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_06.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_07.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_run_08.xml"/>
+	</MaterialGroup>
+	-->
+	
+	<!--WALK-->
+	<MaterialGroup Category="default" Type="0">
+		<Sound Name="Audio/footsteps/mounts/horse_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_walk_08.xml"/>
+	</MaterialGroup>
+	<!--
+	<MaterialGroup Category="swamp" Type="0">
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_swamp_walk_04.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="water" Type="0">
+		<Sound Name="Audio/footsteps/mounts/horse_water_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_water_walk_04.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tar" Type="0">
+		<Sound Name="Audio/footsteps/mounts/horse_tar_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/horse_tar_walk_04.xml"/>
+	</MaterialGroup>
+	-->
+	
+	<!--SWIM-->
+	<MaterialGroup Category="default" Type="2">
+		<Sound Name="Audio/footsteps/mounts/mount_swim_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/mount_swim_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/mount_swim_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/mount_swim_04.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tar" Type="2">
+		<Sound Name="Audio/footsteps/mounts/mount_tar_swim_01.xml"/>
+		<Sound Name="Audio/footsteps/mounts/mount_tar_swim_02.xml"/>
+		<Sound Name="Audio/footsteps/mounts/mount_tar_swim_03.xml"/>
+		<Sound Name="Audio/footsteps/mounts/mount_tar_swim_04.xml"/>
+	</MaterialGroup>
+	
+	
+	
+    <StateGroup Left="0.1" Right="0.4" Left2="0.6" Right2="0.9" Probability="100" Type="0">
+		<Set Name="mount_walk"/>
+	</StateGroup>
+
+    <StateGroup Left="0.1" Right="0.4" Left2="0.6" Right2="0.9" Probability="100" Type="0">
+		<Set Name="mount_walk_backward"/>
+	</StateGroup>
+
+    <StateGroup Left="0.5" Right="0.99" Probability="100" Type="1">
+		<Set Name="mount_run"/>
+	</StateGroup>
+	
+	<StateGroup Left="0.5" Right="0.99" Probability="100" Type="2">
+		<Set Name="mount_swim"/>
+	</StateGroup>
+		
+</SFAnimationAACTemplate>	

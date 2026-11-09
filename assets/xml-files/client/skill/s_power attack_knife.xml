@@ -1,0 +1,227 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFClientMeleeSkill" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Power Attack_Knife" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_Except_Movement_Skills" />
+    </SFBlockingName>
+    <SFBlockingTimerBase>
+        <SFFloat Value="25.0" />
+    </SFBlockingTimerBase>
+    <SFClientParamName>
+        <SFString Value="View_Data" />
+    </SFClientParamName>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFManaCostMultiplier>
+        <SFFloat Value="1.0" />
+    </SFManaCostMultiplier>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSkillTimerGeneral>
+        <SFFloat Value="1.4" />
+    </SFSkillTimerGeneral>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFStaminaMultiplier>
+        <SFFloat Value="8.0" />
+    </SFStaminaMultiplier>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Ignore" />
+        </SFStopControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer_Attack" />
+        </SFSkillTimerName>
+        <SFEnterStatePostAttack>
+            <SFBool Value="TRUE" />
+        </SFEnterStatePostAttack>
+        <SFTimerName>
+            <SFString Value="Basic Timer" />
+        </SFTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Attack" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Melee Timer Attack" />
+        </SFTimerLengthSkillFunctionName>
+    </SFSkillTimer>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer_Restart_Blocking" />
+        </SFSkillTimerName>
+        <SFNotifyOnTimeout>
+            <SFBool Value="FALSE" />
+        </SFNotifyOnTimeout>
+        <SFTimerName>
+            <SFString Value="Basic Timer" />
+        </SFTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFBlockingGroupName>
+            <SFString Value="Block_Power_Attack" />
+        </SFBlockingGroupName>
+        <SFDelay>
+            <SFDouble Value="0.0" />
+        </SFDelay>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Blocking_Restart" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Melee Restart Timer" />
+        </SFTimerLengthSkillFunctionName>
+        <SFBlockedSkillName>
+            <SFString Value="s_Power Attack_Knife" />
+        </SFBlockedSkillName>
+        <SFBlockingGroupTimerSkillFunctionName>
+            <SFString Value="sf_Melee Restart Timer Group" />
+        </SFBlockingGroupTimerSkillFunctionName>
+    </SFSkillTimer>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_Animation_Simple" />
+        </SFSynchronizedObjectName>
+        <SFOffsetStart>
+            <SFFloat Value="0.0" />
+        </SFOffsetStart>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+        <SFMainAnimation>
+            <SFBool Value="TRUE" />
+        </SFMainAnimation>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Do_Nothing" />
+        </SFOperationOnSkillPartExitName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Pre_Attack" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="2daggers_stab" />
+        </SFAnimationStateName>
+    </SFSynchronizedObject>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_SpecialEffect" />
+        </SFSynchronizedObjectName>
+        <SFRelativeStartTime>
+            <SFDouble Value="0.0" />
+        </SFRelativeStartTime>
+        <SFVisibilityName>
+            <SFString Value="Visibility_Public" />
+        </SFVisibilityName>
+        <SFProvideSourceObjectGUID>
+            <SFBool Value="FALSE" />
+        </SFProvideSourceObjectGUID>
+        <SFProvideSourcePosition>
+            <SFBool Value="FALSE" />
+        </SFProvideSourcePosition>
+        <SFProvideDuration>
+            <SFBool Value="FALSE" />
+        </SFProvideDuration>
+        <SFProvidePower>
+            <SFBool Value="FALSE" />
+        </SFProvidePower>
+        <SFOffsetStart>
+            <SFFloat Value="0.5" />
+        </SFOffsetStart>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+        <SFProvideSourceRotation>
+            <SFBool Value="FALSE" />
+        </SFProvideSourceRotation>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Pre_Attack" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFSpecialEffectName>
+            <SFString Value="se_weaponswing" />
+        </SFSpecialEffectName>
+    </SFSynchronizedObject>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_StateChange" />
+        </SFSynchronizedObjectName>
+        <SFOffsetStart>
+            <SFFloat Value="0.4" />
+        </SFOffsetStart>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+    </SFSynchronizedObject>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Function_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFOperatorName>
+            <SFString Value="&gt;=" />
+        </SFOperatorName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFAttributeName>
+            <SFString Value="Stamina" />
+        </SFAttributeName>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Melee Stamina Cost" />
+        </SFSkillFunctionName>
+    </SFConstraint>
+    <SFSubSkillName>
+        <SFString Value="s_Power Attack_Knife_1" />
+    </SFSubSkillName>
+    <SFSubSkillName>
+        <SFString Value="s_Power Attack_Knife_2" />
+    </SFSubSkillName>
+    <SFSubSkillName>
+        <SFString Value="s_Power Attack_Knife_3" />
+    </SFSubSkillName>
+</SFSkill>

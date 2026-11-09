@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFAnimationAACTemplate>
+
+	<MaterialGroup Category="default" Type="0">
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_01.xml"/>
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_02.xml"/>
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_03.xml"/>
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_04.xml"/>
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_05.xml"/>
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_06.xml"/>
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_07.xml"/>
+		<Sound Name="Audio/footsteps/monsters/wing_flap_small_08.xml"/>
+	</MaterialGroup>	
+	
+	
+	
+    <StateGroup Left="0.0" Right="0.5" Probability="100" Type="0">
+		<Set Name="crouch_forward"/>
+		<Set Name="crouch_forward_right"/>
+		<Set Name="crouch_right"/>
+		<Set Name="crouch_backward_right"/>
+		<Set Name="crouch_backward"/>
+		<Set Name="crouch_backward_left"/>
+		<Set Name="crouch_left"/>
+		<Set Name="crouch_forward_left"/>
+	</StateGroup>
+	
+<!-- IDLE STATES	-->
+	<StateGroup Left="0.0" Right="0.5" Probability="100" Type="0">
+		<Set Name="attackmode_idle"/>
+		<Set Name="emote_taunt_01"/>
+		<Set Name="magic_charge"/>
+		<Set Name="normal_idle"/>
+	</StateGroup>
+<!-- -->
+
+	
+    <StateGroup Left="0.0" Right="0.5" Probability="100" Type="0">
+		<Set Name="normal_walk_forward"/>
+		<Set Name="normal_walk_forward_right"/>
+		<Set Name="normal_walk_right"/>
+		<Set Name="normal_walk_backward_right"/>
+		<Set Name="normal_walk_backward"/>
+		<Set Name="normal_walk_backward_left"/>
+		<Set Name="normal_walk_left"/>
+		<Set Name="normal_walk_forward_left"/>
+		<Set Name="attackmode_walk_forward"/>
+		<Set Name="attackmode_walk_forward_right"/>
+		<Set Name="attackmode_walk_right"/>
+		<Set Name="attackmode_walk_backward_right"/>
+		<Set Name="attackmode_walk_backward"/>
+		<Set Name="attackmode_walk_backward_left"/>
+		<Set Name="attackmode_walk_left"/>
+		<Set Name="attackmode_walk_forward_left"/>
+		<Set Name="attackmode_halberd_walk_forward"/>
+		<Set Name="attackmode_halberd_walk_forward_right"/>
+		<Set Name="attackmode_halberd_walk_right"/>
+		<Set Name="attackmode_halberd_backward_right"/>
+		<Set Name="attackmode_halberd_backward"/>
+		<Set Name="attackmode_halberd_backward_left"/>
+		<Set Name="attackmode_halberd_walk_left"/>
+		<Set Name="attackmode_halberd_walk_forward_left"/>
+		<Set Name="attackmode_2handed_walk_forward"/>
+		<Set Name="attackmode_2handed_walk_forward_right"/>
+		<Set Name="attackmode_2handed_walk_right"/>
+		<Set Name="attackmode_2handed_walk_backward_right"/>
+		<Set Name="attackmode_2handed_walk_backward"/>
+		<Set Name="attackmode_2handed_walk_backward_left"/>
+		<Set Name="attackmode_2handed_walk_left"/>
+		<Set Name="attackmode_2handed_walk_forward_left"/>
+	</StateGroup>
+
+    <StateGroup Left="0.3" Right="0.8" Probability="100" Type="0">
+		<Set Name="attackmode_2handed_run_forward"/>
+		<Set Name="attackmode_2handed_run_forward_right"/>
+		<Set Name="attackmode_2handed_run_right"/>
+		<Set Name="attackmode_2handed_run_left"/>
+		<Set Name="attackmode_2handed_run_forward_left"/>
+		<Set Name="attackmode_halberd_run_forward"/>
+		<Set Name="attackmode_halberd_run_forward_right"/>
+		<Set Name="attackmode_halberd_run_right"/>
+		<Set Name="attackmode_halberd_run_left"/>
+		<Set Name="attackmode_halberd_run_forward_left"/>
+		<Set Name="attackmode_run_forward"/>
+		<Set Name="attackmode_run_forward_right"/>
+		<Set Name="attackmode_run_right"/>
+		<Set Name="attackmode_run_left"/>
+		<Set Name="attackmode_run_forward_left"/>
+		<Set Name="normal_run_forward"/>
+		<Set Name="normal_run_forward_right"/>
+		<Set Name="normal_run_right"/>
+		<Set Name="normal_run_left"/>
+		<Set Name="normal_run_forward_left"/>
+	</StateGroup>
+	
+    <StateGroup Left="0.3" Right="0.8" Probability="100" Type="0">
+		<Set Name="normal_sprint_forward"/>
+		<Set Name="attackmode_sprint_forward"/>
+		<Set Name="attackmode_2handed_sprint_forward"/>
+		<Set Name="attackmode_halberd_sprint_forward"/>
+	</StateGroup>
+	
+	
+</SFAnimationAACTemplate>	

@@ -1,0 +1,107 @@
+// Note: Check lighting model
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "time.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+// the rotation defines must go before the #include
+#define SHADER_CFG_ROTATE
+#define SHADER_CFG_ROTATE_SPEED 1.0
+#include "std_vertex.frag"
+
+
+STD_VS_INSTANCE_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE(Input);
+	float Time = abs(sin((TOTAL_TIME + Input.Pos.y + Input.Pos.x + Input.Pos.z) * 1.31f));
+	Time = lerp(0.6f,1.0f,Time);
+    Output.Glow = Time; 
+    return Output;
+}
+
+STD_PS_OUTPUT_3 PS(STD_VS_INSTANCE_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 Color;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+
+	float3 Nn = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldEyeVec);
+	float3 Ln = -PLANET_LIGHTDIR_COMMON;
+
+	
+	
+	float4 SunLight = lightPixelDiffuseRaw(Nn);
+	
+	float3 Reflect = reflect(Vn, Nn);
+	float4 EnvMap = texCUBE(Environment_Sampler, Reflect);
+	float tempdot = saturate(dot(Ln, Reflect));
+	float Specular = pow(tempdot, ALPHAGLOWMETAL_SPECULAR_EXPONENT);
+
+	float4 OtherSunLight;
+	OtherSunLight.xyz = SunLight.xyz * EnvMap.xyz * 2.0f;
+	OtherSunLight.w = Specular * ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION;	
+	
+	float4 FinalSunLight = lerp(SunLight,OtherSunLight, BaseTex.a);	
+	
+	float4 DynamicLight = float4(0,0,0,0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, Nn, Vn, ALPHAGLOWMETAL_SPECULAR_EXPONENT, ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION, LightParams[i]);
+	Specular += DynamicLight.w/ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION;
+	DynamicLight.w *= BaseTex.a;
+#endif
+	
+	Output.Color.xyz = combineIllumination3anim(float4(Input.WorldPos, 1),Input.ZPos, Input.Fog, BaseTex.xyz, FinalSunLight, DynamicLight);
+	Output.Color.w = saturate(( BaseTex.a * Input.Glow) + Specular) * BaseTex.a ;	
+	
+	//Output.Effect = 0;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(BaseTex.xyz, ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION);
+#endif
+
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaTestEnable = false;
+
+        AlphaBlendEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = true;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+       
+
+    }
+}

@@ -1,0 +1,135 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Deployable Lootable Personal StrongBox" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="deployable_strongbox_player_01_broken.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="False" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shadernormalspecularsnow.xml" />
+<SFInteger Value="1" />
+</Shader0>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="strong_box1_ruined.dds" />
+</Texture0>
+<Texture1>
+<SFString Value="strong_box1_ruined.normalmap.dds" />
+</Texture1>
+</Subset0>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.741677165" Y="0" Z="-0.7955210805" />
+</Min>
+<Max>
+<SFVector3 X="0.7416772246" Y="1.198683858" Z="0.7955208421" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.03027700447" Y="0.6458045244" Z="-0.128733933" />
+</Center>
+<Radius>
+<SFFloat Value="1.200535417" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.03027700447" Y="0.6458045244" Z="-0.128733933" />
+</Center>
+<Radius>
+<SFFloat Value="1.200535417" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="SpawnableStructure" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="1.785788721e-014" Y="0.5993418694" Z="-7.105427358e-015" />
+</Center>
+<Radius>
+<SFFloat Value="2.49366641" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="deployable_strongbox_player_01_broken.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

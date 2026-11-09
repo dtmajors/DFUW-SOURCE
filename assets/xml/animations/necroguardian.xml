@@ -1,0 +1,152 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_Necroguardian" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="ANIMATEDOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="true" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <Meshes>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="necroguardian.sfam" />
+                    </Set0>
+                </Meshes>
+                <Animations>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="golems_stone.sfas" />
+                    </Set0>
+                </Animations>
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <NumberOfSubsets>
+                <SFInteger Value="2" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="False" />
+                    <SFString Value="shaderdefault.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader0>
+                        <SFString Value="shaderanim.xml" />
+                        <SFInteger Value="1" />
+                    </Shader0>
+                    <Shader1>
+                        <SFString Value="shaderanim_textureanim_16f.xml" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                </SubsetShaders>
+            </Normal>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+            <AnimationSet0>
+                <SetName>
+                    <SFString Value="Idle" />
+                </SetName>
+                <SetFile>
+                    <SFString Value="SF_DEFAULT" />
+                </SetFile>
+            </AnimationSet0>
+        </AnimationInformation>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-4.42245" Y="-1.11604" Z="-5.01193" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="4.64373" Y="7.95014" Z="4.05425" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="0.110638" Y="3.41705" Z="-0.478843" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="4.53309" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation />
+            </BoundingInformation>
+        </VisibilityInformation>
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="character" />
+        <WaterTransition>
+            <Submerged Value="2" />
+            <Floating Value="1.5" />
+            <Surface Value="1" />
+            <Touching Value="0.1" />
+        </WaterTransition>
+        <ImpulseScaleFactor Value="1" />
+        <RepulsiveAngleRange Min="0" Max="3.14159" />
+    </PhysicsInformation>
+    <MassCenter>
+        <SFVector3 X="0" Y="0" Z="0" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="necroguardian.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="necroguardian.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="0" Y="0" Z="0" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="7.9853" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+    <VersionInformation Major="1" Minor="0" />
+</SFObject>

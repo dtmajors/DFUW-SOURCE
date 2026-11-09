@@ -1,0 +1,503 @@
+<quest quest_id="1004" category="side_quest" tag="On the origin of hags" published="False" valid="True">
+	<title>On the Origin of Hags</title>
+	<description>This is a Quest based on Grim Orcsbane&apos;s submission for our 2014 quest contest.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="night hag">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="8" value="1" tag="An Object Proximity Condition" resource_name="r_Night Hag" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="44" tag="cave troll">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="9" value="1" tag="An Object Proximity Condition" resource_name="r_Troll Cave" distance="20" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="2" tag="">
+			<instruction>Find the ruins in the Island of Sulsar</instruction>
+			<journal_entry>The ruined temple was still standing erect although the passage of time had left its mark on it. The Agonian saw the tell-tale signs of the years having gone by - decrepit walls and weather-torn stones. On the floor, broken vials lay strewn around and all kinds of notes and half-torn books were to be found.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="3" value="1" tag="Go to Ruins A" area_id="7">
+					<task_instruction>Find the ruins in Sulsar</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="24" tag="An Add Quest Area to World-Map Action" area_id="7" />
+			</actions>
+		</node>
+		<node type="event_simple" id="3" tag="">
+			<instruction>Find the ruins in Dun Amsharra</instruction>
+			<tasks>
+				<task type="go_to_area" id="4" value="1" tag="Go to Ruins B" area_id="8">
+					<task_instruction>Find the ruins in Dun Amsharra</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="26" tag="An Add Quest Area to World-Map Action" area_id="8" />
+			</actions>
+		</node>
+		<node type="event_merge" id="34" tag="">
+			<instruction>Find the $[Resource.D.r_darkbrood_general_NameSingular] in Grivendale</instruction>
+			<tasks>
+				<task type="go_to_area" id="27" value="1" tag="A Go To Area Task" area_id="11" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="28" tag="An Add Quest Area to World-Map Action" area_id="11" />
+			</actions>
+		</node>
+		<node type="event_simple" id="5" tag="LINK OBJECT" optional_tasks="False">
+			<instruction>Search for information related to the Darkbrood experiments</instruction>
+			<journal_entry>The dust lifted off the cover of the tattered book. Riddled with Darkbrood markings, the Agonian noticed a page that hinted at the location of a large experimentation site at Svartvann, where a large body of water was required.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="37" value="1" tag="An Interact With Object Task" resource_name="r_qt book origin of hags the plan" />
+				<task type="go_to_area" id="38" value="1" tag="A Go To Area Task" area_id="8" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="unlock darkbrood plan" optional_tasks="True">
+			<instruction>Find the Darkbrood recipe in Svartvann</instruction>
+			<journal_entry>The Agonian found a mysteriously crisp but plain piece of paper in the Darkbrood&apos;s belongings. The piece of paper feels strangely familiar to the touch, as if someone had written a message on it that is nowhere to be seen.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="8" value="1" tag="go to C1" area_id="9" />
+				<task type="kill_object" id="35" value="1" tag="darkbrood" resource_name="r_Darkbroods" quantity="1" />
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="17" tag="An Unlock Quest Item Within The Quest Action" item_id="1" />
+			</actions>
+		</node>
+		<node type="event_simple" id="7" tag="unlock darkbrood plan" optional_tasks="False">
+			<instruction>Reach the Darkbrood experimentation site at Svartvann and investigate.</instruction>
+			<journal_entry>Upon searching, the Agonian found a large journal in the Darkbrood&apos;s belongings. The journal felt heavy in the Agonian&apos;s hands.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="10" value="1" tag="go to C2" area_id="10" />
+				<task type="kill_object" id="41" value="1" tag="A Kill Object(s) Task" resource_name="r_Darkbroods" quantity="1" />
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="25" tag="An Unlock Quest Item Within The Quest Action" item_id="1" />
+			</actions>
+		</node>
+		<node type="event_branch" id="8" tag="" optional_tasks="True">
+			<tasks>
+				<task type="choose" id="14" value="1" tag="help trolls" reward_node_id="-1">
+					<task_instruction>Help the $[Resource.T.r_troll_NamePlural] against the menace of the $[Resource.N.r_night_hag_NamePlural]</task_instruction>
+				</task>
+				<task type="choose" id="15" value="2" tag="help hags" reward_node_id="-1">
+					<task_instruction>Help the $[Resource.N.r_night_hag_NamePlural] overwhelm the Troll race</task_instruction>
+				</task>
+				<task type="choose" id="16" value="3" tag="reveal the truth" reward_node_id="-1">
+					<task_instruction>Reveal the plan to divide and conquer the Troll race</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="19" tag="An Unlock Quest Item Within The Quest Action" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="15" tag="gather mats" optional_tasks="True">
+			<instruction>Gather the recipe materials</instruction>
+			<journal_entry>Having the materials gathered, the Agonian had only to perform the eradication ritual under the Svartvann mountain, inside the Darkbrood camp. This would begin the eradication process for the Hags.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="44" value="1" tag="essences" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.S.r_selentine_essence_NamePlural]</task_instruction>
+				</task>
+				<task type="gather_items" id="45" value="1" tag="blood" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.B.r_blood_q05_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="46" value="1" tag="hag hair" resource_name="r_Hag Hair" quantity="20" inventory_type="Backpack">
+					<task_instruction>Gather 20 $[Resource.H.r_hag_hair_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_fork" id="11" tag="Help Trolls">
+			<journal_entry>The Agonian decided that whatever the origins of the Night Hags, their actions were in no way driven entirely by the Darkbrood. As such, the Trolls were the ones truly in danger of their race being extinguished. The best weapon against them was the recipe that created them.</journal_entry>
+		</node>
+		<node type="event_simple" id="12" tag="Reveal Truth">
+			<instruction>Reveal the Darkbrood plan to both the Trolls and the Hags</instruction>
+			<journal_entry>After weighing the evidence gathered, the Agonian decided the real enemy were the Darkbrood. For reasons yet unknown to him, the Darkbrood had decided to wipe an entire race of creatures from existence. No matter which side made the most mistakes, it was the Darkbrood who orchestrated their demise, and it was the Darkbrood who had to pay for it.</journal_entry>
+		</node>
+		<node type="event_fork" id="13" tag="Help Hags">
+			<instruction>Help the Hags overcome the Trolls</instruction>
+			<journal_entry>The Trolls were the ones who were at fault, the Agonian decided. Had they not turned away their own flesh and blood, had they tried to help them when the time was right, they chose to start a war. Now, they would have to pay the price, and the Darkbrood recipe could bring this war to a swift end.</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<instruction>Interogate the $[Resource.D.r_darkbrood_general_NameSingular]</instruction>
+			<journal_entry>With the $[Resource.D.r_darkbrood_general_NameSingular] dead, the Agonian was able to get his hands on the Darkbrood recipe responsible for turning the troll females into Hags. That same recipe contained the key to destroying the Hags, turning them rest of the Trolls into Hags, or revealing the real culprits to both. What remained was to make a really hard, conscious choice.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="26" value="1" tag="A Kill Object(s) Task" resource_name="r_Darkbrood General" quantity="1">
+					<task_instruction>Kill the $[Resource.D.r_darkbrood_general_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_branch" id="65" tag="audio">
+			<instruction>Reveal the truth to the Trolls and Hags</instruction>
+			<actions>
+				<action type="start_client_sfx_on_player" id="36" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_simple" id="17" tag="hand altar">
+			<instruction>Use a Darkbrood Hand Altar to acquire proof of the plot</instruction>
+			<journal_entry>The mystical energies channeled from the Hand Altar would make the mark on the recipe permanent. All the Agonian needed to do was kill enough $[Resource.D.r_darkbrood_cabalist_NamePlural] for their blood to stain the recipe forever.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="49" value="1" tag="An Interact With Object Task" resource_name="r_qt  darkbrood hand" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="18" tag="">
+			<instruction>Stain the recipe with Darkbrood blood</instruction>
+			<journal_entry>The stained recipe glowed with sinister dark mystical power. It would serve its purpose, but the Agonian would have to kill an innocent $[Resource.T.r_troll_NameSingular] and $[Resource.N.r_night_hag_NameSingular] to infuse their spirits with the aura of the Darkbrood recipe and let their people know the awful truth.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="20" value="1" tag="A Kill Object(s) Task" resource_name="r_Darkbrood Cabalist" quantity="7">
+					<task_instruction>Kill enough $[Resource.D.r_darkbrood_cabalist_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="64" tag="kill hag">
+			<instruction>Reveal the truth to the Trolls and Hags</instruction>
+			<journal_entry>The shock of the Hag ghost was evident in its shrieking voice. The realization that the whole Hag race had in fact been a twisted malignant creation of the Darkbrood was stranger than fiction. It was a memory buried deep into the mind and heart of a creature who had for its entire existence been nothing than a puppet. Every hag would now need to know the truth, and this flayed image of a soul would see to it.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="51" value="2" tag="kill hag" resource_name="r_Night Hag" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="21" tag="kill troll">
+			<instruction>Reveal the truth to the Trolls and Hags</instruction>
+			<journal_entry>Once the poor Troll was laid to rest, its soul was drawn into the aura emanating from the Darkbrood recipe. Without speaking a word, its ghostly images showed the tell-tale signs of horror at the sudden realization of who had been the real enemy all along. It could not rest, even in death, until they had communicated to their Troll Shamans what it had truly learned in its very soul.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="23" value="1" tag="kill troll" resource_name="r_Trolls" quantity="1">
+					<task_instruction>Kill an innocent $[Resource.T.r_troll_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="39" tag="">
+			<journal_entry>The apparition laughed once more, and as if part of a cynical jest, a stone lid on the altar slid open  revealing a hidden cache. Though this was not what the Agonian had come for, it was enough to quell his search for riches. At least, for a while.</journal_entry>
+		</node>
+		<node type="event_join" id="23" tag="">
+			<journal_entry>Before the last ghost parted ways with the Agonian, it nodded its deepest thanks. The Agonian felt his backpack slightly heavier - it felt like the needs of the living were quite different from the needs of the dead.</journal_entry>
+		</node>
+		<node type="event_simple" id="27" tag="">
+			<journal_entry>&quot;Your efforts are in vain, Agonian. There is nothing that can help those that have been the target of our efforts for so many years. The process is flawed and the recipe remains but a stepping stone. There will be many like you, as there have been many before you.&quot;</journal_entry>
+		</node>
+		<node type="end_node" id="26" tag="" />
+		<node type="end_node" id="28" tag="" />
+		<node type="event_branch" id="55" tag="" optional_tasks="True">
+			<tasks>
+				<task type="kill_object" id="33" value="1" tag="A Kill Object(s) Task" resource_name="r_Trolls" quantity="1" />
+				<task type="kill_object" id="34" value="2" tag="A Kill Object(s) Task" resource_name="r_Hags" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="30" tag="" />
+		<node type="event_simple" id="31" tag="">
+			<journal_entry>The Trolls in turn twisted and turned them into the creatures they are now, banishing them forever to never be a part of Trollkin again, forever to be hunted down into extinction. She urged the Agonian to try and stop the eradication of her people, to seek the truth in the ruins of Sulsar, a place all of her people remember but wish had never existed.</journal_entry>
+		</node>
+		<node type="event_simple" id="32" tag="">
+			<journal_entry>In the strife that ensued, the Hags were banished from the lands the Trolls inhabited and sought to continue their plans to eradicate the Trolls by capturing young trolls and using their new-found mystical powers twist them in their own, malevolent, deformed image. The troll implored the Agonian to seek the recipe which gave Hags their evil powers with the help of the Darkbrood, in a place now infested by the Undead, in Dun Amsharra.</journal_entry>
+		</node>
+		<node type="event_simple" id="33" tag="LINK OBJECT" optional_tasks="False">
+			<instruction>Explore the ruins in the Island of Sulsar</instruction>
+			<journal_entry>Idly turning the pages around, trying to make sense of the cryptic writings, the Agonian was able to recognize the rumoured location of a Darkbrood mystic recipe: Svartvann. There was a puzzling note beside that journal page - &quot;Only with the power to blind can this be seen by mortal eyes.&quot;</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="31" value="1" tag="An Interact With Object Task" resource_name="r_qt book origin of hags the plan" />
+				<task type="go_to_area" id="39" value="1" tag="A Go To Area Task" area_id="7" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="35" tag="Link Collectible">
+			<journal_entry>The Agonian dusted off the jacket of the Darkbrood journal. Among its tattered pages, there were undecipherable runes and mystical symbols that he could not understand. But in plain text, he found a crucial note:</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="18" tag="An Unlock Quest Item Within The Quest Action" item_id="2" />
+			</actions>
+		</node>
+		<node type="event_simple" id="36" tag="">
+			<instruction>Get the Darkbrood Transfiguration recipe</instruction>
+			<journal_entry>The journal also contained the location where the recipe was safeguarded, a Darkbrood camp at Grivendale. The recipe is always under the watchful eye of the Darkbrood in the care of a $[Resource.D.r_darkbrood_general_NameSingular] , until their plan is carried out to the end.</journal_entry>
+		</node>
+		<node type="event_simple" id="37" tag="">
+			<journal_entry>&quot;The experiment as a whole, is largely a success. The transformation process takes its toll on the troll body and mind, but many of the subjects manage to survive. Once altered, they can never assume their old form again, unless the recipe is used again on them. Once this is implemented in a wide-scale, the downfall of the Troll race will begin&quot;.</journal_entry>
+		</node>
+		<node type="event_simple" id="38" tag="">
+			<journal_entry>The Agonian knew the deep-seated hate was now nearly impossible to put aside. The recipe would need the mystical aura of Darkbrood blood to stain it, in order for both the Trolls and the Hags to see its true mark and origin. The large Darkbrood Hand Altar would serve well.</journal_entry>
+		</node>
+		<node type="event_merge" id="72" tag="gather mats" optional_tasks="True">
+			<instruction>You need the required materials in your backpack before interacting with the altar.</instruction>
+			<tasks>
+				<task type="gather_items" id="63" value="1" tag="essences" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.S.r_selentine_essence_NamePlural]</task_instruction>
+				</task>
+				<task type="gather_items" id="64" value="1" tag="blood" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.B.r_blood_q05_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="65" value="1" tag="troll hair" resource_name="r_Troll Hair" quantity="20" inventory_type="Backpack">
+					<task_instruction>Gather 20 $[Resource.T.r_troll_hair_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="41" tag="check recipe items" fail_fast="True">
+			<instruction>Find and activate a Darkbrood Hand Altar, in order to finalize the Hag eradication process</instruction>
+			<conditions>
+				<condition type="item_possession" id="6" value="1" tag="An Item Possession Condition" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="7" value="1" tag="An Item Possession Condition" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="18" value="1" tag="hag hair" resource_name="r_Hag Hair" quantity="20" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="54" value="4" tag="An Interact With Object Task" resource_name="r_qt  darkbrood hand" />
+			</tasks>
+		</node>
+		<node type="start_node" id="45" tag="cave hag">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="10" value="1" tag="An Object Proximity Condition" resource_name="r_Cave Hag" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="46" tag="swamp hag">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="11" value="1" tag="An Object Proximity Condition" resource_name="r_Swamp Hag" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="47" tag="troll">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="12" value="1" tag="An Object Proximity Condition" resource_name="r_Troll" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="48" tag="cave shaman">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="13" value="1" tag="An Object Proximity Condition" resource_name="r_Troll Cave Shaman" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="49" tag="cave warrior">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="14" value="1" tag="An Object Proximity Condition" resource_name="r_Troll Cave Warrior" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="50" tag="ice troll">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="15" value="1" tag="An Object Proximity Condition" resource_name="r_Troll Ice" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="51" tag="shaman">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="16" value="1" tag="An Object Proximity Condition" resource_name="r_Troll Shaman" distance="20" />
+			</conditions>
+		</node>
+		<node type="start_node" id="52" tag="troll warrior">
+			<journal_entry>Uncover the truth behind the origin of Hags.</journal_entry>
+			<conditions>
+				<condition type="object_proximity" id="17" value="1" tag="An Object Proximity Condition" resource_name="r_Troll Warrior" distance="20" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="53" tag="">
+			<journal_entry>The Agonian was taken by surprise after the Hag was struck down, her wounds fatal. In its death throes, the deformed, twisted creature spoke of their race being hunted down by the Trollkin for hundreds of years. In what little time the Night Hag still had, she recounted how the Troll Shamans grew fearful of the growing power the females were acquiring due to their mystic attunement, realized with the help of the Darkbrood Mystics.</journal_entry>
+		</node>
+		<node type="event_simple" id="54" tag="">
+			<journal_entry>With its dying breath, the troll spoke to the Agonian imploring him to listen carefully. The troll spoke about how his life is not important, only his race, and of the grave danger of becoming extinct. The Agonian listened to the troll recount how a long time ago, the troll females began to disappear only to return twisted and deformed as Hags, seeking to turn more of the trolls into their hideous new form.</journal_entry>
+		</node>
+		<node type="event_simple" id="56" tag="Link Collectible">
+			<instruction>Find a way to read the papper</instruction>
+			<journal_entry>After illuminating the Darkbrood paper magically, the Agonian was astounded by the truth that was revealed to him - the Darkbrood are indeed engaged in a sinister plan to eradicate all Trollkin. They lured the females trolls with the promise of unlocking their hidden mystic powers - the females from many clans saw this as an opportunity to make life for all of Trollkin better.</journal_entry>
+			<tasks>
+				<task type="use_skill" id="36" value="1" tag="A Use Skill Task" skill_name="s_Light" />
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="23" tag="An Unlock Quest Item Within The Quest Action" item_id="2" />
+			</actions>
+		</node>
+		<node type="event_simple" id="57" tag="">
+			<journal_entry>In reality, the Darkbrood twisted and deformed the females into Hags, in order to split the Troll race in two, preying amongst themselves until the Trolls are eradicated. The transformation was made possible with the help of a powerful recipe, which contains every weakness of both Hags and Trolls. According to the plan, the recipe is safeguarded by a $[Resource.D.r_darkbrood_general_NameSingular] in Grivendale.</journal_entry>
+		</node>
+		<node type="event_merge" id="59" tag="audio">
+			<journal_entry>In the Darkbrood lair, the Agonian felt the surge of the mystical powers gather around him. The next moment, the magical apparition of a Darkbrood was heard, the laughter echoing with unnerving malice. The apparition said:</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="37" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="63" tag="check recipe items" fail_fast="True">
+			<conditions>
+				<condition type="item_possession" id="19" value="1" tag="An Item Possession Condition" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="20" value="1" tag="An Item Possession Condition" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="21" value="1" tag="hag hair" resource_name="r_Hag Hair" quantity="20" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="53" value="4" tag="interact with altar" resource_name="r_qt  darkbrood hand" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="66" tag="gather mats" optional_tasks="True">
+			<instruction>Gather the recipe materials</instruction>
+			<journal_entry>Having the materials gathered, the Agonian had only to perform the eradication ritual under the Svartvann mountain, inside the Darkbrood camp. This would begin the eradication process for the Hags.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="55" value="1" tag="essences" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.S.r_selentine_essence_NamePlural]</task_instruction>
+				</task>
+				<task type="gather_items" id="56" value="1" tag="blood" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.B.r_blood_q05_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="57" value="1" tag="troll hair" resource_name="r_Troll Hair" quantity="20" inventory_type="Backpack">
+					<task_instruction>Gather 20 $[Resource.T.r_troll_hair_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="71" tag="gather mats" optional_tasks="True">
+			<instruction>You need the required materials in your backpack before interacting with the altar.</instruction>
+			<tasks>
+				<task type="gather_items" id="60" value="1" tag="essences" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.S.r_selentine_essence_NamePlural]</task_instruction>
+				</task>
+				<task type="gather_items" id="61" value="1" tag="blood" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack">
+					<task_instruction>Gather 4 $[Resource.B.r_blood_q05_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="62" value="1" tag="hag hair" resource_name="r_Hag Hair" quantity="20" inventory_type="Backpack">
+					<task_instruction>Gather 20 $[Resource.H.r_hag_hair_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="68" tag="check recipe items" fail_fast="True">
+			<instruction>Find and activate a Darkbrood Hand Altar, in order to finalize the Hag eradication process</instruction>
+			<conditions>
+				<condition type="item_possession" id="22" value="1" tag="An Item Possession Condition" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="23" value="1" tag="An Item Possession Condition" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="24" value="1" tag="troll hair" resource_name="r_Troll Hair" quantity="20" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="58" value="4" tag="An Interact With Object Task" resource_name="r_qt  darkbrood hand" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="70" tag="check recipe items" fail_fast="True">
+			<conditions>
+				<condition type="item_possession" id="25" value="1" tag="An Item Possession Condition" resource_name="r_new Selentine Ore" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="26" value="1" tag="An Item Possession Condition" resource_name="r_Blood_q05" quantity="4" inventory_type="Backpack" />
+				<condition type="item_possession" id="27" value="1" tag="hag hair" resource_name="r_Troll Hair" quantity="20" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="59" value="4" tag="interact with altar" resource_name="r_qt  darkbrood hand" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="73" tag="reward">
+			<actions>
+				<action type="give_item_to_player" id="11" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Veilron Ore" quantity="20" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="12" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Ore" quantity="40" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="13" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Potion Health Major" quantity="5" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="14" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Potion Mana Major" quantity="5" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="15" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Potion Stamina Major" quantity="5" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="16" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Mana Flakes_q05" quantity="8" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="74" tag="reward">
+			<actions>
+				<action type="give_item_to_player" id="2" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Mana Flakes_q05" quantity="24" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="3" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Mask Darkbrood Mystic" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="4" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Cloth" quantity="12" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="5" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Leather" quantity="12" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="6" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Wood" quantity="12" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="7" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Ingot" quantity="12" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="8" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Blood_q05" quantity="24" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="75" tag="skin hag">
+			<tasks>
+				<task type="use_skill_on" id="66" value="1" tag="A Use Skill On Object Task" resource_name="r_Hags" skill_name="s_Skinning_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="77" tag="add hag hair to inventory">
+			<actions>
+				<action type="give_item_to_player" id="34" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Hag Hair" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="82" tag="skin troll">
+			<tasks>
+				<task type="use_skill_on" id="71" value="1" tag="A Use Skill On Object Task" resource_name="r_Trolls" skill_name="s_Skinning_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="83" tag="add troll hair to inventory">
+			<actions>
+				<action type="give_item_to_player" id="35" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Troll Hair" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="74" from="47" to="30" value="1" />
+		<edge id="43" from="31" to="2" value="0" />
+		<edge id="89" from="55" to="53" value="2" />
+		<edge id="46" from="2" to="33" value="1" />
+		<edge id="4" from="3" to="5" value="1" />
+		<edge id="48" from="33" to="6" value="1" />
+		<edge id="6" from="5" to="7" value="1" />
+		<edge id="51" from="7" to="35" value="1" />
+		<edge id="91" from="6" to="56" value="1" />
+		<edge id="20" from="11" to="15" value="0" />
+		<edge id="19" from="8" to="12" value="3" />
+		<edge id="18" from="8" to="13" value="2" />
+		<edge id="17" from="8" to="11" value="1" />
+		<edge id="16" from="14" to="8" value="1" />
+		<edge id="58" from="12" to="38" value="0" />
+		<edge id="60" from="17" to="18" value="1" />
+		<edge id="110" from="65" to="64" value="0" />
+		<edge id="109" from="65" to="21" value="0" />
+		<edge id="108" from="18" to="65" value="1" />
+		<edge id="28" from="21" to="23" value="1" />
+		<edge id="131" from="39" to="74" value="0" />
+		<edge id="115" from="13" to="66" value="0" />
+		<edge id="126" from="70" to="72" value="1" />
+		<edge id="61" from="27" to="39" value="0" />
+		<edge id="129" from="73" to="28" value="0" />
+		<edge id="87" from="46" to="30" value="1" />
+		<edge id="85" from="45" to="30" value="1" />
+		<edge id="88" from="30" to="55" value="0" />
+		<edge id="45" from="32" to="3" value="0" />
+		<edge id="50" from="34" to="14" value="1" />
+		<edge id="54" from="35" to="37" value="0" />
+		<edge id="122" from="63" to="71" value="1" />
+		<edge id="55" from="37" to="36" value="0" />
+		<edge id="59" from="38" to="17" value="0" />
+		<edge id="113" from="41" to="59" value="4" />
+		<edge id="114" from="15" to="41" value="1" />
+		<edge id="86" from="0" to="30" value="1" />
+		<edge id="75" from="44" to="30" value="1" />
+		<edge id="76" from="48" to="30" value="1" />
+		<edge id="77" from="49" to="30" value="1" />
+		<edge id="78" from="50" to="30" value="1" />
+		<edge id="79" from="51" to="30" value="1" />
+		<edge id="80" from="52" to="30" value="1" />
+		<edge id="82" from="53" to="31" value="0" />
+		<edge id="84" from="54" to="32" value="0" />
+		<edge id="90" from="55" to="54" value="1" />
+		<edge id="93" from="56" to="57" value="1" />
+		<edge id="94" from="57" to="34" value="0" />
+		<edge id="97" from="36" to="34" value="0" />
+		<edge id="104" from="63" to="59" value="4" />
+		<edge id="124" from="68" to="72" value="1" />
+		<edge id="106" from="59" to="27" value="0" />
+		<edge id="111" from="64" to="23" value="2" />
+		<edge id="116" from="66" to="68" value="1" />
+		<edge id="125" from="68" to="59" value="4" />
+		<edge id="123" from="71" to="63" value="1" />
+		<edge id="120" from="41" to="71" value="1" />
+		<edge id="127" from="72" to="70" value="1" />
+		<edge id="128" from="70" to="59" value="4" />
+		<edge id="130" from="23" to="73" value="0" />
+		<edge id="132" from="74" to="26" value="0" />
+		<edge id="133" from="11" to="75" value="0" />
+		<edge id="136" from="75" to="77" value="1" />
+		<edge id="137" from="77" to="75" value="0" />
+		<edge id="138" from="13" to="82" value="0" />
+		<edge id="139" from="82" to="83" value="1" />
+		<edge id="140" from="83" to="82" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Darkbrood Recipe" image_locked="qc_1004_darkbrood_recipe_locked.png" image_unlocked="qc_1004_darkbrood_recipe_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Darkbrood Transfiguration Recipe</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A recipe to mutate living Trollkin into Hags, that can be used both against Hags and Trolls. Requires 4 $[Resource.S.r_selentine_essence_NamePlural] and 4 $[Resource.B.r_blood_q05_NameSingular] .If used against Hags requires 20 Hag Hair. If used against Trolls requires 20 Troll Hair.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="1" tag="Species Combined" image_locked="qc_1004_darkbrood_plans_locked.png" image_unlocked="qc_1004_darkbrood_plans_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>The Eradication of Trollkin</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A detailed, sinister plan to subvert and eradicate all Trollkin by transforming the females into Hags, using divide and conquer tactics.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="2" tag="Experimenation Journal" image_locked="qc_1004_journal_entry_locked.png" image_unlocked="qc_1004_journal_entry_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Transfiguration Experiment Journal</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A journal describing the experiments conducted by Darkbrood Mystics on Troll females with the purpose of turning them into Hags.</description_unlocked>
+	</quest_item>
+</quest>

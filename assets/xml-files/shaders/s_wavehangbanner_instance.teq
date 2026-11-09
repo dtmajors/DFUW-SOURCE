@@ -1,0 +1,107 @@
+//Banner wave shader
+
+
+#include "stdstate.frag"
+#include "windswing.frag"
+
+#include "texture.frag"
+
+#include "instancing.frag"
+#include "shadowmap.frag"
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+	//Instancing data
+	float4 WMat1 : TEXCOORD5;
+	float4 WMat2 : TEXCOORD6;
+	float4 WMat3 : TEXCOORD7;
+	float4 WMat4 : TEXCOORD8;
+};
+
+
+
+static const float RetractStart = 0.7f;
+
+
+VS_SHADOWMAP_OUTPUT WaveBannerVS_1_1(VS_INPUT Input)
+{
+    VS_SHADOWMAP_OUTPUT Out = (VS_SHADOWMAP_OUTPUT)0;
+
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+	
+
+    float3 ObjectSize = getBBScale();
+
+    float3 MinValues;
+
+    float3 NewPos = Input.Pos;
+    
+    
+    MinValues.x = getXMin(NewPos.x);
+    MinValues.y = getYMin(NewPos.y);
+
+
+	float3 RandSeed = SFMatrixNonTranslationSummary(WMat);
+	
+	float RandVal = frac(RandSeed.x + RandSeed.y + RandSeed.z);
+	
+	float OSizeSq = getYMax(NewPos.y);
+	OSizeSq *= OSizeSq;
+	OSizeSq *= 0.5f;
+	
+    float WaveVal1 = SFGetPeriodicSinTimeValue( 0.0f , OSizeSq,   WIND_SPEED * 1.0f , RandVal + (MinValues.y*0.25f));
+
+	WaveVal1 = abs(WaveVal1);
+	float ScaledWav = WaveVal1/OSizeSq;
+	ScaledWav *= 0.25f;
+    
+    NewPos.z += WaveVal1;
+    
+
+    //float3 L = -PLANET_LIGHTDIR_COMMON;
+
+	float4 WorldPos = mul(float4(NewPos,1.0f),WMat);
+
+    Out.Pos  = mul(WorldPos, SHADOW_VIEW_PROJECTION_MATRIX);             // position (projected)
+	Out.ScreenPos = Out.Pos;
+
+    Out.Tex  = Input.Tex;
+
+    return Out;
+}
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+	
+		FogEnable = TRUE;
+        CullMode = CW;
+	
+        VertexShader = compile vs_3_0 WaveBannerVS_1_1();
+        PixelShader  = compile ps_3_0 ShadowMapPS();
+    }
+}

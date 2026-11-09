@@ -1,0 +1,193 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="burrows_prop_roots_small_04.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shadernormalspecularsnow.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="tex_burrow_entrance02.dds" />
+</Texture0>
+<Texture1>
+<SFString Value="tex_burrow_entrance02.normalmap.dds" />
+</Texture1>
+</Subset0>
+<Subset1>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="burrows_roots02.dds" />
+</Texture0>
+<Texture1>
+<SFString Value="burrows_roots02.normalmap.dds" />
+</Texture1>
+</Subset1>
+<Subset2>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="burrows_roots01.dds" />
+</Texture0>
+<Texture1>
+<SFString Value="burrows_roots01.normalmap.dds" />
+</Texture1>
+</Subset2>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-4.12588501" Y="-6.215585709" Z="-6.045825005" />
+</Min>
+<Max>
+<SFVector3 X="2.722859859" Y="1.49205029" Z="8.994636536" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.2599503696" Y="-1.614521623" Z="0.6173080206" />
+</Center>
+<Radius>
+<SFFloat Value="9.040162086" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.4632613361" Y="0.3823968768" Z="0.791236937" />
+</Center>
+<Radius>
+<SFFloat Value="8.432922363" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.248575151" Y="-2.051269531" Z="5.387935162" />
+</Center>
+<Radius>
+<SFFloat Value="3.164219141" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.02662672475" Y="-3.806218147" Z="-1.053176045" />
+</Center>
+<Radius>
+<SFFloat Value="6.086221218" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="6.77762146" />
+<Surface Value="3.38881073" />
+<Touching Value="-5.083216095" />
+<Floating Value="5.083216095" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-4.1259202957" Y="-6.2155857086" Z="-6.0458230972" />
+</Min>
+<Max>
+<SFVector3 X="2.7228245735" Y="1.4920502901" Z="8.9946384430" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.2676135004" Y="-1.555560112" Z="0.4704971015" />
+</Center>
+<Radius>
+<SFFloat Value="9.167892456" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="burrows_prop_roots_small_04.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

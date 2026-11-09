@@ -1,0 +1,182 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="cave_crystal_light_red04.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="False" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderalphametaltextureglow.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderalphametaltextureglow.xml" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="terrain_rock_alfar_01.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="dungeon_light_crystal02c.tga" />
+</Texture0>
+<Texture3>
+<SFString Value="dungeon_light_crystal02c_illumination.tga" />
+</Texture3>
+</Subset1>
+<Subset2>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="dungeon_light_crystal01c.tga" />
+</Texture0>
+<Texture3>
+<SFString Value="dungeon_light_crystal01c_illumination.tga" />
+</Texture3>
+</Subset2>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-5.028026581" Y="-2.190299988" Z="-4.505478859" />
+</Min>
+<Max>
+<SFVector3 X="4.749133587" Y="18.77421379" Z="4.914225101" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.2515465319" Y="4.628687859" Z="0.8096370101" />
+</Center>
+<Radius>
+<SFFloat Value="14.20567894" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.3478001654" Y="0.446153909" Z="0.6868720055" />
+</Center>
+<Radius>
+<SFFloat Value="5.84116888" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.09977497905" Y="4.884665489" Z="0.8864578605" />
+</Center>
+<Radius>
+<SFFloat Value="13.95623779" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.5735301375" Y="5.438701153" Z="0.6715774536" />
+</Center>
+<Radius>
+<SFFloat Value="7.935004711" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.2876274884" Y="3.67049098" Z="0.797535181" />
+</Center>
+<Radius>
+<SFFloat Value="15.16877079" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="cave_crystal_light_red04.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

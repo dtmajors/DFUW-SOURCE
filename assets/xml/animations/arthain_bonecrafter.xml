@@ -1,0 +1,149 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Arthain Bonecrafter" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="ANIMATEDOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="true" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<Meshes>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="arthain_bonecrafter.sfam" />
+</Set0>
+</Meshes>
+<Animations>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="arthain_bonecrafter.sfas" />
+</Set0>
+</Animations>
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderanimtransparentnew.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+</SubsetShaders>
+</Normal>
+</Shaders>
+<AnimationInformation>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<AnimationSet0>
+<SetName>
+<SFString Value="Idle" />
+</SetName>
+<SetFile>
+<SFString Value="SF_DEFAULT" />
+</SetFile>
+</AnimationSet0>
+</AnimationInformation>
+<DynamicHitConfigFile Enabled="true" Value="animations/arthain_bonecrafter_dynhit_config.xml" />
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-1.41272223" Y="-0.07781647146" Z="-1.544009566" />
+</Min>
+<Max>
+<SFVector3 X="1.443893194" Y="2.778799057" Z="1.312605858" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.01558543742" Y="1.350491285" Z="-0.1157018393" />
+</Center>
+<Radius>
+<SFFloat Value="1.428307772" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation></SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="character" />
+<WaterTransition>
+<Submerged Value="2" />
+<Floating Value="1.5" />
+<Surface Value="1" />
+<Touching Value="0.1" />
+</WaterTransition>
+<ImpulseScaleFactor Value="1" />
+<RepulsiveAngleRange Max="3.14159" Min="0" />
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+<FileName Value="arthain_bonecrafter.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+<FileName Value="arthain_bonecrafter.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0" Y="0" Z="0" />
+</Center>
+<Radius>
+<SFFloat Value="2.78383" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

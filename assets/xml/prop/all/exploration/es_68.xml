@@ -1,0 +1,185 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_exploration t 68" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="es_68.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="False" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shadernormalspecularsnow.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shadernormalspecularsnow.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shadernormalspecularalphaglow.xml" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="acolyte_stand_wood_rough.dds" />
+</Texture0>
+<Texture1>
+<SFString Value="acolyte_stand_wood_rough.normalmap.tga" />
+</Texture1>
+</Subset0>
+<Subset1>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="acolyte_stand_iron02.tga" />
+</Texture0>
+<Texture1>
+<SFString Value="acolyte_stand_iron02.normalmap.tga" />
+</Texture1>
+</Subset1>
+<Subset2>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="acolyte_book_b.dds" />
+</Texture0>
+<Texture1>
+<SFString Value="acolyte_book.normalmap.tga" />
+</Texture1>
+</Subset2>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.4151041806" Y="-0.03320063278" Z="-0.04384393245" />
+</Min>
+<Max>
+<SFVector3 X="0.4297211766" Y="0.03320064023" Z="0.04384503886" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.001321165822" Y="-0.001449285075" Z="0.0009582873317" />
+</Center>
+<Radius>
+<SFFloat Value="0.4310455024" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-6.698827747e-006" Y="-0.0002247146185" Z="0.0001510818838" />
+</Center>
+<Radius>
+<SFFloat Value="0.4297279418" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.001239824691" Y="-0.002459071344" Z="0.001624274766" />
+</Center>
+<Radius>
+<SFFloat Value="0.2771227062" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.00411705859" Y="-0.00132454664" Z="0.0008751528803" />
+</Center>
+<Radius>
+<SFFloat Value="0.1826643497" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.0005038654199" Y="0" Z="2.707044359e-006" />
+</Center>
+<Radius>
+<SFFloat Value="0.4402250648" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="es_68.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

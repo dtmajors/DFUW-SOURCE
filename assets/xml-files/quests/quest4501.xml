@@ -1,0 +1,140 @@
+<quest quest_id="4501" category="training_quest" tag="Cooking Template" published="False" valid="True">
+	<title>Cook a Baked Potato</title>
+	<description>Learn how to cook $[Resource.B.r_baked_potato_NamePlural]</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="in_area" id="0" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="start_node" id="1" tag="">
+			<conditions>
+				<condition type="in_area" id="1" value="1" tag="An In Quest Area Condition" area_id="17" />
+			</conditions>
+		</node>
+		<node type="start_node" id="2" tag="">
+			<conditions>
+				<condition type="in_area" id="2" value="1" tag="An In Quest Area Condition" area_id="18" />
+			</conditions>
+		</node>
+		<node type="start_node" id="3" tag="">
+			<conditions>
+				<condition type="in_area" id="3" value="1" tag="An In Quest Area Condition" area_id="19" />
+			</conditions>
+		</node>
+		<node type="event_merge" id="4" tag="branch" />
+		<node type="event_simple" id="5" tag="">
+			<journal_entry>Now that you found an Oven and interacted with it, double-click on the $[Skill.C.s_cooking_NameSingular] icon, and find the $[Resource.B.r_baked_potato_NameSingular] recipe icon. Double-click on the $[Resource.B.r_baked_potato_NameSingular] and check the required materials list. In some cases, you may need to scroll down the list. Once you have the required materials in your backpack, select to cook one item and click on the large checkmark. In case the cooking fails, you might need to try again - in this case you will need some more materials again.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="An Interact With Object Task" resource_name="r_Oven">
+					<task_instruction>Find and Interact with an $[Resource.O.r_oven_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>Now that you have cooked one $[Resource.B.r_baked_potato_NameSingular], it should have been placed in your backpack. If you are able to use one, do so and notice how it affects your character in the System chat tab as well as any notification messages in your user interface.</journal_entry>
+			<tasks>
+				<task type="craft_item" id="1" value="1" tag="A Craft Item(s) Task" resource_name="r_Baked Potato" quantity="1">
+					<task_instruction>Cook one $[Resource.B.r_baked_potato_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>Now that you saw the effects eating food has on your character and specifically a $[Resource.B.r_baked_potato_NameSingular], here is one for free! Remember that you can also use a $[Resource.S.r_small_oven_NameSingular] for non-mastery recipes, a $[Resource.C.r_clan_oven_NameSingular] or even a $[Resource.C.r_camp_fire_NameSingular] to cook!</journal_entry>
+			<tasks>
+				<task type="activate_item" id="2" value="1" tag="An Activate Item Task" resource_name="r_Baked Potato" consume="False">
+					<task_instruction>Eat a $[Resource.B.r_baked_potato_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="8" tag="">
+			<actions>
+				<action type="give_item_to_player" id="0" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Baked Potato" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="9" tag="" />
+		<node type="start_node" id="10" tag="">
+			<conditions>
+				<condition type="in_area" id="4" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="start_node" id="11" tag="">
+			<conditions>
+				<condition type="in_area" id="5" value="1" tag="An In Quest Area Condition" area_id="17" />
+			</conditions>
+		</node>
+		<node type="start_node" id="12" tag="">
+			<conditions>
+				<condition type="in_area" id="6" value="1" tag="An In Quest Area Condition" area_id="18" />
+			</conditions>
+		</node>
+		<node type="start_node" id="13" tag="">
+			<conditions>
+				<condition type="in_area" id="7" value="1" tag="An In Quest Area Condition" area_id="19" />
+			</conditions>
+		</node>
+		<node type="start_node" id="14" tag="">
+			<conditions>
+				<condition type="in_area" id="8" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="start_node" id="15" tag="">
+			<conditions>
+				<condition type="in_area" id="9" value="1" tag="An In Quest Area Condition" area_id="17" />
+			</conditions>
+		</node>
+		<node type="start_node" id="16" tag="">
+			<conditions>
+				<condition type="in_area" id="10" value="1" tag="An In Quest Area Condition" area_id="18" />
+			</conditions>
+		</node>
+		<node type="start_node" id="17" tag="">
+			<conditions>
+				<condition type="in_area" id="11" value="1" tag="An In Quest Area Condition" area_id="19" />
+			</conditions>
+		</node>
+		<node type="start_node" id="18" tag="">
+			<conditions>
+				<condition type="in_area" id="12" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="start_node" id="19" tag="">
+			<conditions>
+				<condition type="in_area" id="13" value="1" tag="An In Quest Area Condition" area_id="17" />
+			</conditions>
+		</node>
+		<node type="start_node" id="20" tag="">
+			<conditions>
+				<condition type="in_area" id="14" value="1" tag="An In Quest Area Condition" area_id="18" />
+			</conditions>
+		</node>
+		<node type="start_node" id="21" tag="">
+			<conditions>
+				<condition type="in_area" id="15" value="1" tag="An In Quest Area Condition" area_id="19" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="3" to="4" value="1" />
+		<edge id="1" from="2" to="4" value="1" />
+		<edge id="2" from="1" to="4" value="1" />
+		<edge id="3" from="0" to="4" value="1" />
+		<edge id="4" from="4" to="5" value="0" />
+		<edge id="5" from="5" to="6" value="1" />
+		<edge id="6" from="6" to="7" value="1" />
+		<edge id="7" from="7" to="9" value="1" />
+		<edge id="8" from="9" to="8" value="0" />
+		<edge id="9" from="18" to="4" value="1" />
+		<edge id="10" from="21" to="4" value="1" />
+		<edge id="11" from="20" to="4" value="1" />
+		<edge id="12" from="19" to="4" value="1" />
+		<edge id="13" from="10" to="4" value="1" />
+		<edge id="14" from="13" to="4" value="1" />
+		<edge id="15" from="12" to="4" value="1" />
+		<edge id="16" from="11" to="4" value="1" />
+		<edge id="17" from="17" to="4" value="1" />
+		<edge id="18" from="14" to="4" value="1" />
+		<edge id="19" from="16" to="4" value="1" />
+		<edge id="20" from="15" to="4" value="1" />
+	</edges>
+</quest>

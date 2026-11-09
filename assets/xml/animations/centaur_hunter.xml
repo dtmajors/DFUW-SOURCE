@@ -1,0 +1,154 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_centaur hunter" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="ANIMATEDOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="true" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <Meshes>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="centaur_hunter.sfam" />
+                    </Set0>
+                </Meshes>
+                <Animations>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="centaur_hunter.sfas" />
+                    </Set0>
+                </Animations>
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <NumberOfSubsets>
+                <SFInteger Value="0" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="TRUE" />
+                    <SFString Value="shaderanimalphametal.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader1>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                </SubsetShaders>
+            </Normal>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+            <AnimationSet0>
+                <SetName>
+                    <SFString Value="Idle" />
+                </SetName>
+                <SetFile>
+                    <SFString Value="SF_DEFAULT" />
+                </SetFile>
+            </AnimationSet0>
+        </AnimationInformation>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-1.60803" Y="-0.379328" Z="-1.68641" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="1.60245" Y="2.83114" Z="1.52406" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="-0.00278943" Y="1.22591" Z="-0.0811713" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="1.60524" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation />
+            </BoundingInformation>
+        </VisibilityInformation>
+        <DynamicHitConfigFile Enabled="true" Value="animations/centaur_hunter_dynhit_config.xml" />
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="character" />
+        <WaterTransition>
+            <Submerged Value="2.23306" />
+            <Surface Value="0.481751" />
+            <Touching Value="0.113353" />
+            <Floating Value="1.3574" />
+        </WaterTransition>
+    </PhysicsInformation>
+    <VersionInformation Major="1" Minor="0" />
+    <MassCenter>
+        <SFVector3 X="0" Y="0" Z="0" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <DynamicScheme>
+                <Type Value="SFSPHERECOLLISIONSCHEME" />
+                <FileName Value="centaur_hunter.dynamic.SFSPHERECOLLISIONSCHEME.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+            <StaticScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="centaur_hunter.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="0" Y="0" Z="0" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="2.83383" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+</SFObject>

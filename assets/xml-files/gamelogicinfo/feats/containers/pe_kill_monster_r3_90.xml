@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="90"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Monsters"/>
+    <ResourceRank Value="3"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_bandit dwarf bully" Value="90"/>
+  <Steam SteamAchievement="true" SteamIcon="steam_creep_02"/>
+  <Rewards>
+    <Item Name="pe_kill_monster_r3_900" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

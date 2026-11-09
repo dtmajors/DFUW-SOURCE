@@ -1,0 +1,198 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="melechar_banner-rack_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader2>
+<Shader3>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader3>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="25242270048128650000000000000000000000.000000" B="116770537472.000000" G="0.000000" R="5348704660193387500000000000000000000.000000" />
+<Ambient A="9353882794858160900000000000000.000000" B="0.000000" G="25242270048128650000000000000000000000.000000" R="116770537472.000000" />
+<Specular A="0.000000" B="0.000000" G="13711990602194410000000000.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="dwarven_sheetmetal01.psd" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="tex_building_module_dwarf_keep001_51.bmp" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="Snowclan_building_details01.psd" />
+</Texture0>
+</Subset2>
+<Subset3>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="rope.bmp" />
+</Texture0>
+</Subset3>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="4" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-3.409667492" Y="-1.146493554" Z="-0.3670834005" />
+</Min>
+<Max>
+<SFVector3 X="5.746078491" Y="11.55366039" Z="0.3670834303" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.2193251699" Y="5.653028488" Z="0.00632115081" />
+</Center>
+<Radius>
+<SFFloat Value="6.823354244" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.3928451538" Y="7.786267281" Z="0.009090151638" />
+</Center>
+<Radius>
+<SFFloat Value="5.817804813" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="3.259629011e-009" Y="1.092903376" Z="5.743156173e-009" />
+</Center>
+<Radius>
+<SFFloat Value="2.26928401" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.3655872345" Y="1.925492883" Z="-0.001595347421" />
+</Center>
+<Radius>
+<SFFloat Value="0.3486317992" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+<Subset3>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.3620260954" Y="5.667090893" Z="0.009339107201" />
+</Center>
+<Radius>
+<SFFloat Value="4.029632568" />
+</Radius>
+</BoundingSphere>
+</Subset3>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.1899124831" Y="5.527919292" Z="-0.0003684361873" />
+</Center>
+<Radius>
+<SFFloat Value="6.70622921" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="melechar_banner-rack_01.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

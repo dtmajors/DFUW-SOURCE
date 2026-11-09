@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<list>
+
+	<!-- COMMON SKILLS -->
+	<!--   500 EACH    -->
+	<!--    NO REQ     -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Break Fall</SkillTypeName>
+		<TrainingCost>500.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Heal Mount</SkillTypeName>
+		<TrainingCost>500.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Unburden</SkillTypeName>
+		<TrainingCost>500.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Levitation</SkillTypeName>
+		<TrainingCost>500.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+
+	<TrainingRule>
+		<SkillTypeName>s_Mining Mastery New</SkillTypeName>
+		<TrainingCost>15000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Mining</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Logging Mastery New</SkillTypeName>
+		<TrainingCost>15000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Logging</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Herb Gathering Mastery New</SkillTypeName>
+		<TrainingCost>15000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Herb Gathering</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Skinning Mastery New</SkillTypeName>
+		<TrainingCost>15000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Skinning</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<!-- WEAPON MASTERIES SKILLS -->
+	<!--       1,000 EACH        -->
+	<!--     REQ: SKILL 100      -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Archery Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Archery</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Axe Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Axes</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Club Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Clubs and Maces</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Greataxe Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Greataxes</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Greatclub Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Greatclubs</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Greatsword Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Greatswords</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Knife Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Knives</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Polearm Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Polearms</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Sword Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Swords</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Staff Bolt Mastery</SkillTypeName>
+		<TrainingCost>1000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Staff Bolt</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+
+
+	<!-- ROLES SCHOOLS SKILLS -->
+	<!--       50 SKILL       -->
+	<!--      120 SKILL       -->
+	<!--      230 SKILL       -->
+	<!--     1,100 SKILL      -->
+	<!--   3,000 ULTI SKILL   -->
+	<!--       NO REQ         -->
+
+	<!-- WARRIOR SCHOOL -->
+
+	<!-- BATTLE BRAND -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Bandage</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>	<TrainingRule>
+		<SkillTypeName>s_Stinging Riposte</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>	<TrainingRule>
+		<SkillTypeName>s_Foebringer</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Spellbane</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Stoic Defense</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+
+	<!-- BARESARK -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Maelstrom</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Roar</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Repel</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Stampede</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Pulverize</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+
+
+	<!-- SLAYER -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Power Attack</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Battle Rage</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Crushing Blow</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Vampiric Strike</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Barrage</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	
+	
+	<!-- SKIRMISHER SCHOOL -->
+
+	<!-- BRAWLER -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Leap</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Efficiency</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Begone</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Evade</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Heightened Reflexes</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Dash</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+
+	<!-- DEADEYE -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Puncture</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Exploit Weakness</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Explosive Arrow</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Trueshot</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Salvo</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	
+	<!-- DUELIST -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Lacerate</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Flurry</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Lunge</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Pummel</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Uncanny Focus</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+
+	<!-- ELEMENTALIST SCHOOL -->
+
+	<!-- FIRE -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Dragonbreath</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Attunement to Fire</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Fireball</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Magma Bomb</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Heat Stroke</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+
+	<!-- AIR -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Thunderbolt</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Attunement to Air</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Lightning Bolt</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Tornado</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Static Field</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	
+	<!-- WATER -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Bitterstep</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Attunement to Water</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Frostbite</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Watery Grave</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Blizzard</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	
+	<!-- EARTH -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Caustic Bolt</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Attunement to Earth</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Acid Rock</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Heart of Stone</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Toxic Rain</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	
+	
+	<!-- PRIMALIST SCHOOL -->
+	
+	<!-- LIFE -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Exalted Sacrifice</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Consecrate</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Resuscitation</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Healing Blast</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Spirit Bond</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	
+	<!-- LAW -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Virtuous Wrath</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Bastion</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Invigoration</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Primal Surge</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Wall Of Righteous Force</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	
+	<!-- CHAOS -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Bolt of Bedlam</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Siezure</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Havoc Blast</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Soul Flay</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Pall of Pandemonium</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<!-- PAIN -->
+	
+	<TrainingRule>
+		<SkillTypeName>s_Needles</SkillTypeName>
+		<TrainingCost>50.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Pungent Mist</SkillTypeName>
+		<TrainingCost>120.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Mana Leech</SkillTypeName>
+		<TrainingCost>230.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Eye Rot</SkillTypeName>
+		<TrainingCost>1100.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Impale</SkillTypeName>
+		<TrainingCost>3000.0</TrainingCost>
+		<Requirements/>
+	</TrainingRule>
+
+	<!-- CRAFTING MASTERIES SKILLS -->
+	<!--       10,000 SKILL        -->
+	<!--      REQ: SKILL 100       -->
+
+	<TrainingRule>
+		<SkillTypeName>s_Armorsmithing Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Armorsmithing</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Artmaking Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Artmaking</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Alchemy Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Alchemy</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Bowyer Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Bowyer</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Leatherworking Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Leatherworking</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Shieldcrafting Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Shieldcrafting</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Smelting Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Smelting</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Staffcrafting Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Staffcrafting</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Tailoring Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Tailoring</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Tanning Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Tanning</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Weaponsmithing Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Weaponsmithing</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Weaving Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Weaving</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Woodcutting Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Woodcutting</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Cooking Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Cooking</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Shipbuilding Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Shipbuilding</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Engineering Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Engineering</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	<TrainingRule>
+		<SkillTypeName>s_Construction Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Construction</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>
+	
+	<!--	<TrainingRule>
+		<SkillTypeName>s_Jewelsmithing Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Jewelsmithing</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>-->
+	<!--	<TrainingRule>
+		<SkillTypeName>s_Mountsummoning Mastery</SkillTypeName>
+		<TrainingCost>10000.0</TrainingCost>
+		<Requirements>
+			<SkillRequirement>
+				<SkillTypeName>s_Mountsummoning</SkillTypeName>
+				<SkillLevel>100.0</SkillLevel>
+			</SkillRequirement>
+		</Requirements>
+	</TrainingRule>-->
+
+
+</list>

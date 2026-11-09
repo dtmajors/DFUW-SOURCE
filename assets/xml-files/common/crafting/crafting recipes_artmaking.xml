@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Inherit calculations done for
+	1. 4500
+	*******
+	1.  500
+	25. 400
+	50. 300
+	75. 200
+	
+	refined ores have half the rate (double the pieces) and go up to 5 less fron the refined ingots
+-->
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+	<!-- SKILL 1 to 100-->
+		
+	<SFRecipe ResourceName="r_Mounted Badger Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Badger Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Mounted Bear Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Bear Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Mounted Deer Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Deer Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Mounted Goat Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Goat Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Mounted Lion Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Lion Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Mounted Minotaur Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Minotaur Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Mounted Tiger Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Tiger Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Mounted Wolf Head Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Wolf Head" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Niflheim Homestead Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Crystalline Scale" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="50" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dragon Pillar Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="2000" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Draconian Scale" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="12" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="25" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Flame Carrier Statue Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="400" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Greek Fire" Quantity="12" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Ancient Sinew" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="25" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Fountain Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="4000" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Seaweed" Quantity="4000" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fossilized Chitin" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Small Golden Spire Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="30000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="1000" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="100" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Lodestone" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Solar Sphere Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="15000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="1000" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Glyph_q05" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Sunstone" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Golemite Alloy" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="25" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Yssam Sunset Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Painting Canvas" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_01" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_02" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_03" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_04" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_05" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_06" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_07" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_08" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_09" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_10" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_12" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_13" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_15" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_16" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_17" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_18" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_19" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_20" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_21" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_22" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_23" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_24" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_25" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_26" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_27" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_28" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_29" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_30" Quantity="7" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="50" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_The Wax Dragon Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Painting Canvas" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_01" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_02" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_03" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_04" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_05" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_06" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_07" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_08" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_09" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_10" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_12" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_13" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_15" Quantity="13" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_16" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_17" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_18" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_19" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_20" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_21" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_22" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_23" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_24" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_25" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_26" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_27" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_28" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_29" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_30" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="50" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_The Golden Talon Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Painting Canvas" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_01" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_03" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_04" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_05" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_06" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_07" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_08" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_09" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_10" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_12" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_13" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_15" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_16" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_17" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_18" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_19" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_20" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_21" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_22" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_23" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_24" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_25" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_26" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_27" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_28" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_29" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_30" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="50" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_The Clearing Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Painting Canvas" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_01" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_02" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_03" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_04" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_05" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_06" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_07" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_08" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_09" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_10" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_12" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_13" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_15" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_16" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_17" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_18" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_19" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_20" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_21" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_22" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_23" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_24" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_25" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_26" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_27" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_28" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_29" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_30" Quantity="11" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="50" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Lady Grey Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Painting Canvas" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_01" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_02" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_03" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_04" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_05" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_06" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_07" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_08" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_09" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_10" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_12" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_13" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_15" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_16" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_17" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_18" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_19" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_20" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_21" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_22" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_23" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_24" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_25" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_26" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_27" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_28" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_29" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_30" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="50" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_In the Eyes of Nature Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Painting Canvas" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_01" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_02" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_03" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_04" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_05" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_06" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_07" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_08" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_09" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_10" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_12" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_13" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_15" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_16" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_17" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_18" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_19" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_20" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_21" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_22" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_23" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_24" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_25" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_26" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_27" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_28" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_29" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_30" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="75" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Fly with Me Item" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Painting Canvas" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_01" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_02" Quantity="13" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_03" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_04" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_05" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_06" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_07" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_08" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_09" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_10" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_11" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_12" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_13" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_14" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_15" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_16" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_17" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_18" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_19" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_20" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_21" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_22" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_23" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_24" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_25" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_26" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_27" Quantity="9" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_28" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_29" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Dye_30" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Artmaking Mastery" SkillLevel="50" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+</XML>

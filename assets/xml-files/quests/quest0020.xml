@@ -1,0 +1,21 @@
+<quest quest_id="20" category="rumor_quest" tag="The Omitted One" published="False" valid="False">
+	<title>The Omitted One</title>
+	<description>A title on one of the Sarcophagi within the chamber caught your eye.  &quot;The Omitted One.&quot; There is surely a story here, perhaps you can discover more by inspecting the tablet.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="in_area" id="0" value="1" tag="Orkish Volcano Cave" area_id="80" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="">
+			<tasks>
+				<task type="receive_quest" id="1" value="1" tag="Recieve Orkish Tradition" quest_id="-1" />
+			</tasks>
+		</node>
+		<node type="end_node" id="2" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+	</edges>
+</quest>

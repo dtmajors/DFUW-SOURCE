@@ -1,0 +1,94 @@
+//Sun Planet Shader
+
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "time.frag"
+#include "planets.frag"
+#include "objectmatrix.frag"
+#include "vectorfunctions.frag"
+#include "texture.frag"
+
+float4 GlowColor     = float4(0.7f, 0.4f, 0.4f, 1.0f);
+float4 GlowAmbient   = float4(0.2f, 0.2f, 0.0f, 0.0f);
+float  GlowThickness = 1.5f;
+
+static const int ScalePow = 2;
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float4 Spec : COLOR1;
+    float2 Tex  : TEXCOORD0;
+    float2 Tex2  : TEXCOORD1;
+};
+
+VS_OUTPUT VS_SANE(
+    float4 Pos  : POSITION, 
+    float3 Norm : NORMAL, 
+    float2 Tex  : TEXCOORD0)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+    
+	float Potision = 1.2;
+	#ifdef SHADER_PP_QUALITY
+		Potision = 1.1;
+	#endif
+	
+	float Dot = dot(CAMERA_DIRECTION,-PLANET_LIGHTDIR_COMMON);
+    Dot = pow(Dot,ScalePow);
+	
+    float4x4 WVPMat = mul( WORLD_MATRIX, VIEW_PROJECTION_MATRIX);
+	float4 NewPos = float4(Pos.xyz*Potision,1.0f) * Dot;
+	NewPos.w = 1.0f;
+    Out.Pos = mul(NewPos,WVPMat);
+    //Out.Pos = mul(float4(Pos.xyz*Potision,1.0f),WVPMat) ;
+   
+    Out.Tex  = Tex;     
+    return Out;
+}
+
+STD_PS_OUTPUT_3 PS_2(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	float4 Texture = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	float4 Color = Texture ;
+	Color.xyz *=3;
+#ifdef SHADER_PP_GOD_RAYS
+	Color.xyz *=0.4;
+#endif
+	Color.xyz *= float3(0.7,0.6,0.5);
+	Out.Color = Color;
+	
+	return Out;
+
+}
+
+technique T0
+{
+   pass P0
+    {
+		STD_STATE;
+
+        ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+        AlphaTestEnable = FALSE;
+        AlphaBlendEnable = TRUE;
+        
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+
+		FogEnable = FALSE;
+        CullMode = NONE;
+
+        VertexShader = compile vs_3_0 VS_SANE();
+        PixelShader  = compile ps_3_0 PS_2();
+
+    }
+}
+
+
+
+

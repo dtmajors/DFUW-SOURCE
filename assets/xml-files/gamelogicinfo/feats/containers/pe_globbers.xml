@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="true"/>
+   <ShowOnGUI Value="true"/> 
+      
+   <Repeatable Value="false"/>   
+   <Trigger Type="LIFE_MODE_CHANGES">    
+      <IsEventSource Value="true"/>   
+      <LifeMode Value="KILL"/>   
+      <ResourceName Value="r_Growling Gobbler"/>
+      <ResourceRank Value=""/>    
+      <WeaponName Value=""/>    
+      <SkillName Value=""/>    
+      <Counter Value="4500"/>
+   </Trigger>
+   <Points Dynamic="false" Value="5" Key=""/> 
+
+<Rewards>
+	   <Item Type="REWARD_ITEM" Name="r_recipe scroll turkey" Quantity = "1" InBank = "true"/>
+	</Rewards>   
+</Feat>

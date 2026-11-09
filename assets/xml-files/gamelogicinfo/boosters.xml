@@ -1,0 +1,137 @@
+<Boosters>
+	<!-- 
+		TODO : Set the costs and make the calculation formula.
+		if (BoosterIndex == 0)
+			Cost = BaseCost;
+		else
+			Cost = BaseCost * BaseCostMultiplier * BoosterIndex + BaseCost * NumberOfBoostersWithSameIndex
+
+		OtherGroup
+	<BaseCost                 Value = '100.0'/>	
+	<CategoryCostMultipliers  First = '1.0' Second = '2.0' Third = '4.0' Fourth = '8.0'/>
+	<Cost                     Value = BaseCost * BoostsOwnsFromCategory * CategoryCostMultiplier>
+	
+	
+	-->
+	<BaseCost Value = '200.0' FirstCategoryMultiplier = '1.0' SecondCategoryMultiplier = '2.0' ThirdCategoryMultiplier = '4.0' FourthCategoryMultiplier = '8.0'/>
+	<!--_____________________________________________________________________________________________________________________-->
+	<!--                                              STRENGTH BOOSTERS           	                                           -->
+	<!--_____________________________________________________________________________________________________________________-->
+	<Group ID = '0' DisplayName = 'Strength'>
+		<Booster  Index = '0' ID = '0' Name ='the_brawny' DisplayName = 'The Brawny' SpecialEffectName = 'se_em_brawn'>        
+			<Attributes>
+				<Attribute Name = 'Strength Bonus'   Dynamic = '0.0' Static = '10.0'/>
+				<!--<Attribute Name = 'Max Health Bonus' Dynamic = '0.0' Static = '10.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster  Index = '1' ID = '1' Name = 'the_hardy'  DisplayName = 'The Hardy' SpecialEffectName = 'se_em_brawn_2'>        
+			<Attributes>
+				<Attribute Name = 'Strength Bonus'   Dynamic = '0.0' Static = '20.0'/>
+				<!--<Attribute Name = 'Max Health Bonus' Dynamic = '0.0' Static = '20.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '2' ID = '2' Name = 'the_muscular' DisplayName = 'The Muscular' SpecialEffectName = 'se_em_brawn_3'>        
+			<Attributes>
+				<Attribute Name = 'Strength Bonus'   Dynamic = '0.0' Static = '30.0'/>
+				<!--<Attribute Name = 'Max Health Bonus' Dynamic = '0.0' Static = '30.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '3' ID = '3' Name = 'the_strong' DisplayName = 'The Strong'  SpecialEffectName = 'se_em_brawn_4'>        
+			<Attributes>
+				<Attribute Name = 'Strength Bonus'   Dynamic = '0.0' Static = '40.0'/>
+				<!--<Attribute Name = 'Max Health Bonus' Dynamic = '0.0' Static = '40.0'/>-->
+			</Attributes>
+		</Booster>		
+	</Group>
+
+  	<!--_____________________________________________________________________________________________________________________-->
+	<!--                                             DEXTERITY BOOSTERS                                                      -->
+	<!--_____________________________________________________________________________________________________________________-->
+	<Group ID = '1' DisplayName = 'Dexterity'>
+		<Booster Index = '0' ID = '12' Name = 'the_limber' DisplayName = 'The Limber' SpecialEffectName = 'se_em_brawn'>        
+			<Attributes>
+				<Attribute Name = 'Dexterity Bonus'   Dynamic = '0.0' Static = '10.0'/>
+				<!--<Attribute Name = 'Max Stamina Bonus' Dynamic = '0.0' Static = '10.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '1' ID = '13' Name = 'the_agile' DisplayName = 'The Agile' SpecialEffectName = 'se_em_brawn_2'>        
+			<Attributes>
+				<Attribute Name = 'Dexterity Bonus'   Dynamic = '0.0' Static = '20.0'/>
+				<!--<Attribute Name = 'Max Stamina Bonus' Dynamic = '0.0' Static = '20.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '2' ID = '14' Name = 'the_swift' DisplayName = 'The Swift' SpecialEffectName = 'se_em_brawn_3'>        
+			<Attributes>
+				<Attribute Name = 'Dexterity Bonus'   Dynamic = '0.0' Static = '30.0'/>
+				<!--<Attribute Name = 'Max Stamina Bonus' Dynamic = '0.0' Static = '30.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '3' ID = '15' Name = 'the_dextrous' DisplayName = 'The Dextrous' SpecialEffectName = 'se_em_brawn_4'>        
+			<Attributes>
+				<Attribute Name = 'Dexterity Bonus'   Dynamic = '0.0' Static = '40.0'/>
+				<!--<Attribute Name = 'Max Stamina Bonus' Dynamic = '0.0' Static = '40.0'/>-->
+			</Attributes>
+		</Booster>    
+   </Group>
+ 	<!--_____________________________________________________________________________________________________________________-->
+	<!--                                            INTELIGENCE BOOSTERS                                                     -->
+	<!--_____________________________________________________________________________________________________________________-->
+	<Group ID = '2' DisplayName = 'Intelligence'>
+		<Booster Index = '0' ID = '8' Name = 'the_clever' DisplayName = 'The Clever'  SpecialEffectName = 'se_em_brawn'>        
+			<Attributes>
+				<Attribute Name = 'Intelligence Bonus'   Dynamic = '0.0' Static = '10.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '10.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '1' ID = '9' Name = 'the_sharp' DisplayName = 'The Sharp'  SpecialEffectName = 'se_em_brawn_2'>        
+			<Attributes>
+				<Attribute Name = 'Intelligence Bonus'   Dynamic = '0.0' Static = '20.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '20.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '2' ID = '10' Name = 'the_smart' DisplayName = 'The Smart' SpecialEffectName = 'se_em_brawn_3'>        
+			<Attributes>
+				<Attribute Name = 'Intelligence Bonus'   Dynamic = '0.0' Static = '30.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '30.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '3' ID = '11' Name = 'the_intelligent' DisplayName = 'The Intelligent' SpecialEffectName = 'se_em_brawn_4'>        
+			<Attributes>
+				<Attribute Name = 'Intelligence Bonus'   Dynamic = '0.0' Static = '40.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '40.0'/>-->
+			</Attributes>
+		</Booster>        
+	</Group>
+
+	<!--_____________________________________________________________________________________________________________________-->
+	<!--                                               WISDOM BOOSTERS                                                       -->
+	<!--_____________________________________________________________________________________________________________________-->
+	<Group ID = '3' DisplayName = 'Wisdom'>
+		<Booster Index = '0' ID = '4' Name = 'the_aware' DisplayName = 'The Aware' SpecialEffectName = 'se_em_brawn'>        
+			<Attributes>
+				<Attribute Name = 'Wisdom Bonus'   Dynamic = '0.0' Static = '10.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '10.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '1' ID = '5' Name = 'the_thoughtful' DisplayName = 'The Thoughtful' SpecialEffectName = 'se_em_brawn_2'>        
+			<Attributes>
+				<Attribute Name = 'Wisdom Bonus'   Dynamic = '0.0' Static = '20.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '20.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '2' ID = '6' Name = 'the_knowledgeable' DisplayName = 'The Knowledgeable' SpecialEffectName = 'se_em_brawn_3'>        
+			<Attributes>
+				<Attribute Name = 'Wisdom Bonus'   Dynamic = '0.0' Static = '30.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '30.0'/>-->
+			</Attributes>
+		</Booster>
+		<Booster Index = '3' ID = '7' Name = 'the_wise' DisplayName = 'The Wise' SpecialEffectName = 'se_em_brawn_4'>        
+			<Attributes>
+				<Attribute Name = 'Wisdom Bonus'   Dynamic = '0.0' Static = '40.0'/>
+				<!--<Attribute Name = 'Max Mana Bonus' Dynamic = '0.0' Static = '40.0'/>-->
+			</Attributes>
+		</Booster>        
+	</Group>
+   
+</Boosters>
+

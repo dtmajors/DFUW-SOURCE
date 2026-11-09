@@ -1,0 +1,2 @@
+public class hnc$b {
+}

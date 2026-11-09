@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SFSimpleQuest>
+  <QuestEndNpcName>Gamelogic Test Vendor1</QuestEndNpcName>
+  <QuestEndTargetMarkerCaption>Gamelogic Test Vendor1</QuestEndTargetMarkerCaption>
+  <ShowMarkerOnTarget>true</ShowMarkerOnTarget>
+  <NonAliveTarget>false</NonAliveTarget>
+  <TimeLimit/>
+  <SurvivalMode>false</SurvivalMode>
+  <ChainQuest>false</ChainQuest>
+  <QuestFinishedText>ok,now bring back the stuff.</QuestFinishedText>
+  <QuestDiaryText>bring some stuff back.</QuestDiaryText>
+  <UseSkillMessage/>
+  <OverrideTextProgression>false</OverrideTextProgression>
+  <TargetedResources>
+    <SFResourceAndQuantity>
+      <ResourceName>r_Axes</ResourceName>
+      <ResourceType>-1</ResourceType>
+      <Amount>3</Amount>
+      <LeastTargets>-1</LeastTargets>
+      <outer-class class="SFSimpleQuest" reference="../../.."/>
+    </SFResourceAndQuantity>
+    <SFResourceAndQuantity>
+      <ResourceName>r_Shortsword</ResourceName>
+      <ResourceType>-1</ResourceType>
+      <Amount>5</Amount>
+      <LeastTargets>-1</LeastTargets>
+      <outer-class class="SFSimpleQuest" reference="../../.."/>
+    </SFResourceAndQuantity>
+  </TargetedResources>
+  <Rewards>
+    <Reward>
+      <ResourceName>r_Gold</ResourceName>
+      <Amount>1</Amount>
+      <Probability>1.0</Probability>
+      <outer-class class="SFSimpleQuest" reference="../../.."/>
+    </Reward>
+    <Reward>
+      <ResourceName>r_bag blue</ResourceName>
+      <Amount>5</Amount>
+      <Probability>1.0</Probability>
+      <outer-class class="SFSimpleQuest" reference="../../.."/>
+    </Reward>
+  </Rewards>
+  <SkillName/>
+  <SkillType>-1</SkillType>
+  <Marker/>
+  <LinkedSpawnpoints>false</LinkedSpawnpoints>
+  <Type>GATHER_QUEST</Type>
+  <ID>7</ID>
+  <Name>AA_test_gather_quest</Name>
+  <QuestStartSourceSpecialEffect/>
+  <QuestStartTargetSpecialEffect/>
+  <QuestStartClientSpecialEffect/>
+  <QuestEndSourceSpecialEffect/>
+  <QuestEndTargetSpecialEffect/>
+  <QuestEndClientSpecialEffect/>
+  <Filename>_aa_test_gather_quest.xml</Filename>
+  <TileLocation>T01</TileLocation>
+  <QuestStartText>Give me 5 swords and 5 firestarters.</QuestStartText>
+  <QuestEndText>Thank you so much.</QuestEndText>
+  <ShortDescription>Gather some objects.</ShortDescription>
+</SFSimpleQuest>

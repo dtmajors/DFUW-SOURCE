@@ -1,0 +1,417 @@
+<quest quest_id="312" category="lore_quest" tag="The Doombringer" published="False" valid="True">
+	<title>The Doombringer</title>
+	<description>You hadn&apos;t taken more than three steps into the dark and frosted chamber that housed the portal when Behrem&apos;s voice suddenly cracked like a whithin your mind!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="1" value="1" tag="A Quest Completion Condition" quest_id="311" />
+			</conditions>
+		</node>
+		<node type="event_branch" id="1" tag="" />
+		<node type="event_join" id="2" tag="Activate the Hand">
+			<journal_entry>You&apos;d barely needed to touch the strange, hand-shaped altar and something happened.  Possibly the blood you&apos;d recently spilled was all that it needed but suddenly, an eerie buzz that you&apos;d not noticed on the edge of your hearing began to intensify.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="3" value="1" tag="Activate the Hand Shaped Altar" resource_name="r_qt  darkbrood hand">
+					<task_instruction>Activate the Hand Shaped Altar</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="">
+			<journal_entry>It was by no means an easy battle.  The Doombringer was not only an able foe but was driven by a malicious rage that filtered through every one of his Darkbrood minions.</journal_entry>
+		</node>
+		<node type="event_simple" id="4" tag="Fight the Doombringer">
+			<instruction>Sustain damage from the Doombringer until the Hivemind has reacted.</instruction>
+			<journal_entry>That seemed to do it! The chaos you&apos;d sown with the Darkbrood blood had acted as an amplifier for their hivemind and by surviving the Doombringer, the conduit for their collective, you had funneled all that chaos and panic right onto him.  Like a hive rejecting their queen, the Darkbrood would very soon descend upon him and finish what you began.</journal_entry>
+			<tasks>
+				<task type="take_damage_from" id="7" value="1" tag="Get hurt by Doombringer" magnitude="600" resource_name="r_Darkbrood Doombringer" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="5" tag="20 Vials of Blood">
+			<journal_entry>With that grizzly task done, you now had enough blood to sow some chaos around the area.  Behrem had said that the Darkbrood&apos;s blood carried their collective voice and cursed insanity, the legacy of Sahul the fool.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="9" value="1" tag="have vials" resource_name="r_Darkbrood Blood" quantity="20" inventory_type="Backpack">
+					<task_instruction>Gather the 20 </task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="Kill the Doombringer">
+			<journal_entry>Which is, as it turned out, exactly what you did! Preferring to stab right to the heart of the matter, as it were, you made your way directly to the Doombringer himself. The Ork&apos;s had decreed him guilty and sentenced him to death, a death that you were all too happy to provide!</journal_entry>
+			<tasks>
+				<task type="kill_object" id="8" value="1" tag="Kill the Doombringer" resource_name="r_Darkbrood Doombringer" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="7" tag="Smear Blood fanatic" optional_tasks="False">
+			<conditions>
+				<condition type="item_possession" id="0" value="3" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="19" value="1" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_fanatic_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="16" value="1" tag="A Go Near Object Task" resource_name="r_Darkbrood Fanatic" distance="15" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>There was, however, something more.  The Acolyte was correct it seemed, he was more than just Darkbrood; he was somehow enhanced, imbued with a power far beyond his own.</journal_entry>
+		</node>
+		<node type="end_node" id="9" tag="" />
+		<node type="event_simple_conditional" id="10" tag="Burn Blood in forge">
+			<instruction>Burn the blood at</instruction>
+			<conditions>
+				<condition type="item_possession" id="2" value="1" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="10" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="11" value="2" tag="Burn Blood" resource_name="r_qt Darkbrood Forge" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="43" tag="">
+			<actions>
+				<action type="take_item_from_player" id="6" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="12" tag="burn sfx">
+			<journal_entry>The blood burned away with a gurgling hiss as you lay it upon the forge.  A tiny shriek just on the edge of your hearing could be heard mingling with the sound of it evaporating.  This was working...</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_resource" id="0" tag="A Start Client SFX on Specific Object Action" sfx_name="se_powder_throwing" resource_name="r_qt Darkbrood Forge" />
+				<action type="take_item_from_player" id="1" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Darkbrood Blood" quantity="10" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="14" tag="">
+			<actions>
+				<action type="take_item_from_player" id="2" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="21" tag="Smear Blood onto tools" optional_tasks="False">
+			<conditions>
+				<condition type="item_possession" id="3" value="1" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="20" value="2" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_fanatic_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="17" value="2" tag="A Go Near Object Task" resource_name="r_Darkbrood Fanatic" distance="15" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="22" tag="Burn Blood">
+			<instruction>Burn the blood at...</instruction>
+			<conditions>
+				<condition type="item_possession" id="4" value="1" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="10" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="15" value="2" tag="Burn Blood" resource_name="r_qt Darkbrood Forge" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="19" tag="20 Vials of Blood">
+			<instruction>You need 10 viald of Darkbrood blood</instruction>
+			<tasks>
+				<task type="gather_items" id="12" value="1" tag="have vials" resource_name="r_Darkbrood Blood" quantity="10" inventory_type="Backpack">
+					<task_instruction>Gather the 20 Darkbrood vials</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="20" tag="Blood">
+			<instruction>You need 2 vials of darkbrood blood</instruction>
+			<tasks>
+				<task type="gather_items" id="13" value="1" tag="have vials" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack">
+					<task_instruction>Gather the 20 Darkbrood vials</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="42" tag="Smear Blood darkbrood" optional_tasks="True">
+			<conditions>
+				<condition type="item_possession" id="5" value="3" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="21" value="1" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_zealot_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="22" value="1" tag="A Go Near Object Task" resource_name="r_Darkbrood Fanatic" distance="15">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_fanatic_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="24" tag="" />
+		<node type="event_simple" id="25" tag="altar fx">
+			<actions>
+				<action type="start_client_sfx_on_resource" id="3" tag="A Start Client SFX on Specific Object Action" sfx_name="se_darkbrood_altar_activation" resource_name="r_qt  darkbrood hand" />
+			</actions>
+		</node>
+		<node type="event_simple" id="27" tag="">
+			<journal_entry>Once you had sufficiently regained your composure and staved off the looming heart attack, you took a moment to listen to his frenzied whispering.</journal_entry>
+		</node>
+		<node type="event_simple" id="28" tag="">
+			<journal_entry>&quot;Hssst! Hold! You must listen to me friend! Heed my words before you doom us all! I speak to you now through the Orkish emmisaries fire ritual...tis a most fascinating example of primitive energy relocation that I must...ehem, I digress!</journal_entry>
+		</node>
+		<node type="event_simple" id="29" tag="">
+			<journal_entry>The Orks do not understand the full extent of the Doombringer! While you were gone, I have been pouring over certain texts and dark writings.  The Doombringer is indeed the conduit to the Darkbrood&apos;s hive mind, but he has also been exponentially enhanced! The Darkbrood are incabable of such planning as we have witnessed, they are but pawns, hired hands if you will.  The Doombringer is their reward! One of their own given such power as to stand above the rest and, in essence, give them what they could never have as a collective.  A leader!</journal_entry>
+		</node>
+		<node type="event_simple" id="30" tag="">
+			<journal_entry>Therein lies both the rub and your salvation! The Doombringer, I believe, is far beyond your capabilities.  If I am wrong, then by all means, slay him to death! If, however, I am correct, then I believe I have a better way...</journal_entry>
+		</node>
+		<node type="event_simple" id="31" tag="">
+			<journal_entry>The Doombringer, as I said, acts as a conduit for the hive mind.  This, I believe, can be his undoing! The hive mentality of the Darkbrood gives us a weapon against them.  The secret lies in their blood...&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="32" tag="">
+			<journal_entry>He went on at some length, going into various grizzlt details and describing how the Darkbrood&apos;s blood held their hive voice.  Smearing it around the area and burning it on their specially attuned forges should create a confusion and chaos.  Activating their hand-shaped altar would focus and resonate that chaos.</journal_entry>
+		</node>
+		<node type="event_simple" id="33" tag="">
+			<journal_entry>It seemed your next step would be in the collection of Darkbrood blood! That, or you could, of course simply have ignored the Acolyte all togther and battled the Doombringer yourself.</journal_entry>
+		</node>
+		<node type="event_simple" id="34" tag="">
+			<journal_entry>While there was no doubt that you had struck a definitive blow against a dark power behind much of what you had witnessed of late, there was still a very frustrating lack of motive and reasoning behind it all.</journal_entry>
+		</node>
+		<node type="event_simple" id="35" tag="">
+			<journal_entry>There was another, bigger player behind the curtain and, given time, you would find them! Trust me on this...</journal_entry>
+		</node>
+		<node type="event_merge" id="36" tag="kill darkbrood">
+			<tasks>
+				<task type="use_skill_on" id="18" value="1" tag="A Use Skill On Object Task" resource_name="r_Darkbroods" skill_name="s_Skinning_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="37" tag="get blood">
+			<actions>
+				<action type="give_item_to_player" id="4" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Darkbrood Blood" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="38" tag="">
+			<journal_entry>These things always sound so easy when you say them...</journal_entry>
+		</node>
+		<node type="event_simple" id="39" tag="">
+			<journal_entry>The level of chaos and confusion coming out of the Darkbrood was palpable, even to you.  It was now time to strike at the Doombringer! All you needed to do, apparently, was to confront him and survive awhile!</journal_entry>
+		</node>
+		<node type="event_simple" id="40" tag="audio fx">
+			<actions>
+				<action type="start_client_sfx_on_player" id="9" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_simple" id="41" tag="">
+			<journal_entry>It was probably then, a good time to make yourself scarce!</journal_entry>
+		</node>
+		<node type="event_simple_conditional" id="44" tag="Smear Blood zealot" optional_tasks="True">
+			<conditions>
+				<condition type="item_possession" id="6" value="1" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="23" value="2" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_zealot_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="24" value="2" tag="A Go Near Object Task" resource_name="r_Darkbrood Zealot" distance="15" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="45" tag="Blood">
+			<instruction>You need 2 vials of darkbrood blood</instruction>
+			<tasks>
+				<task type="gather_items" id="25" value="1" tag="have vials" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack">
+					<task_instruction>Gather the 20 Darkbrood vials</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_join" id="46" tag="">
+			<journal_entry>Your fingers were sticky and your stomach possibly more than a little uneasy but something was happening, you could see the Darkbrood begin to act differently, a slight panic suffusing their hive-like behavior.</journal_entry>
+		</node>
+		<node type="event_simple_conditional" id="47" tag="Smear Blood zealot" optional_tasks="True">
+			<conditions>
+				<condition type="item_possession" id="7" value="1" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="26" value="2" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_mystic_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="27" value="2" tag="A Go Near Object Task" resource_name="r_Darkbrood Mystic" distance="15" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="48" tag="2 Blood">
+			<instruction>You need 2 vials of darkbrood blood</instruction>
+			<tasks>
+				<task type="gather_items" id="28" value="1" tag="have vials" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack">
+					<task_instruction>Gather the 20 Darkbrood vials</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="49" tag="Smear Blood darkbrood" optional_tasks="True">
+			<conditions>
+				<condition type="item_possession" id="8" value="3" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="29" value="1" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_mystic_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="30" value="1" tag="A Go Near Object Task" resource_name="r_Darkbrood Fanatic" distance="15">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_mystic_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="50" tag="">
+			<actions>
+				<action type="take_item_from_player" id="7" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Darkbrood Blood" quantity="2" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="51" tag="Smear Blood zealot" optional_tasks="True">
+			<conditions>
+				<condition type="item_possession" id="9" value="1" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="3" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="31" value="2" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_warmaster_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="32" value="2" tag="A Go Near Object Task" resource_name="r_Darkbrood Warmaster" distance="15" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="52" tag="3 Blood">
+			<instruction>You need 2 vials of darkbrood blood</instruction>
+			<tasks>
+				<task type="gather_items" id="33" value="1" tag="have vials" resource_name="r_Darkbrood Blood" quantity="3" inventory_type="Backpack">
+					<task_instruction>Gather the 20 Darkbrood vials</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="53" tag="Smear Blood darkbrood" optional_tasks="True">
+			<conditions>
+				<condition type="item_possession" id="10" value="3" tag="Have Blood" resource_name="r_Darkbrood Blood" quantity="3" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="activate_item" id="34" value="1" tag="An Activate Item Task" resource_name="r_Darkbrood Blood" consume="False">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_warmaster_NameSingular]</task_instruction>
+				</task>
+				<task type="go_near_object" id="35" value="1" tag="A Go Near Object Task" resource_name="r_Darkbrood Fanatic" distance="15">
+					<task_instruction>Use the blood near a $[Resource.D.r_darkbrood_warmaster_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="54" tag="">
+			<actions>
+				<action type="take_item_from_player" id="8" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Darkbrood Blood" quantity="3" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="55" tag="" optional_tasks="True">
+			<instruction>Use the dungeon portal or $[Skill.B.s_bindstone_recall_NameSingular] to exit the dungeon.</instruction>
+			<tasks>
+				<task type="use_skill" id="36" value="1" tag="A Use Skill Task" skill_name="s_Bindstone Recall" />
+				<task type="interact_with_object" id="37" value="1" tag="An Interact With Object Task" resource_name="r_Portal Mystic" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="56" tag="" optional_tasks="True">
+			<instruction>Use the dungeon portal or $[Skill.B.s_bindstone_recall_NameSingular] to exit the dungeon.</instruction>
+			<tasks>
+				<task type="use_skill" id="38" value="1" tag="A Use Skill Task" skill_name="s_Bindstone Recall" />
+				<task type="interact_with_object" id="39" value="1" tag="An Interact With Object Task" resource_name="r_Portal Mystic" />
+			</tasks>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="34" from="0" to="27" value="1" />
+		<edge id="1" from="1" to="5" value="0" />
+		<edge id="2" from="5" to="7" value="1" />
+		<edge id="62" from="44" to="43" value="2" />
+		<edge id="32" from="2" to="25" value="1" />
+		<edge id="12" from="5" to="10" value="1" />
+		<edge id="11" from="1" to="6" value="0" />
+		<edge id="7" from="6" to="3" value="1" />
+		<edge id="52" from="38" to="4" value="0" />
+		<edge id="9" from="3" to="8" value="0" />
+		<edge id="42" from="8" to="34" value="0" />
+		<edge id="67" from="14" to="46" value="0" />
+		<edge id="14" from="10" to="12" value="2" />
+		<edge id="15" from="7" to="14" value="1" />
+		<edge id="16" from="7" to="20" value="3" />
+		<edge id="17" from="20" to="21" value="1" />
+		<edge id="18" from="21" to="14" value="2" />
+		<edge id="24" from="21" to="20" value="1" />
+		<edge id="20" from="10" to="19" value="1" />
+		<edge id="21" from="19" to="22" value="1" />
+		<edge id="22" from="22" to="12" value="2" />
+		<edge id="25" from="22" to="19" value="1" />
+		<edge id="61" from="44" to="45" value="1" />
+		<edge id="58" from="12" to="2" value="0" />
+		<edge id="51" from="39" to="38" value="0" />
+		<edge id="60" from="5" to="44" value="1" />
+		<edge id="35" from="27" to="28" value="0" />
+		<edge id="36" from="28" to="29" value="0" />
+		<edge id="37" from="29" to="30" value="0" />
+		<edge id="38" from="30" to="31" value="0" />
+		<edge id="39" from="31" to="32" value="0" />
+		<edge id="40" from="32" to="33" value="0" />
+		<edge id="41" from="33" to="1" value="0" />
+		<edge id="43" from="34" to="35" value="0" />
+		<edge id="85" from="35" to="56" value="0" />
+		<edge id="45" from="1" to="36" value="0" />
+		<edge id="46" from="36" to="37" value="1" />
+		<edge id="47" from="37" to="36" value="0" />
+		<edge id="59" from="25" to="39" value="0" />
+		<edge id="53" from="4" to="40" value="1" />
+		<edge id="54" from="40" to="41" value="0" />
+		<edge id="83" from="41" to="55" value="0" />
+		<edge id="63" from="45" to="42" value="1" />
+		<edge id="64" from="42" to="43" value="1" />
+		<edge id="65" from="42" to="45" value="3" />
+		<edge id="66" from="46" to="2" value="0" />
+		<edge id="68" from="43" to="46" value="0" />
+		<edge id="69" from="5" to="47" value="1" />
+		<edge id="70" from="47" to="50" value="2" />
+		<edge id="71" from="47" to="48" value="1" />
+		<edge id="72" from="48" to="49" value="1" />
+		<edge id="73" from="49" to="48" value="3" />
+		<edge id="74" from="49" to="50" value="1" />
+		<edge id="75" from="50" to="46" value="0" />
+		<edge id="76" from="5" to="51" value="1" />
+		<edge id="77" from="51" to="52" value="1" />
+		<edge id="78" from="51" to="54" value="2" />
+		<edge id="79" from="52" to="53" value="1" />
+		<edge id="80" from="53" to="52" value="3" />
+		<edge id="81" from="53" to="54" value="1" />
+		<edge id="82" from="54" to="2" value="0" />
+		<edge id="84" from="55" to="24" value="1" />
+		<edge id="86" from="56" to="9" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="46" y="424" />
+		<node_location id="1" x="219" y="391" />
+		<node_location id="2" x="892" y="624" />
+		<node_location id="3" x="528" y="183" />
+		<node_location id="4" x="1022" y="338" />
+		<node_location id="5" x="168" y="669" />
+		<node_location id="6" x="419" y="190" />
+		<node_location id="7" x="339" y="381" />
+		<node_location id="8" x="635" y="180" />
+		<node_location id="9" x="1003" y="178" />
+		<node_location id="10" x="445" y="775" />
+		<node_location id="43" x="635" y="416" />
+		<node_location id="12" x="648" y="774" />
+		<node_location id="14" x="647" y="294" />
+		<node_location id="21" x="530" y="259" />
+		<node_location id="22" x="581" y="864" />
+		<node_location id="19" x="443" y="886" />
+		<node_location id="20" x="449" y="275" />
+		<node_location id="42" x="547" y="376" />
+		<node_location id="24" x="1166" y="525" />
+		<node_location id="25" x="902" y="500" />
+		<node_location id="27" x="63" y="343" />
+		<node_location id="28" x="70" y="284" />
+		<node_location id="29" x="78" y="221" />
+		<node_location id="30" x="82" y="171" />
+		<node_location id="31" x="100" y="103" />
+		<node_location id="32" x="139" y="64" />
+		<node_location id="33" x="227" y="58" />
+		<node_location id="34" x="744" y="179" />
+		<node_location id="35" x="833" y="176" />
+		<node_location id="36" x="62" y="530" />
+		<node_location id="37" x="56" y="630" />
+		<node_location id="38" x="937" y="334" />
+		<node_location id="39" x="918" y="408" />
+		<node_location id="40" x="1128" y="341" />
+		<node_location id="41" x="1227" y="328" />
+		<node_location id="44" x="352" y="475" />
+		<node_location id="45" x="408" y="404" />
+		<node_location id="46" x="774" y="481" />
+		<node_location id="47" x="369" y="550" />
+		<node_location id="48" x="420" y="495" />
+		<node_location id="49" x="544" y="482" />
+		<node_location id="50" x="645" y="508" />
+		<node_location id="51" x="436" y="664" />
+		<node_location id="52" x="499" y="590" />
+		<node_location id="53" x="629" y="588" />
+		<node_location id="54" x="694" y="641" />
+		<node_location id="55" x="1168" y="449" />
+		<node_location id="56" x="922" y="176" />
+	</node_locations>
+</quest>

@@ -1,0 +1,166 @@
+/*
+ * Decompiled with CFR.
+ */
+public final class mey
+extends meq {
+    private static final mey Cwg = new mey();
+    @lok(value="Harvesting Skills")
+    @lpl(value="The s_harvesting_skills skill name in singular form")
+    public static final lox Cwh = Cwg.BC("s_harvesting_skills_NameSingular");
+    @lok(value="Agon is a land teeming with rich resources for the enterprising harvester.  Plunder her bounty with any of these skills to reap the materials you need (or that others will buy)!")
+    @lpl(value="The s_harvesting_skills skill description")
+    public static final lox Cwi = Cwg.BC("s_harvesting_skills_Description");
+    @lok(value="Haste")
+    @lpl(value="The s_haste skill name in singular form")
+    public static final lox Cwj = Cwg.BC("s_haste_NameSingular");
+    @lok(value="Aim at a target to increase a character's melee attack speed.")
+    @lpl(value="The s_haste skill description")
+    public static final lox Cwk = Cwg.BC("s_haste_Description");
+    @lok(value="Hasten Spells")
+    @lpl(value="The s_hasten_spells skill name in singular form")
+    public static final lox Cwl = Cwg.BC("s_hasten_spells_NameSingular");
+    @lok(value="Lessens the charging time of the caster\\'s spells for a period of time.")
+    @lpl(value="The s_hasten_spells skill description")
+    public static final lox Cwm = Cwg.BC("s_hasten_spells_Description");
+    @lok(value="Havoc Blast")
+    @lpl(value="The s_havoc_blast skill name in singular form")
+    public static final lox Cwn = Cwg.BC("s_havoc_blast_NameSingular");
+    @lok(value="Blast anything in front of you, be it foe, friend or even the ground itself, with unholy damage and a powerful push-back.")
+    @lpl(value="The s_havoc_blast skill description")
+    public static final lox Cwo = Cwg.BC("s_havoc_blast_Description");
+    @lok(value="Heal Mount")
+    @lpl(value="The s_heal_mount skill name in singular form")
+    public static final lox Cwp = Cwg.BC("s_heal_mount_NameSingular");
+    @lok(value="Bind the wounds of your trusty steed.")
+    @lpl(value="The s_heal_mount skill description")
+    public static final lox Cwq = Cwg.BC("s_heal_mount_Description");
+    @lok(value="Heal Other")
+    @lpl(value="The s_heal_other skill name in singular form")
+    public static final lox Cwr = Cwg.BC("s_heal_other_NameSingular");
+    @lok(value="Fires a healing ray that will recover some of its target\\'s Health.")
+    @lpl(value="The s_heal_other skill description")
+    public static final lox Cws = Cwg.BC("s_heal_other_Description");
+    @lok(value="Heal Self")
+    @lpl(value="The s_heal_self skill name in singular form")
+    public static final lox Cwt = Cwg.BC("s_heal_self_NameSingular");
+    @lok(value="A very basic healing skill when you need to quickly bind your wounds!")
+    @lpl(value="The s_heal_self skill description")
+    public static final lox Cwu = Cwg.BC("s_heal_self_Description");
+    @lok(value="Healing Blast")
+    @lpl(value="The s_healing_blast skill name in singular form")
+    public static final lox Cwv = Cwg.BC("s_healing_blast_NameSingular");
+    @lok(value="An explosive and powerful burst of rejuvenating life force centered at your target point.  This missile of healing energies is affected by gravity.")
+    @lpl(value="The s_healing_blast skill description")
+    public static final lox Cww = Cwg.BC("s_healing_blast_Description");
+    @lok(value="Healing Chant")
+    @lpl(value="The s_healing_chant skill name in singular form")
+    public static final lox Cwx = Cwg.BC("s_healing_chant_NameSingular");
+    @lok(value="Press and hold Action button to create a healing sphere around the caster. This spell cannot be cast while moving.")
+    @lpl(value="The s_healing_chant skill description")
+    public static final lox Cwy = Cwg.BC("s_healing_chant_Description");
+    @lok(value="Healing Circle")
+    @lpl(value="The s_healing_circle skill name in singular form")
+    public static final lox Cwz = Cwg.BC("s_healing_circle_NameSingular");
+    @lok(value="Creates a small instant healing sphere centered on the caster.")
+    @lpl(value="The s_healing_circle skill description")
+    public static final lox CwA = Cwg.BC("s_healing_circle_Description");
+    @lok(value="Healing Ray")
+    @lpl(value="The s_healing_ray skill name in singular form")
+    public static final lox CwB = Cwg.BC("s_healing_ray_NameSingular");
+    @lok(value="The force of your faith binds wounds and heals all allies in the path of your gaze.")
+    @lpl(value="The s_healing_ray skill description")
+    public static final lox CwC = Cwg.BC("s_healing_ray_Description");
+    @lok(value="Healing Totem")
+    @lpl(value="The s_healing_totem skill name in singular form")
+    public static final lox CwD = Cwg.BC("s_healing_totem_NameSingular");
+    @lok(value="A secret passed down from the Ithwen Shaman's of old.  You place down a totem that heals all who stay close to it.  Note that the totem can be destroyed by any non AoE or DoT attacks.")
+    @lpl(value="The s_healing_totem skill description")
+    public static final lox CwE = Cwg.BC("s_healing_totem_Description");
+    @lok(value="Health to Mana")
+    @lpl(value="The s_health_to_mana skill name in singular form")
+    public static final lox CwF = Cwg.BC("s_health_to_mana_NameSingular");
+    @lok(value="Tap into your health pool to raise your Mana!")
+    @lpl(value="The s_health_to_mana skill description")
+    public static final lox CwG = Cwg.BC("s_health_to_mana_Description");
+    @lok(value="Heart of Stone")
+    @lpl(value="The s_heart_of_stone skill name in singular form")
+    public static final lox CwH = Cwg.BC("s_heart_of_stone_NameSingular");
+    @lok(value="Put yourself between a rock and a hard place! Encase yourself within a boulder to gain increased regenerations and a massive immunity to all sources of damage except impact.")
+    @lpl(value="The s_heart_of_stone skill description")
+    public static final lox CwI = Cwg.BC("s_heart_of_stone_Description");
+    @lok(value="Heat Stroke")
+    @lpl(value="The s_heat_stroke skill name in singular form")
+    public static final lox CwJ = Cwg.BC("s_heat_stroke_NameSingular");
+    @lok(value="You cook up an area of such sweltering heat that anyone caught within is severely burned, rendered weaker to fire and drained of stamina.  The area of effect will linger for awhile and continue to effect anyone foolish enough to pass through. Cannot be used underwater.")
+    @lpl(value="The s_heat_stroke skill description")
+    public static final lox CwK = Cwg.BC("s_heat_stroke_Description");
+    @lok(value="Heightened Reflexes")
+    @lpl(value="The s_heightened_reflexes skill name in singular form")
+    public static final lox CwL = Cwg.BC("s_heightened_reflexes_NameSingular");
+    @lok(value="Pushing past the pain, you break past the natural limits of your body. Increases all forms of attack speed and replenishes your stamina. Cannot be used underwater.")
+    @lpl(value="The s_heightened_reflexes skill description")
+    public static final lox CwM = Cwg.BC("s_heightened_reflexes_Description");
+    @lok(value="Herb Gathering")
+    @lpl(value="The s_herb_gathering skill name in singular form")
+    public static final lox CwN = Cwg.BC("s_herb_gathering_NameSingular");
+    @lok(value="Equip a sickle and press your Interact key when targeting certain bushes and plants to gather herbs.")
+    @lpl(value="The s_herb_gathering skill description")
+    public static final lox CwO = Cwg.BC("s_herb_gathering_Description");
+    @lok(value="Herb Gathering Mastery New")
+    @lpl(value="The s_herb_gathering_mastery_new skill name in singular form")
+    public static final lox CwP = Cwg.BC("s_herb_gathering_mastery_new_NameSingular");
+    @lok(value="Equip a sickle and press your Interact key when targeting Farms in cities as well as Engorged Herb Laden Shrubberies.")
+    @lpl(value="The s_herb_gathering_mastery_new skill description")
+    public static final lox CwQ = Cwg.BC("s_herb_gathering_mastery_new_Description");
+    @lok(value="Holy Shield")
+    @lpl(value="The s_holy_shield skill name in singular form")
+    public static final lox CwR = Cwg.BC("s_holy_shield_NameSingular");
+    @lok(value="Grants the caster increased protection against Holy damage.")
+    @lpl(value="The s_holy_shield skill description")
+    public static final lox CwS = Cwg.BC("s_holy_shield_Description");
+    @lok(value="Holy Ward")
+    @lpl(value="The s_holy_ward skill name in singular form")
+    public static final lox CwT = Cwg.BC("s_holy_ward_NameSingular");
+    @lok(value="Aim at a target to grant protection against Holy damage.")
+    @lpl(value="The s_holy_ward skill description")
+    public static final lox CwU = Cwg.BC("s_holy_ward_Description");
+    @lok(value="Holy Weakness")
+    @lpl(value="The s_holy_weakness skill name in singular form")
+    public static final lox CwV = Cwg.BC("s_holy_weakness_NameSingular");
+    @lok(value="Launches a missile inflicting a penalty to its target\\'s Holy protection.")
+    @lpl(value="The s_holy_weakness skill description")
+    public static final lox CwW = Cwg.BC("s_holy_weakness_Description");
+    @lok(value="House Recall")
+    @lpl(value="The s_house_recall skill name in singular form")
+    public static final lox CwX = Cwg.BC("s_house_recall_NameSingular");
+    @lok(value="Press Action button to teleport to your house.")
+    @lpl(value="The s_house_recall skill description")
+    public static final lox CwY = Cwg.BC("s_house_recall_Description");
+    @lok(value="Hymn of Intellect")
+    @lpl(value="The s_hymn_of_intellect skill name in singular form")
+    public static final lox CwZ = Cwg.BC("s_hymn_of_intellect_NameSingular");
+    @lok(value="Fires a magical ray which grants a bonus to the target\\'s Intelligence.")
+    @lpl(value="The s_hymn_of_intellect skill description")
+    public static final lox Cxa = Cwg.BC("s_hymn_of_intellect_Description");
+    @lok(value="Hymn of Might")
+    @lpl(value="The s_hymn_of_might skill name in singular form")
+    public static final lox Cxb = Cwg.BC("s_hymn_of_might_NameSingular");
+    @lok(value="Fires a magical ray which grants a bonus to the target\\'s Strength.")
+    @lpl(value="The s_hymn_of_might skill description")
+    public static final lox Cxc = Cwg.BC("s_hymn_of_might_Description");
+    @lok(value="Hymn of Skill")
+    @lpl(value="The s_hymn_of_skill skill name in singular form")
+    public static final lox Cxd = Cwg.BC("s_hymn_of_skill_NameSingular");
+    @lok(value="Fires a magical ray which grants a bonus to the target\\'s Dexterity.")
+    @lpl(value="The s_hymn_of_skill skill description")
+    public static final lox Cxe = Cwg.BC("s_hymn_of_skill_Description");
+
+    public mey() {
+        super("H");
+    }
+
+    public mey(String string) {
+        super("H." + string);
+    }
+}
+

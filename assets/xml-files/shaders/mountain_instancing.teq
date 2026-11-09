@@ -1,0 +1,171 @@
+// Note: Frequently used shader
+// Note: Frequently used shader
+//Default Shader instancing
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+#include "objectbounding.frag"
+#include "vectorfunctions.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+
+texture Texture0 : REPTexture0 = NULL;
+sampler Texture0Sampler = sampler_state
+{
+	texture = (Texture0);
+	AddressU = Mirror;
+	AddressV = Mirror;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+
+struct CustomVSOutput
+{
+    float4 Pos				: POSITION;
+	float3 WorldTangent		: TANGENT;
+	float3 WorldBinormal	: BINORMAL;
+    float3 WorldNormal		: TEXCOORD0;
+    float3 WorldEyeVec		: TEXCOORD1;
+	float2 Tc				: TEXCOORD2;
+	float4 ZPos				: TEXCOORD3;
+	float3 ModelPos			: TEXCOORD4;
+    float3 WorldPos			: TEXCOORD5;
+	float  Fog				: TEXCOORD6;
+	float4 MappingWeights	: TEXCOORD7;
+};
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+float psin(float x) {return sin(x) * 0.5 + 0.5;}
+
+CustomVSOutput Unwrap(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE_VPAINT(Input);
+	
+	CustomVSOutput O;
+	O.Pos = Output.Pos;
+	O.WorldTangent = Output.WorldTangent;
+	O.WorldBinormal = Output.WorldBinormal;
+    O.WorldNormal = Output.WorldNormal;
+    O.WorldEyeVec = Output.WorldEyeVec;
+	O.Tc = Output.Tc;
+	O.ZPos = Output.ZPos;
+	O.ModelPos = Input.Pos;
+    O.WorldPos = Output.WorldPos;
+	O.Fog = Output.Fog;
+	O.MappingWeights = Output.Misc;
+	
+	float3 AbsNormal = abs(Input.Norm);
+	O.MappingWeights.xyz = AbsNormal / (AbsNormal.x + AbsNormal.y + AbsNormal.z);
+	O.MappingWeights.w = 1.0 - Output.Misc.b; // because the default vertex color is white
+	
+	return O;
+}
+
+
+STD_PS_OUTPUT_3 PS(CustomVSOutput Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, Input.Tc * 30);
+	float4 NormalSampleDetail  = SurfaceColor.g * 0.2;
+	float4 DiffuseCombineMap = tex2D( Texture0Sampler, Input.Tc * 30); 
+
+	float SpecularContribution = NormalSampleDetail.w;
+	
+	//float a = saturate( Input.ZPos / 60 ) ; 
+	//a = 0.5;
+	//NormalSample = a * (NormalSample * 2) + ( 1 - a )* NormalSampleDetail; 
+	
+	float3 WorldNormal = normalize(Input.WorldNormal);
+	float3 Nn = WorldNormal;
+	float3 NnS = WorldNormal;
+	float3 Vn = normalize(Input.WorldEyeVec);
+
+#ifndef LOW_SHADER_QUALITY
+	NormalSampleDetail  = tex2D(LinearSampler_Normal, Input.Tc * 30);
+	float4 NormalSample = tex2D(LinearSampler_Illumination, Input.Tc);
+	SpecularContribution = NormalSampleDetail.w;
+	
+	float3 NormalDetail = (NormalSampleDetail.xyz * 2 - 1) * 0.5;
+	float3 NormalHigh = NormalSample.xyz * 2 - 1;
+	float3 NormalFinal = normalize(NormalDetail + NormalHigh);
+	
+	float3 WorldTangent = normalize(Input.WorldTangent);
+	float3 WorldBinormal = normalize(Input.WorldBinormal);
+	
+	float3 BumpNormal = 2 * NormalFinal;
+	Nn = normalize(WorldNormal + BumpNormal.x * WorldTangent + BumpNormal.y * WorldBinormal);
+	
+	float3 BumpNormalS = 1.5*(NormalSampleDetail.xyz-0.5);
+	NnS = normalize(WorldNormal + BumpNormalS.x * WorldTangent + BumpNormalS.y * WorldBinormal);
+#endif
+
+	float Snow = smoothstep(0.4,1,NnS.y)* Input.MappingWeights.w;
+	SurfaceColor.xyz = lerp(SurfaceColor.xyz,DiffuseCombineMap.xyz,Snow);
+	
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, STANDARD_PROP_SPECULAR_EXPONENT, STANDARD_PROP_DIFFUSE_WRAP, SpecularContribution);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, STANDARD_PROP_SPECULAR_EXPONENT, 
+			STANDARD_PROP_DIFFUSE_WRAP, SpecularContribution, Vn, LightParams[i]);
+	}
+#endif
+
+	Output.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight);
+	Output.Color.w = 0;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, SpecularContribution * 0.48);
+#endif
+
+	// alphaglow
+	//Output.Color.w = 0.1;
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+   
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        //VertexShader = compile vs_3_0 STD_VERTEX_SHADER_INSTANCE_VPAINT();
+		VertexShader = compile vs_3_0 Unwrap();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

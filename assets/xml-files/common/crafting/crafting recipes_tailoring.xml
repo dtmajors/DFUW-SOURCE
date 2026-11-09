@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Armor Light
+Crafting Station: Workbench
+Tailoring – Basic
+1 – Simple Robe
+1 – Sack
+25 – Sack (colored)
+50 – Fine Robe
+Tailoring – Mastery
+1 – Elegant Robe
+50 – Extravagant Robe
+100 – Widowsilk Robe
+--><!--
+Inherit Calcs done for
+1  125
+25 125
+50 125
+75 125
+******
+1  190
+50 150
+-->
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+	<!-- SACKS SKILL 1 to 10 -->
+
+	<SFRecipe ResourceName="r_improved Sack" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="0.4" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- SACKS SKILL 25 to 35 -->
+
+	<SFRecipe ResourceName="r_improved Sack Red" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="10" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="2.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Sack Green" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Lichen" Quantity="10" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="2.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Sack Blue" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q01" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="2.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!--MAGE ROBES-->
+	
+	<!-- SIMPLE ROBES SKILL 1 to 25 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_M Simple Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Simple Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.03" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Simple Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Simple Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.02" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Simple Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.05" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- FRAYED ROBES SKILL 25 to 50 -->
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Frayed Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Frayed Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.4" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.253" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Frayed Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Frayed Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="13" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.202" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Frayed Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.6" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="23" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="7" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.355" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!-- FINE ROBES SKILL 50 to 75 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_M Fine Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="21" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Fine Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="21" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.699" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Fine Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="21" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Fine Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.4" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="32" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="7" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.566" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Fine Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="53" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="11" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.965" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- BULKY ROBES SKILL 75 to 100 -->
+		
+	<SFRecipe ResourceName="r_Improved Robes_M Bulky Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="65" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Bulky Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.6" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="65" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="26.471" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Bulky Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="65" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Bulky Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="100" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="26.214" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_M Bulky Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="158" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="16" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="26.985" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+		
+	<!-- ELEGANT ROBES MASTERY 1 to 50 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_M Elegant Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="136" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.51" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Elegant Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="136" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.6453" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Elegant Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="136" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.51" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Elegant Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="195" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="3" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.6002" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Elegant Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="315" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="5" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.7355" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- EXTRAVAGANT ROBES MASTERY 50 to 100 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_M Extravagant Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="250" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Mage Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Extravagant Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="2.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="250" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Mage Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="34.505" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Extravagant Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="250" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Mage Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Extravagant Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="2.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="350" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="32" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Mage Material" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="34.17" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Extravagant Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="560" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="5" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Mage Material" Quantity="10" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="35.175" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!-- EXTRAVAGANT ROBES MASTERY 75 to 100 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_M Veiled Magistrate Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="380" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Veiled Magistrate Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Veiled Magistrate Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="2.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="380" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Veiled Magistrate Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="34.505" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Veiled Magistrate Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="380" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Veiled Magistrate Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Veiled Magistrate Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="2.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="550" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="3" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Veiled Magistrate Material" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="34.17" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Veiled Magistrate Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="880" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="80" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="5" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Veiled Magistrate Material" Quantity="10" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="35.175" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- WIDOWSILK ROBES MASTERY 100 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_M Widowsilk Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="60" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Widow Silk" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Widowsilk Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="3.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="60" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Widow Silk" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.03" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Widowsilk Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="60" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Widow Silk" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Widowsilk Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="3.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="700" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="86" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="3" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Widow Silk" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.02" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Improved Robes_M Widowsilk Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="4.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="1200" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="138" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="5" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Widow Silk" Quantity="10" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.05" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- CLERIC ROBES -->
+	
+	<!-- SIMPLE ROBES SKILL 1 to 25 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_C Simple Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+	<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Simple Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.03" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Simple Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Simple Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.02" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Simple Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="1" InheritancePortion="1.05" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- FRAYED ROBES SKILL 25 to 50 -->
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Frayed Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Frayed Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.4" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.253" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Frayed Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Frayed Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="13" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.202" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Frayed Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.6" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="23" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="7" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="25" InheritancePortion="5.355" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!-- FINE ROBES SKILL 50 to 75 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_C Fine Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+	<SFIngredient ResourceName="r_Gold" Quantity="21" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Fine Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="21" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.699" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Fine Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="21" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Fine Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.4" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="32" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="7" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.566" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Fine Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="53" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="11" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="50" InheritancePortion="13.965" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- BULKY ROBES SKILL 75 to 100 -->
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Bulky Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="65" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Bulky Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.6" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="65" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="26.471" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Bulky Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="65" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Bulky Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+	<SFIngredient ResourceName="r_Gold" Quantity="100" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="26.214" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Bulky Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="1.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="158" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="16" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Tailoring" SkillLevel="75" InheritancePortion="26.985" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!-- ELEGANT ROBES MASTERY 1 to 50 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_C Elegant Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="136" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.51" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Elegant Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="1.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="136" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.6453" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Elegant Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="136" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.51" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Elegant Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="1.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="195" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="3" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.6002" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Elegant Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="315" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="5" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="1" InheritancePortion="4.7355" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- EXTRAVAGANT ROBES MASTERY 50 to 100 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_C Extravagant Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="250" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Cleric Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Extravagant Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="2.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="250" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Cleric Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="34.505" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Extravagant Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="250" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="22" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Cleric Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Extravagant Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="2.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="350" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="32" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Cleric Material" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="34.17" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Extravagant Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="560" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="5" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Extravagant Cleric Material" Quantity="10" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="50" InheritancePortion="35.175" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!-- EXTRAVAGANT ROBES MASTERY 75 to 100 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_C Vengeful Arbiter Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="380" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Vengeful Arbiter Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Vengeful Arbiter Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="2.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="380" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Vengeful Arbiter Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="34.505" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Vengeful Arbiter Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="380" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="34" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Vengeful Arbiter Material" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="33.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Vengeful Arbiter Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="2.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="550" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="50" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="3" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Vengeful Arbiter Material" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="34.17" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Vengeful Arbiter Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="880" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="80" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="5" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Vengeful Arbiter Material" Quantity="10" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="75" InheritancePortion="35.175" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- SKYMANE SILK ROBES MASTERY 100 -->
+
+	<SFRecipe ResourceName="r_Improved Robes_C Widowsilk Gloves" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+	<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="60" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Skymane Silk" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Widowsilk Pants" Quantity="1" Difficulty="0.0" DurationMultiplier="3.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="60" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Skymane Silk" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.03" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Widowsilk Shoulders" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="60" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Skymane Silk" Quantity="4" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Widowsilk Helmet" Quantity="1" Difficulty="0.0" DurationMultiplier="3.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="700" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="86" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="3" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Skymane Silk" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.02" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Improved Robes_C Widowsilk Torso" Quantity="1" Difficulty="0.0" DurationMultiplier="4.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="1200" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="138" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="5" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Skymane Silk" Quantity="10" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Tailoring Mastery" SkillLevel="100" InheritancePortion="1.05" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+</XML>

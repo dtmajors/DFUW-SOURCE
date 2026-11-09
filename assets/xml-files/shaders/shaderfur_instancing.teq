@@ -1,0 +1,235 @@
+// Note: MOVE LIGHTS TO PS
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "shadowmap.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+texture Tex1 : REPTexture1;
+
+sampler FurSampler = sampler_state
+{
+    texture = <Tex1>;
+    AddressU = WRAP;
+    AddressV = WRAP;
+    BorderColor = 0;
+    //MAXANISOTROPY = 1;
+    MaxMipLevel = 0;
+    
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = DEFAULT_MIN_TEXTUREFILTER;
+    MagFilter = DEFAULT_MAG_TEXTUREFILTER;
+#endif	
+};
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  			: POSITION;
+    float2 Tex  	   		: TEXCOORD0;
+    float3 WorldNormal 		: TEXCOORD1;
+    float3 WorldEyeVec 		: TEXCOORD2;
+#ifdef SHADER_SHADOW_ENABLE
+    float4 WorldPos   		: TEXCOORD3;
+#endif 
+#ifdef DEPTH_WRITE_ENABLE
+	float2 ZPos 				: TEXCOORD4;
+#endif	
+	float3 FurEyeVec		: TEXCOORD5;
+	float2 FurTexCoord		: TEXCOORD6;
+	
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	float4 Diff				: TEXCOORD7;
+#endif
+    float Fog : FOG;
+};
+
+static const float FUR_WAVING = 1.0f;
+
+VS_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	SFMatrix WMat = float4x4(Input.WMat1, Input.WMat2, Input.WMat3, Input.WMat4);
+
+	SFVector4 WorldPos = mul(Input.Pos,WMat);
+#ifdef SHADER_SHADOW_ENABLE
+	Out.WorldPos = WorldPos;
+#endif
+	
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+    Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX);             // position (projected)
+#ifdef DEPTH_WRITE_ENABLE
+	Out.ZPos.xy = Out.Pos.zw;
+#endif
+
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WMat));
+
+	Out.WorldNormal = WorldNorm;
+	Out.WorldEyeVec = normalize(EYE_POS - WorldPos);
+	
+	float3 Offset;
+	float PosSum = Input.Pos.x + Input.Pos.y + Input.Pos.z;
+	Offset.x = sin (TOTAL_TIME + PosSum);
+	Offset.y = sin (0.5f+TOTAL_TIME*1.3f + PosSum);
+	Offset.z = 0.0f;
+	
+	float3 FurVec = Out.WorldEyeVec;
+	
+	Out.FurEyeVec = FurVec + Offset*0.5f*FUR_WAVING;
+
+    Out.Tex  = Input.Tex;
+	
+	float3 AllMin = getAllMin(Input.Pos.xyz);
+	
+	
+	Out.FurTexCoord.x = AllMin.x; // + AllMin.z*0.35f;
+	Out.FurTexCoord.y = AllMin.y;
+
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		Out.Diff.xyz += pointLightPixelDiffuseRaw(WorldPos, WorldNorm, LightParams[i]);
+	}
+	Out.Diff.w = 0;
+#endif
+	
+    return Out;
+}
+
+//MIN: 1.0f , MAX 16.0f (Bigger->more expensive)
+static const float SPECULAR_EXPONENT = 6.0f;
+//MIN: 0.0f MAX: 2.0f);
+static const float DIFFUSE_WRAP = 0.1f;
+
+//MIN: 0.0f MAX: 1.0f
+static const float SPECULAR_CONTRIBUTION = 0.6f;
+
+static const float PARALLAX_EFFECT = 0.05f;
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 Out = (float4)0;
+
+	
+	float2 BaseTexCoord = Input.FurTexCoord;
+	
+	//float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2,BaseTexCoord);
+	
+	float3 FurVec = normalize(Input.FurEyeVec) * PARALLAX_EFFECT;
+	
+	float2 TexCoord = BaseTexCoord;
+
+	float4 SurfaceColor2 = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	
+	BaseTexCoord *= 5.5f;
+	
+	float4 col0 = tex2D(FurSampler,TexCoord);
+	TexCoord = (0.125f*FurVec) + BaseTexCoord;
+	float4 col1 = tex2D(FurSampler,TexCoord);
+	TexCoord = (0.250f*FurVec) + BaseTexCoord;
+	float4 col2 = tex2D(FurSampler,TexCoord);
+	TexCoord = (0.375f*FurVec) + BaseTexCoord;
+	float4 col3 = tex2D(FurSampler,TexCoord);
+	TexCoord = (0.500f*FurVec) + BaseTexCoord;
+	float4 col4 = tex2D(FurSampler,TexCoord);
+	TexCoord = (0.625f*FurVec) + BaseTexCoord;
+	float4 col5 = tex2D(FurSampler,TexCoord);
+	TexCoord = (0.750f*FurVec) + BaseTexCoord;
+	float4 col6 = tex2D(FurSampler,TexCoord);
+	TexCoord = (0.875f*FurVec) + BaseTexCoord;
+	
+	float4 SurfaceColor = col0;
+	
+	SurfaceColor = lerp(SurfaceColor,col1,col1.a);
+	SurfaceColor = lerp(SurfaceColor,col2,col2.a);
+	SurfaceColor = lerp(SurfaceColor,col3,col3.a);
+	SurfaceColor = lerp(SurfaceColor,col4,col4.a);
+	SurfaceColor = lerp(SurfaceColor,col5,col5.a);
+	SurfaceColor = lerp(SurfaceColor,col6,col6.a);
+
+	SurfaceColor = lerp(SurfaceColor2,SurfaceColor,SurfaceColor2.a);
+	//if (SurfaceColor2.a < 0.1f)
+	//	SurfaceColor = SurfaceColor2;
+	//SurfaceColor = lerp(SurfaceColor2,SurfaceColor,SurfaceColor2.a);
+	
+	
+	Out.xyz = SurfaceColor; 
+	
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	Out.xyz += SurfaceColor * Input.Diff.xyz;
+#endif
+	
+	
+	
+#ifdef SHADER_SHADOW_ENABLE
+	float L;
+	L = CalculateCascadedShadowDirLight(Input.WorldPos,Input.ZPos);
+	Out = GetShadowValue(Out,L);
+#endif
+	
+	Out.xyz = lerp(Out.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	//Out.xyz = SurfaceColor.a;
+	
+	Out.w = 0.0f;
+	Output.Color = Out;
+	//Output.Effect = 0.0f;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = normalize(Input.WorldNormal);
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, 0);
+#endif
+	
+	return Output;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

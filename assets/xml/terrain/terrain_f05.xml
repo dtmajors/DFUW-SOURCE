@@ -1,0 +1,175 @@
+<SFObject>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<GameInfo>
+<ResourceType Value="r_Terrain" />
+</GameInfo>
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="terrain_f05.ter" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="FALSE" />
+<SFString Value="shader_terrain_edit.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shader_terrain_new_1mat.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shader_terrain_new_2mat.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shader_terrain_new_6mat.xml" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset2>
+</DefaultTextures>
+</Shaders>
+<Extras>
+<Veg>
+<SFBool Value="TRUE" />
+</Veg>
+<DetailTextures>
+<SFBool Value="FALSE" />
+</DetailTextures>
+</Extras>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-512.0001831" Y="171.3970337" Z="-512" />
+</Min>
+<Max>
+<SFVector3 X="512" Y="458.3822937" Z="512" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-31.44845581" Y="286.6869202" Z="-18.06281853" />
+</Center>
+<Radius>
+<SFFloat Value="761.564209" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-50.3549614" Y="288.2853088" Z="-37.11610794" />
+</Center>
+<Radius>
+<SFFloat Value="788.4447632" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-4.386248589" Y="292.1778259" Z="-47.22465515" />
+</Center>
+<Radius>
+<SFFloat Value="723.15448" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-107.8131561" Y="264.6886292" Z="111.6174088" />
+</Center>
+<Radius>
+<SFFloat Value="879.9321899" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-23.70901108" Y="286.613739" Z="-21.90885544" />
+</Center>
+<Radius>
+<SFFloat Value="758.7662964" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="terrain_f05.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

@@ -1,0 +1,265 @@
+<!--
+	The order in which the shaders appear here is the order in which objects will be sorted for rendering
+-->
+
+<PreloadShaders>
+	<PreloadShader File="shaderskygradient.xml"/>
+	<PreloadShader File="shaderstardome.xml"/>
+	<PreloadShader File="shaderskywind.xml"/>
+	
+	<PreloadShader File="shadersunplanet.xml"/>
+	<PreloadShader File="shadermoonplanet.xml"/>
+	
+	<!--Disable Preload Terrain for test-->
+	<PreloadShader File="shader_terrain_new_1mat.xml"/>
+	<PreloadShader File="shader_terrain_new_2mat.xml"/>
+	<PreloadShader File="shader_terrain_new_3mat.xml"/>
+	<PreloadShader File="shader_terrain_new_4mat.xml"/>
+	
+	<PreloadShader File="shadervegetation.xml"/>
+	
+	<PreloadShader File="shadertracer.xml"/>
+	<PreloadShader File="shaderdecal.xml"/>
+	<PreloadShader File="shaderroad.xml"/>
+	<PreloadShader File="shaderdecaltimefading.xml"/>
+	
+	<!--Liquid-->
+	<PreloadShader File="shaderlavalake.xml"/>
+	<PreloadShader File="shaderlava_soft.xml"/>
+	<PreloadShader File="shaderwatercoast.xml"/>
+	<PreloadShader File="shaderwatercoastcheap.xml"/>
+	<PreloadShader File="shaderwateracid.xml"/>
+	<PreloadShader File="shaderwaterswamp.xml"/>
+	<PreloadShader File="shaderbloodlake.xml"/>
+	<PreloadShader File="shadertar.xml"/>
+	<PreloadShader File="shaderwaterriver.xml"/>
+	
+	<PreloadShader File="shaderwaterwaves.xml"/>
+	<PreloadShader File="shaderwaterwaveslow.xml"/>
+	<PreloadShader File="shaderwaterwaves_static.xml"/>
+	
+	<PreloadShader File="shaderwaterfall.xml"/>
+	<PreloadShader File="shaderwaterfallacid.xml"/>
+	<PreloadShader File="shaderwaterfalltar.xml"/>
+	<PreloadShader File="shaderblood_stream.xml"/>
+	<PreloadShader File="shaderbloodfountain.xml"/>
+	<PreloadShader File="shadericenew.xml"/>
+	
+	<!--Props With Normals-->
+	<PreloadShader File="shadernormalspecularsnow.xml"/>
+	<PreloadShader File="shadernormalspecularalphaglow.xml"/>
+	<PreloadShader File="shadernormalspeculartransparent.xml"/>
+	<PreloadShader File="shadernormalspecularbanner.xml"/>
+	<PreloadShader File="shadernormalspecularsails.xml"/>
+	
+	<!--Trees,Bushes-->
+	<PreloadShader File="shadertreepine.xml"/>
+	<PreloadShader File="shadertreepinevp.xml"/>
+	<PreloadShader File="shadertreenormalspecular.xml"/>
+	
+	<!--Props No Normals-->
+	<PreloadShader File="shaderdefault.xml"/>
+	<PreloadShader File="shaderpropsckey.xml"/>
+	<PreloadShader File="shaderpropsckey_cw.xml"/>
+	<PreloadShader File="shaderpropsckey_ccw.xml"/>
+	<PreloadShader File="shaderprop_alphametal.xml"/>
+	<PreloadShader File="shaderprop_alphametal_cw.xml"/>
+	<PreloadShader File="shaderprop_alphametal_ccw.xml"/>
+	<PreloadShader File="shaderarmoursharp.xml"/>
+	<PreloadShader File="shaderarmoursharp_cw.xml"/>
+	<PreloadShader File="shaderalphaglow.xml"/>
+	<PreloadShader File="shadertents.xml"/>
+	<PreloadShader File="shadersails.xml"/>
+	<PreloadShader File="shaderhangbanner.xml"/>
+	<PreloadShader File="shaderwobble.xml"/>
+	<PreloadShader File="shadertransparentglass.xml"/>
+	<PreloadShader File="shadertransparent_move.xml"/>
+	
+	<PreloadShader File="shaderalphaglowmetal.xml"/>
+	<PreloadShader File="shaderalphametaltextureglow.xml"/>
+	<PreloadShader File="shaderice.xml"/>
+	<PreloadShader File="shadercrystalhighlight.xml"/>
+	<PreloadShader File="shaderlevitationalphaglow.xml"/>
+	
+	<!--Players-->
+	<PreloadShader File="shaderanimcharnew.xml"/>
+	<PreloadShader File="shadereyes.xml"/>
+	<PreloadShader File="shaderanimnew.xml"/>
+	<PreloadShader File="shadernormalspeculararmour.xml"/>
+	<PreloadShader File="shadernormalspecular.xml"/>
+	<PreloadShader File="shaderbeardckey.xml"/>
+	<PreloadShader File="shaderhairckey.xml"/>
+	<PreloadShader File="shaderheadweartransparency.xml"/>
+	<PreloadShader File="shaderheadwearglow.xml"/>
+	
+	<!--Player Jewels-->
+	<PreloadShader File="shaderhair_volume.xml"/>
+	<PreloadShader File="shaderhair_volumeckey.xml"/>
+	<PreloadShader File="shadertransparent.xml"/>
+	
+	<!--New Monsters with Normals-->
+	<PreloadShader File="shaderanimtransparentnew.xml"/>
+	<PreloadShader File="shaderanimalphaglownew.xml"/>
+	<PreloadShader File="shaderanimalphaglow_nopulse_new.xml"/>
+	
+	<!--Old Monsters-->
+	<PreloadShader File="shaderanim.xml"/>
+	<PreloadShader File="shaderanimckey.xml"/>
+	<PreloadShader File="shaderanimalphametal.xml"/>
+	
+	<!--Special Effects-->
+	<PreloadShader File="shaderquadparticle.xml"/>
+	<PreloadShader File="shadereparticle.xml"/>
+	<PreloadShader File="shadersfx_meshexplotion_control.xml"/>
+	<PreloadShader File="shaderspellsfx.xml"/>
+	<PreloadShader File="shaderspellsfx_firemagic.xml"/>
+	<PreloadShader File="shaderspellsfx_firemagic_alt.xml"/>
+	<PreloadShader File="shadersfx_depthblurmotion.xml"/>
+	<PreloadShader File="shadersfx_meshalphagrow.xml"/>
+	<PreloadShader File="shadersfx_meshexplotion.xml"/>
+	<PreloadShader File="shadersfx_meshexplotion_additive.xml"/>
+	<PreloadShader File="shadersfx_meshexplotion_control_ckey.xml"/>
+	<PreloadShader File="shadersfx_meshexplotion_slow.xml"/>
+	<PreloadShader File="shadersfx_meshexplotion_slow_ccw.xml"/>
+	<PreloadShader File="shadersfx_meshexplotion_slow_cw.xml"/>
+	<PreloadShader File="shadersfx_meshshieldtransparentvp.xml"/>
+	<PreloadShader File="shadersfx_meshtexturescroll.xml"/>
+	<PreloadShader File="shadersfx_meshtransparent.xml"/>
+	<PreloadShader File="shadersfx_textureanim_16f.xml"/>
+	<PreloadShader File="shadersfx_textureanim_16f_cw.xml"/>
+	<PreloadShader File="shadersfx_textureanim_4f.xml"/>
+	<PreloadShader File="shadersfx_textureanim_64f.xml"/>
+	<PreloadShader File="shadersfx_timed_explosion.xml"/>
+	<PreloadShader File="shadersfx_timed_reverse_explosion.xml"/>
+	<PreloadShader File="shadersfx_transparent_cw.xml"/>
+	<PreloadShader File="shader_textureanim_64f.xml"/>
+	
+	<!--Underwater-->
+	<PreloadShader File="shaderppfinalunderwater.xml"/>
+	
+	<!--Post Shaders-->
+	<PreloadShader File="shaderppbloom.xml"/>
+	<PreloadShader File="shaderppdown2x.xml"/>
+	<PreloadShader File="shaderppdown.xml"/>
+	<PreloadShader File="shaderppaftercombiner.xml"/>
+	<PreloadShader File="shaderppfinalhdrl.xml"/>
+	
+	<!--Deffered Lights-->
+	<PreloadShader File="shaderdeferedlight.xml"/>
+	
+</PreloadShaders>
+
+<!--
+	--Post Effects--
+	<PreloadShader File="shaderppsampleluminitial.xml"/>
+	<PreloadShader File="shaderppsamplelumiter.xml"/>
+	<PreloadShader File="shaderppsamplelumiternsamples.xml"/>
+	
+	<PreloadShader File="shaderppadaption.xml"/>  DONT ADD IT
+	<PreloadShader File="shaderppbrightpass.xml"/>
+	<PreloadShader File="shaderpptonemap.xml"/>
+	
+	<PreloadShader File="shadergodrayocclusion.xml"/>
+	<PreloadShader File="shadergodrayradial.xml"/>
+	
+	--SMAA--
+	<PreloadShader File="shadersmaablendweightcalculation.xml"/>
+	<PreloadShader File="shadersmaaedgedetect.xml"/>
+	<PreloadShader File="shadersmaaneighborhoodblending.xml"/>
+	
+	--Shadow Shaders--
+	<PreloadShader File="shader_s_anim.xml"/>
+	<PreloadShader File="shader_s_standard.xml"/>
+	<PreloadShader File="shader_s_sails.xml"/>
+	<PreloadShader File="shader_s_tents.xml"/>
+	<PreloadShader File="shader_s_hangbanner.xml"/>
+	<PreloadShader File="shader_s_standard_ckey.xml"/>
+	<PreloadShader File="shader_s_standard_ckey_ccw.xml"/>
+	<PreloadShader File="shader_s_standard_ckey_cw.xml"/>
+	<PreloadShader File="shader_s_armoursharp_cw.xml"/>
+	<PreloadShader File="shader_s_armoursharp_ccw.xml"/>
+	<PreloadShader File="shader_s_alpaglowmetal_cw.xml"/>
+	<PreloadShader File="shader_s_alpaglowmetal_ccw.xml"/>
+	<PreloadShader File="shader_s_alphaprop_cw.xml"/>
+	<PreloadShader File="shader_s_alphaprop_ccw.xml"/>
+	<PreloadShader File="shader_s_treepine.xml"/>
+	<PreloadShader File="shader_s_treepinevp.xml"/>
+	
+	--Shadow Shaders Not Used--
+	<PreloadShader File="shader_s_banner.xml"/>
+	<PreloadShader File="shader_s_prop_ckey_tc.xml"/>
+	<PreloadShader File="shader_s_terraindetailnormal.xml"/>
+	
+	--Old Props Not Freq used--
+	<PreloadShader File="shadertransparentnew.xml"/>
+	<PreloadShader File="shaderalphascrollvp.xml"/>
+	<PreloadShader File="shaderbanner.xml"/>
+	<PreloadShader File="shaderpropsckey_texture_cycle.xml"/>
+	<PreloadShader File="shaderpropstransparent.xml"/>
+	<PreloadShader File="shadermetalrotate.xml"/>
+	<PreloadShader File="shaderlevitation.xml"/>
+	<PreloadShader File="shaderhair.xml"/>
+	<PreloadShader File="shaderhairckeynew.xml"/>
+	<PreloadShader File="shaderhair_volume_highlight.xml"/>
+	
+	--Old Monsters Not Freq Used--
+	<PreloadShader File="shaderanimalphaglow.xml"/>
+	<PreloadShader File="shaderanimalphaglowmetal.xml"/>
+	<PreloadShader File="shaderanimalphaglowalternative.xml"/>
+	<PreloadShader File="shaderanimalphametalnew.xml"/>
+	<PreloadShader File="shaderanimalphametaltextureglow.xml"/>
+	<PreloadShader File="shaderanimarmour.xml"/>
+	<PreloadShader File="shaderanimelemental.xml"/>
+	<PreloadShader File="shaderanimghost.xml"/>
+	<PreloadShader File="shaderanimhair.xml"/>
+	<PreloadShader File="shaderanimtransparent.xml"/>
+	<PreloadShader File="shaderanim_textureanim_16f.xml"/>
+
+
+	
+    ----------------------Old-----------------------
+	<PreloadShader File="shaderscreenspace2d.xml"/>
+	<PreloadShader File="shader3dtext.xml"/>
+	<PreloadShader File="shadershape.xml"/>
+	<PreloadShader File="shaderspherelight.xml"/>
+	<PreloadShader File="shadersphericallight.xml"/>
+	<PreloadShader File="shadersplatterlight.xml"/>
+	<PreloadShader File="shaderstormhammerbody.xml"/>
+	<PreloadShader File="shaderstormhammerlightning.xml"/>
+	<PreloadShader File="shaderstuddedleather.xml"/>
+	<PreloadShader File="shadersword.xml"/>
+	<PreloadShader File="shaderweaponlightning.xml"/>
+	<PreloadShader File="shaderweaponlightning_16f.xml"/>
+	<PreloadShader File="shaderweaponswing.xml"/>
+	<PreloadShader File="shaderanimface.xml"/>
+	<PreloadShader File="shaderanimfullplate.xml"/>
+	<PreloadShader File="shaderanimfurskin.xml"/>
+	<PreloadShader File="shaderscalearmor.xml"/>
+	<PreloadShader File="shaderanimclotharmor.xml"/>
+	<PreloadShader File="shaderanimpaddedleather.xml"/>
+	<PreloadShader File="shaderpaddedleather.xml"/>
+	<PreloadShader File="shaderanimleather.xml"/>
+	<PreloadShader File="shaderleather.xml"/>
+	<PreloadShader File="shaderfullplate.xml"/>
+	<PreloadShader File="shaderbandedarmor.xml"/>
+	<PreloadShader File="shaderplatemail.xml"/>
+	<PreloadShader File="shaderbonearmor.xml"/>
+	<PreloadShader File="shaderchainmail.xml"/>
+	<PreloadShader File="shaderclotharmor.xml"/>
+	<PreloadShader File="shaderclothing.xml"/>
+	<PreloadShader File="shaderanimplatemail.xml"/>
+	<PreloadShader File="shaderanimscalearmor.xml"/>
+	<PreloadShader File="shaderfish.xml"/>
+	
+	<PreloadShader File="shadersfx_shipfrontback.xml"/>
+	<PreloadShader File="shadersfx_shipside.xml"/>
+	<PreloadShader File="shaderplanetaryring.xml"/>
+	<PreloadShader File="shadersm_scroll.xml"/>
+	<PreloadShader File="shaderroad.xml"/>
+	<PreloadShader File="shaderanimorkface.xml"/>
+	<PreloadShader File="shaderlinemesh.xml"/>
+	<PreloadShader File="shaderboxlines.xml"/>
+	<PreloadShader File="shaderboxlinesimpact.xml"/>
+	
+	<PreloadShader File="shaderppgaussian5x5.xml"/>
+-->

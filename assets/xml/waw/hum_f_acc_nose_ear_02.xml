@@ -1,0 +1,148 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_Generic Prop" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="MESHOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="false" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <SFString Value="hum_f_acc_nose_ear_02.sfm" />
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="TRUE" />
+                    <SFString Value="ShaderDefault.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader1>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                </SubsetShaders>
+            </Normal>
+            <NumberOfSubsets>
+                <SFInteger Value="1" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="b1_hum_f_hair.tga" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+        </Shaders>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-.634953082" Y=".241194256" Z="-.202438869" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X=".729179457" Y=".823078528" Z=".113612600" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X=".216924176" Y=".511193722" Z="-.56981100" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value=".873949304" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation>
+                    <Subset0>
+                        <BoundingBox>
+                            <Min>
+                                <SFVector3 X="-.634953082" Y=".241194256" Z="-.202438869" />
+                            </Min>
+                            <Max>
+                                <SFVector3 X=".729179457" Y=".823078528" Z=".113612600" />
+                            </Max>
+                        </BoundingBox>
+                        <BoundingSphere>
+                            <Center>
+                                <SFVector3 X=".216924176" Y=".511193722" Z="-.56981100" />
+                            </Center>
+                            <Radius>
+                                <SFFloat Value=".873949304" />
+                            </Radius>
+                        </BoundingSphere>
+                    </Subset0>
+                </SubsetInformation>
+            </BoundingInformation>
+        </VisibilityInformation>
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="Static" />
+        <WaterTransition>
+            <Submerged Value="-0.1747898608" />
+            <Surface Value="0.1747898608" />
+            <Touching Value="0.5243695824" />
+        <Floating Value="0.0" /></WaterTransition>
+    </PhysicsInformation>
+    <VersionInformation Major="1" Minor="0" />
+    <MassCenter>
+        <SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingBox>
+                <Min>
+                    <SFVector3 X="-.634953082" Y=".241194256" Z="-.202438869" />
+                </Min>
+                <Max>
+                    <SFVector3 X=".729179457" Y=".823078528" Z=".113612600" />
+                </Max>
+            </BoundingBox>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X=".216924176" Y=".511193722" Z="-.56981100" />
+                </Center>
+                <Radius>
+                    <SFFloat Value=".873949304" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+</SFObject>

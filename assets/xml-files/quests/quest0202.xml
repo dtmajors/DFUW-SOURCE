@@ -1,0 +1,153 @@
+<quest quest_id="202" category="lore_quest" tag="Riddle me This..." published="False" valid="True">
+	<title>Riddle me This...</title>
+	<description>With the &quot;ever-helpful&quot; suggestions of the Acolyte bouncing around your head, you set off to locate one of these enigmatic Wordstones of the Goddess. It still amazes me that nobody knew, at the time, the true extent of these stones powers. But that, of course, is another tale...</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="201" />
+			</conditions>
+		</node>
+		<node type="end_node" id="2" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="21" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Arms" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="22" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Elbows" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="23" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Girdle" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="24" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="25" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Greaves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="26" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="27" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="28" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Shoes" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="29" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="30" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="3" tag="solve the riddle">
+			<instruction>Solve the riddle of the Stone</instruction>
+			<journal_entry>The light seemed to galvanize the stone before you. Blazing sigils appeared and erupted in bursts of luminescence that, I would assume, burned themselves into your retinas even after you closed your eyes!</journal_entry>
+			<tasks>
+				<task type="use_skill" id="17" value="1" tag="use light" skill_name="s_Light" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="5" tag="Choose Reward" optional_tasks="True">
+			<tasks>
+				<task type="choose" id="14" value="1" tag="warrior armor" reward_node_id="2">
+					<task_instruction>A full set of Chain Mail Armor</task_instruction>
+				</task>
+				<task type="choose" id="35" value="2" tag="skirm armor" reward_node_id="17">
+					<task_instruction>A full set of Padded Leather Armor</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="interact with stone">
+			<instruction>Seek out and interact with one of the ancient and enigmatic $[Resource.Q.r_qt_wordstone_NamePlural].</instruction>
+			<journal_entry>As you approached the large, ancient Monolith, it was clear that before you stood a thing of considerable power. Almost as if sensing your presence it began to hum with a primal force that reached right into your core, resonating within the deepest recesses of your mind.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="15" value="1" tag="An Interact With Object Task" resource_name="r_qt wordstone">
+					<task_instruction>Interact with the $[Resource.Q.r_qt_wordstone_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="41" tag="mercia" world_x="4293" world_z="-2710" />
+				<action type="show_map_marker" id="42" tag="tovar" world_x="-592" world_z="8081" />
+				<action type="show_map_marker" id="43" tag="ork" world_x="4488" world_z="2238" />
+				<action type="show_map_marker" id="44" tag="mahirim" world_x="-5679" world_z="4024" />
+			</actions>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>&quot;Shed on situations, the first to be seen, needed by sight, required to gleam.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>And then...the voice faded away, leaving your skull raw and battered. It seemed clear that you would likely need to solve this riddle should you wish to access the power of the stone.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="wordstone activated sfx">
+			<journal_entry>Suddenly, you were reeling as pure knowledge pulsed right into your memory! Images were born and exploded in your mind&apos;s eye. Agon, eons ago, young and prosperous, watched over by the loving eye of its mother, the Goddess. You watched as a group of powerful mortals, the Usurpers, stormed her halls and cast her out, taking her place as the gods of Agon. The skies flashed through your vision as centuries of strife and struggle for dominion continued to stream by.</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_resource" id="0" tag="wordstone activated sfx" sfx_name="se_wordstone_activation" resource_name="r_qt wordstone" />
+			</actions>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<journal_entry>Certain events occasionally flickered upwards out of the maelstrom of imagery, visual milestones in the flood of history. Ur Khamset the Usurper ensures his immortality by cursing the life force of Rubaiyat. The titanic Nithron, a race of golden giants, suddenly disappear, leaving behind a suddenly liberated servant-race of elves. A giant being, a primal behemoth from a forgotten time, wipes out the civilization of the Ithwen.</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>An order of scholars emerges, blessed with immortality by their patron. The Acolytes of the Watcher are tasked with gathering history and lore to be used by their mysterious benefactor at the time of &quot;the reckoning&quot;.</journal_entry>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>And finally, you watch as the Watcher reveals herself to be the Goddess, judging her children as unfit to rule Agon, bringing her celestial armies to cleanse Agon of the mortal blight.</journal_entry>
+		</node>
+		<node type="end_node" id="17" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="31" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Arms" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="32" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Elbows" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="33" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Girdle" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="34" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="35" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Greaves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="36" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="37" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="38" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Shoes" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="39" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="40" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="18" tag="Talk to Acolyte" optional_tasks="True">
+			<instruction>Seek out an Acolyte of the Watcher.</instruction>
+			<journal_entry>The acolyte, wordlessly handed you some more protective gear from the towns stockpile.  Your eyes held fresh knowledge, a dangerous gleam of wisdom that spoke of the trials ahead of you.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="36" value="1" tag="Acolyte Q11" vendor_id="q11_idawoll_acolyte" />
+				<task type="interact_with_vendor" id="37" value="1" tag="Acolyte P09" vendor_id="p09_gulgrumir_acolyte" />
+				<task type="interact_with_vendor" id="38" value="1" tag="Acolyte P10" vendor_id="p10_cor_ymirhal_acolyte" />
+				<task type="interact_with_vendor" id="39" value="1" tag="Acolyte P11" vendor_id="p11_maghnir_acolyte" />
+				<task type="interact_with_vendor" id="40" value="1" tag="Acolyte U19" vendor_id="u19_sandbrook_acolyte" />
+				<task type="interact_with_vendor" id="41" value="1" tag="Acolyte T18" vendor_id="t18_monkfield_acolyte" />
+				<task type="interact_with_vendor" id="42" value="1" tag="Acolyte V18" vendor_id="v18_heart_of_eanna_acolyte" />
+				<task type="interact_with_vendor" id="43" value="1" tag="Acolyte U18" vendor_id="u18_sanguine_acolyte" />
+				<task type="interact_with_vendor" id="44" value="1" tag="Acolyte L14" vendor_id="l14_whiteclaw_acolyte" />
+				<task type="interact_with_vendor" id="45" value="1" tag="Acolyte K14" vendor_id="k14_amurran_acolyte" />
+				<task type="interact_with_vendor" id="46" value="1" tag="Acolyte J15" vendor_id="j15_urranyr_acolyte" />
+				<task type="interact_with_vendor" id="47" value="1" tag="Acolyte K13" vendor_id="k13_lyran_acolyte" />
+				<task type="interact_with_vendor" id="48" value="1" tag="Acolyte U14" vendor_id="u14_firun_acolyte" />
+				<task type="interact_with_vendor" id="49" value="1" tag="Acolyte T13" vendor_id="t13_okrim_acolyte" />
+				<task type="interact_with_vendor" id="50" value="1" tag="Acolyte V13" vendor_id="v13_nerzok_acolyte" />
+				<task type="interact_with_vendor" id="51" value="1" tag="Acolyte U13" vendor_id="u13_flaming_skull_acolyte" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>You reached out, brushing your hand over the surface of the ancient monolith and suddenly a  voice akin to the shifting of continents pulsed, almost unbearably, inside your skull.</journal_entry>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>That, or the Acolyte was just in that habit of handing out armor to passing strangers!</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="30" from="0" to="6" value="1" />
+		<edge id="10" from="7" to="8" value="0" />
+		<edge id="33" from="18" to="20" value="1" />
+		<edge id="31" from="6" to="19" value="1" />
+		<edge id="11" from="8" to="3" value="0" />
+		<edge id="12" from="3" to="9" value="1" />
+		<edge id="13" from="9" to="10" value="0" />
+		<edge id="14" from="10" to="11" value="0" />
+		<edge id="15" from="11" to="12" value="0" />
+		<edge id="26" from="12" to="18" value="0" />
+		<edge id="29" from="5" to="17" value="2" />
+		<edge id="28" from="5" to="2" value="1" />
+		<edge id="32" from="19" to="7" value="0" />
+		<edge id="34" from="20" to="5" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="52" y="392" />
+		<node_location id="2" x="675" y="176" />
+		<node_location id="3" x="318" y="606" />
+		<node_location id="5" x="764" y="376" />
+		<node_location id="6" x="158" y="384" />
+		<node_location id="7" x="214" y="517" />
+		<node_location id="8" x="223" y="604" />
+		<node_location id="9" x="431" y="607" />
+		<node_location id="10" x="530" y="606" />
+		<node_location id="11" x="602" y="604" />
+		<node_location id="12" x="678" y="605" />
+		<node_location id="17" x="836" y="181" />
+		<node_location id="18" x="766" y="602" />
+		<node_location id="19" x="265" y="444" />
+		<node_location id="20" x="846" y="529" />
+	</node_locations>
+</quest>

@@ -1,0 +1,214 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_qt wordstone" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<Envelope>
+<Channel Freq="0.165" Max="0.26" Min="0" Name="PY" Type="Sinus" />
+<Channel Freq="0.165" Max="0.26" Min="0" Name="PX" Type="Sinus" />
+</Envelope>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="wordstone_05_parts_06_qt.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="False" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shadernormalspecularsnow.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shadernormalspecularsnow.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shadernormalspecularalphaglow.xml" />
+<SFInteger Value="1" />
+</Shader2>
+<Shader3>
+<SFString Value="shadernormalspecularalphaglow.xml" />
+<SFInteger Value="1" />
+</Shader3>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="wordstone_cracked.tga" />
+</Texture0>
+<Texture1>
+<SFString Value="wordstone_cracked.normalmap.tga" />
+</Texture1>
+</Subset0>
+<Subset1>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="wordstone_base.tga" />
+</Texture0>
+<Texture1>
+<SFString Value="wordstone_base.normalmap.tga" />
+</Texture1>
+</Subset1>
+<Subset2>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="wordstone_cuts.tga" />
+</Texture0>
+<Texture1>
+<SFString Value="wordstone_cuts.normalmap.tga" />
+</Texture1>
+</Subset2>
+<Subset3>
+<Diffuse A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.900000" G="0.900000" R="0.900000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="wordstone_runes.tga" />
+</Texture0>
+<Texture1>
+<SFString Value="wordstone_runes.normalmap.tga" />
+</Texture1>
+</Subset3>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="4" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.5633838177" Y="13.55040169" Z="-4.493171215" />
+</Min>
+<Max>
+<SFVector3 X="0.5633799434" Y="15.4633503" Z="-2.826937914" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-6.649000852e-007" Y="14.53308773" Z="-3.555450439" />
+</Center>
+<Radius>
+<SFFloat Value="1.16210103" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-3.904104346e-007" Y="14.50788403" Z="-3.617723227" />
+</Center>
+<Radius>
+<SFFloat Value="1.097088337" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-7.808208693e-007" Y="14.51917553" Z="-3.498175144" />
+</Center>
+<Radius>
+<SFFloat Value="0.8589559793" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-6.163120361e-007" Y="14.63602161" Z="-3.523892641" />
+</Center>
+<Radius>
+<SFFloat Value="1.250025868" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+<Subset3>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-1.264115213e-006" Y="14.40485191" Z="-3.560974836" />
+</Center>
+<Radius>
+<SFFloat Value="0.9103805423" />
+</Radius>
+</BoundingSphere>
+</Subset3>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-5.91079413e-007" Y="14.54018021" Z="-3.569336653" />
+</Center>
+<Radius>
+<SFFloat Value="1.165169239" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="wordstone_05_parts_06_qt.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

@@ -1,0 +1,174 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFDurationSkillClient" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Unspawn Object" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_Except_Movement_Skills" />
+    </SFBlockingName>
+    <SFClientParamName>
+        <SFString Value="No_Params" />
+    </SFClientParamName>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFReportName>
+        <SFString Value="Report_Skill_Failure" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Stop_Primary_Animation" />
+        </SFOperationOnSkillPartExitName>
+        <SFStartAnimationOnClient>
+            <SFBool Value="FALSE" />
+        </SFStartAnimationOnClient>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="unspawn_object" />
+        </SFAnimationStateName>
+    </SFAnimationInfo>
+    <SFPerformingObject>
+        <SFPerformingObjectName>
+            <SFString Value="Performing_Object_Progressbar" />
+        </SFPerformingObjectName>
+        <SFShowCancelButton>
+            <SFBool Value="FALSE" />
+        </SFShowCancelButton>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFProgressName>
+            <SFString Value="Progress_Skill" />
+        </SFProgressName>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Unspawn Timer" />
+        </SFSkillFunctionName>
+    </SFPerformingObject>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Ignore" />
+        </SFStopControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer" />
+        </SFSkillTimerName>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFTimerName>
+            <SFString Value="Repeating Timer" />
+        </SFTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Unspawn Timer" />
+        </SFTimerLengthSkillFunctionName>
+    </SFSkillTimer>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFModeValueName>
+            <SFString Value="MovementMode Idle" />
+        </SFModeValueName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Unspawnable_Sensor_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Performing" />
+        </SFCheckName>
+        <SFSensorName>
+            <SFString Value="Unspawnable_Sensor" />
+        </SFSensorName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Targeting_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFTargetGroupName>
+            <SFString Value="tg_Unspawnable Resources" />
+        </SFTargetGroupName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Multi_Value_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFModeValueName2>
+            <SFString Value="PostureMode Standing" />
+        </SFModeValueName2>
+        <SFModeName>
+            <SFString Value="ModeType PostureMode" />
+        </SFModeName>
+        <SFModeValueName>
+            <SFString Value="PostureMode Swimming" />
+        </SFModeValueName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Unspawnable_Client_Check_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+    </SFConstraint>
+</SFSkill>

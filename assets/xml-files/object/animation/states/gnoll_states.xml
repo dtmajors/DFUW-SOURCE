@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFAnimationStateTemplate>
+    <VersionInformation Incremental="0" Major="0" Minor="2"/>
+    <Name>
+        <SFString Value="Human State Template"/>
+    </Name>
+    <AnimationStateList>
+        <AnimationState>
+            <StateID>
+                <SFInteger Value="3"/>
+            </StateID>
+            <StateLoop>
+                <SFBool Value="TRUE"/>
+            </StateLoop>
+            <StateAffectAll>
+                <SFBool Value="TRUE"/>
+            </StateAffectAll>
+            <StatePurePartial>
+                <SFBool Value="FALSE"/>
+            </StatePurePartial>
+            <StateDuration>
+                <SFFloat Value="1.3666667"/>
+            </StateDuration>
+            <StateInfoList>
+                <StateInfo>
+                    <AnimationSetID>
+                        <SFString Value="Idle"/>
+                    </AnimationSetID>
+                    <MainSetPlaybackType>
+                        <SFInteger Value="0"/>
+                    </MainSetPlaybackType>
+                </StateInfo>
+            </StateInfoList>
+        </AnimationState>
+        <AnimationState>
+            <StateID>
+                <SFInteger Value="6"/>
+            </StateID>
+            <StateLoop>
+                <SFBool Value="TRUE"/>
+            </StateLoop>
+            <StateAffectAll>
+                <SFBool Value="TRUE"/>
+            </StateAffectAll>
+            <StatePurePartial>
+                <SFBool Value="FALSE"/>
+            </StatePurePartial>
+            <StateDuration>
+                <SFFloat Value="1.2"/>
+            </StateDuration>
+            <StateInfoList>
+                <StateInfo>
+                    <AnimationSetID>
+                        <SFString Value="walk"/>
+                    </AnimationSetID>
+                    <MainSetPlaybackType>
+                        <SFInteger Value="0"/>
+                    </MainSetPlaybackType>
+                </StateInfo>
+            </StateInfoList>
+        </AnimationState>
+        <AnimationState>
+            <StateID>
+                <SFInteger Value="94"/>
+            </StateID>
+            <StateLoop>
+                <SFBool Value="FALSE"/>
+            </StateLoop>
+            <StateAffectAll>
+                <SFBool Value="TRUE"/>
+            </StateAffectAll>
+            <StatePurePartial>
+                <SFBool Value="FALSE"/>
+            </StatePurePartial>
+            <StateDuration>
+                <SFFloat Value="1.2"/>
+            </StateDuration>
+            <StateInfoList>
+                <StateInfo>
+                    <AnimationSetID>
+                        <SFString Value="Attack01_sec"/>
+                    </AnimationSetID>
+                    <MainSetPlaybackType>
+                        <SFInteger Value="0"/>
+                    </MainSetPlaybackType>
+                </StateInfo>
+            </StateInfoList>
+        </AnimationState>
+        <AnimationState>
+            <StateID>
+                <SFInteger Value="76"/>
+            </StateID>
+            <StateLoop>
+                <SFBool Value="TRUE"/>
+            </StateLoop>
+            <StateAffectAll>
+                <SFBool Value="TRUE"/>
+            </StateAffectAll>
+            <StatePurePartial>
+                <SFBool Value="FALSE"/>
+            </StatePurePartial>
+            <StateDuration>
+                <SFFloat Value="2.1"/>
+            </StateDuration>
+            <StateInfoList>
+                <StateInfo>
+                    <AnimationSetID>
+                        <SFString Value="death"/>
+                    </AnimationSetID>
+                    <MainSetPlaybackType>
+                        <SFInteger Value="0"/>
+                    </MainSetPlaybackType>
+                </StateInfo>
+            </StateInfoList>
+        </AnimationState>
+    </AnimationStateList>
+</SFAnimationStateTemplate>

@@ -1,0 +1,3 @@
+enum cn$a {
+   iF;
+}

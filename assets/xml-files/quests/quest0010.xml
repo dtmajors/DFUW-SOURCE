@@ -1,0 +1,272 @@
+<quest quest_id="10" category="training_quest" tag="The Battle Supplier" published="False" valid="True">
+	<title>The Battle Supplier</title>
+	<description>Learn the basics about Harvesting and Crafting</description>
+	<nodes>
+		<node type="event_simple" id="1" tag="" optional_tasks="True">
+			<instruction>Talk to a Battle Supplier</instruction>
+			<journal_entry>Hello, Agonian! I need some $[Resource.I.r_iron_ore_NameSingular] so I can make more of my wares, like armors and weapons, and so can you. There are four basic raw materials from which numerous items can be crafted: $[Resource.I.r_iron_ore_NameSingular] , $[Resource.R.r_rawhide_NameSingular] , $[Resource.T.r_timber_NameSingular] and $[Resource.C.r_cotton_NameSingular] . There are inferior quality versions of these items, $[Resource.I.r_iron_ore_inferior_NameSingular] , $[Resource.R.r_rawhide_inferior_NameSingular] , $[Resource.T.r_timber_inferior_NameSingular] , $[Resource.C.r_cotton_inferior_NameSingular] that can be used to craft the basic raw materials.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="3" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_blacksmith" />
+				<task type="interact_with_vendor" id="2" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_blacksmith" />
+				<task type="interact_with_vendor" id="4" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_blacksmith" />
+				<task type="interact_with_vendor" id="5" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_blacksmith" />
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_blacksmith" />
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_blacksmith" />
+				<task type="interact_with_vendor" id="9" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_blacksmith" />
+				<task type="interact_with_vendor" id="10" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_blacksmith" />
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_blacksmith" />
+				<task type="interact_with_vendor" id="12" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_blacksmith" />
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_blacksmith" />
+				<task type="interact_with_vendor" id="14" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_blacksmith" />
+				<task type="interact_with_vendor" id="15" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_blacksmith" />
+				<task type="interact_with_vendor" id="16" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_blacksmith" />
+				<task type="interact_with_vendor" id="17" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_blacksmith" />
+				<task type="interact_with_vendor" id="18" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_blacksmith" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="">
+			<journal_entry>But that will become clearer to you later on. For now, take this $[Resource.P.r_pickaxe_NameSingular] . You can use this to mine $[Resource.M.r_mining_spawn_metal_NamePlural] and $[Resource.M.r_mining_spawn_rock_NamePlural] . You can craft this tool as well as all other tools at the $[Resource.W.r_workbench_NameSingular] , under the $[Skill.C.s_construction_NameSingular] skill. But more on that later - just follow the steps on your Journal and you will do fine.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="1" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Pickaxe" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<tasks>
+				<task type="use_skill_on" id="29" value="1" tag="A Use Skill On Object Task" resource_name="r_Mining Spawn Rock" skill_name="s_Mining">
+					<task_instruction>Start mining from a $[Resource.M.r_mining_spawn_rock_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>Now that you&apos;ve gathered the $[Resource.I.r_iron_ore_NameSingular] you will need to bring back some $[Resource.C.r_coal_NameSingular] from a $[Resource.M.r_mining_spawn_rock_NameSingular]. $[Resource.C.r_coal_NameSingular] is a very important refining material used in crafting.</journal_entry>
+			<tasks>
+				<task type="harvest_resource" id="27" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new iron ore" quantity="10">
+					<task_instruction>Harvest 10 $[Resource.I.r_iron_ore_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<instruction>Perform $[Skill.M.s_mining_NameSingular] on a $[Resource.M.r_mining_spawn_metal_NameSingular].</instruction>
+			<tasks>
+				<task type="use_skill_on" id="26" value="1" tag="A Use Skill On Object Task" resource_name="r_Mining Spawn Metal" skill_name="s_Mining">
+					<task_instruction>Start mining a metal vein</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>Your last strike with the pickaxe was a lucky one: you got some extra coal just this once! Now that you are done gathering some $[Resource.C.r_coal_NameSingular], let&apos;s see what else goes into crafting an armor piece. Apart from metal, all the basic materials are useful, depending on the type of armor you want to craft, such as robes, leather armor, shields and weapons like bows and staves.</journal_entry>
+			<tasks>
+				<task type="harvest_resource" id="30" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Coal" quantity="5">
+					<task_instruction>Mine 5 $[Resource.C.r_coal_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="12" tag="give items">
+			<journal_entry>Here! You can use this $[Resource.W.r_wood_axe_NameSingular] to gather $[Resource.T.r_timber_NameSingular] by chopping any tree in Agon. In a similar fashion, you can use a $[Resource.S.r_sickle_NameSingular] to harvest $[Resource.C.r_cotton_NameSingular] from a $[Resource.H.r_herb_spawn_standard_NameSingular]. $[Resource.R.r_rawhide_NameSingular] is a bit different, since you will need to skin it from monster gravestones that are skinnable by using a $[Resource.S.r_skinner_NameSingular]. Keep in mind not all monsters can be skinned - the gravestone itself will let you know whether or not it can be skinned. Another source of rawhide is the skinning of a $[Resource.M.r_mining_spawn_leather_NameSingular]. It is one of the suppernodes, but you&apos;ll learn more about them later on. Try harvesting a piece of each material for now. You can then gather the rest either by harvesting them yourself, or acquire them using the market or someone else directly.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="22" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Wood Axe" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="23" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sickle" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="24" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Skinner" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="13" tag="" optional_tasks="False">
+			<instruction>Harvest some $[Resource.T.r_timber_NameSingular],$[Resource.C.r_cotton_NameSingular], and $[Resource.R.r_rawhide_NameSingular]</instruction>
+			<journal_entry>Now that you&apos;re done gathering some basic raw materials, bring them back to any Battle Supplier so they can show you what you are able to craft with them. You can either sell them to the Battle Supplier, but it would be preferable to keep them so you can craft something for yourself later on.</journal_entry>
+			<tasks>
+				<task type="harvest_resource" id="31" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Timber" quantity="1">
+					<task_instruction>Chop down a piece of $[Resource.T.r_timber_NameSingular]</task_instruction>
+				</task>
+				<task type="harvest_resource" id="32" value="1" tag="A Harvest Resource(s) Task" resource_name="r_New Cotton" quantity="1">
+					<task_instruction>Harvest a piece of $[Resource.C.r_cotton_NameSingular] from a $[Resource.H.r_herb_spawn_standard_NameSingular]</task_instruction>
+				</task>
+				<task type="harvest_resource" id="33" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new rawhide" quantity="1">
+					<task_instruction>Skin a piece of $[Resource.R.r_rawhide_inferior_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="76" value="1" tag="A Gather Item(s) Task" resource_name="r_New Cotton" quantity="9" inventory_type="Backpack">
+					<task_instruction>Gather 9 pieces of $[Resource.C.r_cotton_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="77" value="1" tag="A Gather Item(s) Task" resource_name="r_new rawhide" quantity="9" inventory_type="Backpack">
+					<task_instruction>Gather 9 pieces of $[Resource.R.r_rawhide_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="78" value="1" tag="A Gather Item(s) Task" resource_name="r_new Timber" quantity="9" inventory_type="Backpack">
+					<task_instruction>Gather 9 pieces of $[Resource.T.r_timber_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="15" tag="" optional_tasks="True">
+			<instruction>Talk to a Battle Supplier.</instruction>
+			<journal_entry>The basic materials you&apos;ve gathered, in order to be directly useful in crafting, will need to be refined. This is where the refining materials come into play: $[Resource.L.r_leenseed_NameSingular] is used to refine $[Resource.T.r_timber_NameSingular] into $[Resource.W.r_wood_NameSingular] and is mainly harvested from $[Resource.H.r_herb_spawn_standard_NamePlural]. $[Resource.L.r_lye_NameSingular] is used to refine $[Resource.C.r_cotton_NameSingular] into $[Resource.C.r_cloth_NameSingular] and is harvested from trees, while chopping them down for $[Resource.T.r_timber_NameSingular]. $[Resource.C.r_coal_NameSingular] is used to refine $[Resource.I.r_iron_ore_NameSingular] into $[Resource.I.r_iron_ingot_NamePlural] and is mostly harvested from $[Resource.M.r_mining_spawn_rock_NamePlural]. $[Resource.Q.r_quicklime_NameSingular] is used to refine $[Resource.R.r_rawhide_NameSingular] into $[Resource.L.r_leather_NameSingular] and can be harvested from $[Resource.M.r_mining_spawn_metal_NamePlural].</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="34" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_blacksmith" />
+				<task type="interact_with_vendor" id="35" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_blacksmith" />
+				<task type="interact_with_vendor" id="36" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_blacksmith" />
+				<task type="interact_with_vendor" id="37" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_blacksmith" />
+				<task type="interact_with_vendor" id="39" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_blacksmith" />
+				<task type="interact_with_vendor" id="40" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_blacksmith" />
+				<task type="interact_with_vendor" id="41" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_blacksmith" />
+				<task type="interact_with_vendor" id="42" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_blacksmith" />
+				<task type="interact_with_vendor" id="43" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_blacksmith" />
+				<task type="interact_with_vendor" id="44" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_blacksmith" />
+				<task type="interact_with_vendor" id="45" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_blacksmith" />
+				<task type="interact_with_vendor" id="46" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_blacksmith" />
+				<task type="interact_with_vendor" id="47" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_blacksmith" />
+				<task type="interact_with_vendor" id="48" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_blacksmith" />
+				<task type="interact_with_vendor" id="49" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_blacksmith" />
+				<task type="interact_with_vendor" id="50" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_blacksmith" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>You will need to create some basic refined materials first, like $[Resource.W.r_wood_NameSingular], $[Resource.L.r_leather_NameSingular] and $[Resource.I.r_iron_ingot_NameSingular]. Find and use the $[Resource.A.r_anvil_NameSingular] to create some $[Resource.I.r_iron_ingot_NamePlural]. Each $[Resource.I.r_iron_ore_NameSingular] requires some $[Resource.I.r_iron_ore_inferior_NameSingular] (5) and some $[Resource.G.r_gold_NameSingular] (1). You will need at least 5 $[Resource.I.r_iron_ingot_NameSingular], which need at least 25 $[Resource.I.r_iron_ore_NamePlural] to craft the items, so have at it! Once you are done crafting the 25 $[Resource.I.r_iron_ore_NameSingular], you will need to turn those into $[Resource.I.r_iron_ingot_NamePlural], again using the $[Resource.A.r_anvil_NameSingular] only it will also require some $[Resource.C.r_coal_NameSingular]. Always check the materials required for each recipe in the crafting window and do notice there might be a scroll bar! You will find the required recipe under $[Skill.S.s_smelting_NameSingular].</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="2" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="154" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="21" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Coal" quantity="10" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="20" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Leenseed" quantity="8" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="19" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Quicklime" quantity="10" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="18" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new rawhide" quantity="72" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="17" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new iron ore" quantity="250" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="16" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Timber" quantity="200" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>Now that you are done crafting the minimum necessary $[Resource.I.r_iron_ingot_NamePlural] bear in mind that the higher the skill, the less chance there is of failure while crafting. You will now also need at least 5 $[Resource.L.r_leather_NameSingular] and 4 $[Resource.W.r_wood_NameSingular]. Notice how while crafting refininf materials like $[Resource.C.r_coal_NameSingular] and $[Resource.G.r_gold_NameSingular] are consumed. $[Resource.G.r_gold_NameSingular] in general is always used when crafting. Let&apos;s try crafting the required $[Resource.W.r_wood_NameSingular] by using the $[Resource.W.r_workbench_NameSingular]. You will find the required recipe under $[Skill.W.s_woodcutting_NameSingular].</journal_entry>
+			<tasks>
+				<task type="craft_item" id="70" value="1" tag="A Craft Item(s) Task" resource_name="r_new iron ingot" quantity="5">
+					<task_instruction>Craft 5 $[Resource.I.r_iron_ingot_NamePlural]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="18" tag="">
+			<journal_entry>Now that you have crafted the $[Resource.W.r_wood_NameSingular] that will be required for the actual items, try crafting the last few materials needed - the 5 $[Resource.L.r_leather_NameSingular] - by using the $[Resource.W.r_workbench_NameSingular]. To refine the $[Resource.R.r_rawhide_inferior_NameSingular] into $[Resource.R.r_rawhide_NameSingular] and then into $[Resource.L.r_leather_NameSingular], you will need to check under the $[Skill.T.s_tanning_NameSingular] recipes.</journal_entry>
+			<tasks>
+				<task type="craft_item" id="71" value="1" tag="A Craft Item(s) Task" resource_name="r_new wood" quantity="4">
+					<task_instruction>Craft 4 $[Resource.W.r_wood_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>With all the needed materials in hand, now you will need to craft the actual items. Use the $[Resource.A.r_anvil_NameSingular] and start crafting. To craft the $[Resource.S.r_sword_p02_r01_NameSingular] , check under the $[Skill.W.s_weaponsmithing_NameSingular] recipes. To craft the $[Resource.S.r_shield_p03_r01_NameSingular] check under the $[Skill.S.s_shieldcrafting_NameSingular] recipes, and if you follow this train of thought, to craft the $[Resource.A.r_armor_chain_mail_torso_NameSingular] you will need to check under $[Skill.A.s_armorsmithing_NameSingular].</journal_entry>
+			<tasks>
+				<task type="craft_item" id="72" value="1" tag="A Craft Item(s) Task" resource_name="r_new leather" quantity="5">
+					<task_instruction>Craft 5 $[Resource.L.r_leather_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>Talk to any Battle Supplier and he will provide you with some advanced tools!</journal_entry>
+		</node>
+		<node type="event_simple" id="23" tag="" optional_tasks="True">
+			<instruction>Talk to a Battle Supplier.</instruction>
+			<journal_entry>Here is a set of Selentine Tools. With those you will able to harvest up to $[Resource.V.r_veilron_essence_NameSingular].</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="52" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_blacksmith">
+					<task_instruction>Talk to a Battle Supplier</task_instruction>
+				</task>
+				<task type="interact_with_vendor" id="53" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_blacksmith" />
+				<task type="interact_with_vendor" id="54" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_blacksmith" />
+				<task type="interact_with_vendor" id="55" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_blacksmith" />
+				<task type="interact_with_vendor" id="57" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_blacksmith" />
+				<task type="interact_with_vendor" id="58" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_blacksmith" />
+				<task type="interact_with_vendor" id="59" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_blacksmith" />
+				<task type="interact_with_vendor" id="60" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_blacksmith" />
+				<task type="interact_with_vendor" id="61" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_blacksmith" />
+				<task type="interact_with_vendor" id="62" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_blacksmith" />
+				<task type="interact_with_vendor" id="63" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_blacksmith" />
+				<task type="interact_with_vendor" id="64" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_blacksmith" />
+				<task type="interact_with_vendor" id="65" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_blacksmith" />
+				<task type="interact_with_vendor" id="66" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_blacksmith" />
+				<task type="interact_with_vendor" id="67" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_blacksmith" />
+				<task type="interact_with_vendor" id="68" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_blacksmith" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="24" tag="">
+			<journal_entry>With all this harvesting and crafting you should be ready to go about crafting whichever items you need or are willing to invest in. Check the recipes at each station and you will be able to find out what materials are needed each time. Also keep in mind you are able to just craft away for someone who has placed a crafting order, without using any materials of your own - in this case though, the crafted items will go to the one who has placed the order.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="12" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Pickaxe_01" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="13" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sickle_01" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="14" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Skinner_01" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="15" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Wood Axe_01" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="25" tag="">
+			<journal_entry>But then again if you are not going to continue crafting but would rather focus on harvesting first, remember the supernodes. These are special nodes scattered around Agon that provide better quality materials at greater amounts and are located near monsters. These are the $[Resource.M.r_mining_spawn_metal_supernode_NameSingular], the $[Resource.H.r_herb_spawn_supernode_NameSingular], the $[Resource.L.r_logging_spawn_tree_supernode_NameSingular] and the $[Resource.M.r_mining_spawn_leather_NameSingular]. Be careful though because there may be others who would like to take advantage of these nodes!</journal_entry>
+		</node>
+		<node type="end_node" id="26" tag="" />
+		<node type="event_simple" id="27" tag="" optional_tasks="False">
+			<journal_entry>Now that you have crafted this basic metal armor and weapon set, feel free to check out the other kinds of recipes. You should also check the recipes available for crafting at a $[Resource.L.r_laboratory_NameSingular] where $[Skill.A.s_alchemy_NameSingular] is used. At a $[Resource.L.r_laboratory_NameSingular] you can craft $[Resource.S.r_spirit_beads_NameSingular] and $[Resource.E.r_elemental_dust_NameSingular], as well as various potions, like $[Resource.P.r_potion_health_minor_NameSingular] and $[Resource.P.r_potion_mana_minor_NameSingular]. You can also upgrade the various materials that drop with skinning, like turning multiple $[Resource.B.r_blood_q01_NameSingular] into $[Resource.B.r_blood_q02_NameSingular]. The $[Resource.L.r_laboratory_NameSingular] is also the crafting station used to create dyes using pigments so you can dye your armor.</journal_entry>
+			<tasks>
+				<task type="craft_item" id="73" value="1" tag="A Craft Item(s) Task" resource_name="r_Armor Chain Mail Torso" quantity="1">
+					<task_instruction>Craft a $[Resource.A.r_armor_chain_mail_torso_NameSingular]</task_instruction>
+				</task>
+				<task type="craft_item" id="74" value="1" tag="A Craft Item(s) Task" resource_name="r_Sword_p02_r01" quantity="1">
+					<task_instruction>Craft a $[Resource.S.r_sword_p02_r01_NameSingular]</task_instruction>
+				</task>
+				<task type="craft_item" id="75" value="1" tag="A Craft Item(s) Task" resource_name="r_Shield_p03_r01" quantity="1">
+					<task_instruction>Craft a $[Resource.S.r_shield_p03_r01_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="28" tag="">
+			<journal_entry>Some dyes for instance require you to have purchased the $[Skill.A.s_alchemy_mastery_NameSingular], in order to craft mastery-level dyes - this is true for all crafting skills. Past the maximum crafting skill, the mastery-level recipes need the corresponding mastery skill to be crafted. To acquire a mastery you&apos;ll need to have your basic skill at the maximum level (100). Higher level skills require Essences, like $[Resource.S.r_selentine_essence_NameSingular], to be used in infusing materials that are needed in the recipe. These Essences can be harvested using special tools, like a $[Resource.S.r_sickle_01_NameSingular] in order to have a chance at harvesting $[Resource.V.r_veilron_essence_NameSingular]. The trick is, these essences can be harvested outside the safe zones, at the danger zones.</journal_entry>
+		</node>
+		<node type="event_simple" id="29" tag="">
+			<journal_entry>More specifically, with the basic tools you will only be able to harvest $[Resource.S.r_selentine_essence_NameSingular]. You will need a Selentine-quality tool to harvest $[Resource.V.r_veilron_essence_NameSingular]. The essences from the lowest-quality essence to the highest are $[Resource.S.r_selentine_essence_NameSingular], $[Resource.V.r_veilron_essence_NameSingular], $[Resource.N.r_neithal_essence_NameSingular],$[Resource.L.r_leenspar_essence_NameSingular] and $[Resource.T.r_theyril_essence_NameSingular]. These essences are used to create special materials using the refining masteries of the basic materials. For example,  $[Resource.R.r_rawhide_NameSingular] can be turned into $[Resource.S.r_selentine_rawhide_NameSingular], which can in turn be refined into $[Resource.S.r_selentine_leather_NameSingular].</journal_entry>
+		</node>
+		<node type="event_simple" id="31" tag="">
+			<journal_entry>Let&apos;s try your hand at crafting - here are some materials for you to start crafting. For starters, try crafting these items at an $[Resource.A.r_anvil_NameSingular]: one $[Resource.S.r_sword_p02_r01_NameSingular], one $[Resource.S.r_shield_p03_r01_NameSingular] and a $[Resource.A.r_armor_chain_mail_torso_NameSingular]. Sometimes, crafting might fail and the materials will be consumed without producing the item but don&apos;t worry - you should have enough for a second try.</journal_entry>
+		</node>
+		<node type="start_node" id="66" tag="complete welcome">
+			<conditions>
+				<condition type="quest_completion" id="52" value="1" tag="A Quest Completion Condition" quest_id="9" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="12" from="10" to="11" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+		<edge id="11" from="9" to="10" value="1" />
+		<edge id="10" from="8" to="9" value="1" />
+		<edge id="9" from="2" to="8" value="0" />
+		<edge id="13" from="11" to="12" value="1" />
+		<edge id="14" from="12" to="13" value="0" />
+		<edge id="16" from="13" to="15" value="1" />
+		<edge id="34" from="15" to="31" value="1" />
+		<edge id="36" from="16" to="17" value="0" />
+		<edge id="19" from="17" to="18" value="1" />
+		<edge id="20" from="18" to="19" value="1" />
+		<edge id="28" from="19" to="27" value="1" />
+		<edge id="33" from="20" to="23" value="1" />
+		<edge id="25" from="23" to="24" value="1" />
+		<edge id="26" from="24" to="25" value="0" />
+		<edge id="27" from="25" to="26" value="0" />
+		<edge id="29" from="27" to="28" value="1" />
+		<edge id="30" from="28" to="29" value="0" />
+		<edge id="71" from="29" to="20" value="0" />
+		<edge id="35" from="31" to="16" value="0" />
+		<edge id="70" from="66" to="1" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="1" x="368" y="167" />
+		<node_location id="2" x="486" y="166" />
+		<node_location id="10" x="752" y="287" />
+		<node_location id="9" x="667" y="228" />
+		<node_location id="8" x="569" y="208" />
+		<node_location id="11" x="843" y="351" />
+		<node_location id="12" x="934" y="367" />
+		<node_location id="13" x="1031" y="345" />
+		<node_location id="15" x="1131" y="340" />
+		<node_location id="16" x="1327" y="339" />
+		<node_location id="17" x="1359" y="263" />
+		<node_location id="18" x="1255" y="225" />
+		<node_location id="19" x="1313" y="149" />
+		<node_location id="20" x="996" y="45" />
+		<node_location id="23" x="880" y="48" />
+		<node_location id="24" x="781" y="43" />
+		<node_location id="25" x="682" y="40" />
+		<node_location id="26" x="580" y="42" />
+		<node_location id="27" x="1341" y="45" />
+		<node_location id="28" x="1248" y="39" />
+		<node_location id="29" x="1122" y="43" />
+		<node_location id="31" x="1237" y="346" />
+		<node_location id="66" x="249" y="166" />
+	</node_locations>
+</quest>

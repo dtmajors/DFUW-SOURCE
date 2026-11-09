@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SFAnimationEffects>
+	<VersionInformation Incremental="0" Major="0" Minor="1"/>
+	<EffectList>
+		
+		<!--Common Animations-->
+		<AnimationState StateName="drink">
+			<Effect EffectName="se_pe_drinking" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="praying">
+			<Effect EffectName="se_char_pray_01" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="bow_aim">
+			<Effect EffectName="se_pe_arrow_load" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="bow_load">
+			<Effect EffectName="se_pe_arrow_load" StartTime="0.3"/>
+		</AnimationState>
+		<AnimationState StateName="teleport_anim">
+			<Effect EffectName="se_bindstone_recall" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="teleport_anim_02">
+			<Effect EffectName="se_house_recall" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="bind_runestone">
+			<Effect EffectName="se_runestone_teleport_bind" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="use_runestone">
+			<Effect EffectName="se_runestone_teleport" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="gank_get_up">
+			<Effect EffectName="se_common_revive" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="revive">
+			<Effect EffectName="se_common_revive_caster" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="bind_runestone_02">
+			<Effect EffectName="se_summon_player_self" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="crafting_hammer">
+			<Effect EffectName="se_pe_crafting" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="use_spyglass">
+			<Effect EffectName="se_spyglass" StartTime="0.08"/>
+		</AnimationState>
+		<AnimationState StateName="change_role">
+			<Effect EffectName="se_change_role" StartTime="0.005"/>
+		</AnimationState>
+		
+		<!--Sprint Animations
+		<AnimationState StateName="attackmode_2handed_sprint_forward">
+			<Effect EffectName="se_sprint_01" StartTime="0.005"/>
+		</AnimationState>
+		<AnimationState StateName="attackmode_halberd_sprint_forward">
+			<Effect EffectName="se_sprint_01" StartTime="0.005"/>
+		</AnimationState>
+		<AnimationState StateName="attackmode_sprint_forward">
+			<Effect EffectName="se_sprint_01" StartTime="0.005"/>
+		</AnimationState>
+		<AnimationState StateName="normal_sprint_forward">
+			<Effect EffectName="se_sprint_01" StartTime="0.005"/>
+		</AnimationState>-->
+		
+		<!--Emote Animations-->
+		<AnimationState StateName="emote_cry">
+			<Effect EffectName="se_emote_cry_male" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="emote_playguitar">
+			<Effect EffectName="se_emote_guitar_male" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="emote_violin">
+			<Effect EffectName="se_emote_violin_male" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="emote_drink">
+			<Effect EffectName="se_emote_drink_male" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="emote_king">
+			<Effect EffectName="se_emote_royal_male" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="emote_oktoberfest">
+			<Effect EffectName="se_emote_octoberfest_male" StartTime="0.0"/>
+		</AnimationState>	
+		<AnimationState StateName="emote_snowangel">
+			<Effect EffectName="se_emote_snowangel_male" StartTime="0.0"/>
+		</AnimationState>
+	
+		<!--Relics-->
+		<AnimationState StateName="relic_destroy">
+			<Effect EffectName="se_relic_destroy" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="relic_interact1">
+			<Effect EffectName="se_relic_world_aquire" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="relic_interact3">
+			<Effect EffectName="se_relic_world_give" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="relic_interact4">
+			<Effect EffectName="se_relic_world_aquire" StartTime="0.0"/>
+		</AnimationState>
+			
+		<!--Gank Animations-->
+		<AnimationState StateName="gank_magic_staff_charge">
+			<Effect EffectName="se_common_gank_staff_charge" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="gank_magic_staff_attack">
+			<Effect EffectName="se_common_gank_staff_impact" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="gank_bow_charge">
+			<Effect EffectName="se_common_gank_bow_charge" StartTime="0.135"/>
+		</AnimationState>
+		<AnimationState StateName="gank_bow_attack">
+			<Effect EffectName="se_common_gank_bow_impact" StartTime="0.0"/>
+		</AnimationState>
+
+		<!--Siege Engines-->
+		<AnimationState StateName="siegeengine_driver_idle">
+			<Effect EffectName="se_siege_engine_drivers_wheel" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="siegeengine_driver_use">
+			<Effect EffectName="se_siege_engine_drivers_wheel" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="siegeengine_wheel_idle">
+			<Effect EffectName="se_siege_engine_crank_01" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="siegeengine_wheel_use">
+			<Effect EffectName="se_siege_engine_crank_01" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="spawn_ladder">
+			<Effect EffectName="se_siege_ladder_casting" StartTime="0.0"/>
+		</AnimationState>
+		
+		<!--Requisition Gauntlets-->
+		<AnimationState StateName="unseathe_gauntlets">
+			<Effect EffectName="se_requisition_gauntlet_selentine_unsheathe" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="unseathe_gauntlets2">
+			<Effect EffectName="se_requisition_gauntlet_veilron_unsheathe" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="unseathe_gauntlets3">
+			<Effect EffectName="se_requisition_gauntlet_neithal_unsheathe" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="unseathe_gauntlets4">
+			<Effect EffectName="se_requisition_gauntlet_leenspar_unsheathe" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="unseathe_gauntlets5">
+			<Effect EffectName="se_requisition_gauntlet_theyril_unsheathe" StartTime="0.0"/>
+		</AnimationState>
+		
+		<!--Slayer Animations-->
+		<AnimationState StateName="melee_disabling_blow">
+			<Effect EffectName="se_slayer_crushing_blow_part1" StartTime="0.0"/>
+			<Effect EffectName="se_slayer_crushing_blow_part2" StartTime="0.4"/>
+		</AnimationState>
+		<AnimationState StateName="vampiric_strike">
+			<Effect EffectName="se_slayer_vampiric_strike" StartTime="0.5"/>
+		</AnimationState>
+		<AnimationState StateName="power_attack">
+			<Effect EffectName="se_slayer_power_attack_part1" StartTime="0.0"/>
+			<Effect EffectName="se_slayer_power_attack_part2" StartTime="0.5"/>
+		</AnimationState>
+		
+		<!--Duelist Animations-->
+		<AnimationState StateName="flurry">
+		    <Effect EffectName="se_duelist_flurry_first_hit" StartTime="0.3"/>
+			<Effect EffectName="se_duelist_flurry_second_hit" StartTime="0.45"/>
+		</AnimationState>
+		<AnimationState StateName="lunge">
+			<Effect EffectName="se_duelist_pummel" StartTime="0.45"/>
+		</AnimationState>
+		<AnimationState StateName="lacerate_daggers">
+			<Effect EffectName="se_duelist_lacerate_daggers" StartTime="0.05"/>
+		</AnimationState>
+		<AnimationState StateName="lacerate_singlehand">
+			<Effect EffectName="se_duelist_lacerate_singlehand" StartTime="0.1"/>
+		</AnimationState>
+			<AnimationState StateName="lacerate_twohanded">
+			<Effect EffectName="se_duelist_lacerate_twohanded" StartTime="0.27"/>
+		</AnimationState>
+		<AnimationState StateName="lacerate_halberd">
+			<Effect EffectName="se_duelist_lacerate_halberd" StartTime="0.285"/>
+		</AnimationState>
+		<!--<AnimationState StateName="normal_idle">
+			<Effect EffectName="se_duelist_uncanny_focus_armor_m" StartTime="0.0"/>
+		</AnimationState>
+		<AnimationState StateName="attackmode_idle">
+			<Effect EffectName="se_duelist_uncanny_focus_armor_m" StartTime="0.0"/>
+		</AnimationState>-->
+
+	</EffectList>
+</SFAnimationEffects>

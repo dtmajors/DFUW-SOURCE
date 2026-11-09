@@ -1,0 +1,123 @@
+
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "cloudground.frag"
+#include "spenebump.frag"
+#include "stdio.frag"
+
+#include "texture.frag"
+
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+float PowerMaterial : REPGlobalMaterialPower = 1.0f;
+
+
+
+struct VS_OUTPUT
+{
+    float4  Pos     : POSITION;
+    float4  Diffuse : COLOR0;
+    float2  Tex0    : TEXCOORD0;
+    float   Fog	    : FOG;
+};
+
+
+VS_OUTPUT VS(STD_VS_VP_INPUT Input)
+{
+   VS_OUTPUT Out = (VS_OUTPUT)0;
+   
+
+
+    float MoveFactor = Input.Diff.g;
+	float TransparentFactor = Input.Diff.b;
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+
+	float4 RealPos = Input.Pos;
+	float3 AllMin = abs(Input.Pos - getBBCenter());
+	
+	float YVal = getYMin(Input.Pos.y) * (1.0f - Input.Diff.g);
+	float Multiplier = (1.0f - MoveFactor)*0.3;
+	float3 NewNorm = abs(Input.Norm);
+	RealPos.x += NewNorm.x * sin(TOTAL_TIME*0.23f) * AllMin.x * Multiplier;
+	RealPos.z += NewNorm.z * sin(TOTAL_TIME*0.31f) * AllMin.z * Multiplier;
+	RealPos.y += NewNorm.y * sin(TOTAL_TIME*0.13f) * AllMin.y * Multiplier;
+
+	//RealPos = Input.Pos;	
+	float4 WorldPos = mul(RealPos,WORLD_MATRIX);
+	
+    Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX);             // position (projected)
+    
+    
+    
+
+    Out.Diffuse = Input.Diff.g;
+    
+	float Time = abs(sin((TOTAL_TIME+Input.Pos.y + Input.Pos.x + Input.Pos.z)*1.31f));
+    Out.Diffuse.w = Time*TransparentFactor;//saturate(Dot) + 1.0f/255.0f;//0.01f;
+   
+    
+ 
+    Out.Tex0.x  = Input.Tex.x + frac(TOTAL_TIME*0.33f + PowerMaterial);
+	Out.Tex0.y  = Input.Tex.y;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);   
+    
+    return Out;
+}
+
+
+
+
+
+
+
+float4 PS(VS_OUTPUT Input) : COLOR
+{
+	float4 Color = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex0);
+
+	Color = BaseTex;
+	Color.a = BaseTex.a*Input.Diffuse.a;
+	
+	Color.xyz = lerp(Color.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	
+	return Color;
+
+}
+
+
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+	
+        AlphaTestEnable = false;
+
+        AlphaBlendEnable = true;
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+        
+        ZEnable = true;
+		ZWriteEnable = false;
+	
+		FogEnable = true;
+        CullMode = none;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

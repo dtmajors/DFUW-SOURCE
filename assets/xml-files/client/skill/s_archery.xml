@@ -1,0 +1,287 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFClientMissileSkill" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Archery" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBaseCooldown>
+        <SFFloat Value="1.0" />
+    </SFBaseCooldown>
+    <SFBaseHealthCost>
+        <SFFloat Value="1.0" />
+    </SFBaseHealthCost>
+    <SFBaseManaCost>
+        <SFFloat Value="1.0" />
+    </SFBaseManaCost>
+    <SFBaseStaminaCost>
+        <SFFloat Value="0.6" />
+    </SFBaseStaminaCost>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_Except_Movement_Skills" />
+    </SFBlockingName>
+    <SFBlockingTimerBase>
+        <SFFloat Value="0.0" />
+    </SFBlockingTimerBase>
+    <SFClientParamName>
+        <SFString Value="View_Data" />
+    </SFClientParamName>
+    <SFCooldownMultiplier>
+        <SFFloat Value="1.0" />
+    </SFCooldownMultiplier>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFHealthCostMultiplier>
+        <SFFloat Value="1.0" />
+    </SFHealthCostMultiplier>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFManaCostMultiplier>
+        <SFFloat Value="1.0" />
+    </SFManaCostMultiplier>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSkillTimerGeneral>
+        <SFFloat Value="1.0" />
+    </SFSkillTimerGeneral>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFStaminaMultiplier>
+        <SFFloat Value="0.6" />
+    </SFStaminaMultiplier>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Do_Nothing" />
+        </SFOperationOnSkillPartExitName>
+        <SFStartAnimationOnClient>
+            <SFBool Value="FALSE" />
+        </SFStartAnimationOnClient>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_FirstPerson_Hands" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="bow_fire" />
+        </SFAnimationStateName>
+    </SFAnimationInfo>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Do_Nothing" />
+        </SFOperationOnSkillPartExitName>
+        <SFStartAnimationOnClient>
+            <SFBool Value="FALSE" />
+        </SFStartAnimationOnClient>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="bow_fire" />
+        </SFAnimationStateName>
+    </SFAnimationInfo>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Charging" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Charging" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStopControllerOperationName>
+        <SFUseMovementSensor>
+            <SFBool Value="FALSE" />
+        </SFUseMovementSensor>
+        <SFAutoStartSkillOnChargingTimerTimeout>
+            <SFBool Value="FALSE" />
+        </SFAutoStartSkillOnChargingTimerTimeout>
+        <SFMinimumChargingProgress>
+            <SFFloat Value="1.0" />
+        </SFMinimumChargingProgress>
+        <SFCancelChargingEnabled>
+            <SFBool Value="FALSE" />
+        </SFCancelChargingEnabled>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer" />
+        </SFSkillTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFTimerName>
+            <SFString Value="Basic Timer" />
+        </SFTimerName>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Charging" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Ranged Timer Charging" />
+        </SFTimerLengthSkillFunctionName>
+    </SFSkillTimer>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_Animation_Simple" />
+        </SFSynchronizedObjectName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Do_Nothing" />
+        </SFOperationOnSkillPartExitName>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFMainAnimation>
+            <SFBool Value="TRUE" />
+        </SFMainAnimation>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+        <SFOffsetStart>
+            <SFFloat Value="0.0" />
+        </SFOffsetStart>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="bow_load" />
+        </SFAnimationStateName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Charging" />
+        </SFSkillPartName>
+    </SFSynchronizedObject>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_Animation_Simple" />
+        </SFSynchronizedObjectName>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+        <SFOffsetStart>
+            <SFFloat Value="0.0" />
+        </SFOffsetStart>
+        <SFMainAnimation>
+            <SFBool Value="FALSE" />
+        </SFMainAnimation>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Do_Nothing" />
+        </SFOperationOnSkillPartExitName>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Charging" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_FirstPerson_Hands" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="bow_load" />
+        </SFAnimationStateName>
+    </SFSynchronizedObject>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Function_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFOperatorName>
+            <SFString Value="&gt;=" />
+        </SFOperatorName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFAttributeName>
+            <SFString Value="Stamina" />
+        </SFAttributeName>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Ranged Stamina Cost" />
+        </SFSkillFunctionName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Resource_Quantity_Constraint" />
+        </SFConstraintName>
+        <SFQuantity>
+            <SFFloat Value="1.0" />
+        </SFQuantity>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFItemStateName>
+            <SFString Value="Item_Unsheathed" />
+        </SFItemStateName>
+        <SFLockConfigName>
+            <SFString Value="Do_Not_Lock_Items" />
+        </SFLockConfigName>
+        <SFResourceName>
+            <SFString Value="r_Bows" />
+        </SFResourceName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Resource_Quantity_Constraint" />
+        </SFConstraintName>
+        <SFQuantity>
+            <SFFloat Value="1.0" />
+        </SFQuantity>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFItemStateName>
+            <SFString Value="Item_Detached" />
+        </SFItemStateName>
+        <SFLockConfigName>
+            <SFString Value="Lock_Items_For_Consume" />
+        </SFLockConfigName>
+        <SFResourceName>
+            <SFString Value="r_Arrows" />
+        </SFResourceName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Water_Contact_Mode_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+    </SFConstraint>
+    <SFSubSkillName>
+        <SFString Value="s_Archery_1" />
+    </SFSubSkillName>
+</SFSkill>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SFAnimationStateTemplate>
+  <VersionInformation Incremental="0" Major="0" Minor="3"/>
+  <Name>
+    <SFString Value="Human State Template"/>
+  </Name>
+  <AnimationStateList>
+    <AnimationState Duration="1.3666667" FallbackState="false" HideWeapon="false" ID="254" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_attack_back" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.8666667" FallbackState="false" HideWeapon="false" ID="255" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_attack_front" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="2.0333333" FallbackState="false" HideWeapon="false" ID="256" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_break" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="4.0333333" FallbackState="true" HideWeapon="false" ID="257" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_idle" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="4.0333333" FallbackState="false" HideWeapon="false" ID="258" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_jump" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.7" FallbackState="true" HideWeapon="false" ID="259" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_run" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="2.7" FallbackState="true" HideWeapon="false" ID="260" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_walk" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="2.7" FallbackState="true" HideWeapon="false" ID="261" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_walk_backwards" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="4.0333333" FallbackState="true" HideWeapon="false" ID="3" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_idle" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="8.033334" FallbackState="false" HideWeapon="false" ID="264" Loop="false" Partial="false" PlaybackType="0" RemovePartial="true" SetName="mount_idle_extra_01" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.97">
+      <AlternativeSets>
+        <AlternativeSet SetName="mount_idle_extra_02"/>
+      </AlternativeSets>
+    </AnimationState>
+    <AnimationState Duration="2.7" FallbackState="true" HideWeapon="false" ID="266" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_swim" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="2.7" FallbackState="false" HideWeapon="false" ID="337" Loop="false" Partial="false" PlaybackType="0" RemovePartial="true" SetName="mount_death" Speed="1.0" StopAtPosition="true" StopPositionNormalized="1.0"/>
+    <AnimationState Duration="0.8" FallbackState="false" HideWeapon="false" ID="350" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_jump_end" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.0333333" FallbackState="false" HideWeapon="false" ID="349" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_jump_start" Speed="1.5" StopAtPosition="false" StopPositionNormalized="0.0">
+      <ChainedStates>
+        <ChainedState StateID="262402"/>
+      </ChainedStates>
+    </AnimationState>
+    <AnimationState Duration="4.0333333" FallbackState="true" HideWeapon="false" ID="395" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_swim_idle" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+  </AnimationStateList>
+</SFAnimationStateTemplate>

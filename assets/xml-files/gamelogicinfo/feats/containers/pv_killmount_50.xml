@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="true"/>
+   <ShowOnGUI Value="true"/>
+  <Continue Value="true"/>
+	  
+	  <Trigger Type="LIFE_MODE_CHANGES">				
+		    <LifeMode Value="KILL"/>
+		    <Received Value="false"/>
+		    <IsEventSource Value="true"/>
+		    <ResourceName Value="r_horse"/>
+		    <Counter Value="50"/>
+	  </Trigger>	
+	  <Points Dynamic="true" Value="" Key="r_horse"/>		
+		<Rewards> 					  
+		    <Item Type="UNLOCK_FEAT" Name="pv_killmount_300"/>
+	  </Rewards>	
+</Feat>

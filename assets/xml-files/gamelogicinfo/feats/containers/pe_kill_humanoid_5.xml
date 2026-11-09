@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Humanoids"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Humanoids" Value="5"/>
+  <Rewards>
+    <Item Name="pe_kill_humanoid_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_akathar_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_bandit_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_beastmen_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_centaur_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_gnoll_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_goblinoid_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_grungroc_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_hag_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_kobold_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_menhir_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_sadayel_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_sarlid_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_trollkin_30" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

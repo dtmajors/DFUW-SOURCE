@@ -1,0 +1,158 @@
+// Note: Frequently used shader
+
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "time.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+// Matrix Pallette
+static const int MAX_MATRICES = 26;
+float4x3    mWorldMatrixArray[MAX_MATRICES] : REAnimWorldMatrixArray;
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+///////////////////////////////////////////////////////
+
+struct VS_OUTPUT
+{
+    float4  Pos     : POSITION;
+    float2  Tex    : TEXCOORD0;
+    float3 WorldNormal 		: TEXCOORD1;
+    float3 WorldEyeVec 		: TEXCOORD2;
+    float  Glow    			: TEXCOORD3;
+    float3 WorldPos   		: TEXCOORD4;
+	float2 ZPos 				: TEXCOORD5;
+    float   Fog	    : FOG;
+};
+
+VS_OUTPUT VShade_2Weight(STD_VS_SKINNING_INPUT i)
+{
+    VS_OUTPUT   o = (VS_OUTPUT)0;
+    float3      Pos = 0.0f;
+    float3      Normal = 0.0f;    
+    float       LastWeight = 0.0f;
+    
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(i.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])i.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+    // calculate the pos/normal using the "normal" weights 
+    //        and accumulate the weights to calculate the last weight
+
+    LastWeight = BlendWeightsArray[0];
+        
+    Pos = mul(i.Pos, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+    Normal = mul(i.Normal, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+
+    LastWeight = 1.0f - LastWeight; 
+
+    // Now that we have the calculated weight, add in the final influence
+    Pos += (mul(i.Pos, mWorldMatrixArray[IndexArray[1]]) * LastWeight);
+    Normal += (mul(i.Normal, mWorldMatrixArray[IndexArray[1]]) * LastWeight); 
+    
+    float4 WorldPos = float4(Pos,1.0f);
+    // transform position from world space into view and then projection space
+    o.Pos = mul(WorldPos, VIEW_PROJECTION_MATRIX);
+
+    // normalize normals
+    float3 WorldNorm = normalize(Normal);
+	
+	o.WorldPos = WorldPos;
+	
+	o.ZPos.xy = o.Pos.zw;
+	
+	
+	float Time = abs(sin((TOTAL_TIME+i.Pos.y + i.Pos.x + i.Pos.z)*1.31f));
+	
+	o.WorldNormal = WorldNorm;
+	o.WorldEyeVec = normalize(EYE_POS - WorldPos.xyz);
+	
+    o.Glow = Time*Time*Time*Time;
+
+    // copy the input texture coordinate through
+    o.Tex  = i.Tex0.xy;
+    
+    o.Fog = CalculateFog_3_0(o.Pos.z);
+
+
+    return o;
+}
+
+STD_PS_OUTPUT_3 PShade(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	
+	float3 Nn = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldEyeVec);
+
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, STANDARD_PROP_SPECULAR_EXPONENT, STANDARD_PROP_DIFFUSE_WRAP, STANDARD_PROP_SPECULAR_CONTRIBUTION * SurfaceColor.y);
+
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	for (int i=0; i<ActiveLightCount; i++)
+	{
+		[loop] DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, STANDARD_PROP_SPECULAR_EXPONENT, 
+			STANDARD_PROP_DIFFUSE_WRAP, STANDARD_PROP_SPECULAR_CONTRIBUTION * SurfaceColor.y, Vn, LightParams[i]);
+	}
+#endif
+
+	float Glow = SurfaceColor.a * Input.Glow;
+	Output.Color.xyz = combineIllumination3animglow(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight, Glow);
+	Output.Color.a = Glow * (1.0 - smoothstep(0,1,Input.Fog));
+	//Output.Effect = 0.0f;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz,  0.05 * SurfaceColor.y);
+#endif
+
+#ifdef SHADER_PP_QUALITY
+	Output.Color.a *= 2;
+#endif
+
+	return Output;
+}
+
+
+
+//////////////////////////////////////
+// Techniques specs follow
+//////////////////////////////////////
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+    	FogEnable = false;
+        AlphaTestEnable = false;
+        
+        AlphaBlendEnable = false;
+        ZEnable = true;
+		ZWriteEnable = true;
+       	CullMode = CCW;
+        
+    	ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+
+    	VertexShader = compile vs_3_0 VShade_2Weight();
+        PixelShader = compile ps_3_0 PShade();
+    }
+}
+

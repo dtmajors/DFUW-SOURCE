@@ -1,0 +1,154 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_goblin scout" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<DynamicHitConfigFile Enabled="true" Value="animations/goblin_scout_dynhit_config.xml" />
+<ObjectType>
+<SFString Value="ANIMATEDOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="true" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFBool Value="FALSE" />
+<SFBool Value="FALSE" />
+<SFBool Value="FALSE" />
+<SFBool Value="FALSE" />
+<SFBool Value="FALSE" />
+<Meshes>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="goblin_scout.sfam" />
+</Set0>
+</Meshes>
+<Animations>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="goblin_scout.sfas" />
+</Set0>
+</Animations>
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderanimalphaglownew.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+</SubsetShaders>
+</Normal>
+</Shaders>
+<AnimationInformation>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<AnimationSet0>
+<SetName>
+<SFString Value="Idle" />
+</SetName>
+<SetFile>
+<SFString Value="SF_DEFAULT" />
+</SetFile>
+</AnimationSet0>
+</AnimationInformation>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.8880868554" Y="-0.1318244189" Z="-0.8864785433" />
+</Min>
+<Max>
+<SFVector3 X="0.8907919526" Y="1.647054434" Z="0.8924002647" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.001352506923" Y="0.7576149702" Z="0.002960847458" />
+</Center>
+<Radius>
+<SFFloat Value="0.889439404" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation></SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="character" />
+<WaterTransition>
+<Submerged Value="1.27394" />
+<Surface Value="0.724593" />
+<Touching Value="0.0134808" />
+<Floating Value="0.999264" />
+</WaterTransition>
+<ImpulseScaleFactor Value="0" />
+<RepulsiveAngleRange Max="3.14159" Min="0" />
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<DynamicScheme>
+<Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+<FileName Value="goblin_scout.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+<StaticScheme>
+<Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+<FileName Value="goblin_scout.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+</StaticScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0" Y="0" Z="0" />
+</Center>
+<Radius>
+<SFFloat Value="1.64044" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

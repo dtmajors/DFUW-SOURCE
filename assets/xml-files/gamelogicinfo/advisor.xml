@@ -1,0 +1,584 @@
+<Advisor>
+	<AdvisorCategory Id="Combat" Title="Combat" />
+	<AdvisorCategory Id="UI" Title="UI" />
+	<AdvisorCategory Id="General" Title="General" />
+
+	<AdvisorEntry Id = "1" InternalName = "ProximitySupernodes" Title="Supernodes" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Herb Spawn Supernode" Radius="40" />
+		<Trigger Type="PROXIMITY" Resource = "r_Logging Spawn Tree Supernode" Radius="40" />
+		<Trigger Type="PROXIMITY" Resource = "r_Mining Spawn Metal Supernode" Radius="40" />
+		<Trigger Type="PROXIMITY" Resource = "r_Mining Spawn Leather" Radius="40" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_b01.png" />
+			<RightPane ContentType = "Text" Text = "You have discovered a [color ef6e10]Supernode[/color]! These rare nodes have a high chance of yielding superior materials. Be on your guard though, supernodes tend to be jealously protected by powerful monsters." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_b02.png" />
+			<RightPane ContentType = "Text" Text = "You'll discover 4 archetypes of Supernode on your journeys. As with all harvesting, you'll need to equip the [color ef6e10]correct tool[/color] for each resource." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "2" InternalName = "ProximityRelics" Title="Relics" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Relic Chests" Radius="50" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_c01.png" />
+			<RightPane ContentType = "Text" Text = "That powerful resonance that you hear signifies the nearby presence of [color ef6e10]a Relic![/color] A wondrous item of legend that can reinforce and enhance a whole [color ef6e10]clan[/color] or offer immense power to a [color ef6e10]single adventurer.[/color]" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_c02.png" />
+			<RightPane ContentType = "Text" Text = "When you discover a relic, pick it up using your [color ef6e10]interact key[/color] (F by default). Whilst carrying a relic you will find your [color ef6e10]movement[/color] and [color ef6e10]teleportation[/color] capabilities will be [color ef6e10]limited.[/color] [color ef6e10]Drop[/color] the relic at any time by pressing the appropriate hotkey, by default [color ef6e10]L[/color]." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_c03.png" />
+			<RightPane ContentType = "Text" Text = "To provide your [color ef6e10]entire clan[/color] with a unique buff (depending on the Relic you have found), carry the Relic to your [color ef6e10]clan church[/color] and interact with the [color ef6e10]Altar[/color] inside." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_c04.png" />
+			<RightPane ContentType = "Text" Text = "Alternatively, you can carry a Relic to the [color ef6e10]Altar of Immolation[/color] and sacrifice it. This will grant you the very potent power of the [color ef6e10]Immolator![/color]" />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "3" InternalName = "ProximityMonoliths" Title="Prowess Monoliths" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Prowess Monolith" Radius="50" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_d01.png" />
+			<RightPane ContentType = "Text" Text = "You find yourself in the presence of a [color ef6e10]Prowess Monolith![/color] These ancient and mystical structures will allow courageous adventurers to [color ef6e10]harvest pure prowess![/color] Beware fellow adventurers who will seek to divide the spoils!" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_d02.png" />
+			<RightPane ContentType = "Text" Text = "Prowess Monoliths are activated by [color ef6e10]slaying monsters[/color] specific to each particular monolith. The progress of a monolith's activation can be [color ef6e10]monitored[/color] on the map." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_d03.png" />
+			<RightPane ContentType = "Text" Text = "Once activated, merely [color ef6e10]being under[/color] the Monolith will reward adventurers with [color ef6e10]bursts of Prowess.[/color] Prowess is [color ef6e10]split[/color] between all players within the structure walls. Bear in mind that the closer to the [color ef6e10]center[/color] you are, the larger the burst you will receive!" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_d04.png" />
+			<RightPane ContentType = "Text" Text = "Be [color ef6e10]wary[/color] however...every minute, the Monolith will [color ef6e10]violently vent[/color] it's pent up energies. None are caught in the blast will [color ef6e10]survive[/color] so make sure you [color ef6e10]exit[/color] the structure on time." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "4" InternalName = "ProximityDungeonEntrances" Title="Dungeons" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Portals" Radius="30" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_e01.png" />
+			<RightPane ContentType = "Text" Text = "The eerie looking structure closeby is, in fact, a [color ef6e10]dungeon portal.[/color] Such magical gateways around the world lead to [color ef6e10]dangerous[/color] and [color ef6e10]rewarding[/color] areas cut off from the rest of the world." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_e02.png" />
+			<RightPane ContentType = "Text" Text = "[color ef6e10]Interact[/color] with the portal to enter a dungeon. [color ef6e10]Beware[/color] however, once you have entered, more often than not, the only way to leave is to find the [color ef6e10]exit portal.[/color] That, or death." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_e03.png" />
+			<RightPane ContentType = "Text" Text = "Within the dungeon, you will have to cut a path through the dungeon lord's minions to reach them and, should you vanquish them, use the key they drop to open their [color ef6e10]chest of loot![/color] Certain death defying merchants may also be found plying their trade in these unlikely locales." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "5" InternalName = "ProximityBindstone" Title="Bindstones" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Bindstones" Radius="10" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_f01.png" />
+			<RightPane ContentType = "Text" Text = "This very distinctive structure is known as a [color ef6e10]Bindstone.[/color] Your Bindstone is the place where you can [color ef6e10]recall[/color] yourself after long travels as well as the place you shall [color ef6e10]respawn[/color] when you, inevitably, perish." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_f02.png" />
+			<RightPane ContentType = "Text" Text = "To [color ef6e10]anchor[/color] your mortal coil to a Bindstone, simply approach it and use your [color ef6e10]interact key[/color] (F by default). Bindstones within clan holdings operate differently. You need to be a member of the owning clan or have been given permission by them to bind there." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_f03.png" />
+			<RightPane ContentType = "Text" Text = "You can [color ef6e10]recall[/color] to your Bindstone at any time by clicking on the corresponding [color ef6e10]button[/color] next to your minimap. You'll need to [color ef6e10]remain still[/color] during the process or you will cancel the spell." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "6" InternalName = "ProximityVillageHouse" Title="Villages" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Player Houses" Radius="40" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_g01.png" />
+			<RightPane ContentType = "Text" Text = "You have discovered a [color ef6e10]village! Areas such as these provide adventurers with a place to [color ef6e10]build[/color] a house. Houses can only be built if you have found a [color ef6e10]deed.[/color] Once you have obtained one, simply approach an empty lot in the village and [color ef6e10]double-click[/color] the deed in your backpack to begin construction." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_g02.png" />
+			<RightPane ContentType = "Text" Text = "Once built, a house requires a routine payment of [color ef6e10]rent[/color] in order to maintain ownership. Whenever rent is due, the [color ef6e10]flag[/color] outside a house will turn [color ef6e10]red.[/color] You can also track this via the [color ef6e10]Housing GUI window.[/color] As owner, you may also add [color ef6e10]tenants [/color]who will be able to use the house to recall to as well as any facilities you have added." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_g03.png" />
+			<RightPane ContentType = "Text" Text = "Houses come in a number of shapes and sizes and serve various functions. With a [color ef6e10]door[/color] installed, they will provide relative safety from other adventurers (as long as the door remains intact that is). You can also store items once you have installed a [color ef6e10]safe.[/color]" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_g04.png" />
+			<RightPane ContentType = "Text" Text = "Apart from every homeowners pride of decoration, you may also install [color ef6e10]crafting stations[/color]  and even use your house as a second [color ef6e10]recall[/color]  point. The House Recall button is located on your minimap." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "7" InternalName = "ProximityVillageStone" Title="Village Capturing" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Village Control Point" Radius="10" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_h01.png" />
+			<RightPane ContentType = "Text" Text = "A [color ef6e10]Village Stone[/color] allows adventurers to [color ef6e10]capture[/color] the village for their clan or to extract [color ef6e10]resources[/color] from it at set intervals." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_h02.png" />
+			<RightPane ContentType = "Text" Text = "To capture a village you'll need to [color ef6e10]attack[/color] the Village Stone with Impact Damage (Siege Hammers, Cannons, and Battle Spikes for example). Note that in the case of different clans vieing for the village, the new owners are decided by the [color ef6e10]last hit[/color] to destroy the stone." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_h03.png" />
+			<RightPane ContentType = "Text" Text = "A village will produce a steady stream of resources at [color ef6e10]intervals[/color] set by the owning clan. These resources can be [color ef6e10]requisitioned[/color] by any adventurer once the Village Stone icon on your minimap shows it as full. Note that you will require a [color ef6e10]Requisitioning Gauntlet[/color] which is powered by [color ef6e10]Globules of Greed[/color] to nab the goods of a village." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "8" InternalName = "CombatIncapacitated" Title="Defeated in Combat" Category="Combat" Forced="false">
+		<Trigger Type="KILLED"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_i01.png" />
+			<RightPane ContentType = "Text" Text = "You've [color ef6e10]fallen[/color] in combat! Such is the nature of Agon. You might, however, have the good fortune of being [color ef6e10]revived[/color] by a friendly, adventurer. Should you be outside a safe zone, you might have the grim fortune of being [color ef6e10]ganked[/color] by an unfriendly adventurer. Should that happen, anything you carried with you will be left at your [color ef6e10]gravestone[/color] for anyone (including you) to loot!" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_i02.png" />
+			<RightPane ContentType = "Text" Text = "Should neither types of player be around, watch the [color ef6e10]progress bar[/color] on your screen. Once it is done you will spawn at your bindstone unless you have consumed a revive potion, in which case you will be resurrected. You may also end your suffering by pressing the [color ef6e10]spacebar[/color] once the bar has progressed past the black line. This will send you back to your [color ef6e10]bindstone[/color] but leave your items in your grave." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "9" InternalName = "CombatGanked" Title="Getting Ganked" Category="Combat" Forced="false">
+		<Trigger Type="GANKED"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_j01.png" />
+			<RightPane ContentType = "Text" Text = "It appears that someone decided to end your predicament with a note of finality. You're now back at your bindstone and your [color ef6e10]items[/color] remained in your grave. The harshness of this beautiful world may be slowly dawning on you but fret not! Re-equipping yourself for adventure and/or revenge are as easy as a visit to the bank!" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_j02.png" />
+			<RightPane ContentType = "Text" Text = "Should you wish to try your luck at retrieving your items, the [color ef6e10]gravestone icon[/color] on your map will lead the way!" />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "10" InternalName = "CombatMonsterKill" Title="Killing Monsters" Category="Combat" Forced="false">
+		<Trigger Type="KILL_MONSTER"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_k01.png" />
+			<RightPane ContentType = "Text" Text = "You have [color ef6e10]slain[/color] your first monster! Killing monsters will reward you with [color ef6e10]Prowess[/color] and progression towards any associated [color ef6e10]feats.[/color]" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_k02.png" />
+			<RightPane ContentType = "Text" Text = "There are also [color ef6e10]material rewards[/color] to be had. You may [color ef6e10]loot[/color] a monster grave by approaching and pressing the [color ef6e10]interact key[/color] (F by default) while aiming at it. Graves that contain loot are denoted by a special effect." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_k03.png" />
+			<RightPane ContentType = "Text" Text = "Additionally, you can equip a [color ef6e10]skinning knife[/color], if you have one, and click the left mouse button while aiming at the gravestone to skin your recently slain foe. Skinning provides [color ef6e10]unique materials[/color] that, in most cases, cannot be obtained by other means." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_k04.png" />
+			<RightPane ContentType = "Text" Text = "Monsters come in different [color ef6e10]ranks[/color]. The higher the rank, the more challenging the encounter. Check a monster's rank by hovering over it's spawn point on the map. Bear in mind that some monsters will only spawn under [color ef6e10]specific circumstances.[/color]" />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "11" InternalName = "CombatPlayerKill" Title="Incapacitating Players" Category="Combat" Forced="false">
+		<Trigger Type="KILL_PLAYER"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_l01.png" />
+			<RightPane ContentType = "Text" Text = "You are victorious! Your enemy is now lying on the ground helpless. You now have a few options." />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_l02.png" />
+			<RightPane ContentType = "Text" Text = "You may show [color ef6e10]mercy[/color] by approaching the player and holding your Interact key. Then, select [color ef6e10]revive[/color] from the radial menu to help him or her back on their feet. Hopefully, they will be thankful and not bare you a grudge!" />
+		</Page>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_l03.png" />
+			<RightPane ContentType = "Text" Text = "Select [color ef6e10]Gank[/color], however, if instead you wish to finish the job! You will execute your fallen foe and send their soul screaming back to their bindstone." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "12" InternalName = "CombatPlayerGank" Title="Ganking Players" Category="Combat" Forced="false">
+		<Trigger Type="GANK_PLAYER"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_m01.png" />
+			<RightPane ContentType = "Text" Text = "No Mercy! You shuffled off the mortal coils of your foes and their gravestone will be appearing any moment now. Press the Interact key while aiming at it to see what he was [color ef6e10]carrying[/color]. You can drag or double-click any items you want into your inventory." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "13" InternalName = "CombatRessurecting" Title="Reviving Players" Category="Combat" Forced="false">
+		<Trigger Type="REVIVE_OTHER"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_n01.png" />
+			<RightPane ContentType = "Text" Text = "Your mercy is without limits. You revived a fallen adventurer and now they are back on their feet. Bear in mind that their [color ef6e10]stats[/color] will be low as reviving does not replenish them fully." />
+		</Page>
+	</AdvisorEntry>
+
+	<AdvisorEntry Id = "14" InternalName = "CombatRessurected" Title="Getting Revived" Category="Combat" Forced="false">
+		<Trigger Type="REVIVE_BY_OTHER"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_o01.png" />
+			<RightPane ContentType = "Text" Text = "Someone was merciful enough to [color ef6e10]revive[/color] you. Note that your mana, health, and stamina are still [color ef6e10]low[/color] but you are otherwise unharmed." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "15" InternalName = "VariousProwessGained" Title="Gaining Prowess" Category="General" Forced="false">
+		<Trigger Type="RECEIVED_PROWESS"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_p01.png" />
+			<RightPane ContentType = "Text" Text = "You have acquired [color ef6e10]Prowess![/color] You will gather Prowess by performing a number of actions throughout Agon. The more challenging the activity, the more Prowess you will accrue. Your current Prowess is always shown at the [color ef6e10]top[/color] of your screen." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_p02.png" />
+			<RightPane ContentType = "Text" Text = "You can see how much Prowess you have gained in total, and how much is currently unspent. Spend Prowess to [color ef6e10]upgrade[/color] skills and attributes via the Skill window (U) or the Paperdoll (P) respectively." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_p03.png" />
+			<RightPane ContentType = "Text" Text = "You can also start completely fresh by purchasing a [color ef6e10]Regressor[/color] from the Selentine Shop to reset all your Prowess and [color ef6e10]redistribute[/color] it as you see fit." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "16" InternalName = "VariousAccessBank" Title="The Bank" Category="General" Forced="false">
+		<Trigger Type="ACCESS_PLAYER_BANK"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_q01.png" />
+			<RightPane ContentType = "Text" Text = "This is your [color ef6e10]bank[/color]. You can store items here to keep them [color ef6e10]safe[/color], which is recommended for any items that you do not wish to risk being looted out of your potentially inevitable grave!" />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_q02.png" />
+			<RightPane ContentType = "Text" Text = "By pressing the Interact key whilst aiming at the bank you will access your personal vault. You may also [color ef6e10]hold down[/color] the same key to reveal and select additional options such as the clan vault (assuming you are in a clan)." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_q03.png" />
+			<RightPane ContentType = "Text" Text = "You can deposit and withdraw items from your bank by [color ef6e10]dragging[/color] them to and from your backpack. Items placed in your bank are accessible from [color ef6e10]any[/color] bank in the world." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "17" InternalName = "VariousSafeZoneLeave" Title="Agon Zones" Category="General" Forced="false">
+		<Trigger Type="SAFE_ZONE_LEAVE"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_r01.png" />
+			<RightPane ContentType = "Text" Text = "You have just left the [color ef6e10]safezone[/color] for the first time. In a moment your [color ef6e10]protection[/color] will wear off and [color ef6e10]any[/color] other player may attack you. This is counted down in the [color ef6e10]icon[/color] next to your minimap. Returning to the safezone at any point will [color ef6e10]reapply[/color] your protection after a few moments." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_r02.png" />
+			<RightPane ContentType = "Text" Text = "Beyond the safe zone there are [color ef6e10]five[/color] others in Agon. Whilst moving from one to the other does not have the same impact as leaving the safe zone, the [color ef6e10]higher[/color] risk a zone is, the [color ef6e10]better[/color] the possible rewards you can find within!" />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "18" InternalName = "VariousSafeZoneEnter" Title="Returning to the Safezone" Category="General" Forced="false">
+		<Trigger Type="SAFE_ZONE_ENTER"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_s01.png" />
+			<RightPane ContentType = "Text" Text = "You have re-entered the safezone. Be aware that your protection will [color ef6e10]not[/color] return instantaneously. Keep an eye on the [color ef6e10]icon[/color] next to your minimap, once the progress bar is [color ef6e10]full[/color], the icon will turn green and you are protected against all player attacks." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "19" InternalName = "VariousSpawnMount" Title="Spawning Transport" Category="General" Forced="false">
+		<Trigger Type="SPAWN_MOUNT"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_u01.png" />
+			<RightPane ContentType = "Text" Text = "You have spawned a [color ef6e10]mount[/color]. Mounts are one of many means of transportation you can utilize around Agon. As such there are some common rules to their usage." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_u01.png" />
+			<RightPane ContentType = "Text" Text = "To take control of a mount or similar object use your [color ef6e10]interact key[/color] (F by default) on it. Despawn it by [color ef6e10]holding down[/color] the Interact key and selecting the relevant option. This will place it back in your bag. Note that [color ef6e10]unattended mounts[/color] within a safe zone will remain safe for only [color ef6e10]two minutes[/color]. After that it is first come, first ride away!" />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_u01.png" />
+			<RightPane ContentType = "Text" Text = "In the case of Ships or Catapults, you will need to approach the [color ef6e10]helm[/color] to perform all the previously described actions." />
+		</Page>
+	</AdvisorEntry>
+
+	<AdvisorEntry Id = "20" InternalName = "UIPaperdoll" Title="Paperdoll" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_PAPERDOLL"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_v01.png" />
+			<RightPane ContentType = "Text" Text = "This is your [color ef6e10]paperdoll[/color]. It allows for various interactions that have to do with your attributes and equipment." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_v02.png" />
+			<RightPane ContentType = "Text" Text = "At the top of the window you can see your [color ef6e10]current[/color] attribute levels and your protection ratings against various forms of damage. By clicking on the [color ef6e10]green arrow[/color] next to an attribute you can open the level-up window where you can [color ef6e10]increase[/color] the attribute." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_v03.png" />
+			<RightPane ContentType = "Text" Text = "The [color ef6e10]paperdoll slots[/color] allow for equipping your character with various items. You can [color ef6e10]drag[/color] armor and weapons straight to the appropriate slot from your backpack. [color ef6e10]Double clicking[/color] on items in your backpack will also automatically equip them." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_v04.png" />
+			<RightPane ContentType = "Text" Text = "You can drag weapons, consumables, and other types of equipment to your [color ef6e10]quickslots[/color] for easy access. While in action mode, [color ef6e10]scroll[/color] your middle mouse button to the desired item and simply [color ef6e10]press down[/color] on the wheel to use it. You can also [color ef6e10]bind[/color] all quickslots to a key through your options menu." />
+		</Page>
+	</AdvisorEntry>
+
+	<AdvisorEntry Id = "21" InternalName = "UIAttributeLevelUp" Title="Attribute Level Up" Category="UI" Forced="false">
+		<Trigger Type="UI_LEVELUP_ATTRIBUTE"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_w01.png" />
+			<RightPane ContentType = "Text" Text = "This window allows you to [color ef6e10]increase[/color] your attribute levels. Attributes, like skills, require [color ef6e10]Prowess[/color] to increase. The benefits for increasing an attribute are [color ef6e10]listed[/color] in the bottom middle section of this window. Prowess allocation for attributes and skills is [color ef6e10]permanent[/color] and can only be reverted by purchasing the [color ef6e10]Regressor[/color] item from the Selentine Shop." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_w02.png" />
+			<RightPane ContentType = "Text" Text = "Clicking on the green [color ef6e10]+ sign[/color]  will increase your attribute by one point and [color ef6e10]consume[/color]  the prowess displayed to the left. The transaction is only finalized once you have clicked on the [color ef6e10]tick[/color]  icon. Clicking the X icon will cancel your changes without consuming prowess." />
+		</Page>
+	</AdvisorEntry>
+
+	<AdvisorEntry Id = "22" InternalName = "UIMap" Title="Map" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_MAP"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_x01.png" />
+			<RightPane ContentType = "Text" Text = "This is your [color ef6e10]map[/color] . It allows you to see information about the world around you and keeps track of the areas you have explored by removing the [color ef6e10]fog of war[/color] . You can open and close your map at any time by pressing [color ef6e10](M)[/color]." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_x02.png" />
+			<RightPane ContentType = "Text" Text = "On the [color ef6e10]left[/color] hand side, there are various icons that allow you to reveal and hide various layers of map information. You can also [color ef6e10]center[/color] the map to your location with the second button from the top, as well as [color ef6e10]zoom [/color]it in and out with the + and - buttons, or with your mouse scroll wheel." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_x03.png" />
+			<RightPane ContentType = "Text" Text = "Agon is a big world, sometimes finding what you are looking for can be tricky. You can click the [color ef6e10]search[/color] button to reveal a text field that will aid you in your query. Entering the [color ef6e10]name[/color] of what you are looking for will be conveniently highlight it on the map." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "23" InternalName = "UIBackpack" Title="Backpack" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_BACKPACK"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_y01.png" />
+			<RightPane ContentType = "Text" Text = "Essential travel wear for every adventurer, your [color ef6e10]backpack[/color] allows you to organize all your items. Open the backpack anytime by pressing the relevant hotkey, by default [color ef6e10]B[/color]." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_y02.png" />
+			<RightPane ContentType = "Text" Text = "[color ef6e10]Bags[/color] add another level of organization within your backpack. Drag any item over a bag to place it inside. Bags can be [color ef6e10]crafted[/color] at a workstation." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_y03.png" />
+			<RightPane ContentType = "Text" Text = "[color ef6e10]Right click[/color] on any item to access the list of available options and actions associated with it. You can also [color ef6e10]stack[/color] similar items by dragging one bundle on to of another, and [color ef6e10]split stacks[/color] by right clicking on one and selecting the appropriate option." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_y04.png" />
+			<RightPane ContentType = "Text" Text = "On the bottom left of your backpack you will see the [color ef6e10]total weight[/color] of your current belongings against your total limit. Exceeding this limit will cause you to become [color ef6e10]encumbered[/color], slowing your movement speed considerably. You can also see the amount of gold you are currently carrying on you." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "24" InternalName = "UISkillsWindow" Title="Skills" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_SKILLS"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_z01.png" />
+			<RightPane ContentType = "Text" Text = "The skills window is where you can review all your skills and increase their levels. Access it at anytime by pressing the approproate hotkey ,by default [color ef6e10]U[/color]. Note that, initially, your skills are few. You can [color ef6e10]buy [/color]many more from [color ef6e10]vendors[/color] at the price of Prowess." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_z02.png" />
+			<RightPane ContentType = "Text" Text = "Skills are split into different categories. You can [color ef6e10]expand[/color] a category to view its contents by double clicking on it. To return to the parent skills menu you can click on the [color ef6e10]skills tab[/color] on the far left." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_z03.png" />
+			<RightPane ContentType = "Text" Text = "You can [color ef6e10]increase[/color] the level of a skill by clicking on the [color ef6e10]green arrow[/color] below its icon. This will open the skill level up window and allow you to spend prowess to increase your skill level." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_z04.png" />
+			<RightPane ContentType = "Text" Text = "A [color ef6e10]square[/color] icon indicates a school and a [color ef6e10]circular[/color] denotes a skill. Both can have their level increased though a school acts as a [color ef6e10]passive[/color] bonus affecting all the skills that belong to it. Each School has an [color ef6e10]Ultimate[/color] skill and there are also Common skills that do not belong in any school." />
+		</Page>
+	</AdvisorEntry>
+
+	<AdvisorEntry Id = "25" InternalName = "UISkillLevelUp" Title="Leveling up Skills" Category="UI" Forced="false">
+		<Trigger Type="UI_LEVELUP_SKILL"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_aa01.png" />
+			<RightPane ContentType = "Text" Text = "This window allows you to [color ef6e10]increase[/color] your skill levels. Skills, like attributes, require [color ef6e10]Prowess[/color] to increase. The benefits for increasing a skill are listed in the bottom middle section of this window. Prowess allocation for attributes and skills is [color ef6e10]permanent[/color] and can only be reverted by purchasing the [color ef6e10]Regressor[/color] item from the Selentine Shop." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_aa02.png" />
+			<RightPane ContentType = "Text" Text = "Clicking on the [color ef6e10]green + sign[/color] will increase your skill by one point and consume the prowess displayed to the left. The transaction is only finalized once you have clicked on the [color ef6e10]tick[/color] icon. Clicking the X icon will cancel your changes without consuming prowess." />
+		</Page>
+	</AdvisorEntry>
+
+	<AdvisorEntry Id = "26" InternalName = "UIMarket" Title="Market" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_MARKET"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ab01.png" />
+			<RightPane ContentType = "Text" Text = "This is the market. You can [color ef6e10]access[/color] this window anytime through the main menu or by Interacting with a [color ef6e10]market building[/color] in one of the four capital cities. Transactions can only be performed whilst physically [color ef6e10]next[/color] to a Market, otherwise you can only view orders." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ab02.png" />
+			<RightPane ContentType = "Text" Text = "Browse any tradable items via the [color ef6e10]catalog[/color] on the left. You can also use the [color ef6e10]search[/color] field if you know the name of what you are looking for." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ab03.png" />
+			<RightPane ContentType = "Text" Text = "The remainder of the window is split into two areas: The Buying and the Selling lists. Selling lists are, unsurprisingly, items that are [color ef6e10]currently[/color] on sale. Buying lists are items that players have placed orders to [color ef6e10]buy[/color]. If you have the required gold in your backpack you can click the [color ef6e10]Buy Now[/color] button to purchase an item you desire." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ab04.png" />
+			<RightPane ContentType = "Text" Text = "You can also [color ef6e10]place[/color] your own Sell or Buy orders. Placing a sell order simply requires the item you wish to sell in your backpack and enough gold to cover the fees. A buy order requires you to have the gold for the fees and the transaction." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ab05.png" />
+			<RightPane ContentType = "Text" Text = "Items of a successful buy order or a failed sell order, as well as any accompanying gold, are placed in a special container within your bank called the [color ef6e10]Casket of Spoils[/color]. Bear in mind that the casket only appears when an item has been placed into it by the market." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "27" InternalName = "UIFeats" Title="Feats" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_FEATS"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ac01.png" />
+			<RightPane ContentType = "Text" Text = "Feats are special [color ef6e10]tasks[/color] that reward you with Prowess or items depending on the level of difficulty. Feats are [color ef6e10]not obligatory[/color] though they do provide a significant source of Prowess throughout your adventures. " />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ac02.png" />
+			<RightPane ContentType = "Text" Text = "You can select and sift through the various Feat categories to see what they contain. [color ef6e10]CTRL[/color]  Clicking on a category will add or remove it from your selection while the [color ef6e10]search[/color]  field on the top left of the window can be used to locate a specific feat." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ac03.png" />
+			<RightPane ContentType = "Text" Text = "A displayed feat will show its state (locked, in progress, or completed) on the left and its actual progress and potential reward on the right." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ac04.png" />
+			<RightPane ContentType = "Text" Text = "[color ef6e10]Clicking[/color] on a feat will expand it and allow you to access more information relating to its completion and any hierarchical relationships it may share with other feats. You can also click in the [color ef6e10]triangle[/color] that appears on the icon of a feat to add it to the [color ef6e10]tracker[/color]." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ac05.png" />
+			<RightPane ContentType = "Text" Text = "You can also access more [color ef6e10]advanced filtering[/color] options via the icon on the top right. Doing so will offer options to filter by typing part of the name, selecting a specific tag, as well as selecting various ways to sort the results." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ac06.png" />
+			<RightPane ContentType = "Text" Text = "The [color ef6e10]summary tab[/color] provides an overview of your feats that allows you to easily track your progress in terms of feats completed, as well as prowess gained, per category." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "28" InternalName = "UISelentineStore" Title="Selentine Shop" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_SELENTINE"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ad01.png" />
+			<RightPane ContentType = "Text" Text = "This is the Selentine Shop. Here you may purchase various [color ef6e10]cosmetic items[/color] and and in-game [color ef6e10]services[/color]. Prices in the Selentine Shop are listed in Selentine Gold. This special currency can only be purchased through your [color ef6e10]account management[/color] web page." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ad02.png" />
+			<RightPane ContentType = "Text" Text = "You can visit your account management page at any time by clicking on the [color ef6e10]chest icon[/color] on the far left. [color ef6e10]Log on[/color] with your game account credentials and click on the [color ef6e10]shop button[/color]. Once the page has loaded you can scroll through the various products to locate the Selentine Gold [color ef6e10]bundle[/color] you want." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ad03.png" />
+			<RightPane ContentType = "Text" Text = "Once the selentine is added to your account, you can [color ef6e10]return[/color] to the game and purchase an item from the Selentine Shop by double clicking on it. Items purchased will be added to your [color ef6e10]backpack[/color]. Double click that item to activate or equip it depending on its function." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "29" InternalName = "UIGearGuise" Title="Gear Guise" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_GEAR_GUISE"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ae01.png" />
+			<RightPane ContentType = "Text" Text = "The Gear Guise window is where you can apply many fearsome and outstanding [color ef6e10]looks[/color] to your equipment. Gear skins alter the [color ef6e10]visual appearance[/color] of an item but do not affect its attributes. Once purchased, [color ef6e10]double click[/color] on the skin in your backpack to permanently add it to your gear guise window." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_ae02.png" />
+			<RightPane ContentType = "Text" Text = "Once you have added a skin to the Gear Guise window, simply double click it or drag it to the appropriate [color ef6e10]slot[/color], giving whatever item is there a new and unique appearance." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "30" InternalName = "UIRolesManagement" Title="Role Management" Category="UI" Forced="false">
+		<Trigger Type="UI_OPEN_ROLES"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_af01.png" />
+			<RightPane ContentType = "Text" Text = "The role management window is where you set up your various [color ef6e10]battle roles[/color]. There are many different combinations, feel free to experiment with them and find the ones that suit you best. The three [color ef6e10]tabs[/color] that change various aspects of your role can be saved in their configurations via [color ef6e10]blueprints[/color] for easy access." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_af02.png" />
+			<RightPane ContentType = "Text" Text = "The topmost tab is the overview. Here you can inspect the details of your blueprint before applying it. You can also create [color ef6e10]new[/color] blueprints by clicking on the plus sign on the top left. Select a name and icon for your blueprint and then proceed to the other tabs. Any unsaved changes are marked with an [color ef6e10]orange dot[/color]." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_af03.png" />
+			<RightPane ContentType = "Text" Text = "The second tab is where you purchase and apply [color ef6e10]augmentations[color ef6e10] to your attributes and [color ef6e10]tie[/color] them to armor or weapon types. Click on a booster tier and verify your selection to buy it. Click and [color ef6e10]highlight[/color] already purchased booster tiers to set them as active for your blueprint. You can either have a total [color ef6e10]maximum[/color] of +40 points in one attribute, or split between the four." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_af04.png" />
+			<RightPane ContentType = "Text" Text = "Select the [color ef6e10]skills[/color] you will include in our blueprint via the last tab. Open your skills window and find the ones you desire. From there, simply [color ef6e10]drag[/color] them into slots in the Roles Management tab. The skills position in the tab will correspond to its position in the [color ef6e10]hotbar[/color] once you apply your changes." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_af05.png" />
+			<RightPane ContentType = "Text" Text = "On the [color ef6e10]overview[/color] tab, you can survey your blueprint and, if pleased, hit the [color ef6e10]check[/color] on the bottom right to apply it. Be sure you are [color ef6e10]safe[/color] as the process will take 30 seconds. Once a blueprint is applied there is also a 10 minute [color ef6e10]cooldown[/color] before you can apply a different one. There are 8 School slots, 1 Ultimate slot and a total of 16 slots in each blueprint." />
+		</Page>
+	</AdvisorEntry>
+	
+	<AdvisorEntry Id = "31" InternalName = "WelcomeToDF" Title="Welcome to Darkfall" Category="General" Forced="false">
+		<Trigger Type="LOGIN"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a01.png" />
+			<RightPane ContentType = "Text" Text = "Welcome to Agon! The text you are reading as we speak, so to speak, is the [color ef6e10]Advisory System[/color]. It will provide you with information on many aspects of the beautiful but harsh world you are about to explore! Click on the [color ef6e10]next page[/color] button to proceed." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a02.png" />
+			<RightPane ContentType = "Text" Text = "Cycle through pages via the [color ef6e10]Next[/color] and [color ef6e10]Previous[/color] Page buttons and close the adviser with the [color ef6e10]x[/color] at the top left of this window. You can also disable and enable the whole system via the Main Menu." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a03.png" />
+			<RightPane ContentType = "Text" Text = "As you do explore Agon, you'll notice Advisory notification prompts when new info is available. Click the [color ef6e10]prompt[/color] to bring up the latest bit of knowledge. While its recommended that new players access the information as its presented, you're welcome to reveal all the entries the Adviser has to offer via the [color ef6e10]Show List[/color] button." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a04.png" />
+			<RightPane ContentType = "Text" Text = "Pressing [color ef6e10]ESC[/color] will toggle between the two modes of the game. In [color ef6e10]action mode[/color] you can move around and fight. In [color ef6e10]GUI mode[/color] you can access your menus, windows, and select your skills. In GUI mode, a series of icons becomes visible at the right side of your screen. Click on them to see more information." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a05.png" />
+			<RightPane ContentType = "Text" Text = "Now, your first steps! Take these using the [color ef6e10]W, A, S, D[/color] keys, hold [color ef6e10]SHIFT[/color] to sprint, [color ef6e10]SPACEBAR[/color] to jump, and [color ef6e10]C[/color] to sneakily crouch around. If you go swimming, SPACEBAR and C will make you swim up or down respectively." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a06.png" />
+			<RightPane ContentType = "Text" Text = "To fight, you need to unsheathe your weapon by pressing [color ef6e10]R[/color]. With any weapon in hand, you can press the [color ef6e10]left mouse button[/color] to execute the default attack for that weapon. As you obtain and learn yo use more skills, you will be able to add them to your combat role through the Role Management window (Default Hotkey I). You can then press the relevant hotkey and then a mouse button to execute that skill." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a07.png" />
+			<RightPane ContentType = "Text" Text = "In addition to the Advisory system, you'll find the [color ef6e10]Mentor[/color] system to be a more hands on means of training. At any time while you are below 40,000 prowess, you may click on the [color ef6e10]magnifying glass icon[/color] to request a mentor and be paired with an experienced player, thus becoming their apprentice. They will guide you and you can request help or information about the game as you see fit." />
+		</Page>
+		
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a08.png" />
+			<RightPane ContentType = "Text" Text = "You're free to explore Agon! Nearby you will find a town full of friendly [color ef6e10]vendors[/color] and, while you remain within its vicinity you'll be  relatively safe from other players. Beyond this safe zone you will find the true challenge and rewards this game has to offer. [color ef6e10]Feats[/color] can also guide you through the basic interactions of Darkfall, although they are in no way mandatory. Good hunting!" />
+		</Page>
+	</AdvisorEntry>
+	
+		<AdvisorEntry Id = "32" InternalName = "ProximityBank" Title="Bank" Category="General" Forced="false">
+		<Trigger Type="PROXIMITY" Resource = "r_Bank" Radius="6" />
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/gui/advisory/as_a09.png" />
+			<RightPane ContentType = "Text" Text = "The sturdy, vault shaped object over yonder is the [color ef6e10]bank[/color]. You can approach it and, pressing your interact key (F by default), access your [color ef6e10]personal[/color] storage space and learn more about how the bank works." />
+		</Page>
+	</AdvisorEntry>
+
+
+<!--
+
+	<AdvisorEntry Id = "24" InternalName = "EnterDummyArea" Title="Entered Dummy Area" Category="General" Forced="true">
+		<Trigger Type="SPHERES" SphereIds = "2"/>
+		<Page>
+			<LeftPane ContentType = "Image" ImagePath="texture/dds/gui/crafting_alchemy.dds" />
+			<RightPane ContentType = "Text" Text = "Page 1. This is a test you have Entered the Dummy area in the old tuotrial tile!" />
+		</Page>
+	</AdvisorEntry>
+-->
+	
+</Advisor>

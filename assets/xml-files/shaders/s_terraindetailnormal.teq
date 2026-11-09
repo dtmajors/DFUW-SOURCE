@@ -1,0 +1,53 @@
+#include "stdstate.frag"
+#include "spenebump.frag"
+
+#include "shadowmap.frag"
+
+
+struct VS_INPUT
+{
+    float4 Pos					: POSITION;
+};
+
+
+
+
+VS_SHADOWMAP_OUTPUT_NO_TEXTURE VS(VS_INPUT Input)
+{
+    VS_SHADOWMAP_OUTPUT_NO_TEXTURE Out = (VS_SHADOWMAP_OUTPUT_NO_TEXTURE)0;
+
+	SFVector3 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+	WorldPos += PLANET_LIGHTDIR_COMMON * 1.0f; //Push 1 m
+    //SFMatrix WVP = mul(WORLD_MATRIX,SHADOW_VIEW_PROJECTION_MATRIX);
+
+
+    //Out.Pos  = mul(Input.Pos, WVP);             // position (projected)
+    Out.Pos  = mul(float4(WorldPos,1.0f),SHADOW_VIEW_PROJECTION_MATRIX);             // position (projected)
+
+    Out.ScreenPos = Out.Pos;
+
+    return Out;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; //Don't write to the alpha channel
+        AlphaTestEnable = false;
+        AlphaBlendEnable = FALSE;
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+	
+		FogEnable = FALSE;
+        CullMode = CW;
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 ShadowMapPSNoTexture();
+    }
+}

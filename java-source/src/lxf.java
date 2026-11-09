@@ -1,0 +1,172 @@
+/*
+ * Decompiled with CFR.
+ */
+public class lxf
+extends lvn {
+    private static final lxf toc = new lxf();
+    @lok(value="$(Resource.NameSingular)")
+    @lol(value="Used only for display purposes")
+    public static final lox tod = toc.a("ResourceDisplayName", lxf.Bl("Resource"));
+    @lok(value="$(Resource.NamePlural)")
+    @lol(value="Used only for display purposes for plural names")
+    public static final lox toe = toc.a("ResourceDisplayNamePlural", lxf.Bl("Resource"));
+    @lok(value="$(Resource.Description)")
+    @lpl(value="This is the resource description.")
+    public static final lox tof = toc.a("ResourceDescription", lxf.Bl("Resource"));
+    @lok(value="QUANTITY")
+    @lpl(value="This is the item quantity label.")
+    public static final lox tfF = toc.BC("Quantity");
+    @lok(value="WEIGHT")
+    @lpl(value="This is the item weight label.")
+    public static final lox tog = toc.BC("Weight");
+    @lok(value="TWO HANDED")
+    @lpl(value="Two handed weapon.")
+    public static final lox toh = toc.BC("TwoHanded");
+    @lok(value="ONE HANDED")
+    @lpl(value="One handed weapon.")
+    public static final lox toi = toc.BC("OneHanded");
+    @lok(value="RANK")
+    @lpl(value="This is item's rank.")
+    public static final lox toj = toc.BC("Rank");
+    @lok(value="DAMAGE")
+    @lpl(value="Weapon's output damage per hit.")
+    public static final lox tok = toc.BC("Damage");
+    @lok(value="ATTACK SPEED")
+    @lpl(value="Weapon's attack speed.")
+    public static final lox tol = toc.BC("AttackSpeed");
+    @lok(value="CRITICAL CHANCE")
+    @lpl(value="Weapon's chance for a critical hit.")
+    public static final lox tom = toc.BC("CriticalChance");
+    @lok(value="DURABILITY")
+    @lpl(value="Weapon's durability.")
+    public static final lox ton = toc.BC("Durability");
+    @lok(value="MAX DURABILITY")
+    @lpl(value="Weapon's max durability.")
+    public static final lox too = toc.BC("MaxDurability");
+    @lok(value="BLOCK")
+    @lpl(value="Weapon's percentage damage blocking.")
+    public static final lox tae = toc.BC("Block");
+    @lok(value="MAKER")
+    @lpl(value="Item's crafter.")
+    public static final lox top = toc.BC("Maker");
+    @lok(value="DELETE")
+    @lpl(value="Delete menu item, which initiates the deletion of an item in player's backpack.")
+    public static final lox toq = toc.BC("Delete");
+    @lok(value="DELETE?")
+    @lpl(value="Delete menu item confirmation.")
+    public static final lox tor = toc.BC("DeleteConfirm");
+    @lok(value="SPLIT")
+    @lpl(value="Split menu item, which initiates the split process of an item in player's backpack")
+    public static final lox tos = toc.BC("Split");
+    @lok(value="MERGE")
+    @lpl(value="Merge menu item, which merges the similar items into one stack")
+    public static final lox tot = toc.BC("Merge");
+    @lok(value="MERGE ALL [CTRL+M]")
+    @lpl(value="Merge all menu item, which merges all stackable items into their own stack")
+    public static final lox tou = toc.BC("MergeAll");
+    @lok(value="SELECT ALL [CTRL+A]")
+    @lpl(value="Select all menu item, for selecting all items")
+    public static final lox tov = toc.BC("SelectAll");
+    @lok(value="Divide")
+    @lpl(value="divide command")
+    public static final lox tow = toc.BC("Divide");
+    @lok(value="Customize")
+    @lpl(value="customize command")
+    public static final lox tox = toc.BC("Customize");
+    @lok(value="RENAME")
+    @lpl(value="Rename menu item, which initiates the renaming process of a container item in player's backpack.")
+    public static final lox toy = toc.BC("Rename");
+    @lok(value="MARKED AREA")
+    @lpl(value="Area name where the player will spawn by using this runestone.")
+    public static final lox toz = toc.BC("RuneStoneName");
+    @lok(value="USAGE COUNT")
+    @lpl(value="How many times a player can use this runestone.")
+    public static final lox toA = toc.BC("UsageCount");
+    @lok(value="POSITION")
+    @lpl(value="Position where the player will spawn by using this runestone.")
+    public static final lox toB = toc.BC("RuneStonePosition");
+    @lok(value="REQUIREMENTS")
+    @lpl(value="Basic attribute and role requirements in order to be able to use a specific resource.")
+    public static final lox toC = toc.BC("Requirements");
+    @lok(value="SALVAGE")
+    @lpl(value="Salvage menu item, which initiates the process of salvaging resources from the item")
+    public static final lox toD = toc.BC("Salvage");
+    @lok(value="SALVAGE CONTENTS")
+    @lpl(value="Salvage menu item, which initiates the process of salvaging all salvageable items from within a container")
+    public static final lox toE = toc.BC("SalvageContents");
+    @lok(value="LIFE")
+    @lpl(value="Shows the figurine current Life")
+    public static final lox toF = toc.BC("FigurineHealth");
+    @lok(value="MAX HEALTH")
+    @lpl(value="Shows the figurine current max health")
+    public static final lox toG = toc.BC("FigurineMaxHealth");
+    @lok(value="SPEED")
+    @lpl(value="Shows the figurine current speed")
+    public static final lox toH = toc.BC("FigurineSpeed");
+    @lok(value="CARRYING WEIGHT")
+    @lpl(value="Shows the figurine carrying weight")
+    public static final lox toI = toc.BC("FigurineCarryingWeight");
+    @lok(value="RIDING LEVEL")
+    @lpl(value="Shows the figurine needed riding skill level in order to ride it")
+    public static final lox toJ = toc.BC("FigurineRidingSkillLevel");
+    @lok(value="DAMAGE")
+    @lpl(value="Shows the figurine current strength")
+    public static final lox toK = toc.BC("FigurineStrength");
+    @lok(value="DURATION")
+    @lpl(value="Shows the nurisment duration")
+    public static final lox toL = toc.BC("Duration");
+    @lok(value="BUFFS")
+    @lpl(value="Shows the buffs headline.")
+    public static final lox toM = toc.BC("Buffs");
+    @lok(value="$(Position)")
+    @lol(value="Used only for display purposes")
+    public static final lox toN = toc.a("HousePosition", lxf.Br("Position"));
+    @lok(value="LOCATION")
+    @lpl(value="Used on the fake deed item to display the location tag.")
+    public static final lox toO = toc.BC("HouseLocationTag");
+    @lok(value="UPGRADES")
+    @lpl(value="Used on the fake deed item to display the upgrades tag.")
+    public static final lox toP = toc.BC("HouseUpgrades");
+    @lok(value="AVAILABLE AT")
+    @lpl(value="Used on the fake deed item to display the available at tag.")
+    public static final lox toQ = toc.BC("HouseAvailableAt");
+    @lok(value="$(TimeBeforeHouseIsFree)")
+    @lol(value="Only for display purposes")
+    public static final lox toR = toc.a("HouseAvailableAtTime", lxf.Bi("TimeBeforeHouseIsFree"));
+    @lok(value="Set as primary dye")
+    @lpl(value="Context menu option to set a dye as the primary.")
+    public static final lox toS = toc.BC("SetAsPrimaryDye");
+    @lok(value="Set as secondary dye")
+    @lpl(value="Context menu option to set a dye as the secondary.")
+    public static final lox toT = toc.BC("SetAsSecondaryDye");
+    @lok(value="Apply Dyes")
+    @lpl(value="Context menu option to apply a dye.")
+    public static final lox toU = toc.BC("ApplyDyes");
+    @lok(value="Remove Dyes")
+    @lpl(value="Context menu option to remove a dye.")
+    public static final lox toV = toc.BC("RemoveDyes");
+    @lok(value="Dyes")
+    @lpl(value="Title for the dyes window.")
+    public static final lox toW = toc.BC("Dyes");
+    @lok(value="Primary Dye")
+    @lpl(value="Text Displayed for dyes in the item tooltip window.")
+    public static final lox toX = toc.BC("PrimaryDye");
+    @lok(value="Secondary Dye")
+    @lpl(value="Text Displayed for dyes in the item tooltip window.")
+    public static final lox toY = toc.BC("SecondaryDye");
+    @lok(value="Sample")
+    @lpl(value="Text Displayed for dyes in the item tooltip window.")
+    public static final lox toZ = toc.BC("Sample");
+    @lok(value="Turnover")
+    @lpl(value="Tool's Turnover = a tools efficiency")
+    public static final lox tpa = toc.BC("Turnover");
+
+    protected lxf(String string) {
+        super("Items." + string);
+    }
+
+    private lxf() {
+        super("Items");
+    }
+}
+

@@ -1,0 +1,152 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_repair tools" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="waw_repair_tools_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="shaderalphaglowmetal.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="waw_special_weapons_01.bmp" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.1355219930" Y="-.471964777" Z="-.1842861772" />
+</Min>
+<Max>
+<SFVector3 X=".2609215081" Y=".471965484" Z=".5095516443" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".394766629" Y=".3708630" Z=".4072917700" />
+</Center>
+<Radius>
+<SFFloat Value=".5949987769" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.1355219930" Y="-.471964777" Z="-.1842861772" />
+</Min>
+<Max>
+<SFVector3 X=".2609215081" Y=".471965484" Z=".5095516443" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".394766629" Y=".3708630" Z=".4072917700" />
+</Center>
+<Radius>
+<SFFloat Value=".5949987769" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="static" />
+<WaterTransition>
+<Submerged Value="0.47599902152" />
+<Surface Value="0.23799951076" />
+<Touching Value="-0.35699926614" />
+<Floating Value="0.35699926614" />
+</WaterTransition>
+</PhysicsInformation>
+<VersionInformation Major="1" Minor="0" />
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.1355219930" Y="-.471964777" Z="-.1842861772" />
+</Min>
+<Max>
+<SFVector3 X=".2609215081" Y=".471965484" Z=".5095516443" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".394766629" Y=".3708630" Z=".4072917700" />
+</Center>
+<Radius>
+<SFFloat Value=".5949987769" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+</SFObject>

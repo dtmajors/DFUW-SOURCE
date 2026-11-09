@@ -1,0 +1,159 @@
+//Spherical Light Shader
+
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "instancing.frag"
+
+
+
+float4x4 LightMatrix: LightMatrix;
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_CUSTOM;
+
+
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+};
+
+float4 PS() : COLOR
+{
+	return 0.0f;
+}
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : NORMAL;
+	//Instance Data
+	float4 LM1  : TEXCOORD0;
+	float4 LM2  : TEXCOORD1;
+	float4 LM3  : TEXCOORD2;
+	float4 LM4  : TEXCOORD3;
+	float3 LightPos : TEXCOORD4;
+};
+
+
+VS_OUTPUT SplatterLight(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+	
+	SFMatrix LightMatrix;
+	LightMatrix[0]	= Input.LM1;
+	LightMatrix[1]	= Input.LM2;
+	LightMatrix[2]	= Input.LM3;
+	LightMatrix[3]	= Input.LM4;
+	float3 LightPosition = Input.LightPos;
+
+	float3 Normal = Input.Norm;
+	float3 CPos = SFMatrixDecomposeTranslation(VIEW_MATRIX);
+	
+    float3 NewPos = mul(Input.Pos,LightMatrix);
+    
+    float3 Dir = normalize(CPos - NewPos);
+    
+    //Dot with norm and don't do anything with shit not facing the camera
+    if (dot(Dir,Normal) < 0)
+    {
+    	Out.Pos = mul(float4(LightPosition,1),VIEW_PROJECTION_MATRIX);    	
+    }
+    else
+    {
+    	Out.Pos = mul(float4(NewPos,1),VIEW_PROJECTION_MATRIX);
+    }
+    
+
+    return Out;
+}
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    	//Texture[0] = NULL;
+        CullMode = CCW;
+        FogEnable = FALSE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+
+        //Disable writing to colorbuffer
+        ColorWriteEnable = 0;
+        
+        // Disable writing to depth buffer
+        ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+        // Setup stencil states
+
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        StencilPass = Keep;
+
+        PixelShader = compile ps_3_0 PS();
+        VertexShader = compile vs_3_0 SplatterLight();
+    }
+    pass P1
+    {
+		STD_STATE;
+        CullMode = CW;
+        StencilZFail = Incr;
+        PixelShader = compile ps_3_0 PS();
+        VertexShader = compile vs_3_0 SplatterLight();
+    }
+}
+
+
+technique T1
+{
+    pass P0
+    {
+		STD_STATE;
+    	//Texture[0] = NULL;
+        CullMode = None;
+        FogEnable = FALSE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        ColorWriteEnable = 0;
+        
+        //Disable writing to colorbuffer
+        //SrcBlend = Zero;
+        //DestBlend = One;
+        
+        // Disable writing to depth buffer
+        ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+        // Setup stencil states
+        TwoSidedStencilMode = true;
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        Ccw_StencilFunc = Always;
+        Ccw_StencilZFail = Incr;
+        Ccw_StencilPass = Keep;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        StencilPass = Keep;
+
+        PixelShader = compile ps_3_0 PS();
+        VertexShader = compile vs_3_0 SplatterLight();
+
+    }
+    
+    
+    
+}
+
+
+

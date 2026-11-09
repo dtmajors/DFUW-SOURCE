@@ -1,0 +1,118 @@
+// Note: Frequently used shader
+//Default Shader instancing
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+#include "offscreenfx.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+
+STD_VS_INSTANCE_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE(Input);
+	Output.Misc = Output.Pos;
+	
+	return Output;
+}
+
+STD_PS_OUTPUT_3 PS(STD_VS_INSTANCE_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+	
+	float3 Nn = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldEyeVec);
+	
+	float SpecularContrib = 0.6f;
+	float SpecularExponent = 40.0f;
+	
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, SpecularExponent, STANDARD_PROP_DIFFUSE_WRAP, SpecularContrib);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+	/*
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, SpecularExponent, 
+			STANDARD_PROP_DIFFUSE_WRAP, SpecularContrib, Vn, LightParams[i]);
+	}
+#endif
+	*/
+
+	float SpecularSuppress = 1.0f - smoothstep(0.95f, 1.0f, SurfaceColor.w);
+	Sunlight *= SpecularSuppress;
+	DynamicLight *= SpecularSuppress;
+	
+	float TotalSpecular = Sunlight.w + DynamicLight.w;
+	
+	SurfaceColor.w += TotalSpecular * 0.5f;
+	
+	// this is supposed to be glass
+	DynamicLight.xyz *= 0.1;
+	Sunlight.xyz *= 0.1;
+
+	Output.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight);
+	Output.Color.w = SurfaceColor.w;
+	//Output.Effect = 0.0f;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, 0.1 * STANDARD_PROP_SPECULAR_CONTRIBUTION * SurfaceColor.y);
+#endif
+
+	float freshnel = 1.0f - dot(normalize(EyePos - Input.WorldPos), Nn);
+	freshnel = saturate(pow(freshnel, 4) - 0.1f);
+	
+	Output.Color.w = saturate(Output.Color.w + freshnel);
+	
+		// OffscreenFX
+	Output.Color = ProcessOffscreenFXColor(Output.Color, Input.Misc);
+
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+    
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+		SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = false;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

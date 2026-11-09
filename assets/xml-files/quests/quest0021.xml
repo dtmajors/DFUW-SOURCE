@@ -1,0 +1,136 @@
+<quest quest_id="21" category="side_quest" tag="On Orkish Tradition" published="False" valid="False">
+	<title>On Orkish Tradition</title>
+	<description>The headstone of a chipped and broken gravestone hidden inside a volcano cave reads, &quot;The Omitted One.&quot; There is surely a tale here worthy of a little investigation!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="object_interaction" id="0" value="1" tag="Interact with Sarcophagus." resource_name="" />
+			</conditions>
+		</node>
+		<node type="event_branch" id="1" tag="Search the Undead" optional_tasks="True">
+			<instruction>Search the undead within the cave for clues as to the &quot;omitted&quot; occupant of the sarcophagus.</instruction>
+			<journal_entry>As the brittle boned occupants of the cave crumble to dust, one after the other, something takes notice of your actions. An ethereal sigh, like the breeze flowing among ancient, long forgetten crypts, gives voice to the swirling dust around you.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="0" value="1" tag="Kill Skellies" resource_name="r_Skeletons" quantity="10">
+					<task_instruction>Slay undead within the cave.</task_instruction>
+				</task>
+				<task type="kill_object" id="1" value="2" tag="Optional: Kill the Knight" resource_name="r_Bone Knight" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="">
+			<journal_entry>Closer inspection reveals that &quot;The Omitted One&quot; is indeed omitted from his or her resting place! The shuffling footsteps of the restless undead within the chamber hint that the occupants may have unresolved issues! Perhaps they will hold clues as to the former occupent of this hidden crypt.</journal_entry>
+		</node>
+		<node type="event_simple" id="3" tag="">
+			<journal_entry>&quot;Yooouu sssseeek to wipe the dussst of the agesss...to gleeaaan the ssstory of honour losssst.  Thhhhirty did the dirty deeed... thhhhirty mussst be cleansssed...&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="4" tag="Bone Knight">
+			<journal_entry>The Bone Knight crumples before you.  It seemed almost that the bones were filled with lead, eager to fall to the ground with heaviness.  With a sigh of relief, the voice spoke one final time.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="7" value="1" tag="Kill the Bone Knight" resource_name="r_Bone Knight" quantity="1">
+					<task_instruction>Defeat the Bone Knight</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_branch" id="5" tag="More Skellies" optional_tasks="True">
+			<instruction>Slay a total of thirty skeletons within the cavern to summon forth the Omitted One.</instruction>
+			<journal_entry>The Voice issues once more from the shadows. &quot;I come...&quot;</journal_entry>
+			<tasks>
+				<task type="kill_object" id="2" value="1" tag="More Skellies" resource_name="r_Skeletons" quantity="20">
+					<task_instruction>Slay at least 20 more skeletons</task_instruction>
+				</task>
+				<task type="kill_object" id="3" value="2" tag="Optional Kill Bone Knight" resource_name="r_Bone Knight" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="6" tag="Defeated the Bonee Knight">
+			<journal_entry>&quot;I fall.. and shed my dishonor.  Tis like a rusty suit of armor, heavy with the rot of time, and you have broken the strap! Ancient my betrayal, my honor sacrificed for a house with none.  Go, tell them my tale that history be remembered with my name intact once more.&quot;</journal_entry>
+		</node>
+		<node type="event_branch" id="12" tag="Defeated the Bonee Knight" optional_tasks="True">
+			<instruction>Decide which of the three Orkish factions should know the truth of the tale and deliver the tale to them.</instruction>
+			<journal_entry>And thus was the legend omitted from Orkish history, as the final punishment for crimes percieved. Yet now you knew the truth of it, and it was left to you to decide what to do. Should you tell the tale to the Iron Fist, they would act in accordance to the law. The Shamen of the Burning Path would act as faith dictated and the Slaughterhouse Boyz, Keelrota&apos;s own clan would act according to blood.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="8" value="1" tag="Interact with Burning Path Vendor" vendor_id="v13_quest_ork_shaman" />
+				<task type="interact_with_vendor" id="9" value="2" tag="Ineract with Iron FIst Vendor" vendor_id="u14_firun_councillor" />
+				<task type="interact_with_vendor" id="10" value="3" tag="Interact with Slaughterhouse Vendor" vendor_id="t13_okrim_councillor" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="Burning Path">
+			<journal_entry>The Shaman listened in silence, the glow of the distant volcano glinting in his eyes. As you finish the tale, he shook his head and said in a grim voice, &quot;such tales must not be hidden.  Through our past misdeeds, no matter how vile they paint us, do we learn to strive forward.  How can we conquer others if we cannot conquer ourselves! Her tale shall be remembered, and taught.  You have done well, you have my thanks.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="Iron Fist">
+			<journal_entry>The Iron Fist listened in stony silence as you wove your tail, his features turning ever more grim as it progressed. He did not seem pleased and, after treating you to several long moments of his hardest glare, said, &quot;Tis a fine tale, tragedy and honour all a-weavin and twistin&apos; together and what not.  Tell it over a mug of ale if you like but not to me.  What would ye have me do? Change the laws every time some tortured spirit pokes it&apos;s brain-rotten skull out of the past to complain? The past&apos;s the past..what mistakes were made must remain there if we&apos;re to move forward. Tell ye what.. take this payment for yer troubles and do me a favor.. keep yer dwarf-stunk mouth shut about it!&quot;</journal_entry>
+		</node>
+		<node type="end_node" id="10" tag="" />
+		<node type="event_simple" id="11" tag="Slaughterhouse">
+			<journal_entry>As you wove your tale, the Ork before you grew ever more agitated. Tears glistened in his eyes even before you reached the tragic end. &quot;We have always known, deep down, the depth of our ancestors crime, whether it be one of passion or no. There is no forgiveness for it, and doubly so knowing that Keelrota did suffer even after her death to walk the path of undeath! I thank ye even so friend. Yer tale will be spread as far as I can spread it, that Keelrota&apos;s memory be rectified, and our mistakes be forgiven.&quot;</journal_entry>
+		</node>
+		<node type="event_merge" id="13" tag="reward?" reward_type="RewardsHiddenUntilChosen">
+			<journal_entry>And thus, for better or for ill, you did your part and put the tale of Keelrota the Backbreaker to rest. The reward in your pack was weighty enough, but perhaps your heart was a little lighter for it.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="0" tag="reward?" resource_name="r_Greatsword_p03_r04" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<journal_entry>The voice spoke on, weaving in it&apos;s eerie tones the tale of Keelrota the Backbreaker, hidden and buried in false shame within this cave, omitted from the legends of the Orks as the ultimate mark of dishonor.</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>It was a time of upheaval and change for the Orkish peoples. The worship of the great fire dragon was discovered to be false, a weakness. A tribe of Shaman arose, teaching that Orks should worship only themselves, to strive to be as the volcano that gave them fiery shelter; a seething river of molten fire housed within a granite mountain! Keelrota was one of the greatest Orkish warriors of this time.  Again and again she led orks to victory for her clan, forsaking all bonds to the false dragon and shining as a true paragon of Orkish strength and honour.</journal_entry>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>It was at the height of her reknown that she was cast to the depths of dishonour, betrayed by those who adored her most. Keelrota, the take said, discovered a hidden lair of dragon disciples.  A last bastion to those who saught to repress the orkish peoples hidden within their own volcano. Even as she crept inside the hidden commune, Keelrota saw that her discovery came too late. The disciples had begun a ritual that would cause the volcano to erupt, no doubt to show the &apos;dragons&apos; displeasure at her minion&apos;s new, free thinking, ways.</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>Keelrota launched herself towards the cultists, trying to interrupt the ritual with a whirling steel circle of death. Dozens of cultists fell even as their own daggers cut at her, but they may as well have been chipping at a tempest, such was her rage and resolve. Yet her nostrils flared, the scent of burning blood filling the cavern; the magic had begun to work.  Keelrota watched the air around the still smoking corpse of what must have been the sacrificial victim begin to sizzle and burn. Desperate, seeking to stay the eruption for as long as she could until help came, Keelrota entered the burning aura, using her own flesh and will to hold back the dire magics that shook the mountain around her.</journal_entry>
+		</node>
+		<node type="event_simple" id="18" tag="">
+			<journal_entry>In a vengeful rage, the head disciple grabbed a burning brand and burned the image of the dragon onto Keelrota&apos;s chest. Voiceless, held in the grip of the earth-shaking magics around her, she screamed her defiance. It was at that moment that her clan and the militia burst into the cavern, seeking to bring aid.</journal_entry>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>Yet, even in their imminent death, even as the blades struck home, the disciples treachery knew no bounds.  Even as they died, they named Keelrota as their patron, their lord and leader. The smoking corspes of sacrificed orks littered the cavern floor and the smoking brand blazed on Keelrota&apos;s chest. Where loyalty and disbelief should have stayed their hand, rage and pain drove their blades. Keelrota watched with sad, silenced eyes as her most trusted turned their blades towards her.</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="1" to="3" value="1" />
+		<edge id="1" from="1" to="6" value="2" />
+		<edge id="2" from="2" to="1" value="0" />
+		<edge id="3" from="3" to="5" value="0" />
+		<edge id="5" from="5" to="6" value="2" />
+		<edge id="6" from="5" to="4" value="1" />
+		<edge id="7" from="4" to="6" value="1" />
+		<edge id="15" from="12" to="11" value="3" />
+		<edge id="14" from="12" to="9" value="2" />
+		<edge id="13" from="12" to="8" value="1" />
+		<edge id="22" from="6" to="14" value="0" />
+		<edge id="17" from="8" to="13" value="0" />
+		<edge id="18" from="9" to="13" value="0" />
+		<edge id="19" from="11" to="13" value="0" />
+		<edge id="20" from="13" to="10" value="0" />
+		<edge id="21" from="0" to="2" value="1" />
+		<edge id="23" from="14" to="15" value="0" />
+		<edge id="24" from="15" to="16" value="0" />
+		<edge id="25" from="16" to="17" value="0" />
+		<edge id="26" from="17" to="18" value="0" />
+		<edge id="27" from="18" to="19" value="0" />
+		<edge id="28" from="19" to="12" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="30" y="30" />
+		<node_location id="1" x="30" y="164" />
+		<node_location id="2" x="30" y="97" />
+		<node_location id="3" x="132" y="38" />
+		<node_location id="4" x="296" y="95" />
+		<node_location id="5" x="221" y="35" />
+		<node_location id="6" x="221" y="162" />
+		<node_location id="12" x="830" y="281" />
+		<node_location id="8" x="839" y="399" />
+		<node_location id="9" x="681" y="333" />
+		<node_location id="10" x="309" y="406" />
+		<node_location id="11" x="449" y="276" />
+		<node_location id="13" x="451" y="401" />
+		<node_location id="14" x="415" y="160" />
+		<node_location id="15" x="569" y="162" />
+		<node_location id="16" x="686" y="158" />
+		<node_location id="17" x="779" y="159" />
+		<node_location id="18" x="919" y="157" />
+		<node_location id="19" x="928" y="272" />
+	</node_locations>
+</quest>

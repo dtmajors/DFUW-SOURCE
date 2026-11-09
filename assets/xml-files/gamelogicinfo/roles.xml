@@ -1,0 +1,416 @@
+<Roles>
+	<!--______________________________________-->
+	<!--               Timers                 -->
+	<!--______________________________________-->
+	<Cooldown           Value = "1" /><!-- Seconds -->
+	<Delay              Value = "20"  /><!-- Seconds -->
+	<CombatTimer        Value = "20"  /> <!-- Seconds -->
+	<CustomRolesEnabled Value = "true"/>
+	<NumberOfRoleSkills Value = "10"/>
+	<NumberOfSkills     Value = "20"/>
+	<NumberOfUltis      Value = "1"/>
+	
+	<!--______________________________________-->
+	<!--           Roles Skills              -->
+	<!--______________________________________-->
+	<Skills>
+		<Skill Value="s_Battle Brand_Skills" Disclude="s_Slayer_Skills" Ulti="s_Stoic Defense" Role="0" Active="true"/>
+		<Skill Value="s_Baresark_Skills"     Disclude="s_Champion_Skills" Ulti="s_Pulverize" Role="0" Active="true"/>
+		<Skill Value="s_Slayer_Skills"       Disclude="s_Battle Brand_Skills" Ulti="s_Barrage" Role="0" Active="true"/>
+		<Skill Value="s_Champion_Skills"     Disclude="s_Baresark_Skills" Ulti="" Role="0" Active="false"/>
+
+		<Skill Value="s_Brawler_Skills"      Disclude="s_Blackguard_Skills" Ulti="s_Heightened Reflexes" Role="1" Active="true"/>
+		<Skill Value="s_Deadeye_Skills"      Disclude="s_Duelist_Skills" Ulti="s_Salvo" Role="1" Active="true"/>		
+		<Skill Value="s_Duelist_Skills"      Disclude="s_Deadeye_Skills" Ulti="s_Uncanny Focus" Role="1" Active="true"/>
+		<Skill Value="s_Blackguard_Skills"   Disclude="s_Brawler_Skills" Ulti="" Role="1" Active="false"/>
+
+		<Skill Value="s_Fire_Spells"         Disclude="s_Water_Spells" Ulti="s_Heat Stroke" Role="2" Active="true"/>
+		<Skill Value="s_Air_Spells"          Disclude="s_Earth_Spells" Ulti="s_Static Field" Role="2" Active="true"/>
+		<Skill Value="s_Water_Spells"        Disclude="s_Fire_Spells" Ulti="s_Blizzard" Role="2" Active="true"/>
+		<Skill Value="s_Earth_Spells"        Disclude="s_Air_Spells" Ulti="s_Toxic Rain" Role="2" Active="true"/>
+
+		<Skill Value = 's_Life_Spells'       Disclude = 's_Pain_Spells'         Ulti = 's_Spirit Bond'               Role = '3' Active = 'true'/>
+		<Skill Value = 's_Law_Spells'        Disclude = 's_Chaos_Spells'        Ulti = 's_Wall Of Righteous Force'   Role = '3' Active = 'true'/>
+		<Skill Value = 's_Chaos_Spells'      Disclude = 's_Law_Spells'          Ulti = 's_Pall of Pandemonium'       Role = '3' Active = 'true'/>	
+		<Skill Value = 's_Pain_Spells'       Disclude = 's_Life_Spells'         Ulti = 's_Impale'                    Role = '3' Active = 'true'/>
+
+	</Skills>
+
+	<!--______________________________________-->
+	<!--                 Roles                -->
+	<!--______________________________________-->
+	<Role Index="0" Name="Warrior" DisplayName="Warrior" ArmorType="Heavy" ArmorParentResource="r_Armor Dread Plate" Description="The Warrior role is that of the heavy-armored combatant. Wading into battle protected by the strongest armors, and wielding the mightiest of weapons, warriors will be in the front line, shrugging off huge amounts of damage to pummel their foes head on (or on head as it were). Warriors depend mainly on stamina to fuel their devastating attacks." Active="true">
+		<BlockingList>
+			<Role Value = "1"/>
+			<Role Value = "2"/>
+			<Role Value = "3"/>
+		</BlockingList>
+		<Specializations>
+			<Specialization Index="0" Name="Battle BrandChampion" DisplayName="Battle BrandChampion" Primary="s_Battle Brand_Skills" Secondary="s_Champion_Skills"/>
+			<Specialization Index="1" Name="ChampionBattle Brand" DisplayName="ChampionBattle Brand" Primary="s_Champion_Skills"     Secondary="s_Battle Brand_Skills"/>
+			<Specialization Index="2" Name="ChampionSlayer"       DisplayName="ChampionSlayer"       Primary="s_Champion_Skills"     Secondary="s_Slayer_Skills"/>
+			<Specialization Index="3" Name="SlayerChampion"       DisplayName="SlayerChampion"       Primary="s_Slayer_Skills"       Secondary="s_Champion_Skills"/>
+			<Specialization Index="4" Name="Battle BrandBaresark" DisplayName="Battle BrandBaresark" Primary="s_Battle Brand_Skills" Secondary="s_Baresark_Skills"/>
+			<Specialization Index="5" Name="BaresarkBattle Brand" DisplayName="BaresarkBattle Brand" Primary="s_Baresark_Skills"     Secondary="s_Battle Brand_Skills"/>
+			<Specialization Index="6" Name="BaresarkSlayer"       DisplayName="BaresarkSlayer"       Primary="s_Baresark_Skills"     Secondary="s_Slayer_Skills"/>
+			<Specialization Index="7" Name="SlayerBaresark"       DisplayName="SlayerBaresark"       Primary="s_Slayer_Skills"       Secondary="s_Baresark_Skills"/>
+		</Specializations>
+		
+		<WobbleConfigurations>
+			<WobbleConfiguration WeaponTypes="BOW"> 
+				<RadiusVelocityMultiplier 	Value = "18.7"	/>
+				<RadiusVelocityExponent 	Value = "1.1"	/>
+				<CursorSpeed				Value = "3.0"	/>
+				<CursorChasePerSecond 		Value = "0.95"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+			<WobbleConfiguration WeaponTypes="MAGIC_STAFF"> 
+				<RadiusVelocityMultiplier 	Value = "5.5"	/>
+				<RadiusVelocityExponent 	Value = "1.5"	/>
+				<CursorSpeed				Value = "2.0"	/>
+				<CursorChasePerSecond 		Value = "0.95"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+			<WobbleConfiguration WeaponTypes="THROWABLE_WEAPON"> 
+				<RadiusVelocityMultiplier 	Value = "18.7"	/>
+				<RadiusVelocityExponent 	Value = "1.1"	/>
+				<CursorSpeed				Value = "2.5"	/>
+				<CursorChasePerSecond 		Value = "0.9"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+		</WobbleConfigurations>
+		
+		<!--Scale is for the graphic, Do Not Touch-->
+		<!--Size is for the random deviation and is measured in Radians-->
+		<TargetingDeviations>
+			<TargetingDeviation WeaponTypes="BOW" Time="0.3"><!--0.4-->
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.005"/><!--0.004-->
+				<LargeSize Value="0.010"/><!--0.008-->
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.0"/> 
+				<PerfectAimTime Value = "0.9"/> 
+			</TargetingDeviation>
+			<!--Smaller Deviation as Spells are slower casted in general-->
+			<!--In compensation, it takes 1 decasecond mosre for reticle to rest-->
+			<TargetingDeviation WeaponTypes="MAGIC_STAFF" Time="0.3"><!--0.4-->
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.002"/><!--0.004-->
+				<LargeSize Value="0.004"/><!--0.008-->
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.5"/> 
+				<PerfectAimTime Value = "0.9"/> 
+			</TargetingDeviation>
+			<!--This has the biggest deviation as in RL grenades are inacurate-->
+			<!--Also this skill is the same for everyone-->
+			<TargetingDeviation WeaponTypes="THROWABLE_WEAPON" Time="0.4">
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.004"/>
+				<LargeSize Value="0.008"/>
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.5"/> 
+				<PerfectAimTime Value = "0.9"/> 
+			</TargetingDeviation>
+		</TargetingDeviations>
+
+		<Pools>
+			<Pool Value="Stamina" Percentage="92.0"/>
+			<Pool Value="Mana" Percentage="84.0"/>
+		</Pools>
+	</Role>
+
+	<Role Index="1" Name="Skirmisher" DisplayName="Skirmisher" ArmorType="Medium" ArmorParentResource="r_Armor Intricate Leather" Description="The Skirmisher fights with brains rather than brawn. His prowess comes from cunning attacks, lethal strategy and stealthy ambushes. Skirmisher's wear medium armors to best utilize the protection coupled with the agility they allow in battle. Stamina is the main source of a Skirmisher's skills and attacks." Active="true">
+		<BlockingList>
+			<Role Value="0"/>
+			<Role Value="2"/>
+			<Role Value ='3'/>
+		</BlockingList>
+		<Specializations>
+
+			<Specialization Index="0" Name="DeadeyeBrawler" DisplayName="DeadeyeBrawler" Primary="s_Deadeye_Skills" Secondary="s_Brawler_Skills"/>
+			<Specialization Index="1" Name="BrawlerDeadeye" DisplayName="BrawlerDeadeye" Primary="s_Brawler_Skills" Secondary="s_Deadeye_Skills"/>
+			<Specialization Index="2" Name="DuelistBlackguard" DisplayName="DuelistBlackguard" Primary="s_Duelist_Skills" Secondary="s_Blackguard_Skills"/>
+			<Specialization Index="3" Name="BlackguardDuelist" DisplayName="BlackguardDuelist" Primary="s_Blackguard_Skills" Secondary="s_Duelist_Skills"/>
+			<Specialization Index="4" Name="DeadeyeBlackguard" DisplayName="DeadeyeBlackguard" Primary="s_Deadeye_Skills" Secondary="s_Blackguard_Skills"/>
+			<Specialization Index="5" Name="BlackguardDeadeye" DisplayName="BlackguardDeadeye" Primary="s_Blackguard_Skills" Secondary="s_Deadeye_Skills"/>
+			<Specialization Index="6" Name="DuelistBrawler" DisplayName="DuelistBrawler" Primary="s_Duelist_Skills" Secondary="s_Brawler_Skills"/>
+			<Specialization Index="7" Name="BrawlerDuelist" DisplayName="BrawlerDuelist" Primary="s_Brawler_Skills" Secondary="s_Duelist_Skills"/>
+		</Specializations>
+
+		<WobbleConfigurations>
+			<WobbleConfiguration WeaponTypes="BOW"> 
+				<RadiusVelocityMultiplier 	Value = "15.5"	/>
+				<RadiusVelocityExponent 	Value = "1.0"	/>
+				<CursorSpeed				Value = "2.5"	/>
+				<CursorChasePerSecond 		Value = "0.85"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "7.0"	/>
+			</WobbleConfiguration> 
+			<WobbleConfiguration WeaponTypes="MAGIC_STAFF"> 
+				<RadiusVelocityMultiplier 	Value = "5.5"	/>
+				<RadiusVelocityExponent 	Value = "1.5"	/>
+				<CursorSpeed				Value = "2.0"	/>
+				<CursorChasePerSecond 		Value = "0.95"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration>
+			<WobbleConfiguration WeaponTypes="THROWABLE_WEAPON"> 
+				<RadiusVelocityMultiplier 	Value = "18.7"	/>
+				<RadiusVelocityExponent 	Value = "1.1"	/>
+				<CursorSpeed				Value = "2.5"	/>
+				<CursorChasePerSecond 		Value = "0.9"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+		</WobbleConfigurations>
+
+		<!--Scale is for the graphic, Do Not Touch-->
+		<!--Size is for the random deviation and is measured in Radians-->
+		<TargetingDeviations>
+			<TargetingDeviation WeaponTypes="BOW" Time="0.2"><!--0.4-->
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.003"/><!--0.004-->
+				<LargeSize Value="0.006"/><!--0.008-->
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.0"/> 
+				<PerfectAimTime Value="0.25"/>
+			</TargetingDeviation>
+			<!--Smaller Deviation as Spells are slower casted in general-->
+			<!--In compensation, it takes 1 decasecond mosre for reticle to rest-->
+			<TargetingDeviation WeaponTypes="MAGIC_STAFF" Time="0.3"><!--0.4-->
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.002"/><!--0.004-->
+				<LargeSize Value="0.004"/><!--0.008-->
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.5"/> 
+				<PerfectAimTime Value = "0.9"/> 
+			</TargetingDeviation>
+			<!--This has the biggest deviation as in RL grenades are inacurate-->
+			<!--Also this skill is the same for everyone-->
+			<TargetingDeviation WeaponTypes="THROWABLE_WEAPON" Time="0.4">
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.004"/>
+				<LargeSize Value="0.008"/>
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.5"/> 
+				<PerfectAimTime Value="0.9"/> 
+			</TargetingDeviation>
+		</TargetingDeviations>
+		<Pools>
+			<Pool Value="Health" Percentage="92.0"/>
+			<Pool Value="Mana" Percentage="84.0"/>
+		</Pools>
+	</Role>
+
+	<Role Index="2" Name="Elementalist" DisplayName="Elementalist" ArmorType="Light_M" ArmorParentResource="r_Robes_M Extravagant" Description="Few mortals command the mental discipline and intelligence needed to harness the arcane energies that shape the world around them. This is the role of an Elementalist. Able to invoke devastating magical energies drawn from the elements themselves, they make for formidable foes and powerful allies. An Elementalist fuels his magic by tapping into his mana reserves and he can only wear the lightest armors to weave the spells he casts." Active="true">
+		<BlockingList>
+			<Role Value="1"/>
+			<Role Value="0"/>
+			<Role Value ='3'/>
+		</BlockingList>
+		<Specializations>
+			<Specialization Index="0" Name="FireEarth" DisplayName="FireEarth" Primary="s_Fire_Spells" Secondary="s_Earth_Spells"/>
+			<Specialization Index="1" Name="EarthFire" DisplayName="EarthFire" Primary="s_Earth_Spells" Secondary="s_Fire_Spells"/>
+			<Specialization Index="2" Name="WaterEarth" DisplayName="WaterEarth" Primary="s_Water_Spells" Secondary="s_Earth_Spells"/>
+			<Specialization Index="3" Name="EarthWater" DisplayName="EarthWater" Primary="s_Earth_Spells" Secondary="s_Water_Spells"/>
+			<Specialization Index="4" Name="FireAir" DisplayName="FireAir" Primary="s_Fire_Spells" Secondary="s_Air_Spells"/>
+			<Specialization Index="5" Name="AirFire" DisplayName="AirFire" Primary="s_Air_Spells" Secondary="s_Fire_Spells"/>
+			<Specialization Index="6" Name="WaterAir" DisplayName="WaterAir" Primary="s_Water_Spells" Secondary="s_Air_Spells"/>
+			<Specialization Index="7" Name="AirWater" DisplayName="AirWater" Primary="s_Air_Spells" Secondary="s_Water_Spells"/>
+		</Specializations>
+		
+		<WobbleConfigurations>
+			<WobbleConfiguration WeaponTypes="BOW"> 
+				<RadiusVelocityMultiplier 	Value = "15.5"	/>
+				<RadiusVelocityExponent 	Value = "1.0"	/>
+				<CursorSpeed				Value = "3.0"	/>
+				<CursorChasePerSecond 		Value = "0.95"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+			<WobbleConfiguration WeaponTypes="MAGIC_STAFF"> 
+				<RadiusVelocityMultiplier 	Value = "5.5"	/>
+				<RadiusVelocityExponent 	Value = "1.5"	/>
+				<CursorSpeed				Value = "1.5"	/>
+				<CursorChasePerSecond 		Value = "0.85"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "15.0"	/>
+			</WobbleConfiguration> 
+			<WobbleConfiguration WeaponTypes="THROWABLE_WEAPON"> 
+				<RadiusVelocityMultiplier 	Value = "18.7"	/>
+				<RadiusVelocityExponent 	Value = "1.1"	/>
+				<CursorSpeed				Value = "2.5"	/>
+				<CursorChasePerSecond 		Value = "0.9"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+		</WobbleConfigurations>
+
+		<!--Scale is for the graphic, Do Not Touch-->
+		<!--Size is for the random deviation and is measured in Radians-->
+		<TargetingDeviations>
+			<TargetingDeviation WeaponTypes="BOW" Time="0.3"><!--0.4-->
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.003"/><!--0.004-->
+				<LargeSize Value="0.006"/><!--0.008-->
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.4"/> 
+				<PerfectAimTime Value="0.9"/> 
+			</TargetingDeviation>
+			<!--Smaller Deviation as Spells are slower casted in general-->
+			<!--In compensation, it takes 1 decasecond mosre for reticle to rest-->
+			<TargetingDeviation WeaponTypes="MAGIC_STAFF" Time="0.2"><!--0.4-->
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.002"/><!--0.004-->
+				<LargeSize Value="0.004"/><!--0.008-->
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.0"/> 
+				<PerfectAimTime Value="0.5"/> 
+			</TargetingDeviation>
+			<!--This has the biggest deviation as in RL grenades are inacurate-->
+			<!--Also this skill is the same for everyone-->
+			<TargetingDeviation WeaponTypes="THROWABLE_WEAPON" Time="0.4">
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.004"/>
+				<LargeSize Value="0.008"/>
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.5"/> 
+				<PerfectAimTime Value="0.9"/> 
+			</TargetingDeviation>
+		</TargetingDeviations>
+		<Pools>
+			<Pool Value="Health" Percentage="84.0"/>
+			<Pool Value="Stamina" Percentage="92.0"/>
+		</Pools>
+	</Role>
+
+	<Role Index = '3' Name = 'Primalist' DisplayName = 'Primalist' ArmorType = 'Light_C' ArmorParentResource = 'r_Robes_C Extravagant' Description = 'Primalists have tapped into the forces that fuel and govern all life and death.  Harnessing ancient wisdom and occult magics the Primalist wades into battle with the power to affect the very life-force of their foes or allies.  Mana fuels all their spells and skills, though he can only wear the lightest armors in order to facilitate the intricate primal energies he wields.' Active = 'true'>
+		<BlockingList>
+			<Role Value ='1'/>
+			<Role Value ='2'/>
+			<Role Value ='0'/>
+		</BlockingList>		
+		<Specializations>
+			<Specialization Index = '0' Name = 'PainLaw'   DisplayName = 'PainLaw'    Primary = 's_Pain_Spells'  Secondary = 's_Law_Spells'/>
+			<Specialization Index = '1' Name = 'LawPain'   DisplayName = 'LawPain'    Primary = 's_Law_Spells'   Secondary = 's_Pain_Spells'/>
+			<Specialization Index = '2' Name = 'PainChaos' DisplayName = 'PainChaos'  Primary = 's_Pain_Spells'  Secondary = 's_Chaos_Spells'/>
+			<Specialization Index = '3' Name = 'ChaosPain' DisplayName = 'ChaosPain'  Primary = 's_Chaos_Spells' Secondary = 's_Pain_Spells'/>
+			<Specialization Index = '4' Name = 'LifeLaw'   DisplayName = 'LifeLaw'    Primary = 's_Life_Spells'  Secondary = 's_Law_Spells'/>
+			<Specialization Index = '5' Name = 'LawLife'   DisplayName = 'LawLife'    Primary = 's_Law_Spells'   Secondary = 's_Life_Spells'/>
+			<Specialization Index = '6' Name = 'LifeChaos' DisplayName = 'LifeChaos'  Primary = 's_Life_Spells'  Secondary = 's_Chaos_Spells'/>
+			<Specialization Index = '7' Name = 'ChaosLife' DisplayName = 'ChaosLife'  Primary = 's_Chaos_Spells' Secondary = 's_Life_Spells'/>
+		</Specializations>
+
+		<WobbleConfigurations>
+			<WobbleConfiguration WeaponTypes="BOW"> 
+				<RadiusVelocityMultiplier 	Value = "15.5"	/>
+				<RadiusVelocityExponent 	Value = "1.0"	/>
+				<CursorSpeed				Value = "3.0"	/>
+				<CursorChasePerSecond 		Value = "0.95"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+			<WobbleConfiguration WeaponTypes="MAGIC_STAFF"> 
+				<RadiusVelocityMultiplier 	Value = "5.5"	/>
+				<RadiusVelocityExponent 	Value = "1.5"	/>
+				<CursorSpeed				Value = "1.5"	/>
+				<CursorChasePerSecond 		Value = "0.85"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "15.0"	/>
+			</WobbleConfiguration>
+			<WobbleConfiguration WeaponTypes="THROWABLE_WEAPON"> 
+				<RadiusVelocityMultiplier 	Value = "18.7"	/>
+				<RadiusVelocityExponent 	Value = "1.1"	/>
+				<CursorSpeed				Value = "2.5"	/>
+				<CursorChasePerSecond 		Value = "0.9"	/> 
+				<StopTime					Value = "0.6"	/>
+				<VelocityChasePerSecondUp	Value = "15.0"	/>
+				<VelocityChasePerSecondDown Value = "1.0"	/>
+			</WobbleConfiguration> 
+		</WobbleConfigurations>
+
+		<TargetingDeviations>
+			<TargetingDeviation WeaponTypes="BOW" Time="0.3">
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.003"/>
+				<LargeSize Value="0.006"/>
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.4"/> 
+				<PerfectAimTime Value="0.9"/> 
+			</TargetingDeviation>
+			<!--Smaller Deviation as Spells are slower casted in general-->
+			<!--In compensation, it takes 1 decasecond mosre for reticle to rest-->
+			<TargetingDeviation WeaponTypes="MAGIC_STAFF" Time="0.2">
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.002"/>
+				<LargeSize Value="0.004"/>
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.0"/> 
+				<PerfectAimTime Value="0.5"/> 
+			</TargetingDeviation>
+			<!--This has the biggest deviation as in RL grenades are inacurate-->
+			<!--Also this skill is the same for everyone-->
+			<TargetingDeviation WeaponTypes="THROWABLE_WEAPON" Time="0.4">
+				<SmallSize Value="0.0"/>
+				<MediumSize Value="0.004"/>
+				<LargeSize Value="0.008"/>
+				<SmallScale Value="1.0"/>
+				<MediumScale Value="2.5"/>
+				<LargeScale Value="6.0"/>
+				<PerfectAimStartTime Value = "0.5"/> 
+				<PerfectAimTime Value="0.9"/> 
+			</TargetingDeviation>
+		</TargetingDeviations>
+		<Pools>
+			<Pool    Value = 'Health'  Percentage = '92.0'/>
+			<Pool    Value = 'Stamina' Percentage = '92.0'/>
+			<Pool    Value = 'Mana'    Percentage = '92.0'/>
+		</Pools>
+	</Role>
+
+	<Role Index = '4' Name = 'Commoner' DisplayName = 'Commoner' ArmorType = 'All' ArmorParentResource = 'None' Description = 'None' Active = 'true'>
+		<BlockingList/>
+		<Specializations>
+			<Specialization Index="0" Name="Common"               DisplayName="Common"               Primary=""                      Secondary=""/>
+		</Specializations>
+		<WobbleConfigurations/>
+		<TargetingDeviations/>
+		<Pools/>
+	</Role>
+</Roles>

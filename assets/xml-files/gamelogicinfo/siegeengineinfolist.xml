@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<SFXML>
+	<VersionInformation Incremental="0" Major="0" Minor="1"/>
+	<!-- ********************************************************************
+	Catapult
+*********************************************************************** -->
+	<SFSiegeEngineInfo>
+		<SFResourceName>
+			<SFString Value="r_SiegeEngine Catapult"/>
+		</SFResourceName>
+
+		<SFSiegeEngineInfoSpawnable ResourceType="r_siegeengine catapult arm" AttachPoint="AttachPoint_Vehicle Gun 01" SpawnableType="CATAPULT_ARM"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_siegeengine wheel" AttachPoint="AttachPoint_Vehicle Steering Wheel"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Catapult Engine Slot 01" AttachPoint="AttachPoint_SiegeEngine Slot 01" SpawnableType="ENGINE_SLOT"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Catapult Engine Slot 02" AttachPoint="AttachPoint_SiegeEngine Slot 02" SpawnableType="ENGINE_SLOT"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Catapult Engine Slot 03" AttachPoint="AttachPoint_SiegeEngine Slot 03" SpawnableType="ENGINE_SLOT"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Catapult Engine Slot 04" AttachPoint="AttachPoint_SiegeEngine Slot 04" SpawnableType="ENGINE_SLOT"/>
+
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Engine" AttachPoint="AttachPoint_Engine"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Ladder 01" AttachPoint="AttachPoint_SiegeEngine Slot 04"/>
+
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/extra/pc_siegeengine_wheel_front_02.xml" AttachPoint="AttachPoint_Wheel 02"/>
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/extra/pc_siegeengine_wheel_front_01.xml" AttachPoint="AttachPoint_Wheel 01"/>
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/extra/pc_siegeengine_wheel_back_01.xml" AttachPoint="AttachPoint_Wheel 04"/>
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/extra/pc_siegeengine_wheel_back_02.xml" AttachPoint="AttachPoint_Wheel 03"/>
+
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_Vehicle Steering Wheel Player" Idle="siegeengine_driver_idle" Moving="siegeengine_driver_use"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_SiegeEngine Slot Player 01" Idle="siegeengine_wheel_idle" Moving="siegeengine_wheel_use"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_SiegeEngine Slot Player 02" Idle="siegeengine_wheel_idle" Moving="siegeengine_wheel_use"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_SiegeEngine Slot Player 03" Idle="siegeengine_wheel_idle" Moving="siegeengine_wheel_use"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_SiegeEngine Slot Player 04" Idle="siegeengine_wheel_idle" Moving="siegeengine_wheel_use"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_Engine" Idle="siegeengine_idle" Moving="siegeengine_move"/>
+
+		<SFSiegeEngineInfoSkill SkillName="s_fire catapult" CannonInfoResourceType="r_improved crackshot" ChargingSpecialEffect="se_siege_engine_catapult_boulder_missile_idle" ChargingSpecialEffectDelay="0.5" LaunchDamageType="Impact Damage" LaunchDamageMagnitude="100" LaunchDamageRadius="1.0"/>
+		<SFSiegeEngineInfoSkill SkillName="s_fire catapult fire" CannonInfoResourceType="r_improved boomshot" ChargingSpecialEffect="se_siege_engine_catapult_fire_missile_idle" ChargingSpecialEffectDelay="0.5" LaunchDamageType="Impact Damage" LaunchDamageMagnitude="100" LaunchDamageRadius="1.0"/>
+
+		<SFSiegeEngineInfoStartSpawningSpecialEffect>
+			<SFString Value="se_warhulks_spawn"/>
+		</SFSiegeEngineInfoStartSpawningSpecialEffect>
+		<SFSiegeEngineInfoUnspawnSpecialEffect>
+			<SFString Value="se_warhulks_unspawn"/>
+		</SFSiegeEngineInfoUnspawnSpecialEffect>
+
+		<SFSiegeEngineInfoDamageSpecialEffect>
+			<SFString Value="se_warhulk_sh_damage_1"/>
+		</SFSiegeEngineInfoDamageSpecialEffect>
+
+		<SFSiegeEngineInfoPreKillSpecialEffect>
+			<SFString Value="se_warhulk_sh_prekill"/>
+		</SFSiegeEngineInfoPreKillSpecialEffect>
+
+		<SFSiegeEngineInfoKillSpecialEffect>
+			<SFString Value="se_warhulk_sh_kill"/>
+		</SFSiegeEngineInfoKillSpecialEffect>
+
+		<!--r_SiegeEngine Catapult-->
+		<SFSiegeEngineTurnRadius>
+			<!--How big is the circle of turn. Must be where the pivot of the turn is.-->
+			<SFFloat Value="7.5"/>
+		</SFSiegeEngineTurnRadius>
+		<SFSiegeEngineAccelerationRate>
+			<SFFloat Value="2.0"/>
+		</SFSiegeEngineAccelerationRate>
+		<SFSiegeEngineDecelerationRate>
+			<!--This is when player presses s after w-->
+			<SFFloat Value="3.0"/>
+		</SFSiegeEngineDecelerationRate>
+		<SFSiegeEngineRollToRestDecelerationRate>
+			<!--This counts when player depresses w or s-->
+			<SFFloat Value="1.0"/>
+		</SFSiegeEngineRollToRestDecelerationRate>
+		<SFSiegeEngineBackwardSpeedMultiplier>
+			<SFFloat Value="0.75"/>
+		</SFSiegeEngineBackwardSpeedMultiplier>
+		<SFSiegeEngineVelocityMultiplierThresholdAngle>
+			<!--Angle that redusces speed for uphill-->
+			<SFFloat Value="0.5"/>
+		</SFSiegeEngineVelocityMultiplierThresholdAngle>
+		<SFSiegeEngineVelocityMultiplierBoostFactor>
+			<!--Speed increase when downhill-->
+			<SFFloat Value="1.0"/>
+		</SFSiegeEngineVelocityMultiplierBoostFactor>
+
+		<SFSiegeEngineTurnAccelerationRate>
+			<SFFloat Value="0.9"/>
+		</SFSiegeEngineTurnAccelerationRate>
+		<SFSiegeEngineTurnDecelerationRate>
+			<SFFloat Value="1.8"/>
+		</SFSiegeEngineTurnDecelerationRate>
+
+		<!--How much the vehicle will follow the terrain. 1.8 is the max value-->
+		<SFSiegeEngineMaxPitchRockAngle>
+			<SFFloat Value="1.8"/>
+		</SFSiegeEngineMaxPitchRockAngle>
+		<SFSiegeEngineMaxRollRockAngle>
+			<SFFloat Value="1.8"/>
+		</SFSiegeEngineMaxRollRockAngle>
+
+		<!--float MaxVelocity = SiegeEngineInfo.getSiegeEngineMaxContactVelocity() * ( AttachedEnginePlayersPercentage * 0.7f + 0.7f);-->
+		<SFSiegeEngineMaxContactVelocity>
+			<SFFloat Value="5.0"/>
+		</SFSiegeEngineMaxContactVelocity>
+		<SFSiegeEngineMinObjectCollisionRadius>
+			<SFFloat Value="1.0"/>
+		</SFSiegeEngineMinObjectCollisionRadius>
+
+		<!--		<SFTankMainCannonInfoResourceName>
+			<SFString Value=""/>
+		</SFTankMainCannonInfoResourceName>-->
+		<SFTankMainCannonInfoResourceName>
+			<SFString Value=""/>
+		</SFTankMainCannonInfoResourceName>
+		<SFTankCannon2InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon2InfoResourceName>
+		<SFTankCannon3InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon3InfoResourceName>
+		<SFTankCannon4InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon4InfoResourceName>
+		<SFTankCannon5InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon5InfoResourceName>
+		<SFTankCannon6InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon6InfoResourceName>
+		<SFTankCannon7InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon7InfoResourceName>
+		<SFTankCannon8InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon8InfoResourceName>
+		<SFTankCannon9InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon9InfoResourceName>
+		<TankLadderResourceName>
+			<SFString Value=""/>
+		</TankLadderResourceName>
+		<!--		<TankLadderResourceName>
+			<SFString Value="r_Warhulk Ladder_01"/>
+		</TankLadderResourceName>-->
+
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0"/>
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0"/>
+		</SFKillDamageMagnitude>
+
+		<SFMissileDelayTime>
+			<SFFloat Value="0.25"/>
+		</SFMissileDelayTime>
+	</SFSiegeEngineInfo>
+
+	<SFSiegeEngineInfo>
+		<SFResourceName>
+			<SFString Value="r_SiegeEngine Catapult Test"/>
+		</SFResourceName>
+
+		<SFSiegeEngineInfoSpawnable ResourceType="r_siegeengine catapult arm" AttachPoint="AttachPoint_Engine" SpawnableType="CATAPULT_ARM"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_Catapult Controller" AttachPoint="AttachPoint_Vehicle Steering Wheel"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Catapult Engine Slot Test" AttachPoint="AttachPoint_SiegeEngine Slot 01" SpawnableType="ENGINE_SLOT"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Catapult Engine Slot Test" AttachPoint="AttachPoint_SiegeEngine Slot 02" SpawnableType="ENGINE_SLOT"/>
+		<SFSiegeEngineInfoSpawnable ResourceType="r_SiegeEngine Catapult Engine Slot Test" AttachPoint="AttachPoint_SiegeEngine Slot 03" SpawnableType="ENGINE_SLOT"/>
+
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/engines/catapult_wheel.xml" AttachPoint="AttachPoint_Wheel 01"/>
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/engines/catapult_wheel.xml" AttachPoint="AttachPoint_Wheel 02"/>
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/engines/catapult_wheel.xml" AttachPoint="AttachPoint_Wheel 03"/>
+		<SFSiegeEngineInfoWheel Mesh="prop/all/no_wb/pc_siege_weaponry/engines/catapult_wheel.xml" AttachPoint="AttachPoint_Wheel 04"/>
+
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_Vehicle Steering Wheel Player" Idle="use_cannon" Moving="normal_run_forward"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_SiegeEngine Slot Player 01" Idle="use_cannon" Moving="normal_run_forward"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_SiegeEngine Slot Player 02" Idle="use_cannon" Moving="normal_run_forward"/>
+		<SFSiegeEngineInfoAnimationState AttachPoint="AttachPoint_SiegeEngine Slot Player 03" Idle="use_cannon" Moving="normal_run_forward"/>
+		<!--<SFSiegeEngineInfoAnimationState AttachPoint = "AttachPoint_Engine" Idle="use_cannon" Moving="normal_run_forward"/>-->
+
+		<SFSiegeEngineInfoSkill SkillName="s_fire catapult" CannonInfoResourceType="r_siegeengine catapult" ChargingSpecialEffect="se_common_charging" ChargingSpecialEffectDelay="0.8" LaunchDamageType="Fire Damage" LaunchDamageMagnitude="10" LaunchDamageRadius="1.0"/>
+
+		<SFSiegeEngineInfoStartSpawningSpecialEffect>
+			<SFString Value="se_warhulks_spawn"/>
+		</SFSiegeEngineInfoStartSpawningSpecialEffect>
+		<SFSiegeEngineInfoUnspawnSpecialEffect>
+			<SFString Value="se_warhulks_unspawn"/>
+		</SFSiegeEngineInfoUnspawnSpecialEffect>
+
+		<SFSiegeEngineInfoDamageSpecialEffect>
+			<SFString Value="se_warhulk_sh_damage_1"/>
+		</SFSiegeEngineInfoDamageSpecialEffect>
+
+		<SFSiegeEngineInfoPreKillSpecialEffect>
+			<SFString Value="se_warhulk_sh_prekill"/>
+		</SFSiegeEngineInfoPreKillSpecialEffect>
+
+		<SFSiegeEngineInfoKillSpecialEffect>
+			<SFString Value="se_warhulk_sh_kill"/>
+		</SFSiegeEngineInfoKillSpecialEffect>
+
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/warhulks/df_warhulk_stormhammer_idle_unused_loop.xml"/>
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/warhulks/df_warhulk_stormhammer_idle_used_loop.xml"/>
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/warhulks/df_warhulk_stormhammer_start_using.xml"/>
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/warhulks/df_warhulk_stormhammer_stop_using.xml"/>
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/warhulks/df_warhulk_stormhammer_start_moving.xml"/>
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/warhulks/df_warhulk_stormhammer_stop_moving.xml"/>
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/warhulks/df_warhulk_stormhammer_moving_loop.xml"/>
+		</SFMovingAudioName>
+
+		<SFSiegeEngineTurnRadius>
+			<SFFloat Value="7.5"/>
+		</SFSiegeEngineTurnRadius>
+		<SFSiegeEngineAccelerationRate>
+			<SFFloat Value="1.0"/>
+		</SFSiegeEngineAccelerationRate>
+		<SFSiegeEngineDecelerationRate>
+			<SFFloat Value="2.0"/>
+		</SFSiegeEngineDecelerationRate>
+		<SFSiegeEngineRollToRestDecelerationRate>
+			<SFFloat Value="3.0"/>
+		</SFSiegeEngineRollToRestDecelerationRate>
+		<SFSiegeEngineBackwardSpeedMultiplier>
+			<SFFloat Value="0.75"/>
+		</SFSiegeEngineBackwardSpeedMultiplier>
+		<SFSiegeEngineVelocityMultiplierThresholdAngle>
+			<SFFloat Value="0.2"/>
+		</SFSiegeEngineVelocityMultiplierThresholdAngle>
+		<SFSiegeEngineVelocityMultiplierBoostFactor>
+			<SFFloat Value="0.1"/>
+		</SFSiegeEngineVelocityMultiplierBoostFactor>
+
+		<SFSiegeEngineMaxPitchRockAngle>
+			<SFFloat Value="0.2"/>
+		</SFSiegeEngineMaxPitchRockAngle>
+		<SFSiegeEngineMaxRollRockAngle>
+			<SFFloat Value="0.1"/>
+		</SFSiegeEngineMaxRollRockAngle>
+
+		<SFSiegeEngineMaxContactVelocity>
+			<SFFloat Value="5.0"/>
+		</SFSiegeEngineMaxContactVelocity>
+		<SFSiegeEngineMinObjectCollisionRadius>
+			<SFFloat Value="4.0"/>
+		</SFSiegeEngineMinObjectCollisionRadius>
+		<SFSiegeEngineTurnAccelerationRate>
+			<SFFloat Value="0.5"/>
+		</SFSiegeEngineTurnAccelerationRate>
+		<SFSiegeEngineTurnDecelerationRate>
+			<SFFloat Value="0.75"/>
+		</SFSiegeEngineTurnDecelerationRate>
+
+
+		<SFTankMainCannonInfoResourceName>
+			<SFString Value="r_Stormhammer Cannon"/>
+		</SFTankMainCannonInfoResourceName>
+		<SFTankCannon2InfoResourceName>
+			<SFString Value="r_Lightning Cannon_01"/>
+		</SFTankCannon2InfoResourceName>
+		<SFTankCannon3InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon3InfoResourceName>
+		<SFTankCannon4InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon4InfoResourceName>
+		<SFTankCannon5InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon5InfoResourceName>
+		<SFTankCannon6InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon6InfoResourceName>
+		<SFTankCannon7InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon7InfoResourceName>
+		<SFTankCannon8InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon8InfoResourceName>
+		<SFTankCannon9InfoResourceName>
+			<SFString Value=""/>
+		</SFTankCannon9InfoResourceName>
+		<TankLadderResourceName>
+			<SFString Value="r_Warhulk Ladder_01"/>
+		</TankLadderResourceName>
+
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0"/>
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="20.0"/>
+		</SFKillDamageMagnitude>
+
+		<SFMissileDelayTime>
+			<SFFloat Value="0.1"/>
+		</SFMissileDelayTime>
+	</SFSiegeEngineInfo>
+</SFXML>

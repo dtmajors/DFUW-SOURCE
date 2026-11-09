@@ -1,0 +1,161 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_Gravelord dungeon" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="ANIMATEDOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="true" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <Meshes>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="gravelord_dungeon.sfam" />
+                    </Set0>
+                </Meshes>
+                <Animations>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="gravelord_dungeon.sfas" />
+                    </Set0>
+                </Animations>
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <NumberOfSubsets>
+                <SFInteger Value="4" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="False" />
+                    <SFString Value="shaderanimtransparentnew.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader0>
+                        <SFString Value="shaderanimtransparentnew.xml" />
+                        <SFInteger Value="1" />
+                    </Shader0>
+                    <Shader1>
+                        <SFString Value="shaderanimtransparentnew.xml" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="shaderanimtransparentnew.xml" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                    <Shader3>
+                        <SFString Value="shaderanimalphaglownew.xml" />
+                        <SFInteger Value="1" />
+                    </Shader3>
+                </SubsetShaders>
+            </Normal>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+            <AnimationSet0>
+                <SetName>
+                    <SFString Value="Idle" />
+                </SetName>
+                <SetFile>
+                    <SFString Value="SF_DEFAULT" />
+                </SetFile>
+            </AnimationSet0>
+        </AnimationInformation>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-2.83768" Y="-0.246344" Z="-3.17093" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="2.58313" Y="5.17447" Z="2.24989" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="-0.127274" Y="2.46406" Z="-0.460521" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="2.71041" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation />
+            </BoundingInformation>
+        </VisibilityInformation>
+        <DynamicHitConfigFile Enabled="true" Value="animations/gravelord_dungeon_dynhit_config.xml" />
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="character" />
+        <WaterTransition>
+            <Submerged Value="2" />
+            <Floating Value="1.5" />
+            <Surface Value="1" />
+            <Touching Value="0.1" />
+        </WaterTransition>
+        <ImpulseScaleFactor Value="1" />
+        <RepulsiveAngleRange Min="0" Max="3.14159" />
+    </PhysicsInformation>
+    <MassCenter>
+        <SFVector3 X="0" Y="0" Z="0" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="gravelord_dungeon.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="gravelord_dungeon.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="0" Y="0" Z="0" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="5.22037" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+    <VersionInformation Major="1" Minor="0" />
+</SFObject>

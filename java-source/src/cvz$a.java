@@ -1,0 +1,19 @@
+public enum cvz$a {
+   fBK,
+   fBL,
+   fBM,
+   fBN,
+   fBO,
+   fBP,
+   fBQ,
+   fBR,
+   fBS,
+   fBT,
+   fBU,
+   fBV,
+   fBW,
+   fBX,
+   fBY,
+   fBZ,
+   fCa;
+}

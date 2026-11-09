@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="true"/>
+   <ShowOnGUI Value="true"/> 
+      
+   <Repeatable Value="false"/>   
+   <Trigger Type="LIFE_MODE_CHANGES">    
+      <IsEventSource Value="true"/>   
+      <LifeMode Value="KILL"/>   
+      <ResourceName Value="r_elf monsters"/>
+      <ResourceRank Value=""/>    
+      <WeaponName Value=""/>    
+      <SkillName Value=""/>    
+      <Counter Value="30"/>
+   </Trigger>
+   <Points Dynamic="true" Value="" Key="r_elf monsters"/>
+   <Rewards> 
+      <Item Type="UNLOCK_FEAT" Name="pe_kill_elf_monster_150"/>
+   </Rewards>      
+</Feat>

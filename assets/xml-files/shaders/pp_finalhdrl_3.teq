@@ -1,0 +1,93 @@
+////Final pass shader
+#include "stdstate.frag"
+#include "ssao.frag"
+#include "texture.frag"
+#include "planets.frag"
+#include "mathconstants.frag"
+#include "colorGrading.frag"
+#include "DepthOfField.frag"
+#include "lumaSharpness.frag"
+
+texture BloomColor  : REPTexturePrevBlendTex;
+
+const float BloomMultiplier = 1.0f;
+
+sampler2D BloomSampler =
+sampler_state
+{
+		
+    Texture = <BloomColor>;
+    AddressU = Clamp;
+    AddressV = Clamp;
+
+    MinFilter = Linear;
+    MagFilter = Linear;
+
+};
+
+struct VS_INPUT
+{
+    float4 Pos					: POSITION;
+    float2 Tex				    : TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos  			: POSITION;
+    float2 Tex  			: TEXCOORD0;
+};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+	Out.Pos = Input.Pos;
+	Out.Tex.xy = 	Input.Tex.xy;
+	return Out;
+}
+
+float4 FinalHDRL(VS_OUTPUT Input) : COLOR0
+{
+	float4 OutColor = 0;
+	OutColor = tex2D(SceneSampler,Input.Tex.xy);
+	
+	OutColor = ApplyDepthOfField(OutColor, Input.Tex.xy);
+	
+	
+	// Add bloom
+	float4 BloomC = tex2D(BloomSampler,Input.Tex.xy);
+	OutColor += BloomC * BloomMultiplier;
+
+#ifdef SHADER_PP_GOD_RAYS
+	OutColor.xyz += tex2D(GodRaySampler, Input.Tex).xyz * 0.6;
+#endif
+
+#ifndef LOW_SHADER_QUALITY
+	OutColor.xyz = LumaSharpenPass(OutColor,Input.Tex.xy);
+#endif
+	
+	OutColor.xyz = colorGrade(OutColor.xyz);
+
+	return OutColor;
+}
+
+technique FinalHDRLTechnique
+{
+    pass P0
+    {
+		STD_STATE;
+        ZEnable = false;
+		ZWriteEnable = false;
+		CullMode = CCW;
+    
+        Lighting       = false;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+        
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 FinalHDRL();
+        ZEnable = false;
+    
+    }
+}

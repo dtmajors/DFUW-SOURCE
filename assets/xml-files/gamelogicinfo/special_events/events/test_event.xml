@@ -1,0 +1,51 @@
+<Event  version_major = "1" version_minor = "0">	
+	<Info>
+		<ID          Value = "0"/>
+		<IconName    Value = "ei_frost_fest.png"/>			
+		<Persistent  Value = "true"/>
+	</Info>
+	
+	<Conditions>
+		<Start   Value = "SERVER_UP"/>
+		<Restart Value = "IMMEDIATELY"/>
+		<Repeat  Value = "INFINITE"/>
+	</Conditions>	
+	
+	<Step Type = "Monster" Index = "0" StepDescription = "Naughty Frost Fest Monsters are stealing Frost Fest gifts! Kill enough to unmask the mastermind!">
+		<Monsters>
+			<Monster Value = "r_Spider Giant"/>
+			<Monster Value = "r_Bear Arctic"/>
+			<Monster Value = "r_Air Elemental Lesser"/>
+			<Monster Value = "r_Earth Elemental Lesser"/>
+			<Monster Value = "r_Fire Elemental Lesser"/>
+			<Monster Value = "r_Ice Elemental Lesser"/>
+			<Monster Value = "r_Salamander"/>
+			<Monster Value = "r_Serpentine"/>
+			<Monster Value = "r_Spirit"/>
+		</Monsters>				
+		<Loot>
+			<SFItem ResourceName = "r_Potion Rejuvenation Lesser" Probability = "1.0"  Quantity    = "1" />
+			<SFItem ResourceName = "r_new Selentine Cloth"        Probability = "0.5"  MinQuantity = "2" MaxQuantity = "14"/>
+		</Loot>
+		<Limit debug_value = "5" live_value = "6000"/>
+	</Step>
+	
+	
+	<Step Type = "BossKill" Index = "1" StepDescription = "The Feastlord has awoken and is ready to rumble! Who has dared touch his Brownies can come face his wrath!">
+		<BossPreset Value = "event_oak_lord"/>
+		<Spawnpoints>
+			<Spawnpoint Value = "i20_spawns_04"/>
+			<Spawnpoint Value = "i22_spawns_03"/>
+			<Spawnpoint Value = "m11_spawns_01"/>
+			<Spawnpoint Value = "m18_spawns_02"/>
+			<Spawnpoint Value = "m20_spawns_01"/>
+			<Spawnpoint Value = "p12_spawns_04"/>
+			<Spawnpoint Value = "r12_spawns_01"/>
+			<Spawnpoint Value = "w18_spawns_01"/>				
+		</Spawnpoints>					
+		<Limit debug_value = "1" live_value = "1"/>
+		<Rewards Type = "AREA_OF_EVENT">
+			<Reward Type = "SPAWNABLE" Value = "r_Frozen Presents"  Keys = "1" debug_value = "60" live_value = "60"/>
+		</Rewards>
+	</Step>
+</Event>	

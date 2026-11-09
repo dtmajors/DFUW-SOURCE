@@ -1,0 +1,30 @@
+<quest quest_id="406" category="lore_quest" tag="Lead 05">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="402" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="2" tag="Find the Rune">
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="Rune" resource_name="" />
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="0" tag="An Add Map-Marker to World-Map Action" marker_type="-1" world_x="0" world_z="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="3" tag="Only the Penitent Man...">
+			<tasks>
+				<task type="interact_with_vendor" id="1" value="1" tag="An Interact With Vendor Task" vendor_id="" />
+			</tasks>
+		</node>
+		<node type="end_node" id="4" tag="" />
+		<node type="event_simple" id="5" tag="" />
+	</nodes>
+	<edges>
+		<edge id="3" from="0" to="5" value="0" />
+		<edge id="1" from="2" to="4" value="0" />
+		<edge id="4" from="5" to="3" value="0" />
+		<edge id="5" from="5" to="2" value="0" />
+	</edges>
+</quest>

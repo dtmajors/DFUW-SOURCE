@@ -1,0 +1,22 @@
+public enum hzo$a {
+   lyG,
+   lyH,
+   lyI,
+   lyJ,
+   lyK,
+   lyL,
+   lyM,
+   lyN,
+   lyO,
+   lyP,
+   lyQ,
+   lyR,
+   lyS,
+   lyT,
+   lyU,
+   lyV,
+   lyW,
+   lyX,
+   lyY,
+   lyZ;
+}

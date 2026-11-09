@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="true"/>
+   <ShowOnGUI Value="true"/> 				  
+	  	
+	  <Trigger Type="CRAFTING"> 
+		    <Failure Value="false"/>						
+		    <SkillName Value="s_Crafting Skills"/> 
+      <!-- NOT OPTIONAL -->			
+		<ResourceName Value="r_Armors Leather"/>  
+      <!-- OPTIONAL   -->
+		<Counter Value="2"/>         
+      <!-- NOT OPTIONAL -->
+	</Trigger>		
+	  <Points Dynamic="true" Value="" Key="r_Armors Leather"/>	
+	  <Rewards> 					  
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_full_leather_armor"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_arms"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_elbows"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_girdle"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_gloves"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_greaves"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_helmet"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_pants"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_shoes"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_shoulders"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_craft_leather_torso"/>
+	  </Rewards>			
+</Feat>

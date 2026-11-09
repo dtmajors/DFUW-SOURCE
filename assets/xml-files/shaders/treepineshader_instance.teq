@@ -1,0 +1,147 @@
+// Note: Frequently used shader
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "windswing.frag"
+#include "instancing.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 SunLight : COLOR0;
+    float3 Light: COLOR1;
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	float4 DynamicLight : COLOR2;
+#endif
+    float2 Tex  : TEXCOORD0;
+    float4 WorldPos   : TEXCOORD1;
+	float3 WorldOffset : TEXCOORD4;
+	float2 ZPos : TEXCOORD2;
+	float3 WorldNormal : TEXCOORD3;
+    float Fog : FOG;
+};
+
+VS_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	SFMatrix WMat = float4x4(Input.WMat1, Input.WMat2, Input.WMat3, Input.WMat4);
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+   
+    WindOutPut WOut;
+    
+    float3 NewNorm = float3(0,1,0);
+    
+	WOut = CalculateWindPosObjectSpaceInstance(Input.Pos,NewNorm,WMat);
+
+    Out.Pos  = mul(float4(WOut.Pos,1), VIEW_PROJECTION_MATRIX);             // position (projected)
+    float3 WorldPos = WOut.Pos;//mul(float4(WOut.Pos,1),WMat);
+	Out.WorldPos = float4(WorldPos,1);
+	Out.ZPos = Out.Pos.zw;
+	
+    float3 WorldNorm2 = normalize(mul(Input.Norm,(float3x3)WMat));
+    
+    float3 WorldNorm = normalize((WOut.Norm*0.2f)+WorldNorm2);
+
+   	Out.WorldOffset = 4.0f * WorldNorm;
+
+    Out.SunLight.xyz =  saturate(dot(WorldNorm, L)) * PLANET_LIGHTCOLOR_COMMON;
+    Out.SunLight.w = 0.0f;
+    
+    
+    //Reflect it
+    float3 ViewVec = normalize(WorldPos - EYE_POS);
+    Out.Light = normalize(reflect(ViewVec,WorldNorm2));
+    
+    Out.Tex  = Input.Tex;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	Out.DynamicLight = float4(0, 0, 0, 0);
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		Out.DynamicLight += pointLightPixelDiffuseRaw(WorldPos, WorldNorm, LightParams[i]);
+	}
+#endif
+
+	Out.WorldNormal = WorldNorm;
+	
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2, Input.Tex);
+	
+	if (BaseTex.a < ALPHA_TEST_VALUE)
+	{
+		clip(-1);
+	}
+	
+	float3 Nn = normalize(Input.WorldNormal);
+	float Dot = 1.0f + 0.5f * CalculateSpeneBumpPixelReflect_3_0(BaseTex.xyz,Input.Light);
+	float4 SunLight = Input.SunLight * Dot;
+	
+	float3 Weather = applyAtmosphere_Trees(BaseTex.xyz,Nn);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	DynamicLight = Input.DynamicLight * Dot;
+#endif
+
+	Output.Color.xyz = combineWeatherIllumination3(Input.WorldPos, Input.ZPos, Input.Fog, BaseTex.xyz, SunLight, DynamicLight, 0, Weather, Input.WorldOffset);
+	Output.Color.w = 0.0f; 
+	//Output.Effect = 0;
+
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = normalize(Input.WorldNormal);
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(BaseTex.xyz, 0);
+#endif
+	
+	return Output;
+}
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

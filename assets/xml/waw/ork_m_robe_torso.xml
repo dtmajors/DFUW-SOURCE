@@ -1,0 +1,167 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="ANIMATEDOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="true" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<Meshes>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="ork_m_robe_torso.sfam" />
+</Set0>
+</Meshes>
+<Animations>
+<NumberOfSets>
+<SFInteger Value="4" />
+</NumberOfSets>
+<Set0>
+<SFString Value="ork_psa_emotes.sfas" />
+</Set0>
+<Set1>
+<SFString Value="ork_psa_mounts.sfas" />
+</Set1>
+<Set2>
+<SFString Value="ork_psa_primary.sfas" />
+</Set2>
+<Set3>
+<SFString Value="ork_psa_secondary.sfas" />
+</Set3>
+</Animations>
+<SFBool Value="FALSE" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<NumberOfSubsets>
+<SFInteger Value="0" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="ShaderAnim.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+</Shaders>
+<AnimationInformation>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<AnimationSet0>
+<SetName>
+<SFString Value="Idle" />
+</SetName>
+<SetFile>
+<SFString Value="SF_DEFAULT" />
+</SetFile>
+</AnimationSet0>
+</AnimationInformation>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.4353258312" Y="1.0512409210" Z="-.4355751574" />
+</Min>
+<Max>
+<SFVector3 X=".4338518977" Y="1.9204188585" Z=".4336026013" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-.7369780" Y="1.4858298302" Z="-.9862551" />
+</Center>
+<Radius>
+<SFFloat Value=".4345888793" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation />
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Character" />
+<WaterTransition>
+<Submerged Value="0.34767110344" />
+<Surface Value="0.17383555172" />
+<Touching Value="-0.26075332758" />
+<Floating Value="0.26075332758" /></WaterTransition>
+</PhysicsInformation>
+<VersionInformation Major="1" Minor="0" />
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFSPHERECOLLISIONSCHEME" />
+<FileName Value="ork_m_robe_torso.sfamSFSPHERECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFSPHERECOLLISIONSCHEME" />
+<FileName Value="ork_m_robe_torso.sfamSFSPHERECOLLISIONSCHEME.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="ork_m_robe_torso.sfamSFDUMMYCOLLISIONSCHEME.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.4353258610" Y="1.0512409210" Z="-.4355751276" />
+</Min>
+<Max>
+<SFVector3 X=".4338518977" Y="1.9204187393" Z=".4336026311" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-.7369780" Y="1.4858298302" Z="-.9862551" />
+</Center>
+<Radius>
+<SFFloat Value=".4345888793" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+</SFObject>

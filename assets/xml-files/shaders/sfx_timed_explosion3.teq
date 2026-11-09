@@ -1,0 +1,123 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "object.frag"
+
+#include "offscreenfx.frag"
+
+float4 AmbMaterial  : REPGlobalMaterialAmbient = { 1.0f, 1.0f, 1.0f, 1.0f };
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float2 Tex  : TEXCOORD0;
+	float4 ClipSpace : TEXCOORD1;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float4 Diff : COLOR0;
+    float2 Tex	: TEXCOORD0;
+};
+
+bool Transparent : REInfoTransparent = true;
+
+
+static const float TIME_TO_RISE = 1.0f;
+static const float TIME_TO_FALL = TIME_TO_RISE;
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	float4 Pos = Input.Pos;
+
+
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+
+
+	float CurrentDeltaTime = TOTAL_TIME - OBJECT_CREATION_TIME;
+	
+	float RiseMultiplier = pow(1.0f - saturate(CurrentDeltaTime/AmbMaterial.x),10);
+	float FallMultiplier = pow(saturate(CurrentDeltaTime/AmbMaterial.x),2);
+	
+	Pos.xyz *= saturate(1.0f - RiseMultiplier + 0.5f);
+	Pos.y *= (1.0f - FallMultiplier)*getYMin(Input.Pos.y);
+	
+   
+    Out.Pos  = mul(Pos, WVP);
+	Out.ClipSpace = Out.Pos;
+
+    
+    Out.Diff = DiffMaterial;
+    Out.Diff.w = Input.Diff.g* pow(1.0f - FallMultiplier,2);
+    
+    Out.Tex.x  = Input.Tex.x + frac(TOTAL_TIME*AmbMaterial.y);
+    Out.Tex.y  = Input.Tex.y + frac(TOTAL_TIME*AmbMaterial.z);
+    
+
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	
+	float4 Color = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	Color = BaseTex * Input.Diff;
+	Color.xyz = lerp(Color.xyz,0,Input.Fog);
+
+	Out.Color = Color;
+	//Out.Effect = 0.0f;
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_NO_EFFECT;
+#endif	
+	// OffscreenFX
+
+	Out.Color = ProcessOffscreenFXColor(Out.Color, Input.ClipSpace);
+
+	return Out;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+        SrcBlend = SrcAlpha;
+        DestBlend = One;//InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = false;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

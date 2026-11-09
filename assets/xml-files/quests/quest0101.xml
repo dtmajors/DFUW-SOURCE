@@ -1,0 +1,32 @@
+<quest quest_id="101" category="side_quest" tag="Wagon Letter" published="False" valid="True">
+	<title>Wagon Letter</title>
+	<description>A mysterious letter found inside a wagon.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="wagon_letter">
+			<conditions>
+				<condition type="object_interaction" id="0" value="1" tag="An Object Interaction Condition" resource_name="r_qt love letter wagon" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="4" tag="The Letter's Writtings">
+			<journal_entry>&quot;My beloved one, I&apos;m leaving you this message in the first place we met. I still remember the way the Mercian guards approached you. I thought they would kill you! I need to tell you something but I fear for anyone else learning about it. Search for my next letter at the first place you took me to watch the sunrise. The lighthouse where i could see the Fire Elementals from a safe distance while the sea surrounded us.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>&quot;...life...&quot;</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="0" tag="An Unlock Quest Item Within The Quest Action" item_id="0" />
+			</actions>
+		</node>
+		<node type="end_node" id="6" tag="End" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="4" value="1" />
+		<edge id="7" from="7" to="6" value="0" />
+		<edge id="6" from="4" to="7" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Wagon Letter" image_locked="qc_101_letter_wagon_locked.png" image_unlocked="qc_101_letter_wagon_unlocked.png">
+		<name_locked>Locked</name_locked>
+		<name_unlocked>A letter found in a wagon.</name_unlocked>
+		<description_locked>Locked</description_locked>
+		<description_unlocked>&amp;quot;My beloved one, I&amp;apos;m leaving you this message in the first place we met. I still remember the way the Mercian guards approached you. I thought they would kill you! I need to tell you something but I fear for anyone else learning about it. Search for my next letter at the first place you took me to watch the sunrise. The lighthouse where i could see the Fire Elementals from a safe distance while the sea surrounded us.&amp;quot;</description_unlocked>
+	</quest_item>
+</quest>

@@ -1,0 +1,2912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SFXML>
+    <VersionInformation Incremental="0" Major="0" Minor="1" />
+    <SFWaterVesselInfo>
+        <!-- \xml\prop\all\no_wb\pc_ships\pirate_raft\pc_pirate_raft.xml -->
+        <SFResourceName>
+            <SFString Value="r_Raft_01" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_uw_ship_raft_01_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_uw_ship_raft_01_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_uw_ship_raft_01_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_uw_ship_raft_01_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_uw_ship_raft_01_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Raft_01_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="\prop\all\no_wb\pc_ships\pirate_raft\pc_pirate_raft_waves.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.4" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.0" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="5.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_03.xml -->
+        <SFResourceName>
+            <SFString Value="r_Ship_01" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_01_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_01_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_01_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_01_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_01_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Ship_01_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_03_water_sides.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_03_water_back.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.6" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.7" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+
+	</SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_02.xml -->
+        <SFResourceName>
+            <SFString Value="r_Ship_02" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_02_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_02_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_02_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_02_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_02_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Ship_02_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_02_water_sides.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_02_water_back.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.5" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.9" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_01.xml -->
+        <SFResourceName>
+            <SFString Value="r_Ship_03" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_03_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_03_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_03_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_03_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_03_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_small" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                        
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Ship_03_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_04_water_sides.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_04_water_back.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.5" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="6.3" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+	
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_01.xml -->
+        <SFResourceName>
+            <SFString Value="r_Ship_04" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_04_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_04_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_04_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_04_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_04_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_small" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                                
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Ship_04_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_01_water_sides.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_01_water_back.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.5" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="6.0" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_raft_large_01.xml -->
+        <SFResourceName>
+            <SFString Value="r_Ship_05" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_05_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_05_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_05_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_05_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_05_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_medium" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                        
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Ship_05_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Raft Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_raft_large_01_water_back.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_raft_large_01_water_sides.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="4.5" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_raft_large_02.xml -->
+        <SFResourceName>
+            <SFString Value="r_Ship_06" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_06_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_06_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_06_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_06_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_06_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_medium" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                        
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Ship_06_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Raft Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_raft_large_02_water_back.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_raft_large_02_water_sides.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="4.85" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_raft_large_03.xml -->
+        <SFResourceName>
+            <SFString Value="r_Ship_07" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_07_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_07_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_07_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_07_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_07_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_medium" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                        
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Ship_07_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Raft Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_raft_large_03_water_back.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_raft_large_03_water_sides.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="4.3" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_medium_warship_02.xml -->
+        <SFResourceName>
+            <SFString Value="r_Warship_01" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_warship_01_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_warship_01_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_warship_01_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_warship_01_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_warship_01_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_large" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Warship_01_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet Big" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_warship_02_water_back.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_warship_02_water_sides.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_medium_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_medium_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.0" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_medium_warship_01.xml -->
+        <SFResourceName>
+            <SFString Value="r_Warship_02" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_warship_02_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_warship_02_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_warship_02_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_warship_02_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_warship_02_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_large" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Warship_02_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet Big" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_warship_01_water_back.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_warship_01_water_sides.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_medium_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_medium_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.3" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled_medium_warship_03.xml -->
+        <SFResourceName>
+            <SFString Value="r_Warship_03" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_warship_03_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_warship_03_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_warship_03_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_warship_03_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_warship_03_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_medium" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Warship_03_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet Big" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_warship_03_water_back.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_warship_03_water_sides.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_medium_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_medium_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_medium_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.6" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+    
+    
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boats_playercontrolled/all_boat_playercontrolled_warship_01.xml -->
+        <SFResourceName>
+            <SFString Value="r_Warship_04" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_warship_04_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_warship_04_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_warship_04_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_warship_04_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_warship_04_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_large" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>        
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Warship_04_Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet Big" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_warship_01_water_back.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_warship_01_water_sides.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_large_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_large_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_large_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_large_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_large_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.04" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.0" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+	
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/boat_playercontrolled_small_01.xml -->
+        <SFResourceName>
+            <SFString Value="r_Small Ship_01" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_raft_01_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_raft_01_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_raft_01_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_raft_01_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_raft_01_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Small Ship_01 Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Small_01 Fishnet" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/boat_playercontrolled_small_01_water_sides.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/boat_playercontrolled_small_01_water_back.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="7.5" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="10.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="30.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.4" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="5.0" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.35" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>	
+	
+    <SFWaterVesselInfo>
+        <!-- xml/prop/all/all_boat_playercontrolled_medium_junk_01.xml -->
+        <SFResourceName>
+            <SFString Value="r_Medium Ship_01" />
+        </SFResourceName>
+        <SFWaterVesselInfoStartSpawningSpecialEffect>
+            <SFString Value="se_ship_03_spawn" />
+        </SFWaterVesselInfoStartSpawningSpecialEffect>
+        <SFWaterVesselInfoPreKillSpecialEffect>
+            <SFString Value="se_ship_03_prekill" />
+        </SFWaterVesselInfoPreKillSpecialEffect>
+        <SFWaterVesselInfoKillSpecialEffect>
+            <SFString Value="se_ship_03_kill" />
+        </SFWaterVesselInfoKillSpecialEffect>
+        <SFWaterVesselInfoUnspawnSpecialEffect>
+            <SFString Value="se_ship_03_unspawn" />
+        </SFWaterVesselInfoUnspawnSpecialEffect>
+        <SFWaterVesselInfoSinkSpecialEffect>
+            <SFString Value="se_ship_03_sink" />
+        </SFWaterVesselInfoSinkSpecialEffect>
+        <SFWaterVesselInfoDamageSpecialEffect>
+            <SFString Value="se_ship_damage" />
+        </SFWaterVesselInfoDamageSpecialEffect>
+    	<SFWaterVesselInfoShockChargerSpecialEffect>
+    	    <SFString Value="se_depth_charge_small" />
+    	</SFWaterVesselInfoShockChargerSpecialEffect>                        
+        <SFWaterVesselInfoSailResourceName>
+            <SFString Value="r_Medium Ship_01 Sail_01" />
+        </SFWaterVesselInfoSailResourceName>
+        <SFWaterVesselInfoFishnetResourceName>
+            <SFString Value="r_Ship Fishnet Big" />
+        </SFWaterVesselInfoFishnetResourceName>
+        <SFWaterVesselInfoWaterSideFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_junk_01_water_sides.xml" />
+        </SFWaterVesselInfoWaterSideFX>
+        <SFWaterVesselInfoWaterBackFX>
+            <SFString Value="prop/all/boats_playercontrolled/all_boat_playercontrolled_medium_junk_01_water_back.xml" />
+        </SFWaterVesselInfoWaterBackFX>
+        <SFIdleUnusedAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleUnusedAudioName>
+        <SFIdleAudioName>
+            <SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+        </SFIdleAudioName>
+        <SFStartAudioName>
+            <SFString Value="audio/ships/df_ship_any_start_using.xml" />
+        </SFStartAudioName>
+        <SFStopAudioName>
+            <SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+        </SFStopAudioName>
+        <SFStartMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+        </SFStartMovingAudioName>
+        <SFStopMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+        </SFStopMovingAudioName>
+        <SFMovingAudioName>
+            <SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+        </SFMovingAudioName>
+        <SFWaterVesselInfoSinkTime>
+            <SFFloat Value="40" />
+        </SFWaterVesselInfoSinkTime>
+        <SFWaterVesselInfoCorpseTime>
+            <SFFloat Value="0.1" />
+        </SFWaterVesselInfoCorpseTime>
+        <SFWaterVesselInfoPreKillTime>
+            <SFFloat Value="2.0" />
+        </SFWaterVesselInfoPreKillTime>
+        <SFWaterVesselInfoSinkDistance>
+            <SFFloat Value="10.0" />
+        </SFWaterVesselInfoSinkDistance>
+        <SFKillExplosionRadius>
+            <SFFloat Value="20.0" />
+        </SFKillExplosionRadius>
+        <SFKillExplosionForce>
+            <SFFloat Value="5.0" />
+        </SFKillExplosionForce>
+        <SFKillDamageMagnitude>
+            <SFFloat Value="100.0" />
+        </SFKillDamageMagnitude>
+        <SFWaterVesselInfoYawTurnRate>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoYawTurnRate>
+        <SFWaterVesselInfoMaxAcceleration>
+            <SFFloat Value="0.6" />
+        </SFWaterVesselInfoMaxAcceleration>
+        <SFWaterVesselInfoMaxVelocity>
+            <SFFloat Value="8.0" />
+        </SFWaterVesselInfoMaxVelocity>
+        <SFWaterVesselInfoMaxBackwardVelocityPercentage>
+            <SFFloat Value="0.25" />
+        </SFWaterVesselInfoMaxBackwardVelocityPercentage>
+        <SFWaterVesselInfoTurnAccelerationRate>
+            <SFFloat Value="0.75" />
+        </SFWaterVesselInfoTurnAccelerationRate>
+        <SFWaterVesselInfoTurnDeccelerationRate>
+            <SFFloat Value="0.3" />
+        </SFWaterVesselInfoTurnDeccelerationRate>
+        <SFWaterVesselInfoZeroVelocityTurnFraction>
+            <SFFloat Value="0.0" />
+        </SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="1.0" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+    </SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\wherry\pc_wherry.xml -->
+		<SFResourceName>
+			<SFString Value="r_Ship Wherry" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_Ship Wherry Sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_Ship Wherry Climbing Net" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="prop/all/no_wb/pc_ships/wherry/pc_wherry_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.4" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="1.0" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="6.3" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.35" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="6.43491" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\launch\pc_launch.xml -->
+		<SFResourceName>
+			<SFString Value="r_Ship Launch" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_Ship Launch Sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_Ship Launch Fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\launch\pc_launch_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.4" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="1.0" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="5.0" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.35" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="8.04291" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\fishing_trawler\pc_fishing_trawler.xml -->
+		<SFResourceName>
+			<SFString Value="r_Ship Fishing Trawler" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_Ship Fishing Trawler Sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_Ship Fishing Trawler Fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoFishBoxResourceName>
+			<SFString Value="r_Ship Fishing Trawler Shipbox" />
+		</SFWaterVesselInfoFishBoxResourceName>				
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\fishing_trawler\pc_fishing_trawler_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.2" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.5" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="4.2" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.35" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="9.83727" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	<!-- \xml\prop\all\no_wb\pc_ships\sea_scraper\pc_sea_scraper.xml -->
+	
+	<SFWaterVesselInfo>		
+		<SFResourceName>
+			<SFString Value="r_ship sea scraper" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship sea scraper sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship sea scraper fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoFishBoxResourceName>
+			<SFString Value="r_ship sea scraper shipbox" />
+		</SFWaterVesselInfoFishBoxResourceName>		
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\sea_scraper\pc_sea_scraper_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.2" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.5" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="4.2" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.35" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="13.94970" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\coastal_runner\pc_coastal_runner.xml -->
+		<SFResourceName>
+			<SFString Value="r_Ship Coastal Runner" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_Ship Coastal Runner Sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_Ship Coastal Runner Fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\coastal_runner\pc_coastal_runner_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="20.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.4" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="1.0" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="11.5" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.55" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="11.80473" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\pinnace\pc_pinnace.xml -->
+		<SFResourceName>
+			<SFString Value="r_Ship Pinnace" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_Ship Pinnace Sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_Ship Pinnace Fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\pinnace\pc_pinnace_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.3" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="1.0" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="7" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.35" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="16.27218" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\sloop\pc_sloop.xml -->
+		<SFResourceName>
+			<SFString Value="r_Ship Sloop" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_fs_explode" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship sloop sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship sloop fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\sloop\pc_sloop_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="3.0" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="30.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="20.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="200.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.3" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.7" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="7.0" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.55" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="36.77218" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\schooner\pc_schooner.xml -->
+		<SFResourceName>
+			<SFString Value="r_ship schooner" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship schooner sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship schooner fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\schooner\pc_schooner_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.18" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.4" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="11.0" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.7" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.35" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="21.44970" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\fine\pc_brigantine.xml -->
+		<SFResourceName>
+			<SFString Value="r_ship brigantine" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship brigantine sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship brigantine fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\brigantine\pc_brigantine_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="7.5" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="10.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="10.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="5.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="30.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.9" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="9.0" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.85" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.45" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="24.30473" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\junk\pc_junk.xml -->
+		<SFResourceName>
+			<SFString Value="r_ship junk" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship junk sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship junk fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\junk\pc_junk_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="20" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="15.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="20.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="15.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="100.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.2" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.6" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="9" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.75" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.3" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="27.33727" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\\pc_barque.xml -->
+		<SFResourceName>
+			<SFString Value="r_ship barque" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship barque sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship barque fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\barque\pc_barque_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="30" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="15.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="50.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="20.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="300.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.3" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="8.0" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.6" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.3" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="30.54733" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\frigate\pc_frigate.xml -->
+		<SFResourceName>
+			<SFString Value="r_ship frigate" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship frigate sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship frigate fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\frigate\pc_frigate_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="50" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="20.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="60.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="30.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="400.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.14" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="10" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.55" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.3" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="33.93491" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+	
+	<SFWaterVesselInfo>
+		<!-- \xml\prop\all\no_wb\pc_ships\ship_of_the_line\pc_ship_of_the_line.xml -->
+		<SFResourceName>
+			<SFString Value="r_ship ship of the line" />
+		</SFResourceName>
+		<SFWaterVesselInfoStartSpawningSpecialEffect>
+			<SFString Value="se_uw_ship_small_spawn" />
+		</SFWaterVesselInfoStartSpawningSpecialEffect>
+		<SFWaterVesselInfoPreKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_prekill" />
+		</SFWaterVesselInfoPreKillSpecialEffect>
+		<SFWaterVesselInfoKillSpecialEffect>
+			<SFString Value="se_uw_ship_small_kill" />
+		</SFWaterVesselInfoKillSpecialEffect>
+		<SFWaterVesselInfoUnspawnSpecialEffect>
+			<SFString Value="se_uw_ship_small_unspawn" />
+		</SFWaterVesselInfoUnspawnSpecialEffect>
+		<SFWaterVesselInfoSinkSpecialEffect>
+			<SFString Value="se_uw_ship_small_sink" />
+		</SFWaterVesselInfoSinkSpecialEffect>
+		<SFWaterVesselInfoDamageSpecialEffect>
+			<SFString Value="se_ship_damage" />
+		</SFWaterVesselInfoDamageSpecialEffect>
+		<SFWaterVesselInfoSailResourceName>
+			<SFString Value="r_ship ship of the line sail_01" />
+		</SFWaterVesselInfoSailResourceName>
+		<SFWaterVesselInfoFishnetResourceName>
+			<SFString Value="r_ship ship of the line fishnet" />
+		</SFWaterVesselInfoFishnetResourceName>
+		<SFWaterVesselInfoWaterSideFX>
+			<SFString Value="\prop\all\no_wb\pc_ships\ship_of_the_line\pc_ship_of_the_line_waves.xml" />
+		</SFWaterVesselInfoWaterSideFX>
+		<SFWaterVesselInfoWaterBackFX>
+			<SFString Value="" />
+		</SFWaterVesselInfoWaterBackFX>
+		<SFIdleUnusedAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleUnusedAudioName>
+		<SFIdleAudioName>
+			<SFString Value="audio/ships/df_ship_small_idle_loop.xml" />
+		</SFIdleAudioName>
+		<SFStartAudioName>
+			<SFString Value="audio/ships/df_ship_any_start_using.xml" />
+		</SFStartAudioName>
+		<SFStopAudioName>
+			<SFString Value="audio/ships/df_ship_any_stop_using.xml" />
+		</SFStopAudioName>
+		<SFStartMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_start_moving.xml" />
+		</SFStartMovingAudioName>
+		<SFStopMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_stop_moving.xml" />
+		</SFStopMovingAudioName>
+		<SFMovingAudioName>
+			<SFString Value="audio/ships/df_ship_small_moving_loop.xml" />
+		</SFMovingAudioName>
+		<SFWaterVesselInfoSinkTime>
+			<SFFloat Value="60" />
+		</SFWaterVesselInfoSinkTime>
+		<SFWaterVesselInfoCorpseTime>
+			<SFFloat Value="0.1" />
+		</SFWaterVesselInfoCorpseTime>
+		<SFWaterVesselInfoPreKillTime>
+			<SFFloat Value="2.0" />
+		</SFWaterVesselInfoPreKillTime>
+		<SFWaterVesselInfoSinkDistance>
+			<SFFloat Value="25.0" />
+		</SFWaterVesselInfoSinkDistance>
+		<SFKillExplosionRadius>
+			<SFFloat Value="70.0" />
+		</SFKillExplosionRadius>
+		<SFKillExplosionForce>
+			<SFFloat Value="30.0" />
+		</SFKillExplosionForce>
+		<SFKillDamageMagnitude>
+			<SFFloat Value="500.0" />
+		</SFKillDamageMagnitude>
+		<SFWaterVesselInfoYawTurnRate>
+			<SFFloat Value="0.14" />
+		</SFWaterVesselInfoYawTurnRate>
+		<SFWaterVesselInfoMaxAcceleration>
+			<SFFloat Value="0.2" />
+		</SFWaterVesselInfoMaxAcceleration>
+		<SFWaterVesselInfoMaxVelocity>
+			<SFFloat Value="8.5" />
+		</SFWaterVesselInfoMaxVelocity>
+		<SFWaterVesselInfoMaxBackwardVelocityPercentage>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoMaxBackwardVelocityPercentage>
+		<SFWaterVesselInfoTurnAccelerationRate>
+			<SFFloat Value="0.4" />
+		</SFWaterVesselInfoTurnAccelerationRate>
+		<SFWaterVesselInfoTurnDeccelerationRate>
+			<SFFloat Value="0.25" />
+		</SFWaterVesselInfoTurnDeccelerationRate>
+		<SFWaterVesselInfoZeroVelocityTurnFraction>
+			<SFFloat Value="0.0" />
+		</SFWaterVesselInfoZeroVelocityTurnFraction>
+        <SFWaterVesselInfoRammingDamageMultiplier>
+            <SFFloat Value="37.5" />
+        </SFWaterVesselInfoRammingDamageMultiplier>
+        <SFWaterVesselInfoCameraRadius>
+            <SFFloat Value="-1.0" />
+        </SFWaterVesselInfoCameraRadius>
+	</SFWaterVesselInfo>
+</SFXML>

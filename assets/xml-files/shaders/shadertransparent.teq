@@ -1,0 +1,137 @@
+//Generic PropShader Shader
+
+
+
+#include "stdstate.frag"
+#include "fog.frag"
+#include "sampler.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "atmosphere.frag"
+#include "offscreenfx.frag"
+
+texture Tex0 : REPTextureDirect;
+
+
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+struct VS_OUTPUT_TERR
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float3 Light: COLOR1;
+    float2 Tex  : TEXCOORD0;
+	float4 ClipSpace  : TEXCOORD1;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+bool Transparent : REInfoTransparent = true;
+
+
+VS_OUTPUT_TERR PropVS1_1(VS_INPUT Input)
+{
+    VS_OUTPUT_TERR Out = (VS_OUTPUT_TERR)0;
+
+
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+   
+    Out.Pos  = mul(Input.Pos, WVP);             // position (projected)
+
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+    float3 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+
+    
+    float Diff = saturate(dot(WorldNorm, L));
+    
+    Out.Diff = saturate((Diff * PLANET_LIGHTCOLOR_COMMON * DiffMaterial)  + ATMOSPHERE_AMBIENT);
+    Out.Diff.w = DiffMaterial.w;
+    
+    float3 LDir = CalculateSpeneBumpLightQuat(WorldNorm,L);
+
+    Out.Light.xyz = normalize(LDir);
+    
+    Out.Tex  = Input.Tex;
+	
+    Out.Fog = CalculateFog(Out.Pos.z);
+	Out.ClipSpace = Out.Pos;
+    return Out;
+}
+
+
+float4 PropPS1_1(VS_OUTPUT_TERR Input) : COLOR
+{
+	
+	float4 Out = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER,Input.Tex);
+	//float dotter = CalculateSpeneBumpPixel(BaseTex,Input.Light);
+	float dotter = CalculateSpeneBumpPixelReflect_2(BaseTex,Input.Light);
+	Out = BaseTex;
+	Out *= Input.Diff;
+	Out.xyz += dotter/4;
+	
+	//Out.w = BaseTex.w;
+	
+	// OffscreenFX
+	Out = ProcessOffscreenFXColor(Out, Input.ClipSpace);
+	return Out;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+   	Texture[0] = (Tex0);
+    
+    
+	ColorWriteEnable = RED|BLUE|GREEN;
+	TexCoordIndex[0] = 0;
+	TexCoordIndex[1] = 1;
+
+        Lighting       = false;
+        SpecularEnable = false;
+        DitherEnable   = false;
+        Shademode      = Gouraud;
+        AddressU[0] = WRAP;
+        AddressV[0] = WRAP;
+
+        AlphaBlendEnable = TRUE;
+        AlphaTestEnable = FALSE;
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        ALPHAREF = 0x5f;
+        ALPHAFUNC = GREATEREQUAL;
+        
+        ZEnable = TRUE;
+	ZWriteEnable = TRUE;
+	
+	Lighting = FALSE;
+	FogEnable = TRUE;
+        CullMode = CCW;
+        //CullMode = NONE;
+	
+        VertexShader = compile vs_1_1 PropVS1_1();
+        PixelShader  = compile ps_2_a PropPS1_1();
+
+    }
+}

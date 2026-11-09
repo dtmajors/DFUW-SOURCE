@@ -1,0 +1,134 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Ship Small_01 Fishnet" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="boat_playercontrolled_small_01_ladder.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shadersails.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="0.000000" B="0.000000" G="370974242818515920000000000.000000" R="0.000000" />
+<Ambient A="0.000000" B="0.000000" G="10395590599566604000000000000000.000000" R="0.000000" />
+<Specular A="0.000000" B="0.000000" G="0.000003" R="505628243432918750000000000.000000" SpecPow="0.000000" />
+<Texture0>
+<SFString Value="small_boat_details.tga" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="1" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-2.60393" Y="-1.99096" Z="-2.72177" />
+</Min>
+<Max>
+<SFVector3 X="2.58687" Y="3.19984" Z="2.46903" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.00852737" Y="0.604437" Z="-0.126367" />
+</Center>
+<Radius>
+<SFFloat Value="2.5954" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.008527374826" Y="0.604437232" Z="-0.1263673156" />
+</Center>
+<Radius>
+<SFFloat Value="2.595399857" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="ladder" />
+<WaterTransition>
+<Submerged Value="2" />
+<Floating Value="1.5" />
+<Surface Value="1" />
+<Touching Value="0.1" />
+</WaterTransition>
+<ImpulseScaleFactor Value="1" />
+<RepulsiveAngleRange Max="3.14159" Min="0" />
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.00852773" Y="1.033" Z="-0.126367" />
+</Center>
+<Radius>
+<SFFloat Value="2.83674" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="boat_playercontrolled_small_01_ladder.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

@@ -1,0 +1,33 @@
+<SFDynamicHitConfig>
+    <Dt value="0.020000" />
+    <Gravity x="0.000000" y="0.000000" z="0.000000" />
+    <NumRelaxIterations value="10" />
+    <NodeJointCrossSize value="2.000000" />
+    <HitForceMagnitude value="80000.000000" />
+    <HitForceRadius value="20.000000" />
+    <HitAccelerationTime value="0.150000" />
+    <HitDecelerationTime value="0.200000" />
+    <HitCylinder>
+        <Radius x="10" z="5" />
+        <YRange min="15" max="50" />
+    </HitCylinder>
+    <PinnedNodes />
+    <IgnoreAllChildrenNodes>
+        <Node name="HorseLLeg0Ankle" />
+        <Node name="HorseRLeg1Ankle" />
+        <Node name="HorseLFrontLeg0Ankle" />
+        <Node name="HorseRFrontLeg1Ankle" />
+        <Node name="HorseNeck01" />
+        <Node name="HorseJaw1" />
+    </IgnoreAllChildrenNodes>
+    <IgnoreSingleNodes>
+        <Node name="HorsePelvis" />
+        <Node name="HorseNeck01" />
+        <Node name="HorseJaw1" />
+    </IgnoreSingleNodes>
+    <ExtraJointsBetweenNodes>
+        <Joint from="HorseSpine01" to="HorseLLeg010" />
+        <Joint from="HorseSpine01" to="HorseRLeg110" />
+    </ExtraJointsBetweenNodes>
+    <EqualAndGreaterLengthConstraints />
+</SFDynamicHitConfig>

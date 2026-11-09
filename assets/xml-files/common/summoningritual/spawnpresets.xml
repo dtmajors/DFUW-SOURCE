@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SFSpawnPresets>
+	<VersionInformation Incremental="0" Major="0" Minor="1" />
+
+	<SFSpawnPreset Name="zombies1">
+		<SFDisplayName>
+			<SFString Value="Easy Zombies" />
+		</SFDisplayName>
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>
+			<ResourceSpawn ResourceName="r_zombie shambler_01" Probability="50" />
+			<ResourceSpawn ResourceName="r_zombie shambler_02" Probability="50" />
+		</ResourceSpawnList>
+		<RespawnDelay MaxSpawnTime="0.3" MinSpawnTime="0.2" />
+		<RequiredMaterialList>
+			<RequiredMaterial ResourceName="r_potato" Quantity="5"/>
+			<RequiredMaterial ResourceName="r_improved arrow_01" Quantity="10"/>
+		</RequiredMaterialList>
+	</SFSpawnPreset>
+	<SFSpawnPreset Name="zombies2">
+		<SFDisplayName>
+			<SFString Value="Medium Zombies" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_zombie dire" SpawnCondition="X_MINIONS" SpawnConditionValue="20" />
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>
+			<ResourceSpawn ResourceName="r_zombie warrior_01" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_02" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_03" Probability="34" />
+		</ResourceSpawnList>
+		<RespawnDelay MaxSpawnTime="0.3" MinSpawnTime="0.2" />
+		<RequiredMaterialList>
+			<RequiredMaterial ResourceName="r_potato" Quantity="20"/>
+			<RequiredMaterial ResourceName="r_improved arrow_01" Quantity="30"/>
+		</RequiredMaterialList>
+	</SFSpawnPreset>
+	<SFSpawnPreset Name="zombies3">
+		<SFDisplayName>
+			<SFString Value="Hard Zombies" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_zombie dire" SpawnCondition="X_MINIONS" SpawnConditionValue="20" />
+		<SpawnPointMOBSNumber Value="10" />
+		<ResourceSpawnList>
+			<ResourceSpawn ResourceName="r_zombie warrior_01" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_02" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_03" Probability="34" />
+		</ResourceSpawnList>
+		<RespawnDelay MaxSpawnTime="0.3" MinSpawnTime="0.2" />
+		<RequiredMaterialList>
+			<RequiredMaterial ResourceName="r_potato" Quantity="50"/>
+			<RequiredMaterial ResourceName="r_improved arrow_01" Quantity="100"/>
+		</RequiredMaterialList>
+	</SFSpawnPreset>
+
+	<SFSpawnPreset Name="event_oak_lord">
+		<SFDisplayName>
+			<SFString Value="Santa Oak Lord" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_Oak Lord" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="30" />
+		<ResourceSpawnList>
+			<ResourceSpawn ResourceName="r_Brownie"    Probability="50" />
+			<ResourceSpawn ResourceName="r_Brownie_01" Probability="50" />
+		</ResourceSpawnList>
+		<RespawnDelay MaxSpawnTime="0.3" MinSpawnTime="0.2" />
+	</SFSpawnPreset>
+
+</SFSpawnPresets>

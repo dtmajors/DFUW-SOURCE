@@ -1,0 +1,196 @@
+// Note: Test this shader
+//Banner wave shader
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+#ifdef SHADER_SHADOW_ENABLE
+#define SHADOWS_ENABLED_HERE
+#endif
+
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  	   : POSITION;
+    float4 SunLight    : COLOR0;
+    float2 Tex  	   : TEXCOORD0;
+    float4 WorldPos    : TEXCOORD1;
+	float2 ZPos 	   : TEXCOORD2;
+	float3 WorldNormal : TEXCOORD4;
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	float4 DynamicLight : TEXCOORD3;
+#endif
+    float Fog : FOG;
+};
+
+static const float RetractStart = 0.85f;
+
+float lightCalculation(const float3 Normal, const float3 NewPosNormal, const float3 LightVec)
+{
+	float Diff1 = abs(dot(Normal, LightVec));
+    float Diff2 = abs(dot(NewPosNormal, LightVec));
+	float Diff = Diff2 + Diff2/4;
+    
+    return Diff;
+}
+
+VS_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	float4x4 WMat = float4x4(Input.WMat1, Input.WMat2, Input.WMat3, Input.WMat4);
+
+    float3 ObjectSize = getBBScale();
+  
+    float3 MinValues;
+
+    float3 NewPos = Input.Pos;
+	
+	float3 NewNorm = Input.Norm;
+    
+    //First retract in X if necessary
+    float RetractVal = saturate(RetractStart + WIND_SPEED);
+
+    //Then move down if necessary
+    float RetractVal2 = saturate(1.0f - (WIND_SPEED+RetractStart)) * ObjectSize.y*0.01f;
+    
+    MinValues.x = getXMin(NewPos.x);
+    MinValues.y = getXMin(NewPos.y);
+
+    float WindStr = saturate(WIND_SPEED + 0.3f);
+    float WindSpd = saturate(0.5f*WIND_SPEED + 0.1f);
+
+
+    float ScaleVal = 0.19f + WIND_SPEED*0.15f;
+    float ScaleValY = 0.13f + WIND_SPEED*0.11f;
+	
+	float3 WorldTranslation = SFMatrixDecomposeTranslation(WMat);
+	float3 RandSeed = SFMatrixNonTranslationSummary(WMat);
+	
+	float RandVal = frac(RandSeed.x + RandSeed.y + RandSeed.z);
+	
+
+    float WaveVal1 = SFGetPeriodicSinTimeValue( 0.0f , MinValues.x * WindStr * (ObjectSize.x*ScaleVal),   -WindSpd * 8.0f , RandVal + MinValues.x);
+    float WaveVal2 = SFGetPeriodicSinTimeValue( 0.0f , MinValues.x * WindStr * (ObjectSize.y*ScaleVal),   -WindSpd * 13.0f , RandVal + MinValues.y);
+    float WaveVal3 = SFGetPeriodicSinTimeValue( 0.0f , MinValues.x * WindStr * (ObjectSize.y*ScaleValY),   -WindSpd * 7.0f, RandVal + MinValues.x);
+    
+
+    float ScaledWav1 = WaveVal1/(MinValues.x * WindStr * (ObjectSize.x*ScaleVal));
+    
+	float3 PrevNewPos = NewPos;
+	
+    NewPos.z += WaveVal1 + WaveVal2;
+    NewPos.y += WaveVal3;
+	
+	
+    NewPos = SFVectorRotateY(NewPos,WIND_ROTATION.y);
+
+	float3 WorldNorm = normalize(SFVectorRotateY(NewNorm,WIND_ROTATION.y));
+	Out.WorldNormal = WorldNorm;	
+	
+	float3 NewPosNorm = (NewPos - PrevNewPos) + WorldNorm;
+	NewPosNorm.y += (abs(NewPosNorm.x) + abs(NewPosNorm.z))/2;
+	NewPosNorm = normalize(NewPosNorm);
+    
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+	NewPos += WorldTranslation;
+	Out.WorldPos = float4(NewPos,1.0f);
+
+    Out.Pos  = mul(float4(NewPos,1.0f), VIEW_PROJECTION_MATRIX);             // position (projected)
+	Out.ZPos = Out.Pos.zw;
+
+    
+	float Diff = lightCalculation(WorldNorm, NewPosNorm, -PLANET_LIGHTDIR_COMMON);
+	Out.SunLight.xyz = saturate(Diff * PLANET_LIGHTCOLOR_COMMON);
+    Out.SunLight.w = 0.0f;
+    
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	Out.DynamicLight = float4(0, 0, 0, 0);
+	[loop] for (int LightIndex=0; LightIndex<ActiveLightCount; LightIndex++)
+	{
+		Out.DynamicLight.xyz += lightCalculation(WorldNorm, NewPosNorm, normalize(unpackLightPosition(LightParams[LightIndex]) - NewPos)) * 
+			unpackLightColor(LightParams[LightIndex]) * calculatePointLightAttenuation(NewPos, LightParams[LightIndex]);
+	}
+#endif
+	
+    Out.Tex  = Input.Tex;
+
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+
+	if (BaseTex.a < ALPHA_TEST_VALUE)
+	{
+		clip(-0.5f);
+	}
+	
+	float4 DynamicLight = float4(0,0,0,0);
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	DynamicLight = Input.DynamicLight;
+#endif
+	Out.Color.xyz = combineIllumination3(Input.WorldPos, Input.ZPos, Input.Fog, BaseTex.xyz, Input.SunLight, DynamicLight);
+	
+	Out.Color.w = 0.0f;
+	//Out.Effect = 0;
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_getZVal(Input.ZPos);
+#endif
+
+#ifdef DEPTH_WRITE_ENABLE
+	Out.Depth.xyz = normalize(Input.WorldNormal);
+	Out.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Out.Material = float4(BaseTex.xyz,0);
+#endif
+	
+	return Out;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

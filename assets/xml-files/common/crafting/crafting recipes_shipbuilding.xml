@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Inherit Calcs done for
+1  50
+10 - 100 ship module 900
+25 50
+50 50
+75 50
+******
+1  50
+1  50 New Selentine Module
+25 50
+25 50 New Veilron Module
+50 50
+50 50 New Neithal Module
+75 50
+75 50 New Leenspar Module
+-->
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="3"/>
+	
+	<!-- ship modules -->
+
+	<SFRecipe ResourceName="r_new Module Ship" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="10" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="300" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="100" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="30" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding" SkillLevel="10" InheritancePortion="1.52" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_new Module Ship Selentine" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="100" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="40" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Selentine Wood" Quantity="10" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_New Selentine Ingot" Quantity="10" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="10" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_new Module Ship Veilron" Quantity="1" Difficulty="0.0" DurationMultiplier="1.4" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="600" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="100" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="40" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_New Veilron Wood" Quantity="10" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_New Veilron Ingot" Quantity="10" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="10" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_new Module Ship Neithal" Quantity="1" Difficulty="0.0" DurationMultiplier="1.6" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="700" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="100" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="40" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_New Neithal Wood" Quantity="10" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_New Neithal Ingot" Quantity="10" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="10" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="50" InheritancePortion="11.2" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_new Module Ship Leenspar" Quantity="1" Difficulty="0.0" DurationMultiplier="1.8" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="800" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="100" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="40" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_New Leenspar Wood" Quantity="10" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_New Leenspar Ingot" Quantity="10" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="10" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="75" InheritancePortion="36.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe> 
+	
+	<!-- ship items -->
+
+	<SFRecipe ResourceName="r_improved Ship Cannon Item" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="10" CraftingSkillLevelMax="20">
+		<SFIngredient ResourceName="r_Gold" Quantity="30" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="15" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding" SkillLevel="10" InheritancePortion="1.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_improved Compass" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="1" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Lodestone" Quantity="1" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- ship figurines -->
+
+	<SFRecipe ResourceName="r_Figurine Ship Wherry" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1000" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="100" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="25" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Figurine Ship Launch" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8000" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Figurine Ship Fishing Trawler" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="7000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding" SkillLevel="50" InheritancePortion="11.2" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Figurine Ship Coastal Runner" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="7000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="14" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding" SkillLevel="75" InheritancePortion="36.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Figurine Ship Sea Scraper" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="15" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding" SkillLevel="75" InheritancePortion="36.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Figurine Ship Pinnace" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="9000" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new module ship Selentine" Quantity="3" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="12" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="1" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="3" FractionLoss="0.8"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Figurine Ship Sloop" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="10000" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new module ship Selentine" Quantity="4" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="15" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="1" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="4" FractionLoss="0.8"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="1" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Figurine Ship Schooner" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="12000" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new module ship Veilron" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="20" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="1" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="6" FractionLoss="0.6"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Figurine Ship Brigantine" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="15000" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new module ship Veilron" Quantity="4" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="25" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="1" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="8" FractionLoss="0.6"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Figurine Ship Junk" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="20000" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new module ship Neithal" Quantity="3" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="30" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="13" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="50" InheritancePortion="11.2" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Figurine Ship Barque" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="22000" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new module ship Neithal" Quantity="4" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="32" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="13" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="50" InheritancePortion="11.2" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Figurine Ship Frigate" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="30000" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_new module ship Leenspar" Quantity="5" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="45" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Sunstone" Quantity="1" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="16" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Widow Silk" Quantity="6" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Skymane Silk" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="75" InheritancePortion="36.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Figurine Ship Ship of the Line" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="50000" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_new module ship Leenspar" Quantity="6" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_new module ship" Quantity="90" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_improved Compass" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Sunstone" Quantity="1" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_improved Ship Cannon Item" Quantity="26" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Widow Silk" Quantity="12" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Skymane Silk" Quantity="12" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Shipbuilding Mastery" SkillLevel="75" InheritancePortion="36.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+</XML>
+

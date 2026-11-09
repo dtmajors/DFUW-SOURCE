@@ -1,0 +1,94 @@
+{
+  "recovered": 19916,
+  "remaining": 243,
+  "by_extension": {
+    ".frag": 64,
+    ".teq": 208,
+    ".xml": 4394,
+    ".sfqt": 162,
+    ".class": 15086,
+    ".properties": 1,
+    ".mf": 1
+  },
+  "groups": {
+    "1": {
+      "entries": 23,
+      "stream_bytes": 0,
+      "not_covered": 23,
+      "references": [],
+      "trailer_extensions": []
+    },
+    "2": {
+      "entries": 302,
+      "stream_bytes": 2374,
+      "not_covered": 28,
+      "recovered": 274,
+      "references": [
+        {
+          "record": "xml-files/shaders/shadowmap.frag",
+          "reference": "C:\\Df Stuff\\extracted\\ProjectDFInfinite\\32bit\\Client\\Game\\data\\dev\\dfdata\\xml-files\\shaders\\shadowmap.frag",
+          "bytes": 2371,
+          "independent_samples": 16
+        }
+      ],
+      "trailer_extensions": [
+        {
+          "record": "xml-files/shaders/cascadedshadowmap.frag",
+          "bytes_added": 3
+        }
+      ]
+    },
+    "3": {
+      "entries": 4597,
+      "stream_bytes": 9917,
+      "not_covered": 44,
+      "recovered": 4553,
+      "references": [
+        {
+          "record": "xml-files/common/specialeffect/specialeffecttree.xml",
+          "reference": "C:\\Df Stuff\\extracted\\ProjectDFInfinite\\32bit\\Client\\Game\\data\\dev\\dfdata\\xml-files\\common\\specialeffect\\specialeffecttree.xml",
+          "bytes": 9917,
+          "independent_samples": 16
+        }
+      ],
+      "trailer_extensions": []
+    },
+    "4": {
+      "entries": 15237,
+      "stream_bytes": 11313,
+      "not_covered": 148,
+      "recovered": 15089,
+      "references": [
+        {
+          "record": "classes/com/thoughtworks/xstream/xstream.class",
+          "reference": "live_class_dump\\classes\\com\\thoughtworks\\xstream\\xstream.class",
+          "bytes": 11310,
+          "independent_samples": 16
+        }
+      ],
+      "trailer_extensions": [
+        {
+          "record": "classes/mvg.class",
+          "bytes_added": 3
+        }
+      ]
+    }
+  },
+  "keys_recovered": 0,
+  "partial_first_blocks": [
+    {
+      "name": "xml-files/zones/voxels.xml",
+      "output": "partial-verified\\xml-files\\zones\\voxels.xml.partial",
+      "bytes": 926519,
+      "full_size": 1452752,
+      "sha256": "3724d1b04d06a3989082ef256981f0e3516544e3735401856f3d0cabaa90bafd"
+    },
+    {
+      "name": "xml-files/objectspace/world_testing_tiles/nature/nature_tree_pines_new.xml",
+      "output": "partial-verified\\xml-files\\objectspace\\world_testing_tiles\\nature\\nature_tree_pines_new.xml.partial",
+      "bytes": 918022,
+      "full_size": 1244446,
+      "sha256": "9893bf4f0278e50f91c45b7da11e1d587780af75ff21d87149dd555186cb8abd"
+    }
+  ]
+}

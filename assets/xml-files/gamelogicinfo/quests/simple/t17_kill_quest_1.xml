@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SFSimpleQuest>
+  <QuestEndNpcName/>
+  <QuestEndTargetMarkerCaption/>
+  <ShowMarkerOnTarget>false</ShowMarkerOnTarget>
+  <NonAliveTarget>false</NonAliveTarget>
+  <TimeLimit>00:10:00</TimeLimit>
+  <SurvivalMode>false</SurvivalMode>
+  <ChainQuest>true</ChainQuest>
+  <QuestFinishedText>5 goblins are dead from your bloody hands.</QuestFinishedText>
+  <QuestDiaryText>Killed 5 goblins.</QuestDiaryText>
+  <UseSkillMessage/>
+  <OverrideTextProgression>false</OverrideTextProgression>
+  <TargetedResources>
+    <SFResourceAndQuantity>
+      <ResourceName>r_Goblins</ResourceName>
+      <ResourceType>-1</ResourceType>
+      <Amount>5</Amount>
+      <LeastTargets>5</LeastTargets>
+      <outer-class class="SFSimpleQuest" reference="../../.."/>
+    </SFResourceAndQuantity>
+  </TargetedResources>
+  <Rewards>
+    <Reward>
+      <ResourceName>r_Gold</ResourceName>
+      <Amount>999</Amount>
+      <Probability>1.0</Probability>
+      <outer-class class="SFSimpleQuest" reference="../../.."/>
+    </Reward>
+  </Rewards>
+  <SkillName/>
+  <SkillType>-1</SkillType>
+  <Marker>
+    <spenefett.gamelogic.framework.quest.definition.SFQuestMarkerUtil>
+      <FileName>t17_spawns_01.xml</FileName>
+      <Caption>Goblins,Kill em all</Caption>
+      <MarkerIconType>Target Kill</MarkerIconType>
+      <MarkerTargetType>SPAWN_POINT</MarkerTargetType>
+      <Visible>true</Visible>
+    </spenefett.gamelogic.framework.quest.definition.SFQuestMarkerUtil>
+  </Marker>
+  <LinkedSpawnpoints>true</LinkedSpawnpoints>
+  <Type>KILL_QUEST</Type>
+  <ID>18</ID>
+  <Name>KILL_QUEST_1</Name>
+  <QuestStartSourceSpecialEffect/>
+  <QuestStartTargetSpecialEffect/>
+  <QuestStartClientSpecialEffect/>
+  <QuestEndSourceSpecialEffect/>
+  <QuestEndTargetSpecialEffect/>
+  <QuestEndClientSpecialEffect/>
+  <Filename>t17_kill_quest_1.xml</Filename>
+  <TileLocation>T17</TileLocation>
+  <QuestStartText>Just go and kill 5 goblins!</QuestStartText>
+  <QuestEndText>Congratulations, you have jusy finished your first assigmnent!!</QuestEndText>
+  <ShortDescription>Kill 5 goblins!!</ShortDescription>
+</SFSimpleQuest>

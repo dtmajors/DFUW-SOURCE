@@ -1,0 +1,160 @@
+/*
+ * Decompiled with CFR.
+ */
+public final class mev
+extends meq {
+    private static final mev CtR = new mev();
+    @lok(value="Earth")
+    @lpl(value="The s_earth skill name in singular form")
+    public static final lox CtS = CtR.BC("s_earth_NameSingular");
+    @lok(value="The deep rocks of the Earth have blessed you with their strength.  The element of earth is best attuned to damaging your enemies over time and protecting yourself.")
+    @lpl(value="The s_earth skill description")
+    public static final lox CtT = CtR.BC("s_earth_Description");
+    @lok(value="Earth Spells")
+    @lpl(value="The s_earth_spells skill name in singular form")
+    public static final lox CtU = CtR.BC("s_earth_spells_NameSingular");
+    @lok(value="Adepts of Earth Magic controls both the power of strength and corrosion.  They're unique in knowing ways to protect efficiently against melee weapons without donning cumbersome armor.")
+    @lpl(value="The s_earth_spells skill description")
+    public static final lox CtV = CtR.BC("s_earth_spells_Description");
+    @lok(value="Earthquake Monster")
+    @lpl(value="The s_earthquake_monster skill name in singular form")
+    public static final lox CtW = CtR.BC("s_earthquake_monster_NameSingular");
+    @lok(value="FIX s_earthquake_monster DESCRIPTION IN THE SKILLTREE")
+    @lol(value="The s_earthquake_monster skill description has not been set, and must be updated in the skill tree and code, before it can be translated... the text here has special handling and will not be displayed in-game")
+    public static final lox CtX = CtR.BC("s_earthquake_monster_Description");
+    @lok(value="Earthquake Old")
+    @lpl(value="The s_earthquake_old skill name in singular form")
+    public static final lox CtY = CtR.BC("s_earthquake_old_NameSingular");
+    @lok(value="Press and hold Action button to call forth an earthquake damaging everything close by, including the caster.")
+    @lpl(value="The s_earthquake_old skill description")
+    public static final lox CtZ = CtR.BC("s_earthquake_old_Description");
+    @lok(value="Eat")
+    @lpl(value="The s_eat skill name in singular form")
+    public static final lox Cua = CtR.BC("s_eat_NameSingular");
+    @lok(value="FIX s_eat DESCRIPTION IN THE SKILLTREE")
+    @lol(value="The s_eat skill description has not been set, and must be updated in the skill tree and code, before it can be translated... the text here has special handling and will not be displayed in-game")
+    public static final lox Cub = CtR.BC("s_eat_Description");
+    @lok(value="Efficiency")
+    @lpl(value="The s_efficiency skill name in singular form")
+    public static final lox Cuc = CtR.BC("s_efficiency_NameSingular");
+    @lok(value="Conserving your energy, all your skills will consume less stamina for the duration.")
+    @lpl(value="The s_efficiency skill description")
+    public static final lox Cud = CtR.BC("s_efficiency_Description");
+    @lok(value="Eldrich Sphere Monster")
+    @lpl(value="The s_eldrich_sphere_monster skill name in singular form")
+    public static final lox Cue = CtR.BC("s_eldrich_sphere_monster_NameSingular");
+    @lok(value="FIX s_eldrich_sphere_monster DESCRIPTION IN THE SKILLTREE")
+    @lol(value="The s_eldrich_sphere_monster skill description has not been set, and must be updated in the skill tree and code, before it can be translated... the text here has special handling and will not be displayed in-game")
+    public static final lox Cuf = CtR.BC("s_eldrich_sphere_monster_Description");
+    @lok(value="Eldrich Sphere ShadowImp Monster")
+    @lpl(value="The s_eldrich_sphere_shadowimp_monster skill name in singular form")
+    public static final lox Cug = CtR.BC("s_eldrich_sphere_shadowimp_monster_NameSingular");
+    @lok(value="FIX s_eldrich_sphere_shadowimp_monster DESCRIPTION IN THE SKILLTREE")
+    @lol(value="The s_eldrich_sphere_shadowimp_monster skill description has not been set, and must be updated in the skill tree and code, before it can be translated... the text here has special handling and will not be displayed in-game")
+    public static final lox Cuh = CtR.BC("s_eldrich_sphere_shadowimp_monster_Description");
+    @lok(value="Eldrich Sphere Wisp Monster")
+    @lpl(value="The s_eldrich_sphere_wisp_monster skill name in singular form")
+    public static final lox Cui = CtR.BC("s_eldrich_sphere_wisp_monster_NameSingular");
+    @lok(value="FIX s_eldrich_sphere_wisp_monster DESCRIPTION IN THE SKILLTREE")
+    @lol(value="The s_eldrich_sphere_wisp_monster skill description has not been set, and must be updated in the skill tree and code, before it can be translated... the text here has special handling and will not be displayed in-game")
+    public static final lox Cuj = CtR.BC("s_eldrich_sphere_wisp_monster_Description");
+    @lok(value="Elementalist")
+    @lpl(value="The s_elementalist skill name in singular form")
+    public static final lox Cuk = CtR.BC("s_elementalist_NameSingular");
+    @lok(value="A master manipulator of the cosmic elemental energies, the Elementalist uses the arcane powers to blast his enemies to oblivion!")
+    @lpl(value="The s_elementalist skill description")
+    public static final lox Cul = CtR.BC("s_elementalist_Description");
+    @lok(value="Enchantment")
+    @lpl(value="The s_enchantment skill name in singular form")
+    public static final lox Cum = CtR.BC("s_enchantment_NameSingular");
+    @lok(value="Allows the enchanting of weapons, magestaffs, necklaces, rings, and armor.")
+    @lpl(value="The s_enchantment skill description")
+    public static final lox Cun = CtR.BC("s_enchantment_Description");
+    @lok(value="Engineering")
+    @lpl(value="The s_engineering skill name in singular form")
+    public static final lox Cuo = CtR.BC("s_engineering_NameSingular");
+    @lok(value="The favored craft of the techno-magical dwarves of old.  Engineering allows you to build the basic building blocks of many of the worlds constructions.  Standing near a workbench, press your Interact key to begin crafting.")
+    @lpl(value="The s_engineering skill description")
+    public static final lox Cup = CtR.BC("s_engineering_Description");
+    @lok(value="Engineering Mastery")
+    @lpl(value="The s_engineering_mastery skill name in singular form")
+    public static final lox Cuq = CtR.BC("s_engineering_mastery_NameSingular");
+    @lok(value="You are a master engineer! Your craftsmanship now rivals that of the Dwarves of old and allows you to achieve advanced feats of Engineering like War Machinery and their like.")
+    @lpl(value="The s_engineering_mastery skill description")
+    public static final lox Cur = CtR.BC("s_engineering_mastery_Description");
+    @lok(value="Evade")
+    @lpl(value="The s_evade skill name in singular form")
+    public static final lox Cus = CtR.BC("s_evade_NameSingular");
+    @lok(value="Like a coiled spring, you can leap quickly in any direction you choose. Cannot be used underwater.")
+    @lpl(value="The s_evade skill description")
+    public static final lox Cut = CtR.BC("s_evade_Description");
+    @lok(value="Evil Eye")
+    @lpl(value="The s_evil_eye skill name in singular form")
+    public static final lox Cuu = CtR.BC("s_evil_eye_NameSingular");
+    @lok(value="Fires a missile that decreases its target\\'s chance of negating spell effects.")
+    @lpl(value="The s_evil_eye skill description")
+    public static final lox Cuv = CtR.BC("s_evil_eye_Description");
+    @lok(value="Exalted Sacrifice")
+    @lpl(value="The s_exalted_sacrifice skill name in singular form")
+    public static final lox Cuw = CtR.BC("s_exalted_sacrifice_NameSingular");
+    @lok(value="Give of your own to heal and rejuvenate another.  You will lose 40% of the health your ally is healed for.")
+    @lpl(value="The s_exalted_sacrifice skill description")
+    public static final lox Cux = CtR.BC("s_exalted_sacrifice_Description");
+    @lok(value="Examine Object")
+    @lpl(value="The s_examine_object skill name in singular form")
+    public static final lox Cuy = CtR.BC("s_examine_object_NameSingular");
+    @lok(value="Description of s_Examine Object")
+    @lpl(value="The s_examine_object skill description")
+    public static final lox Cuz = CtR.BC("s_examine_object_Description");
+    @lok(value="Exhaust")
+    @lpl(value="The s_exhaust skill name in singular form")
+    public static final lox CuA = CtR.BC("s_exhaust_NameSingular");
+    @lok(value="Fires a missile that reduces its target\\'s natural Stamina regeneration.")
+    @lpl(value="The s_exhaust skill description")
+    public static final lox CuB = CtR.BC("s_exhaust_Description");
+    @lok(value="Exhaust Monster")
+    @lpl(value="The s_exhaust_monster skill name in singular form")
+    public static final lox CuC = CtR.BC("s_exhaust_monster_NameSingular");
+    @lok(value="FIX s_exhaust_monster DESCRIPTION IN THE SKILLTREE")
+    @lol(value="The s_exhaust_monster skill description has not been set, and must be updated in the skill tree and code, before it can be translated... the text here has special handling and will not be displayed in-game")
+    public static final lox CuD = CtR.BC("s_exhaust_monster_Description");
+    @lok(value="Exploding Charge")
+    @lpl(value="The s_exploding_charge skill name in singular form")
+    public static final lox CuE = CtR.BC("s_exploding_charge_NameSingular");
+    @lok(value="Fires a missile that explodes upon impact causing Lightning damage.")
+    @lpl(value="The s_exploding_charge skill description")
+    public static final lox CuF = CtR.BC("s_exploding_charge_Description");
+    @lok(value="Exploit Weakness")
+    @lpl(value="The s_exploit_weakness skill name in singular form")
+    public static final lox CuG = CtR.BC("s_exploit_weakness_NameSingular");
+    @lok(value="Finding the weakness in your foes armor, your arrow causes them to take increased piercing damage for the duration.")
+    @lpl(value="The s_exploit_weakness skill description")
+    public static final lox CuH = CtR.BC("s_exploit_weakness_Description");
+    @lok(value="Explosion")
+    @lpl(value="The s_explosion skill name in singular form")
+    public static final lox CuI = CtR.BC("s_explosion_NameSingular");
+    @lok(value="Produces a fiery blast centered on the caster, damaging everything around him as well as himself.")
+    @lpl(value="The s_explosion skill description")
+    public static final lox CuJ = CtR.BC("s_explosion_Description");
+    @lok(value="Explosive Arrow")
+    @lpl(value="The s_explosive_arrow skill name in singular form")
+    public static final lox CuK = CtR.BC("s_explosive_arrow_NameSingular");
+    @lok(value="Imbue your arrow with magical energies to explode on impact and damage any fools in the vicinity! This skill consumes mana.")
+    @lpl(value="The s_explosive_arrow skill description")
+    public static final lox CuL = CtR.BC("s_explosive_arrow_Description");
+    @lok(value="Eye Rot")
+    @lpl(value="The s_eye_rot skill name in singular form")
+    public static final lox CuM = CtR.BC("s_eye_rot_NameSingular");
+    @lok(value="Damn their eyes! Aim well and all caught within this curse's blast will bleed right out of their eye-sockets, suffering blindness, a decrease to their dexterity and intelligence, and a lot of hurt!")
+    @lpl(value="The s_eye_rot skill description")
+    public static final lox CuN = CtR.BC("s_eye_rot_Description");
+
+    public mev() {
+        super("E");
+    }
+
+    public mev(String string) {
+        super("E." + string);
+    }
+}
+

@@ -1,0 +1,22 @@
+//  Math Constants
+//
+//
+//
+
+#ifndef __MATHCONSTANTS__FRAG__
+#define __MATHCONSTANTS__FRAG__
+
+
+#define SF_PI 		3.14159265358979323846264338
+#define SF_HALFPI 	1.57079632679489661923
+#define SF_TWOPI 	6.28318530717958647692
+#define SF_INVPI 	0.31830988618379067154
+
+
+#define SF_ANIMATIONSCALE  0.0254000000259
+
+shared const float RANDOM_VALUE : REPRandomValue;
+
+
+
+#endif

@@ -1,0 +1,133 @@
+//Volum Light Shader
+
+
+
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+
+
+float LightRadius : LightRadius;
+float3 LightPosition : LightPosition;
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : NORMAL;
+};
+
+
+
+VS_OUTPUT VolumLight(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	float3 Normal = Input.Norm;
+	float3 CPos = SFMatrixDecomposeTranslation(VIEW_MATRIX);
+	
+	float3 NewPos = Input.Pos * LightRadius;
+	NewPos += LightPosition;
+	
+	Out.Pos = mul(float4(NewPos,1.0f),VIEW_PROJECTION_MATRIX);
+	
+	//Out.Pos = NewPos;
+
+    return Out;
+}
+
+
+
+
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    	//Texture[0] = NULL;
+        CullMode = Ccw;
+        FogEnable = FALSE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+
+        //Disable writing to colorbuffer
+        ColorWriteEnable = 0;
+        
+        // Disable writing to depth buffer
+        ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+        // Setup stencil states
+
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        StencilPass = Keep;
+
+        PixelShader = NULL;
+        VertexShader = compile vs_1_1 VolumLight();
+    }
+    pass P1
+    {
+		STD_STATE;
+        CullMode = CW;
+        StencilZFail = Incr;
+        PixelShader = NULL;
+        VertexShader = compile vs_1_1 VolumLight();
+    }
+}
+
+
+technique T1
+{
+    pass P0
+    {
+		STD_STATE;
+    	//Texture[0] = NULL;
+        CullMode = None;
+        FogEnable = FALSE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        ColorWriteEnable = 0;
+        
+        //Disable writing to colorbuffer
+        //SrcBlend = Zero;
+        //DestBlend = One;
+        
+        // Disable writing to depth buffer
+        ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+        // Setup stencil states
+        TwoSidedStencilMode = true;
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        Ccw_StencilFunc = Always;
+        Ccw_StencilZFail = Incr;
+        //Ccw_StencilZFail = REPLACE;
+        Ccw_StencilPass = Keep;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        //StencilZFail = REPLACE;
+        StencilPass = Keep;
+
+        PixelShader = NULL;
+        VertexShader = compile vs_1_1 VolumLight();
+
+    }
+}
+
+

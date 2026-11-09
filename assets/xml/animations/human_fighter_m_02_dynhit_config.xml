@@ -1,0 +1,29 @@
+<SFDynamicHitConfig>
+    <Dt value="0.020000" />
+    <Gravity x="0.000000" y="0.000000" z="0.000000" />
+    <NumRelaxIterations value="10" />
+    <NodeJointCrossSize value="2.000000" />
+    <HitForceMagnitude value="80000.000000" />
+    <HitForceRadius value="20.000000" />
+    <HitAccelerationTime value="0.150000" />
+    <HitDecelerationTime value="0.200000" />
+    <HitCylinder>
+        <Radius x="10" z="5" />
+        <YRange min="15" max="50" />
+    </HitCylinder>
+    <PinnedNodes />
+    <IgnoreAllChildrenNodes>
+        <Node name="hum_fHead" />
+        <Node name="hum_fLArmPalm" />
+        <Node name="hum_fRArmPalm" />
+        <Node name="hum_fLLegAnkle" />
+        <Node name="hum_fRLegAnkle" />
+    </IgnoreAllChildrenNodes>
+    <IgnoreSingleNodes>
+        <Node name="hum_f" />
+        <Node name="hum_fPelvis" />
+        <Node name="hum_fHead" />
+    </IgnoreSingleNodes>
+    <ExtraJointsBetweenNodes />
+    <EqualAndGreaterLengthConstraints />
+</SFDynamicHitConfig>

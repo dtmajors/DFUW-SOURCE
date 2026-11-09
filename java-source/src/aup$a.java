@@ -1,0 +1,19 @@
+enum aup$a {
+   cec,
+   ced,
+   cee,
+   cef,
+   ceg,
+   ceh,
+   cei,
+   cej,
+   cek,
+   cel,
+   cem,
+   cen,
+   ceo,
+   cep,
+   ceq,
+   cer,
+   ces;
+}

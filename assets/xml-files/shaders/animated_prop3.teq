@@ -1,0 +1,183 @@
+#include "stdstate.frag"
+#include "anim.frag"
+#include "stdio.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+#include "matrix.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+// Matrix Pallette
+float4x3    mWorldMatrixArray[ANIM_MAX_MATRICES] : REAnimWorldMatrixArray;
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+///////////////////////////////////////////////////////
+
+struct VS_OUTPUT
+{
+    float4  Pos     		: POSITION;
+    float2  Tex0    		: TEXCOORD0;
+    float3 WorldNormal 		: TEXCOORD1;
+    float3 WorldEyeVec 		: TEXCOORD2;
+    float3 WorldPos 		: TEXCOORD3;
+	float2 	ZPos 			: TEXCOORD4;
+	float3 WorldTangent     : TEXCOORD5;
+	float3 WorldBinormal    : TEXCOORD6;
+    float   Fog	    		: FOG;
+};
+
+VS_OUTPUT VShade_2Weight(STD_VS_SKINNING_INPUT Input)
+{
+    VS_OUTPUT   o = (VS_OUTPUT)0;
+    float3      Pos = 0.0f;
+    float3      Normal = 0.0f;    
+	float3      Tangent = 0.0;
+	float3		Binormal = 0.0;
+    float       LastWeight = 0.0f;
+	
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(Input.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])Input.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+
+    BlendWeightsArray[2] = 1.0 - (BlendWeightsArray[0] + BlendWeightsArray[1]);
+	BlendWeightsArray[3] = 0.0;
+
+	Pos += mul(Input.Pos, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+	Normal += mul(Input.Normal, (float3x3)mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+#ifndef LOW_SHADER_QUALITY
+	Tangent += mul(Input.Tangent, (float3x3)mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+	Binormal += mul(Input.Binormal, (float3x3)mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+#endif
+
+	Pos += mul(Input.Pos, mWorldMatrixArray[IndexArray[1]]) * BlendWeightsArray[1];
+	Normal += mul(Input.Normal, (float3x3)mWorldMatrixArray[IndexArray[1]]) * BlendWeightsArray[1];
+#ifndef LOW_SHADER_QUALITY
+	Tangent += mul(Input.Tangent, (float3x3)mWorldMatrixArray[IndexArray[1]]) * BlendWeightsArray[1];
+	Binormal += mul(Input.Binormal, (float3x3)mWorldMatrixArray[IndexArray[1]]) * BlendWeightsArray[1];
+#endif
+	
+	Pos += mul(Input.Pos, mWorldMatrixArray[IndexArray[2]]) * BlendWeightsArray[2];
+	Normal += mul(Input.Normal, (float3x3)mWorldMatrixArray[IndexArray[2]]) * BlendWeightsArray[2];
+#ifndef LOW_SHADER_QUALITY
+	Tangent += mul(Input.Tangent, (float3x3)mWorldMatrixArray[IndexArray[2]]) * BlendWeightsArray[2];
+	Binormal += mul(Input.Binormal, (float3x3)mWorldMatrixArray[IndexArray[2]]) * BlendWeightsArray[2];
+#endif
+	        
+    // transform position from world space into view and then projection space
+    o.Pos = mul(float4(Pos.xyz, 1.0f), VIEW_PROJECTION_MATRIX);
+	o.WorldPos = Pos;
+	o.ZPos.xy = o.Pos.zw;
+
+    // normalize normals
+    Normal = normalize(Normal);
+#ifndef LOW_SHADER_QUALITY
+	Tangent = normalize(Tangent);
+	Binormal = normalize(Binormal);
+	o.WorldTangent = Tangent;
+	o.WorldBinormal = Binormal;
+#endif
+
+    // copy the input texture coordinate through
+    o.Tex0  = Input.Tex0.xy;
+	
+	o.WorldNormal = Normal;
+	o.WorldEyeVec  = normalize(EYE_POS - Pos);
+    o.Fog = CalculateFog_3_0(o.Pos.z);
+
+    return o;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, Input.Tex0);
+	float4 NormalSample = SurfaceColor.g * 0.2;
+	
+	float SpecularContribution = NormalSample.w;
+	float SunSpecularExponent = lerp(16,40,RAIN_FACTOR);
+	float OpaqueLightsExponent = 16;
+	
+	float3 WorldNormal = normalize(Input.WorldNormal);
+	float3 Nn = WorldNormal;
+	float3 Vn = normalize(Input.WorldEyeVec);
+
+#ifndef LOW_SHADER_QUALITY
+	NormalSample = tex2D(LinearSampler_Normal, Input.Tex0);
+	SpecularContribution = NormalSample.w;
+	
+	float3 WorldTangent = normalize(Input.WorldTangent);
+	float3 WorldBinormal = normalize(Input.WorldBinormal);
+		
+	float3 BumpNormal = 2.0 * (NormalSample.xyz - 0.5);
+	Nn = normalize(WorldNormal + BumpNormal.x * WorldTangent + BumpNormal.y * WorldBinormal);
+#endif
+
+	float4 Weather = applyAtmosphere(SurfaceColor.xyz,Input.WorldPos,Vn,WorldNormal,Nn,Input.Tex0 * 0.2,SpecularContribution,1);
+	
+	float3 Ln = -PLANET_LIGHTDIR_COMMON;
+	float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+	float SunSpecularContribution = lerp(SpecularContribution,SpecularContribution*lerp(2.5,1.5,smoothstep(0.7,0.9,SunIntensity)),saturate(dot(Ln,Vn)));
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, SunSpecularExponent, STANDARD_PROP_DIFFUSE_WRAP, SunSpecularContribution / lerp(0.2 ,1,SunIntensity));
+
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, OpaqueLightsExponent, 
+			STANDARD_PROP_DIFFUSE_WRAP,  NormalSample.w, Vn, LightParams[i]);
+	}
+#endif
+
+	Output.Color.xyz = combineWeatherIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight, 0, Weather.xyz, 0);
+	Output.Color.w = 0;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, NormalSample.w);
+#endif
+
+	return Output;
+}
+
+
+
+//////////////////////////////////////
+// Techniques specs follow
+//////////////////////////////////////
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+		ColorWriteEnable = RED | BLUE | GREEN | ALPHA;
+    
+        AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+		
+        ZEnable = true;
+		ZWriteEnable = true;
+		
+       	CullMode = CCW;
+		FogEnable = false;
+        
+    	VertexShader = compile vs_3_0 VShade_2Weight();
+        PixelShader = compile ps_3_0 PS();
+    }
+}
+

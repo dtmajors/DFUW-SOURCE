@@ -1,0 +1,88 @@
+//REFLECTIVE DEPTH PASS SHADER
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "stdio.frag"
+#include "texture.frag"
+#include "lighting.frag"
+#include "ssao.frag"
+#include "combine_illumination.frag"
+#include "fake_reflections.frag"
+#include "reflections.frag"
+
+bool Transparent : REInfoTransparent = true;
+
+// Tell that this object is reflective
+bool Reflective : REInfoReflective = true;
+int ReflectionType : REInfoReflectionType = REFLECTION_TYPE_REAL;
+float ReflectionHeight : REPReflectionHeight = 0 ;
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos 				: POSITION;
+	float4 ClipSpacePos		: TEXCOORD0;
+};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+	
+	float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+	Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX);      
+	Out.ClipSpacePos = Out.Pos;
+	
+	return Out;
+}
+
+STD_PS_OUTPUT_3 DepthPassPS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3) 0;
+	
+	
+	Out.Color = 0;
+	
+	// so we don't receive light
+	Out.Material = 0 ;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Out.Depth.xyz = float3(0, 1, 0);
+	Out.Depth.w = Input.ClipSpacePos.z / Input.ClipSpacePos.w;
+#endif
+
+	return Out;
+}
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = 0;
+		ColorWriteEnable1 = RED | GREEN | BLUE | ALPHA;
+		ColorWriteEnable2 =  RED | GREEN | BLUE | ALPHA;
+		
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+
+        
+        ZEnable = true;
+		ZWriteEnable = false;
+	
+		
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 DepthPassPS();
+
+    }
+}
+

@@ -1,0 +1,155 @@
+// Note: Frequently used shader
+//Default Shader instancing
+//Vertex Paint Color(White : allow weather effect)
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+struct CustomVSOutput
+{
+    float4 Pos				: POSITION;
+	float3 WorldTangent		: TANGENT;
+	float3 WorldBinormal	: BINORMAL;
+    float3 WorldNormal		: TEXCOORD0;
+    float3 WorldEyeVec		: TEXCOORD1;
+	float2 Tc				: TEXCOORD2;
+	float4 ZPos				: TEXCOORD3;
+	float3 ModelPos			: TEXCOORD4;
+    float3 WorldPos			: TEXCOORD5;
+	float  Fog				: TEXCOORD6;
+	float4 Speed			: TEXCOORD7;
+};
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+CustomVSOutput Unwrap(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE_VPAINT(Input);
+	
+	CustomVSOutput O;
+	O.Pos = Output.Pos;
+	O.WorldTangent = Output.WorldTangent;
+	O.WorldBinormal = Output.WorldBinormal;
+    O.WorldNormal = Output.WorldNormal;
+	O.WorldNormal = Output.WorldNormal;
+    O.WorldEyeVec = Output.WorldEyeVec;
+	O.Tc = Output.Tc;
+	O.ZPos = Output.ZPos;
+	O.ModelPos = Input.Pos;
+    O.WorldPos = Output.WorldPos;
+	O.Fog = Output.Fog;
+	O.Speed.x = Output.Tc.x + frac(TOTAL_TIME * 1.0);
+	O.Speed.y = Output.Tc.x + frac(TOTAL_TIME * 1.5);
+	O.Speed.z = Output.Tc.x + frac(TOTAL_TIME * 2.0);
+	O.Speed.w = Output.Tc.x + frac(TOTAL_TIME * 2.5);
+	
+	return O;
+}
+
+STD_PS_OUTPUT_3 PS(CustomVSOutput Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float Speed = 0;
+	
+	if(PowerMaterial == 0)
+		Speed = Input.Tc.x;
+	if(PowerMaterial > 0 && PowerMaterial <= 0.25)
+		Speed = Input.Speed.x;
+	if(PowerMaterial > 0.25 && PowerMaterial <= 0.5)
+		Speed = Input.Speed.y;
+	if(PowerMaterial > 0.5 && PowerMaterial <= 0.75)
+		Speed = Input.Speed.z;
+	if(PowerMaterial > 0.75 && PowerMaterial <= 1.0)
+		Speed = Input.Speed.w;
+	
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, float2(Speed,Input.Tc.y));
+	if (SurfaceColor.w <0.5) clip(-1);
+	
+	float4 NormalSample = SurfaceColor.g * 0.2;
+	
+	float SpecularContribution = NormalSample.w;
+	float SunSpecularExponent = lerp(16,40,RAIN_FACTOR);
+		
+	float3 WorldNormal = normalize(Input.WorldNormal);
+	float3 Nn = WorldNormal;
+	float3 Vn = normalize(Input.WorldEyeVec);
+	
+#ifndef LOW_SHADER_QUALITY
+	NormalSample = tex2D(LinearSampler_Normal, float2(Speed,Input.Tc.y));
+	SpecularContribution = NormalSample.w;
+	
+	float3 WorldTangent = normalize(Input.WorldTangent);
+	float3 WorldBinormal = normalize(Input.WorldBinormal);
+	
+	float3 BumpNormal = 2.0 * (NormalSample.xyz - float3(0.5, 0.5, 0.5));
+	Nn = normalize(WorldNormal + BumpNormal.x * WorldTangent + BumpNormal.y * WorldBinormal);
+#endif
+	
+	//float4 Weather = applyAtmosphere(SurfaceColor.xyz,Input.WorldPos,Vn,WorldNormal,Nn,Input.Tc*0.2,SpecularContribution,1);
+	//Weather.xyz = lerp(Weather.xyz,SurfaceColor.xyz,Input.MappingWeights.z); //Black->No Weather White->Weather
+	//SpecularContribution = lerp(Weather.w,SpecularContribution,Input.MappingWeights.z);
+	
+	float3 Ln = -PLANET_LIGHTDIR_COMMON;
+	float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+	float SunSpecularContribution = lerp(SpecularContribution,SpecularContribution*lerp(2.5,1.5,smoothstep(0.7,0.9,SunIntensity)),saturate(dot(Ln,Vn)));
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, SunSpecularExponent, STANDARD_PROP_DIFFUSE_WRAP, SunSpecularContribution / lerp(0.2 ,1,SunIntensity));
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, STANDARD_PROP_SPECULAR_EXPONENT, 
+			STANDARD_PROP_DIFFUSE_WRAP, NormalSample.w, Vn, LightParams[i]);
+	}
+#endif
+
+	Output.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight);
+	Output.Color.w = 0;
+
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, NormalSample.w);
+#endif
+
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+		VertexShader = compile vs_3_0 Unwrap();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

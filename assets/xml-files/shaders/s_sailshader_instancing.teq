@@ -1,0 +1,86 @@
+#include "stdstate.frag"
+#include "spenebump.frag"
+#include "windswing.frag"
+#include "texture.frag"
+
+#include "instancing.frag"
+#include "shadowmap.frag"
+
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float2 Tex	: TEXCOORD0;
+    float3 Norm : Normal;
+	//Instancing data
+	float4 WMat1 : TEXCOORD5;
+	float4 WMat2 : TEXCOORD6;
+	float4 WMat3 : TEXCOORD7;
+	float4 WMat4 : TEXCOORD8;
+	
+};
+
+
+
+VS_SHADOWMAP_OUTPUT VS(VS_INPUT Input)
+{
+    VS_SHADOWMAP_OUTPUT Out = (VS_SHADOWMAP_OUTPUT)0;
+
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+	
+	
+	float3 TempPos = Input.Pos;
+	//Wave it along the normal	
+	float WaveFactor = saturate(1.0f - Input.Diff.y);
+	float VertexOffset = Input.Pos.x + Input.Pos.y + Input.Pos.z;
+	
+	float SinVal  = sin((TOTAL_TIME * 10.0f * WIND_SPEED)  + VertexOffset );
+	
+	TempPos += Input.Norm * SinVal * WaveFactor * 0.5f;
+	
+
+    float4 WorldPos = mul(float4(TempPos,1.0f),WMat);
+	WorldPos.xyz += PLANET_LIGHTDIR_COMMON;
+
+	Out.Pos = mul(WorldPos,SHADOW_VIEW_PROJECTION_MATRIX);
+	
+	Out.ScreenPos = Out.Pos;
+    
+    Out.Tex  = Input.Tex;
+
+    return Out;
+}
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = false;
+        
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 ShadowMapPS();
+    }
+}

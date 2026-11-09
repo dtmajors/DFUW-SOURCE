@@ -1,0 +1,202 @@
+
+//The default technique. No external stuff is needed here
+
+#include "stdstate.frag"
+#include "shaderconfig.frag"
+#include "matrix.frag"
+#include "objectmatrix.frag"
+#include "mathtypes.frag"
+
+
+texture Tex0 : REPTextureDirect;
+
+//
+// Technique 0 - One pass
+//
+
+//Worst technique
+
+//texture BaseTexture : REPTexture0 = NULL;
+//< string TEST = "HORE"; 
+//  string BALLE = "HOMO";
+//
+//> 
+float4 MatA  = { 0.5f, 0.5f, 0.5f, 1.0f };    	// ambient
+float4 MatD = { 0.01f, 1.01f, 0.01f, 1.0f };    	// diffuse
+float4 MatE = { 0.0f, 0.0f, 0.0f, 1.0f };    	// emissive
+float4 MatS = { 0.0f, 0.0f, 0.0f, 1.0f };    	// specular
+float  MatP =  0.0;                            	// power
+
+float4 Diffuse = { 0.01f, 2.0f, 0.01f, 1.0f };
+
+sampler Sampler = sampler_state
+{
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = DEFAULT_MIN_TEXTUREFILTER;
+    MagFilter = DEFAULT_MAG_TEXTUREFILTER;
+#endif	
+};
+ 
+
+
+struct VS_OUTPUT
+{
+    float4 Position  	: POSITION;    // position of the vertex
+    float4 Diffuse   	: COLOR0;      // diffuse color of the vertex
+    float2 Tex  	: TEXCOORD0;   // texcoord of the vertex
+};
+
+struct PS_OUTPUT
+{   
+    float4 RGBColor : COLOR0;  // Pixel color    
+};
+
+
+VS_OUTPUT DilleShader( float4 vPos : POSITION, 
+                                     float3 vNormal : NORMAL,
+                                     float2 Tex : TEXCOORD0 )
+{
+    VS_OUTPUT Output = (VS_OUTPUT)0;
+
+    SFMatrix mWorldViewProjection = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+
+    Output.Position = mul(vPos, mWorldViewProjection);
+    Output.Tex = Tex;
+    Output.Diffuse = Diffuse;
+    
+    return Output;
+}
+
+
+PS_OUTPUT DillePSShader( VS_OUTPUT In )
+{
+    PS_OUTPUT Output = (PS_OUTPUT)0;
+    float4 BaseTex = tex2D(Sampler, In.Tex);
+    Output.RGBColor = BaseTex * In.Diffuse;
+    
+    return Output;
+    
+}
+
+
+
+
+technique T0 
+{
+
+
+    pass P0
+    {
+		STD_STATE;
+  	Texture[0] = (Tex0);
+
+        Lighting       = False;
+        SpecularEnable = False;
+        DitherEnable   = False;
+        Shademode      = Flat;
+        FillMode       = wireframe;
+        
+        
+
+
+        // Stage 0
+        ColorOp[0]   = SelectArg1;
+        ColorArg1[0] = Texture;
+        ColorArg2[0] = Current;
+
+        AlphaOp[0]   = SelectArg1;
+//        AlphaArg1[0] = Texture;
+//        AlphaArg2[0] = Current;
+
+
+        // Stage 1
+        ColorOp[1]   = Disable;
+        AlphaOp[1]   = Disable;
+    }
+
+
+
+}
+
+
+//
+// Technique 1 - One pass
+//
+
+technique T1
+{
+
+    pass P0
+    {
+		STD_STATE;
+  	Texture[0] = (Tex0);
+
+        Lighting       = True;
+        SpecularEnable = True;
+        DitherEnable   = True;
+        Shademode      = Gouraud;
+//        FillMode       = SOLID;
+//        FillMode       = wireframe;
+        
+
+
+        // Stage 0
+        ColorOp[0]   = SelectArg1;
+        ColorArg1[0] = Texture;
+        ColorArg2[0] = Current;
+
+        AlphaOp[0]   = SelectArg1;
+//        AlphaArg1[0] = Texture;
+//        AlphaArg2[0] = Current;
+
+        // Stage 1
+        ColorOp[1]   = Disable;
+        AlphaOp[1]   = Disable;
+    }
+
+
+
+}
+
+
+
+
+//
+// Technique 2 - One pass Default and best technique
+//
+
+technique T2
+{
+    pass P0
+    {
+		STD_STATE;
+    
+  	Texture[0] = (Tex0);
+
+    	
+
+        Lighting       = false;
+//        Lighting       = false;
+        SpecularEnable = false;
+        DitherEnable   = True;
+        Shademode      = Gouraud;
+    	FogEnable 	= FALSE;
+        FillMode       = Solid;
+        AlphaBlendEnable = FALSE;
+//        SrcBlend = SrcColor;
+//        DestBlend = InvSrcColor;
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = FALSE;
+        ZEnable = TRUE;
+	ZWriteEnable = TRUE;
+       	CullMode = CCW;
+        
+        VertexShader = compile vs_1_1 DilleShader();
+        PixelShader  = compile ps_2_a DillePSShader();
+	
+        
+
+    }
+}

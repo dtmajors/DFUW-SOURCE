@@ -1,0 +1,99 @@
+/*
+ * Decompiled with CFR.
+ */
+public class mqo {
+    public static final String Eeq = "Update Table";
+    public static final String Eer = "Enable";
+    public static final String Ees = "Disable";
+    public static final String Eet = "Add Sensors";
+    public static final String Eeu = "Remove Sensors";
+    public static final String Eev = "Remove";
+    public static final String Eew = "Remove All";
+    public static final String Eex = "Create ObjectSpace";
+    public static final String Eey = "Create Interaction ObjectSpace";
+    public static final String Eez = "View Contents";
+    public static final String EeA = "Save ObjectSpace";
+    public static final String EeB = "Rename";
+    public static final String EeC = "Reposition ObjectSpace";
+    public static final String EeD = "Delete";
+    public static final String EeE = "Object Properties";
+    public static final String EeF = "Turn ON Shadowcasting";
+    public static final String EeG = "Turn OFF Shadowcasting";
+    public static final String EeH = "Change shader";
+    public static final String EeI = "Go to Object";
+    public static final String EeJ = "Add to Selected Collection";
+    public static final String EeK = "Dissolve Collecion";
+    public static final String EeL = "Inline Collecion";
+    public static final String EeM = "Set Selected Height Object";
+    public static final String EeN = "Set Selected";
+    public static final String EeO = "Set Selected Collection";
+    public static final String EeP = "Toggle Editing of Collection";
+    public static final String EeQ = "Set Global Shader";
+    public static final String EeR = "Set as Selected Attachable";
+    public static final String EeS = "Align object(s) to ground";
+    public static final String EeT = "Hide Selected";
+    public static final String EeU = "Hide Unselected";
+    public static final String EeV = "Unhide All";
+    public static final String EeW = "Move Selected Objects to this OS";
+    public static final String EeX = "Edit Mesh";
+    public static final String EeY = "Set Object Category";
+    public static final String EeZ = "Edit Node";
+    public static final String Efa = "Delete Node";
+    public static final String Efb = "Add Node";
+    public static final String Efc = "Add Attribute";
+    public static final String Efd = "Delete Attribute";
+    public static final String Efe = "Repaint Tree";
+    public static final String Eff = "Rename";
+    public static final String Efg = "load";
+    public static final String Efh = "Edit";
+    public static final String Efi = "Remove Object";
+    public static final String Efj = "Add Texture";
+    public static final String Efk = "Remove Texture";
+    public static final String Efl = "Add Track";
+    public static final String Efm = "Remove";
+    public static final String Efn = "Properties";
+    public static final String Efo = "Refresh";
+    public static final String Efp = "Add Attachpoint";
+    public static final String Efq = "Remove Attachpoint";
+    public static final String Efr = "Attachpoint Properties";
+    public static final String Efs = "Add AnimationSet";
+    public static final String Eft = "Refresh Table";
+    public static final String Efu = "Add Transition";
+    public static final String Efv = "Remove Transition";
+    public static final String Efw = "Refresh Table";
+    public static final String Efx = "Add State";
+    public static final String Efy = "Remove State";
+    public static final String Efz = "Refresh State list";
+    public static final String EfA = "Add effect";
+    public static final String EfB = "Remove effect";
+    public static final String EfC = "Refresh effect list";
+    public static final String EfD = "Copy Effect to All Playable Chars";
+    public static final String EfE = "Add audio effect";
+    public static final String EfF = "Remove audio effect";
+    public static final String EfG = "Refresh audio effect list";
+    public static final String EfH = "Copy to All Playable Chars";
+    public static final String EfI = "Refresh";
+    public static final String EfJ = "Remove";
+    public static final String EfK = "Remove Selected";
+    public static final String EfL = "Rename SFAS SFFile";
+    public static final String EfM = "Remove Whole SFAS SFFile";
+    public static final String EfN = "Refresh";
+    public static final String EfO = "Refresh";
+    public static final String EfP = "Add DistanceTimer";
+    public static final String EfQ = "Remove DistanceTimer";
+    public static final String EfR = "Add Attribute";
+    public static final String EfS = "Remove Attribute";
+    public static final String EfT = "Properties";
+    public static final String EfU = "Open Resource";
+    public static final String EfV = "Create SFFile for Resource";
+    public static final String EfW = "Create SFFile for Resource from copy";
+    public static final String EfX = "Add Skill";
+    public static final String EfY = "Copy Attachpoint";
+    public static final String EfZ = "Remove item";
+    public static final String Ega = "Select All";
+    public static final String Egb = "Select None";
+
+    private mqo() {
+    }
+}
+

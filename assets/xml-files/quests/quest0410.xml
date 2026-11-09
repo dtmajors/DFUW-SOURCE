@@ -1,0 +1,29 @@
+<quest quest_id="410" category="lore_quest" tag="Matter of Materials: Scythe">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="Lead 01" quest_id="403" />
+				<condition type="quest_completion" id="1" value="1" tag="Lead 02" quest_id="404" />
+				<condition type="quest_completion" id="2" value="1" tag="Lead 03" quest_id="405" />
+				<condition type="quest_completion" id="3" value="1" tag="Lead 04" quest_id="-1" />
+				<condition type="quest_completion" id="4" value="1" tag="Lead 05" quest_id="406" />
+				<condition type="quest_completion" id="5" value="1" tag="Lead 06" quest_id="407" />
+				<condition type="quest_completion" id="6" value="1" tag="Lead 07" quest_id="408" />
+				<condition type="quest_completion" id="7" value="1" tag="Lead 08" quest_id="-1" />
+			</conditions>
+		</node>
+		<node type="end_node" id="7" tag="" />
+		<node type="event_simple" id="6" tag="Craft the Scythe">
+			<tasks>
+				<task type="craft_item" id="0" value="1" tag="Craft the Scythe" resource_name="" quantity="0" />
+			</tasks>
+			<actions>
+				<action type="give_item_to_player" id="0" tag="Give Scythe Recipe" resource_name="" quantity="0" inventory_type="None" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="6" value="0" />
+		<edge id="6" from="6" to="7" value="0" />
+	</edges>
+</quest>

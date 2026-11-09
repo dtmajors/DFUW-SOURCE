@@ -1,0 +1,556 @@
+ <Feats>
+	<Tags>
+		<Tag Value = 'PVE'  Weight = '10.0'/>
+		<Tag Value = 'MOBS' Weight = '14.0'/>
+		<Tag Value = 'PVP'  Weight = '15.0'/>
+		<Tag Value = 'EASY' Weight = '16.0'/>
+	</Tags>
+    <Group Index = '0' Name = 'pve' DisplayName = 'PVE' Locked = 'false'>	
+		<SubGroup Index = '0' Name = 'pve_starter' DisplayName = 'Newbie pve'  Locked = 'false'>
+
+			<Feat  Index = '0' Name = 'easy_monster' DisplayName = 'Kill some Goblins'  Locked = 'false' Tags = 'PVE:MOBS:EASY'> 				    					
+				    <ShowOnGUI                  Value = 'true'/>
+					<Repeatable                 Value = 'false'/>								
+				    <Description                Value = 'Kill $(Counter) $(Resource.Name$(Counter.Plurality)).'/> <!-- Kill 2 Goblins -->
+					
+				    <Trigger Type = 'LIFE_MODE_CHANGES'> 
+						<IsEventSource Value = 'true'/>			
+					    <LifeMode      Value = 'KILL'/>
+						<ResourceName  Value = 'r_goblins'/>
+						<ResourceRank  Value = ''/>
+						<WeaponName    Value = ''/>
+						<SkillName     Value = ''/>
+						<Counter       Value = '2'/>
+				    </Trigger>		
+
+					<!-- 
+						for a reference, for dynamic points, check monster_ranks.xml under xmlfiles/gamelogicinfo
+						Total points are CounterValue * DynamicValue from this file
+					-->
+					<Points  Dynamic = 'true' Value = '' Key = 'r_goblins'/>
+					
+					<!-- Optional -->
+				    <Rewards> 					    
+						<Item Type = 'UNLOCK_FEAT'        Name = 'moreeeeeee'/>
+				    </Rewards>           
+			</Feat>     
+			
+			<Feat Index = '1' Name = 'moreeeeeee' DisplayName = 'Kill moreeeee Goblins'  Locked = 'true' Tags = 'PVE:MOBS'> 				    
+					<Continue    Value = 'true'/>
+				    <ShowOnGUI   Value = 'true'/>						
+					<Description Value = 'Kill $(Counter) $(Resource.Name$(Counter.Plurality)).'/> <!-- Kill 4 Goblins -->
+					
+				    <Trigger  Type = 'LIFE_MODE_CHANGES'> <!-- Player mob/resource killing or dying from -->					    
+						<IsEventSource Value = 'true'/>			
+					    <LifeMode      Value = 'KILL'/>			
+						<ResourceName  Value = 'r_goblins'/>
+						<ResourceRank  Value = ''/>
+						<WeaponName    Value = 'r_shortsword'/>
+						<SkillName     Value = 's_swords'/>
+						<Counter       Value = '4'/>
+				    </Trigger>		
+					
+					<!-- 
+						for a reference, for dynamic points, check monster_ranks.xml under xmlfiles/gamelogicinfo
+						Total points are CounterValue * DynamicValue from this file
+					-->
+					<Points  Dynamic = 'false' Value = '20' Key = ''/>					
+			</Feat>   
+			
+			<Feat  Index = '2' Name = 'die_from_goblins' DisplayName = 'Die from a Goblin'  Locked = 'false' Tags = 'PVE:MOBS'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Die $(Counter) from $(Resource.Name$(Counter.Plurality)).'/> <!-- die once from a goblin -->
+					
+				    <Trigger  Type = 'LIFE_MODE_CHANGES'> <!-- Player mob/resource killing or dying from -->					    
+						<IsEventSource Value = 'false'/>		
+						<LifeMode      Value = 'KILL'/>
+						<ResourceName  Value = 'r_goblins'/>
+						<Counter       Value = '1'/>
+				    </Trigger>		
+					
+					<!-- 
+						for a reference, for dynamic points, check monster_ranks.xml under xmlfiles/gamelogicinfo
+						Total points are CounterValue * DynamicValue from this file
+					-->
+					<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+
+					<Rewards> 					    
+						<Item Type = 'UNLOCK_GROUP'        Name = 'pvp'/>
+				    </Rewards>			
+			</Feat> 	
+	
+
+			<Feat  Index = '3' Name = 'rest_skill' DisplayName = 'Rest in peace'  Locked = 'false' Tags = 'PVE:SKILL'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Use $(Skill.NameSingular) for $(Counter) seconds'/> 
+					
+				    <Trigger  Type = 'SKILL'> 
+						<SkillName     Value  = 's_rest'/>		   <!-- NOT OPTIONAL -->			
+						<ResourceName  Value  = 'r_player races'/> <!-- OPTIONAL     -->
+						<Duration      Value  = 'true'/>           <!-- NOT OPTIONAL -->
+						<Distance      Value  = 'false'/>          <!-- NOT OPTIONAL -->
+						<Counter       Value  = '20'/>             <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '33' Key = ''/>		
+			</Feat> 		
+			
+			
+			<Feat Index = '4' Name = 'skin' DisplayName = 'Skin them all'  Locked = 'false' Tags = 'PVE:SKILL'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Skin $(Counter) $(Resource.Name$(Counter.Plurality)).'/> 
+					
+				    <Trigger  Type = 'SKIN'> <!-- Player mob/resource killing or dying from -->					    
+						<ResourceName  Value  = 'r_hobgoblins'/>   <!-- NOT OPTIONAL -->
+						<Counter       Value  = '3'/>              <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '11' Key = ''/>		
+			</Feat> 				
+
+			<Feat Index = '5' Name = 'revive_a_player' DisplayName = 'revive a player'  Locked = 'false' Tags = 'PVE:PVP'> 				    
+					<Continue    Value = 'false'/>
+				    <ShowOnGUI   Value = 'true'/>						
+					<Description Value = 'Revive $(Resource.Name$(Counter.Plurality)) $(Counter) times.'/> 
+					
+				    <Trigger  Type = 'LIFE_MODE_CHANGES'> 					    
+						<IsEventSource Value = 'true'/>			
+						<Received      Value = 'false'/>		
+					    <ResourceName  Value = 'r_player races'/>            <!-- NOT OPTIONAL-->	
+			            <LifeMode      Value = 'REVIVE'/>			
+						<Counter       Value = '2'/>
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '100' Key = ''/>					
+			</Feat>   				
+
+			<Feat Index = '6' Name = 'harvest_ore' DisplayName = 'harvest some ore'  Locked = 'false' Tags = 'PVE:PVP'> 				    
+					<Continue    Value = 'false'/>
+				    <ShowOnGUI   Value = 'true'/>						
+					<Description Value = 'Harvest $(Counter) $(Resource.Name$(Counter.Plurality)) from a $(NodeResource.NameSingular).'/> 
+					
+				    <Trigger  Type = 'HARVEST'> 					    						
+			            <NodeResourceName Value = 'r_Mining Spawn Metal'/>  <!-- OPTIONAL. -->
+						<ResourceName     Value = 'r_iron ore'/>            <!-- NOT OPTIONAL-->
+						<Counter          Value = '2'/>
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '100' Key = ''/>					
+			</Feat>   				
+
+			<Feat Index = '7' Name = 'loot_gold' DisplayName = 'loot some gold'  Locked = 'false' Tags = 'PVE:PVP'> 				    
+					<Continue    Value = 'false'/>
+				    <ShowOnGUI   Value = 'true'/>						
+					<Description Value = 'Loot $(Counter) $(Resource.Name$(Counter.Plurality)) from a $(ContainerResource.NameSingular).'/>
+					
+				    <Trigger  Type = 'TRANSFER'> 					    						
+					    <Deposit               Value = 'false'/>             <!-- NOT OPTIONAL. -->
+			            <ContainerResourceName Value = 'r_Monster Corpse'/>  <!-- NOT OPTIONAL. -->
+						<ResourceName          Value = 'r_gold'/>            <!-- NOT OPTIONAL. -->
+						<Counter               Value = '100'/>
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '100' Key = ''/>					
+			</Feat>   				
+			
+			<Feat  Index = '8' Name = 'bank_arrows' DisplayName = 'bank some gold'  Locked = 'false' Tags = 'PVE:PVP'> 				    
+					<Continue    Value = 'false'/>
+				    <ShowOnGUI   Value = 'true'/>						
+					<Description Value = 'Bank $(Counter) $(Resource.Name$(Counter.Plurality)).'/> 
+					
+				    <Trigger  Type = 'TRANSFER'> 					    						
+					    <Deposit               Value = 'true'/>       <!-- NOT OPTIONAL. -->
+			            <ContainerResourceName Value = 'r_Bank'/>     <!-- NOT OPTIONAL. -->
+						<ResourceName          Value = 'r_improved Arrow_01'/> <!-- NOT OPTIONAL. -->
+						<Counter               Value = '100'/>
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '100' Key = ''/>					
+			</Feat>			
+			
+			<Feat  Index = '9' Name = 'break_a_tool' DisplayName = 'break a pickaxe'  Locked = 'false' Tags = 'PVE:PVP'> 				    
+					<Continue    Value = 'false'/>
+					<Repeatable  Value = 'true'/>
+				    <ShowOnGUI   Value = 'true'/>						
+					<Description Value = 'Break $(Counter) $(Resource.Name$(Counter.Plurality)).'/> 
+					
+				    <Trigger  Type = 'BREAK_ITEM'> 					    						
+						<ResourceName      Value = 'r_improved_pickaxe'/> <!-- NOT OPTIONAL. -->
+						<Counter           Value = '1'/>
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '10' Key = ''/>					
+			</Feat>					
+	
+			<Feat Index = '10' Name = 'fail_in_crafting' DisplayName = 'A failure crafter'  Locked = 'false' Tags = 'PVE:CRAFTING'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Fail in $(Resource.Name$(Counter.Plurality)) $(Counter) times.'/> 
+					
+				    <Trigger  Type = 'CRAFTING'> 
+						<Failure       Value  = 'true'/>
+						<SkillName     Value  = 's_Crafting Skills'/>  <!-- NOT OPTIONAL -->			
+						<ResourceName  Value  = 'r_swords'/>           <!-- OPTIONAL     -->
+						<Counter       Value  = '3'/>                  <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '222' Key = ''/>		
+			</Feat> 		
+	
+			<Feat Index = '11' Name = 'succeed_in_crafting' DisplayName = 'A novice crafter'  Locked = 'false' Tags = 'PVE:CRAFTING'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Craft $(Counter) $(Resource.Name$(Counter.Plurality)).'/> 
+					
+				    <Trigger  Type = 'CRAFTING'> 
+						<Failure       Value  = 'false'/>						
+						<SkillName     Value  = 's_Crafting Skills'/>  <!-- NOT OPTIONAL -->			
+						<ResourceName  Value  = 'r_swords'/>           <!-- OPTIONAL     -->
+						<Counter       Value  = '4'/>                  <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 	
+
+			<Feat Index = '12' Name = 'pay_rent' DisplayName = 'Pay the rent'  Locked = 'false' Tags = 'PVE:HOUSING'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Pay the rent.'/> 
+					
+				    <Trigger  Type = 'HOUSING'> 
+					    <!-- ONLY ONE OF THE FOLLOWING SHOULD EXIST --> 						
+						<Action  Value = 'PAY_RENT'/>      
+						<!--
+						<Action  Value = 'BE_TENANT'/>     
+						<Action  Value = 'ADD_TENANT'/>      
+						-->
+						<Counter Value = '1'/>            <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 	
+
+			<Feat Index = '13' Name = 'spawn_a_horse' DisplayName = 'Spawn a mount'  Locked = 'false' Tags = 'PVE:SPAWNING'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Use a $(Resource.Name$(Counter.Plurality))'/> 
+					
+				    <Trigger  Type = 'SPAWNING'> 
+						<ResourceName  Value  = 'r_figurine horse'/>   <!-- NOT OPTIONAL --> 
+						<Counter       Value  = '1'/>                  <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 	
+	
+			<Feat Index = '14' Name = 'invite_tenant' DisplayName = 'Invite a tenant'  Locked = 'false' Tags = 'PVE:HOUSING'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Invite a tenant.'/> 
+					
+				    <Trigger  Type = 'HOUSING'> 
+						<Action  Value = 'ADD_TENANT'/>            <!-- NOT OPTIONAL --> 
+						<Counter Value  = '1'/>                  <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 	
+
+			<Feat Index = '15' Name = 'be_a_tenant' DisplayName = 'Be a tenant in a house'  Locked = 'false' Tags = 'PVE:HOUSING'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Be a tenant.'/> 
+					
+				    <Trigger  Type = 'HOUSING'> 
+						<Action  Value = 'BE_TENANT'/>            <!-- NOT OPTIONAL --> 
+						<Counter Value  = '1'/>                   <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 	
+
+			<Feat Index = '16' Name = 'level_skill' DisplayName = 'Level jump to 100'  Locked = 'false' Tags = 'PVE:SKILL'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Level $(Skill.NameSingular) to 100.'/> 
+					
+				    <Trigger  Type = 'SKILL_LEVEL'> 
+						<SkillName  Value = 's_jump'/>   <!-- NOT OPTIONAL --> 
+						<Level      Value = '100.0'/>    <!-- NOT OPTIONAL --> 
+						<Counter    Value  = '1'/>       <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '111' Key = ''/>		
+			</Feat> 	
+			
+			<Feat Index = '17' Name = 'buy_booster' DisplayName = 'Buy the first strength booster'  Locked = 'false' Tags = 'PVE:BOOSTER'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Buy $[Booster.$(Booster)_DisplayName] Booster.'/> 
+					
+				    <Trigger  Type = 'BUY'> 
+						<Type        Value = 'BOOSTER'/>      <!-- NOT OPTIONAL --> 
+						<ObjectName  Value = 'the_brawny'/>   <!-- NOT OPTIONAL. USE THE NAME AND NOT THE DISPLAY NAME IF IS A BOOSTER --> 
+						<Counter     Value  = '1'/>           <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '111' Key = ''/>		
+			</Feat> 	
+
+			<Feat Index = '18' Name = 'buy_skill' DisplayName = 'Buy sanctify'  Locked = 'false' Tags = 'PVE:SKILL'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Buy $(Skill.NameSingular) Skill.'/> 
+					
+				    <Trigger  Type = 'BUY'> 
+						<Type        Value = 'SKILL'/>      <!-- NOT OPTIONAL --> 
+						<ObjectName  Value = 's_sanctify'/> <!-- NOT OPTIONAL --> 
+						<Counter     Value  = '1'/>         <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '111' Key = ''/>		
+			</Feat> 	
+
+			<Feat Index = '19' Name = 'create_a_party' DisplayName = 'Create a party'  Locked = 'false' Tags = 'PVE:SKILL'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Create your first party.'/> 
+					
+				    <Trigger  Type = 'SOCIAL'> 
+						<Action      Value = 'CREATE_PARTY'/>  <!-- NOT OPTIONAL --> 
+						<Counter     Value  = '1'/>            <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '23' Key = ''/>		
+			</Feat> 	
+
+			<Feat Index = '20' Name = 'join_a_party' DisplayName = 'Join a party'  Locked = 'false' Tags = 'PVE:SKILL'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Join your first party.'/> 
+					
+				    <Trigger  Type = 'SOCIAL'> 
+						<Action      Value = 'JOIN_PARTY'/>  <!-- NOT OPTIONAL --> 
+						<Counter     Value  = '1'/>            <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '23' Key = ''/>		
+			</Feat> 	
+			
+
+			<Feat Index = '21' Name = 'summon' DisplayName = 'Summon friends'  Locked = 'false' Tags = 'PVE:SKILL'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Summon 1 of your friends.'/> 
+					
+				    <Trigger  Type = 'SKILL'> 
+						<SkillName     Value  = 's_Summon Player'/>	<!-- NOT OPTIONAL -->			
+						<Duration      Value  = 'false'/>           <!-- NOT OPTIONAL -->
+						<Distance      Value  = 'false'/>           <!-- NOT OPTIONAL -->
+						<Counter       Value  = '1'/>               <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '38' Key = ''/>		
+			</Feat> 	
+			
+			<Feat Index = '22' Name = 'place_house' DisplayName = 'Place a house'  Locked = 'false' Tags = 'PVE:SPAWNING'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Place $(Counter) $(Resource.Name$(Counter.Plurality)).'/> 
+					
+				    <Trigger  Type = 'SPAWNING'> 
+						<ResourceName  Value  = 'r_Player Houses'/>   <!-- NOT OPTIONAL --> 
+						<Counter       Value  = '1'/>                 <!-- NOT OPTIONAL -->
+				    </Trigger>		
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 
+			
+			<Feat Index = '23' Name = 'complex_feat' DisplayName = 'Visit the subcontinents'  Locked = 'false' Tags = 'PVE:EXLPORATION'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Set foot on at least one tile per subcontinent'/> 
+					
+				    <Trigger  Type = 'FEAT'> 
+	                  	<Feat    Value = '24'/>
+						<Feat    Value = '25'/>						
+						<Feat    Value = '34'/>
+						<Feat    Value = '35'/>
+						<Counter Value = '4'/>
+				    </Trigger>							
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 
+			
+			<Feat Index = '24' Name = 'visit_subcontinent_1' DisplayName = 'Visit subcontinent'  Locked = 'false' Tags = 'PVE:EXLPORATION'> 				    
+				    <ShowOnGUI   Value = 'false'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Set foot on at least one area on $[Area.$(Area)_DisplayName].'/> 
+					
+				    <Trigger  Type = 'EXPLORATION'> 
+	                  	<Area    Value = 'subcontinent_1'/>
+						<Counter Value = '1'/>
+				    </Trigger>							
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 
+			<Feat Index = '25' Name = 'visit_subcontinent_2' DisplayName = 'Visit subcontinent'  Locked = 'false' Tags = 'PVE:EXLPORATION'> 				    
+				    <ShowOnGUI   Value = 'false'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Set foot on at least one area on $[Area.$(Area)_DisplayName].'/> 
+					
+				    <Trigger  Type = 'EXPLORATION'> 
+	                  	<Area    Value = 'subcontinent_2'/>
+						<Counter Value = '1'/>
+				    </Trigger>							
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 
+			<Feat Index = '33' Name = 'visit_dungeon' DisplayName = 'Visit dungeon'  Locked = 'false' Tags = 'PVE:EXLPORATION'> 				    
+				    <ShowOnGUI   Value = 'true'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Set foot on $[Area.$(Area)_DisplayName]'/> 
+					
+				    <Trigger  Type = 'EXPLORATION'> 
+	                  	<Area    Value = 'first_dungeon'/>
+						<Dungeon Value = 'true'/> <!-- OPTIONAL FOR EXPLORATION TRIGGERS.BY DEFAULT IS SET TO FALSE-->
+						<Counter Value = '1'/>
+				    </Trigger>							
+					<Points  Dynamic = 'false' Value = '111' Key = ''/>		
+			</Feat> 
+
+			<Feat Index = '34' Name = 'visit_subcontinent_3' DisplayName = 'Visit subcontinent'  Locked = 'false' Tags = 'PVE:EXLPORATION'> 				    
+				    <ShowOnGUI   Value = 'false'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Set foot on at least one area on $[Area.$(Area)_DisplayName]'/> 
+					
+				    <Trigger  Type = 'EXPLORATION'> 
+	                  	<Area    Value = 'subcontinent_3'/>
+						<Counter Value = '1'/>
+				    </Trigger>							
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 
+			<Feat Index = '35' Name = 'visit_subcontinent_4' DisplayName = 'Visit subcontinent'  Locked = 'false' Tags = 'PVE:EXLPORATION'> 				    
+				    <ShowOnGUI   Value = 'false'/>
+					<Repeatable  Value = 'false'/>								
+					<Description Value = 'Set foot on at least one area on $[Area.$(Area)_DisplayName]'/> 
+					
+				    <Trigger  Type = 'EXPLORATION'> 
+	                  	<Area    Value = 'subcontinent_4'/>
+						<Counter Value = '1'/>
+				    </Trigger>							
+					<Points  Dynamic = 'false' Value = '555' Key = ''/>		
+			</Feat> 			
+
+		</SubGroup>
+
+		<Rewards Points = '100'>
+			<Item Type = 'UNLOCK_GROUP'       Name = 'pvp'/>
+		</Rewards>          			
+			
+	</Group>
+	
+	
+	<Group Index = '1' Name = 'pvp' DisplayName = 'PVP' Locked = 'true'>
+	
+		<SubGroup Index = '1' Name = 'pvp_first' DisplayName = 'Pvp starting' Locked = 'false'>
+		
+			<Feat Index = '26' Name = 'kill_player' DisplayName = 'Kill 2 players'  Locked = 'false' Tags = 'PVP'>
+				<ShowOnGUI              Value = 'true'/>
+				<Description            Value = 'Kill $(Counter) $(Resource.Name$(Counter.Plurality)).'/> 
+				<Trigger Type = 'LIFE_MODE_CHANGES'>				
+					<BelongToEnemyClan      Value = 'true'/> 
+					<ThereIsActiveChallenge Value = 'true'/> 
+					<LifeMode               Value = 'KILL'/>
+					<Received               Value = 'false'/>
+					<IsEventSource          Value = 'true'/>
+					<ResourceName           Value = 'r_player races'/>
+					<Counter                Value = '2'/>
+				</Trigger>
+				
+				<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+			</Feat>    
+ 
+			
+			<Feat Index = '27' Name = 'damage_an_enemy_bindstone' DisplayName = 'Damage an enemy  bindstone'  Locked = 'false' Tags = 'PVP:CONQUEST'>
+				<ShowOnGUI              Value = 'true'/>
+				<Description            Value = 'You have to damage an enemy $(Resource.NameSingular) during a siege.'/> 
+				<Trigger Type = 'ATTRIBUTE'>
+					<BelongToEnemyClan         Value = 'true'/> 
+					<ThereIsActiveChallenge    Value = 'true'/> 
+					<StructureInChallengedCity Value = 'true'/> 
+				    <EffectName                Value = 'DAMAGE'/>
+                    <IsEventSource             Value = 'true'/>
+                    <ResourceName              Value = 'r_Clanstone City'/>
+                    <AttributeName             Value = 'Health'/>
+                    <WeaponName                Value = 'r_improved siege hammer'/>
+					<Counter                   Value = '50'/>
+				</Trigger>
+				
+				<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+			</Feat>     
+
+			<Feat Index = '28' Name = 'damage_a_village_bindstone' DisplayName = 'Damage a village control point'  Locked = 'false' Tags = 'PVP:CONQUEST'>
+				<ShowOnGUI              Value = 'true'/>
+				<Description            Value = 'You have to output $(Counter) damage on a $(Resource.NameSingular) using a $(Weapon.NameSingular).'/> 
+				<Trigger Type = 'ATTRIBUTE'>
+				    <EffectName    Value = 'DAMAGE'/>
+                    <IsEventSource Value = 'true'/>
+                    <ResourceName  Value = 'r_Village Control Point'/>
+                    <AttributeName Value = 'Health'/>
+                    <WeaponName    Value = 'r_improved siege hammer'/>
+					<Counter       Value = '50'/>
+				</Trigger>
+				
+				<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+			</Feat>     
+			
+
+			<Feat Index = '29' Name = 'damage_an_enemy_wall' DisplayName = 'Damage an enemy wall'  Locked = 'false' Tags = 'PVP:CONQUEST'>
+				<ShowOnGUI              Value = 'true'/>
+				<Description            Value = 'You have to output $(Counter) damage on an enemy $(Resource.NameSingular) during a siege.'/> 
+				<Trigger Type = 'ATTRIBUTE'>
+					<BelongToEnemyClan         Value = 'true'/> 
+					<ThereIsActiveChallenge    Value = 'true'/> 
+					<StructureInChallengedCity Value = 'true'/> 
+				    <EffectName    Value = 'DAMAGE'/>
+                    <IsEventSource Value = 'true'/>
+                    <ResourceName  Value = 'r_Clan Walls'/>
+                    <AttributeName Value = 'Health'/>
+                    <WeaponName    Value = 'r_improved siege hammer'/>
+					<Counter       Value = '50'/>
+				</Trigger>
+				
+				<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+			</Feat>     
+			
+			<Feat Index = '30' Name = 'destroy_enemy_wall' DisplayName = 'Destroy an enemy wall'  Locked = 'false' Tags = 'PVP:CONQUEST'>
+				<ShowOnGUI              Value = 'true'/>
+				<Description            Value = 'Tear down an enemy clan city $(Resource.NameSingular) during a siege.'/> 
+				<Trigger Type = 'LIFE_MODE_CHANGES'>
+					<BelongToEnemyClan         Value = 'true'/> 
+					<ThereIsActiveChallenge    Value = 'true'/> 
+					<StructureInChallengedCity Value = 'true'/> 
+					<LifeMode      Value = 'KILL'/>
+					<IsEventSource Value = 'true'/>
+					<ResourceName  Value = 'r_Clan Walls'/>
+					<Counter       Value = '1'/>
+				</Trigger>
+				
+				<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+			</Feat>     	
+
+			<Feat Index = '31' Name = 'repair_a_wall' DisplayName = 'Repair a wall in your city'  Locked = 'false' Tags = 'PVP:CONQUEST'>
+				<ShowOnGUI              Value = 'true'/>
+				<Description            Value = 'Repair a $(Resource.NameSingular) of a city that belongs to your clan.'/> 
+				<Trigger Type = 'ATTRIBUTE'> 
+					<BelongInSameClan Value = 'true'/>
+				    <EffectName       Value = 'HEAL'/>
+                    <IsEventSource    Value = 'true'/>
+                    <ResourceName     Value = 'r_clan structure wall'/>
+                    <AttributeName    Value = 'Health'/>                    
+					<Counter          Value = '10'/>
+				</Trigger>
+				
+				<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+			</Feat>   	
+
+			<Feat Index = '32' Name = 'damage_a_horse' DisplayName = 'Damage a horse'  Locked = 'false' Tags = 'PVP:CONQUEST'>
+				<ShowOnGUI              Value = 'true'/>
+				<Description            Value = 'Do $(Counter) damage on a $(Resource.NameSingular).'/> 
+				<Trigger Type = 'ATTRIBUTE'>
+				    <EffectName    Value = 'DAMAGE'/>
+                    <IsEventSource Value = 'true'/>
+                    <ResourceName  Value = 'r_horse'/>
+                    <AttributeName Value = 'Health'/>                    
+					<Counter       Value = '50'/>
+				</Trigger>
+				
+				<Points  Dynamic = 'false' Value = '50' Key = ''/>		
+			</Feat>   	
+
+		</SubGroup>
+		
+	</Group>
+	
+ </Feats>

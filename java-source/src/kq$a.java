@@ -1,0 +1,20 @@
+enum kq$a {
+   aqQ,
+   aqR,
+   aqS,
+   aqT,
+   aqU,
+   aqV,
+   aqW,
+   aqX,
+   aqY,
+   aqZ,
+   ara,
+   arb,
+   arc,
+   ard,
+   are,
+   arf,
+   arg,
+   arh;
+}

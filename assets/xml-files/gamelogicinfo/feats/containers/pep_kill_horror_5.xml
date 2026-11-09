@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Type Value="PARTY"/>
+  <Reset Type="WEEKLY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Monsters"/>
+    <ResourceRank Value="11"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_demon" Value="750"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="7500" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_improved Theyril Chest Key" Quantity="2" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_Large Treasure Map Item" Quantity="1" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

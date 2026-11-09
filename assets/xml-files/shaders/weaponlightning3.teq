@@ -1,0 +1,163 @@
+#include "stdstate.frag"
+#include "shaderconfig.frag"
+#include "stdio.frag"
+#include "fog.frag"
+#include "sampler.frag"
+#include "matrix.frag"
+#include "objectmatrix.frag"
+#include "planets.frag"
+#include "objectbounding.frag"
+#include "cloudground.frag"
+#include "spenebump.frag"
+#include "environment.frag"
+#include "stdio.frag"
+#include "atmosphere.frag"
+#include "alphaHDRL.frag"
+#include "HDRLUtils.frag"
+#include "sampler.frag"
+#include "texture.frag"
+
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  	: POSITION;
+    float4 Diff 	: COLOR0;
+    float2 Tex  	: TEXCOORD0;
+    float3 Reflect	: TEXCOORD1;
+    float Fog 		: FOG;
+};
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+const float LerpFrequency : REInfoLerpPositionDirectionFrequency = 1.0f/20.0f;
+
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+   VS_OUTPUT Out = (VS_OUTPUT)0;
+   
+
+    float3 ObjectSize = getBBScale();
+
+
+    float4x4 WorldView = mul(WORLD_MATRIX, VIEW_MATRIX);
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+
+
+    float MPly = 1.0f - Input.Diff.x;
+    float3 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+    float3 NormLerpPos = normalize(LERP_POS_DIRECTION);
+    float Len = length(LERP_POS_DIRECTION);
+
+	float LenMul = 1.0f;
+	if (Len > (ObjectSize.z*0.5f))
+	{
+		LenMul = ObjectSize.x*0.5f/Len;
+	}
+    
+
+    float3 Norm = mul(Input.Norm,(float3x3)WORLD_MATRIX);
+    float3 N = normalize(mul(Norm, (float3x3)VIEW_MATRIX)); // normal (view space)
+
+ 	float Move = abs(dot(NormLerpPos,Norm));
+
+    float3 DirOffset = 4*MPly*LERP_POS_DIRECTION*LenMul;
+    WorldPos -= DirOffset;
+
+
+    float3 P = mul(float4(WorldPos,1.0f), (float4x3)VIEW_MATRIX);  // position (view space)
+
+	float3 v = normalize(P - EYE_POS);    
+	float3 Reflect = normalize(reflect(v,Norm));
+	
+	
+    Out.Pos  = mul(float4(WorldPos, 1), VIEW_PROJECTION_MATRIX);             // position (projected)
+    
+   
+    Out.Reflect = Reflect;
+ 
+    //Out.Tex  = Input.Tex + frac(TOTAL_TIME);
+    Out.Tex.x  = Input.Tex.x; // + frac(TOTAL_TIME);
+    Out.Tex.y  = Input.Tex.y - frac(TOTAL_TIME);
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);   
+    
+    return Out;
+}
+
+
+
+
+
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	float4 Color;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	float4 Env = texCUBE(Environment_Sampler, Input.Reflect);
+	
+	Color = BaseTex; 
+	Color *= Env*2;
+	
+	Color.a = BaseTex.a;
+	
+	Color.xyz = lerp(Color.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	Out.Color = Color;
+	//Out.Effect = float4(Input.Tex,0.0f,0.0f);
+#ifdef SSAO_ENABLE
+	Out.Depth = 0.0f;
+#endif
+	
+
+	return Out;	
+	
+
+}
+
+
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+    	
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = true;
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

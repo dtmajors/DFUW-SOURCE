@@ -1,0 +1,43 @@
+<SFDynamicHitConfig>
+    <Dt value="0.020000" />
+    <Gravity x="0.000000" y="0.000000" z="0.000000" />
+    <NumRelaxIterations value="10" />
+    <NodeJointCrossSize value="2.000000" />
+    <HitForceMagnitude value="80000.000000" />
+    <HitForceRadius value="20.000000" />
+    <HitAccelerationTime value="0.150000" />
+    <HitDecelerationTime value="0.200000" />
+    <HitCylinder>
+        <Radius x="10" z="5" />
+        <YRange min="15" max="50" />
+    </HitCylinder>
+    <PinnedNodes />
+    <IgnoreAllChildrenNodes>
+        <Node name="hum_fLLeg0AnkleDigit011" />
+        <Node name="hum_fRLeg1AnkleDigit011" />
+        <Node name="hum_fLFrontLeg0AnkleDigit011" />
+        <Node name="hum_fRFrontLeg1AnkleDigit011" />
+        <Node name="hum_fLArmCollarBone" />
+        <Node name="hum_fRArmCollarBone" />
+        <Node name="hum_fSpine" />
+        <Node name="hum_fTail00" />
+    </IgnoreAllChildrenNodes>
+    <IgnoreSingleNodes>
+        <Node name="hum_fPelvis" />
+        <Node name="hum_fLFrontLeg0CollarBone" />
+        <Node name="hum_fRFrontLeg1CollarBone" />
+        <Node name="hum_fLArmCollarBone" />
+        <Node name="hum_fRArmCollarBone" />
+        <Node name="hum_fSpine" />
+        <Node name="hum_fTail00" />
+    </IgnoreSingleNodes>
+    <ExtraJointsBetweenNodes>
+        <Joint from="hum_fLLeg010" to="hum_fSpine01" />
+        <Joint from="hum_fRLeg110" to="hum_fLLeg010" />
+        <Joint from="hum_fRLeg110" to="hum_fSpine01" />
+        <Joint from="hum_fLFrontLeg010" to="hum_fRFrontLeg110" />
+        <Joint from="hum_fSpine1" to="hum_fLFrontLeg010" />
+        <Joint from="hum_fSpine1" to="hum_fRFrontLeg110" />
+    </ExtraJointsBetweenNodes>
+    <EqualAndGreaterLengthConstraints />
+</SFDynamicHitConfig>

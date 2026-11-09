@@ -1,0 +1,58 @@
+// pp_dof_blur.teq
+
+#include "camera.frag"
+#include "stdstate.frag"
+
+texture SceneTexture : REPTextureSceneColor ; 
+sampler2D SceneSampler = sampler_state
+{
+	Texture = <SceneTexture>;
+	AddressU = CLAMP;
+	AddressV = CLAMP;
+
+    MinFilter = Point;
+    MagFilter = Point;
+};
+
+float gaussianKernel[25] = {
+	1 / 273.0, 4 / 273.0, 7 / 273.0, 4 / 273.0, 1 / 273.0,
+	4 / 273.0, 16 / 273.0, 26 / 273.0, 16 / 273.0, 4 / 273.0,
+	7 / 273.0, 26 / 273.0, 41 / 273.0, 26 / 273.0, 7 / 273.0,
+	4 / 273.0, 16 / 273.0, 26 / 273.0, 16 / 273.0, 4 / 273.0,
+	1 / 273.0, 4 / 273.0, 7 / 273.0, 4 / 273.0, 1 / 273.0
+};
+
+float4 Downsample(in float2 tc : TEXCOORD0) : COLOR
+{
+	float2 textureDim = BackBufferParams.xy / 2;
+	float2 texelSize = 1 / textureDim;
+	
+	float4 mean = 0;
+	
+	for (int j=-2; j<=2; j++) {
+		for (int i=-2; i<=2; i++) {
+			float2 texCoord = tc + texelSize * float2(i, j);
+			mean += tex2D(SceneSampler, texCoord) * gaussianKernel[ (i + 2) + 5 * (j + 2)];
+		}
+	}
+
+	return mean;
+}
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+		Lighting = false;
+		AlphaBlendEnable = FALSE;
+		AlphaTestEnable = FALSE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+		ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+		CullMode = NONE;
+
+		VertexShader = null;
+        PixelShader  = compile ps_3_0 Downsample();
+    }
+}

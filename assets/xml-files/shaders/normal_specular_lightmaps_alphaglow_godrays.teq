@@ -1,0 +1,147 @@
+// Note: Frequently used shader
+// Note: Frequently used shader
+//Default Shader instancing
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+#include "objectbounding.frag"
+#include "vectorfunctions.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+struct CustomVSOutput
+{
+    float4 Pos				: POSITION;
+	float3 WorldTangent		: TANGENT;
+	float3 WorldBinormal	: BINORMAL;
+    float3 WorldNormal		: TEXCOORD0;
+    float3 WorldEyeVec		: TEXCOORD1;
+	float2 Tc				: TEXCOORD2;
+	float4 ZPos				: TEXCOORD3;
+	float3 ModelPos			: TEXCOORD4;
+    float3 WorldPos			: TEXCOORD5;
+	float  Fog				: TEXCOORD6;
+	float2 TClightmap		: TEXCOORD7;
+};
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+CustomVSOutput Unwrap(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE(Input);
+	
+	CustomVSOutput O;
+	O.Pos = Output.Pos;
+	O.WorldTangent = Output.WorldTangent;
+	O.WorldBinormal = Output.WorldBinormal;
+    O.WorldNormal = Output.WorldNormal;
+    O.WorldEyeVec = Output.WorldEyeVec;
+	O.Tc = Output.Tc;
+	O.ZPos = Output.ZPos;
+	O.ModelPos = Input.Pos;
+    O.WorldPos = Output.WorldPos;
+	O.Fog = Output.Fog;
+	O.TClightmap = Output.Misc;
+	/*
+	float3 AbsNormal = abs(Input.Norm);
+	O.MappingWeights.xyz = AbsNormal / (AbsNormal.x + AbsNormal.y + AbsNormal.z);
+	O.MappingWeights.w = 1.0 - Output.Misc.b; // because the default vertex color is white
+	*/
+	return O;
+}
+
+
+STD_PS_OUTPUT_3 PS(CustomVSOutput Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+	float4 LightMap = tex2D(LinearSampler_Illumination, Input.TClightmap.xy);
+	float4 NormalSample =  SurfaceColor.g * 0.2;
+	float SpecularContribution = NormalSample.w;
+	float SunSpecularExponent = 10;
+	float OpaqueLightsExponent = 16;
+	
+	float3 WorldNormal = normalize(Input.WorldNormal);
+	float3 Nn = WorldNormal;
+	float3 Vn = normalize(Input.WorldEyeVec);
+	
+#ifndef LOW_SHADER_QUALITY
+	NormalSample = tex2D(LinearSampler_Normal, Input.Tc);
+	SpecularContribution = NormalSample.w;
+	
+	float3 WorldTangent = normalize(Input.WorldTangent);
+	float3 WorldBinormal = normalize(Input.WorldBinormal);
+		
+	float3 BumpNormal = 2.0 * (NormalSample.xyz - 0.5);
+	Nn = normalize(WorldNormal + BumpNormal.x * WorldTangent + BumpNormal.y * WorldBinormal);
+#endif
+	
+	float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, SunSpecularExponent, STANDARD_PROP_DIFFUSE_WRAP, (SpecularContribution * (LightMap.x*6))  / lerp(0.2 ,1,SunIntensity));
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, OpaqueLightsExponent, 
+			STANDARD_PROP_DIFFUSE_WRAP, SpecularContribution, Vn, LightParams[i]);
+	}
+#endif
+
+	Sunlight.xyz *= pow(LightMap.xxx,1.5)*12;
+	Output.Color.xyz = combineIllumination3Lightmaps(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight);
+	Output.Color.xyz += SurfaceColor.xyz * SurfaceColor.w;
+
+#ifdef SHADER_PP_GOD_RAYS
+	Output.Color.xyz += NormalSample.w*0.2;
+#endif
+
+
+//#ifndef SHADER_PP_GOD_RAYS	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+//#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, SpecularContribution);
+#endif
+
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        //VertexShader = compile vs_3_0 STD_VERTEX_SHADER_INSTANCE_VPAINT();
+		VertexShader = compile vs_3_0 Unwrap();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

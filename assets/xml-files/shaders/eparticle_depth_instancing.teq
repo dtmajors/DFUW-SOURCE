@@ -1,0 +1,344 @@
+
+
+#include "shaderconfig.frag"
+#include "offscreenfx.frag"
+
+#include "stdstate.frag"
+#include "fog.frag"
+#include "time.frag"
+#include "mathfunctions.frag"
+#include "instancing.frag"
+#include "matrix.frag"
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_CUSTOM;
+
+texture Texture0 : REPTexture0 = NULL;
+texture Texture1 : REPTexture1 = NULL;
+
+#define INSTANCE_8_TEXTURES
+
+texture ITex0 = NULL;
+texture ITex1 = NULL;
+texture ITex2 = NULL;
+texture ITex3 = NULL;
+texture ITex4 = NULL;
+texture ITex5 = NULL;
+texture ITex6 = NULL;
+
+sampler T0S = sampler_state
+{
+	texture = <ITex0>;
+	AddressU = WRAP;
+	AddressV = WRAP;
+	MinFilter = USER_TEXTURE_FILTER;
+	MagFilter = USER_TEXTURE_FILTER;
+};
+sampler T1S = sampler_state
+{
+	texture = <ITex1>;
+	AddressU = WRAP;
+	AddressV = WRAP;
+	MinFilter = USER_TEXTURE_FILTER;
+	MagFilter = USER_TEXTURE_FILTER;
+};
+sampler T2S = sampler_state
+{
+	texture = <ITex2>;
+	AddressU = WRAP;
+	AddressV = WRAP;
+	MinFilter = USER_TEXTURE_FILTER;
+	MagFilter = USER_TEXTURE_FILTER;
+};
+sampler T3S = sampler_state
+{
+	texture = <ITex3>;
+	AddressU = WRAP;
+	AddressV = WRAP;
+	MinFilter = USER_TEXTURE_FILTER;
+	MagFilter = USER_TEXTURE_FILTER;
+};
+sampler T4S = sampler_state
+{
+	texture = <ITex4>;
+	AddressU = WRAP;
+	AddressV = WRAP;
+	MinFilter = USER_TEXTURE_FILTER;
+	MagFilter = USER_TEXTURE_FILTER;
+};
+sampler T5S = sampler_state
+{
+	texture = <ITex5>;
+	AddressU = WRAP;
+	AddressV = WRAP;
+	MinFilter = USER_TEXTURE_FILTER;
+	MagFilter = USER_TEXTURE_FILTER;
+};
+sampler T6S = sampler_state
+{
+	texture = <ITex6>;
+	AddressU = WRAP;
+	AddressV = WRAP;
+	MinFilter = USER_TEXTURE_FILTER;
+	MagFilter = USER_TEXTURE_FILTER;
+};
+
+
+struct PARTICLE_VS_INPUT
+{
+   float3 Pos	: POSITION;
+   float2 Tex		: TEXCOORD0;
+   //InstanceData
+   float4 StartColor 	: COLOR0;
+   float4 EndColor		: COLOR1;
+   float4 LifeTime_NumTextures_StartScale_EndScale : TEXCOORD1;
+   float4 StartRotation_EndRotation_StartTime_DepthModifier : TEXCOORD2;
+   float4 ParticlePosition_TextureNumber : TEXCOORD3;
+   float4 PrevParticlePosition_MotionBlurMultiplier : TEXCOORD4;
+};
+
+
+struct PARTICLE_VS_OUTPUT
+{
+   float4 Pos 	: POSITION;
+   float2 Tex	: TEXCOORD0;
+   float2 Tex2  : TEXCOORD1;
+   float4 PSPos   : TEXCOORD2;
+   float3 ViewDir : TEXCOORD3;
+   float  Scale : TEXCOORD4;
+   float  TexNumber : TEXCOORD5;
+   float4  Effect  : TEXCOORD6;
+   float4 ClipSpace	: TEXCOORD7;
+   float4 Diff	: COLOR0;
+   float  Fog	: FOG;
+};
+
+sampler depth_sampler = sampler_state
+{
+	texture = (Texture1);
+};
+
+
+PARTICLE_VS_OUTPUT Particle_VS(PARTICLE_VS_INPUT Input)
+{
+    PARTICLE_VS_OUTPUT Out = (PARTICLE_VS_OUTPUT)0;
+    
+
+	float TextureNumber = Input.ParticlePosition_TextureNumber.w;
+	float4 StartColor = Input.StartColor;
+	float4 EndColor = Input.EndColor;
+	float3 ParticlePosition = Input.ParticlePosition_TextureNumber.xyz;
+	float ParticleLifeTime = Input.LifeTime_NumTextures_StartScale_EndScale.x;
+	int NumTextures = Input.LifeTime_NumTextures_StartScale_EndScale.y;
+	float StartScale = Input.LifeTime_NumTextures_StartScale_EndScale.z;
+	float EndScale = Input.LifeTime_NumTextures_StartScale_EndScale.w;
+	float StartRotation = Input.StartRotation_EndRotation_StartTime_DepthModifier.x;
+	float EndRotation = Input.StartRotation_EndRotation_StartTime_DepthModifier.y;
+	float StartTime = Input.StartRotation_EndRotation_StartTime_DepthModifier.z;
+	float DepthModifier = Input.StartRotation_EndRotation_StartTime_DepthModifier.w;
+	float3 PrevParticlePosition = Input.PrevParticlePosition_MotionBlurMultiplier.xyz;
+	float MotionBlurMultiplier = Input.PrevParticlePosition_MotionBlurMultiplier.w;
+	
+	
+	
+    float3 NewPos = Input.Pos;
+    
+    float LifeScale = (TOTAL_TIME_ACCURATE - StartTime)/ParticleLifeTime; 
+	
+	LifeScale = saturate(LifeScale);
+	if (LifeScale >= 1.0f)
+		LifeScale = 0.99999f;
+	
+	
+	float Expo = LifeScale*LifeScale*LifeScale;
+	//LifeScale = LifeScale*LifeScale;//*LifeScale*LifeScale;
+	
+	
+
+    float Scale = lerp(StartScale, EndScale, LifeScale);
+    float Rotation = lerp(StartRotation,EndRotation, LifeScale);
+    float4 Color = lerp(StartColor,EndColor, Expo );
+
+    NewPos = SFVectorRotateZ(NewPos,Rotation);
+    NewPos = mul(NewPos,(float3x3)VIEW_MATRIX_TRANSPOSE);    
+    NewPos *= Scale;
+	float3 PrevPos = NewPos;
+	NewPos += ParticlePosition;
+	PrevPos += PrevParticlePosition;
+
+	
+    
+    
+    //Time ta do da texture 
+    float TextureFactor = 1.0f/NumTextures;
+    
+    int RealNumTextures = NumTextures * NumTextures;
+   
+    float CurrentTex = RealNumTextures * LifeScale;
+    
+    CurrentTex  = floor(CurrentTex);
+    //find out where we are
+    float Y = floor(CurrentTex/NumTextures);
+    float X = CurrentTex - (Y * NumTextures);
+    
+    float2 TexOut;
+    TexOut.x = X * TextureFactor + Input.Tex.x * TextureFactor;
+    TexOut.y = Y * TextureFactor + Input.Tex.y * TextureFactor;
+    
+    
+    
+    
+    Out.Pos = mul(float4(NewPos,1.0f),VIEW_PROJECTION_MATRIX);
+	//float2 Eff = MB_GetBMVal_float(Out.Pos,float4(PrevPos,1.0f),MotionBlurMultiplier);
+	//Out.Effect = float4(Eff,0.0f,0.0f);
+	Out.ViewDir = mul(float3(0.0f,0.0f,1.0f),(float3x3)VIEW_MATRIX_TRANSPOSE); 
+    Out.Tex = TexOut;
+	Out.Tex2 = Input.Tex;
+    Out.Diff = Color;
+	Out.PSPos = float4(NewPos,1.0f);
+	Out.Scale = Scale * DepthModifier;
+	Out.TexNumber = TextureNumber;
+    
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	Out.ClipSpace = Out.Pos;
+	
+	return Out;
+}
+
+struct PARTICLE_PS_OUTPUT
+{
+	float4 Color : COLOR;
+	float4 Effect : COLOR1;
+#ifdef DEPTH_WRITE_ENABLE
+	float4 SSAO_Depth 	: COLOR2;
+#endif
+	float Depth : DEPTH;
+};
+
+PARTICLE_PS_OUTPUT Particle_PS(PARTICLE_VS_OUTPUT Input)
+{
+	PARTICLE_PS_OUTPUT Out = (PARTICLE_PS_OUTPUT)0;
+	float4 Tex;
+	if (Input.TexNumber < 0.5f)
+	{
+		Tex = tex2D(T0S,Input.Tex);
+	}	
+	else
+	if (Input.TexNumber < 1.5f)
+	{
+		Tex = tex2D(T1S,Input.Tex);
+	}
+	else
+	if (Input.TexNumber < 2.5f)
+	{
+		Tex = tex2D(T2S,Input.Tex);
+	}
+	else
+#ifdef INSTANCE_8_TEXTURES
+	if (Input.TexNumber < 3.5f)
+#endif
+	{
+		Tex = tex2D(T3S,Input.Tex);
+	}
+#ifdef INSTANCE_8_TEXTURES
+	else
+	if (Input.TexNumber < 4.5f)
+	{
+		Tex = tex2D(T4S,Input.Tex);
+	}
+	else
+	if (Input.TexNumber < 5.5f)
+	{
+		Tex = tex2D(T5S,Input.Tex);
+	}
+	else
+	//if (Input.TexNumber == 6.0f)
+	{
+		Tex = tex2D(T6S,Input.Tex);
+	}
+#endif		
+
+	float4 Depth = tex2D(depth_sampler,Input.Tex2);
+	Out.Color = Tex*Input.Diff;
+	if (Input.Fog > 0.0f)
+		Out.Color.xyz = lerp(Out.Color.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	float A = 1.0f;
+	if (Out.Color.a < 0.01f)
+	{
+		clip(-0.5f);
+	}
+
+	//Out.Effect = Input.Effect;
+	//Out.Effect.a = SSAO_NO_EFFECT; // A; // - (Out.Color.a*Out.Color.a*Out.Color.a*Out.Color.a);
+		
+	float4 NewPos = Input.PSPos;
+	NewPos.xyz = NewPos.xyz - (Depth.x*Input.Scale)*Input.ViewDir;
+	float4 OutPos = mul(NewPos,VIEW_PROJECTION_MATRIX);
+	
+	Out.Depth = OutPos.z/OutPos.w;
+#ifdef DEPTH_WRITE_ENABLE
+	Out.SSAO_Depth = 0;//SSAO_NO_EFFECT;
+#endif	
+
+	// OffscreenFX
+	Out.Color = ProcessOffscreenFXColorSmooth(Out.Color, Input.ClipSpace);
+	return Out;
+}
+
+
+
+//-0
+// 
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+        AlphaTestEnable = false;
+        ZEnable = TRUE;
+		ZWriteEnable = FALSE;
+
+	   	AlphablendEnable = TRUE;
+	   	SRCBlend = SRCALPHA;
+	   	DestBlend = One;//InvSrcAlpha;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+		ColorWriteEnable = RED|BLUE|GREEN;
+        VertexShader = compile vs_3_0 Particle_VS();
+        PixelShader  = compile ps_3_0 Particle_PS();
+        
+
+    }
+}
+
+
+technique T1
+{
+    pass P0
+    {
+		STD_STATE;
+        AlphaTestEnable = false;
+		
+        ZEnable = TRUE;
+		ZWriteEnable = FALSE;
+
+		AlphablendEnable = TRUE;
+		SRCBlend = SRCALPHA;
+		DestBlend = One;//InvSrcAlpha;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+        VertexShader = compile vs_3_0 Particle_VS();
+        PixelShader  = compile ps_3_0 Particle_PS();
+        
+
+    }
+}

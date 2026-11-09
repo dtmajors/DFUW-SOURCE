@@ -1,0 +1,207 @@
+#include "stdstate.frag"
+#include "light_constants.frag"
+#include "stdio.frag"
+#include "wind.frag"
+#include "clouds.frag"
+#include "time.frag"
+#include "matrix.frag"
+#include "planets.frag"
+#include "environment.frag"
+#include "objectmatrix.frag"
+
+#include "camera.frag"
+
+texture Cloud0 : REPTexture0;
+texture Cloud1 : REPTexture1;
+
+
+#define ADDITIONAL_ADD 0.1
+#define POS_NORM_MULT 4
+#define SKY_SPEED_MULT 0.1f
+
+sampler Cloud0_Sampler = sampler_state 
+{
+    texture = <Cloud0>;
+    AddressU = WRAP;
+    AddressV = WRAP;
+    AddressW = WRAP;
+    BorderColor = 0;
+    MaxMipLevel = 0;
+
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+sampler Cloud1_Sampler = sampler_state 
+{
+    texture = <Cloud1>;
+    AddressU = WRAP;
+    AddressV = WRAP;
+    AddressW = WRAP;
+    BorderColor = 0;
+    MaxMipLevel = 0;
+
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+
+
+struct InVertex
+{
+
+   float3 Position : POSITION;
+   float3 Normal   : NORMAL;
+   float2 Tex: TEXCOORD0;
+};
+
+
+struct OutVertex
+{
+   float4 Position : POSITION;
+   float4 SkyLight : COLOR0;
+   float4 SkyColor : COLOR1;
+   float2 Tex0: TEXCOORD0;
+   float2 Tex1: TEXCOORD1;
+};
+
+OutVertex SkyVertexShader(InVertex IN)
+{
+ 
+    OutVertex OUT = (OutVertex)0;
+	float3 InPosition = IN.Position ; 
+	//InPosition.y += 2; 
+	InPosition *= 120;
+	
+    float BlendMultiply = saturate( IN.Position.y- 0.4f); 
+    float3 WorldPos = mul(float4( InPosition ,1),(float4x3)WorldMatrix);
+    
+    //PlanetPos1.y += 100.0f;
+    float3 PlanetDir = normalize(PlanetPos1-WorldPos);
+    
+    float4x4 WorldView = mul(WorldMatrix, VIEW_MATRIX);
+    float3 WVPos = mul(float4(InPosition,1),(float3x3)WorldView);
+    OUT.Position = mul(float4(WVPos,1),PROJECTION_MATRIX);
+
+    
+    //backlighting
+//    float4 P1 = (1-dot(IN.Normal, PlanetLightDir1))    *PlanetLightColor1*PlanetLightColor1.w;
+    //float NormalDot = dot(IN.Normal , -PlanetLightDir1);
+//    float ColIntens = PlanetLightColor1*PlanetLightColor1.w;
+    float4 P1 = PlanetLightColor1*PlanetLightColor1.w;
+    P1 *= pow(dot(PlanetLightDir1, PlanetDir),8)*dot(IN.Normal,-PlanetLightDir1);
+    
+    PlanetDir = normalize(PlanetPos2 - WorldPos);
+    float4 P2 = PlanetLightColor2*PlanetLightColor2.w;
+    P2 *= pow(dot(PlanetLightDir2, PlanetDir),16)*dot(IN.Normal,-PlanetLightDir2);
+    
+    PlanetDir = normalize(PlanetPos3 - WorldPos);
+    float4 P3 = PlanetLightColor3*PlanetLightColor3.w;
+    P3 *= pow(dot(PlanetLightDir3, PlanetDir),32)*dot(IN.Normal,-PlanetLightDir3);
+    
+    
+    
+
+    float4 Final = (P1 + P2 + P3) * 0.33f; //P1 + P2;// + P3;// * PlanetLightColor1.w;
+    
+    
+    OUT.SkyLight = Final ; // * 0.5f;
+    OUT.SkyLight.w = BlendMultiply*(1.0 + CLOUD_THICKNESS);
+//    OUT.SkyColor = SkyColor;
+
+    OUT.SkyColor = SkyColor * saturate(BlendMultiply); //*2.0f;
+
+    //OUT.SkyColor.w = RELATIVE_CLOUD_COVER;
+    OUT.SkyColor.w = RelativeCloudCover;
+    
+    float mult = 0.6 ; 
+	float WStrength = frac( ((TOTAL_TIME * WIND_SPEED * SKY_SPEED_MULT) *  WIND_DIR_Z)) * mult  ;
+    float WStrength_2 = frac( ((TOTAL_TIME * WIND_SPEED * SKY_SPEED_MULT) *  WIND_DIR_X)) * mult ;
+    float WStrength2 = frac( ((TOTAL_TIME * CLOUD_DIFFERENCE_SPEED * (WIND_SPEED * SKY_SPEED_MULT ))* WIND_DIR_Z)) * mult;
+    float WStrength2_2 = frac( ((TOTAL_TIME * CLOUD_DIFFERENCE_SPEED * (WIND_SPEED * SKY_SPEED_MULT))* WIND_DIR_X)) * mult;
+
+   
+
+    OUT.Tex1.x = (IN.Tex.x - WStrength);
+    OUT.Tex1.y = (IN.Tex.y - WStrength_2);
+    OUT.Tex0.x = (IN.Tex.x - WStrength2);
+    OUT.Tex0.y = (IN.Tex.y - WStrength2_2);
+    OUT.Tex1 = OUT.Tex1 * CLOUD_REPEAT * 2.5;
+    OUT.Tex0 = OUT.Tex0 * CLOUD_REPEAT * 2.5;
+    //OUT.Tex1.x = OUT.Tex0.x = IN.Tex.x;
+    
+    
+  
+    return OUT;
+
+  
+}
+
+
+STD_PS_OUTPUT_3 SkyPixelShader(OutVertex IN)
+{    
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3)0;
+    float4 S0 = tex2D(Cloud0_Sampler, IN.Tex0);
+    float4 S1 = tex2D(Cloud1_Sampler, IN.Tex1);
+    
+    float4 TexCol = lerp(S0,S1,IN.SkyColor.w);
+    
+    float4 Color = CloudColor ; 
+	//IN.SkyColor ; 
+	//TexCol*IN.SkyColor;
+    //Color.xyz +=  2.f * TexCol.xyz ; //*IN.SkyLight.xyz;
+	//Color.xyz = 2.f ; //saturate( Color.xyz * 15 ) ;
+	float avg = TexCol.xyz ; 
+	//Color.w = TexCol.w; 
+	Color.w = saturate(avg * CLOUD_THICKNESS *IN.SkyLight.w);
+
+	Out.Color = Color ;
+#ifdef DEPTH_WRITE_ENABLE
+	Out.Depth.xyz = 0;
+	Out.Depth.w = 1.0;
+#endif
+
+float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+#ifdef SHADER_PP_QUALITY
+	Out.Color = lerp(Color*1.1,Color,smoothstep(0.4,0.401,SunIntensity));
+#endif
+
+	return Out;
+}
+
+
+
+
+
+technique T0
+{
+
+	pass P0
+	{
+		STD_STATE;
+        //CullMode = CW;
+        CullMode =  none;
+        ZEnable = false;
+        ZWriteEnable = false;
+        AlphaBlendEnable = true;
+        AlphaTestEnable = FALSE;
+        
+        SrcBlend = SRCALPHA;
+		DestBlend = INVSRCALPHA;
+		//ColorWriteEnable = RED|BLUE|GREEN|ALPHA; //Don't write to the alpha channel - NO WRITE!
+		ColorWriteEnable = RED|BLUE|GREEN; //Don't write to the alpha channel - NO WRITE!
+		FogEnable = False;
+       	
+		VertexShader = compile vs_3_0 SkyVertexShader();	
+		PixelShader = compile ps_3_0 SkyPixelShader();	
+	}
+	
+}
+
+

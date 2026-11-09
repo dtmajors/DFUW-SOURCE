@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Grounded Monsters"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Grounded Monsters" Value="5"/>
+  <Rewards>
+    <Item Name="pe_kill_animal" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_construct" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_elemental" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_giant" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_humanoid" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_magical_beast" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_outerplanar" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_plant_monster" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_undead" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_vermin" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_matayin" Type="UNLOCK_SUBGROUP"/>
+    <Item Name="pe_kill_wildlife" Type="UNLOCK_SUBGROUP"/>
+  </Rewards>
+</Feat>

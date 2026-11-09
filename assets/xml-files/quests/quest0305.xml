@@ -1,0 +1,79 @@
+<quest quest_id="305" category="lore_quest" tag="The Burning Path" published="False" valid="True">
+	<title>The Burning Path</title>
+	<description>Against all odds, it seemed you had passed the Orkish trials! Orkish ideology worked a little differently you see.  If you were wrong, you could improve.  If you were hurt, you could heal.  Therein, to the Orkish mind. lay the path to redemption.</description>
+	<nodes>
+		<node type="event_simple" id="0" tag="Meet the Shaman">
+			<instruction>Go to Nerzok and meet the shaman of the Burning Path.</instruction>
+			<journal_entry>The usual nostril-burning scents of ash and lava were enhanced by a musty odor of incense in Nerzok.  Clearly this was the Orkish version of a spiritual community.  The dull glow that glinted off the actual burning path that ran through the town lent what I imagine the Orks found to be a cozy afterglow to life here.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="Meet the Shaman of the Burning Path" vendor_id="v13_quest_ork_shaman" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="1" tag="Back to the Fist">
+			<instruction>Return to the Fist</instruction>
+			<journal_entry>A true Ork through and through, the Fist looked you up and down and declared you acquitted and redeemed, adding however, that you should not get cocky as Orkish law automatically assumed everyone was always guilty of something.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="1" value="1" tag="Back to the Fist" vendor_id="u13_flaming_skull_fistofthelaw" />
+			</tasks>
+		</node>
+		<node type="start_node" id="3" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="304" />
+				<condition type="quest_completion" id="1" value="1" tag="A Quest Completion Condition" quest_id="303" />
+				<condition type="quest_completion" id="2" value="1" tag="A Quest Completion Condition" quest_id="304" />
+			</conditions>
+		</node>
+		<node type="end_node" id="4" tag="" />
+		<node type="event_simple" id="5" tag="">
+			<journal_entry>Therefore, battered, singed, and with perhaps more than a little ire for the creators of the fetish that had gotten you into this mess, you approached the Fist of the Law once more, to see what lay ahead.</journal_entry>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>He announced that, at least for now, your head could remain on your shoulders and you could proceed unmolested, in his own words, &quot;in whatever direction an elvish fart takes you.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>He did suggest however that the Orkish Shamen of the Burning Path would be looking into your situation and, should you wish to help in their occult investigations, you would more than likely be rewarded.</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>The Shaman of the Burning Path however, was not exactly your atypical member of clergy.  To me, he came across as more of your, ‘crush the unbelievers&apos;  than a ‘lead the flock&apos; type of man (or Ork) of faith.  Of course, the various weaponry, bulging muscles, and brooding, quasi-homicidal expression all probably helped bring that image across nicely.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>The Shaman, after listening to your tale and examining the Fetish, snorted and expressed disgust at such a pathetic and base type of magic. He declared that perpetrators of such an underhanded and sniveling type of deed needed to be found and beaten within an inch of their life, and then that inch to be squashed beneath his boot as well.</journal_entry>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<journal_entry>Discovering the plan behind the Fetish would also be good, but you got the impression that this was secondary to the righteous punishment in the Shaman&apos;s eyes.</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>Nevertheless, the grizzled Ork suggested three different questions that needed to be answered in order that the flaming path of justice (and lots of pain) be revealed to the miscreants in question.</journal_entry>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>How was the Fetish constructed, who did the constructing, and exactly what was it&apos;s purpose?</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="5" from="3" to="5" value="1" />
+		<edge id="7" from="1" to="6" value="1" />
+		<edge id="10" from="0" to="8" value="1" />
+		<edge id="6" from="5" to="1" value="0" />
+		<edge id="8" from="6" to="7" value="0" />
+		<edge id="9" from="7" to="0" value="0" />
+		<edge id="11" from="8" to="9" value="0" />
+		<edge id="12" from="9" to="10" value="0" />
+		<edge id="13" from="10" to="11" value="0" />
+		<edge id="14" from="11" to="12" value="0" />
+		<edge id="16" from="12" to="4" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="511" y="452" />
+		<node_location id="1" x="316" y="440" />
+		<node_location id="3" x="60" y="440" />
+		<node_location id="4" x="851" y="445" />
+		<node_location id="5" x="189" y="440" />
+		<node_location id="6" x="378" y="381" />
+		<node_location id="7" x="436" y="314" />
+		<node_location id="8" x="566" y="400" />
+		<node_location id="9" x="604" y="327" />
+		<node_location id="10" x="669" y="274" />
+		<node_location id="11" x="718" y="200" />
+		<node_location id="12" x="809" y="154" />
+	</node_locations>
+</quest>

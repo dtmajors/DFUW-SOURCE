@@ -1,0 +1,147 @@
+<quest quest_id="181" category="side_quest" tag="The Nithron's Cipher" published="False" valid="True">
+	<title>The Nithron&apos;s Cipher</title>
+	<description>A little-known tome that contains the secrets of locating a device to decipher Nithron runes!</description>
+	<nodes>
+		<node type="event_simple" id="0" tag="">
+			<journal_entry>Within these pages I shall divulge my ingenious peoplemethodology and research into the theories behind much of what we know of the Ancient Nithron and their sudden disappearance so long ago.</journal_entry>
+		</node>
+		<node type="event_branch" id="1" tag="what to do" optional_tasks="True">
+			<tasks>
+				<task type="interact_with_vendor" id="3" value="1" tag="ask librarian" vendor_id="q09_quest_acolyte_librarian" />
+				<task type="interact_with_object" id="4" value="2" tag="find teh alfari decipher to unlock the secret compartment of the chest" resource_name="r_qt nithron library" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Acquire recipe">
+			<journal_entry>Soon..so would all the ancient secrets of the Nithron...provided the Agonian could find some.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="2" tag="unlock Nithrone Decipher" item_id="1" />
+				<action type="give_item_to_player" id="3" tag="give sroll recipe" resource_name="r_Recipe Scroll Nithron Device" quantity="1" inventory_type="Bank" />
+			</actions>
+		</node>
+		<node type="event_simple" id="7" tag="what the librarian says">
+			<journal_entry>$[Vendors.q09_quest_acolyte_librarian_Name] did confirm to the Agonian that the Shadow Salient Requisition Center did survive the destructions of Alfari cities.  Structures that house powerful magics tend to have a way of getting through major catastrophes relatively unscathed...except when they happen to cause them of course.</journal_entry>
+		</node>
+		<node type="start_node" id="4" tag="book of nithrone in library">
+			<journal_entry>A wholly remarkable work on the possible history and culture of Nithron Runes written by me, Garlish the Ever Inventive!</journal_entry>
+			<conditions>
+				<condition type="object_interaction" id="1" value="1" tag="of Nithrone History" resource_name="r_qt book of nithron history" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="5" tag="book &quot;Alfari...:">
+			<journal_entry>The Second in a series of amazing books written by myself, Garlish the Ever Inventive that in no way seeks to extort the reader of their moneys.  Within these pages you will find the secrets of locating the Nithron Cipher! An item of untold usefulness and well worth reading and, more importantly, buying, my books!</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="2" value="1" tag="alfari techniques book" resource_name="r_qt book alfari enchanting techniques">
+					<task_instruction>Find the book &quot;Alfari Enchanting Techniques for Dunces&quot; somewhere in the Library</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="6" tag="" />
+		<node type="event_merge" id="8" tag="Unlock the chest">
+			<journal_entry>And with an innocuous and anticlimactic click the compartment slipped open when the Agonian waved the Arcane Manifestor around the bottom of the chest, the Nithron DeCipher was uncovered!</journal_entry>
+			<tasks>
+				<task type="loot_object" id="7" value="1" tag="loot selentine chest" resource_name="r_qt nithron box" />
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="1" tag="alfari decripter" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="10" tag="find the alfari decipher">
+			<journal_entry>After a brief search throughout the building, the Agonian did locate a fairly mystical looking key-like device behind a book marked, ironically enough, &quot;Hiding in Plain Sight: the Do&apos;s and Don&apos;t&quot;</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="6" value="1" tag="find teh alfari decipher to unlock the secret compartment of the chest" resource_name="r_qt nithron library" />
+			</tasks>
+		</node>
+		<node type="start_node" id="11" tag="">
+			<journal_entry>The Second in a series of amazing books written by myself, Garlish the Ever Inventive that in no way seeks to extort the reader of their moneys.  Within these pages you will find the secrets of locating the Nithron Cipher! An item of untold usefulness and well worth reading and, more importantly, buying, my books!</journal_entry>
+			<conditions>
+				<condition type="object_interaction" id="2" value="1" tag="An Object Interaction Condition" resource_name="r_qt book alfari enchanting techniques" />
+			</conditions>
+		</node>
+		<node type="event_merge" id="12" tag="">
+			<journal_entry>Chapter 1 (of 1)</journal_entry>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>It is common knowledge that the so called Elvish civilizations (Mirdain, Ithwen, Ciel Fey, and Arthain) took their first tentative steps into the world when their benevolent masters, the Nithron, inexplicably ceased to be.  Their former halls empty and silent, the Nithron had seemingly abandoned their slave race and left the elves to step blinking into the light of freedom.</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<journal_entry>Lesser known is the fact that much of these secrets and information can be gleaned from a secretive form of runespeak the Nithron left behind in many of their ruins around Agon.</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>I suppose one could, if so inclined, the refer to this as ruinspeak! Do you see what I did there?</journal_entry>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>At the height of the Alfari nations power, certain pseudo-mystical devices were created by inquiring minds (I use the term &quot;mind&quot; quite loosely here) with the purpose of deciphering this hidden language.  Should you, dear and gullible reader, have any interest in the above, you have simply to acquire my book entitled: Alfari Devices  and you will be well on your way to the secrets of the universe! (Or, more likely than not, ancient Nithron grocery lists...)</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>The Cipher, as with all Alfari devices, requires activation using 5 numbers of each type of fusion essence; Selentine, Theryl, and so forth.</journal_entry>
+		</node>
+		<node type="event_simple" id="18" tag="">
+			<journal_entry>Purchase orders for Cypher artifacts must be made at the Shadow Salient requisition centre in Velmuna.  The High Infuser keeps the especially valuable devices and items secreted away from the main collections for security reasons.</journal_entry>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>&quot;Secreted&quot;, of course, is a term I borrow loosely. Quasi-hidden compartments in every chest that can only be unlocked via keys hidden around the building itself are not exactly the definition of security.  Especially not, I suspect, after I have written about it here but, that is really not a problem of mine.</journal_entry>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>The building in question was, Behrem revealed, located just west of the Alfari capital of Shoal, or at least where it used to be.</journal_entry>
+		</node>
+		<node type="event_simple" id="21" tag="">
+			<journal_entry>After a brief search throughout the building, the Agonian did locate a fairly mystical looking key-like device behind a book marked, ironically enough, &quot;Hiding in Plain Sight: the Do&apos;s and Don&apos;t&quot;</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="28" from="7" to="20" value="0" />
+		<edge id="32" from="1" to="21" value="2" />
+		<edge id="16" from="5" to="12" value="1" />
+		<edge id="19" from="0" to="13" value="0" />
+		<edge id="9" from="1" to="7" value="1" />
+		<edge id="7" from="2" to="6" value="0" />
+		<edge id="8" from="4" to="0" value="1" />
+		<edge id="12" from="8" to="2" value="1" />
+		<edge id="15" from="10" to="8" value="1" />
+		<edge id="24" from="12" to="17" value="0" />
+		<edge id="18" from="11" to="12" value="1" />
+		<edge id="20" from="13" to="14" value="0" />
+		<edge id="21" from="14" to="15" value="0" />
+		<edge id="22" from="15" to="16" value="0" />
+		<edge id="23" from="16" to="5" value="0" />
+		<edge id="25" from="17" to="18" value="0" />
+		<edge id="26" from="18" to="19" value="0" />
+		<edge id="27" from="19" to="1" value="0" />
+		<edge id="29" from="20" to="10" value="0" />
+		<edge id="33" from="21" to="8" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Alfari Decripter" image_locked="qc_181_alfari_decrypter_locked.png" image_unlocked="qc_181_alfari_decrypter_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Arcane Manifestor</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A cunningly hidden arcane key that will reveal secret compartments in certain Alfari chests.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="1" tag="Nithrone Decipher Device Recipe" image_locked="qc_181_nithron_decipher_device_recipe_locked.png" image_unlocked="qc_181_nithron_decipher_device_recipe_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Nithron DeCipher</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>An ancient Alfari device used for the mystical translation of Nithron Runes.</description_unlocked>
+	</quest_item>
+	<node_locations>
+		<node_location id="0" x="150" y="674" />
+		<node_location id="1" x="583" y="351" />
+		<node_location id="2" x="950" y="361" />
+		<node_location id="7" x="617" y="243" />
+		<node_location id="4" x="69" y="727" />
+		<node_location id="5" x="121" y="442" />
+		<node_location id="6" x="1040" y="362" />
+		<node_location id="8" x="857" y="355" />
+		<node_location id="10" x="820" y="248" />
+		<node_location id="11" x="85" y="204" />
+		<node_location id="12" x="226" y="341" />
+		<node_location id="13" x="225" y="653" />
+		<node_location id="14" x="302" y="649" />
+		<node_location id="15" x="371" y="647" />
+		<node_location id="16" x="446" y="649" />
+		<node_location id="17" x="301" y="341" />
+		<node_location id="18" x="396" y="344" />
+		<node_location id="19" x="485" y="346" />
+		<node_location id="20" x="710" y="240" />
+		<node_location id="21" x="712" y="353" />
+	</node_locations>
+</quest>

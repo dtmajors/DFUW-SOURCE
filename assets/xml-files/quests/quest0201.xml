@@ -1,0 +1,201 @@
+<quest quest_id="201" category="lore_quest" tag="Beginnings" published="False" valid="True">
+	<title>Beginnings</title>
+	<description>Yours has always been my favorite. I have spun countless tales in my lifespan, chronicled epics and composed opi of legends. Your story, however, with its sheer mortal unpredictability, eluded even my own imaginations and predictions as to its direction. Your actions, motivations, and even reasoning has oft proved so vastly elusive as to amuse me to no end... I still remember that first day when, with the vale behind you, you began to seek answers...</description>
+	<nodes>
+		<node type="end_node" id="5" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="12" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="13" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="14" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="15" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="16" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>The Acolyte greeted you and offered some vague pleasantries accompanied by inane platitudes on the subject of the Vale and how those who emerge, more often than not, have that glassy eyed look of perplexity so often brought about by time spent with the Custodian.</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>Some mild concern was expressed towards the events you described, however, and suggested you seek out the wisdom of a $[Resource.Q.r_qt_wordstone_NameSingular] to fill in the gaps. True to form, this Acolyte was about as useful as a fireball to the face and apparently even an old rock holds more intelligence!</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="Talk to Acolyte" optional_tasks="True">
+			<instruction>Seek out an Acolyte of the Watcher.</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="9" value="1" tag="Acolyte Q11" vendor_id="q11_idawoll_acolyte" />
+				<task type="interact_with_vendor" id="10" value="1" tag="Acolyte P09" vendor_id="p09_gulgrumir_acolyte" />
+				<task type="interact_with_vendor" id="11" value="1" tag="Acolyte P10" vendor_id="p10_cor_ymirhal_acolyte" />
+				<task type="interact_with_vendor" id="12" value="1" tag="Acolyte P11" vendor_id="p11_maghnir_acolyte" />
+				<task type="interact_with_vendor" id="13" value="1" tag="Acolyte U19" vendor_id="u19_sandbrook_acolyte" />
+				<task type="interact_with_vendor" id="14" value="1" tag="Acolyte T18" vendor_id="t18_monkfield_acolyte" />
+				<task type="interact_with_vendor" id="15" value="1" tag="Acolyte V18" vendor_id="v18_heart_of_eanna_acolyte" />
+				<task type="interact_with_vendor" id="16" value="1" tag="Acolyte U18" vendor_id="u18_sanguine_acolyte" />
+				<task type="interact_with_vendor" id="17" value="1" tag="Acolyte L14" vendor_id="l14_whiteclaw_acolyte" />
+				<task type="interact_with_vendor" id="18" value="1" tag="Acolyte K14" vendor_id="k14_amurran_acolyte" />
+				<task type="interact_with_vendor" id="19" value="1" tag="Acolyte J15" vendor_id="j15_urranyr_acolyte" />
+				<task type="interact_with_vendor" id="20" value="1" tag="Acolyte K13" vendor_id="k13_lyran_acolyte" />
+				<task type="interact_with_vendor" id="22" value="1" tag="Acolyte U14" vendor_id="u14_firun_acolyte" />
+				<task type="interact_with_vendor" id="25" value="1" tag="Acolyte T13" vendor_id="t13_okrim_acolyte" />
+				<task type="interact_with_vendor" id="26" value="1" tag="Acolyte V13" vendor_id="v13_nerzok_acolyte" />
+				<task type="interact_with_vendor" id="27" value="1" tag="Acolyte U13" vendor_id="u13_flaming_skull_acolyte" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>One rare moment of usefulness did come out of your encounter with the Acolyte however.  He offered you a set of clothing and armor to aid you in your impending adventures.</journal_entry>
+		</node>
+		<node type="event_branch" id="10" tag="choose reward" optional_tasks="True">
+			<tasks>
+				<task type="choose" id="28" value="1" tag="ele robes" reward_node_id="5">
+					<task_instruction>A full set of Simple Elementalist Robes</task_instruction>
+				</task>
+				<task type="choose" id="29" value="2" tag="pri robes" reward_node_id="16">
+					<task_instruction>A full set of Simple Primalsit Robes</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="16" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="17" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="18" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="19" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="20" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="21" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="33" tag="">
+			<journal_entry>But...ehem, I allow my personal ire to sidetrack your tale.  My apologies my dear.</journal_entry>
+		</node>
+		<node type="start_node" id="35" tag="city area">
+			<conditions>
+				<condition type="in_area" id="274" value="1" tag="An In Quest Area Condition" area_id="19" />
+			</conditions>
+		</node>
+		<node type="event_merge" id="37" tag="empty node" />
+		<node type="start_node" id="38" tag="city area">
+			<conditions>
+				<condition type="in_area" id="275" value="1" tag="An In Quest Area Condition" area_id="76" />
+			</conditions>
+		</node>
+		<node type="start_node" id="39" tag="city area">
+			<conditions>
+				<condition type="in_area" id="276" value="1" tag="An In Quest Area Condition" area_id="38" />
+			</conditions>
+		</node>
+		<node type="start_node" id="40" tag="city area">
+			<conditions>
+				<condition type="in_area" id="277" value="1" tag="An In Quest Area Condition" area_id="67" />
+			</conditions>
+		</node>
+		<node type="start_node" id="41" tag="city area">
+			<conditions>
+				<condition type="in_area" id="278" value="1" tag="An In Quest Area Condition" area_id="75" />
+			</conditions>
+		</node>
+		<node type="start_node" id="42" tag="city area">
+			<conditions>
+				<condition type="in_area" id="279" value="1" tag="An In Quest Area Condition" area_id="17" />
+			</conditions>
+		</node>
+		<node type="start_node" id="43" tag="city area">
+			<conditions>
+				<condition type="in_area" id="280" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="start_node" id="44" tag="city area">
+			<conditions>
+				<condition type="in_area" id="281" value="1" tag="An In Quest Area Condition" area_id="18" />
+			</conditions>
+		</node>
+		<node type="start_node" id="45" tag="city area">
+			<conditions>
+				<condition type="in_area" id="282" value="1" tag="An In Quest Area Condition" area_id="68" />
+			</conditions>
+		</node>
+		<node type="start_node" id="46" tag="city area">
+			<conditions>
+				<condition type="in_area" id="283" value="1" tag="An In Quest Area Condition" area_id="69" />
+			</conditions>
+		</node>
+		<node type="start_node" id="47" tag="city area">
+			<conditions>
+				<condition type="in_area" id="284" value="1" tag="An In Quest Area Condition" area_id="70" />
+			</conditions>
+		</node>
+		<node type="start_node" id="48" tag="city area">
+			<conditions>
+				<condition type="in_area" id="285" value="1" tag="An In Quest Area Condition" area_id="71" />
+			</conditions>
+		</node>
+		<node type="start_node" id="49" tag="city area">
+			<conditions>
+				<condition type="in_area" id="286" value="1" tag="An In Quest Area Condition" area_id="72" />
+			</conditions>
+		</node>
+		<node type="start_node" id="50" tag="city area">
+			<conditions>
+				<condition type="in_area" id="287" value="1" tag="An In Quest Area Condition" area_id="73" />
+			</conditions>
+		</node>
+		<node type="start_node" id="51" tag="city area">
+			<conditions>
+				<condition type="in_area" id="288" value="1" tag="An In Quest Area Condition" area_id="74" />
+			</conditions>
+		</node>
+		<node type="start_node" id="52" tag="city area">
+			<conditions>
+				<condition type="in_area" id="289" value="1" tag="An In Quest Area Condition" area_id="77" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="8" from="8" to="6" value="1" />
+		<edge id="4" from="6" to="7" value="0" />
+		<edge id="43" from="7" to="33" value="0" />
+		<edge id="10" from="9" to="10" value="0" />
+		<edge id="27" from="10" to="16" value="2" />
+		<edge id="26" from="10" to="5" value="1" />
+		<edge id="44" from="33" to="9" value="0" />
+		<edge id="46" from="37" to="8" value="0" />
+		<edge id="47" from="43" to="37" value="1" />
+		<edge id="48" from="42" to="37" value="1" />
+		<edge id="49" from="44" to="37" value="1" />
+		<edge id="50" from="35" to="37" value="1" />
+		<edge id="51" from="39" to="37" value="1" />
+		<edge id="52" from="40" to="37" value="1" />
+		<edge id="53" from="45" to="37" value="1" />
+		<edge id="54" from="46" to="37" value="1" />
+		<edge id="55" from="47" to="37" value="1" />
+		<edge id="56" from="48" to="37" value="1" />
+		<edge id="57" from="49" to="37" value="1" />
+		<edge id="58" from="50" to="37" value="1" />
+		<edge id="59" from="51" to="37" value="1" />
+		<edge id="60" from="41" to="37" value="1" />
+		<edge id="61" from="38" to="37" value="1" />
+		<edge id="62" from="52" to="37" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="5" x="1114" y="251" />
+		<node_location id="6" x="704" y="312" />
+		<node_location id="7" x="800" y="314" />
+		<node_location id="8" x="592" y="311" />
+		<node_location id="9" x="908" y="315" />
+		<node_location id="10" x="1002" y="312" />
+		<node_location id="16" x="1123" y="374" />
+		<node_location id="33" x="859" y="255" />
+		<node_location id="35" x="45" y="164" />
+		<node_location id="37" x="435" y="320" />
+		<node_location id="38" x="194" y="855" />
+		<node_location id="39" x="41" y="234" />
+		<node_location id="40" x="36" y="308" />
+		<node_location id="41" x="129" y="846" />
+		<node_location id="42" x="105" y="52" />
+		<node_location id="43" x="164" y="36" />
+		<node_location id="44" x="71" y="105" />
+		<node_location id="45" x="38" y="384" />
+		<node_location id="46" x="40" y="454" />
+		<node_location id="47" x="43" y="529" />
+		<node_location id="48" x="44" y="602" />
+		<node_location id="49" x="46" y="671" />
+		<node_location id="50" x="59" y="743" />
+		<node_location id="51" x="85" y="803" />
+		<node_location id="52" x="280" y="832" />
+	</node_locations>
+</quest>

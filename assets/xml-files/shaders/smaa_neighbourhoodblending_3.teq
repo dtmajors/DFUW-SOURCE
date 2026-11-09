@@ -1,0 +1,37 @@
+// SMAA_EdgeDetect_3.teq
+
+#include "stdstate.frag"
+#include "SMAA.frag"
+
+void DX9_SMAANeighborhoodBlendingVS(inout float4 position : POSITION,
+                                    inout float2 texcoord : TEXCOORD0,
+                                    out float4 offset[2] : TEXCOORD1) {
+    SMAANeighborhoodBlendingVS(position, position, texcoord, offset);
+}
+
+float4 DX9_SMAANeighborhoodBlendingPS(float4 position : SV_POSITION,
+                                      float2 texcoord : TEXCOORD0,
+                                      float4 offset[2] : TEXCOORD1,
+                                      uniform SMAATexture2D colorTex,
+                                      uniform SMAATexture2D blendTex) : COLOR {
+	//return tex2D(colorTex, texcoord);
+	//return abs(tex2D(colorTex, texcoord) - SMAANeighborhoodBlendingPS(texcoord, offset, colorTex, blendTex)) * 10;
+	float4 ret =  SMAANeighborhoodBlendingPS(texcoord, offset, colorTex, blendTex);
+
+	return ret;
+}
+ 
+technique NeighborhoodBlending {
+    pass NeighborhoodBlending {
+		STD_STATE;
+        VertexShader = compile vs_3_0 DX9_SMAANeighborhoodBlendingVS();
+        PixelShader = compile ps_3_0 DX9_SMAANeighborhoodBlendingPS(colorTex, blendTex);
+        ZEnable = false;
+        //SRGBWriteEnable = true;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+
+        // Here we want to process all the pixels.
+        StencilEnable = false;
+    }
+}

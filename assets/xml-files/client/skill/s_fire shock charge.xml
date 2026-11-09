@@ -1,0 +1,99 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFClientSkill" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Fire Shock Charge" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_Only_Itself" />
+    </SFBlockingName>
+    <SFClientParamName>
+        <SFString Value="No_Params" />
+    </SFClientParamName>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Ignore" />
+        </SFStopControllerOperationName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer_Restart_Blocking" />
+        </SFSkillTimerName>
+        <SFBlockingGroupName>
+            <SFString Value="Block_Only_Self" />
+        </SFBlockingGroupName>
+        <SFNotifyOnTimeout>
+            <SFBool Value="FALSE" />
+        </SFNotifyOnTimeout>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFTimerName>
+            <SFString Value="Infinite Basic Timer" />
+        </SFTimerName>
+        <SFDelay>
+            <SFDouble Value="0.0" />
+        </SFDelay>
+        <SFBlockingGroupTimerSkillFunctionName>
+            <SFString Value="sf_Spell Duration Standard" />
+        </SFBlockingGroupTimerSkillFunctionName>
+        <SFBlockedSkillName>
+            <SFString Value="s_Fire Shock Charge" />
+        </SFBlockedSkillName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Duration Medium" />
+        </SFTimerLengthSkillFunctionName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Blocking_Restart" />
+        </SFSkillPartName>
+    </SFSkillTimer>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Resource_Quantity_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFQuantity>
+            <SFFloat Value="1.0" />
+        </SFQuantity>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFItemStateName>
+            <SFString Value="Item_Detached" />
+        </SFItemStateName>
+        <SFLockConfigName>
+            <SFString Value="Lock_Items_For_Consume" />
+        </SFLockConfigName>
+        <SFResourceName>
+            <SFString Value="r_Shock Charge" />
+        </SFResourceName>
+    </SFConstraint>
+</SFSkill>

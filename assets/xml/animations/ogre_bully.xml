@@ -1,0 +1,155 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_ogre bully" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="ANIMATEDOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="true" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<Meshes>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="ogre_bully.sfam" />
+</Set0>
+</Meshes>
+<Animations>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="ogre_bully.sfas" />
+</Set0>
+</Animations>
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<NumberOfSubsets>
+<SFInteger Value="3" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderanimtransparentnew.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+</Shaders>
+<AnimationInformation>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<AnimationSet0>
+<SetName>
+<SFString Value="Idle" />
+</SetName>
+<SetFile>
+<SFString Value="SF_DEFAULT" />
+</SetFile>
+</AnimationSet0>
+</AnimationInformation>
+<DynamicHitConfigFile Enabled="true" Value="animations/ogre_bully_dynhit_config.xml" />
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-1.819516778" Y="-0.1693049669" Z="-2.094120741" />
+</Min>
+<Max>
+<SFVector3 X="1.771779418" Y="3.42199111" Z="1.497175336" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.02386877313" Y="1.626343131" Z="-0.2984727323" />
+</Center>
+<Radius>
+<SFFloat Value="1.795648098" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation></SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="character" />
+<WaterTransition>
+<Submerged Value="2.62277" />
+<Surface Value="1.64455" />
+<Touching Value="0.0850627" />
+<Floating Value="2.13366" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<DynamicScheme>
+<Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+<FileName Value="ogre_bully.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+<StaticScheme>
+<Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+<FileName Value="ogre_bully.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+</StaticScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0" Y="0" Z="0" />
+</Center>
+<Radius>
+<SFFloat Value="3.54428" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

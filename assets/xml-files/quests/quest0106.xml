@@ -1,0 +1,32 @@
+<quest quest_id="106" category="side_quest" tag="Mountain Letter" published="False" valid="True">
+	<title>Mountain Letter</title>
+	<description>A mysterious letter found at a mountain.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="mountain_letter">
+			<conditions>
+				<condition type="object_interaction" id="0" value="1" tag="An Object Interaction Condition" resource_name="r_qt love letter mountain" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="4" tag="The Letter's Writtings">
+			<journal_entry>&quot;My heart wanted to stay forever in that cave with you. I didn&apos;t really care about the Sadayel. I knew you would defend me. If only my mind would say the same... I know who you are. I didn&apos;t want to believe it, and alas your attitude towards me wouldn&apos;t let me see the truth, but at least I know your feelings were sincere. I know you are a High Magus. And I know that there is something in your blood that isn&apos;t right. I also know how fiercely you&apos;ve been fighting it ever since we were together. I fear though my love that we did a grave mistake... and a lot of innocent people will pay for it. You see, though you know I&apos;m a King&apos;s daughter, there is one thing that you don&apos;t know about me. The blood inside me is that of Eana&apos;s. Do you see it now. Do you realise what we&apos;ve done? If you love me and I pray you do, I&apos;ll need you to do something that is going to hurt. Take the wisp and pierce it through. Get the empty bottle under it and pure the blood from the vial I gave you through it. Now, I need you to be strong cos it is going to hurt. Drink the blood a pray you&apos;ll survive... If you can still read, let me tell you what happened. The blood vial I gave you on our third moon anniversary was blood of mine. It was Eana&apos;s blood. If you have survived, know this: You are free now from the demon&apos;s sway. If you are alive, know that you are the only one who can stop him. If you have any strength left in you, go to our private sanctuary and I&apos;ll reveal everything to you. The island south of your capital. You will need to do a small ritual in order to acquire the last letter... from me. By now, if you have acquired all four of my letters, you should be able to understand what needs to be done...&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>&quot;...blood...&quot;</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="0" tag="An Unlock Quest Item Within The Quest Action" item_id="0" />
+			</actions>
+		</node>
+		<node type="end_node" id="6" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="4" value="1" />
+		<edge id="6" from="4" to="7" value="0" />
+		<edge id="7" from="7" to="6" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Mountain Letter" image_locked="qc_106_letter_mountain_locked.png" image_unlocked="qc_106_letter_mountain_unlocked.png">
+		<name_locked>Locked</name_locked>
+		<name_unlocked>A letter found at a mountain.</name_unlocked>
+		<description_locked>Locked</description_locked>
+		<description_unlocked>&amp;quot;My heart wanted to stay forever in that cave with you. I didn&amp;apos;t really care about the Sadayel. I knew you would defend me. If only my mind would say the same... I know who you are. I didn&amp;apos;t want to believe it, and alas your attitude towards me wouldn&amp;apos;t let me see the truth, but at least I know your feelings were sincere. I know you are a High Magus. And I know that there is something in your blood that isn&amp;apos;t right. I also know how fiercely you&amp;apos;ve been fighting it ever since we were together. I fear though my love that we did a grave mistake... and a lot of innocent people will pay for it. You see, though you know I&amp;apos;m a King&amp;apos;s daughter, there is one thing that you don&amp;apos;t know about me. The blood inside me is that of Eana&amp;apos;s. Do you see it now. Do you realise what we&amp;apos;ve done? If you love me and I pray you do, I&amp;apos;ll need you to do something that is going to hurt. Take the wisp and pierce it through. Get the empty bottle under it and pure the blood from the vial I gave you through it. Now, I need you to be strong cos it is going to hurt. Drink the blood a pray you&amp;apos;ll survive... If you can still read, let me tell you what happened. The blood vial I gave you on our third moon anniversary was blood of mine. It was Eana&amp;apos;s blood. If you have survived, know this: You are free now from the demon&amp;apos;s sway. If you are alive, know that you are the only one who can stop him. If you have any strength left in you, go to our private sanctuary and I&amp;apos;ll reveal everything to you. The island south of your capital. You will need to do a small ritual in order to acquire the last letter... from me. By now, if you have acquired all four of my letters, you should be able to understand what needs to be done...&amp;quot;</description_unlocked>
+	</quest_item>
+</quest>

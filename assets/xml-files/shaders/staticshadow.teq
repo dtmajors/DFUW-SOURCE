@@ -1,0 +1,155 @@
+//Static Shadow Shader
+#include "stdstate.frag"
+#include "shaderconfig.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+};
+
+
+
+VS_OUTPUT StaticShadowDisc(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+
+    SFMatrix WV = mul(WORLD_MATRIX,VIEW_MATRIX);
+
+    //float3 L = ShadowLight * CAMERA_FAR_PLANE;
+    float3 L = mul(float3(0,1,0),(float3x3)VIEW_MATRIX);
+    L = normalize(L);
+    L *= CAMERA_FAR_PLANE;
+    //L *= 20.0f;
+
+	float Multiplier = BOUNDING_SPHERE_RADIUS*0.6f;
+	//if (Multiplier < 0)
+	//	Multiplier = 0.25f;
+    
+    float3 NewP = Input.Pos.xyz * Multiplier;
+	NewP.y += 0.5f;
+
+    float4 PosView = mul( float4(NewP,1.0f),WV);
+    float3 NView = normalize(mul(Input.Norm,(float3x3)WV));
+    
+    
+    float3 LightView = PosView - L;
+    
+    //reverse extrution
+    if (dot(NView,-LightView) < 0.0f)
+    {
+    	if (PosView.z > L.z)
+    	{
+    	   PosView.xyz += LightView * (CAMERA_FAR_PLANE - PosView.z)/LightView.z;
+    	}
+    	else
+    	   PosView = float4(LightView, 0.0f);
+    	   
+    	Out.Pos = mul(PosView, PROJECTION_MATRIX);
+    }
+    else
+    {
+    	Out.Pos = mul( PosView, PROJECTION_MATRIX );
+    }
+
+    return Out;
+}
+
+
+//
+// Single Sided Shader
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+        FogEnable = FALSE;
+
+        CullMode = Ccw;
+        AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+        
+        //Disable writing to colorbuffer
+        ColorWriteEnable = 0;
+        //SrcBlend = Zero;
+        //DestBlend = One;
+        
+        // Disable writing to depth buffer
+        //ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+        // Setup stencil states
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        StencilPass = Keep;
+        
+        VertexShader = compile vs_1_1 StaticShadowDisc();
+        PixelShader  = NULL;
+
+    }
+    pass P1
+    {
+		STD_STATE;
+        CullMode = Cw;
+        StencilZFail = Incr;
+        VertexShader = compile vs_1_1 StaticShadowDisc();
+        PixelShader = NULL;
+    }
+}
+
+//Double sided if card can handle it
+
+technique T1
+{
+    pass P0
+    {
+		STD_STATE;
+        CullMode = None;
+        FogEnable = FALSE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        ColorWriteEnable = 0;
+        
+        //Disable writing to colorbuffer
+        //SrcBlend = Zero;
+        //DestBlend = One;
+        
+        // Disable writing to depth buffer
+        ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+        // Setup stencil states
+        TwoSidedStencilMode = true;
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        Ccw_StencilFunc = Always;
+        Ccw_StencilZFail = Incr;
+        Ccw_StencilPass = Keep;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        StencilPass = Keep;
+
+        PixelShader = NULL;
+        VertexShader = compile vs_1_1 StaticShadowDisc();
+
+    }
+}
+
+

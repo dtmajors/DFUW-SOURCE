@@ -1,0 +1,89 @@
+//Volum Light Shader Final
+
+
+
+#include "stdstate.frag"
+#include "sampler.frag"
+
+texture Tex0 : REPTextureDirect;
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float2 Tex  : TEXCOORD0;
+    float2 Tex2 : TEXCOORD1;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float2 Tex  : TEXCOORD0;
+    float2 Tex2 : TEXCOORD1;
+};
+
+
+
+VS_OUTPUT VS_1_1(VS_INPUT Input)
+{
+	VS_OUTPUT Out = (VS_OUTPUT)0;
+	Out.Pos = Input.Pos*0.1f;
+	Out.Pos.w = 1.0f;
+	Out.Tex = Input.Tex;// + TOTAL_TIME;
+	Out.Tex2 = Input.Tex2;
+	return Out;
+}
+
+
+
+float4 PS_1_1(VS_OUTPUT Input) : COLOR
+{
+	
+	float4 Out = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER,Input.Tex);
+	float4 BaseTex2 = tex2D(DEFAULT_SAMPLER,Input.Tex2);
+	Out = lerp(BaseTex,BaseTex2,BaseTex.w);
+	Out.w += 0.2f;
+	return Out;
+}
+
+
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    	Texture[0] = (Tex0);
+    	Texture[1] = (Tex0);
+        CullMode = CCW;
+        FogEnable = FALSE;
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+        ColorWriteEnable = RED|BLUE|GREEN;
+        
+        // Disable writing to depth buffer
+        ZEnable = FALSE;
+        ZWriteEnable = false;
+        
+        //
+                        
+        // Setup stencil states
+        TwoSidedStencilMode = false;
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        StencilFunc = LessEqual;
+        //StencilZFail = REPLACE;
+        StencilPass = Zero;
+
+        PixelShader = compile ps_2_a PS_1_1();
+        VertexShader = compile vs_1_1 VS_1_1();
+
+    }
+}
+
+

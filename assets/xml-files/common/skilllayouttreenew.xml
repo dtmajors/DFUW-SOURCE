@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML>
+	<VersionInformation Major="0" Minor="3" Incremental="0"/>
+	<GUISkillTree>
+		<GUISkill Name="s_Harvesting Skills" Type="Folder" Radial="false">
+				<GUISkill Name="s_Fishing" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Herb Gathering" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Herb Gathering Mastery New" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Logging" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Logging Mastery New" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Mining" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Mining Mastery New" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Skinning" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Skinning Mastery New" Type="Skill" Radial="false" Improves="Time"/>
+				<GUISkill Name="s_Digging" Type="Skill" Radial="false" Improves="Success"/>
+				<!--<GUISkill Name="s_Requisitioning" Type="Skill" Radial="false" Improves="Time"/>-->
+		</GUISkill>
+		
+		<GUISkill Name="s_Crafting Skills" Type="Folder" Radial="false">				
+				<GUISkill Name="s_Conversions" Type="Skill" Radial="false"/>
+				
+				<GUISkill Name="s_Armorsmithing" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Armorsmithing Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				
+				<!-- <GUISkill Name="s_Artmaking" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Artmaking Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				 -->
+				<GUISkill Name="s_Shieldcrafting" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Shieldcrafting Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Leatherworking" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Leatherworking Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+
+				<GUISkill Name="s_Weaponsmithing" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Weaponsmithing Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Bowyer" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Bowyer Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Staffcrafting" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Staffcrafting Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+
+				<GUISkill Name="s_Alchemy" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Alchemy Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<!--<GUISkill Name="s_Jewelsmithing" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Jewelsmithing Mastery" Type="Skill" Radial="false"/>-->
+				<GUISkill Name="s_Mountsummoning" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<!--<GUISkill Name="s_Mountsummoning Mastery" Type="Skill" Radial="false"/>-->
+				<GUISkill Name="s_Cooking" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Cooking Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+
+				<GUISkill Name="s_Construction" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Construction Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Engineering" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Engineering Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Shipbuilding" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Shipbuilding Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+
+				<GUISkill Name="s_Woodcutting" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Woodcutting Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Smelting" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Smelting Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Tanning" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Tanning Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+
+				<GUISkill Name="s_Weaving" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Weaving Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Tailoring" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+				<GUISkill Name="s_Tailoring Mastery" Type="Skill" Radial="false" Improves="Success;Recipes"/>
+
+				<GUISkill Name="s_Salvaging" Type="Skill" Radial="false"/>
+				<!--<GUISkill Name="s_Crafting Improvements" Type="Category" Radial="false"/>
+				<GUISkill Name="s_Trueforge Armor" Type="Skill" Radial="false"/><!-\- Adds up to 90% more durability to crafted armors -\->
+				<GUISkill Name="s_Trueforge Weapon" Type="Skill" Radial="false"/><!-\- Adds up to 90% more durability to crafted weapons -\->
+				<GUISkill Name="s_Dwarven Steelmaster" Type="Skill" Radial="false"/><!-\- Adds up to 10% more durability to crafted metal thingies -\->
+				<GUISkill Name="s_Industry" Type="Skill" Radial="false"/><!-\- Reduces the time of all crafting. -\->-->
+		</GUISkill>
+		
+		<GUISkill Name="s_General Skills" Type="Folder" Radial="false">
+			<GUISkill Name="s_Riding" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Repair" Type="Skill" Radial="false" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude;Time"/>
+		</GUISkill>
+			
+		<!-- <GUISkill Name="s_General Skills" Type="Folder" Radial="false">
+		</GUISkill> -->	
+			
+			<!--Need Category Name -->
+			<!--HIDE will set to 100-->
+			<!--			<GUISkill Name="s_Crouch walk" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Run" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Sprint" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Swimming" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Diving" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Jump" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Riding" Type="Skill" Radial="false"/>-->
+			<!--Need Category Name!-->
+			<!--DELETE from players. Might be added later as perks-->
+			<!--			<GUISkill Name="s_Acrobatics" Type="Skill" Radial="false"/><!-\- Reduces falling dmg. -\->
+			<GUISkill Name="s_Tireless" Type="Skill" Radial="false"/><!-\- More Encumbered Speed -\->
+			<GUISkill Name="s_Pack Mule" Type="Skill" Radial="false"/><!-\- More Weight in Backpack -\->
+			<!-\-Need Category Name! (H,M,S impovements)-\->
+			<GUISkill Name="s_Endurance" Type="Skill" Radial="false"/><!-\- Determines the natural Stamina regeneration rate. -\->
+			<GUISkill Name="s_Fitness" Type="Skill" Radial="false"/><!-\- Determines the natural Health regeneration rate. -\->
+			<GUISkill Name="s_Focus" Type="Skill" Radial="false"/><!-\- Determines the natural Mana regeneration rate. -\->-->
+			<!--Need Category Name!-->
+			<!--Kjetil must delete this-->
+			<!--<GUISkill Name="s_Spotter" Type="Skill" Radial="false"/><!-\- Increases the identification range. -\->-->
+			<!--DELETE-->
+			<!--<GUISkill Name="s_Survivalist" Type="Skill" Radial="false"/><!-\- Increases food bonus duration. -\->-->
+			<!--Need Category Name!-->
+			<!--DELETE-->
+			<!--<GUISkill Name="s_Reagent Conservation" Type="Skill" Radial="false"/><!-\- One less reagent per cast!!!! -\->-->
+
+			<!--DELETE-->
+			<!--<GUISkill Name="s_Resistances" Type="Folder" Radial="false"><!-\- Lessens random damage max range -\->
+				<GUISkill Name="s_Reflex" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Constitution" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Defense" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Fortitude" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Willpower" Type="Skill" Radial="false"/>
+			</GUISkill>-->
+			<!--DELETE-->
+			<!--<GUISkill Name="s_Racial Skills" Type="Folder" Radial="false"><!-\- Small protection bonus -\->
+				<GUISkill Name="s_Alfar Malevolence" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Dwarven Mettle" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Human Stoicism" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Mirdain Grace" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Orkish Wrath" Type="Skill" Radial="false"/>
+			</GUISkill>-->
+		
+		
+		<GUISkill Name="s_Combat Skills" Type="Folder" Radial="false">
+
+			<!--<GUISkill Name="s_Axe Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Club Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Greataxe Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Greatclub Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Greatsword Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Knife Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Polearm Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Sword Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Archery Mastery" Type="Skill" Radial="false"/>
+				<GUISkill Name="s_Staff Bolt Mastery" Type="Skill" Radial="false"/>-->
+			<!--!!!!!!!!!!!!!!-->
+			<!--<GUISkill Name="s_Parry" Type="Skill" Radial="false"/> HIDDEN FROM GUI - MAP ON KEY-->
+			<!--<GUISkill Name="s_Maintenance" Type="Skill" Radial="false"/>
+				  Reduces your equipment\'s durability loss from combat. HIDDEN will be added later as a perk-->
+
+			<GUISkill Name="s_Axes" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Axe Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Clubs and Maces" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Club Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Greataxes" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Greataxe Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Greatclubs" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Greatclub Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Greatswords" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Greatsword Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Knives" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Knife Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Polearms" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Polearm Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Swords" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Sword Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Archery" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+			<GUISkill Name="s_Archery Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Staff Bolt" Type="Skill" Radial="false" Improves="Mana;AoE;Stamina"/>
+			<GUISkill Name="s_Staff Bolt Mastery" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Throwing" Type="Skill" Radial="false" Improves="Magnitude"/>
+			<GUISkill Name="s_Siege Hammer" Type="Skill" Radial="false" Improves="Magnitude;Speed"/>
+
+		</GUISkill>
+
+		<GUISkill Name="s_Common Skills" Type="Folder" Radial="false">
+			<!--Need Category Name!-->
+			<GUISkill Name="s_Break Fall" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Mana;Magnitude;Stamina;Duration"/>
+			<GUISkill Name="s_Heal Mount" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Mana;Magnitude;Stamina;Duration"/>
+			<GUISkill Name="s_Heal Self" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Mana;Magnitude;Stamina;Duration"/>
+			<GUISkill Name="s_Light" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Mana;Duration;Stamina"/>
+			<GUISkill Name="s_Health to Mana" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude;Duration"/>
+			<GUISkill Name="s_Mana to Stamina" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude;Duration"/>
+			<GUISkill Name="s_Stamina to Health" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude;Duration"/>
+			<GUISkill Name="s_Unburden" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Mana;Magnitude;Stamina;Duration"/>
+			
+			
+			
+			
+			<!--Need Category Name!-->
+			<GUISkill Name="s_Disabling Blow" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude;Duration"/>
+			<GUISkill Name="s_Disabling Shot" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude;Duration"/>
+			<GUISkill Name="s_Disabling Bolt" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude;Duration"/>
+			
+			<!--Must bind these to keys-->
+			<!--<GUISkill Name="s_Gank" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Revive" Type="Skill" Radial="false"/>-->
+			<!--Need Category Name!-->
+			<!--We will bind this to a key-->
+			<!--<GUISkill Name="s_Rest" Type="Skill" Radial="true"/>-->
+			<!--Kjetil must set a cap somehow for each ship-->
+			<!--HIDE FROM GUI as skills. Must be added as buttons somewhere-->
+			<!--<GUISkill Name="s_Bindstone Recall" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_House Recall" Type="Skill" Radial="false"/>
+			<GUISkill Name="s_Teleport Anchor" Type="Skill" Radial="false"/>-->
+			<!--DELETE. Also delete books and scrolls-->
+			<!--<GUISkill Name="s_Read" Type="Skill" Radial="false"/>-->
+			<GUISkill Name="s_Levitation" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude"/>
+			
+			<!-- new (by 11/9/2015) common skills -->
+			<GUISkill Name="s_Begone" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude"/>
+			<GUISkill Name="s_Evade" Type="Skill" Radial="true" Color="136 106 80" BackColor="15 15 15" Improves="Magnitude"/>
+			
+		</GUISkill>
+		<GUISkill Name="s_Warrior" Type="Folder" Radial="false">
+			
+			<GUISkill Name="s_Baresark" Type="Category" Radial="false" Color="103 10 153" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Maelstrom" Type="Skill" Radial="true" Color="103 10 153" BackColor="15 15 15" Improves="Mana;Magnitude;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Roar" Type="Skill" Radial="true" Color="103 10 153" BackColor="15 15 15" Improves="Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Repel" Type="Skill" Radial="true" Color="103 10 153" BackColor="15 15 15" Improves="Magnitude;Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Stampede" Type="Skill" Radial="true" Color="103 10 153" BackColor="15 15 15" Improves="Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Pulverize" Type="Skill" Radial="true" Color="103 10 153" BackColor="15 15 15" Improves="Magnitude;Mana;Stamina;Cooldown" IPS="true"/>
+
+			
+			<GUISkill Name="s_Battle Brand" Type="Category" Radial="false" Color="84 126 158" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Bandage" Type="Skill" Radial="true" Color="84 126 158" BackColor="15 15 15" Improves="Mana;Duration;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Stinging Riposte" Type="Skill" Radial="true" Color="84 126 158" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Foebringer" Type="Skill" Radial="true" Color="84 126 158" BackColor="15 15 15" Improves="Magnitude;Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Spellbane" Type="Skill" Radial="true" Color="84 126 158" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Stoic Defense" Type="Skill" Radial="true" Color="84 126 158" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+
+			
+			
+			<!--<GUISkill Name="s_Champion" Type="Category" Radial="false"/>
+			<GUISkill Name="s_Burst of Speed" Type="Skill" Radial="true"/>-->
+
+			<GUISkill Name="s_Slayer" Type="Category" Radial="false" Color="171 0 0" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Power Attack" Type="Skill" Radial="true" Color="171 0 0" BackColor="15 15 15" Improves="Magnitude;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Battle Rage" Type="Skill" Radial="true" Color="171 0 0" BackColor="15 15 15" Improves="Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Crushing Blow" Type="Skill" Radial="true" Color="171 0 0" BackColor="15 15 15" Improves="Magnitude;Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Vampiric Strike" Type="Skill" Radial="true" Color="171 0 0" BackColor="15 15 15" Improves="Magnitude;Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Barrage" Type="Skill" Radial="true" Color="171 0 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+
+		</GUISkill>
+
+
+		<GUISkill Name="s_Skirmisher" Type="Folder" Radial="false">
+			
+			<GUISkill Name="s_Brawler" Type="Category" Radial="false" Color="215 163 5" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Leap" Type="Skill" Radial="true" Color="215 163 5" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Efficiency" Type="Skill" Radial="true" Color="215 163 5" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<!-- <GUISkill Name="s_Dash" Type="Skill" Radial="true" Color="215 163 5" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;" IPS="true"/> -->
+			<GUISkill Name="s_Heightened Reflexes" Type="Skill" Radial="true" Color="215 163 5" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			
+			<GUISkill Name="s_Deadeye" Type="Category" Radial="false" Color="12 108 21" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Puncture" Type="Skill" Radial="true" Color="12 108 21" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Exploit Weakness" Type="Skill" Radial="true" Color="12 108 21" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Explosive Arrow" Type="Skill" Radial="true" Color="12 108 21" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Trueshot" Type="Skill" Radial="true" Color="12 108 21" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Salvo" Type="Skill" Radial="true" Color="12 108 21" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+
+			
+			<!--<GUISkill Name="s_Blackguard" Type="Category" Radial="false"/>
+			<GUISkill Name="s_Smoke Screen" Type="Skill" Radial="true"/>-->
+			
+			<GUISkill Name="s_Duelist" Type="Category" Radial="false" Color="31 43 162" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Lacerate" Type="Skill" Radial="true" Color="31 43 162" BackColor="15 15 15" Improves="Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Flurry" Type="Skill" Radial="true" Color="31 43 162" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Lunge" Type="Skill" Radial="true" Color="31 43 162" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Pummel" Type="Skill" Radial="true" Color="31 43 162" BackColor="15 15 15" Improves="Mana;Stamina;Cooldown" IPS="true"/>
+			<GUISkill Name="s_Uncanny Focus" Type="Skill" Radial="true" Color="31 43 162" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+
+		</GUISkill>
+
+		<GUISkill Name="s_Elementalist" Type="Folder" Radial="false">
+
+			<GUISkill Name="s_Air" Type="Category" Radial="false" Color="143 141 127" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Thunderbolt" Type="Skill" Radial="true" Color="143 141 127" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<GUISkill Name="s_Attunement to Air" Type="Skill" Radial="true" Color="143 141 127" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Lightning Bolt" Type="Skill" Radial="true" Color="143 141 127" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Tornado" Type="Skill" Radial="true" Color="143 141 127" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Static Field" Type="Skill" Radial="true" Color="143 141 127" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			
+			<GUISkill Name="s_Earth" Type="Category" Radial="false" Color="255 66 0" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Caustic Bolt" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Attunement to Earth" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;NumberOfStacks" IPS="true"/>
+			<GUISkill Name="s_Acid Rock" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Heart of Stone" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<GUISkill Name="s_Toxic Rain" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			
+			
+			<GUISkill Name="s_Fire" Type="Category" Radial="false" Color="255 66 0" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Dragonbreath" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Attunement to Fire" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Fireball" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<GUISkill Name="s_Magma Bomb" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<GUISkill Name="s_Heat Stroke" Type="Skill" Radial="true" Color="255 66 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+
+			
+			<!--Water-->
+			<GUISkill Name="s_Water"           Type="Category" Radial="false"  Color="21 118 174" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Bitterstep"       Type="Skill" Radial="true"  Color="21 118 174" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<GUISkill Name="s_Attunement to Water"    Type="Skill" Radial="true"  Color="21 118 174" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Frostbite"     Type="Skill" Radial="true"  Color="21 118 174" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Watery Grave"      Type="Skill" Radial="true"  Color="21 118 174" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Blizzard" Type="Skill" Radial="true"  Color="21 118 174" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<!--Water-->
+					
+			<!--			
+			<GUISkill Name="s_Earth" Type="Category" Radial="false"/>
+			<GUISkill Name="s_Acid Shield" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Acid Weakness" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Burden" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Earthquake" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Pungent Mist" Type="Skill" Radial="true"/>-->
+
+		</GUISkill>
+
+
+		<GUISkill Name="s_Primalist" Type="Folder" Radial="false">
+
+			<!--PSTART-->
+			
+			<GUISkill Name="s_Chaos" Type="Category" Radial="false" Color="208 194 0" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Bolt of Bedlam" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<GUISkill Name="s_Siezure" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Havoc Blast" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Soul Flay" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Pall of Pandemonium" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			
+			<GUISkill Name="s_Law" Type="Category" Radial="false" Color="208 194 0" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Virtuous Wrath" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/>
+			<GUISkill Name="s_Bastion" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Invigoration" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Primal Surge" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Wall Of Righteous Force" Type="Skill" Radial="true" Color="208 194 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;AoE" IPS="true"/><!--PEND-->
+			
+			<GUISkill Name="s_Life" Type="Category" Radial="false" Color="151 209 0" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Exalted Sacrifice" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Consecrate" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Resuscitation" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Healing Blast" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Spirit Bond" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+
+							
+			<GUISkill Name="s_Pain" Type="Category" Radial="false" Color="151 209 0" BackColor="15 15 15" Improves="Cast" IPS="true"/>
+			<GUISkill Name="s_Needles" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Pungent Mist" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Mana Leech" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina;Duration" IPS="true"/>
+			<GUISkill Name="s_Eye Rot" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+			<GUISkill Name="s_Impale" Type="Skill" Radial="true" Color="151 209 0" BackColor="15 15 15" Improves="Mana;Cooldown;Stamina" IPS="true"/>
+		</GUISkill>
+		<!--
+		<GUISkill Name="s_Temporary Spells" Type="Folder" Radial="false">
+			<GUISkill Name="s_Arcane Bolt" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Arcane Sphere" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Arcane Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Blinding Light" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Levitation" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Acid Arrow" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Acid Rain" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Acid Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Agility" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Arrow Shield" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Ball Lightning" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Beacon" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Begone" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Blizzard" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Bludgeoning Weakness" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Brawn" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Clear Thoughts" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Cold Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Come Hither" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Corrosive Blast" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Cursed Bolt" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Delayed Shot" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Desecration" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Disease" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Disintegrate" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Evil Eye" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Exhaust" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Fire Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Firebolt" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Flesh Curse" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Frailty" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Gills" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Guiding Wind" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Haste" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Hasten Spells" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Heal Other" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Holy Shield" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Holy Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Holy Weakness" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Ice Storm" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Icicle" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Infernal Shield" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Infernal Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Inferno" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Infliction Shield" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Infliction Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Insect Swarm" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Insight" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Ironskin" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Lay on Hands" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Lend Mana" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Lightning Strike" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Lightning Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Magic Shield" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Magic Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Mana Leech" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Mental Weakness" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Meteor Strike" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Missile Fury" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Mystic Ward" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Needles" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Old Spellcraft_Spells" Type="Folder" Radial="false"/>
+			<GUISkill Name="s_Ominous Drain" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Palsy" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Rapid Shot Old" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Rend" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Sacred Missile" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Shards" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Shield of Protection" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Shrapnel" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Slashing Weakness" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Slow" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Smoke Signal" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Spell Curse" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Stamina Leech" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Stoneskin" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Stormblast" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Stupidity" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Thunderstorm" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Tongue Rot" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Toxic Rain" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Undeath" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Unholy Caress" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Unholy Flames" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Venom" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Volcano" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Wall of Fire" Type="Skill" Radial="true"/>
+			<GUISkill Name="s_Water Breathing" Type="Skill" Radial="true"/>
+		</GUISkill>
+		-->
+	</GUISkillTree>
+</XML>

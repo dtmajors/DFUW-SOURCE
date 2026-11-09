@@ -1,0 +1,34 @@
+// PP_BrightPass.teq
+
+#include "stdstate.frag"
+#include "PP_ToneMappers.frag"
+#include "RGBE.frag"
+
+const float BPass : REEnvBrightPass;
+
+sampler s0 : register(s0);
+sampler s1 : register(s1);
+
+float4 BrightPass(float2 ScreenPos : TEXCOORD0) : COLOR
+{
+	// Texture sample with rendered frame
+	float3 Sample = interpretAlphaGlowColor(tex2D(s0, ScreenPos));
+	
+	// Average luminance of rendered frame (adapted)
+	float AvgLumi = tex2D(s1, float2(0.5, 0.5)).r;
+
+	// Tonemapped result. Please adjust values if neccessary!
+	float3 ToneMapped = 0.5f * max(0, Sample - 2.0f * BPass * AvgLumi);
+		    
+	return float4(ToneMapped, 1);
+}
+
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+        PixelShader  = compile ps_3_0 BrightPass();
+    }
+}

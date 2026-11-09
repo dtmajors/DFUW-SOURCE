@@ -1,0 +1,169 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+
+#include "texture.frag"
+#include "time.frag"
+
+#include "ssao.frag"
+
+#include "offscreenfx.frag"
+
+// Matrix Pallette
+static const int MAX_MATRICES = 26;
+float4x3    mWorldMatrixArray[MAX_MATRICES] : REAnimWorldMatrixArray;
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+bool Transparent : REInfoTransparent = true;
+
+
+///////////////////////////////////////////////////////
+
+struct VS_OUTPUT
+{
+    float4  Pos     : POSITION;
+    float2  Tex    : TEXCOORD0;
+    float  Glow    			: TEXCOORD1;
+	float CamDist 			: TEXCOORD2;
+	float2 NTex1			: TEXCOORD3;
+	float2 NTex2			: TEXCOORD4;
+#ifdef DEPTH_WRITE_ENABLE
+	float ZPos 				: TEXCOORD5;
+#endif	
+	float4 ClipSpace		: TEXCOORD6;
+    float   Fog	    : FOG;
+};
+
+
+
+VS_OUTPUT VShade_2Weight(STD_VS_SKINNING_INPUT i)
+{
+    VS_OUTPUT   o = (VS_OUTPUT)0;
+    float3      Pos = 0.0f;
+    float3      Normal = 0.0f;    
+    float       LastWeight = 0.0f;
+    
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(i.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])i.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+    // calculate the pos/normal using the "normal" weights 
+    //        and accumulate the weights to calculate the last weight
+
+    LastWeight = BlendWeightsArray[0];
+        
+    Pos = mul(i.Pos, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+    Normal = mul(i.Normal, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+
+    LastWeight = 1.0f - LastWeight; 
+
+    // Now that we have the calculated weight, add in the final influence
+    Pos += (mul(i.Pos, mWorldMatrixArray[IndexArray[1]]) * LastWeight);
+    Normal += (mul(i.Normal, mWorldMatrixArray[IndexArray[1]]) * LastWeight); 
+    
+    float4 WorldPos = float4(Pos,1.0f);
+    // transform position from world space into view and then projection space
+    o.Pos = mul(WorldPos, VIEW_PROJECTION_MATRIX);
+
+	float3 Dist = WorldPos - EYE_POS;
+	float len =  abs(length(Dist));
+	//now check this against farplane
+	len = 1.0f - saturate(len/FOG_END);
+	o.CamDist = len;
+	
+    // normalize normals
+    float3 WorldNorm = normalize(Normal);
+	
+#ifdef DEPTH_WRITE_ENABLE
+	o.ZPos = o.Pos.z;
+#endif
+	
+    o.Glow = frac(i.Pos.y + i.Pos.x + i.Pos.z) * 1.5f;
+
+    // copy the input texture coordinate through
+    o.Tex  = i.Tex0.xy;
+	o.NTex1 = i.Tex0.xy + TOTAL_TIME;
+	o.NTex2 = i.Tex0.xy - TOTAL_TIME * 0.13f;
+    
+    o.Fog = CalculateFog_3_0(o.Pos.z);
+
+	o.ClipSpace = o.Pos;
+
+    return o;
+}
+
+STD_PS_OUTPUT_3 PShade(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 ReturnVal = (STD_PS_OUTPUT_3)0;
+	float4 Out = (float4)0;
+	
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	//float4 Lerp = tex2D(DEFAULT_SAMPLER_2,Input.Tex * 4.0f);
+	float3 Normal1 = tex2D(DEFAULT_SAMPLER_2,Input.NTex1);
+	float3 Normal2 = tex2D(DEFAULT_SAMPLER_2,Input.NTex2);
+	
+	
+	
+	float3 SCol = SurfaceColor.xyz;
+	
+	float Time = abs(sin( (TOTAL_TIME + SCol.r + SCol.g + SCol.b + Input.Glow) * 0.3f ));
+	
+	Out.xyz = SurfaceColor.xyz; // * saturate(Time + 0.7f);
+
+	
+		
+	Out.xyz = lerp(Out.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	Out.a = saturate(SurfaceColor.a * Time) * (1.0 - smoothstep(0,1,Input.Fog));
+
+	float2 ToyseNormal = normalize(Normal1.xz + Normal2.xy);
+	float2 RealEffect = ToyseNormal * (1.0f - Time);
+	RealEffect *= 0.2f * Input.CamDist;
+	
+	ReturnVal.Color = Out;
+	//ReturnVal.Effect = RealEffect.xyxy;
+	
+#ifdef SSAO_ENABLE
+	ReturnVal.Depth = SSAO_NO_EFFECT;
+#endif
+	
+	// OffscreenFX
+	ReturnVal.Color = ProcessOffscreenFXColor(ReturnVal.Color, Input.ClipSpace);
+	
+	return ReturnVal;
+}
+
+
+
+//////////////////////////////////////
+// Techniques specs follow
+//////////////////////////////////////
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+    	FogEnable = false;
+        AlphaTestEnable = false;
+        
+        AlphaBlendEnable = true;
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+
+        ZEnable = true;
+		ZWriteEnable = true;
+       	CullMode = CCW;
+        
+    	ColorWriteEnable = RED|BLUE|GREEN; 
+
+    	VertexShader = compile vs_3_0 VShade_2Weight();
+        PixelShader = compile ps_3_0 PShade();
+    }
+}
+

@@ -1,0 +1,189 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="decals_u15.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="shaderroad.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+</SubsetShaders>
+</Normal>
+<NumberOfSubsets>
+<SFInteger Value="5" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="dds\road_path_dirt_01.dds" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Texture0>
+<SFString Value="dds\road_path_stone_tiles_01.dds" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Texture0>
+<SFString Value="dds\road_path_stone_tiles_01_end.dds" />
+</Texture0>
+</Subset2>
+<Subset3>
+<Texture0>
+<SFString Value="dds\road_path_stone_tiles_03.dds" />
+</Texture0>
+</Subset3>
+<Subset4>
+<Texture0>
+<SFString Value="dds\road_path_stone_tiles_03_end.dds" />
+</Texture0>
+</Subset4>
+</DefaultTextures>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-465.387207" Y="-72.70948792" Z="-512" />
+</Min>
+<Max>
+<SFVector3 X="465.387207" Y="72.70950317" Z="512" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="12.3049221" Y="-18.77044106" Z="31.91116714" />
+</Center>
+<Radius>
+<SFFloat Value="724.6225586" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-345.3605652" Y="18.8951416" Z="71.22488403" />
+</Center>
+<Radius>
+<SFFloat Value="599.5535889" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="420.4644165" Y="-58.97493362" Z="-179.1667938" />
+</Center>
+<Radius>
+<SFFloat Value="358.8331604" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="459.3014526" Y="-61.66523361" Z="182.6941681" />
+</Center>
+<Radius>
+<SFFloat Value="7.799024582" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+<Subset3>
+<BoundingSphere>
+<Center>
+<SFVector3 X="407.4043274" Y="-67.4431076" Z="393.2413025" />
+</Center>
+<Radius>
+<SFFloat Value="156.3421478" />
+</Radius>
+</BoundingSphere>
+</Subset3>
+<Subset4>
+<BoundingSphere>
+<Center>
+<SFVector3 X="456.1851807" Y="-59.84550476" Z="243.8292389" />
+</Center>
+<Radius>
+<SFFloat Value="7.408365726" />
+</Radius>
+</BoundingSphere>
+</Subset4>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="15.07305431" Y="-19.49578857" Z="31.85901451" />
+</Center>
+<Radius>
+<SFFloat Value="726.3892822" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="decals_u15.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

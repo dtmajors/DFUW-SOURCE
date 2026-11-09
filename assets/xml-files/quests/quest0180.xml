@@ -1,0 +1,24 @@
+<quest quest_id="180" category="rumor_quest" tag="Nithron Cipher" published="False" valid="True">
+	<title>The Nithrone Cipher</title>
+	<description>Tales have been told of an ancient device that had the ability to decipher Nithron Runes.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="talk to librarian">
+			<journal_entry>The librarian, ever eager to prattle on about his collection, suggested that a tome titled, &quot;..of Nithron History,&quot; may hold some answers.</journal_entry>
+			<conditions>
+				<condition type="vendor_interaction" id="2" value="1" tag="talk to librarian" vendor_id="q09_quest_acolyte_librarian" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Seek some more knowledge on the Nithron">
+			<tasks>
+				<task type="receive_quest" id="1" value="1" tag="A Receive Quest Task" quest_id="181">
+					<task_instruction>Find the book &quot;...of Nithrone History&quot; inside the Amethyst Athenium</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="2" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+	</edges>
+</quest>

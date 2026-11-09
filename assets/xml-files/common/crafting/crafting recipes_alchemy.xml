@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Inherit Calcs done for
+1  125 * 1.5 = 190
+25 125 * 1.5 = 190
+50 125 * 1.5 = 190
+75 125 * 1.5 = 190
+******
+1  100 * 1.5 = 150
+25 90  * 1.5 = 135
+50 80  * 1.5 = 120
+75 70  * 1.5 = 105
+-->
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+	<!--Rare element conversions -->
+	
+	<SFRecipe ResourceName="r_new veilron ore" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="100" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_catalyst selentine" Quantity="200" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new selentine ore" Quantity="24" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_new neithal ore" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="200" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_catalyst veilron" Quantity="140" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new veilron ore" Quantity="22" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_new leenspar ore" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="250" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_catalyst neithal" Quantity="100" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new neithal ore" Quantity="20" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_new theyril ore" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="280" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_catalyst leenspar" Quantity="80" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_new leenspar ore" Quantity="18" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="75" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!--Quest Unlocked Recipes Start-->
+	
+	<SFRecipe ResourceName="r_Liquified Granite" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="1" Lockable="TRUE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Granite" Quantity="3" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="0.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="0.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Liquified Rubysand" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="1" Lockable="TRUE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Rubysand" Quantity="5" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="0.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="0.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Extraordinary Bottle" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="1" Lockable="TRUE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Liquified Granite" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Liquified Rubysand" Quantity="1" FractionLoss="0.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="0.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Nithron Device" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="1" Lockable="TRUE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Blood_q03" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Fungus_q03" Quantity="1" FractionLoss="0.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="0.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_improved Turkey Item" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="1" Lockable="TRUE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Meat" Quantity="2" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_new rawhide" Quantity="3" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Black Powder" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Eye_q01" Quantity="2" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="1" FractionLoss="0.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!--Quest Unlocked Recipes End-->
+
+	<SFRecipe ResourceName="r_Empty Bottle" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shells" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fossil" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- reagents -->
+
+	<SFRecipe ResourceName="r_Elemental Dust" Quantity="25" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mandrake" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Spirit Beads" Quantity="25" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Nacre" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_air ulti reagent" Quantity="25" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_leenseed" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_chaos ulti reagent" Quantity="25" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_quicklime" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_baresark ulti reagent" Quantity="25" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_lye" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_brawler ulti reagent" Quantity="25" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_coal" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!-- Potions -->
+
+	<SFRecipe ResourceName="r_Potion Health Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Seeds" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q01" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Stamina Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Apple" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q01" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Mana Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shells" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q01" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>	
+
+	<!-- Upgrade Skinning Mats -->
+
+	<SFRecipe ResourceName="r_Anima_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Bile_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Blood_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Eye_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Eye_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fragment_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fragment_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fungus_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fungus_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Glyph_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Glyph_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Gristle_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Mana Flakes_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Marrow_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Ooze_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Ooze_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Shadowtaint_q02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="35" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q01" Quantity="6" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- Potions -->
+
+	<SFRecipe ResourceName="r_Potion Rejuvenation Lesser" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Larva" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Potion Health Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Seeds" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Potion Stamina Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Apple" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Potion Mana Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shells" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Potion Health Major" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Seeds" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Potion Stamina Major" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Apple" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Potion Mana Major" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shells" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion PVE Revive_01" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="55" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Lichen" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Larva" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="1" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- ********* MASTERY ********* -->
+
+	<!-- Upgrade Skinning Mats -->
+
+	<SFRecipe ResourceName="r_Anima_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Bile_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Bile_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Blood_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Eye_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Eye_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fragment_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Fragment_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fungus_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Fungus_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Glyph_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Glyph_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Gristle_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Gristle_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Mana Flakes_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Marrow_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Marrow_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Ooze_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Ooze_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Shadowtaint_q03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q02" Quantity="6" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- Potions -->
+
+	<SFRecipe ResourceName="r_Potion Rejuvenation Greater" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Larva" Quantity="11" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="1" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Anima_q03" Quantity="1" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Potion Antidote" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="155" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="18" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Water Breathing" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="155" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Nacre" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Ooze_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Slashing Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shells" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Piercing Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Wildberries" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Infliction Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blueberries" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Acid Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Egg" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Cold Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fossil" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Eye_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Fire Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fragment_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Lightning Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Larva" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_fungus_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Holy Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Strawberries" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Glyph_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Unholy Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Seeds" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Slashing Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shells" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Piercing Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Wildberries" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Ooze_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Bludgeoning Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Infliction Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blueberries" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Acid Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Egg" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Cold Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fossil" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Fire Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Eye_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Lightning Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Larva" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fragment_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Holy Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Strawberries" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_fungus_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Unholy Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Seeds" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Glyph_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Bludgeoning Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Arcane Protection Minor" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Apple" Quantity="30" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q02" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Arcane Protection Moderate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Apple" Quantity="60" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q03" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!-- Upgrade Skinning Mats -->
+
+	<SFRecipe ResourceName="r_Anima_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Anima_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Bile_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Blood_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Blood_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Eye_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Eye_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fragment_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Fragment_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fungus_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Fungus_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Glyph_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Glyph_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Gristle_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Gristle_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Mana Flakes_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Marrow_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Marrow_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Ooze_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Ooze_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Shadowtaint_q04" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="60" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q03" Quantity="6" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- Potions -->
+
+	<SFRecipe ResourceName="r_Potion Suppress Weakness" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="135" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Sulfur" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q03" Quantity="2" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Clean Slate" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="135" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q03" Quantity="2" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_Potion Clear Mind" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="135" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Rust" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Eye_q03" Quantity="2" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="75" InheritancePortion="46.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion Remedy" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="135" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Wildberries" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fungus_q03" Quantity="2" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="75" InheritancePortion="46.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- Upgrade Skinning Mats -->
+
+	<SFRecipe ResourceName="r_Anima_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Anima_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Bile_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Bile_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Blood_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Blood_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Eye_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Eye_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fragment_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Fragment_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Fungus_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Fungus_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Glyph_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Glyph_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Gristle_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Gristle_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Mana Flakes_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Marrow_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Marrow_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Ooze_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Ooze_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Shadowtaint_q05" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q04" Quantity="8" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- Potions -->
+
+	<SFRecipe ResourceName="r_Potion Panacea" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="155" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fossil" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Larva" Quantity="20" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fragment_q03" Quantity="1" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Glyph_q03" Quantity="1" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Potion PVP Revive_01" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="155" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Celestial Soul" Quantity="1" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>	
+
+	<!-- Dyes -->
+
+	<SFRecipe ResourceName="r_Dye_01" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_01" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_02" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fungus_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_03" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_04" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Ooze_q01" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_04" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_05" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q01" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_05" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_06" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q01" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_06" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_07" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q01" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_07" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_08" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q01" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_08" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_09" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="13" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q01" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_09" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_10" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="13" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q01" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_10" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_11" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="13" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q01" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_11" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_12" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="13" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fungus_q01" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fungus_q02" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_12" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_13" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fragment_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_13" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_14" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Ooze_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_14" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_15" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_15" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_16" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Pigment_16" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Alchemy" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_17" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="48" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q03" Quantity="1" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Pigment_17" Quantity="5" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_18" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="48" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q03" Quantity="1" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Pigment_18" Quantity="5" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_19" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="48" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Marrow_q03" Quantity="1" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Pigment_19" Quantity="5" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.265" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_20" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="78" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Bile_q03" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Pigment_20" Quantity="5" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_21" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="78" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q03" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Pigment_21" Quantity="5" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_22" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="78" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fungus_q03" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Pigment_22" Quantity="5" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_23" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="118" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fragment_q03" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Fragment_q04" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Pigment_23" Quantity="5" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_24" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="118" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Ooze_q03" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Ooze_q04" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Pigment_24" Quantity="5" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_25" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="118" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gristle_q03" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Gristle_q04" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Pigment_25" Quantity="5" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="50" InheritancePortion="21.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_26" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="170" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Mana Flakes_q04" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Pigment_26" Quantity="5" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="75" InheritancePortion="46.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_27" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="170" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Blood_q04" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Pigment_27" Quantity="5" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="75" InheritancePortion="46.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_28" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="170" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q04" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Pigment_28" Quantity="5" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="75" InheritancePortion="46.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_29" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="238" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Eye_q04" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Eye_q05" Quantity="1" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Pigment_29" Quantity="5" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Dye_30" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="238" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Empty Bottle" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q04" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Shadowtaint_q05" Quantity="1" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Pigment_30" Quantity="5" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Greek fire" Quantity="4" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="78" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Resin" Quantity="5" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Sulfur" Quantity="5" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Tar Material" Quantity="1" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="25" InheritancePortion="7.18" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_anthracite coal" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="FALSE">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_trout" Quantity="10" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_shells" Quantity="7" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_seaweed" Quantity="5" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_anthracite" Quantity="2" FractionLoss="0.6"/>
+		<SFRequiredSkill SkillName="s_Alchemy Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+</XML>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Giants"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Giants" Value="5"/>
+  <Rewards>
+    <Item Name="pe_kill_giant_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_fire_giant_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_hill_giant_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_ogre_30" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

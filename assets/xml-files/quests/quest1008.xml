@@ -1,0 +1,24 @@
+<quest quest_id="1008" category="rumor_quest" tag="Issac's Vengeance" published="False" valid="True">
+	<title>Isaac&apos;s Vengeance</title>
+	<description>The rumor around Sanguine is that the Five Beards Trading Company, is willing to pay a lot of $[Resource.G.r_gold_NameSingular] for the contents of a missing lockbox. More information can be found at one of their agents. It is known that most of the time they can be found in places underground.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="in_area" id="15" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="2" tag="" />
+		<node type="event_simple" id="45" tag="">
+			<journal_entry>Agents of the Five Beards Trading Company had indeed an offer.</journal_entry>
+			<tasks>
+				<task type="receive_quest" id="19" value="1" tag="A Receive Quest Task" quest_id="1009" />
+			</tasks>
+		</node>
+		<node type="end_node" id="50" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="41" from="2" to="45" value="0" />
+		<edge id="33" from="45" to="50" value="1" />
+	</edges>
+</quest>

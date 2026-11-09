@@ -1,0 +1,200 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="decals_v13.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="FALSE" />
+<SFString Value="ShaderDefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdecal.xml" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderroad.xml" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderroad.xml" />
+</Shader2>
+<Shader3>
+<SFString Value="shaderroad.xml" />
+</Shader3>
+<Shader4>
+<SFString Value="shaderroad.xml" />
+</Shader4>
+</SubsetShaders>
+</Normal>
+<NumberOfSubsets>
+<SFInteger Value="5" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="dds\decal_blood_512_03.dds" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Texture0>
+<SFString Value="dds\road_path_dirt_01.dds" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Texture0>
+<SFString Value="dds\road_path_dirt_01_end.dds" />
+</Texture0>
+</Subset2>
+<Subset3>
+<Texture0>
+<SFString Value="dds\road_path_stone_tiles_03.dds" />
+</Texture0>
+</Subset3>
+<Subset4>
+<Texture0>
+<SFString Value="dds\road_path_stone_tiles_03_end.dds" />
+</Texture0>
+</Subset4>
+</DefaultTextures>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-516.4731445" Y="-9.430770874" Z="-517.5085449" />
+</Min>
+<Max>
+<SFVector3 X="516.4726563" Y="9.430770874" Z="517.5087891" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-36.90023041" Y="-1.095769644" Z="-172.3822784" />
+</Center>
+<Radius>
+<SFFloat Value="818.1374512" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="128.9521484" Y="2.050720215" Z="-201.7268066" />
+</Center>
+<Radius>
+<SFFloat Value="0.8662738204" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="194.29245" Y="-0.4891230762" Z="-273.941925" />
+</Center>
+<Radius>
+<SFFloat Value="686.7041016" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-66.50209045" Y="-1.414208412" Z="-213.3848724" />
+</Center>
+<Radius>
+<SFFloat Value="599.9417725" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+<Subset3>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-143.571106" Y="-1.338683367" Z="-127.4504852" />
+</Center>
+<Radius>
+<SFFloat Value="717.3203125" />
+</Radius>
+</BoundingSphere>
+</Subset3>
+<Subset4>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-2.876164675" Y="-1.822257519" Z="-132.8963318" />
+</Center>
+<Radius>
+<SFFloat Value="804.6810303" />
+</Radius>
+</BoundingSphere>
+</Subset4>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-35.30047607" Y="-1.122904539" Z="-171.3718719" />
+</Center>
+<Radius>
+<SFFloat Value="818.1575928" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="decals_v13.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

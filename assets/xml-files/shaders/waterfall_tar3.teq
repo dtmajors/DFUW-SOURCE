@@ -1,0 +1,170 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+#include "reflections.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+#include "offscreenfx.frag"
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+
+// Tell that this object is reflective
+//bool Reflective : REInfoReflective = true;
+//int ReflectionType : REInfoReflectionType = REFLECTION_TYPE_FAKE;
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float2 Tex  : TEXCOORD0;
+    float2 Tex2  : TEXCOORD1;
+    float3 ViewNormal 		: TEXCOORD2;
+    float3 ViewEyeVec 		: TEXCOORD3;
+	float3 ViewLight		: TEXCOORD4;
+	float3 ViewNormal2		: TEXCOORD5;
+    float3 WorldPos   : TEXCOORD6;
+	float4 ClipSpace : TEXCOORD8;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+   
+    Out.Pos  = mul(Input.Pos, WVP);             // position (projected)
+
+	
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+    float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+
+	Out.WorldPos = WorldPos.xyz / WorldPos.w;
+
+	Out.ClipSpace = Out.Pos;
+	Out.Diff = Input.Diff.r;
+    
+	Out.ViewNormal = normalize(mul(WorldNorm,(float3x3)VIEW_MATRIX));
+	Out.ViewEyeVec = normalize(mul(WorldPos,VIEW_MATRIX).xyz);
+	Out.ViewLight = normalize(mul(L,(float3x3)VIEW_MATRIX));
+	Out.ViewNormal2 = normalize(mul(float3(0,1,0),(float3x3)VIEW_MATRIX));
+    
+    Out.Tex.x  = Input.Tex.x;
+    Out.Tex.y  = Input.Tex.y - frac(TOTAL_TIME*WATERFALL_TEXTURE_ONE_SPEED);
+
+    Out.Tex2.x  = Input.Tex.x;
+    Out.Tex2.y  = Input.Tex.y - frac(TOTAL_TIME*WATERFALL_TEXTURE_TWO_SPEED);
+
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3)0;
+
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	float4 BaseTex2 = tex2D(DEFAULT_SAMPLER_2,Input.Tex2);
+	BaseTex = (BaseTex + BaseTex2)*0.5f;
+	
+	float3 RealNormal = normalize(Input.ViewNormal*0.5f + Input.ViewNormal2*0.5f);
+	
+	float3 Nn = normalize(Input.ViewNormal);
+	float3 Vn = normalize(Input.ViewEyeVec);
+	float3 Ln = normalize(Input.ViewLight);
+	
+	float ldrealn = saturate(abs(dot(Ln,RealNormal)));
+	//float3 SunLightDiff = ldrealn * PLANET_LIGHTCOLOR_COMMON;
+	
+	float3 Reflect = reflect(Vn,Nn);
+	float tempdot = saturate(abs(dot(Ln,Reflect)));
+
+	float Specular = pow(tempdot , WATERFALL_SPECULAR_EXPONENT);
+	//float3 SunLightSpec = Specular * WATERFALL_SPECULAR_CONTRIBUTION * PLANET_LIGHTCOLOR_COMMON;
+
+	float4 SunLight;
+	SunLight.xyz = ldrealn * PLANET_LIGHTCOLOR_COMMON;
+	SunLight.w = Specular * WATERFALL_SPECULAR_CONTRIBUTION * dot(float3(0.33f,0.33f,0.33f),PLANET_LIGHTCOLOR_COMMON);
+	
+	Input.WorldPos.xyz += BaseTex.xyz/4;
+	
+
+	float4 DynamicLight = float4(0,0,0,0);
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	float3 WorldNormal = normalize(mul(Nn, INV_VIEW_MATRIX));
+	float3 WorldEyeVec = normalize(Input.WorldPos - EyePos);
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularRawAbs(Input.WorldPos, WorldNormal, WorldEyeVec,
+			0, 0, LightParams[i]);
+	}
+#endif
+
+	Out.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1),Input.ClipSpace.z / Input.ClipSpace.w,Input.Fog,BaseTex, SunLight, DynamicLight );
+	Out.Color.w = BaseTex.w * Input.Diff.r *  (1.0 - Input.Fog);
+
+	// OffscreenFX
+	Out.Color *= 0.85;
+	Out.Color = ProcessOffscreenFXColor(Out.Color, Input.ClipSpace);
+
+	
+	return Out;
+}
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+	
+		SeparateAlphaBlendEnable = true;
+		SrcBlendAlpha = ZERO;
+		DestBlendAlpha = INVSRCALPHA;
+		
+        AlphaBlendEnable = true;
+		AlphaTestEnable = false;
+		
+		SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+
+        ZEnable = TRUE;
+		ZWriteEnable = false;
+	
+		FogEnable = true;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

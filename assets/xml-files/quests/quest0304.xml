@@ -1,0 +1,172 @@
+<quest quest_id="304" category="lore_quest" tag="Spiritual Trial" published="False" valid="True">
+	<title>Trial of Spirit</title>
+	<description>People never really consider it, but I have always found the Orks to be a deeply spiritual people.  Granted, their faith revolves mostly around pain, fear, and battle to prove oneself, but it is a faith nonetheless!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="301" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Leap of Faith" optional_tasks="False">
+			<instruction>$[Skill.J.s_jump_NameSingular] into the lava</instruction>
+			<journal_entry>You leapt out of the lava and quickly quenched the numerous tiny blazes that smoldered various parts of your body.  The grins on various, nearby Orks faces suggested that you had completed the Leap of Faith.  That, or that this was a very painful prank indeed!</journal_entry>
+			<tasks>
+				<task type="use_skill" id="0" value="1" tag="A Use Skill Task" skill_name="s_Jump" />
+				<task type="take_damage_from" id="1" value="1" tag="A Take Damage from Object Task" magnitude="10" resource_name="r_Lava" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Path of Faith">
+			<instruction>Walk the invisible bridge</instruction>
+			<journal_entry>I remember even I watched, transfixed, as you placed one foot out onto the searing hot nothingness above the volcano.  I was sure you were about to plummet to a very fiery end.  Yet, bizarrely, you walked on, unscathed, to the very center of the chasm! Something passed between you and the volcano then, I know not what.  But there was definitely a sense of something spiritual on your face as you strode back..</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="6" value="1" tag="An Interact With Object Task" resource_name="r_qt flaming skull invisible bridge">
+					<task_instruction>Interact with the power source</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Go to Leap">
+			<instruction>Complete the Leap of Faith.</instruction>
+			<tasks>
+				<task type="go_to_area" id="2" value="1" tag="Go to Leap Point" area_id="79" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="0" tag="An Add Quest Area to World-Map Action" area_id="79" />
+			</actions>
+		</node>
+		<node type="event_branch" id="4" tag="" />
+		<node type="event_simple" id="5" tag="Go to Path">
+			<instruction>Complete the Path of Faith.</instruction>
+			<tasks>
+				<task type="go_to_area" id="3" value="1" tag="A Go To Area Task" area_id="80" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="1" tag="An Add Quest Area to World-Map Action" area_id="80" />
+			</actions>
+		</node>
+		<node type="event_simple" id="6" tag="Go to Cave">
+			<instruction>Learn the Word of Faith.</instruction>
+			<journal_entry>The Word of Faith.  It was time to add it to your vocabulary! The cavern awaited.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="20" value="1" tag="A Go To Area Task" area_id="81" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="2" tag="An Add Quest Area to World-Map Action" area_id="81" />
+			</actions>
+		</node>
+		<node type="event_simple" id="7" tag="Conflict of Faith" optional_tasks="False">
+			<instruction>Learn the Word of Faith.</instruction>
+			<journal_entry>Sycophantic they brayed her name like mindless asses.  But their faith wavered, it was ephemeral.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="4" value="1" tag="Kill Skeletons" resource_name="r_Skeletons" quantity="10" />
+				<task type="go_to_area" id="16" value="1" tag="A Go To Area Task" area_id="81" />
+			</tasks>
+		</node>
+		<node type="event_join" id="8" tag="" />
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>And thus it was, with more questions than answers, as is often the way with matters of the spirit, that you completed the Trial of Spirit...</journal_entry>
+		</node>
+		<node type="end_node" id="10" tag="" />
+		<node type="event_simple" id="14" tag="Conflict of Faith" optional_tasks="False">
+			<instruction>Learn the Word of Faith.</instruction>
+			<journal_entry>Accused, condemned, and ever faithful.  She met their hatred with steely eyes, their chittering accusations with volcanic resolve, their eternal torment with smiling satisfaction.  Hark, she comes now!</journal_entry>
+			<tasks>
+				<task type="kill_object" id="10" value="1" tag="Kill Skeletons" resource_name="r_Skeletons" quantity="10" />
+				<task type="go_to_area" id="18" value="1" tag="A Go To Area Task" area_id="81" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="Conflict of Faith" optional_tasks="False">
+			<instruction>Learn the Word of Faith.</instruction>
+			<journal_entry>Men at arms whose arms hung limp as her honor was denounced and her life betrayed.  Now their arms flail, fleshless, faithless, evermore...</journal_entry>
+			<tasks>
+				<task type="kill_object" id="8" value="1" tag="Kill Skeletons" resource_name="r_Skeletons" quantity="10" />
+				<task type="go_to_area" id="17" value="1" tag="A Go To Area Task" area_id="81" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="17" tag="the tale of the Ancestors" />
+		<node type="event_simple" id="16" tag="bone knight" optional_tasks="False">
+			<instruction>Learn the Word of Faith.</instruction>
+			<journal_entry>She had faith ever-after, and she reflects it in you.  Tried, weighed, and found wanting.. a mortal true!</journal_entry>
+			<tasks>
+				<task type="kill_object" id="14" value="1" tag="Kill Skeleton boss" resource_name="r_Bone Knight" quantity="1">
+					<task_instruction>Kill the $[Resource.B.r_bone_knight_NameSingular]</task_instruction>
+				</task>
+				<task type="go_to_area" id="19" value="1" tag="A Go To Area Task" area_id="81" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="18" tag="">
+			<journal_entry>The trial of spirit was comprised of three tests that would weigh and measure your soul, as it were.</journal_entry>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>The Leap of Faith stated, &quot;Only by leaping into the fires of damnation will he prove his worth.&quot; This one would sizzle...it required you to leap into lava!</journal_entry>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>The Path of Faith stated, &quot;Only in the footsteps of the Burning Path will he proceed.&quot; This one demanded you walk right off the mouth of the volcano and find peace at it&apos;s center!</journal_entry>
+		</node>
+		<node type="event_simple" id="21" tag="">
+			<journal_entry>The Word of Faith stated, &quot;The penitent one shall walk into the searing darkness and atone for the crimes of the past.&quot; This, presumably, had something to do with a dark cave within the volcano itself.</journal_entry>
+		</node>
+		<node type="event_simple" id="22" tag="">
+			<journal_entry>Stepping into the sweltering cave, you were perhaps unsurprised to be greeted by the blank and homicidal stares of several undead.  What may have come as a bit of a shock was the ancient voice that suddenly whispered and echoed off the searing walls,</journal_entry>
+		</node>
+		<node type="event_simple" id="23" tag="">
+			<journal_entry>&quot;Faithless the one, faithless the many.  Faith lost and faith retold.  See her fawning minions, heed their faithless cries...and punish them!&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="24" tag="">
+			<journal_entry>Next her allies, brimming with loyalty like overflowing vessels of golden ale.  But how quickly it grew stale...</journal_entry>
+		</node>
+		<node type="event_simple" id="25" tag="">
+			<journal_entry>Finally her accusers, lacking in conviction, in courage, their faith was false...</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="24" from="0" to="18" value="1" />
+		<edge id="1" from="3" to="1" value="1" />
+		<edge id="3" from="4" to="3" value="0" />
+		<edge id="4" from="4" to="5" value="0" />
+		<edge id="5" from="5" to="2" value="1" />
+		<edge id="6" from="4" to="6" value="0" />
+		<edge id="29" from="6" to="22" value="1" />
+		<edge id="8" from="1" to="8" value="1" />
+		<edge id="9" from="2" to="8" value="1" />
+		<edge id="23" from="17" to="8" value="0" />
+		<edge id="11" from="8" to="9" value="0" />
+		<edge id="12" from="9" to="10" value="0" />
+		<edge id="34" from="13" to="25" value="1" />
+		<edge id="32" from="7" to="24" value="1" />
+		<edge id="21" from="14" to="16" value="1" />
+		<edge id="22" from="16" to="17" value="1" />
+		<edge id="25" from="18" to="19" value="0" />
+		<edge id="26" from="19" to="20" value="0" />
+		<edge id="27" from="20" to="21" value="0" />
+		<edge id="28" from="21" to="4" value="0" />
+		<edge id="30" from="22" to="23" value="0" />
+		<edge id="31" from="23" to="7" value="0" />
+		<edge id="33" from="24" to="13" value="0" />
+		<edge id="35" from="25" to="14" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="40" y="478" />
+		<node_location id="1" x="525" y="637" />
+		<node_location id="2" x="504" y="491" />
+		<node_location id="3" x="363" y="640" />
+		<node_location id="4" x="179" y="495" />
+		<node_location id="5" x="370" y="487" />
+		<node_location id="6" x="219" y="385" />
+		<node_location id="7" x="265" y="266" />
+		<node_location id="8" x="760" y="470" />
+		<node_location id="9" x="849" y="472" />
+		<node_location id="10" x="945" y="475" />
+		<node_location id="14" x="622" y="90" />
+		<node_location id="13" x="406" y="83" />
+		<node_location id="17" x="758" y="308" />
+		<node_location id="16" x="709" y="195" />
+		<node_location id="18" x="64" y="380" />
+		<node_location id="19" x="99" y="301" />
+		<node_location id="20" x="113" y="231" />
+		<node_location id="21" x="140" y="160" />
+		<node_location id="22" x="304" y="384" />
+		<node_location id="23" x="377" y="387" />
+		<node_location id="24" x="305" y="159" />
+		<node_location id="25" x="516" y="88" />
+	</node_locations>
+</quest>

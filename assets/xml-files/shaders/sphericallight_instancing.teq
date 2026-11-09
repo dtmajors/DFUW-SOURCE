@@ -1,0 +1,128 @@
+//Spherical Light Shader for instancing
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "instancing.frag"
+
+
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_CUSTOM;
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+};
+
+
+struct VS_INPUT
+{
+    float3 Pos	: POSITION;
+	//InstanceData
+	float4 WorldPos_Radius : TEXCOORD0;
+};
+
+
+
+
+VS_OUTPUT SphericalLigth(VS_INPUT Input)
+{
+	VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	float3 NewPos = (Input.Pos*10.0f*Input.WorldPos_Radius.w) + Input.WorldPos_Radius.xyz;    
+
+	Out.Pos = mul(float4(NewPos,1),VIEW_PROJECTION_MATRIX);
+
+	return Out;
+}
+
+float4 PS() : COLOR
+{
+	return 0.0f;
+}
+
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+        CullMode = Ccw;
+        FogEnable = FALSE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+
+        //Disable writing to colorbuffer
+        ColorWriteEnable = 0;
+        
+        // Disable writing to depth buffer
+        ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+		
+        // Setup stencil states
+
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        StencilPass = Keep;
+
+        PixelShader = compile ps_3_0 PS();
+        VertexShader = compile vs_3_0 SphericalLigth();
+    }
+    pass P1
+    {
+		STD_STATE;
+        CullMode = CW;
+        StencilZFail = Incr;
+        PixelShader = compile ps_3_0 PS();
+        VertexShader = compile vs_3_0 SphericalLigth();
+    }
+}
+
+
+technique T1
+{
+    pass P0
+    {
+		STD_STATE;
+        CullMode = None;
+        FogEnable = FALSE;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        ColorWriteEnable = 0;
+        
+        //Disable writing to colorbuffer
+        //SrcBlend = Zero;
+        //DestBlend = One;
+        
+        // Disable writing to depth buffer
+        ZEnable = true;
+        ZWriteEnable = false;
+        ZFunc = Less;
+        // Setup stencil states
+        TwoSidedStencilMode = true;
+        StencilEnable = true;
+        StencilRef = 1;
+        StencilMask = 0xFFFFFFFF;
+        StencilWriteMask = 0xFFFFFFFF;
+        Ccw_StencilFunc = Always;
+        Ccw_StencilZFail = Incr;
+        //Ccw_StencilZFail = REPLACE;
+        Ccw_StencilPass = Keep;
+        StencilFunc = Always;
+        StencilZFail = Decr;
+        //StencilZFail = REPLACE;
+        StencilPass = Keep;
+
+        PixelShader = compile ps_3_0 PS();
+        VertexShader = compile vs_3_0 SphericalLigth();
+
+    }
+}
+
+

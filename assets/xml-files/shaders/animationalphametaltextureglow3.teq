@@ -1,0 +1,170 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "time.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+// Matrix Pallette
+static const int MAX_MATRICES = 26;
+float4x3    mWorldMatrixArray[MAX_MATRICES] : REAnimWorldMatrixArray;
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+///////////////////////////////////////////////////////
+
+struct VS_OUTPUT
+{
+    float4  Pos     		: POSITION;
+    float2  Tex    		: TEXCOORD0;
+    float  Glow    			: TEXCOORD1;
+    float3 WorldPos   		: TEXCOORD2;
+	float3 WorldNormal		: TEXCOORD3;
+	float3 WorldEyeVec		: TEXCOORD4;
+	float2 ZPos 				: TEXCOORD5;
+    float   Fog	    : FOG;
+};
+
+
+
+VS_OUTPUT VShade_2Weight(STD_VS_SKINNING_INPUT i)
+{
+    VS_OUTPUT   o = (VS_OUTPUT)0;
+    float3      Pos = 0.0f;
+    float3      Normal = 0.0f;    
+    float       LastWeight = 0.0f;
+    
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(i.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])i.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+    // calculate the pos/normal using the "normal" weights 
+    //        and accumulate the weights to calculate the last weight
+
+    LastWeight = BlendWeightsArray[0];
+    
+	// This is to force the compiler not to use an LRP command (which produces a compiler error for some reason)
+	static const float Delta = 0.0000001;
+		
+    Pos = mul(i.Pos, mWorldMatrixArray[IndexArray[0]]) * (BlendWeightsArray[0] + Delta);
+    Normal = mul(i.Normal, mWorldMatrixArray[IndexArray[0]]) * (BlendWeightsArray[0] + Delta);
+
+    LastWeight = 1.0 - LastWeight; 
+
+    // Now that we have the calculated weight, add in the final influence
+    Pos += mul(i.Pos, mWorldMatrixArray[IndexArray[1]]) * (LastWeight - Delta);
+    Normal += mul(i.Normal, mWorldMatrixArray[IndexArray[1]]) * (LastWeight - Delta); 
+    
+    
+	// transform position from world space into view and then projection space
+    o.Pos = mul(float4(Pos, 1), VIEW_PROJECTION_MATRIX);
+
+
+	// normalize normals
+    Normal = normalize(Normal);
+	
+	o.WorldPos = Pos;
+	o.WorldNormal = Normal;
+	o.WorldEyeVec = normalize(Pos -  EyePos);
+	
+	o.ZPos.xy = o.Pos.zw;
+	
+	float Time = abs(sin((TOTAL_TIME+i.Pos.y + i.Pos.x + i.Pos.z)*1.31f));
+	Time = lerp(0.6f,1.0f,Time);
+	
+	
+    o.Glow = Time;
+
+    o.Tex  = i.Tex0.xy;
+    
+    o.Fog = CalculateFog_3_0(o.Pos.z);
+
+
+    return o;
+}
+
+STD_PS_OUTPUT_3 PShade(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_DIFFUSE,Input.Tex);
+	float4 GlowTex = tex2D(DEFAULT_SAMPLER_ILLUMINATION,Input.Tex);
+	
+	float3 Nn = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldEyeVec);
+	float3 Ln = -PLANET_LIGHTDIR_COMMON;
+
+	float4 SunLight = lightPixelDiffuseRaw(Nn);
+	
+	float3 Reflect = reflect(Vn,Nn);
+	float4 EnvMap = texCUBE(Environment_Sampler, Reflect);
+	float tempdot = saturate(dot(Ln,Reflect));
+	float Specular = pow(tempdot , ALPHAGLOWMETAL_SPECULAR_EXPONENT);
+	
+	float4 OtherSunLight;
+	OtherSunLight.xyz = SunLight.xyz * EnvMap.xyz * 2.0f;
+	OtherSunLight.w = Specular * ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION;
+
+	
+	float4 FinalSunLight = lerp(SunLight,OtherSunLight, BaseTex.a);
+	
+	float4 DynamicLight = float4(0,0,0,0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, Nn, Vn, ALPHAGLOWMETAL_SPECULAR_EXPONENT, ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION, LightParams[i]);
+	Specular += DynamicLight.w/ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION;
+	DynamicLight.w *= BaseTex.a;
+#endif
+	
+	float Glow = Input.Glow * GlowTex.a;
+	Output.Color.xyz = combineIllumination3animglow(float4(Input.WorldPos, 1), Input.ZPos, smoothstep(0.6,1,Input.Fog), BaseTex.xyz, FinalSunLight, DynamicLight, Glow);
+	Output.Color.a = saturate(Glow + (DynamicLight.a + FinalSunLight.a)/ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION) * (1.0 - smoothstep(0,0.8,Input.Fog));
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(BaseTex.xyz, ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION);
+#endif
+	
+	return Output;
+}
+
+
+
+//////////////////////////////////////
+// Techniques specs follow
+//////////////////////////////////////
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+    	FogEnable = false;
+
+        AlphaTestEnable = false;
+        
+        AlphaBlendEnable = false;
+        ZEnable = true;
+		ZWriteEnable = true;
+       	CullMode = CCW;
+        
+    	ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+
+    	VertexShader = compile vs_3_0 VShade_2Weight();
+        PixelShader = compile ps_3_0 PShade();
+    }
+}
+

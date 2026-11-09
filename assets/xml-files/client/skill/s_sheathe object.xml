@@ -1,0 +1,102 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFClientSkill" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Sheathe Object" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_Except_Movement_Skills" />
+    </SFBlockingName>
+    <SFClientParamName>
+        <SFString Value="No_Params" />
+    </SFClientParamName>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Ignore" />
+        </SFStopControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer_Restart_Blocking" />
+        </SFSkillTimerName>
+        <SFDelay>
+            <SFDouble Value="0.0" />
+        </SFDelay>
+        <SFTimerName>
+            <SFString Value="Infinite Basic Timer" />
+        </SFTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFNotifyOnTimeout>
+            <SFBool Value="FALSE" />
+        </SFNotifyOnTimeout>
+        <SFBlockingGroupName>
+            <SFString Value="Block_Sheathe_Unsheathe" />
+        </SFBlockingGroupName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Blocking_Restart" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Manipulate Restart Timer" />
+        </SFTimerLengthSkillFunctionName>
+        <SFBlockedSkillName>
+            <SFString Value="s_Sheathe Object" />
+        </SFBlockedSkillName>
+        <SFBlockingGroupTimerSkillFunctionName>
+            <SFString Value="sf_Manipulate Restart Timer" />
+        </SFBlockingGroupTimerSkillFunctionName>
+    </SFSkillTimer>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Resource_Combination_Quantity_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFQuantity>
+            <SFFloat Value="1.0" />
+        </SFQuantity>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFItemStateName>
+            <SFString Value="Item_Unsheathed" />
+        </SFItemStateName>
+        <SFLockConfigName>
+            <SFString Value="Do_Not_Lock_Items" />
+        </SFLockConfigName>
+        <SFResourceName>
+            <SFString Value="r_Weapons" />
+        </SFResourceName>
+        <SFResourceName2>
+            <SFString Value="r_Attachable Tools" />
+        </SFResourceName2>
+    </SFConstraint>
+</SFSkill>

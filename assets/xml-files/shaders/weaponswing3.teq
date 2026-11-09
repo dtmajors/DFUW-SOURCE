@@ -1,0 +1,131 @@
+// Note: Test this shader
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "cloudground.frag"
+#include "spenebump.frag"
+#include "stdio.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos  	: POSITION;
+    float2 Tex  	: TEXCOORD0;
+    float4 WorldPos   : TEXCOORD1;
+	float3 WorldNorm	: TEXCOORD2;
+	float3 WorldEyeVec	: TEXCOORD3;
+	float2 ZPos : TEXCOORD4;
+   float Fog 		: FOG;
+};
+
+const float LerpFrequency : REInfoLerpPositionDirectionFrequency = 1.0f/20.0f;
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+   VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    float3 ObjectSize = getBBScale();
+
+    float4x4 WorldView = mul(WORLD_MATRIX, VIEW_MATRIX);
+
+    float MPly = 1.0f - Input.Diff.x;
+    float3 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+    float3 NormLerpPos = normalize(LERP_POS_DIRECTION);
+    float Len = length(LERP_POS_DIRECTION);
+
+	float LenMul = 1.0f;
+	if (Len > (ObjectSize.z*0.5f))
+	{
+		LenMul = ObjectSize.x*0.5f/Len;
+	}
+
+    float3 Norm = mul(Input.Norm,(float3x3)WORLD_MATRIX);
+
+ 	float Move = abs(dot(NormLerpPos,Norm));
+
+    float3 DirOffset = 4*MPly*LERP_POS_DIRECTION*LenMul;
+    WorldPos -= DirOffset;
+
+    float3 P = mul(float4(WorldPos,1.0f), (float4x3)VIEW_MATRIX);  // position (view space)
+
+    Out.Pos  = mul(float4(WorldPos, 1), VIEW_PROJECTION_MATRIX);             // position (projected)
+
+	Out.WorldPos = float4(WorldPos,1);
+	Out.WorldNorm = Norm;
+	Out.WorldEyeVec = normalize(WorldPos - EyePos);
+	Out.ZPos = Out.Pos.zw;
+    Out.Tex  = Input.Tex;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);   
+    
+    return Out;
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+
+	float3 Nn = normalize(Input.WorldNorm);
+	float3 Vn = normalize(Input.WorldEyeVec);
+	
+	float4 SunLight = lightPixelSpecularDiffuseEnvironmentRaw(Nn, Vn, -PLANET_LIGHTDIR_COMMON, WEAPONSWING_SPECULAR_EXPONENT, WEAPONSWING_SPECULAR_CONTRIBUTION);
+
+
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int LightIndex=0; LightIndex<ActiveLightCount; LightIndex++)
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos.xyz, Nn, Vn, WEAPONSWING_SPECULAR_EXPONENT, WEAPONSWING_SPECULAR_CONTRIBUTION, LightParams[LightIndex]);
+#endif
+
+	Output.Color.xyz = combineIllumination3(Input.WorldPos,Input.ZPos,Input.Fog,BaseTex.xyz, SunLight, DynamicLight);
+	Output.Color.w = (SunLight.w + DynamicLight.w)/WEAPONSWING_SPECULAR_CONTRIBUTION;
+	//Output.Effect = 0;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(BaseTex.xyz, WEAPONSWING_SPECULAR_CONTRIBUTION);
+#endif
+	
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    	
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

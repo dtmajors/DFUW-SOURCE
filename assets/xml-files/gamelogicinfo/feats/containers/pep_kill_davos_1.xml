@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Type Value="PARTY"/>
+  <Reset Type="DAILY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="1"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Davos"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_davos" Value="75"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="800" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_Runestone" Quantity="1" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

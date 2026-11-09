@@ -1,0 +1,168 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="ANIMATEDOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="true" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<Meshes>
+          <NumberOfSets>
+            <SFInteger Value="1" />
+          </NumberOfSets>
+          <Set0>
+            <SFString Value="alfar_f_dragon_armour_fullhelmet.sfam" />
+          </Set0>
+        </Meshes>
+<Animations>
+          <NumberOfSets>
+            <SFInteger Value="4" />
+          </NumberOfSets>
+          <Set0>
+            <SFString Value="alfar_f_emotes.sfas" />
+          </Set0>
+          <Set1>
+            <SFString Value="alfar_f_mounts.sfas" />
+          </Set1>
+          <Set2>
+            <SFString Value="alfar_f_primary.sfas" />
+          </Set2>
+          <Set3>
+            <SFString Value="alfar_f_secondary.sfas" />
+          </Set3>
+        </Animations>
+<SFBool Value="FALSE" />
+<SFBool Value="FALSE" />
+      </Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<NumberOfSubsets>
+<SFInteger Value="0" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="ShaderAnim.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+</Shaders>
+<AnimationInformation>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<AnimationSet0>
+<SetName>
+<SFString Value="Idle" />
+</SetName>
+<SetFile>
+<SFString Value="SF_DEFAULT" />
+</SetFile>
+</AnimationSet0>
+</AnimationInformation>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.4222733378" Y="1.0535680056" Z="-.5099007487" />
+</Min>
+<Max>
+<SFVector3 X=".4216305614" Y="1.8974717855" Z=".3340031207" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-.3214098" Y="1.4755198956" Z="-.879488215" />
+</Center>
+<Radius>
+<SFFloat Value=".4219519496" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation />
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Character" />
+<WaterTransition>
+<Submerged Value="0.33756155968" />
+<Surface Value="0.16878077984" />
+<Touching Value="-0.25317116976" />
+<Floating Value="0.25317116976" /></WaterTransition>
+</PhysicsInformation>
+<VersionInformation Major="1" Minor="0" />
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFSPHERECOLLISIONSCHEME" />
+<FileName Value="alfar_f_dragon_armour_fullhelmet.sfamSFSPHERECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFSPHERECOLLISIONSCHEME" />
+<FileName Value="alfar_f_dragon_armour_fullhelmet.sfamSFSPHERECOLLISIONSCHEME.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="alfar_f_dragon_armour_fullhelmet.sfamSFDUMMYCOLLISIONSCHEME.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.4222733676" Y="1.0535678864" Z="-.5099007487" />
+</Min>
+<Max>
+<SFVector3 X=".4216305315" Y="1.8974719048" Z=".3340031207" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-.3214098" Y="1.4755198956" Z="-.879488215" />
+</Center>
+<Radius>
+<SFFloat Value=".4219519496" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+</SFObject>

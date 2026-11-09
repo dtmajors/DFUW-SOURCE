@@ -1,0 +1,201 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFDurationSkillClient" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Logging Mastery New" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_Except_Movement_Skills" />
+    </SFBlockingName>
+    <SFClientParamName>
+        <SFString Value="Targeting_Constraint_Data" />
+    </SFClientParamName>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFReportName>
+        <SFString Value="Report_Skill_Failure_And_Success" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Stop_Primary_Animation" />
+        </SFOperationOnSkillPartExitName>
+        <SFStartAnimationOnClient>
+            <SFBool Value="FALSE" />
+        </SFStartAnimationOnClient>
+        <SFAnimationStateName>
+            <SFString Value="harvesting_axe" />
+        </SFAnimationStateName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+    </SFAnimationInfo>
+    <SFPerformingObject>
+        <SFPerformingObjectName>
+            <SFString Value="Performing_Object_Progressbar" />
+        </SFPerformingObjectName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFProgressName>
+            <SFString Value="Progress_Skill" />
+        </SFProgressName>
+        <SFShowCancelButton>
+            <SFBool Value="FALSE" />
+        </SFShowCancelButton>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Harvesting Timer Mastery New" />
+        </SFSkillFunctionName>
+    </SFPerformingObject>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Ignore" />
+        </SFStopControllerOperationName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer" />
+        </SFSkillTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFTimerName>
+            <SFString Value="Repeating Timer" />
+        </SFTimerName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Harvesting Timer Mastery New" />
+        </SFTimerLengthSkillFunctionName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+    </SFSkillTimer>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Value_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFModeValueName>
+            <SFString Value="MovementMode Idle" />
+        </SFModeValueName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFModeName>
+            <SFString Value="ModeType PostureMode" />
+        </SFModeName>
+        <SFModeValueName>
+            <SFString Value="PostureMode Standing" />
+        </SFModeValueName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Resource_Quantity_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFQuantity>
+            <SFFloat Value="1.0" />
+        </SFQuantity>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFItemStateName>
+            <SFString Value="Item_Unsheathed" />
+        </SFItemStateName>
+        <SFLockConfigName>
+            <SFString Value="Lock_Items" />
+        </SFLockConfigName>
+        <SFResourceName>
+            <SFString Value="r_Wood Axes" />
+        </SFResourceName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Performing_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFOperatorName>
+            <SFString Value="&gt;=" />
+        </SFOperatorName>
+        <SFInactivateRegeneration>
+            <SFBool Value="TRUE" />
+        </SFInactivateRegeneration>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Harvesting Stamina Cost" />
+        </SFSkillFunctionName>
+        <SFAttributeName>
+            <SFString Value="Stamina" />
+        </SFAttributeName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Line_Targeting_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFMaxDistance>
+            <SFFloat Value="3.0" />
+        </SFMaxDistance>
+        <SFTargetGroupName>
+            <SFString Value="tg_Logging Mastery New" />
+        </SFTargetGroupName>
+    </SFConstraint>
+</SFSkill>

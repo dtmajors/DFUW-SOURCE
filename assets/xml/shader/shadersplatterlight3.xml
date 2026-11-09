@@ -1,0 +1,68 @@
+<SFShader>
+	<Version_Info Minor="2" Major="0"/>
+	<Description>
+		<SFString Value="SplatterLight Shader"/>
+	</Description>
+	<Shader>
+		<RenderEffect>
+			<xSFString Value="splatterlight.teq"/>
+			<SFString Value="splatterlight_instancing.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="FALSE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="TRUE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="1"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="1"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqTexture>
+				<SFBool Value="FALSE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+		<TextureReqs>
+			<NumberOfTextures>
+				<SFInteger Value="0"/>
+			</NumberOfTextures>
+			<Texture0>
+				<SFString Value="SF_DEFAULT"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture0>
+			<Texture1>
+				<SFString Value="extra.tga"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture1>
+		</TextureReqs>
+		<MeshReqs>
+			<NumberOfMeshes>
+				<SFInteger Value="0"/>
+			</NumberOfMeshes>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+		<ShaderPool>
+			<SFString Value="SF_LIGHT_POOL"/>
+			<SFInteger Value="11"/>
+		</ShaderPool>
+	</Shader>
+</SFShader>

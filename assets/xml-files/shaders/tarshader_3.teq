@@ -1,0 +1,186 @@
+// Note: MOVE LIGHTS TO PS!!!
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+#include "fake_reflections.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+// Tell that this object is reflective
+bool Reflective : REInfoReflective = true;
+
+texture Texture0 : REPTexture0 = NULL;
+
+sampler NormalSampler = sampler_state
+{
+	texture = (Texture0);
+	AddressU = Wrap;
+	AddressV = Wrap;
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+};
+
+texture Texture1 : REPTexture1 = NULL;
+
+sampler TarSampler = sampler_state
+{
+	texture = (Texture1);
+	AddressU = Wrap;
+	AddressV = Wrap;
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos  		: POSITION;
+	float2 Tex2 		: TEXCOORD0;
+	float2 Tex3 		: TEXCOORD1;
+	float2 Tex4 		: TEXCOORD2;
+    float3 WorldPos   	: TEXCOORD3;
+	float3 WorldNorm	: TEXCOORD4;
+	float2 ZPos 		: TEXCOORD5;
+	float3 ViewPos 		: TEXCOORD6;
+	float4 ClipSpacePos : TEXCOORD7;
+    float Fog 			: FOG;
+};
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+    float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+
+	float MaxVal  = 0.25f;
+	float SinVal  = abs(sin(TOTAL_TIME*frac(Input.Pos.x+Input.Pos.z)*0.05f));
+	float POffset = smoothstep(0,1,SinVal) * MaxVal;
+	//WorldPos.y += POffset;
+
+	Out.ViewPos = mul(WorldPos, VIEW_MATRIX);
+	Out.Pos = mul(WorldPos,VIEW_PROJECTION_MATRIX);
+	
+	Out.ZPos.xy = Out.Pos.zw;
+	
+	Out.WorldPos = WorldPos;
+	Out.WorldNorm = WorldNorm;
+
+	//Out.Tex2 = Input.Pos.xz*0.001f;
+	float2 PosTex;
+	PosTex.x = Input.Tex.x;
+	PosTex.y = Input.Tex.y;
+	Out.Tex2.x = PosTex.x - frac(TOTAL_TIME*0.001f);
+	Out.Tex2.y = PosTex.y + frac(TOTAL_TIME*0.001f);
+
+	Out.Tex3 = PosTex + frac(TOTAL_TIME*0.00017f);
+	Out.Tex4 = PosTex - frac(TOTAL_TIME*0.0015f);
+	
+	Out.ClipSpacePos = Out.Pos ;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+    return Out;
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+
+	float3 Nn = normalize(Input.WorldNorm);
+	float3 Vn = normalize(Input.WorldPos - EyePos);
+
+	float rnd = 0.0f;
+	float f = 1.0f;
+	float2 TexCOORD = Input.Tex3;
+	float2 TexCOORD2 = Input.Tex4;
+	for (int i=0; i < 3; i++)
+	{
+		float4 Noise = tex2D(NormalSampler,TexCOORD * f);
+		rnd += ((Noise.x + Noise.y + Noise.z)/3)/f;
+		f *= 2.13;
+		f += frac(TOTAL_TIME*0.0002f);
+	}
+
+	TexCOORD = Input.Tex2;
+	TexCOORD += (rnd);
+	float4 BaseTex = tex2D(TarSampler,Input.Tex2);
+	float4 Tex = tex2D(TarSampler,TexCOORD);
+	float4 Noise2 = tex2D(TarSampler,TexCOORD2+ (rnd+rnd));
+	float4 Tar = Tex *Noise2 * 4;
+	Tar = Tar*0.55 + BaseTex*0.45f;
+	
+	Input.WorldPos.xz += Tar.xz;
+	
+	float SpecMod = saturate(dot(Noise2,float3(0.33f,0.33f,0.33f)));
+	float4 SunLight = lightPixelSpecularRaw(Nn, Vn, TAR_SPECULAR_EXPONENT, TAR_SPECULAR_CONTRIBUTION);
+	float3 SunSpecHack = SunLight.w * SpecMod * (1.0f + PLANET_LIGHTCOLOR_COMMON) / 2.0f;
+	
+	float4 Vpaint = float4(1.0f,1.0f,1.0f,1.0f);
+	float DepthTransparency = getDepthTransparency(Input.ClipSpacePos,Vpaint);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+	float3 DynamicSpecHack = float3(0, 0, 0);
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, Nn, Vn, TAR_SPECULAR_EXPONENT, TAR_SPECULAR_CONTRIBUTION, LightParams[i]);
+	DynamicSpecHack = DynamicLight.w * SpecMod * normalize(1.0f+DynamicLight.xyz);
+#endif
+
+	Output.Color.xyz=combineIllumination3full(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, Tar, SunLight.xyz, SunSpecHack, DynamicLight.xyz, DynamicSpecHack, 0.0f, 0.0f);
+	Output.Color.w = saturate(DepthTransparency*4);
+
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+		
+		SeparateAlphaBlendEnable = true;
+		SrcBlendAlpha = ZERO;
+		DestBlendAlpha = ONE;
+		
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+		
+		SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

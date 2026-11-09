@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Reset Type="WEEKLY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="140"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Monsters"/>
+    <ResourceRank Value="4"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_bandit dwarf bully" Value="149"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="1500" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_improved Selentine Chest Key" Quantity="1" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

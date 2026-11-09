@@ -1,0 +1,18 @@
+/*
+ * Decompiled with CFR.
+ */
+package com.thoughtworks.xstream.io;
+
+import com.thoughtworks.xstream.core.BaseException;
+
+public class StreamException
+extends BaseException {
+    public StreamException(Throwable e2) {
+        super(e2);
+    }
+
+    public StreamException(String message) {
+        super(message);
+    }
+}
+

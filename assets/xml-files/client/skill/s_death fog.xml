@@ -1,0 +1,368 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFClientSpell" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Death Fog" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_Except_Movement_Skills" />
+    </SFBlockingName>
+    <SFBlockingTimerBase>
+        <SFFloat Value="20.0" />
+    </SFBlockingTimerBase>
+    <SFDelayTimerBase>
+        <SFFloat Value="2.0" />
+    </SFDelayTimerBase>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFManaCostMultiplier>
+        <SFFloat Value="5.0" />
+    </SFManaCostMultiplier>
+    <SFProvideViewData>
+        <SFBool Value="TRUE" />
+    </SFProvideViewData>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFStaminaMultiplier>
+        <SFFloat Value="3.0" />
+    </SFStaminaMultiplier>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFStopAnimationOnSkillPartExit>
+            <SFBool Value="FALSE" />
+        </SFStopAnimationOnSkillPartExit>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Charging" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_FirstPerson_Hands" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="magic_charge" />
+        </SFAnimationStateName>
+    </SFAnimationInfo>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFStopAnimationOnSkillPartExit>
+            <SFBool Value="FALSE" />
+        </SFStopAnimationOnSkillPartExit>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Charging" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_WorldObject" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="magic_charge" />
+        </SFAnimationStateName>
+    </SFAnimationInfo>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Charging" />
+        </SFSkillControllerName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStopControllerOperationName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Charging" />
+        </SFStartControllerOperationName>
+        <SFUseMovementSensor>
+            <SFBool Value="FALSE" />
+        </SFUseMovementSensor>
+        <SFSkipSensorSkillLevel>
+            <SFFloat Value="100.0" />
+        </SFSkipSensorSkillLevel>
+        <SFAutoStartSkillOnChargingTimerTimeout>
+            <SFBool Value="FALSE" />
+        </SFAutoStartSkillOnChargingTimerTimeout>
+        <SFMinimumChargingProgress>
+            <SFFloat Value="1.0" />
+        </SFMinimumChargingProgress>
+        <SFCancelChargingEnabled>
+            <SFBool Value="FALSE" />
+        </SFCancelChargingEnabled>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer_Attack" />
+        </SFSkillTimerName>
+        <SFEnterStatePostAttack>
+            <SFBool Value="TRUE" />
+        </SFEnterStatePostAttack>
+        <SFTimerName>
+            <SFString Value="Basic Timer" />
+        </SFTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Attack" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Spell Timer Casting" />
+        </SFTimerLengthSkillFunctionName>
+    </SFSkillTimer>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer_Restart_Blocking" />
+        </SFSkillTimerName>
+        <SFNotifyOnTimeout>
+            <SFBool Value="FALSE" />
+        </SFNotifyOnTimeout>
+        <SFTimerName>
+            <SFString Value="Basic Timer" />
+        </SFTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Blocking_Restart" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Spell Restart Timer" />
+        </SFTimerLengthSkillFunctionName>
+        <SFBlockedSkillName>
+            <SFString Value="s_Death Fog" />
+        </SFBlockedSkillName>
+    </SFSkillTimer>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer" />
+        </SFSkillTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFTimerName>
+            <SFString Value="Basic Timer" />
+        </SFTimerName>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Spell Timer Charging" />
+        </SFTimerLengthSkillFunctionName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Charging" />
+        </SFSkillPartName>
+    </SFSkillTimer>
+    <SFSpecialEffectInfo>
+        <SFVisibilityName>
+            <SFString Value="Visibility_Public" />
+        </SFVisibilityName>
+        <SFRelativeStartTime>
+            <SFDouble Value="0.0" />
+        </SFRelativeStartTime>
+        <SFProvideSourceObjectGUID>
+            <SFBool Value="FALSE" />
+        </SFProvideSourceObjectGUID>
+        <SFProvideSourcePosition>
+            <SFBool Value="FALSE" />
+        </SFProvideSourcePosition>
+        <SFProvideDuration>
+            <SFBool Value="FALSE" />
+        </SFProvideDuration>
+        <SFProvidePower>
+            <SFBool Value="FALSE" />
+        </SFProvidePower>
+        <SFProvideSourceRotation>
+            <SFBool Value="FALSE" />
+        </SFProvideSourceRotation>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Charging" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_WorldObject" />
+        </SFTargetObjectName>
+        <SFSpecialEffectName>
+            <SFString Value="se_spell_necromancy_charging" />
+        </SFSpecialEffectName>
+    </SFSpecialEffectInfo>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_Animation_Simple" />
+        </SFSynchronizedObjectName>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFMainAnimation>
+            <SFBool Value="TRUE" />
+        </SFMainAnimation>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+        <SFOffsetStart>
+            <SFFloat Value="0.0" />
+        </SFOffsetStart>
+        <SFStopAnimationOnSkillPartExit>
+            <SFBool Value="FALSE" />
+        </SFStopAnimationOnSkillPartExit>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Pre_Attack" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_WorldObject" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="magic_fire_01" />
+        </SFAnimationStateName>
+    </SFSynchronizedObject>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_Animation_Simple" />
+        </SFSynchronizedObjectName>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFMainAnimation>
+            <SFBool Value="FALSE" />
+        </SFMainAnimation>
+        <SFOffsetStart>
+            <SFFloat Value="0.0" />
+        </SFOffsetStart>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+        <SFStopAnimationOnSkillPartExit>
+            <SFBool Value="FALSE" />
+        </SFStopAnimationOnSkillPartExit>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Pre_Attack" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_FirstPerson_Hands" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="magic_fire_01" />
+        </SFAnimationStateName>
+    </SFSynchronizedObject>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_SpecialEffect" />
+        </SFSynchronizedObjectName>
+        <SFRelativeStartTime>
+            <SFDouble Value="0.0" />
+        </SFRelativeStartTime>
+        <SFVisibilityName>
+            <SFString Value="Visibility_Public" />
+        </SFVisibilityName>
+        <SFProvideSourceObjectGUID>
+            <SFBool Value="FALSE" />
+        </SFProvideSourceObjectGUID>
+        <SFProvideSourcePosition>
+            <SFBool Value="FALSE" />
+        </SFProvideSourcePosition>
+        <SFProvideDuration>
+            <SFBool Value="FALSE" />
+        </SFProvideDuration>
+        <SFProvidePower>
+            <SFBool Value="FALSE" />
+        </SFProvidePower>
+        <SFOffsetStart>
+            <SFFloat Value="0.2" />
+        </SFOffsetStart>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+        <SFProvideSourceRotation>
+            <SFBool Value="TRUE" />
+        </SFProvideSourceRotation>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_WorldObject" />
+        </SFTargetObjectName>
+        <SFSpecialEffectName>
+            <SFString Value="se_lm_mana_missile_fire01" />
+        </SFSpecialEffectName>
+    </SFSynchronizedObject>
+    <SFSynchronizedObject>
+        <SFSynchronizedObjectName>
+            <SFString Value="Synchronized_StateChange" />
+        </SFSynchronizedObjectName>
+        <SFOffsetStart>
+            <SFFloat Value="0.2" />
+        </SFOffsetStart>
+        <SFOffsetStop>
+            <SFFloat Value="1.0" />
+        </SFOffsetStop>
+    </SFSynchronizedObject>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Function_Value_Constraint" />
+        </SFConstraintName>
+        <SFOperatorName>
+            <SFString Value=">=" />
+        </SFOperatorName>
+        <SFCheckInverse>
+            <SFBool Value="FALSE" />
+        </SFCheckInverse>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFAttributeName>
+            <SFString Value="Mana" />
+        </SFAttributeName>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Spell Mana Cost" />
+        </SFSkillFunctionName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Function_Value_Constraint" />
+        </SFConstraintName>
+        <SFOperatorName>
+            <SFString Value=">=" />
+        </SFOperatorName>
+        <SFCheckInverse>
+            <SFBool Value="FALSE" />
+        </SFCheckInverse>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Spell Stamina Cost" />
+        </SFSkillFunctionName>
+        <SFAttributeName>
+            <SFString Value="Stamina" />
+        </SFAttributeName>
+    </SFConstraint>
+    <SFSubSkillName>
+        <SFString Value="s_Death Fog_1" />
+    </SFSubSkillName>
+</SFSkill>

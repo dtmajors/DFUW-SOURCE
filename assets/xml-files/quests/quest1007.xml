@@ -1,0 +1,862 @@
+<quest quest_id="1007" category="side_quest" tag="The Lady of the Lake">
+	<title>The Lady of the Lake</title>
+	<description>This is a quest based on Daedrus Dragoneye&apos;s submision for our 2014 quest contest</description>
+	<nodes>
+		<node type="start_node" id="0" tag="need area for lady">
+			<conditions>
+				<condition type="weather_state" id="1" value="1" tag="A Weather Condition" weather_state="Snowing" />
+				<condition type="in_area" id="2" value="1" tag="An In Quest Area Condition" area_id="39" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="" />
+		<node type="event_simple" id="84" tag="">
+			<tasks>
+				<task type="harvest_resource" id="2" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Carrot" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="83" tag="">
+			<tasks>
+				<task type="harvest_resource" id="1" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Seaweed" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="ADD IMPOSSIBLE TASK FOR QUEST DESCRIPTION">
+			<instruction>Bring gifts to the Lady of the Lake</instruction>
+			<journal_entry>The Agonian&apos;s steamy breath floated in the cold, crisp air. Soft, thick snow flakes were fell lazily in the lake when the apparition of a noble, white-clad lady rose up from within the crystal-clear water. The lady told the Agonian that she wished to see how the world around her had changed. She asked for gifts, and promised rewards.</journal_entry>
+			<actions>
+				<action type="start_client_sfx_at_location" id="0" tag="A Start Client SFX at World Location Action" sfx_name="" world_x="-8473" world_y="0" world_z="7866" />
+			</actions>
+		</node>
+		<node type="event_simple" id="141" tag="">
+			<tasks>
+				<task type="harvest_resource" id="40" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Rawhide" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<tasks>
+				<task type="go_to_area" id="0" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="140" tag="">
+			<journal_entry>$[Resource.S.r_shells_NamePlural] are highly coveted by the Winterbound for their shinyness. Although they seem as just empty shells of some sea creature that was once alive, they do have their intricate uses in crafting potions.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="100" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Shells" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="101" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Empty Bottle" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="113" tag="">
+			<journal_entry>$[Resource.M.r_mana_flakes_q05_NamePlural] are the highest, purest form of embodied mana that can be created from the smaller, lesser forms. The Vargashi use them mostly as a trinket as they have no other use for them, but on the rarest of occasions they have been known to trade them for other items by bartering.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="82" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Skin Mana Flakes" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="83" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Mana Flakes_q05" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="139" tag="">
+			<tasks>
+				<task type="go_to_area" id="39" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="112" tag="">
+			<tasks>
+				<task type="go_to_area" id="21" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="138" tag="">
+			<tasks>
+				<task type="harvest_resource" id="38" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Shells" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="111" tag="">
+			<tasks>
+				<task type="harvest_resource" id="20" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Skin Mana Flakes" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="137" tag="">
+			<journal_entry>$[Resource.N.r_nacre_NameSingular] ,although a material obtained near or from the sea, can be found amongst the crystallized remains of the elementals in Niflheim. Though it is actually unknown why or how exactly elementals are associated with it, it could be it is part of their formation.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="98" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Nacre" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="99" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Potion Water Breathing" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="110" tag="">
+			<journal_entry>$[Resource.R.r_runestone_NamePlural] are an apocryphal means of travel to the Vargashi that very few, if any, can use effectively. Coveted for their ancient runes and holding much more of a religious value, used as trinkets and cabalistic trinkets by the Vargashi, they are always helpful to those that seek access to far away places in a time of need.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="80" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Runestone" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="81" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Portal Shard" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="136" tag="">
+			<tasks>
+				<task type="go_to_area" id="37" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="109" tag="">
+			<tasks>
+				<task type="go_to_area" id="19" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="135" tag="">
+			<tasks>
+				<task type="harvest_resource" id="36" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Nacre" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="108" tag="">
+			<tasks>
+				<task type="harvest_resource" id="18" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Runestone" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="134" tag="">
+			<journal_entry>$[Resource.C.r_cod_NameSingular] is the staple food of the Matayin. While they have no real cuisine to speak of and consume it raw, more advanced races have been known to use it in all sorts of tasty, nutritious dishes.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="96" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Cod" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="97" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Cod Stew" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="107" tag="">
+			<journal_entry>Inferior Rawhide is made from the scraps of animal hides and smaller animal skins that cannot be used directly in leatherworking. The Vargashi believe nothing should go to waste - knowing that every little piece could prove critical for their survival, they might be found carrying all sorts of pelts and cut skins.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="78" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new rawhide" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="79" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Rawhide" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="133" tag="">
+			<tasks>
+				<task type="go_to_area" id="35" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="106" tag="">
+			<tasks>
+				<task type="go_to_area" id="17" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="132" tag="">
+			<tasks>
+				<task type="harvest_resource" id="34" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Cod" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="105" tag="">
+			<tasks>
+				<task type="harvest_resource" id="16" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new rawhide" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="131" tag="">
+			<journal_entry>$[Resource.M.r_mandrake_NameSingular] is used by the Matayin in strange rituals that outsiders have only observed from afar. Not easy to find and even harder to grow, it is difficult to obtain in Niflheim but just as crucial in the making of high-quality cloth.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="94" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Mandrake" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="95" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Veilron Cloth" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="104" tag="">
+			<journal_entry>Rawhide is the primary source for leatherworking materials, and more so in Niflheim. Rich in sources of rawhide, although the Vargashi rarely use it directly, their harsh way of life requires that each piece is used into turning them into the much more useful $[Resource.L.r_leather_NameSingular] .</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="76" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new rawhide" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="77" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Leather" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="130" tag="">
+			<tasks>
+				<task type="go_to_area" id="33" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="103" tag="">
+			<tasks>
+				<task type="go_to_area" id="15" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="129" tag="">
+			<tasks>
+				<task type="harvest_resource" id="32" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Mandrake" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="102" tag="">
+			<tasks>
+				<task type="harvest_resource" id="14" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new rawhide" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="128" tag="">
+			<journal_entry>$[Resource.S.r_sulfur_NameSingular] is sourced from the deep reaches underneath the ice-hard Niflheim soil. The Matayin are able to reach it from underwater recesses - its smell is said to be comforting to them. It is otherwise an important alchemical material.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="92" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Sulfur" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="93" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Potion Suppress Weakness" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="101" tag="">
+			<journal_entry>$[Resource.S.r_selentine_essence_NameSingular] although not the most highly-valued of essences it is still highly valued. Easier to come by than most essences, that doesn&apos;t make the Vargashi any less wary of losing them and as such they are always prepared to fight for every one of them.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="75" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Timber" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="127" tag="">
+			<tasks>
+				<task type="go_to_area" id="31" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="100" tag="">
+			<tasks>
+				<task type="go_to_area" id="13" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="126" tag="">
+			<tasks>
+				<task type="harvest_resource" id="30" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Sulfur" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="99" tag="">
+			<tasks>
+				<task type="harvest_resource" id="12" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Selentine Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="125" tag="">
+			<journal_entry>$[Resource.R.r_resin_NameSingular] is one of the most common natural substances. Niflheim is quite unforgiving even to the hardiest of trees - the Matayin are known to scavenge as much of it as possible when they can - it is rumoured that they use it into a drinkable concoction that evokes mystical dreams. It is otherwise a common, useful sticky material used in a variety of crafts.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="90" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Resin" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="91" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Tar Material" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="98" tag="">
+			<journal_entry>$[Resource.V.r_veilron_essence_NameSingular] is particularly rare as it is, and Niflheim is no exception. The Vargashi are aware of its potency and usefulness in creating powerful Veilron weapons and efficient tools and are very mindful of protecting such essences with their very lives.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="72" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Veilron Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="73" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Veilron Wood" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="124" tag="">
+			<tasks>
+				<task type="go_to_area" id="29" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="97" tag="">
+			<tasks>
+				<task type="go_to_area" id="11" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="123" tag="">
+			<tasks>
+				<task type="harvest_resource" id="28" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Resin" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="96" tag="">
+			<tasks>
+				<task type="harvest_resource" id="10" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Veilron Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="122" tag="">
+			<journal_entry>$[Resource.E.r_empty_bottle_NamePlural] are most likely found on the Vargashi after being discarded. Heavy, boisterous drinkers, they can always be found with some kind of drink around their belts - some have heard of the Vargashi being especially fond of some strange Matayin brew.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="88" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Empty Bottle" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="89" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Potion Rejuvenation Greater" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="95" tag="">
+			<journal_entry>$[Resource.S.r_seeds_NamePlural] come in all varieties and sizes - but they need to be hardy to survive in Niflheim. The Vargashi value and treasure them because even in meagre quantities they can grow into bushes to be harvested. Plus, they are very nutritious and form the base for a number of potions.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="70" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Seeds" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="71" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Potion Health Major" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="121" tag="">
+			<tasks>
+				<task type="go_to_area" id="27" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="94" tag="">
+			<tasks>
+				<task type="go_to_area" id="9" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="120" tag="">
+			<tasks>
+				<task type="harvest_resource" id="26" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Empty Bottle" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="93" tag="">
+			<tasks>
+				<task type="harvest_resource" id="8" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Seeds" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="119" tag="">
+			<journal_entry>$[Resource.N.r_neithal_leather_NameSingular] is a high quality material handcrafted by the Vargashi leatherworkers with great care. Much sought for its qualities in the creation of suitable pieces of armor, the Vargashi consider it a material essential for survival.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="86" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Neithal Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="87" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Skinner_03" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="92" tag="">
+			<journal_entry>$[Resource.C.r_cotton_NameSingular] is practically an exotic material in Niflheim - though not used for outdoors clothing, many smaller non-utilitarian items of the Vargashi utilize $[Resource.C.r_cotton_NameSingular] in some quantity - some of the Vargashi even cherish it for it&apos;s small, brittle flower. Its white color is considered emblematic of Vargashi purity.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="68" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_New Cotton" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="69" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Cloth" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="118" tag="">
+			<tasks>
+				<task type="go_to_area" id="25" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="91" tag="">
+			<tasks>
+				<task type="go_to_area" id="7" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="117" tag="">
+			<tasks>
+				<task type="harvest_resource" id="24" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Neithal Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="90" tag="">
+			<tasks>
+				<task type="harvest_resource" id="6" value="1" tag="A Harvest Resource(s) Task" resource_name="r_New Cotton" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="116" tag="">
+			<journal_entry>$[Resource.V.r_veilron_leather_NameSingular] is a material quite valuable to the Vargashi. Although not the highest quality leather that the Vargashi are proficient with, it is more readily available, but still considered too important not to die for.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="84" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Veilron Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="85" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Staff_p03_r06" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="89" tag="">
+			<journal_entry>$[Resource.L.r_leather_NameSingular] comes in all qualities, shapes and varieties, but it is one of the most basic materials used in Vargashi clothing. Abundant and easily processed with basic tools, it provides the Vargashi with a competitive edge in terms of survival.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="66" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new leather" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="67" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Saddle" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="115" tag="">
+			<tasks>
+				<task type="go_to_area" id="23" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="88" tag="">
+			<tasks>
+				<task type="go_to_area" id="5" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="114" tag="">
+			<tasks>
+				<task type="harvest_resource" id="22" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Veilron Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="87" tag="">
+			<tasks>
+				<task type="harvest_resource" id="4" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new leather" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="82" tag="">
+			<journal_entry>$[Resource.S.r_seaweed_NameSingular] is commonly found around the seas and lakes of Agon, but is also to be found by the Vargashi. In the harsh climate of Niflheim, the Vargashi feed on everything the land has to offer, even $[Resource.S.r_seaweed_NameSingular] .</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="62" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Seaweed" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="63" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Salmon Caserole" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="86" tag="">
+			<journal_entry>The Vargashi consider $[Resource.C.r_carrot_NamePlural] to be a delicacy - the cold, hard soil of Niflheim isn&apos;t the ideal ground for $[Resource.C.r_carrot_NameSingular] to flourish on, but the Vargashi make do. They sometimes carry them around for a quick snack between their more usual, raw meat meals.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="64" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Carrot" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="65" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Vegetable Soup" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_join" id="63" tag="">
+			<journal_entry>The Lady of the Lake thanked the Agonian for his gifts and his efforts with more than just the small trinkets she was able to make for him.</journal_entry>
+		</node>
+		<node type="event_simple" id="64" tag="">
+			<actions>
+				<action type="give_item_to_player" id="59" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sunstone" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="156" tag="">
+			<tasks>
+				<task type="harvest_resource" id="50" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Veilron Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="155" tag="">
+			<journal_entry>$[Resource.L.r_lobster_NamePlural] are a delicacy known around Agon - the Niflheim variety has a much harder shell and while it is less meaty, it is considered more savoury than the kind found in warmer climates. Seidbound do not eat them, but rather keep them as pets.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="110" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Lobster" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="111" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Lobster Caserole" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="154" tag="">
+			<tasks>
+				<task type="go_to_area" id="49" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="153" tag="">
+			<tasks>
+				<task type="harvest_resource" id="48" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Lobster" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="152" tag="">
+			<journal_entry>$[Resource.I.r_iron_ore_inferior_NameSingular] is the small, impure chunks of ore that need to be refined into something pliable and usable for creating metal. It nearly saturates Seidbound bodies due to their habitats&apos; construction.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="108" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new iron ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="109" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new iron ingot" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="151" tag="">
+			<tasks>
+				<task type="go_to_area" id="47" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="150" tag="">
+			<tasks>
+				<task type="harvest_resource" id="46" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new iron ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="149" tag="">
+			<journal_entry>$[Resource.I.r_iron_ore_NameSingular] is the main material the Seidbound are known to active look for. As such, they can be found carrying it some times. While they have no immediate use for it, they do hoard it for trading purposes.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="106" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new iron ingot" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="107" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Dread Plate Girdle" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="148" tag="">
+			<tasks>
+				<task type="go_to_area" id="45" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="147" tag="">
+			<tasks>
+				<task type="harvest_resource" id="44" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new iron ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="146" tag="">
+			<journal_entry>$[Resource.S.r_selentine_ore_NameSingular] is a rare variety of metal ore that is difficult as well as expensive to acquire. The Winterbound have the unique knack of being able to use their senses to search for such ore veins.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="104" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Selentine Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="105" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sword_p03_r05" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="145" tag="">
+			<tasks>
+				<task type="go_to_area" id="43" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="144" tag="">
+			<tasks>
+				<task type="harvest_resource" id="42" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Selentine Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="143" tag="">
+			<journal_entry>$[Resource.S.r_selentine_rawhide_NameSingular] is sought for by the Vargashi, but it is the Winterbound who are naturally apt in gathering the hides of beasts imbued with selentine essence.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="102" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Rawhide" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="103" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Shield_p03_r05" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="142" tag="">
+			<tasks>
+				<task type="go_to_area" id="41" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="85" tag="">
+			<tasks>
+				<task type="go_to_area" id="3" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="157" tag="">
+			<tasks>
+				<task type="go_to_area" id="51" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="158" tag="">
+			<journal_entry>$[Resource.V.r_veilron_rawhide_NameSingular] is coveted by both the Seidbound and Winterbound but it is the Seidbound who have a knack of hoarding it for reasons that have yet to be revealed. It is otherwise a rare, valuable material than any on Niflheim can turn into very useful items, with the right skills and tools.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="112" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Veilron Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="113" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Requisition Gauntlet_r02" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="159" tag="">
+			<tasks>
+				<task type="harvest_resource" id="52" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Veilron Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="160" tag="">
+			<tasks>
+				<task type="go_to_area" id="53" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="161" tag="">
+			<journal_entry>$[Resource.V.r_veilron_ore_NameSingular] is to be found sparsely around the frozen lands of Niflheim. The Seidbound can be found carrying some of it from time to time - weather they dig for it or is sourced by trade, it is unknown.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="114" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Veilron Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="115" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Shield_p01_r06" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="162" tag="">
+			<tasks>
+				<task type="harvest_resource" id="54" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Neithal Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="163" tag="">
+			<tasks>
+				<task type="go_to_area" id="55" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="164" tag="">
+			<journal_entry>$[Resource.N.r_neithal_rawhide_NameSingular] is one of the most hard to find hides in the island of Niflheim - as such, it is quite sought after even if it cannot be of immediate use to the Seidbound, as it is a most prized material for the Vargashi.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="116" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Neithal Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="117" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Bow_p03_r07" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="165" tag="">
+			<tasks>
+				<task type="harvest_resource" id="56" value="1" tag="A Harvest Resource(s) Task" resource_name="r_new Neithal Ore" quantity="1">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="166" tag="">
+			<tasks>
+				<task type="go_to_area" id="57" value="1" tag="A Go To Area Task" area_id="39">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="167" tag="">
+			<journal_entry>$[Resource.N.r_neithal_ore_NameSingular] is another essence-imbued material that the Seidbound are known for. Again, how the come by it is the source of tales and stories for the inhabitants of Niflheim, but it is no secret that it is not only them that consider it valuable not just in Niflheim, but around Agon.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="118" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Neithal Ore" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="119" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Neithal Ingot" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="168" tag="">
+			<instruction>Harvest and return gifts to the Lady of the Lake</instruction>
+		</node>
+		<node type="event_simple" id="169" tag="">
+			<journal_entry>The Lady of the Lake is a spirit entity of Agon that inhabits a lake in Niflheim. Wise and old as perhaps Agon itself the Lady can prove a helpful friend, if one is willing to share.</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="242" from="168" to="135" value="0" />
+		<edge id="100" from="83" to="6" value="1" />
+		<edge id="245" from="0" to="169" value="1" />
+		<edge id="186" from="86" to="63" value="0" />
+		<edge id="185" from="130" to="131" value="1" />
+		<edge id="184" from="129" to="130" value="1" />
+		<edge id="183" from="133" to="134" value="1" />
+		<edge id="160" from="165" to="166" value="1" />
+		<edge id="166" from="157" to="158" value="1" />
+		<edge id="171" from="151" to="152" value="1" />
+		<edge id="174" from="145" to="146" value="1" />
+		<edge id="175" from="144" to="145" value="1" />
+		<edge id="176" from="141" to="142" value="1" />
+		<edge id="177" from="142" to="143" value="1" />
+		<edge id="178" from="139" to="140" value="1" />
+		<edge id="179" from="138" to="139" value="1" />
+		<edge id="180" from="135" to="136" value="1" />
+		<edge id="181" from="136" to="137" value="1" />
+		<edge id="182" from="132" to="133" value="1" />
+		<edge id="158" from="126" to="127" value="1" />
+		<edge id="159" from="127" to="128" value="1" />
+		<edge id="161" from="166" to="167" value="1" />
+		<edge id="162" from="163" to="164" value="1" />
+		<edge id="163" from="162" to="163" value="1" />
+		<edge id="164" from="159" to="160" value="1" />
+		<edge id="165" from="160" to="161" value="1" />
+		<edge id="167" from="156" to="157" value="1" />
+		<edge id="168" from="153" to="154" value="1" />
+		<edge id="169" from="154" to="155" value="1" />
+		<edge id="172" from="147" to="148" value="1" />
+		<edge id="170" from="150" to="151" value="1" />
+		<edge id="173" from="148" to="149" value="1" />
+		<edge id="157" from="124" to="125" value="1" />
+		<edge id="156" from="123" to="124" value="1" />
+		<edge id="155" from="121" to="122" value="1" />
+		<edge id="154" from="120" to="121" value="1" />
+		<edge id="153" from="118" to="119" value="1" />
+		<edge id="152" from="117" to="118" value="1" />
+		<edge id="151" from="115" to="116" value="1" />
+		<edge id="150" from="114" to="115" value="1" />
+		<edge id="149" from="112" to="113" value="1" />
+		<edge id="148" from="111" to="112" value="1" />
+		<edge id="147" from="109" to="110" value="1" />
+		<edge id="146" from="108" to="109" value="1" />
+		<edge id="145" from="106" to="107" value="1" />
+		<edge id="144" from="105" to="106" value="1" />
+		<edge id="143" from="103" to="104" value="1" />
+		<edge id="142" from="102" to="103" value="1" />
+		<edge id="141" from="100" to="101" value="1" />
+		<edge id="140" from="99" to="100" value="1" />
+		<edge id="139" from="97" to="98" value="1" />
+		<edge id="138" from="96" to="97" value="1" />
+		<edge id="137" from="94" to="95" value="1" />
+		<edge id="136" from="93" to="94" value="1" />
+		<edge id="135" from="91" to="92" value="1" />
+		<edge id="134" from="90" to="91" value="1" />
+		<edge id="133" from="88" to="89" value="1" />
+		<edge id="132" from="87" to="88" value="1" />
+		<edge id="243" from="168" to="132" value="0" />
+		<edge id="238" from="168" to="147" value="0" />
+		<edge id="241" from="168" to="138" value="0" />
+		<edge id="98" from="82" to="63" value="0" />
+		<edge id="131" from="85" to="86" value="1" />
+		<edge id="130" from="84" to="85" value="1" />
+		<edge id="228" from="168" to="117" value="0" />
+		<edge id="227" from="168" to="114" value="0" />
+		<edge id="226" from="168" to="111" value="0" />
+		<edge id="225" from="168" to="108" value="0" />
+		<edge id="224" from="168" to="105" value="0" />
+		<edge id="223" from="168" to="102" value="0" />
+		<edge id="222" from="168" to="99" value="0" />
+		<edge id="221" from="168" to="96" value="0" />
+		<edge id="220" from="168" to="93" value="0" />
+		<edge id="219" from="168" to="90" value="0" />
+		<edge id="218" from="168" to="87" value="0" />
+		<edge id="217" from="168" to="84" value="0" />
+		<edge id="216" from="168" to="83" value="0" />
+		<edge id="229" from="168" to="120" value="0" />
+		<edge id="236" from="168" to="153" value="0" />
+		<edge id="230" from="168" to="123" value="0" />
+		<edge id="235" from="168" to="156" value="0" />
+		<edge id="231" from="168" to="126" value="0" />
+		<edge id="234" from="168" to="159" value="0" />
+		<edge id="232" from="168" to="165" value="0" />
+		<edge id="233" from="168" to="162" value="0" />
+		<edge id="215" from="168" to="83" value="0" />
+		<edge id="237" from="168" to="150" value="0" />
+		<edge id="240" from="168" to="141" value="0" />
+		<edge id="239" from="168" to="144" value="0" />
+		<edge id="99" from="6" to="82" value="1" />
+		<edge id="90" from="63" to="64" value="0" />
+		<edge id="91" from="64" to="1" value="0" />
+		<edge id="187" from="89" to="63" value="0" />
+		<edge id="188" from="92" to="63" value="0" />
+		<edge id="189" from="95" to="63" value="0" />
+		<edge id="190" from="98" to="63" value="0" />
+		<edge id="191" from="101" to="63" value="0" />
+		<edge id="192" from="104" to="63" value="0" />
+		<edge id="193" from="107" to="63" value="0" />
+		<edge id="194" from="110" to="63" value="0" />
+		<edge id="195" from="113" to="63" value="0" />
+		<edge id="196" from="116" to="63" value="0" />
+		<edge id="197" from="119" to="63" value="0" />
+		<edge id="198" from="122" to="63" value="0" />
+		<edge id="199" from="125" to="63" value="0" />
+		<edge id="200" from="128" to="63" value="0" />
+		<edge id="201" from="131" to="63" value="0" />
+		<edge id="202" from="134" to="63" value="0" />
+		<edge id="203" from="137" to="63" value="0" />
+		<edge id="204" from="140" to="63" value="0" />
+		<edge id="205" from="143" to="63" value="0" />
+		<edge id="206" from="146" to="63" value="0" />
+		<edge id="207" from="149" to="63" value="0" />
+		<edge id="208" from="152" to="63" value="0" />
+		<edge id="209" from="155" to="63" value="0" />
+		<edge id="210" from="158" to="63" value="0" />
+		<edge id="211" from="161" to="63" value="0" />
+		<edge id="212" from="164" to="63" value="0" />
+		<edge id="213" from="167" to="63" value="0" />
+		<edge id="214" from="4" to="168" value="0" />
+		<edge id="244" from="168" to="129" value="0" />
+		<edge id="246" from="169" to="4" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="47" y="32" />
+		<node_location id="1" x="606" y="796" />
+		<node_location id="84" x="57" y="1000" />
+		<node_location id="83" x="45" y="1048" />
+		<node_location id="4" x="189" y="85" />
+		<node_location id="141" x="94" y="898" />
+		<node_location id="6" x="94" y="1049" />
+		<node_location id="140" x="253" y="600" />
+		<node_location id="113" x="115" y="1474" />
+		<node_location id="139" x="230" y="535" />
+		<node_location id="112" x="68" y="1474" />
+		<node_location id="138" x="199" y="471" />
+		<node_location id="111" x="30" y="1473" />
+		<node_location id="137" x="191" y="631" />
+		<node_location id="110" x="117" y="1428" />
+		<node_location id="136" x="178" y="564" />
+		<node_location id="109" x="66" y="1426" />
+		<node_location id="135" x="153" y="506" />
+		<node_location id="108" x="30" y="1426" />
+		<node_location id="134" x="131" y="702" />
+		<node_location id="107" x="124" y="1379" />
+		<node_location id="133" x="130" y="644" />
+		<node_location id="106" x="67" y="1375" />
+		<node_location id="132" x="123" y="585" />
+		<node_location id="105" x="30" y="1376" />
+		<node_location id="131" x="712" y="340" />
+		<node_location id="104" x="120" y="1330" />
+		<node_location id="130" x="718" y="278" />
+		<node_location id="103" x="70" y="1332" />
+		<node_location id="129" x="714" y="209" />
+		<node_location id="102" x="30" y="1331" />
+		<node_location id="128" x="233" y="1044" />
+		<node_location id="101" x="117" y="1277" />
+		<node_location id="127" x="184" y="1043" />
+		<node_location id="100" x="67" y="1280" />
+		<node_location id="126" x="133" y="1042" />
+		<node_location id="99" x="30" y="1280" />
+		<node_location id="125" x="236" y="996" />
+		<node_location id="98" x="121" y="1235" />
+		<node_location id="124" x="188" y="993" />
+		<node_location id="97" x="71" y="1233" />
+		<node_location id="123" x="141" y="993" />
+		<node_location id="96" x="30" y="1235" />
+		<node_location id="122" x="113" y="1615" />
+		<node_location id="95" x="125" y="1193" />
+		<node_location id="121" x="65" y="1611" />
+		<node_location id="94" x="76" y="1192" />
+		<node_location id="120" x="30" y="1612" />
+		<node_location id="93" x="30" y="1190" />
+		<node_location id="119" x="110" y="1566" />
+		<node_location id="92" x="133" y="1148" />
+		<node_location id="118" x="65" y="1563" />
+		<node_location id="91" x="85" y="1148" />
+		<node_location id="117" x="30" y="1564" />
+		<node_location id="90" x="34" y="1147" />
+		<node_location id="116" x="111" y="1523" />
+		<node_location id="89" x="135" y="1104" />
+		<node_location id="115" x="68" y="1521" />
+		<node_location id="88" x="90" y="1104" />
+		<node_location id="114" x="30" y="1521" />
+		<node_location id="87" x="45" y="1103" />
+		<node_location id="82" x="144" y="1046" />
+		<node_location id="86" x="154" y="997" />
+		<node_location id="63" x="431" y="729" />
+		<node_location id="64" x="529" y="737" />
+		<node_location id="156" x="446" y="309" />
+		<node_location id="155" x="505" y="380" />
+		<node_location id="154" x="504" y="333" />
+		<node_location id="153" x="503" y="282" />
+		<node_location id="152" x="562" y="364" />
+		<node_location id="151" x="560" y="311" />
+		<node_location id="150" x="561" y="260" />
+		<node_location id="149" x="632" y="317" />
+		<node_location id="148" x="633" y="272" />
+		<node_location id="147" x="633" y="228" />
+		<node_location id="146" x="179" y="948" />
+		<node_location id="145" x="128" y="948" />
+		<node_location id="144" x="79" y="948" />
+		<node_location id="143" x="195" y="898" />
+		<node_location id="142" x="141" y="898" />
+		<node_location id="85" x="104" y="995" />
+		<node_location id="157" x="446" y="363" />
+		<node_location id="158" x="445" y="414" />
+		<node_location id="159" x="392" y="314" />
+		<node_location id="160" x="393" y="370" />
+		<node_location id="161" x="396" y="427" />
+		<node_location id="162" x="345" y="333" />
+		<node_location id="163" x="346" y="387" />
+		<node_location id="164" x="343" y="443" />
+		<node_location id="165" x="289" y="372" />
+		<node_location id="166" x="289" y="431" />
+		<node_location id="167" x="286" y="485" />
+		<node_location id="168" x="40" y="117" />
+		<node_location id="169" x="266" y="42" />
+	</node_locations>
+</quest>

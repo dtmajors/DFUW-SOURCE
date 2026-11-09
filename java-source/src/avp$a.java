@@ -1,0 +1,22 @@
+enum avp$a {
+   cpG,
+   cpH,
+   cpI,
+   cpJ,
+   cpK,
+   cpL,
+   cpM,
+   cpN,
+   cpO,
+   cpP,
+   cpQ,
+   cpR,
+   cpS,
+   cpT,
+   cpU,
+   cpV,
+   cpW,
+   cpX,
+   cpY,
+   cpZ;
+}

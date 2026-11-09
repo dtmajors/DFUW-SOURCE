@@ -1,0 +1,112 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+
+#include "offscreenfx.frag"
+
+float4 AmbMaterial  : REPGlobalMaterialAmbient = { 1.0f, 1.0f, 1.0f, 1.0f };
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+struct VS_OUTPUT_TERR
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float2 Tex  : TEXCOORD0;
+	float4 ClipSpace : TEXCOORD1;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float4 Diff : COLOR0;
+    float2 Tex	: TEXCOORD0;
+};
+
+bool Transparent : REInfoTransparent = true;
+
+
+VS_OUTPUT_TERR VS(VS_INPUT Input)
+{
+    VS_OUTPUT_TERR Out = (VS_OUTPUT_TERR)0;
+
+
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+
+   
+    Out.Pos  = mul(Input.Pos, WVP);             // position (projected)
+
+    
+    Out.Diff = DiffMaterial;
+    Out.Diff.w = (1.0f - Input.Diff.r)*DiffMaterial.w;
+    
+    float Scale = 1.0f + Input.Diff.g*SIN_TIME;
+    
+    Out.Tex.x  = Input.Tex.x * Scale + frac(TOTAL_TIME*AmbMaterial.x);
+    Out.Tex.y  = Input.Tex.y * Scale + frac(TOTAL_TIME*AmbMaterial.y);
+    
+
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	
+	Out.ClipSpace = Out.Pos;
+
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT_TERR Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	float4 Color = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	Color = BaseTex * Input.Diff;
+	Color.xyz = lerp(Color.xyz,0,Input.Fog);
+
+	Out.Color = Color;
+	//Out.Effect = 0.0f;
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_NO_EFFECT;
+#endif	
+
+	// OffscreenFX
+	Out.Color = ProcessOffscreenFXColor(Out.Color, Input.ClipSpace);
+
+	return Out;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = TRUE;
+        AlphaTestEnable = FALSE;
+        SrcBlend = SrcAlpha;
+        DestBlend = One;//InvSrcAlpha;
+        
+        ZEnable = TRUE;
+		ZWriteEnable = FALSE;
+	
+		FogEnable = TRUE;
+        //CullMode = CCW;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+	}
+}

@@ -1,0 +1,745 @@
+<Skills>
+	<Relations>
+		<!-- ####   Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Staff Bolt"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"    Value ="s_Staff Bolt"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"           Value ="s_Staff Bolt Mastery"/>
+		</SFSkillRelationSet>	
+		<!-- ####    Air Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Air_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Air"/>
+<!--			<SFSkillRelation SFRelationName ="DURABLE_SKILL"         Value ="s_Durable Spells_Air"/>
+			<SFSkillRelation SFRelationName ="INTENSIFY_SKILL"       Value ="s_Intensify_Air"/>
+			<SFSkillRelation SFRelationName ="MANA_EFFICIENCY_SKILL" Value ="s_Mana Efficiency_Air"/>
+			<SFSkillRelation SFRelationName ="QUICKEN_SKILL"         Value ="s_Quicken Spells_Air"/>-->
+		</SFSkillRelationSet>
+		<!-- ####    Fire Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Fire_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Fire"/>
+		</SFSkillRelationSet>
+		<!-- ####    Earth Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Earth_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Earth"/>
+		</SFSkillRelationSet>
+		<!-- ####    Water Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Water_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Water"/>
+		</SFSkillRelationSet>		
+		<!-- ####    Law Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Law_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Law"/>
+		</SFSkillRelationSet>		
+		<!-- ####    Chaos Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Chaos_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Chaos"/>
+		</SFSkillRelationSet>		
+		<!-- ####    Life Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Life_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Life"/>
+		</SFSkillRelationSet>		
+		<!-- ####    Pain Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Pain_Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"    Value ="s_Pain"/>
+		</SFSkillRelationSet>		
+			<!-- ####    Temporary Spells    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Temporary Spells"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Temporary Magic"/>
+		</SFSkillRelationSet>	
+		<!-- ##########       MELEE SCHOOLS       ########## -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Baresark_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Baresark"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Slayer_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Slayer"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Champion_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Champion"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Battle Brand_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Battle Brand"/>
+		</SFSkillRelationSet>		
+		<!-- ##########      RANGER SCHOOLS       ########## -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Deadeye_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Deadeye"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Blackguard_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Blackguard"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Brawler_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Brawler"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Duelist_Skills"/>
+			<SFSkillRelation SFRelationName ="MAGIC_SCHOOL_SKILL"  Value ="s_Duelist"/>
+		</SFSkillRelationSet>		
+		<!-- ####    Axe Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Axes"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Axes"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Axe Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Axe"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Club and Mace Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Clubs and Maces"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Clubs and Maces"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Club Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Club"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Greataxe Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Greataxes"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Greataxes"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Greataxe Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Greataxe"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Greatclub Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Greatclubs"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Greatclubs"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Greatclub Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Greatclub"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Greatsword Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Greatswords"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Greatswords"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Greatsword Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Greatsword"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Knife Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Knives"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Knives"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Knife Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Knife"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Natural Melee Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Natural Melee"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Natural Basic Attacks"/>
+			<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Natural Special Attacks"/>			
+		</SFSkillRelationSet>		
+		<!-- ####    Natural Ranged Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Natural Ranged"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Natural Archery"/>
+			<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Natural Ranged Attacks"/>			
+		</SFSkillRelationSet>		
+		<!-- ####    Polearm Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Polearms"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Polearms"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Polearm Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Polearm"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Siege Weapon Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Siege Hammer"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Siege Hammer"/>
+		</SFSkillRelationSet>		
+		<!-- ####    Sword Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Swords"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Swords"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Sword Mastery"/>
+			<!--<SFSkillRelation SFRelationName ="SPECIAL_ATTACKS_SKILL" Value ="s_Power Attack_Sword"/>-->
+		</SFSkillRelationSet>		
+		<!-- ####    Thrown Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Thrown Weapons"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Throwing"/>
+		</SFSkillRelationSet>	
+		<!-- ####    Archery Skills    #### -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Archery"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Archery"/>
+			<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Archery Mastery"/>
+		</SFSkillRelationSet>				
+		<!-- ##########     HARVESTING SKILLS    ########## -->
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Fishing"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Fishing"/>
+			<!--<SFSkillRelation SFRelationName ="MASTERY_SKILL"         Value ="s_Fishing Mastery"/>-->
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Herb Gathering"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Herb Gathering"/>
+		</SFSkillRelationSet>
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Herb Gathering Mastery New"/>
+		<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"         Value ="s_Herb Gathering Mastery New"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Logging"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Logging"/>
+		</SFSkillRelationSet>
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Logging Mastery New"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"         Value ="s_Logging Mastery New"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Mining"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Mining"/>
+		</SFSkillRelationSet>
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Mining Mastery New"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"         Value ="s_Mining Mastery New"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Repair"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Repair"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Skinning"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Skinning"/>
+		</SFSkillRelationSet>
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Skinning Mastery New"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"         Value ="s_Skinning Mastery New"/>
+		</SFSkillRelationSet>		
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Digging"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"  Value ="s_Digging"/>
+		</SFSkillRelationSet>				
+		<SFSkillRelationSet>
+			<SkillName Value = "s_Requisitioning"/>
+			<SFSkillRelation SFRelationName ="DEFAULT_WEAPON_SKILL"    Value ="s_Requisitioning"/>
+		</SFSkillRelationSet>
+	</Relations>
+	<Connections>
+		<Connection WeaponName = "r_axes"                    SkillName = "s_axes"/>
+		<Connection WeaponName = "r_siege hammer"            SkillName = "s_siege hammer"/>
+		<Connection WeaponName = "r_improved siege hammer"   SkillName = "s_siege hammer"/>
+		<Connection WeaponName = "r_bows"                    SkillName = "s_archery"/>
+		<Connection WeaponName = "r_clubs"                   SkillName = "s_clubs and maces"/>
+		<Connection WeaponName = "r_greataxes"               SkillName = "s_greataxes"/>
+		<Connection WeaponName = "r_greatclubs"              SkillName = "s_greatclubs"/>
+		<Connection WeaponName = "r_greatswords"             SkillName = "s_greatswords"/>
+		<Connection WeaponName = "r_knives"                  SkillName = "s_knives"/>
+		<Connection WeaponName = "r_magic staffs"            SkillName = "s_Staff Bolt"/>
+		<Connection WeaponName = "r_Natural Magic Staffs"    SkillName = "s_spells"/>
+		<Connection WeaponName = "r_natural melee weapons"   SkillName = "s_natural melee"/>
+		<Connection WeaponName = "r_natural ranged weapons"  SkillName = "s_natural ranged"/>
+		<Connection WeaponName = "r_polearms"                SkillName = "s_polearms"/>
+		<Connection WeaponName = "r_swords"                  SkillName = "s_swords"/>
+		<Connection WeaponName = "r_throwable weapons"       SkillName = "s_thrown weapons"/>
+		<Connection WeaponName = "r_improved fishing pole"   SkillName = "s_fishing"/>
+		<Connection WeaponName = "r_improved repair tools"   SkillName = "s_repair"/>
+		<Connection WeaponName = "r_improved shovel"         SkillName = "s_digging"/>
+		<Connection WeaponName = "r_Requisition Gauntlets"   SkillName = "s_Requisitioning"/>
+		
+		<!-- pick axes -->
+		
+		<Connection WeaponName = "r_Pickaxe"        SkillName = "s_mining"/>
+		<Connection WeaponName = "r_Pickaxe_01"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_Pickaxe_02"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_Pickaxe_03"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_Pickaxe_04"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_Pickaxe_05"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_improved Pickaxe"        SkillName = "s_mining"/>
+		<Connection WeaponName = "r_improved Pickaxe_01"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_improved Pickaxe_02"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_improved Pickaxe_03"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_improved Pickaxe_04"     SkillName = "s_mining mastery new"/>
+		<Connection WeaponName = "r_improved Pickaxe_05"     SkillName = "s_mining mastery new"/>
+		
+		<!-- sickles -->
+		
+		<Connection WeaponName = "r_sickle"         SkillName = "s_herb gathering"/>
+		<Connection WeaponName = "r_sickle_01"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_sickle_02"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_sickle_03"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_sickle_04"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_sickle_05"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_improved sickle"         SkillName = "s_herb gathering"/>
+		<Connection WeaponName = "r_improved sickle_01"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_improved sickle_02"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_improved sickle_03"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_improved sickle_04"      SkillName = "s_herb gathering mastery new"/>
+		<Connection WeaponName = "r_improved sickle_05"      SkillName = "s_herb gathering mastery new"/>
+		
+		<!-- skinners -->
+		
+		<Connection WeaponName = "r_skinner"        SkillName = "s_skinning"/>
+		<Connection WeaponName = "r_skinner_01"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_skinner_02"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_skinner_03"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_skinner_04"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_skinner_05"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_improved skinner"        SkillName = "s_skinning"/>
+		<Connection WeaponName = "r_improved skinner_01"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_improved skinner_02"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_improved skinner_03"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_improved skinner_04"     SkillName = "s_skinning mastery new"/>
+		<Connection WeaponName = "r_improved skinner_05"     SkillName = "s_skinning mastery new"/>
+		
+		<!-- wood axes -->
+		
+		<Connection WeaponName = "r_wood axe"       SkillName = "s_logging"/>
+		<Connection WeaponName = "r_wood axe_01"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_wood axe_02"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_wood axe_03"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_wood axe_04"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_wood axe_05"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_improved wood axe"       SkillName = "s_logging"/>
+		<Connection WeaponName = "r_improved wood axe_01"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_improved wood axe_02"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_improved wood axe_03"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_improved wood axe_04"    SkillName = "s_logging mastery new"/>
+		<Connection WeaponName = "r_improved wood axe_05"    SkillName = "s_logging mastery new"/>
+		
+	</Connections>
+	
+	<!--____________________________________________________________________________________________-->
+	<!--                                Radial Menu Connections                                     -->
+	<!--____________________________________________________________________________________________-->	
+	<RadialMenuConnections>
+		<Skill Name= 's_Disabling Blow'>
+			<WeaponName Value = 'r_Bows'          SkillName = 's_Disabling Shot'/>
+			<WeaponName Value = 'r_Magic Staffs'  SkillName = 's_Disabling Bolt'/>
+		</Skill>
+		<Skill Name= 's_Disabling Shot'>
+			<WeaponName Value = 'r_Melee Weapons' SkillName = 's_Disabling Blow'/>
+			<WeaponName Value = 'r_Magic Staffs'  SkillName = 's_Disabling Bolt'/>
+		</Skill>
+		<Skill Name= 's_Disabling Bolt'>
+			<WeaponName Value = 'r_Melee Weapons' SkillName = 's_Disabling Blow'/>
+			<WeaponName Value = 'r_Bows'          SkillName = 's_Disabling Shot'/>
+		</Skill>
+	</RadialMenuConnections>
+	
+	<Constraints>
+		<!--____________________________________________________________________________________________-->
+		<!--                                       Warrior                                              -->
+		<!--____________________________________________________________________________________________-->
+		
+		<!-- Melee Special Skills (Warrior Class) -->
+		<Skill>
+			<Name                   Value= 's_Battle Brand_Skills'/> 
+			<WeaponName             Value = 'r_Weapons'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>
+		<Skill>
+			<Name                   Value= 's_Champion_Skills'/> 
+			<WeaponName             Value = 'r_Weapons'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>		
+		<Skill>
+			<Name                   Value= 's_Slayer_Skills'/> 
+			<WeaponName             Value = 'r_Melee Weapons'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>		
+		<Skill>
+			<Name                   Value= 's_Baresark_Skills'/> 
+			<WeaponName             Value = 'r_Melee Weapons'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>		
+		<!-- Default Melee Attacks -->
+		
+		<!-- Two handed -->
+		<Skill>
+			<Name        Value= 's_Greataxes'/> 
+			<WeaponName  Value = 'r_Greataxes'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>							
+		<Skill>
+			<Name        Value= 's_Greatclubs'/> 
+			<WeaponName  Value = 'r_Greatclubs'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>							
+		<Skill>
+			<Name        Value= 's_Greatswords'/> 
+			<WeaponName  Value = 'r_Greatswords'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>							
+		<Skill>
+			<Name        Value= 's_Knives'/> 
+			<WeaponName  Value = 'r_Knives'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>							
+		<Skill>
+			<Name        Value= 's_Polearms'/> 
+			<WeaponName  Value = 'r_Polearms'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>			
+		
+		<!-- Single handed -->
+		<Skill>
+			<Name        Value= 's_Axes'/> 
+			<WeaponName  Value = 'r_Axes'/>
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>							
+		<Skill>
+			<Name        Value= 's_Clubs and Maces'/> 
+			<WeaponName  Value = 'r_Clubs'/>
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>											
+		<Skill>
+			<Name        Value= 's_Swords'/> 
+			<WeaponName  Value = 'r_Swords'/>
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>							
+		<Skill>
+			<Name        Value= 's_Disabling Blow'/> 
+			<WeaponName  Value = 'r_Melee Weapons'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>		
+		<Skill>
+			<Name        Value= 's_Gank'/> 
+			<Weapons>
+				<WeaponName  Value = 'r_melee weapons'/>
+				<WeaponName  Value = 'r_Magic Staffs'/>
+				<WeaponName  Value = 'r_Bows'/>
+			</Weapons>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>		
+		<!--____________________________________________________________________________________________-->
+		<!--                                      Skirmisher                                            -->
+		<!--____________________________________________________________________________________________-->
+
+		
+		<!-- Archery Special Skills (Skirmisher Class)-->		
+		<Skill>
+			<Name                   Value= 's_Duelist_Skills'/> 
+			<WeaponName             Value = 'r_Melee Weapons'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>
+		<Skill>
+			<Name                   Value= 's_Uncanny Focus'/> 
+			<Weapons>
+				<WeaponName  Value = 'r_Bows'/>
+				<WeaponName  Value = 'r_Magic Staffs'/>
+				<WeaponName  Value = 'r_melee weapons'/>
+			</Weapons>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>
+		<Skill>
+			<Name                   Value= 's_Brawler_Skills'/> 
+			<WeaponName             Value = 'r_Weapons'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>
+		<Skill>	
+			<Name			 Value = 's_Heightened Reflexes'/>
+			<Weapons>
+				<WeaponName  Value = 'r_Bows'/>
+				<WeaponName  Value = 'r_Magic Staffs'/>
+				<WeaponName  Value = 'r_melee weapons'/>
+			</Weapons>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>
+		<Skill>
+			<Name                   Value= 's_Deadeye_Skills'/> 
+			<WeaponName             Value = 'r_Bows'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'true'  Optional = 'true'/>
+			<Swimming               Value = 'true'  Optional = 'true'/>
+			<Blockable              Value = 'true'/>
+		</Skill>
+		<Skill>
+			<Name                   Value= 's_Blackguard_Skills'/> 
+			<WeaponName             Value = 'r_Weapons'/>
+			<Mounted                Value = 'false'  Optional = 'false'/>
+			<Submerged              Value = 'false'  Optional = 'false'/>
+			<Swimming               Value = 'false'  Optional = 'false'/>
+			<Blockable              Value = 'true'/>
+		</Skill>
+		<!-- Archery default attack -->
+		<Skill>
+			<Name        Value= 's_archery attack'/> 
+			<WeaponName  Value = 'r_bows'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+		<!-- Archery disabling shot -->
+		<Skill>
+			<Name        Value= 's_Archery General Skills'/> 
+			<WeaponName  Value = 'r_bows'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+		
+		<!--____________________________________________________________________________________________-->
+		<!--                                     Mage/Cleric                                            -->
+		<!--____________________________________________________________________________________________-->
+		
+		
+		<!-- Magic (Mage/Cleric Classes)-->
+		<Skill>
+			<Name        Value= 's_spells'/> 
+			<WeaponName  Value = 'r_Magic Staffs'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+			<Swimming    Value = 'false' Optional = 'true'/>
+			<Blockable   Value = 'true'/>
+		</Skill>
+		<Skill>
+			<Name        Value= 's_Law_Spells'/> 
+			<Weapons>
+			<WeaponName  Value = 'r_Magic Staffs'/>
+			<WeaponName  Value = 'r_Axes'/>
+			<WeaponName  Value = 'r_Clubs'/>
+			<WeaponName  Value = 'r_Swords'/>
+			</Weapons>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+			<Swimming    Value = 'false' Optional = 'true'/>
+			<Blockable   Value = 'true'/>
+		</Skill>
+		
+		<Skill>
+			<Name        Value= 's_Pungent Mist'/> 
+			<Weapons>
+			<WeaponName  Value = 'r_Magic Staffs'/>
+			<WeaponName  Value = 'r_Knives'/>
+			</Weapons>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+			<Swimming    Value = 'false' Optional = 'true'/>
+			<Blockable   Value = 'true'/>
+		</Skill>
+		
+		<Skill>
+			<Name        Value= 's_Mana Leech'/> 
+			<Weapons>
+			<WeaponName  Value = 'r_Magic Staffs'/>
+			<WeaponName  Value = 'r_Greataxes'/>
+			<WeaponName  Value = 'r_Greatclubs'/>
+			<WeaponName  Value = 'r_Greatswords'/>
+			<WeaponName  Value = 'r_Polearms'/>
+			</Weapons>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+			<Swimming    Value = 'false' Optional = 'true'/>
+			<Blockable   Value = 'true'/>
+		</Skill>
+		<!-- Default Magic Attack -->
+		<Skill>
+			<Name        Value= 's_Staff Bolt'/> 
+			<WeaponName  Value = 'r_Magic Staffs'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+
+		<!-- Magic disabling bolt -->
+		<Skill>
+			<Name        Value= 's_Magic General Spells'/> 
+			<WeaponName  Value = 'r_Magic Staffs'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+
+		<!--____________________________________________________________________________________________-->
+		<!--                                       Common                                               -->
+		<!--____________________________________________________________________________________________-->
+
+
+		<Skill>
+			<Name        Value= 's_mount attacks'/> 
+			<Mounted     Value = 'true'  Optional   = 'false'/>
+			<Submerged   Value = 'false' Optional   = 'true'/>
+		</Skill>		
+		<Skill>
+			<Name        Value= 's_thrown weapons'/> 
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+		<Skill>
+			<Name        Value= 's_natural attacks'/> 
+			<WeaponName  Value = 'r_natural weapons' Relational = 'true'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+		
+		<!-- s_Diving,s_Jump,s_Medical Skills,s_Movement Skills,s_Pray,s_Rest,s_Summon Player,s_Unspawn Object -->
+		<Skill>
+			<Name        Value= 's_general skills'/> 
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+		
+		<!-- s_Bindstone Recall,s_House Recall,s_Magic Schools_Skills,s_Staff Bolt Mastery,s_Teleport Anchor  -->
+		<Skill>
+			<Name        Value= 's_magic skills'/> 
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+		
+		<!--  s_Drink,s_Eat,s_Examine Object,s_Fire Cannon,s_Fire Shock Charge,s_Placement Skills,s_Take Object,s_Use Item,s_Use Object -->
+		<Skill>
+			<Name        Value= 's_other skills'/> 
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>		
+	
+		<!-- s_Break Fall,s_Heal Mount,s_Heal Self,s_Health to Mana,s_Light,s_Mana to Stamina,s_Stamina to Health,s_Unburden -->
+
+		<Skill>
+			<Name        Value= 's_common skills'/>
+			<Attached    Value = 'false' Optional = 'false'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>			
+		
+		<Skill>
+			<Name        Value= 's_repair'/> 
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>					
+		<Skill>
+			<Name        Value= 's_crafting skills'/> 
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'false'/>
+		</Skill>			
+		
+		<Skill>
+			<Name        Value= 's_Wild Magic_Spells'/> 
+			<Weapons>
+				<WeaponName  Value = 'r_Natural Magic Staffs'/>
+				<WeaponName  Value = 'r_Magic Staffs'/>
+			</Weapons>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'false'/>
+		</Skill>	
+	 
+		<!--<Skill>
+			<Name        Value= 's_Temporary Spells'/> 
+			<Weapons>
+				<WeaponName  Value = 'r_Natural Magic Staffs'/>
+				<WeaponName  Value = 'r_Magic Staffs'/>
+			</Weapons>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'false'/>
+		</Skill>-->
+	
+		<!-- Parry -->
+		<Skill>
+			<Name        Value= 's_Combat Enhancements'/> 
+			<Weapons>
+				<WeaponName  Value = 'r_Bows'/>
+				<WeaponName  Value = 'r_Magic Staffs'/>
+				<WeaponName  Value = 'r_Melee Weapons'/>
+				<WeaponName  Value = 'r_Shields'/>
+				<WeaponName  Value = 'r_Throwable Weapons'/>					
+			</Weapons>
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>	
+		
+		<!-- Siege Hammer -->
+		<Skill>
+			<Name        Value = 's_Siege Weapon Skills'/> 
+			<WeaponName  Value = 'r_Siege Weapons'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'false'/>
+		</Skill>	
+	
+		<Skill>
+			<Name        Value= 's_natural melee'/> 
+			<WeaponName  Value = 'r_Natural Melee Weapons'/>
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>				
+		<Skill>
+			<Name        Value= 's_natural ranged'/> 
+			<WeaponName  Value = 'r_Natural Ranged Weapons'/>
+			<Mounted     Value = 'false' Optional = 'true'/>
+			<Submerged   Value = 'false' Optional = 'true'/>
+		</Skill>			
+		<Skill>
+			<Name        Value= 's_Requisitioning'/> 
+			<WeaponName  Value = 'r_Requisition Gauntlets'/>
+			<Mounted     Value = 'false' Optional = 'false'/>
+			<Submerged   Value = 'false' Optional = 'false'/>
+		</Skill>
+	</Constraints>
+	
+	<!-- SPECIAL TARGETING CHECK FOR ALL RAY CAST SKILLS. Check class SFClientSkill, method sendSkillStateChangeMessage, around line 748 -->
+	<Targeting>
+		<Skill Value = 's_Dragonbreath'/>
+		<Skill Value = 's_Exalted Sacrifice'/>
+		<Skill Value = 's_Flurry'/>
+		<Skill Value = 's_Frostbite'/>
+		<Skill Value = 's_Heal Mount'/>
+		<Skill Value = 's_Lightning Bolt'/>
+		<Skill Value = 's_Lunge'/>
+		<Skill Value = 's_Primal Surge'/>
+		<Skill Value = 's_Puncture'/>
+		<Skill Value = 's_Resuscitation'/>
+		<Skill Value = 's_Siezure'/>
+		<Skill Value = 's_Smoke Screen'/>
+		<Skill Value = 's_Tornado'/>
+		<Skill Value = 's_Watery Grave'/>
+		<Skill Value = 's_Pall of Pandemonium'/>
+		<Skill Value = 's_Havoc Blast'/>
+		<Skill Value = 's_Soul Flay'/>
+		<Skill Value = 's_Roar'/>
+		<Skill Value = 's_Impale'/>
+		<Skill Value = 's_Mana Leech'/>
+		<Skill Value = 's_Pungent Mist'/>
+	</Targeting>
+	
+	<!-- Layer types update on attribute change from a skill. Boolean and Float attributes only and only for their positive value -->
+	<HideLayers>
+		<Attribute Value = "Attunement To Earth">
+			<SFLayer Value = "LAYER_GIRDLE"/>
+			<SFLayer Value = "LAYER_HELMET"/>
+			<SFLayer Value = "LAYER_GLOVES"/>
+			<SFLayer Value = "LAYER_SHOULDERS"/>
+			<SFLayer Value = "LAYER_HAIR"/>			
+			<SFLayer Value = "LAYER_MASK"/>			
+		</Attribute>
+	</HideLayers>
+	
+</Skills>

@@ -1,0 +1,89 @@
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "texture.frag"
+
+const float4 Col0 = { 1.0f , 1.0f , 1.0f , 0.0f }; 
+const float4 Col1 = { 1.0f , 0.0f , 0.0f , 0.0f }; 
+const float4 Col2 = { 0.0f , 1.0f , 0.0f , 0.0f };
+const float4 Col3 = { 0.0f , 0.0f , 1.0f , 0.0f };
+
+//float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+//float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+struct VS_OUTPUT_TERR
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float Fog : FOG;
+};
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+	float4 Weights1 : COLOR0 ; 
+	float4 Weights2 : COLOR1 ;
+};
+
+VS_OUTPUT_TERR VS(VS_INPUT Input)
+{
+    VS_OUTPUT_TERR Out = (VS_OUTPUT_TERR)0;
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+    Out.Pos  = mul(Input.Pos, WVP);             // position (projected)
+    Out.Fog = CalculateFog(Out.Pos.z);
+
+	float val1 = Input.Weights1.z ; 
+	float val2 = Input.Weights1.y ; 
+	float val3 = Input.Weights1.x ; 
+	
+	float WhiteVal = saturate( 1.f - val1 - val2 ) ; 
+	
+	float4 ColDiff = Col1 * val1 + Col2 * val2 + Col0 * WhiteVal ; 
+	if ( val3 > 0 ) 
+		ColDiff = Col3 * val3 ; 
+	
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+    float DiffVal = saturate( (dot(WorldNorm , L) + 1.f ) * 0.25 + 0.5f ) ;
+	Out.Diff = saturate(DiffVal * ColDiff ) ; 
+	
+	//Out.Diff = Weights1.x * Col1 + Weights1.y * Col2 + (1.f - Weights1.x - Weights1.y ) * Col0 ; 
+    //float3 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+    //Out.Tex  = Input.Tex;
+
+    return Out;
+}
+
+float4 PS(VS_OUTPUT_TERR Input) : COLOR
+{
+	float4 Out = (float4)0;
+	Out = Input.Diff;
+	//float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	//Out = BaseTex;
+	//Out.w = PowerMaterial;
+	return Out;
+}
+
+//
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = true;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_1_1 VS();
+        PixelShader  = compile ps_2_a PS();
+    }
+}

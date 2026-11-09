@@ -1,0 +1,64 @@
+<Perks Enabled = 'true'>
+	<!-- Build = 1 means western build 
+		 Build = 2 means korean build 
+		 Build = 0 means whatever build
+	
+	
+	LOCALIZATION
+	WIPE 
+	CHECK PERISTENCE
+	-->
+	
+	<!--********************************************************************************************-->
+	<!--                                        PLAYER PERKS                                        -->
+	<!--********************************************************************************************-->
+	<Player Currency = 'Prowess' NumOfActives = '10' NumOfActivesPerGroup = '10'>		
+	
+	<!--	<Perk Type = 'pride'               Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'progression:0'     TierValues = '0.1:0.2:0.3' Build = '0'/>  Prowess rewarded from activities comes with a bonus -->
+	<!--	<Perk Type = 'heavy_handed'        Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'battle_general:0'  TierValues = '0.1:0.2:0.3' Build = '0'/>  Critical hits deliver bonus damage -->	
+	<!--	<Perk Type = 'crusher'             Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'battle_general:1'  TierValues = '0.1:0.2:0.3' Build = '0'/>  Extra durability damage to defender armor -->	
+	<!--	<Perk Type = 'alfari_guile_mage'   Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'battle_general:2'  TierValues = '0.1:0.2:0.3' Build = '0'/>  Small chance to cast spells without consuming reagents -->	
+	<!--	<Perk Type = 'alfari_guile_ranger' Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'battle_general:2'  TierValues = '0.1:0.2:0.3' Build = '0'/>  Small chance to shoot bow without consuming arrows -->
+	<!--	<Perk Type = 'grim_focus'          Locked = 'true' Duration = '00:00:00:20' SFCost = '2' Group = 'battle_general:6'  TierValues = '0.4:0.6:0.8' Build = '0'/>  Standing still reduces casting times -->	
+	<!--	<Perk Type = 'self_preservation'   Locked = 'true' Duration = '00:00:00:20' SFCost = '2' Group = 'battle_general:7'  TierValues = '0.4:0.6:0.8' Build = '0'/>  Increase healing effects magnitude cast on ones person -->	
+	<!--	<Perk Type = 'market_guy'          Locked = 'true' Duration = '00:00:00:20' SFCost = '2' Group = 'battle_general:8'  TierValues = '0.4:0.6:0.8' Build = '0'/>  Reduced market taxes -->	
+	<!--	<Perk Type = 'mount_protections'   Locked = 'true' Duration = '00:00:01:20' SFCost = '2' Group = 'battle_general:10' TierValues = '1.1:2.2:3.3' Build = '0'/>  increase ship speed  -->	
+	<!--	<Perk Type = 'mount_handle'        Locked = 'true' Duration = '00:00:01:20' SFCost = '2' Group = 'battle_general:11' TierValues = '0.4:0.6:0.8' Build = '0'/>  increase ship speed  -->	
+	<!--	<Perk Type = 'ship_protections'    Locked = 'true' Duration = '00:00:01:20' SFCost = '2' Group = 'battle_general:13' TierValues = '1.1:2.2:3.3' Build = '0'/>  increase mount speed -->	
+	<!--	<Perk Type = 'ship_handle'         Locked = 'true' Duration = '00:00:01:20' SFCost = '2' Group = 'battle_general:14' TierValues = '0.4:0.6:0.8' Build = '0'/>  increase mount speed -->			
+	<!--	<Perk Type = 'alfari_guile_ranger' Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'clan:0'            TierValues = '0.1' Build = '0'/>  Small chance to shoot bow without consuming arrows -->					
+	<!--	<Perk Type = 'gold_digger'         Locked = 'true' Duration = '00:00:15:00' SFCost = '2' Group = 'clan:1'            TierValues = '0.1' Build = '0'/>  Increases gold drop rates from monsters killed. -->
+	<!--	<Perk Type = 'vorpal'              Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'pvp:1'             TierValues = '0.1:0.2:0.3' Build = '0'/> --><!--  Small auto gank chance -->	
+	<!--	<Perk Type = 'rust_monster'        Locked = 'true' Duration = '00:00:10:00' SFCost = '2' Group = 'pvp:0'             TierValues = '0.1:0.2:0.3' Build = '0'/> --><!-- Increases durability damage on attacker weapon -->	
+	</Player>
+	
+	
+	<!--********************************************************************************************-->
+	<!--                                          CLAN PERKS                                        -->
+	<!--********************************************************************************************-->
+	<Clan Currency = 'Dominion' NumOfActives = '16' NumOfActivesPerGroup = '10'>
+		
+		<!-- Not in design document order -->
+		
+		<Perk Type = 'battle_triage'          Locked = 'true' SFCost = '4000' Group = 'battle_general:0' TierValues = '7.0'   Percentage = "true" Build = '0'/> <!-- (%) Revive with better stats -->	
+		<Perk Type = 'back_stabber'           Locked = 'true' SFCost = '3500' Group = 'battle_general:1' TierValues = '0.25'  Percentage = "true" Build = '0'/> <!-- (%) Increase damage delivered when performing back hits -->	
+		<Perk Type = 'back_of_your_scull'     Locked = 'true' SFCost = '2500' Group = 'battle_general:2' TierValues = '0.25'  Percentage = "true" Build = '0'/> <!-- (%) Reduce damage received from back hits -->			
+		<Perk Type = 'inc_2_handed_parry'     Locked = 'true' SFCost = '1500' Group = 'battle_general:3' TierValues = '0.20'  Percentage = "true" Build = '0'/> <!-- (%) Increase parry defense for two handed melee weapons  -->	
+		<Perk Type = 'inc_impact_damage'      Locked = 'true' SFCost = '2000' Group = 'battle_general:4' TierValues = '0.30'  Percentage = "true" Build = '0'/> <!-- (%) Increase impact damage (apart from living creatures & players)  -->	
+		<Perk Type = 'inc_peace_regeneration' Locked = 'true' SFCost = '3500' Group = 'battle_general:5' TierValues = '0.2'   Percentage = "false" Build = '0'/> <!-- (Plain) Increase Stat regeneration while out of combat  -->	
+	
+		<Perk Type = 'inc_density_metal'      Locked = 'true' SFCost = '24000' Group = 'crafting:0' TierValues = '0.15' Percentage = "true" Build = '0'/> <!-- (%) Increased Density of metal armors -->	
+		<Perk Type = 'inc_fury_elementalist'  Locked = 'true' SFCost = '24000' Group = 'crafting:1' TierValues = '0.05' Percentage = "true" Build = '0'/> <!-- (%) Increase Fury of elementalist robes -->	
+		<Perk Type = 'inc_velocity_leather'   Locked = 'true' SFCost = '24000' Group = 'crafting:2' TierValues = '0.05' Percentage = "true" Build = '0'/> <!-- (%) Increase Velocity of leather armors -->	
+		<Perk Type = 'inc_vitality_primalist' Locked = 'true' SFCost = '24000' Group = 'crafting:3' TierValues = '0.1'  Percentage = "true" Build = '0'/> <!-- (%) Increase Vitality of primalist robes -->	
+		<Perk Type = 'imp_bow_damage'         Locked = 'true' SFCost = '30000' Group = 'crafting:4' TierValues = '2.0'  Percentage = "false" Build = '0'/> <!-- (Plain) Improved Bow damage -->	
+		<Perk Type = 'imp_melee_damage'       Locked = 'true' SFCost = '30000' Group = 'crafting:5' TierValues = '2.0'  Percentage = "false" Build = '0'/> <!-- (Plain) Improved Melee damage -->	
+		<Perk Type = 'imp_staff_damage'       Locked = 'true' SFCost = '30000' Group = 'crafting:6' TierValues = '2.0'  Percentage = "false" Build = '0'/> <!-- (Plain) Improved Staff damage -->	
+		
+		<Perk Type = 'mount_speed'            Locked = 'true' SFCost = '1500' Group = 'handle:0'         TierValues = '0.05'  Percentage = "true" Build = '0'/> <!-- (%) increase mount speed -->	
+		<Perk Type = 'ship_speed_and_handle'  Locked = 'true' SFCost = '1000' Group = 'handle:1'         TierValues = '0.1'   Percentage = "true" Build = '0'/> <!-- (%) increase ship speed and maneuverability -->	
+	
+		<Perk Type = 'inc_carry_weight'       Locked = 'true' SFCost = '1000' Group = 'quality:0'        TierValues = '100.0' Percentage = "false" Build = '0'/> <!-- (Plain) Increase max carrying weight  -->			
+	</Clan>
+
+</Perks>

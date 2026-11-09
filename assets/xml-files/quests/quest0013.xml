@@ -1,0 +1,170 @@
+<quest quest_id="13" category="training_quest" tag="Dredging Floor" published="False" valid="True">
+	<title>Dredging Floor</title>
+	<description>Learn more about how $[Skill.S.s_shipbuilding_NameSingular] and $[Resource.S.r_ship_fishing_trawler_NameSingular] works</description>
+	<nodes>
+		<node type="end_node" id="1" tag="">
+			<actions>
+				<action type="give_item_to_player" id="8" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Ship Fishing Trawler" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="2" tag="" optional_tasks="True">
+			<instruction>Talk to any Spellmaster in a safe zone city</instruction>
+			<journal_entry>If you&apos;ve wondered about what happens out there in the oceans surrounding the mainland of Agon, perhaps we can be of assistance. First off, ships come in many sizes and varieties. They can be fast and small, with limited firepower in the form of $[Resource.S.r_ship_cannon_item_NamePlural], or large and unwieldly like a $[Resource.S.r_ship_ship_of_the_line_NameSingular]. Anything as small as a $[Resource.R.r_raft_01_NameSingular] can get you out in the ocean, but some of the most useful ships like the $[Resource.S.r_ship_fishing_trawler_NameSingular] and the $[Resource.S.r_ship_sea_scraper_NameSingular] are much larger and can turn in a hefty profit when used correctly. You only need a single person to be at the helm to go sailing, but having company can prove life-saving out in the open sea.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_mage" />
+				<task type="interact_with_vendor" id="1" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_mage" />
+				<task type="interact_with_vendor" id="2" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_mage" />
+				<task type="interact_with_vendor" id="3" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_mage" />
+				<task type="interact_with_vendor" id="4" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_mage" />
+				<task type="interact_with_vendor" id="5" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_mage" />
+				<task type="interact_with_vendor" id="6" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_mage" />
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_mage" />
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_mage" />
+				<task type="interact_with_vendor" id="9" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_mage" />
+				<task type="interact_with_vendor" id="10" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_mage" />
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_mage" />
+				<task type="interact_with_vendor" id="12" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_mage" />
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_mage" />
+				<task type="interact_with_vendor" id="14" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_mage" />
+				<task type="interact_with_vendor" id="15" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_mage" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="">
+			<journal_entry>Try and get your feet wet first though before you aim for your own $[Resource.S.r_ship_ship_of_the_line_NameSingular]. Try your hand at sailing with this $[Resource.R.r_raft_01_NameSingular] first. Just point at some nearby sea and double-click the $[Resource.F.r_figurine_raft_01_NameSingular], climb aboard and press the Interact key at the helm.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="0" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Raft_01" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="4" tag="" optional_tasks="False">
+			<instruction>Gather the required materials in your bank</instruction>
+			<journal_entry>Now that you&apos;ve gathered the materials talk to a spellmaster to tell you what you need to do.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="17" value="1" tag="A Gather Item(s) Task" resource_name="r_Gold" quantity="3500" inventory_type="Bank">
+					<task_instruction>Gather 3,500 $[Resource.G.r_gold_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="18" value="1" tag="A Gather Item(s) Task" resource_name="r_new Module Ship" quantity="6" inventory_type="Bank">
+					<task_instruction>Gather 6 $[Resource.M.r_module_ship_NamePlural]</task_instruction>
+				</task>
+				<task type="gather_items" id="19" value="1" tag="A Gather Item(s) Task" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Bank">
+					<task_instruction>Gather a $[Resource.S.r_ship_cannon_item_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="5" tag="">
+			<instruction>Deploy the $[Resource.R.r_raft_01_NameSingular] by double-clicking the $[Resource.F.r_figurine_raft_01_NameSingular] and give it a spin</instruction>
+			<journal_entry>While the raft isn&apos;t made for speed or firepower, it also cannot be crafted since it&apos;s not considered a real ship - and truth be told, it isn&apos;t one. To craft a ship, you mostly need $[Resource.G.r_gold_NameSingular] and some $[Resource.M.r_module_ship_NamePlural]. Most of the time, you&apos;ll also need one or more  $[Resource.S.r_ship_cannon_item_NamePlural]. Ships larger than a $[Resource.S.r_ship_coastal_runner_NameSingular] are mastery-level ships and require additional materials. If you&apos;re interested we&apos;d be happy to offer you a one-time chance to get a $[Resource.S.r_ship_fishing_trawler_NameSingular] which you can use for fishing at half the cost, without the need to skill-up right away.</journal_entry>
+			<tasks>
+				<task type="activate_item" id="36" value="1" tag="An Activate Item Task" resource_name="r_Figurine Raft_01" consume="False" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="6" tag="">
+			<journal_entry>Here&apos;s your fishing trawler! Now that you&apos;re all set, the High Seas are waiting! Get to a nearby shore, point at the horizon over water and double-click at the $[Resource.F.r_figurine_ship_fishing_trawler_NameSingular] to deploy it, swim aboard and use the helm. Before you know it, your box will be filled with fish ready to sell and you&apos;ll be better for it after the whole experience. Unless you get jumped at - don&apos;t forget you can use the spacebar to raise and lower your nets so that you don&apos;t lose everything.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="4" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Gold" quantity="3500" inventory_type="Backpack" />
+				<action type="take_item_from_player" id="5" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Module Ship" quantity="6" inventory_type="Backpack" />
+				<action type="take_item_from_player" id="6" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="7" tag="" optional_tasks="True" fail_fast="False">
+			<instruction>Talk to any Spellmaster in a safe zone city</instruction>
+			<conditions>
+				<condition type="item_possession" id="4" value="2" tag="An Item Possession Condition" resource_name="r_Gold" quantity="3500" inventory_type="Backpack" />
+				<condition type="item_possession" id="5" value="2" tag="An Item Possession Condition" resource_name="r_new Module Ship" quantity="6" inventory_type="Backpack" />
+				<condition type="item_possession" id="6" value="2" tag="An Item Possession Condition" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_vendor" id="20" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_mage" />
+				<task type="interact_with_vendor" id="21" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_mage" />
+				<task type="interact_with_vendor" id="22" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_mage" />
+				<task type="interact_with_vendor" id="23" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_mage" />
+				<task type="interact_with_vendor" id="24" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_mage" />
+				<task type="interact_with_vendor" id="25" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_mage" />
+				<task type="interact_with_vendor" id="26" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_mage" />
+				<task type="interact_with_vendor" id="27" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_mage" />
+				<task type="interact_with_vendor" id="28" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_mage" />
+				<task type="interact_with_vendor" id="29" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_mage" />
+				<task type="interact_with_vendor" id="30" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_mage" />
+				<task type="interact_with_vendor" id="31" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_mage" />
+				<task type="interact_with_vendor" id="32" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_mage" />
+				<task type="interact_with_vendor" id="33" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_mage" />
+				<task type="interact_with_vendor" id="34" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_mage" />
+				<task type="interact_with_vendor" id="35" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_mage" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>Just gather nearly half the materials in your bank, and then talk to any Spellmaster in a safe zone city - we&apos;d more than happy to provide you with a brand-new $[Resource.S.r_ship_fishing_trawler_NameSingular]!</journal_entry>
+		</node>
+		<node type="event_simple_conditional" id="14" tag="" optional_tasks="True" fail_fast="False">
+			<instruction>Talk to any Spellmaster in a safe zone city</instruction>
+			<conditions>
+				<condition type="item_possession" id="7" value="2" tag="An Item Possession Condition" resource_name="r_Gold" quantity="3500" inventory_type="Backpack" />
+				<condition type="item_possession" id="8" value="2" tag="An Item Possession Condition" resource_name="r_new Module Ship" quantity="6" inventory_type="Backpack" />
+				<condition type="item_possession" id="9" value="2" tag="An Item Possession Condition" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_vendor" id="42" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_mage" />
+				<task type="interact_with_vendor" id="43" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_mage" />
+				<task type="interact_with_vendor" id="44" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_mage" />
+				<task type="interact_with_vendor" id="45" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_mage" />
+				<task type="interact_with_vendor" id="46" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_mage" />
+				<task type="interact_with_vendor" id="47" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_mage" />
+				<task type="interact_with_vendor" id="48" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_mage" />
+				<task type="interact_with_vendor" id="49" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_mage" />
+				<task type="interact_with_vendor" id="50" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_mage" />
+				<task type="interact_with_vendor" id="51" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_mage" />
+				<task type="interact_with_vendor" id="52" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_mage" />
+				<task type="interact_with_vendor" id="53" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_mage" />
+				<task type="interact_with_vendor" id="54" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_mage" />
+				<task type="interact_with_vendor" id="55" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_mage" />
+				<task type="interact_with_vendor" id="56" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_mage" />
+				<task type="interact_with_vendor" id="57" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_mage" />
+			</tasks>
+		</node>
+		<node type="event_join" id="13" tag="" optional_tasks="False">
+			<instruction>You need to have the items in your backpack</instruction>
+			<tasks>
+				<task type="gather_items" id="39" value="1" tag="A Gather Item(s) Task" resource_name="r_Gold" quantity="3500" inventory_type="Backpack, Bank">
+					<task_instruction>Gather 3,500 $[Resource.G.r_gold_NameSingular] in your bank</task_instruction>
+				</task>
+				<task type="gather_items" id="40" value="1" tag="A Gather Item(s) Task" resource_name="r_new Module Ship" quantity="6" inventory_type="Backpack, Bank">
+					<task_instruction>Gather 6 $[Resource.M.r_module_ship_NamePlural] in your bank</task_instruction>
+				</task>
+				<task type="gather_items" id="41" value="1" tag="A Gather Item(s) Task" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack, Bank">
+					<task_instruction>Gather a $[Resource.S.r_ship_cannon_item_NameSingular] in your bank</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="start_node" id="32" tag="city area">
+			<conditions>
+				<condition type="quest_completion" id="42" value="1" tag="A Quest Completion Condition" quest_id="15" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="1" from="2" to="3" value="1" />
+		<edge id="3" from="3" to="5" value="0" />
+		<edge id="7" from="5" to="8" value="1" />
+		<edge id="5" from="4" to="7" value="1" />
+		<edge id="21" from="7" to="6" value="1" />
+		<edge id="8" from="8" to="4" value="0" />
+		<edge id="18" from="7" to="13" value="2" />
+		<edge id="20" from="14" to="6" value="1" />
+		<edge id="23" from="6" to="1" value="0" />
+		<edge id="19" from="13" to="14" value="1" />
+		<edge id="22" from="14" to="13" value="2" />
+		<edge id="47" from="32" to="2" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="1" x="791" y="217" />
+		<node_location id="2" x="132" y="223" />
+		<node_location id="3" x="202" y="219" />
+		<node_location id="4" x="416" y="214" />
+		<node_location id="5" x="276" y="216" />
+		<node_location id="6" x="650" y="219" />
+		<node_location id="7" x="519" y="215" />
+		<node_location id="8" x="347" y="215" />
+		<node_location id="14" x="647" y="119" />
+		<node_location id="13" x="521" y="117" />
+		<node_location id="32" x="33" y="214" />
+	</node_locations>
+</quest>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Vermins"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Vermins" Value="5"/>
+  <Rewards>
+    <Item Name="pe_kill_vermin_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_hivekin_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_scumling_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_spider_30" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

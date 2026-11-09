@@ -1,0 +1,63 @@
+<SFShader>
+	<Version_Info Minor="2" Major="0"/>
+	<Description>
+		<SFString Value="PP Final Underwater HDRL Shader"/>
+	</Description>
+	<Shader>
+		<RenderEffect>
+			<SFString Value="pp_final_underwater3.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="FALSE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="FALSE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="0"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="0"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqTexture>
+				<SFBool Value="TRUE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+		<TextureReqs>
+			<NumberOfTextures>
+				<SFInteger Value="1"/>
+			</NumberOfTextures>
+			<Texture0>
+				<SFString Value="SF_DEFAULT"/>
+				<TextureType>
+					<SFString>
+						<Value>SF2DTEXTURE</Value>
+					</SFString>
+				</TextureType>
+			</Texture0>
+		</TextureReqs>
+		<MeshReqs>
+			<NumberOfMeshes>
+				<SFInteger Value="0"/>
+			</NumberOfMeshes>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+		<ShaderPool>
+			<SFString Value="SF_POST_PROCESS_POOL"/>
+			<SFInteger Value="10"/>
+		</ShaderPool>
+	</Shader>
+</SFShader>

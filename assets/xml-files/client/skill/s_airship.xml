@@ -1,0 +1,141 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFMovementDurationSkill" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Airship" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_And_Rotation_Except_Fire_Cannon" />
+    </SFBlockingName>
+    <SFBoostSkillName>
+        <SFString Value="Skill" />
+    </SFBoostSkillName>
+    <SFClientParamName>
+        <SFString Value="No_Params" />
+    </SFClientParamName>
+    <SFEnableBoost>
+        <SFBool Value="FALSE" />
+    </SFEnableBoost>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFMinimumStaminaValue>
+        <SFFloat Value="0.0" />
+    </SFMinimumStaminaValue>
+    <SFRechargingStaminaValue>
+        <SFFloat Value="0.0" />
+    </SFRechargingStaminaValue>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Do_Nothing" />
+        </SFOperationOnSkillPartExitName>
+        <SFStartAnimationOnClient>
+            <SFBool Value="FALSE" />
+        </SFStartAnimationOnClient>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Pre_Attack" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_FirstPerson_Hands" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="normal_walk_forward" />
+        </SFAnimationStateName>
+    </SFAnimationInfo>
+    <SFMovementDirection>
+        <SFDirectionName>
+            <SFString Value="Forward" />
+        </SFDirectionName>
+        <SFDirectionVector>
+            <SFVector3 X="0.0" Y="0.0" Z="-1.0" />
+        </SFDirectionVector>
+    </SFMovementDirection>
+    <SFMovementDirection>
+        <SFDirectionName>
+            <SFString Value="Backward" />
+        </SFDirectionName>
+        <SFDirectionVector>
+            <SFVector3 X="0.0" Y="0.0" Z="1.0" />
+        </SFDirectionVector>
+    </SFMovementDirection>
+    <SFMovementDirection>
+        <SFDirectionName>
+            <SFString Value="Left" />
+        </SFDirectionName>
+        <SFDirectionVector>
+            <SFVector3 X="1.0" Y="0.0" Z="0.0" />
+        </SFDirectionVector>
+    </SFMovementDirection>
+    <SFMovementDirection>
+        <SFDirectionName>
+            <SFString Value="Right" />
+        </SFDirectionName>
+        <SFDirectionVector>
+            <SFVector3 X="-1.0" Y="0.0" Z="0.0" />
+        </SFDirectionVector>
+    </SFMovementDirection>
+    <SFMovementDirection>
+        <SFDirectionName>
+            <SFString Value="Up" />
+        </SFDirectionName>
+        <SFDirectionVector>
+            <SFVector3 X="0.0" Y="1.0" Z="0.0" />
+        </SFDirectionVector>
+    </SFMovementDirection>
+    <SFMovementDirection>
+        <SFDirectionName>
+            <SFString Value="Down" />
+        </SFDirectionName>
+        <SFDirectionVector>
+            <SFVector3 X="0.0" Y="-1.0" Z="0.0" />
+        </SFDirectionVector>
+    </SFMovementDirection>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Stop_Skill" />
+        </SFStopControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer" />
+        </SFSkillTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFTimerName>
+            <SFString Value="Infinite Repeating Timer" />
+        </SFTimerName>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Timer Performing" />
+        </SFTimerLengthSkillFunctionName>
+    </SFSkillTimer>
+</SFSkill>

@@ -1,0 +1,65 @@
+<quest quest_id="9992" category="test_quest" tag="Test Quest 03 - Activate, Craft, Proximity" published="False" valid="True">
+	<title>A name</title>
+	<description>A description</description>
+	<nodes>
+		<node type="start_node" id="0" tag="Keep Start">
+			<conditions>
+				<condition type="build_mode" id="1" value="1" tag="Debug for Test Quests!" build_mode="Debug" />
+				<condition type="item_activation" id="2" value="1" tag="Activate Keep Deed" resource_name="r_House Deed_05" consume="False" />
+			</conditions>
+		</node>
+		<node type="start_node" id="1" tag="Cottage Start">
+			<conditions>
+				<condition type="build_mode" id="0" value="1" tag="Debug for Test Quests" build_mode="Debug" />
+				<condition type="item_activation" id="3" value="1" tag="Activate Cottage Deed" resource_name="r_House Deed_01" consume="False" />
+			</conditions>
+		</node>
+		<node type="event_merge" id="2" tag="Craft Battle-Spikes">
+			<tasks>
+				<task type="craft_item" id="0" value="1" tag="Craft Battle-Spikes" resource_name="r_Grenade_02" quantity="10" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Go Near Eradan Mount">
+			<tasks>
+				<task type="go_near_object" id="1" value="1" tag="Go Near Eradan" resource_name="r_Eradan" distance="5" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="4" tag="Empty Node" />
+		<node type="event_simple" id="5" tag="Go Near Death Pig Mount">
+			<tasks>
+				<task type="go_near_object" id="4" value="1" tag="Go Near Death Pig" resource_name="r_Death Pig" distance="5" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="Go Near Garmir Mount">
+			<tasks>
+				<task type="go_near_object" id="2" value="1" tag="Go Near Garmir" resource_name="r_Garmir" distance="5" />
+			</tasks>
+		</node>
+		<node type="end_node" id="7" tag="Complete Quest - No Reward!" />
+		<node type="end_node" id="8" tag="Complete Quest - No Reward!" />
+		<node type="end_node" id="9" tag="Complete Quest - No Reward" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+		<edge id="3" from="2" to="4" value="1" />
+		<edge id="4" from="4" to="3" value="0" />
+		<edge id="5" from="4" to="6" value="0" />
+		<edge id="6" from="4" to="5" value="0" />
+		<edge id="7" from="3" to="7" value="1" />
+		<edge id="8" from="6" to="8" value="1" />
+		<edge id="9" from="5" to="9" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="116" y="58" />
+		<node_location id="1" x="116" y="332" />
+		<node_location id="2" x="258" y="195" />
+		<node_location id="3" x="542" y="332" />
+		<node_location id="4" x="400" y="195" />
+		<node_location id="5" x="542" y="58" />
+		<node_location id="6" x="542" y="195" />
+		<node_location id="7" x="684" y="332" />
+		<node_location id="8" x="684" y="195" />
+		<node_location id="9" x="684" y="58" />
+	</node_locations>
+</quest>

@@ -1,0 +1,135 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_Generic Prop" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="MESHOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <SFString Value="shadow_dummy_01.sfm" />
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="TRUE" />
+                    <SFString Value="ShaderDefault.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader1>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                </SubsetShaders>
+            </Normal>
+            <NumberOfSubsets>
+                <SFInteger Value="1" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+        </AnimationInformation>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-0.354917556" Y="-0.1323551238" Z="-0.2391766161" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="0.3547958136" Y="2.917547703" Z="0.2899305522" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="0.001205816865" Y="1.807497621" Z="0.02693136409" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="1.96197319" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation>
+                    <Subset0>
+                        <BoundingSphere>
+                            <Center>
+                                <SFVector3 X="0.001205816865" Y="1.807497621" Z="0.02693136409" />
+                            </Center>
+                            <Radius>
+                                <SFFloat Value="1.96197319" />
+                            </Radius>
+                        </BoundingSphere>
+                    </Subset0>
+                </SubsetInformation>
+            </BoundingInformation>
+        </VisibilityInformation>
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="Static" />
+        <WaterTransition>
+            <Submerged Value="0.8" />
+            <Surface Value="0.6" />
+            <Touching Value="0.0" />
+        <Floating Value="0.7" /></WaterTransition>
+    </PhysicsInformation>
+    <VersionInformation Major="1" Minor="0" />
+    <MassCenter>
+        <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="1.0" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+    <VersionInformation Major="1" Minor="0" />
+</SFObject>

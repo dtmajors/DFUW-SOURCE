@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="30"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Matayins"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Matayins" Value="30"/>
+  <Rewards>
+    <Item Name="pe_kill_matayin_150" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

@@ -1,0 +1,67 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFJumpSkill" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Jump" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_Only_Itself" />
+    </SFBlockingName>
+    <SFClientParamName>
+        <SFString Value="No_Params" />
+    </SFClientParamName>
+    <SFDirectionVector>
+        <SFVector3 X="0.0" Y="0.023" Z="0.0" />
+    </SFDirectionVector>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Ignore" />
+        </SFStopControllerOperationName>
+    </SFSkillController>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFOperatorName>
+            <SFString Value="&gt;=" />
+        </SFOperatorName>
+        <SFLimitValue>
+            <SFFloat Value="3.0" />
+        </SFLimitValue>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFAttributeName>
+            <SFString Value="Stamina" />
+        </SFAttributeName>
+    </SFConstraint>
+</SFSkill>

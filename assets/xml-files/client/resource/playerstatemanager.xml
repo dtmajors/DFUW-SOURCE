@@ -1,0 +1,693 @@
+<XML>
+    <VersionInformation Major="0" Minor="1" Incremental="0" />
+<!--
+###############################################################################
+#####                         Rules for FlyingMode                        #####
+###############################################################################
+-->
+<!-- Rule for changing movementmode when changing flyingmode from 'FlyingMode Grounded' -->
+    <SFStateChangeRule EventName="Event_Object_Lost_Contact">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Normal" />
+    </SFStateChangeRule>
+<!-- Rule for changing flyingmode to 'FlyingMode Grounded' -->
+    <SFStateChangeRule EventName="Event_Object_Gained_Contact">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" />
+    </SFStateChangeRule>
+<!-- Rule for changing flyingmode to 'FlyingMode Jumping' -->
+    <SFStateChangeRule EventName="Event_Object_Lost_Contact">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" JumpSkillTriggered="TRUE" Name="JumpSkillRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Contact="FALSE" Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Jumping" />
+    </SFStateChangeRule>
+<!-- Rule for changing flyingmode to 'FlyingMode Falling' -->
+    <SFStateChangeRule EventName="Event_Object_Lost_Contact">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode"   ModeValueName="LifeMode Alive"      Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" JumpSkillTriggered="FALSE"  Name="JumpSkillRequirement" />
+		<SFRequirement CheckInverse="FALSE" EvadeSkillTriggered="FALSE" Name="EvadeSkillRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE"          Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Falling" />
+    </SFStateChangeRule>
+
+<!-- Rule for changing flyingmode to 'FlyingMode Evade' -->
+    <SFStateChangeRule EventName="Event_Object_Lost_Contact">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" EvadeSkillTriggered="TRUE" Name="EvadeSkillRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Contact="FALSE" Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Evade" />
+    </SFStateChangeRule>
+<!-- Rule for changing flyingmode to 'FlyingMode Falling' -->
+    <SFStateChangeRule EventName="Event_Object_Lost_Contact">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" EvadeSkillTriggered="FALSE" Name="EvadeSkillRequirement" />
+		<SFRequirement CheckInverse="FALSE" JumpSkillTriggered="FALSE"  Name="JumpSkillRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Falling" />
+    </SFStateChangeRule>	
+<!--
+###############################################################################
+#####                        Rules for LeaningMode                        #####
+###############################################################################
+-->
+<!-- Rule for changing leaningmode to 'LeaningMode Left' -->
+    <SFStateChangeRule EventName="Event_Object_Leaning_Left">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType LeaningMode" ModeValueName="LeaningMode Left" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LeaningMode" ModeValueName="LeaningMode Left" />
+    </SFStateChangeRule>
+<!-- Rule for changing leaningmode to 'LeaningMode Right' -->
+    <SFStateChangeRule EventName="Event_Object_Leaning_Right">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType LeaningMode" ModeValueName="LeaningMode Right" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LeaningMode" ModeValueName="LeaningMode Right" />
+    </SFStateChangeRule>
+<!-- Rule for changing leaningmode to 'LeaningMode Straight' -->
+    <SFStateChangeRule EventName="Event_Object_Straightened">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType LeaningMode" ModeValueName="LeaningMode Straight" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LeaningMode" ModeValueName="LeaningMode Straight" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                          Rules for LifeMode                         #####
+###############################################################################
+-->
+<!-- Rules for changing lifemode to 'LifeMode Alive' -->
+<!-- Rule #1 from 'LifeMode Dead' -->
+    <SFStateChangeRule EventName="Event_Object_Respawned">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Dead" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" />
+    </SFStateChangeRule>
+<!-- Rule #2 from 'LifeMode GankMode' -->
+    <SFStateChangeRule EventName="Event_Object_Revived">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode GankMode" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" />
+    </SFStateChangeRule>
+<!-- Rule #3 from 'LifeMode Limbo' -->
+    <SFStateChangeRule EventName="Event_Object_Left_Limbo">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Limbo" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" />
+    </SFStateChangeRule>
+<!-- Rule for changing lifemode to 'LifeMode GankMode' -->
+    <SFStateChangeRule EventName="Event_Object_Entered_GankMode">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode GankMode" />
+    </SFStateChangeRule>
+<!-- Rules for changing lifemode to 'LifeMode Dying' -->
+<!-- Rule #1 from 'LifeMode Alive' -->
+    <SFStateChangeRule EventName="Event_Object_Dying">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" />
+    </SFStateChangeRule>
+<!-- Rule #2 from 'LifeMode GankMode' -->
+    <SFStateChangeRule EventName="Event_Object_Dying">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode GankMode" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" />
+    </SFStateChangeRule>
+<!-- Rule for changing lifemode to 'LifeMode Dead' -->
+    <SFStateChangeRule EventName="Event_Object_Died">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dead" />
+    </SFStateChangeRule>
+<!-- Rule for changing lifemode to 'LifeMode Limbo' -->
+    <SFStateChangeRule EventName="Event_Object_Entered_Limbo">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Limbo" />
+    </SFStateChangeRule>
+<!-- Rule for changing to 'LifeMode Intermediate' -->
+    <SFStateChangeRule EventName="Event_Object_Dying">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Limbo" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Intermediate" />
+    </SFStateChangeRule>
+<!-- Rule for changing from 'LifeMode Intermediate' -->
+    <SFStateChangeRule EventName="Event_Object_Respawned">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Intermediate" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                        Rules for MovementMode                       #####
+###############################################################################
+-->
+<!-- Rules for changing movementmode to 'MovementMode Idle' -->
+<!-- Rule #1 On land -->
+    <SFStateChangeRule EventName="Event_Object_Stopped_Moving">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" Contact="TRUE" />
+		<SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" Rest="TRUE" />
+        <SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" InTheWater="FALSE" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="NULL" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" />
+    </SFStateChangeRule>
+<!-- Rule #2 On land -->
+    <SFStateChangeRule EventName="Event_MovementSkill_Stopped">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" Contact="TRUE" />
+		<SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" Rest="TRUE" />
+        <SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" InTheWater="FALSE" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="NULL" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" />
+    </SFStateChangeRule>
+<!-- Rule #3 In the water -->
+    <SFStateChangeRule EventName="Event_Object_Stopped_Moving">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" Rest="TRUE" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="TRUE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="NULL" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" />
+    </SFStateChangeRule>
+<!-- Rule for changing movementmode to 'MovementMode Slow' -->
+    <SFStateChangeRule EventName="Event_MovementSkill_Started">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Slow" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="s_Crouch Walk" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Walk" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Swim" />
+            </SFMovementSkillName>
+
+			<!-- Externalobject skills -->
+            <SFMovementSkillName>
+                <SFString Value="s_Mount Swim" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Riding Walk" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Sail" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Slow" />
+    </SFStateChangeRule>
+<!-- Rule for changing movementmode to 'MovementMode Normal' -->
+    <SFStateChangeRule EventName="Event_MovementSkill_Started">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Normal" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="s_Run" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Swim" />
+            </SFMovementSkillName>
+
+			<!-- Externalobject skills -->
+            <SFMovementSkillName>
+                <SFString Value="s_Mount Swim" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Riding Run" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Sail" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Normal" />
+    </SFStateChangeRule>
+<!-- Rule for changing movementmode to 'MovementMode Fast' -->
+    <SFStateChangeRule EventName="Event_MovementSkill_Started">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Fast" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="s_Sprint" />
+            </SFMovementSkillName>
+            <SFMovementSkillName>
+                <SFString Value="s_Swimming" />
+            </SFMovementSkillName>
+
+			<!-- Externalobject skills -->
+            <SFMovementSkillName>
+                <SFString Value="s_Riding" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Fast" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                        Rules for PostureMode                        #####
+###############################################################################
+-->
+<!-- Rule for changing posturemode from any value to 'PostureMode Attached' -->
+    <SFStateChangeRule EventName="Event_Object_Attached">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Attached" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Attached" />
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from any value to 'PostureMode Climbing' -->
+<!-- Rule #1 On land -->
+    <SFStateChangeRule EventName="Event_Object_Started_Climbing">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Climbing" />
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Slow" />
+    </SFStateChangeRule>
+<!-- Rule #2 In the water -->
+    <SFStateChangeRule EventName="Event_Object_Started_Climbing">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Climbing" />
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Slow" />
+    </SFStateChangeRule>
+<!-- Rules for changing posturemode from 'PostureMode Climbing' to another posturemode  -->
+<!-- Rule #1 to 'PostureMode Standing' -->
+    <SFStateChangeRule EventName="Event_Object_Stopped_Climbing">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Climbing" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" />
+    </SFStateChangeRule>
+<!-- Rule #2 to 'PostureMode Swimming' -->
+    <SFStateChangeRule EventName="Event_Object_Stopped_Climbing">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Climbing" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="TRUE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from any value to 'PostureMode Crouching' -->
+    <SFStateChangeRule EventName="Event_Object_Crouching">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Climbing" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Crouching" Name="ObjectStateRequirement" />
+		<SFRequirement CheckInverse="TRUE"  ModeName="ModeType PostureMode" ModeValueName="PostureMode Resting"   Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Crouching" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from any value to 'PostureMode Mounted' -->
+    <SFStateChangeRule EventName="Event_Object_Mounted">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Mounted" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Mounted" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from 'PostureMode Mounted' to 'PostureMode Standing' -->
+    <SFStateChangeRule EventName="Event_Object_Unmounted">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Mounted" Name="ObjectStateRequirement" />
+		<SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from 'PostureMode Mounted' to 'PostureMode Swimming' -->
+    <SFStateChangeRule EventName="Event_Object_Unmounted">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Mounted" Name="ObjectStateRequirement" />
+		<SFRequirement CheckInverse="FALSE" InTheWater="TRUE" Name="PhysicsStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from 'PostureMode Resting' to 'PostureMode Standing' -->
+    <SFStateChangeRule EventName="Event_Object_Getting_Up">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Resting" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from any value to 'PostureMode Resting' -->
+    <SFStateChangeRule EventName="Event_Object_Sitting_Down">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Resting"   Name="ObjectStateRequirement" />
+		<SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Crouching" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Resting" />
+    </SFStateChangeRule>
+<!-- Rule for changing posturemode from any value to 'PostureMode Standing' -->
+    <SFStateChangeRule EventName="Event_Object_Standing">
+    	<SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" />
+    </SFStateChangeRule>
+<!-- Rules for changing posturemode from any value to 'PostureMode Swimming' -->
+<!-- Rule #1 -->
+    <SFStateChangeRule EventName="Event_Object_Started_Swimming">
+        <!-- SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" / -->
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" />
+    </SFStateChangeRule>
+<!-- Rule #2 -->
+    <SFStateChangeRule EventName="Event_Object_Dived">
+        <!-- SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" / -->
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" />
+    </SFStateChangeRule>
+<!-- Rules for changing posturemode from 'PostureMode Swimming' to 'PostureMode Standing' -->
+<!-- Rule #1 -->
+    <SFStateChangeRule EventName="Event_Object_Left_The_Water">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" />
+    </SFStateChangeRule>
+<!-- Rule #2 -->
+    <SFStateChangeRule EventName="Event_Object_Wading">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" />
+    </SFStateChangeRule>
+<!-- Rules for changing posturemode from 'PostureMode Attached' to another posturemode -->
+<!-- Rule #1 -->
+    <SFStateChangeRule EventName="Event_Object_Detached">
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Attached" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Standing" />
+    </SFStateChangeRule>
+<!-- Rule #2 -->
+    <SFStateChangeRule EventName="Event_Object_Detached">
+        <SFRequirement CheckInverse="FALSE" InTheWater="TRUE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType PostureMode" ModeValueName="PostureMode Attached" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType PostureMode" ModeValueName="PostureMode Swimming" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                      Rules for WaterContactMode                     #####
+###############################################################################
+-->
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode No Water Contact' -->
+    <SFStateChangeRule EventName="Event_Object_Left_The_Water">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode No Water Contact" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode No Water Contact" />
+    </SFStateChangeRule>
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode Touching Water' -->
+    <SFStateChangeRule EventName="Event_Object_Wading">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Touching Water" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Touching Water" />
+    </SFStateChangeRule>
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode On Water Surface' -->
+    <SFStateChangeRule EventName="Event_Object_Started_Swimming">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode On Water Surface" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode On Water Surface" />
+    </SFStateChangeRule>
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode On Water Surface' -->
+    <SFStateChangeRule EventName="Event_Object_Dived">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Submerged In Water" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Submerged In Water" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                         Rules for WeaponMode                        #####
+###############################################################################
+-->
+<!-- Rules for changing weaponmode to 'WeaponMode Unarmed' -->
+<!-- #1 Changing from 'WeaponMode Combat' -->
+    <SFStateChangeRule EventName="Event_Weapon_Sheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Combat" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Unarmed" />
+    </SFStateChangeRule>
+<!-- #2 Changing from 'WeaponMode Spell' -->
+    <SFStateChangeRule EventName="Event_Magic_Staff_Sheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Spell" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Unarmed" />
+    </SFStateChangeRule>
+<!-- #3 Changing from 'WeaponMode Tool' -->
+    <SFStateChangeRule EventName="Event_Tool_Detached">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Tool" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Unarmed" />
+    </SFStateChangeRule>
+<!-- Rule for changing WeaponMode to 'WeaponMode Combat' -->
+    <SFStateChangeRule EventName="Event_Weapon_Unsheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Combat" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Combat" />
+    </SFStateChangeRule>
+<!-- Rule for changing WeaponMode to 'WeaponMode Spell' -->
+    <SFStateChangeRule EventName="Event_Magic_Staff_Unsheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Spell" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Spell" />
+    </SFStateChangeRule>
+<!-- Rule for changing WeaponMode to 'WeaponMode Tool' -->
+    <SFStateChangeRule EventName="Event_Tool_Attached">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Tool" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Tool" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                           Operation Rules                           #####
+###############################################################################
+-->
+<!-- OperationRule for changing weaponmode from any value into any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType WeaponMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_WeaponMode_Changed" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing flyingmode from any value into any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType FlyingMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_FlyingMode_Changed" />
+        </SFOperationName>
+        <SFOperationName>
+            <SFString Value="Start_Flying_Animation" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing leaningmode from any value to any value. -->
+<!--
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType LeaningMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_LeaningMode_Changed" />
+        </SFOperationName>
+    </SFOperationRule>
+-->
+<!-- OperationRule for changing lifemode from any value to any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType LifeMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_LifeMode_Changed" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing between movementmodes (From any value, except Idle, to Slow). -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="MovementMode Slow" />
+        </SFNewModeValueName>
+        <SFOperationRequirement>
+            <SFCheckInverse>
+                <SFBool Value="TRUE" />
+            </SFCheckInverse>
+            <SFCheckNewModeValue>
+                <SFBool Value="FALSE" />
+            </SFCheckNewModeValue>
+            <SFModeName>
+                <SFString Value="ModeType MovementMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="MovementMode Idle" />
+            </SFModeValueName>
+        </SFOperationRequirement>
+        <SFOperationName>
+            <SFString Value="Stop_Current_MovementSkill" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing between movementmodes (From Slow to any value, except Idle). -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="MovementMode Slow" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationRequirement>
+            <SFCheckInverse>
+                <SFBool Value="TRUE" />
+            </SFCheckInverse>
+            <SFCheckNewModeValue>
+                <SFBool Value="TRUE" />
+            </SFCheckNewModeValue>
+            <SFModeName>
+                <SFString Value="ModeType MovementMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="MovementMode Idle" />
+            </SFModeValueName>
+        </SFOperationRequirement>
+        <SFOperationName>
+            <SFString Value="Stop_Current_MovementSkill" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing movementmode from any value to Idle. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="MovementMode Idle" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_Object_Stopped_Moving" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing posturemode from mounted to dismounted. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType PostureMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="PostureMode Mounted" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="PostureMode Standing" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_WaterContactMode_Changed" />
+        </SFOperationName>
+        <SFEventName>
+            <SFString Value="Event_Object_Left_The_Water" />
+        </SFEventName>
+    </SFOperationRule>	
+<!-- OperationRule for changing posturemode from any value to any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType PostureMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_PostureMode_Changed" />
+        </SFOperationName>
+        <SFEventName>
+            <SFString Value="Event_Object_Straightened" />
+        </SFEventName>
+        <SFEventName>
+            <SFString Value="Event_PostureMode_Changed" />
+        </SFEventName>
+    </SFOperationRule>
+<!-- OperationRule for changing posturemode when stopping climbing. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType PostureMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="PostureMode Climbing" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Stop_Climbing" />
+        </SFOperationName>
+    </SFOperationRule>
+<!--
+###############################################################################
+#####                   Client Specific Operation Rules                   #####
+###############################################################################
+-->
+<!-- OperationRule for changing movementmode from any value into any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Notify_BobberManager" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing posturemode from any value into any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType PostureMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Notify_BobberManager" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing watercontactmode from any value to any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType WaterContactMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_WaterContactMode_Changed" />
+        </SFOperationName>
+    </SFOperationRule>
+</XML>

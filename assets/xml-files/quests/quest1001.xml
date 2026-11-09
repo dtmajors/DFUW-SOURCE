@@ -1,0 +1,292 @@
+<quest quest_id="1001" category="side_quest" tag="Broken Sword" published="False" valid="True">
+	<title>Broken Sword</title>
+	<description>Along his travels, the Agonian came across a merchant by the name of $[Vendors.p21_wilderness_merchant_Name] . This Alfari spun a gripping tale of an ancient lord of his people known as Eladron Swiftblade, wielder of Syrdarian.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<journal_entry>The entire tale began when the merchant noticed the Agonian scrutinizing a shard of an ancient looking blade.  Eladron, the Agonian learned, had been betrayed to his death, by one of his closest.</journal_entry>
+			<conditions>
+				<condition type="vendor_interaction" id="2" value="1" tag="Talk with Akashur" vendor_id="p21_wilderness_merchant" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="Sword to Akashur">
+			<journal_entry>In such times, the lure of gold is one not easily shrugged off.  The Agonian shook hands with Akashur and walked away, one old sword lighter but twelve thousand $[Resource.G.r_gold_NameSingular] richer. A keen wailing was distinctly ignored and Eldarion and his blade were very soon nothing but a hazy,golden memory, just another bedtime story.</journal_entry>
+		</node>
+		<node type="event_simple" id="2" tag="zombie dire">
+			<instruction>Locate the pieces of Syrdarian</instruction>
+			<tasks>
+				<task type="kill_object" id="0" value="1" tag="kill zombie" resource_name="r_Zombie Dire" quantity="1">
+					<task_instruction>Search among the zombies for a piece of Syrdarian</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>As the Agonian examined the shard, they became aware that it&apos;s dark gleam seemed to pulse, seemed to grow and wane depending upon where it was pointed. Almost instinctively, the Agonian realized the shard was being drawn home, it was shining brightly whenever facing the direction of Zahnal. The Agonian slowly began to believe...it was time to find the final piece, and lay the legend of the blade to rest.</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="severii legionaire">
+			<instruction>Locate another piece of Syrdarian</instruction>
+			<tasks>
+				<task type="kill_object" id="6" value="1" tag="kill ghouls" resource_name="r_Severii Legionnaire" quantity="1">
+					<task_instruction>Find the remaining pieces of Syrdarian amongst the Severii.</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="14" tag="s">
+			<journal_entry>Amongst the brittle and cracked remains of the skeletons, the Agonian saw the glint of a cross-guard, quite ornate and delicate, attached to a grip adorned with a dark crest of some kind, a golden, tarnished pommel upon its end. If this was a piece of Syrdarian, only $[Vendors.p21_wilderness_merchant_Name] could confirm.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="11" tag="Worn Hilt" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<instruction>Return to $[Vendors.p21_wilderness_merchant_Name]</instruction>
+			<journal_entry>Upon witnessing the hilt the Agonian revealed, $[Vendors.p21_wilderness_merchant_Name] &apos;s immediate elation was clear.  His eyes lit up with a strange gleam and an eerie smile played across his lips. He was more than certain that this was a piece of Syrdarian.  Logic dictaded that further shards of the fabled blade would also be found upon the undead, it remained the Agonian&apos;s task to decide which type of beast to strike at next.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="5" value="1" tag="talk with akashur" vendor_id="p21_wilderness_merchant">
+					<task_instruction>Take the hilt back to Akashur</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="20" tag="s">
+			<journal_entry>Another skeleton fell, and many more would have followed but then, among the time bleached bones of the once undead, the Agonian spied a strange gleam. Further investigation uncovered a darkly shining shard that almost had to come from the shattered blade.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="14" tag="Broken Blade" item_id="1" />
+			</actions>
+		</node>
+		<node type="event_simple" id="22" tag="">
+			<instruction>Follow the glint of the shard.</instruction>
+			<journal_entry>And indeed, it was among the ruins of Zahnal that the Agonian finally heard the twisted voice of Eladron Swiftblade, lamenting and imploring a release from his eternal prison of undeath. A betrayal had shattered his heart and his blade. Should the blade be made whole, the spectre could rest, redeemed. The Agonian had only to find the lost scabbard somewhere near the king&apos;s resting place.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="34" value="1" tag="go to zahnal marker" area_id="1">
+					<task_instruction>Visit the ruins in Zahnal</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="28" tag="find resting place of Eladron" world_x="1850" world_z="-4610" />
+			</actions>
+		</node>
+		<node type="event_simple" id="24" tag="1st speach">
+			<journal_entry>In a voice like a wind twisting through a thousand dusty crypts, the king spoke:</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="38" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_1001_kings_first_speech" />
+			</actions>
+		</node>
+		<node type="event_simple" id="31" tag="got scabbard 2nd speech">
+			<journal_entry>Once again, with a voice like the clashing of a thousand tombs, did Eldarion invade the Agonian&apos;s mind.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="20" tag="tattered scabbard" item_id="2" />
+				<action type="start_client_sfx_on_player" id="39" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_1001_kings_second_speech" />
+			</actions>
+		</node>
+		<node type="event_simple" id="32" tag="go to Ahu Ezmeth">
+			<instruction>Make Syrdarian Whole</instruction>
+			<tasks>
+				<task type="go_to_area" id="35" value="1" tag="A Go To Area Task" area_id="2">
+					<task_instruction>Make Syrdarian whole</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="35" tag="An Add Map-Marker to World-Map Action" world_x="1597" world_z="-3723" />
+			</actions>
+		</node>
+		<node type="event_simple" id="33" tag="">
+			<instruction>Return Syrdarian to $[Vendors.p21_wilderness_merchant_Name]</instruction>
+			<journal_entry>The Merchant Akashur&apos;s impatience was palpable and evident even before the Agonian drew close. Some small part of the Agonian did perhaps sense something was amiss, but it was not until the merchant began to giggle maniacally that the penny did drop.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="30" value="1" tag="Bring sword to Akashur" vendor_id="p21_wilderness_merchant">
+					<task_instruction>Decide Syrdarian&apos;s fate</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_branch" id="34" tag="" optional_tasks="True">
+			<instruction>Decide the fate of Syrdarian</instruction>
+			<journal_entry>The Agonian had to choose. How can one value a man&apos;s soul against a fleeting moment of wealth?</journal_entry>
+			<tasks>
+				<task type="choose" id="31" value="1" tag="Decide Syrdarian's Fate" reward_node_id="58">
+					<task_instruction>Sell Syrdarian to Akashur</task_instruction>
+				</task>
+				<task type="choose" id="32" value="2" tag="sword to Eladron" reward_node_id="57">
+					<task_instruction>Release Eladron from his curse</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="36" tag="Sword to Arnaur">
+			<journal_entry>The Merchant Akashur&apos;s face was a picture of rage and disbelief as the Agonian turned and walked away.  While sputtered epithets and curses followed, there was also a distinct feeling of change within the Agonian&apos;s pack.   Overwhelmed by curiosity, they stopped and opened the bag, only to find a $[Resource.S.r_sword_p01_r09_NameSingular] in the place of Syrdarian. Eldarion was even in death, an elf of honor, and finally free.  The Aginian smiled and continued on their way, the curses of the Merchant Akashur growing fainter in the distance.</journal_entry>
+		</node>
+		<node type="event_simple" id="37" tag="">
+			<journal_entry>Lord Swiftblade ruled in days long past and his blade, Syrdarian the Honourbound, was said to always strike true. Moreover, many have since heard the wind carrying his voice within the many places haunted by the undead across the land. $[Vendors.p21_wilderness_merchant_Name] informed the Agonian that the first tome of the Alfari Myths contained a more complete accounting of the tale.  However, with the burning of the Alfar Library, copies of the tome, written by one Lord Lucifer, had become quite scarce indeed.</journal_entry>
+		</node>
+		<node type="event_simple" id="38" tag="">
+			<journal_entry>$[Vendors.p21_wilderness_merchant_Name] believed, with little doubt, that the piece he held was from Syrdarian and he was quite certain that any more pieces would most certainly be found on the undead themselves.  If Syrdarian could somehow be re-forged, the Merchant promised he would pay the hefty sum of twelve thousand gold. While certainly not many would be willing to wield the blade of a cursed king, such scruples were, perhaps, not universal. All he required was for one such shard to be located to confirm the search would not be fruitless.</journal_entry>
+		</node>
+		<node type="event_simple" id="40" tag="">
+			<journal_entry>$[Vendors.p21_wilderness_merchant_Name] thus asked the Agonian if they would be interested in finding the rest of the pieces. He would give them the one he possessed to allow identification of the rest. However, he also required 2000 $[Resource.G.r_gold_NameSingular] as a form of insurance. The Agonian would have to choose, but he was warned that this was a one time offer...</journal_entry>
+		</node>
+		<node type="event_branch" id="41" tag="" optional_tasks="True">
+			<instruction>Choose whether to pay the merchant his insurance or not. Choose wisely, there is no turning back.</instruction>
+			<tasks>
+				<task type="choose" id="36" value="1" tag="give gold" reward_node_id="-1">
+					<task_instruction>Give the $[Resource.G.r_gold_NameSingular] to $[Vendors.p21_wilderness_merchant_Name] .</task_instruction>
+				</task>
+				<task type="choose" id="37" value="2" tag="don't give gold" reward_node_id="-1">
+					<task_instruction>Come back later.</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="42" tag="give gold">
+			<conditions>
+				<condition type="item_possession" id="3" value="1" tag="has the plr enough gold?" resource_name="r_Gold" quantity="2000" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="gather_items" id="38" value="2" tag="has the gold" resource_name="r_Gold" quantity="2000" inventory_type="Backpack" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="43" tag="dont give gold" />
+		<node type="event_simple" id="45" tag="player doesn't have the gold">
+			<tasks>
+				<task type="choose" id="39" value="1" tag="plr not have gold" reward_node_id="-1">
+					<task_instruction>You don&apos;t have the gold. Go bring some...</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="46" tag="player has the gold!">
+			<journal_entry>The Agonian, as it turned out, was just curious enough to trust the merchant with their $[Resource.G.r_gold_NameSingular] .</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="26" tag="remove gold from plr" resource_name="r_Gold" quantity="2000" inventory_type="Backpack" />
+				<action type="unlock_quest_item" id="27" tag="quest item: broken blade piece" item_id="4" />
+			</actions>
+		</node>
+		<node type="event_merge" id="47" tag="fail safe node" />
+		<node type="event_simple" id="48" tag="">
+			<journal_entry>It was now time to take the shard and search amongst the undead to glean if there was anything more to this legend...</journal_entry>
+		</node>
+		<node type="event_simple" id="51" tag="sword whole fx">
+			<journal_entry>The blade was now whole again and the dead Alfar lord&apos;s silence proof enough of the deed.  Perhaps, now content, his soul could now rest in relative peace. In any case, it remained to be seen if the merchant $[Vendors.p21_wilderness_merchant_Name] would remain true to his word.</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="41" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_simple" id="52" tag="">
+			<journal_entry>&quot;Yeeeeees! I can feel the potential now.  The weapon is in concord, my soul resonates with its integrity, its power.  You need only bring it to the place of my demise mortal.  There shall I finally be free of this immortal coil, will I finally sleep, perchance to dream! Get you to the land north of this one, there on the accursed island will you put my soul to rest...&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="53" tag="">
+			<instruction>Find the Scabbard</instruction>
+			<journal_entry>The scabbard was waiting inside a chest.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="41" value="1" tag="An Interact With Object Task" resource_name="r_qt broken sword chest" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="54" tag="">
+			<journal_entry>&quot;Oh gleefully gruesome gambits payed off at last!  Even beyond death have I foiled and fouled your sweet release once more oh great and grand lord of the house!&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="55" tag="">
+			<journal_entry>Impossible as it seemed, it was clear that Akashur had been the one who had betrayed Eldarion so many years ago.  It was also fairly clear that Akashur was, clearly, insane. Throughout Akashur&apos;s (if indeed that was even his name) gloating one, single, otherworldly thought kept playing through the Agonians mind.  The absolute sure knowledge that, should he simply walk away now, the blade and the curse would vanish.</journal_entry>
+		</node>
+		<node type="event_simple" id="56" tag="">
+			<journal_entry>&quot;Pierced is my heart and shattered as my blade, mend the one to free the other! I sense the shards and remnants of my oft-bloodied companion upon you.  House them within my scabbard, wrap them within it&apos;s ancient embrace that they may be made whole.  Seek it within the hallowed halls of this place, find it and release me from my torment!&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="57" tag="" reward_type="RewardsHiddenUntilChosen">
+			<actions>
+				<action type="give_item_to_player" id="36" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sword_p01_r09" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="58" tag="" reward_type="RewardsHiddenUntilChosen">
+			<actions>
+				<action type="give_item_to_player" id="37" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="15000" inventory_type="Backpack" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="35" from="0" to="37" value="1" />
+		<edge id="4" from="2" to="14" value="1" />
+		<edge id="8" from="14" to="15" value="0" />
+		<edge id="10" from="15" to="17" value="1" />
+		<edge id="13" from="17" to="20" value="1" />
+		<edge id="56" from="20" to="9" value="0" />
+		<edge id="19" from="9" to="22" value="0" />
+		<edge id="21" from="22" to="24" value="1" />
+		<edge id="68" from="24" to="56" value="0" />
+		<edge id="59" from="31" to="52" value="0" />
+		<edge id="57" from="32" to="51" value="1" />
+		<edge id="72" from="34" to="58" value="1" />
+		<edge id="64" from="33" to="54" value="1" />
+		<edge id="70" from="34" to="57" value="2" />
+		<edge id="37" from="37" to="38" value="0" />
+		<edge id="39" from="38" to="40" value="0" />
+		<edge id="43" from="41" to="42" value="1" />
+		<edge id="47" from="45" to="47" value="1" />
+		<edge id="44" from="41" to="43" value="2" />
+		<edge id="45" from="42" to="45" value="1" />
+		<edge id="46" from="42" to="46" value="2" />
+		<edge id="48" from="47" to="41" value="0" />
+		<edge id="49" from="40" to="47" value="0" />
+		<edge id="50" from="46" to="48" value="0" />
+		<edge id="51" from="48" to="2" value="0" />
+		<edge id="74" from="43" to="47" value="0" />
+		<edge id="58" from="51" to="33" value="0" />
+		<edge id="60" from="52" to="32" value="0" />
+		<edge id="62" from="53" to="31" value="1" />
+		<edge id="66" from="54" to="55" value="0" />
+		<edge id="67" from="55" to="34" value="0" />
+		<edge id="69" from="56" to="53" value="0" />
+		<edge id="71" from="57" to="36" value="0" />
+		<edge id="73" from="58" to="1" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Worn Hilt" image_locked="qc_1001_broken_blade_hilt_locked.png" image_unlocked="qc_1001_broken_blade_hilt_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Intricate Crossguard</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>An intricate crossguard of the ancient sword Syrdarian, pried from the possession of a foul undead being.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="1" tag="Broken Blade Piece" image_locked="qc_1001_broken_blade_piece_01_locked.png" image_unlocked="qc_1001_broken_blade_piece_01_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Shard of Syrdarian</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A still gleaming shard of off the blade of Syrdarian, sword of Eldarion. It has seen better days.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="2" tag="Tattered Scabbard" image_locked="qc_1001_broken_blade_scabbard_locked.png" image_unlocked="qc_1001_broken_blade_scabbard_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Eldarion&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;apos;s Scabbard</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>The Scabbard that housed the great blade and holds the key to releasing Eldarion&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;apos;s spirit from eternal torment.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="4" tag="Akashur's Broken piece" image_locked="qc_1001_broken_blade_piece_02_locked.png" image_unlocked="qc_1001_broken_blade_piece_02_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Merchant&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;apos;s Shard of Syrdarian</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A shard of the fabled Syrdarian, belonging to the long dead Alfar Lord Eldarion.</description_unlocked>
+	</quest_item>
+	<node_locations>
+		<node_location id="0" x="30" y="30" />
+		<node_location id="1" x="1477" y="605" />
+		<node_location id="2" x="141" y="484" />
+		<node_location id="9" x="545" y="810" />
+		<node_location id="17" x="326" y="785" />
+		<node_location id="14" x="151" y="641" />
+		<node_location id="15" x="199" y="751" />
+		<node_location id="20" x="435" y="795" />
+		<node_location id="22" x="652" y="809" />
+		<node_location id="24" x="754" y="803" />
+		<node_location id="31" x="926" y="719" />
+		<node_location id="32" x="1071" y="721" />
+		<node_location id="33" x="1156" y="805" />
+		<node_location id="34" x="1312" y="664" />
+		<node_location id="36" x="1482" y="716" />
+		<node_location id="37" x="179" y="30" />
+		<node_location id="38" x="273" y="30" />
+		<node_location id="40" x="711" y="34" />
+		<node_location id="41" x="575" y="256" />
+		<node_location id="42" x="491" y="338" />
+		<node_location id="43" x="625" y="159" />
+		<node_location id="45" x="690" y="342" />
+		<node_location id="46" x="384" y="352" />
+		<node_location id="47" x="693" y="251" />
+		<node_location id="48" x="275" y="370" />
+		<node_location id="51" x="1079" y="806" />
+		<node_location id="52" x="1002" y="720" />
+		<node_location id="53" x="833" y="727" />
+		<node_location id="54" x="1246" y="818" />
+		<node_location id="55" x="1315" y="788" />
+		<node_location id="56" x="830" y="813" />
+		<node_location id="57" x="1389" y="712" />
+		<node_location id="58" x="1384" y="608" />
+	</node_locations>
+</quest>

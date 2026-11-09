@@ -1,0 +1,150 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_npc dwarf elder male" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="ANIMATEDOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="true" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <Meshes>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="npc_human_elder_m_01.sfam" />
+                    </Set0>
+                </Meshes>
+                <Animations>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="npc_human_elder_m01.sfas" />
+                    </Set0>
+                </Animations>
+                <SFBool Value="FALSE" />
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <NumberOfSubsets>
+                <SFInteger Value="0" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="TRUE" />
+                    <SFString Value="ShaderAnim.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader1>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                </SubsetShaders>
+            </Normal>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+            <AnimationSet0>
+                <SetName>
+                    <SFString Value="Idle" />
+                </SetName>
+                <SetFile>
+                    <SFString Value="SF_DEFAULT" />
+                </SetFile>
+            </AnimationSet0>
+        </AnimationInformation>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-1.09716" Y="-0.0371153" Z="-1.17732" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="1.08387" Y="2.14391" Z="1.0037" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="-0.00664425" Y="1.0534" Z="-0.086807" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="1.09051" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation />
+            </BoundingInformation>
+        </VisibilityInformation>
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="character" />
+        <WaterTransition>
+            <Submerged Value="1.65787" />
+            <Surface Value="1.0308" />
+            <Touching Value="0.01718" />
+        <Floating Value="1.344335" /></WaterTransition>
+    </PhysicsInformation>
+    <VersionInformation Major="1" Minor="0" />
+    <MassCenter>
+        <SFVector3 X="0" Y="0" Z="0" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="npc_dwarf_elder_m_01.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="npc_dwarf_elder_m_01.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="0" Y="0" Z="0" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="2.1475" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+</SFObject>

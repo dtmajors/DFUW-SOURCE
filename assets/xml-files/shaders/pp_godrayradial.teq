@@ -1,0 +1,88 @@
+// godraysocclusion.teq
+#include "planets.frag"
+#include "matrix.frag"
+#include "stdstate.frag"
+#include "PP_ToneMappers.frag"
+#include "RGBE.frag"
+#include "texture.frag"
+#include "atmosphere.frag"
+
+//working
+static const int NUM_SAMPLES =  100;
+static const float Density = 1.0; //2.0; 
+static const float Weight = 1.0;  //2.0;  
+static const float Decay = 0.97;  //0.92;
+
+texture OcclusionTexture : REPGodRayOcclusionTexture ; 
+sampler2D OcclusionSampler = sampler_state
+{
+	Texture = <OcclusionTexture>;
+	AddressU = CLAMP;
+	AddressV = CLAMP;
+
+    MinFilter = Linear;
+    MagFilter = Linear;
+};
+
+float4 Radial(in float2 tc : TEXCOORD0) : COLOR
+{
+	float2 initialTC = tc;
+	float2 deltaTexCoord = (tc - GOD_RAY_SCREEN_CENTER);  
+	deltaTexCoord *= 1.0 /  NUM_SAMPLES * Density;  
+	float4 color = tex2D(OcclusionSampler, tc); 
+	float illuminationDecay = 1.0f;  
+	
+	for (int i = 0; i < NUM_SAMPLES; i++)  
+	{    
+		tc -= deltaTexCoord;  
+		float4 sample = tex2D(OcclusionSampler, tc); 		
+		sample *= illuminationDecay * Weight;  
+		color += sample;  
+		illuminationDecay *= Decay;  
+	}
+	
+	float2 aspectCorrectedTC = initialTC - 0.5;
+	aspectCorrectedTC.x *= BackBufferParams.x / BackBufferParams.y;
+	float2 aspectCorrectedPlanetCenter = GOD_RAY_SCREEN_CENTER - 0.5;
+	aspectCorrectedPlanetCenter.x *= BackBufferParams.x / BackBufferParams.y;
+	float dist = distance(aspectCorrectedTC, aspectCorrectedPlanetCenter);
+	
+	//float Exposure = smoothstep(0.12, 0.055, dist)*0.02 + smoothstep(0.055, 0.5, dist);
+	//Exposure *= smoothstep(1.0, 0.4, dist);
+	
+	
+	float maxDisk = 2.0;
+	float minDisk = 1.0;
+	
+	maxDisk = lerp(maxDisk,0.5,RAIN_FACTOR + SNOW_FACTOR);
+	minDisk = lerp(minDisk,0.2,RAIN_FACTOR + SNOW_FACTOR);
+	
+	float Exposure = smoothstep(maxDisk, 0.0, dist)*0.02 + smoothstep(minDisk, 0.0, dist)*0.001;
+	
+	float4 godraycolor = lerp(float4(1.0,0.7,0.2,0.0),PLANET_LIGHTCOLOR_COMMON,smoothstep(0.735,0.7349,PLANET_LIGHTCOLOR_COMMON.b));
+	
+	//xmas hack
+	//float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+	//float4 godraycolor = lerp(float4(0,0.4,0.6,0.0),float4(1.0,0.7,0.2,0.0),smoothstep(0.4,0.401,SunIntensity));
+	
+	return  color * Exposure * godraycolor * GOD_RAY_FADE;
+}
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+		Lighting = false;
+		AlphaBlendEnable = FALSE;
+		AlphaTestEnable = FALSE;
+
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+		ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+		CullMode = NONE;
+
+		VertexShader = null;
+        PixelShader  = compile ps_3_0 Radial();
+    }
+}

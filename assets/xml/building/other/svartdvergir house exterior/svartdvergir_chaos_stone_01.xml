@@ -1,0 +1,178 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="svartdvergir_chaos_stone_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="FALSE" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderdefault.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderalphaglowmetal.xml" />
+<SFInteger Value="1" />
+</Shader1>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="svartdvergir_coal.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="svartdvergir_structure_hotCoal.bmp" />
+</Texture0>
+</Subset1>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="2" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-5.2573399544" Y="-.6371705532" Z="-3.8515486717" />
+</Min>
+<Max>
+<SFVector3 X="5.2573471069" Y="4.3773927689" Z="4.0090961456" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".9232633710" Y="1.6967661381" Z="-.1663723737" />
+</Center>
+<Radius>
+<SFFloat Value="6.2059578896" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingBox>
+<Min>
+<SFVector3 X="-5.2573399544" Y="-.6371705532" Z="-3.8515486717" />
+</Min>
+<Max>
+<SFVector3 X="5.2573471069" Y="4.3773927689" Z="4.0090961456" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".9232633710" Y="1.6967661381" Z="-.1663723737" />
+</Center>
+<Radius>
+<SFFloat Value="6.2059578896" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingBox>
+<Min>
+<SFVector3 X="-3.4480528831" Y="-.6371705532" Z="-3.8515486717" />
+</Min>
+<Max>
+<SFVector3 X="5.0979404449" Y="4.3773927689" Z="4.0090961456" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="1.0249863863" Y="1.7042782307" Z="-.1514329016" />
+</Center>
+<Radius>
+<SFFloat Value="5.3812170029" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="static" />
+<WaterTransition>
+<Submerged Value="4.9647651672" />
+<Surface Value="2.4823825836" />
+<Touching Value="-3.7235738754" />
+<Floating Value="3.7235738754" />
+</WaterTransition>
+</PhysicsInformation>
+<VersionInformation Major="1" Minor="0" />
+<MassCenter>
+<SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="svartdvergir_chaos_stone_01.sfm.static.SFAABBTREECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-5.2573399544" Y="-.6371705532" Z="-3.8515486717" />
+</Min>
+<Max>
+<SFVector3 X="5.2573471069" Y="4.3773927689" Z="4.0090961456" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".9232627749" Y="1.6967637539" Z="-.1663717926" />
+</Center>
+<Radius>
+<SFFloat Value="6.2059564590" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+</SFObject>

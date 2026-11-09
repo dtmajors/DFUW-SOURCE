@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  	
+					TYPE = 0 is runing stance,
+					TYPE = 1 is walking stance,
+					TYPE = 2 is crouch stance
+					TYPE = 3 is swimming
+					TYPE = 4 is swim sprint
+-->
+	
+<SFAnimationAACTemplate>
+
+<!-- RUN TEMPLATES-->
+	<MaterialGroup Category="default" Type="0">
+		<Sound Name="Audio/footsteps/player/run/dirt_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_08.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_09.xml"/>
+		<Sound Name="Audio/footsteps/player/run/dirt_run_10.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="pebble" Type="0">
+		<Sound Name="Audio/footsteps/player/run/pebble_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/pebble_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/pebble_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/pebble_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/pebble_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/pebble_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/pebble_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/pebble_run_08.xml"/>
+	</MaterialGroup>		
+	<MaterialGroup Category="water" Type="0">
+		<Sound Name="Audio/footsteps/player/run/water_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/water_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/water_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/water_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/water_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/water_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/water_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/water_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="wood" Type="0">
+		<Sound Name="Audio/footsteps/player/run/wood_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/wood_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/wood_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/wood_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/wood_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/wood_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/wood_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/wood_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tile" Type="0">
+		<Sound Name="Audio/footsteps/player/run/tile_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tile_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tile_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tile_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tile_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tile_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tile_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tile_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="swamp" Type="0">
+		<Sound Name="Audio/footsteps/player/run/swamp_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/swamp_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/swamp_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/swamp_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/swamp_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/swamp_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/swamp_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/swamp_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="grass" Type="0">
+		<Sound Name="Audio/footsteps/player/run/grass_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="snow" Type="0">
+		<Sound Name="Audio/footsteps/player/run/snow_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/snow_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/snow_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/snow_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/snow_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/snow_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/snow_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/snow_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="sand" Type="0">
+		<Sound Name="Audio/footsteps/player/run/sand_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/sand_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/sand_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/sand_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/sand_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/sand_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/sand_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/sand_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="jungle" Type="0">
+		<Sound Name="Audio/footsteps/player/run/grass_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/grass_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="metal" Type="0">
+		<Sound Name="Audio/footsteps/player/run/metal_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/metal_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/metal_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/metal_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/metal_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/metal_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/metal_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/metal_run_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="stone" Type="0">
+		<Sound Name="Audio/footsteps/player/run/stone_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/stone_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/stone_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/stone_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/stone_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/stone_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/stone_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/stone_run_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="ice" Type="0">
+		<Sound Name="Audio/footsteps/player/run/ice_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/ice_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/ice_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/ice_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/ice_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/ice_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/ice_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/ice_run_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="carpet" Type="0">
+		<Sound Name="Audio/footsteps/player/run/carpet_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/carpet_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/carpet_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/carpet_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/carpet_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/carpet_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/carpet_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/carpet_run_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="tar" Type="0">
+		<Sound Name="Audio/footsteps/player/run/tar_run_01.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tar_run_02.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tar_run_03.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tar_run_04.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tar_run_05.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tar_run_06.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tar_run_07.xml"/>
+		<Sound Name="Audio/footsteps/player/run/tar_run_08.xml"/>
+	</MaterialGroup>
+	
+	
+	<!-- WALK TEMPLATES-->
+	<MaterialGroup Category="default" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/dirt_walk_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="pebble" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/pebble_walk_08.xml"/>
+	</MaterialGroup>		
+	<MaterialGroup Category="water" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/water_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/water_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/water_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/water_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/water_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/water_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/water_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/water_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="wood" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/wood_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tile" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tile_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="swamp" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/swamp_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="grass" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="snow" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/snow_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="sand" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/sand_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="jungle" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/grass_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="metal" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/metal_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="stone" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/stone_walk_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="ice" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/ice_walk_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="carpet" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/carpet_walk_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tar" Type="1">
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_04.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_05.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_06.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_07.xml"/>
+		<Sound Name="Audio/footsteps/player/walk/tar_walk_08.xml"/>
+	</MaterialGroup>
+	
+	
+	<!-- CROUCH TEMPLATES-->
+	<MaterialGroup Category="default" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/dirt_crouch_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="pebble" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/pebble_crouch_08.xml"/>
+	</MaterialGroup>		
+	<MaterialGroup Category="water" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/water_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="wood" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/wood_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tile" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tile_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="swamp" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/swamp_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="grass" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="snow" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/snow_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="sand" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/sand_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="jungle" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/grass_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="metal" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/metal_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="stone" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/stone_crouch_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="ice" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/ice_crouch_08.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="carpet" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/carpet_crouch_08.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tar" Type="2">
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_01.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_02.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_03.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_04.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_05.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_06.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_07.xml"/>
+		<Sound Name="Audio/footsteps/player/crouch/tar_crouch_08.xml"/>
+	</MaterialGroup>
+	
+	
+	
+	<!-- SWIM TEMPLATES -->
+	<MaterialGroup Category="default" Type="3">
+		<Sound Name="Audio/footsteps/player/swim/water_swim_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_03.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_04.xml"/>
+	</MaterialGroup>	
+	<MaterialGroup Category="water" Type="3">
+		<Sound Name="Audio/footsteps/player/swim/water_swim_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_03.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_04.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="swamp" Type="3">
+		<Sound Name="Audio/footsteps/player/swim/swamp_swim_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/swamp_swim_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/swamp_swim_03.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/swamp_swim_04.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tar" Type="3">
+		<Sound Name="Audio/footsteps/player/swim/tar_swim_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/tar_swim_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/tar_swim_03.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/tar_swim_04.xml"/>
+	</MaterialGroup>
+	
+	
+	
+	<!--SWIM sprint TEMPLATES -->
+	<MaterialGroup Category="default" Type="4">
+		<Sound Name="Audio/footsteps/player/swim/water_swim_sprint_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_sprint_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_sprint_03.xml"/>
+	</MaterialGroup>	 
+	<MaterialGroup Category="water" Type="4">
+		<Sound Name="Audio/footsteps/player/swim/water_swim_sprint_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_sprint_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/water_swim_sprint_03.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="swamp" Type="4">
+		<Sound Name="Audio/footsteps/player/swim/swamp_swim_sprint_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/swamp_swim_sprint_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/swamp_swim_sprint_03.xml"/>
+	</MaterialGroup>
+	<MaterialGroup Category="tar" Type="4">
+		<Sound Name="Audio/footsteps/player/swim/tar_swim_sprint_01.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/tar_swim_sprint_02.xml"/>
+		<Sound Name="Audio/footsteps/player/swim/tar_swim_sprint_03.xml"/>
+	</MaterialGroup>
+	
+	
+	
+	
+	
+	<StateGroup Left="0.3" Right="0.8" Probability="100" Type="4">
+		<Set Name="swim_sprint"/>
+		<Set Name="swim_sprint_armed"/>
+	</StateGroup>
+
+	
+	<StateGroup Left="0.3" Right="0.8" Probability="100" Type="3">
+		<Set Name="swim_backward"/>
+		<Set Name="swim_forward"/>
+		<Set Name="swim_idle"/>
+		<Set Name="swim_left"/>
+		<Set Name="swim_right"/>
+	</StateGroup>
+	
+
+	
+    <StateGroup  Left="0.3" Right="0.8"  Probability="100" Type="2">
+		<Set Name="crouch_forward"/>
+		<Set Name="crouch_forward_right"/>
+		<Set Name="crouch_right"/>
+		<Set Name="crouch_backward_right"/>
+		<Set Name="crouch_backward"/>
+		<Set Name="crouch_backward_left"/>
+		<Set Name="crouch_left"/>
+		<Set Name="crouch_forward_left"/>
+	</StateGroup>
+
+	
+	
+    <StateGroup Left="0.3" Right="0.8" Probability="100" Type="1">
+		<Set Name="normal_walk_forward"/>
+		<Set Name="normal_walk_forward_right"/>
+		<Set Name="normal_walk_right"/>
+		<Set Name="normal_walk_backward_right"/>
+		<Set Name="normal_walk_backward"/>
+		<Set Name="normal_walk_backward_left"/>
+		<Set Name="normal_walk_left"/>
+		<Set Name="normal_walk_forward_left"/>
+		<Set Name="attackmode_walk_forward"/>
+		<Set Name="attackmode_walk_forward_right"/>
+		<Set Name="attackmode_walk_right"/>
+		<Set Name="attackmode_walk_backward_right"/>
+		<Set Name="attackmode_walk_backward"/>
+		<Set Name="attackmode_walk_backward_left"/>
+		<Set Name="attackmode_walk_left"/>
+		<Set Name="attackmode_walk_forward_left"/>
+		<Set Name="attackmode_halberd_walk_forward"/>
+		<Set Name="attackmode_halberd_walk_forward_right"/>
+		<Set Name="attackmode_halberd_walk_right"/>
+		<Set Name="attackmode_halberd_backward_right"/>
+		<Set Name="attackmode_halberd_backward"/>
+		<Set Name="attackmode_halberd_backward_left"/>
+		<Set Name="attackmode_halberd_walk_left"/>
+		<Set Name="attackmode_halberd_walk_forward_left"/>
+		<Set Name="attackmode_2handed_walk_forward"/>
+		<Set Name="attackmode_2handed_walk_forward_right"/>
+		<Set Name="attackmode_2handed_walk_right"/>
+		<Set Name="attackmode_2handed_walk_backward_right"/>
+		<Set Name="attackmode_2handed_walk_backward"/>
+		<Set Name="attackmode_2handed_walk_backward_left"/>
+		<Set Name="attackmode_2handed_walk_left"/>
+		<Set Name="attackmode_2handed_walk_forward_left"/>
+	</StateGroup>
+
+	
+    <StateGroup Left="0.3" Left2="0.632" Left3="0.964"		 Right="0.13" Right2="0.466" Right3="0.798" Probability="100" Type="0">
+		<Set Name="attackmode_2handed_run_forward"/>
+		<Set Name="attackmode_2handed_run_forward_right"/>
+		<Set Name="attackmode_2handed_run_right"/>
+		<Set Name="attackmode_2handed_run_left"/>
+		<Set Name="attackmode_2handed_run_forward_left"/>
+		<Set Name="attackmode_halberd_run_forward"/>
+		<Set Name="attackmode_halberd_run_forward_right"/>
+		<Set Name="attackmode_halberd_run_right"/>
+		<Set Name="attackmode_halberd_run_left"/>
+		<Set Name="attackmode_halberd_run_forward_left"/>
+		<Set Name="attackmode_run_forward"/>
+		<Set Name="attackmode_run_forward_right"/>
+		<Set Name="attackmode_run_right"/>
+		<Set Name="attackmode_run_left"/>
+		<Set Name="attackmode_run_forward_left"/>
+		<Set Name="normal_run_forward"/>
+		<Set Name="normal_run_forward_right"/>
+		<Set Name="normal_run_right"/>
+		<Set Name="normal_run_left"/>
+		<Set Name="normal_run_forward_left"/>
+	</StateGroup>
+	
+    <StateGroup Left="0.094" Left2="0.43" Left3="0.762" 		Right="0.26" Right2="0.596" Right3="0.928" Probability="100" Type="0">
+		<Set Name="normal_sprint_forward"/>
+		<Set Name="attackmode_sprint_forward"/>
+		<Set Name="attackmode_2handed_sprint_forward"/>
+		<Set Name="attackmode_halberd_sprint_forward"/>
+	</StateGroup>
+	
+	
+</SFAnimationAACTemplate>	

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFObjectSpace>
+    <ObjectSpaceGuid>
+        <SFInteger Value="13"/>
+    </ObjectSpaceGuid>
+    <VersionInformation Incremental="0" Major="0" Minor="1"/>
+    <ObjectSpaceName>
+        <SFString Value="a_planetary_system"/>
+    </ObjectSpaceName>
+    <Active>
+        <SFBool Value="TRUE"/>
+    </Active>
+    <Locked>
+        <SFBool Value="FALSE"/>
+    </Locked>
+    <Inlined>
+        <SFBool Value="FALSE"/>
+    </Inlined>
+    <ObjectSpaceType>
+        <SFInteger Value="9"/>
+    </ObjectSpaceType>
+    <SFWind>
+        <Guid>
+            <SFInteger Value="105"/>
+        </Guid>
+        <WindDirection>
+            <SFVector3 X="-0.2" Y="0.0" Z="-0.2"/>
+        </WindDirection>
+        <WindGustSpeed>
+            <SFFloat Value="0.2"/>
+        </WindGustSpeed>
+        <WindSpeed>
+            <SFFloat Value="0.29"/>
+        </WindSpeed>
+        <WindStrength>
+            <SFFloat Value="0.26"/>
+        </WindStrength>
+        <WindTurbidity>
+            <SFFloat Value="0.4"/>
+        </WindTurbidity>
+    </SFWind>
+    <SFHemisphere>
+        <Guid>
+            <SFInteger Value="104"/>
+        </Guid>
+        <HemisphereTranslation>
+            <SFVector3 X="0.0" Y="1000.0" Z="0.0"/>
+        </HemisphereTranslation>
+        <HemisphereRotation>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+        </HemisphereRotation>
+        <HemisphereScale>
+            <SFFloat Value="1.0"/>
+        </HemisphereScale>
+        <HemisphereTextureList>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_01.bmp"/>
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_02.bmp"/>
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_03.bmp"/>
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_04.bmp"/>
+            </HemisphereTexture>
+        </HemisphereTextureList>
+    </SFHemisphere>
+    <SFWorldGlobalLinearFogObject>
+        <Guid>
+            <SFInteger Value="102"/>
+        </Guid>
+        <FogColor>
+            <SFColor A="0.0" B="0.56078434" G="0.44313726" R="0.5411765"/>
+        </FogColor>
+        <Density>
+            <SFFloat Value="1.0"/>
+        </Density>
+        <FogStart>
+            <SFFloat Value="0.25"/>
+        </FogStart>
+        <FogEnd>
+            <SFFloat Value="0.95"/>
+        </FogEnd>
+        <RangeBased>
+            <SFBool Value="TRUE"/>
+        </RangeBased>
+        <VertexFog>
+            <SFBool Value="TRUE"/>
+        </VertexFog>
+        <FogOn>
+            <SFBool Value="TRUE"/>
+        </FogOn>
+        <FogMethod>
+            <SFInteger Value="1"/>
+        </FogMethod>
+    </SFWorldGlobalLinearFogObject>
+  <SFWorldGlobalPostFXObject>
+	<Guid>
+	  <SFInteger Value="218"/>
+	</Guid>
+	<Exposure>
+	  <SFFloat Value="0.6"/>
+	</Exposure>
+	<BrightPass>
+	  <SFFloat Value="1.0"/>
+	</BrightPass>
+	<Bloom>
+	  <SFFloat Value="1.0"/>
+	</Bloom>
+  </SFWorldGlobalPostFXObject>
+    <SFPlanet>
+        <Guid>
+            <SFInteger Value="10290"/>
+        </Guid>
+        <PlanetType>
+            <SFInteger Value="2"/>
+        </PlanetType>
+        <LightColor>
+            <SFColor A="0.0" B="0.0" G="0.28235295" R="0.5411765"/>
+        </LightColor>
+        <LogicalDistance>
+            <SFFloat Value="1500.0"/>
+        </LogicalDistance>
+        <Intensity>
+            <SFFloat Value="1.0"/>
+        </Intensity>
+        <Distance>
+            <SFVector3 X="0.0" Y="350.0" Z="0.0"/>
+        </Distance>
+        <Rotation>
+            <SFVector3 X="2.14" Y="0.0" Z="2.76"/>
+        </Rotation>
+        <LocalRotation>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+        </LocalRotation>
+        <Visible>
+            <SFBool Value="TRUE"/>
+        </Visible>
+        <Active>
+            <SFBool Value="TRUE"/>
+        </Active>
+        <SelfLightingDirection>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+        </SelfLightingDirection>
+        <XMLFilename>
+            <SFString Value="planets\sun.xml"/>
+        </XMLFilename>
+        <PlanetDistanceModifier>
+            <SFFloat Value="0.0"/>
+        </PlanetDistanceModifier>
+        <PlanetLocalRotationRadiansPerSecond>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+        </PlanetLocalRotationRadiansPerSecond>
+        <PlanetRotationRadiansPerSecond>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+        </PlanetRotationRadiansPerSecond>
+    </SFPlanet>
+    <SFAtmosphere>
+        <Guid>
+            <SFInteger Value="103"/>
+        </Guid>
+        <CloudColor>
+            <SFColor A="0.0" B="0.32156864" G="0.53333336" R="0.84705883"/>
+        </CloudColor>
+        <CloudCover>
+            <SFFloat Value="0.53"/>
+        </CloudCover>
+        <CloudThickness>
+            <SFFloat Value="1.0"/>
+        </CloudThickness>
+        <AtmosphericLight>
+            <SFColor A="0.0" B="0.2901961" G="0.19215687" R="0.23137255"/>
+        </AtmosphericLight>
+    </SFAtmosphere>
+    <SFLightManagerSetup>
+        <Guid>
+            <SFInteger Value="666"/>
+        </Guid>
+        <Color0>
+            <SFColor A="0.7" B="0.1" G="0.3" R="0.1"/>
+        </Color0>
+        <Color1>
+            <SFColor A="0.9" B="0.1" G="0.1" R="0.1"/>
+        </Color1>
+        <Color2>
+            <SFColor A="0.81" B="1.0" G="1.0" R="1.0"/>
+        </Color2>
+        <LerpColorStart>
+            <SFColor A="0.0" B="0.2" G="0.2" R="0.2"/>
+        </LerpColorStart>
+        <LerpColorEnd>
+            <SFColor A="0.0" B="0.6" G="1.0" R="1.0"/>
+        </LerpColorEnd>
+        <LerpFrequency>
+            <SFFloat Value="5.0"/>
+        </LerpFrequency>
+    </SFLightManagerSetup>
+</SFObjectSpace>

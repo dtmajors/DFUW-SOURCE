@@ -1,0 +1,64 @@
+<SFShader>
+	<Version_Info Minor="2" Major="0"/>
+	<Description>
+		<SFString Value="Tree Shader"/>
+	</Description>
+	<Shader>
+		<RenderEffect>
+			<xSFString Value="S_TreePineShader.teq"/>
+			<SFString Value="S_TreePineShader_instance.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="FALSE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="TRUE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="0"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="0"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqTexture>
+				<SFBool Value="TRUE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+		<TextureReqs>
+			<NumberOfTextures>
+				<SFInteger Value="1"/>
+			</NumberOfTextures>
+			<Texture0>
+				<SFString Value="SF_DEFAULT"/>
+				<TextureType>
+					<SFString>
+						<Value>SF2DTEXTURE</Value>
+					</SFString>
+				</TextureType>
+			</Texture0>
+		</TextureReqs>
+		<MeshReqs>
+			<NumberOfMeshes>
+				<SFInteger Value="0"/>
+			</NumberOfMeshes>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+		<ShaderPool>
+			<SFString Value="SF_SHADOW_POOL"/>
+			<SFInteger Value="3"/>
+		</ShaderPool>
+	</Shader>
+</SFShader>

@@ -1,0 +1,72 @@
+<quest quest_id="203" category="lore_quest" tag="The Traveling Acolytes" published="False" valid="True">
+	<title>The Traveling Acolytes</title>
+	<description>The Acolyte then addressed you in that irritatingly sage way, though, as before, this ire may be my personal outlook of course.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="202" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="7" tag="Search the dead Acolyte">
+			<instruction>Search the dead acolytes for clues.</instruction>
+			<journal_entry>Your initial observations of the grizzly site yielded nothing more than a piece of equipment you managed to salvage and, of course, plenty of gore! But then you saw it, a single goblin footprint next to one of the corpses.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="8" value="1" tag="An Interact With Object Task" resource_name="r_qt dead acolyte 01" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="" />
+		<node type="end_node" id="6" tag="reward">
+			<actions>
+				<action type="give_item_to_player" id="0" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_improved Arrow_01" quantity="30" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="1" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Selentine Ore" quantity="2" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="2" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Runestone" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="3" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sword_p02_r02" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="4" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Bow_p02_r02" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>Then finally, and perhaps inevitably, the confession that a group of his brethren, recently departed for the capital, may hold more answers for you should you be able to track them down.</journal_entry>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>Senseless platitudes of the new wisdoms in your eyes, be they welcome or no, vaguely troubled musings on the meaning of what you saw and the existence of the vale itself were all offered.</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>An adventure had seemingly begun! Born of curiosity, boredom, ambition or any number of possible motivations, you took the first tentative steps into the world to locate a group of Acolytes who would, perhaps, be able to shed some more light upon the implosion of knowledge currently buzzing through your mind.</journal_entry>
+		</node>
+		<node type="event_simple" id="13" tag="got at area" optional_tasks="True">
+			<instruction>Seek out a group of travelling Acolytes of the Watcher on their way to the capital</instruction>
+			<journal_entry>Finally, you located the travelling Acolytes.  However, it seemed someone or something had located them first, and now they travelled far beyond your reach...</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="9" value="1" tag="A Go To Area Task" area_id="63" />
+				<task type="go_to_area" id="10" value="1" tag="A Go To Area Task" area_id="64" />
+				<task type="go_to_area" id="11" value="1" tag="A Go To Area Task" area_id="65" />
+				<task type="go_to_area" id="12" value="1" tag="A Go To Area Task" area_id="66" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="5" tag="An Add Quest Area to World-Map Action" area_id="63" />
+				<action type="show_quest_area" id="6" tag="An Add Quest Area to World-Map Action" area_id="64" />
+				<action type="show_quest_area" id="7" tag="An Add Quest Area to World-Map Action" area_id="65" />
+				<action type="show_quest_area" id="8" tag="An Add Quest Area to World-Map Action" area_id="66" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="10" from="0" to="12" value="1" />
+		<edge id="6" from="7" to="9" value="1" />
+		<edge id="7" from="8" to="11" value="0" />
+		<edge id="12" from="11" to="13" value="0" />
+		<edge id="9" from="9" to="6" value="0" />
+		<edge id="11" from="12" to="8" value="0" />
+		<edge id="13" from="13" to="7" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="95" y="429" />
+		<node_location id="7" x="657" y="415" />
+		<node_location id="9" x="785" y="413" />
+		<node_location id="6" x="924" y="414" />
+		<node_location id="8" x="256" y="423" />
+		<node_location id="12" x="173" y="377" />
+		<node_location id="11" x="371" y="424" />
+		<node_location id="13" x="497" y="415" />
+	</node_locations>
+</quest>

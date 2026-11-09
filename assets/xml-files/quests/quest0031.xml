@@ -1,0 +1,127 @@
+<quest quest_id="31" category="side_quest" tag="Children of Eanna" published="False" valid="False">
+	<title>Children of Eanna</title>
+	<description>Entering the area around the mouth of the river, you discover the shambling and ever hungering forms of the undead. But there is something different about these walking corpses, and it has nothing to do with the heavy feeling of sadness that blankets the area like a mournful shroud.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="in_area" id="1" value="1" tag="Mouth of Eanna" area_id="84" />
+			</conditions>
+		</node>
+		<node type="event_simple_conditional" id="1" tag="Kill a skellie or a zombie at the mouth of the river" optional_tasks="True">
+			<instruction>Battle undead to learn what is unusual about them (beyond their shambling state of perpetually rotten life after death that is...)</instruction>
+			<journal_entry>Clutched in the putrid and decaying fingers of the undead corpse before you is a small, dusty vessel. There is something very strange about it however, as if all the sadness and grief permeating the area is emanating from it. Surely somebody can tell you more about this.</journal_entry>
+			<conditions>
+				<condition type="in_area" id="0" value="1" tag="Mouth of Eanna" area_id="84" />
+			</conditions>
+			<tasks>
+				<task type="kill_object" id="0" value="1" tag="Skeletons" resource_name="r_Skeletons" quantity="1" />
+				<task type="kill_object" id="1" value="1" tag="Zombies" resource_name="r_Zombies" quantity="1" />
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="0" tag="Ancient Vase" item_id="-1" />
+			</actions>
+		</node>
+		<node type="event_simple" id="3" tag="Talk to Acolyte" optional_tasks="True">
+			<instruction>Seek out an Acolyte of the Watcher.</instruction>
+			<journal_entry>&quot;Well now here&apos;s a thing and no mistake!&quot; The Acolyte, almost reverently, examined the dusty old amphora with furrowed brow and pursed lips. &quot;The markings indicate a pre-mercian period of origin, possibly...in fact, I&apos;m sure of it, Chal&apos;dean! I should very much like to know it&apos;s story!&quot;</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="2" value="1" tag="Acolyte Q11" vendor_id="q11_idawoll_acolyte" />
+				<task type="interact_with_vendor" id="3" value="1" tag="Acolyte P09" vendor_id="p09_gulgrumir_acolyte" />
+				<task type="interact_with_vendor" id="4" value="1" tag="Acolyte P10" vendor_id="p10_cor_ymirhal_acolyte" />
+				<task type="interact_with_vendor" id="5" value="1" tag="Acolyte P11" vendor_id="p11_maghnir_acolyte" />
+				<task type="interact_with_vendor" id="6" value="1" tag="Acolyte U19" vendor_id="u19_sandbrook_acolyte" />
+				<task type="interact_with_vendor" id="7" value="1" tag="Acolyte T18" vendor_id="t18_monkfield_acolyte" />
+				<task type="interact_with_vendor" id="8" value="1" tag="Acolyte V18" vendor_id="v18_heart_of_eanna_acolyte" />
+				<task type="interact_with_vendor" id="9" value="1" tag="Acolyte U18" vendor_id="u18_sanguine_acolyte" />
+				<task type="interact_with_vendor" id="10" value="1" tag="Acolyte L14" vendor_id="l14_whiteclaw_acolyte" />
+				<task type="interact_with_vendor" id="11" value="1" tag="Acolyte K14" vendor_id="k14_amurran_acolyte" />
+				<task type="interact_with_vendor" id="12" value="1" tag="Acolyte J15" vendor_id="j15_urranyr_acolyte" />
+				<task type="interact_with_vendor" id="13" value="1" tag="Acolyte K13" vendor_id="k13_lyran_acolyte" />
+				<task type="interact_with_vendor" id="14" value="1" tag="Acolyte U14" vendor_id="u14_firun_acolyte" />
+				<task type="interact_with_vendor" id="15" value="1" tag="Acolyte T13" vendor_id="t13_okrim_acolyte" />
+				<task type="interact_with_vendor" id="16" value="1" tag="Acolyte V13" vendor_id="v13_nerzok_acolyte" />
+				<task type="interact_with_vendor" id="17" value="1" tag="Acolyte U13" vendor_id="u13_flaming_skull_acolyte" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="">
+			<journal_entry>&quot;Now, you may not be aware of this but Wordstones, ancient monoliths that you can find surprisingly well hidden around the land, are able to store and release knowledge and lore from past ages. I am curious as to what might happen should you try to activate one using this litte curio.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="5" tag="Interact with Wordstone">
+			<instruction>Find a Wordstone and attempt to interact with it.</instruction>
+			<journal_entry>Even as you approached the towering monolith, you felt this was going to work.  The ancient vase veritably hummed with tiny vibrations that grew more pronounced the closer you came to the wordstone.  The wordstone seemed to resonate in kind to the tiny and ancient curio clutched in your hand.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="20" value="1" tag="Wordstone" resource_name="r_qt wordstone" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>Suddenly your hand that held the vase went numb as a strange sort of energy travelled up your arm and into your skull! Raw knowledge and memory flooded your consciousness as you bore witness to a chunk of history that came to life behind your eyes.</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>There was a note of despair and overwhelming sadness blanketing the scenes of war and devestation that streamed before your eyes. These feelings, however, were not born of you or the images before you, but rather of something vast that you could almost feel watching over your shoulder.</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>You saw the ancient empire of Chal&apos;dea, nurtured by Eanna, it&apos;s patron and goddess of the river that flowed so close to you, grow from a stuggling band of nomads into a flourishing civilization that held no equal. You watched it&apos;s empires spread across the lands and conquer even the hardy Vargashi in it&apos;s time. You watched as Melek, envious and insane, twisted the slumbering dreams of Kyriakos, Eanna&apos;s most beloved son, and pushed him to a murderous madness that he wrought upon his own mother. And you watched, as the banks of the river Eanna, convulsing in the Goddess&apos;s agony, overflowed and crashed down upon the ancient cradle of the Chal&apos;dean empire, even as the hosts of Alfari marauders ran amok through the streets.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>And finally, one final sequence played out, almost as an afterthougt. A small band of desperate survivors fled the devestation carrying and guarding a small amphora. An amphora that seemed to hold the very essence of grief and hope, mixed and merged inside the humble receptacle.</journal_entry>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<journal_entry>Then, as the images faded and your eyes began to adjust to the relative normality of vision, a voice whispered out from the amphora you held in your hands. Anguished and bitter it spoke. &quot;Such is the sorrowful truth of my legacy mortal, but the story is not complete. Nor indeed, has it concluded. Allow my one boon and I shall complete the tale for you, and lo, even grant you a lead in this twisted drama.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="Slay Severii">
+			<instruction>Locate and slay Severii in the southern parts of Agon if you want to hear the final chapter of Eanna&apos;s tale.</instruction>
+			<journal_entry>As the last of the armored undead crumpled into a dusty heap at your feet, the now familiar voice of your dark passenger once more issued forth from the ancient amphora. &quot;It is done, my children, gathered and raised by my grieving son to atone for his percieved crime against me, finally rest as they should. Perhaps one day so shall he.  However, I promised you an ending mortal, and a part in this twisted comedy of betrayal.&quot;</journal_entry>
+			<tasks>
+				<task type="kill_object" id="18" value="1" tag="Severii" resource_name="r_Severiis" quantity="15">
+					<task_instruction>Kill 15 $[Resource.S.r_severii_NameSingular] .</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>&quot;There are children of mine that toil, endlessly and with no rest from the agony of life, to exact vengeance for a crime far too distant. I beseech you mortal, find my severed children, shuffle of their immortal coils and let them finally find peace.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>&quot;One final task would I ask of you and all shall be revealed. Carry me to Khasdim, pour me into that dark crater and you shall know the end, and the beginning...&quot; The voice faded into nothingness.</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="Go to Khasdim">
+			<instruction>Carry the Amphora to Khasdim and &quot;pour&quot; it&apos;s contents into the crater.</instruction>
+			<journal_entry>Even as your feet touched the blasted and cracked soil of the crater, something seemed different. You could not immediately locate the source of change until you looked into the old amphora you carried and noticed that it seemed to slowly be filling with a dark liquid! The fluid seemed to ignore the physical cracks of the amphora but somehow stayed confined within. At the same time, it almost felt like there was a very physical sense of longing emenating from it&apos;s watery depths.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="19" value="1" tag="Go to Khasdim quest area" area_id="0" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>The feeling was so palpable, so overpowering, that you found yourself tipping the amphora with hardly a thought of your own powering the action.  You watched, mesmerized, as the dark liquid tumbled out of the ancient and broken vessel and into the ground below.  Immediately there was an overwhelming sense of relief and culmination bursting forth from the ground beneath your feet!</journal_entry>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>&quot;Ahhh mortal! You cannot know the ecstacy of this freedom you have finally granted me! It was here that my children were to bring my essence, the tears of my river, the seeds of my spring, that I may grow again and flourish! Here, in the hidden bastion of Khasdim beneath these cracked and dry lands, will Chal&apos;dea be reborn.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>&quot;But you should go now mortal, the skies above are not a safe place for you right now. One more of my children, whose egg was placed in this crater eons ago to safeguard my future, will only percieve you as an interloper in his lands and, as you have garnered my favor, I would not wish you to become a morsel of his. Go now, and you have my thanks, remember me when you hear the whispers of Chal&apos;dea growing again beneath the surface of the world. You have my thanks mortal, and my rewards if it please you...</journal_entry>
+		</node>
+		<node type="end_node" id="18" tag="">
+			<actions>
+				<action type="give_item_to_player" id="1" tag="Ideally a nice crafting pattern unlocked" resource_name="" quantity="0" inventory_type="None" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="3" value="1" />
+		<edge id="2" from="3" to="4" value="1" />
+		<edge id="3" from="4" to="5" value="0" />
+		<edge id="4" from="5" to="6" value="1" />
+		<edge id="5" from="6" to="7" value="0" />
+		<edge id="6" from="7" to="8" value="0" />
+		<edge id="7" from="8" to="9" value="0" />
+		<edge id="8" from="9" to="10" value="0" />
+		<edge id="9" from="10" to="12" value="0" />
+		<edge id="10" from="12" to="11" value="0" />
+		<edge id="11" from="11" to="13" value="1" />
+		<edge id="12" from="13" to="14" value="0" />
+		<edge id="13" from="14" to="15" value="1" />
+		<edge id="14" from="15" to="16" value="0" />
+		<edge id="15" from="16" to="17" value="0" />
+		<edge id="16" from="17" to="18" value="0" />
+	</edges>
+</quest>

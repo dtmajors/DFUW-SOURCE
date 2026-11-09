@@ -1,0 +1,195 @@
+<quest quest_id="12" category="training_quest" tag="Silver Lining" published="False" valid="True">
+	<title>Silver Lining</title>
+	<description>Learn more about how $[Skill.S.s_salvaging_NameSingular] and the  $[Resource.S.r_ship_sea_scraper_NamePlural] work</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="10" value="1" tag="A Quest Completion Condition" quest_id="13" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="">
+			<actions>
+				<action type="give_item_to_player" id="4" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Telescope" quantity="1" inventory_type="Bank" />
+			</actions>
+		</node>
+		<node type="event_simple" id="2" tag="talk to merchant" optional_tasks="True">
+			<instruction>Talk to any merchant in a safe city</instruction>
+			<journal_entry>Buying and selling is an art in itself - nothing should go to waste. It might surprise you, but every broken piece of weapon or armor, tattered robe or rusty armor still has value. They can be salvaged at a $[Resource.W.r_workbench_NameSingular] or a $[Resource.A.r_anvil_NameSingular] using your  $[Skill.S.s_salvaging_NameSingular] skill. Once salvaged, each item is broken down to some of its original materials which can then be sold back or gathered to craft brand new items. Items will naturally deteriorate the more they are being used and will eventually end up as $[Resource.S.r_salvagables_NameSingular]. Monsters in the safe zones might carry something worth salvaging, but it is the ocean bottoms that are really filled with $[Resource.S.r_salvagables_NameSingular]. The only catch is that you need a $[Resource.F.r_figurine_ship_sea_scraper_NameSingular] to make some real profit out of $[Skill.S.s_salvaging_NameSingular]. For starters, try getting some salvage off a monster.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_merchant" />
+				<task type="interact_with_vendor" id="1" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_merchant" />
+				<task type="interact_with_vendor" id="2" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_merchant" />
+				<task type="interact_with_vendor" id="3" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_merchant" />
+				<task type="interact_with_vendor" id="4" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_merchant" />
+				<task type="interact_with_vendor" id="5" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_merchant" />
+				<task type="interact_with_vendor" id="6" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_merchant" />
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_merchant" />
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_merchant" />
+				<task type="interact_with_vendor" id="9" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_merchant" />
+				<task type="interact_with_vendor" id="10" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_merchant" />
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_merchant" />
+				<task type="interact_with_vendor" id="12" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_merchant" />
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_merchant" />
+				<task type="interact_with_vendor" id="14" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_merchant" />
+				<task type="interact_with_vendor" id="15" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_merchant" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="" optional_tasks="False">
+			<instruction>Gather some of the materials for a $[Resource.S.r_ship_sea_scraper_NameSingular]</instruction>
+			<journal_entry>Now that you have the required materials, bring them to a merchant and they will take care of the rest.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="18" value="1" tag="A Gather Item(s) Task" resource_name="r_Gold" quantity="5000" inventory_type="Backpack, Bank">
+					<task_instruction>Gather 5,000 $[Resource.G.r_gold_NameSingular] in your bank</task_instruction>
+				</task>
+				<task type="gather_items" id="19" value="1" tag="A Gather Item(s) Task" resource_name="r_new Module Ship" quantity="7" inventory_type="Backpack, Bank">
+					<task_instruction>Gather 15 $[Resource.M.r_module_ship_NamePlural] in your bank</task_instruction>
+				</task>
+				<task type="gather_items" id="20" value="1" tag="A Gather Item(s) Task" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack, Bank">
+					<task_instruction>Gather 1 $[Resource.S.r_ship_cannon_item_NameSingular] in your bank</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="loot some salvage">
+			<instruction>Gather some pieces of broken weapons from a gravestone.</instruction>
+			<journal_entry>Now that you&apos;ve acquired something worth salvaging, you should have a go at actually breaking it down for its materials at a $[Resource.W.r_workbench_NameSingular] or a $[Resource.A.r_anvil_NameSingular]. Don&apos;t forget that you will probably get only a few materials back without much value, but the higher the amount and quality of the materials that were put into crafting the original item, the higher the payout when salvaging the useless, broken variety.</journal_entry>
+			<tasks>
+				<task type="loot_object" id="16" value="1" tag="A Loot Object Task" resource_name="r_Grounded Monsters" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="5" tag="r_Salvagables or r_Salvage">
+			<instruction>Salvage some broken piece of armor or weapon</instruction>
+			<journal_entry>While searching for monsters that drop salvageable materials seems like it&apos;s not worth it, it is quite a different story when you are out in the sea at the helm of a $[Resource.S.r_ship_sea_scraper_NameSingular]. There are so many salvageable materials waiting to be brought onto the ship and then broken down for profit. For you, we&apos;ve got a special, one time offer with one of our shipbuilding partners. Gather nearly half of the materials required for a $[Resource.S.r_ship_sea_scraper_NameSingular] and we will fill in the rest. Don&apos;t worry though, it&apos;ll be just as watertight as the rest!</journal_entry>
+			<tasks>
+				<task type="use_skill_on" id="17" value="1" tag="A Use Skill On Object Task" resource_name="r_Salvage" skill_name="s_Salvaging" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="6" tag="">
+			<journal_entry>Thanks for the materials and your generous contribution. Here&apos;s your brand new $[Resource.S.r_ship_sea_scraper_NameSingular]. It should serve you well, at least for a while.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="0" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Gold" quantity="5000" inventory_type="Backpack" />
+				<action type="take_item_from_player" id="1" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_new Module Ship" quantity="7" inventory_type="Backpack" />
+				<action type="take_item_from_player" id="2" tag="A Take Item(s) from Player's Inventory Action" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Bank" />
+			</actions>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>There you go! Double-click it while pointing out towards the sea, hop in and start scraping! Watch out for pirates though!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="3" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Ship Sea Scraper" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="9" tag="" optional_tasks="False">
+			<instruction>Go scraping with your new $[Resource.S.r_ship_sea_scraper_NameSingular]</instruction>
+			<journal_entry>Well it seems like a profitable venture if everything goes right, doesn&apos;t it? Just in case, we placed a $[Resource.T.r_telescope_NameSingular] to your $[Resource.B.r_bank_NameSingular] - it&apos;ll help you see ships in the vicinity. Be very careful while you&apos;re scraping away - you will still have to empty whatever you scrape from your ship&apos;s $[Resource.S.r_ship_sea_scraper_shipbox_NameSingular] and carry it before you are able to salvage it properly.</journal_entry>
+			<tasks>
+				<task type="activate_item" id="38" value="1" tag="An Activate Item Task" resource_name="r_Figurine Ship Sea Scraper" consume="False">
+					<task_instruction>Deploy your $[Resource.S.r_ship_fishing_trawler_NameSingular]</task_instruction>
+				</task>
+				<task type="harvest_resource" id="39" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Salvage" quantity="48">
+					<task_instruction>Harvest four dozen pieces of $[Resource.S.r_salvagables_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="20" tag="talk to merchant" optional_tasks="True" fail_fast="False">
+			<instruction>Bring the materials to a merchant</instruction>
+			<conditions>
+				<condition type="item_possession" id="7" value="2" tag="An Item Possession Condition" resource_name="r_Gold" quantity="5000" inventory_type="Backpack" />
+				<condition type="item_possession" id="8" value="2" tag="An Item Possession Condition" resource_name="r_new Module Ship" quantity="7" inventory_type="Backpack" />
+				<condition type="item_possession" id="9" value="2" tag="An Item Possession Condition" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_vendor" id="68" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_merchant" />
+				<task type="interact_with_vendor" id="69" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_merchant" />
+				<task type="interact_with_vendor" id="70" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_merchant" />
+				<task type="interact_with_vendor" id="71" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_merchant" />
+				<task type="interact_with_vendor" id="72" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_merchant" />
+				<task type="interact_with_vendor" id="73" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_merchant" />
+				<task type="interact_with_vendor" id="74" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_merchant" />
+				<task type="interact_with_vendor" id="75" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_merchant" />
+				<task type="interact_with_vendor" id="76" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_merchant" />
+				<task type="interact_with_vendor" id="77" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_merchant" />
+				<task type="interact_with_vendor" id="78" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_merchant" />
+				<task type="interact_with_vendor" id="79" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_merchant" />
+				<task type="interact_with_vendor" id="80" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_merchant" />
+				<task type="interact_with_vendor" id="81" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_merchant" />
+				<task type="interact_with_vendor" id="82" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_merchant" />
+				<task type="interact_with_vendor" id="83" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_merchant" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="18" tag="talk to merchant" optional_tasks="True" fail_fast="False">
+			<instruction>Bring the materials to a merchant</instruction>
+			<conditions>
+				<condition type="item_possession" id="4" value="2" tag="An Item Possession Condition" resource_name="r_Gold" quantity="5000" inventory_type="Backpack" />
+				<condition type="item_possession" id="5" value="2" tag="An Item Possession Condition" resource_name="r_new Module Ship" quantity="7" inventory_type="Backpack" />
+				<condition type="item_possession" id="6" value="2" tag="An Item Possession Condition" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_vendor" id="49" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_merchant" />
+				<task type="interact_with_vendor" id="50" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_merchant" />
+				<task type="interact_with_vendor" id="51" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_merchant" />
+				<task type="interact_with_vendor" id="52" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_merchant" />
+				<task type="interact_with_vendor" id="53" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_merchant" />
+				<task type="interact_with_vendor" id="54" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_merchant" />
+				<task type="interact_with_vendor" id="55" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_merchant" />
+				<task type="interact_with_vendor" id="56" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_merchant" />
+				<task type="interact_with_vendor" id="57" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_merchant" />
+				<task type="interact_with_vendor" id="58" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_merchant" />
+				<task type="interact_with_vendor" id="59" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_merchant" />
+				<task type="interact_with_vendor" id="60" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_merchant" />
+				<task type="interact_with_vendor" id="61" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_merchant" />
+				<task type="interact_with_vendor" id="62" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_merchant" />
+				<task type="interact_with_vendor" id="63" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_merchant" />
+				<task type="interact_with_vendor" id="64" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_merchant" />
+			</tasks>
+		</node>
+		<node type="event_join" id="19" tag="" optional_tasks="False">
+			<instruction>You need to have the required materials in you backpack</instruction>
+			<tasks>
+				<task type="gather_items" id="65" value="1" tag="A Gather Item(s) Task" resource_name="r_Gold" quantity="5000" inventory_type="Backpack">
+					<task_instruction>Gather 5,000 $[Resource.G.r_gold_NameSingular] in your bank</task_instruction>
+				</task>
+				<task type="gather_items" id="66" value="1" tag="A Gather Item(s) Task" resource_name="r_new Module Ship" quantity="7" inventory_type="Backpack">
+					<task_instruction>Gather 15 $[Resource.M.r_module_ship_NamePlural] in your bank</task_instruction>
+				</task>
+				<task type="gather_items" id="67" value="1" tag="A Gather Item(s) Task" resource_name="r_Ship Cannon Item" quantity="1" inventory_type="Backpack">
+					<task_instruction>Gather 1 $[Resource.S.r_ship_cannon_item_NameSingular] in your bank</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="21" tag="give salvage to player">
+			<actions>
+				<action type="give_item_to_player" id="5" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sword_p01_r01 Broken" quantity="5" inventory_type="Backpack" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="1" from="2" to="4" value="1" />
+		<edge id="34" from="4" to="21" value="1" />
+		<edge id="3" from="5" to="3" value="1" />
+		<edge id="30" from="19" to="20" value="1" />
+		<edge id="33" from="6" to="8" value="0" />
+		<edge id="8" from="8" to="9" value="0" />
+		<edge id="10" from="9" to="1" value="1" />
+		<edge id="26" from="3" to="18" value="1" />
+		<edge id="29" from="18" to="19" value="2" />
+		<edge id="28" from="18" to="6" value="1" />
+		<edge id="31" from="20" to="6" value="1" />
+		<edge id="32" from="20" to="19" value="2" />
+		<edge id="35" from="21" to="5" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="41" y="199" />
+		<node_location id="1" x="959" y="228" />
+		<node_location id="2" x="112" y="219" />
+		<node_location id="3" x="377" y="187" />
+		<node_location id="4" x="182" y="160" />
+		<node_location id="5" x="298" y="216" />
+		<node_location id="6" x="639" y="224" />
+		<node_location id="8" x="774" y="228" />
+		<node_location id="9" x="872" y="231" />
+		<node_location id="20" x="633" y="117" />
+		<node_location id="18" x="522" y="218" />
+		<node_location id="19" x="527" y="116" />
+		<node_location id="21" x="274" y="124" />
+	</node_locations>
+</quest>

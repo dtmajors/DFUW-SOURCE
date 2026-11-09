@@ -1,0 +1,100 @@
+<Event  version_major = "1" version_minor = "0">	
+	
+	<!-- Step description is translatable and could be even empty here and set in Translator tool afterwards -->
+	<Step Type = "MONSTER" Index = "0" StepDescription = "Slay the Strangely Surging monsters to draw out their Alpha!">
+		<!-- Player must kill the following monsters to progress the event. You can use also monster families here -->
+		<Monsters>			
+			<Monster Value = "r_kobold raider"/>
+			<Monster Value = "r_kobold shaman"/>
+			<Monster Value = "r_sadayel guardian"/>
+			<Monster Value = "r_sadayel shaman"/>
+			<Monster Value = "r_sarnakh"/>
+			<Monster Value = "r_kobold strongman"/>
+			<Monster Value = "r_sadayel chief"/>			
+		</Monsters>						
+		
+		<!-- Whenever a monster from the above lists dies its loot gets additionally the following items -->
+		<Loot>
+			<SFItem ResourceName = "r_medium presents1 Key" Probability = "0.06"  Quantity    = "1" />
+		</Loot>
+		
+		<!-- Step progression gui window message on mouse over on the window progress bar. No parameters here except the Counter/Limit -->
+		<ProgressMessage Value = "Monsters Slain $(Counter)/$(Limit)"/>
+		
+		<!-- How many monsters from the specified group must die in order for the event to be completed -->
+		<Limit debug_value = "3" live_value = "500"/>		
+		
+		<!--
+		No rewards for this step
+		<Rewards>
+		</Rewards>
+		-->
+	</Step>
+	
+	<!-- Step description is translatable and could be even empty here and set in Translator tool afterwards -->
+	<Step Type = "BOSSKILL" Index = "1" StepDescription = "Slay the Strangely Surging Alpha to unlock the Ethereal Caches!">
+		
+		<!-- You can create a preset in the file xml-files\gamelogicinfo\spawnpresets.xml using the Value as a Spawn preset name -->
+		<BossPreset Value = "event_reptilians">
+			
+			<!-- Boost the boss with the following multipliers (Health = Health * HealthBoost)-->
+			<!-- IMPORTANT!!!: Protections are Attribute too, so if you want prot= x1 and Attributes= x4, you have to put ProtectionsBoost =x0.25-->
+			<Boosts Negative = "false">
+				<HealthBoost      Value = "7.796257796"/>
+				<ProtectionsBoost Value = "0.5"/>
+				<AttributesBoost  Value = "2.0"/>
+			</Boosts>
+			
+			<!-- Marker icon which will be used to show the boss position on the map -->
+			<MarkerIcon Value = "marker_event_monster_kill_medium.png"/>
+			
+			<!-- A bunch of translated notification messages for the boss -->
+			<NotificationMessages>
+				<SpawningMessage    Value = "Who dares disrupt my experimentations! This will not be tolerated! Come then, face The $(Resource.NameSingular) in $(Tile)!"/>
+				<BossWarningMessage Value = "Doom has arrived! The $(Resource.NameSingular), enraged at the squishing of it's minions, challenges all who dare face his wrath!"/>			
+				<BossDiedMessage    Value = "The $(Resource.NameSingular) has fallen in $(Tile)! Long live...well not the $(Resource.NameSingular)! "/>
+			</NotificationMessages>
+		</BossPreset>
+		
+		<!-- Selects randomly one of the following spawnpoints to spawn the boss -->
+		<Spawnpoints>
+			<Spawnpoint Value = "i14_spawns_03"/>
+			<Spawnpoint Value = "i26_spawns_01"/>
+			<Spawnpoint Value = "j25_spawns_01"/>
+			<Spawnpoint Value = "l17_spawns_05"/>			
+			<Spawnpoint Value = "m21_spawns_03"/>
+			<Spawnpoint Value = "p17_spawns_01"/>
+			<Spawnpoint Value = "p24_spawns_03"/>
+			<Spawnpoint Value = "q17_spawns_03"/>
+			<Spawnpoint Value = "r12_spawns_04"/>
+			<Spawnpoint Value = "s20_spawns_02"/>
+			<Spawnpoint Value = "u11_spawns_04"/>
+			<!--<Spawnpoint Value = "t18_spawns_03"/>-->
+		</Spawnpoints>					
+		
+		<!-- Step progression gui window message on mouse over on the window progress bar -->
+		<ProgressMessage Value = "Alpha Grimdrake killed $(Counter)/$(Limit)"/>
+
+		<!-- How many times the boss has to die in order for the event to be completed -->
+		<Limit debug_value = "1" live_value = "1"/>
+		
+		<!-- 
+			After every step completion we can specify a reward. Right now we have only area rewards which means that there are going to spawn in a specific area.
+			The area in this step type is the the spawnpoint where the boss was spawned and died.	
+		-->
+		<Rewards Type = "AREA_OF_EVENT">
+			<!-- Only spawnable reward type for now -->
+			<Reward Type = "SPAWNABLE">
+				<!-- Translatabled message when the rewards will be distributed in the area -->
+				<Message  Value = "Bring your $(Resource.NamePlural) to solidify the mysterious Ethereal Caches!"/>
+				<!-- The resource type of the rewards to spawn -->
+				<Resource Value = "r_medium presents1"/> 
+				<!-- If the reward is a chest, set here which type of key a player needs to open it and how many of them -->
+				<Keys     Quantity = "1"        KeyResourceName = "r_medium presents1 Key"/>
+				<!-- How many rewards will be spawned/distributed -->
+				<Quantity debug_value = "30" live_value      = "8"/>
+			</Reward>
+		</Rewards>
+	</Step>
+		
+</Event>	

@@ -1,0 +1,73 @@
+<SFShader>
+	<Version_Info Minor="2" Major="0"/>
+	<Description>
+		<SFString Value="SunShader"/>
+	</Description>
+	<Shader>
+		<RenderEffect>
+			<SFString Value="PlanetSunShader3.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="FALSE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="FALSE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="0"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="0"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqTexture>
+				<SFBool Value="TRUE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+		<TextureReqs>
+			<NumberOfTextures>
+				<SFInteger Value="2"/>
+			</NumberOfTextures>
+			<Texture0>
+				<SFString Value="SF_DEFAULT"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture0>
+			<Texture1>
+				<SFString Value="sun_glare_01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture1>
+			<Texture2>
+				<SFString Value="sun2.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture2>
+		</TextureReqs>
+		<MeshReqs>
+			<NumberOfMeshes>
+				<SFInteger Value="0"/>
+			</NumberOfMeshes>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+		<ShaderPool>
+			<SFString Value="SF_OUTDOOR_POOL"/>
+			<SFInteger Value="1"/>
+		</ShaderPool>
+	</Shader>
+</SFShader>

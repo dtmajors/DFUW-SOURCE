@@ -1,0 +1,250 @@
+<quest quest_id="9994" category="test_quest" tag="Epic Test Quest" published="False" valid="True">
+	<title>A sort-of epic test quest</title>
+	<description>A test quest that includes several different aspects, lots of various rewards, two choice points (one for rewards and one for fun), optional (one-of) tasks, collections of required (all-of) tasks, and lots of other fun stuff to ensure that the GUI can cope</description>
+	<nodes>
+		<node type="start_node" id="0" tag="Auto-Available in Debug">
+			<conditions>
+				<condition type="build_mode" id="0" value="1" tag="Debug for Test Quests" build_mode="Debug" />
+			</conditions>
+		</node>
+		<node type="event_merge" id="1" tag="Equip 10,000 gold">
+			<instruction>Use your fancy GM commands to add 10,000 gold to your player&apos;s back-pack... in chunks, if you want to see the counter working!</instruction>
+			<journal_entry>Using the mystical powers of the mysterious console, you uttered (typed) the magical words &quot;gm_equip r_gold:10000&quot; and 10,000 gold miraculously appeared in your back-pack and your quest moved on to the next step</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0001.ogg" />
+			<tasks>
+				<task type="gather_items" id="0" value="1" tag="Obtain 10,000 Gold" resource_name="r_Gold" quantity="10000" inventory_type="Backpack">
+					<task_instruction>Acumulate 10,000 gold (hint: gm_equip might help)</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_branch" id="2" tag="Choose a path" optional_tasks="True">
+			<instruction>Choose your path through the quest called test...</instruction>
+			<tasks>
+				<task type="choose" id="1" value="1" tag="Choose Path 1" reward_node_id="-1">
+					<task_instruction>Select path 1, for lots of harvesting fun</task_instruction>
+				</task>
+				<task type="choose" id="2" value="2" tag="Choose Path 2" reward_node_id="-1">
+					<task_instruction>Path 2 will make you craft, I hope there&apos;s a crafting station nearby</task_instruction>
+				</task>
+				<task type="choose" id="3" value="3" tag="Choose Path 3" reward_node_id="-1">
+					<task_instruction>Path 3 is just about equiping stuff, or is it...</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="19" tag="Show Map Marker" world_x="0" world_z="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="3" tag="Harvest Some Stuff" optional_tasks="True">
+			<instruction>You must harvest something, either timber, cotton or stone, but the inferior stuff will not count...</instruction>
+			<journal_entry>You used your tools to harvest some stuff (no idea what, since the quest didn&apos;t branch), but I&apos;m sure it was good, and it allows you to move on to the next tasking, complicated, mind-bending task...</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0003.ogg" />
+			<tasks>
+				<task type="harvest_resource" id="4" value="1" tag="Harvest Timber" resource_name="r_new timber" quantity="3">
+					<task_instruction>Harvest timber, from a tree, and not the inferior crap</task_instruction>
+				</task>
+				<task type="harvest_resource" id="5" value="1" tag="Harvest Cotton" resource_name="r_New Cotton" quantity="3">
+					<task_instruction>Harvest cotton, from a bush, the inferior crap doesn&apos;t count here either</task_instruction>
+				</task>
+				<task type="harvest_resource" id="6" value="1" tag="Harvest Stone" resource_name="r_Stone" quantity="3">
+					<task_instruction>Harvest stone, from a stone, I don&apos;t think there is inferior stone</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="20" tag="Show Quest Area" area_id="1" />
+			</actions>
+		</node>
+		<node type="event_simple" id="4" tag="Craft All Stuff" optional_tasks="False">
+			<instruction>You chose to craft, now you must live with your choice, you must craft all 3 of the crappy items listed below...</instruction>
+			<journal_entry>You managed to find a appropriate crafting station, and equipped all the required materials (and watched the mind-numbing bar fill up several times), you have your weapons now you can progress to the next task in this gauntlet of danger and intrigue that is the epic quest called test...</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0004.ogg" />
+			<tasks>
+				<task type="craft_item" id="7" value="1" tag="Craft Sword" resource_name="r_Sword_p03_r01" quantity="1">
+					<task_instruction>Craft a crude barbaric sword</task_instruction>
+				</task>
+				<task type="craft_item" id="8" value="1" tag="Craft Axe" resource_name="r_Axe_p03_r01" quantity="1">
+					<task_instruction>Craft a crude barbaric axe</task_instruction>
+				</task>
+				<task type="craft_item" id="9" value="1" tag="Craft Bow" resource_name="r_Bow_p03_r01" quantity="1">
+					<task_instruction>Craft a crude barbaric bow</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="17" tag="Unlock Test Quest Item" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_fork" id="5" tag="Equip All Stuff" optional_tasks="False">
+			<instruction>You must summon the ancient knowledge of &quot;gm_equip&quot; once more... well twice actually... as you must now add both of the items below to your back-pack (so we can test that multiple graph progression-points are supported by the GUI correctly)</instruction>
+			<journal_entry>Once again you defied all the perils and managed to solve all the clues, you now have everything you could ever need (a stupidly large ship, and a funny looking mask), you must now manage to juggle two progression points in the epic quest called test, to decide what you want to test next...</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0005.ogg" />
+			<tasks>
+				<task type="gather_items" id="10" value="1" tag="Equip Tasos Mask" resource_name="r_Mask Tassos" quantity="1" inventory_type="Backpack">
+					<task_instruction>Summon the console and type &apos;gm_equip r_mask tassos&apos;</task_instruction>
+				</task>
+				<task type="gather_items" id="11" value="2" tag="Equip Ship Figurine" resource_name="r_Figurine Ship Ship of the Line" quantity="1" inventory_type="Backpack">
+					<task_instruction>Console again, but this time &apos;gm_equip r_Figurine ship ship of the line&apos; (because one &apos;ship&apos; won&apos;t do!)</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="Rest">
+			<instruction>Rest your weary bones (press h)... completing this task will end the quest...</instruction>
+			<journal_entry>After your struggle through the epic mind-bending quest, you can put on your Tasos mask and rest now, and use your rewards to dye your armour black...</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0006.ogg" />
+			<tasks>
+				<task type="use_skill" id="14" value="1" tag="Rest" skill_name="s_Rest">
+					<task_instruction>Press &apos;H&apos; (I think!) to sit on the ground</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="7" tag="Spawn the Ship">
+			<instruction>Now you have it, try to spawn that stupidly oversized ship (even if you fail, the quest should progress from here, since success is not a requirement of the activate item task!)</instruction>
+			<journal_entry>You managed to find a large enough body of water and spawnd your over-sized ship in it... or maybe you didn&apos;t, since the quest would have progressed anyway, but at least you managed to double-click an icon in your back-pack... that&apos;s something, I suppose...</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0007.ogg" />
+			<tasks>
+				<task type="activate_item" id="16" value="1" tag="Spawn The Ship" resource_name="r_Figurine Ship Ship of the Line" consume="False">
+					<task_instruction>Double-click the ship in your back-pack</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="Run!">
+			<instruction>Run!</instruction>
+			<journal_entry>You ran away from the dangerous, terrifying, life-threatening crafting station, with your crappy weapons secured in your back-pack, you will now receive your rewards of lots of heavy metal (or you would, if the give item action was implemented)</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0008.ogg" />
+			<tasks>
+				<task type="use_skill" id="13" value="1" tag="Run!" skill_name="s_Sprint">
+					<task_instruction>Run!... well, sprint actually</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="Jump Around">
+			<instruction>Jump!</instruction>
+			<journal_entry>Somehow (I&apos;ve no idea how) you figured out the cryptic puzzle and managed to press the space bar... now you will receive your amazing reward and be showered in gold (although not really, since the give item action is not yet implemented!)</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0009.ogg" />
+			<tasks>
+				<task type="use_skill" id="12" value="1" tag="Jump" skill_name="s_Jump">
+					<task_instruction>Jump (hint: press space)</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="10" tag="Give Gold Reward" reward_type="RewardsVisible">
+			<journal_entry>You ended your epic struggle with some gold!</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0010.ogg" />
+			<actions>
+				<action type="give_item_to_player" id="0" tag="Receive 100,000 Gold" resource_name="r_Gold" quantity="100000" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="end_node" id="11" tag="Give Ingots Reward" reward_type="RewardsVisible">
+			<journal_entry>You worked your ass off, and you succeeded... all the Ingots are yours, you lucky tester!</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0011.ogg" />
+			<actions>
+				<action type="give_item_to_player" id="1" tag="Receive 100 Selentine Ingots" resource_name="r_new Selentine Ingot" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="2" tag="Receive 100 Neithal Ingots" resource_name="r_new Neithal Ingot" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="3" tag="Receive 100 Veilron Ingots" resource_name="r_new Veilron Ingot" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="4" tag="Receive 100 Leenspar Ingots" resource_name="r_new Leenspar Ingot" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="5" tag="Receive 100 Theyril Ingots" resource_name="r_new Theyril Ingot" quantity="100" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="end_node" id="12" tag="Give Dyes Reward" reward_type="RewardsVisible">
+			<journal_entry>After all the struggle and strife, you received (well didn&apos;t, but anyway...) your black dyes!</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0012.ogg" />
+			<actions>
+				<action type="give_item_to_player" id="6" tag="Receive Black Dyes" resource_name="r_Dye_30" quantity="100" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="13" tag="Despawn the Ship">
+			<instruction>Now your ship is spawned (or isn&apos;t, I have no idea!), you must de-spawn it... actually you can de-spawn anything here, as resource type is not part of the use skill task... so just use the unspawn skill (one day we&apos;ll figure out how to be consistent with naming), and we can move on...</instruction>
+			<journal_entry>You unspawned/de-spawned something (hopfully the ship, but maybe just a mount)... anyway, with all this skill and knowledge gained from all of these insanely epic tasks, you must now be ready to put that knowledge and experience to good use and select your rewards... cloth or wood, it&apos;s your choice...</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0013.ogg" />
+			<tasks>
+				<task type="use_skill" id="17" value="1" tag="Use Unspawn Skill" skill_name="s_Unspawn Object">
+					<task_instruction>De-spawn something, ideally the ship, but anything will do</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_branch" id="14" tag="Choose Rewards" optional_tasks="True">
+			<instruction>Pick one, they&apos;re both &quot;ok&quot; rewards... and it doesn&apos;t really matter, as you wont&apos; actually receive either, until I implement the give item action...</instruction>
+			<journal_entry>You overcame all adversities and made the epic choice... How you did it without cracking under the pressure is a mystery to me!</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0014.ogg" />
+			<tasks>
+				<task type="choose" id="18" value="1" tag="Choose Wood Rewards" reward_node_id="16">
+					<task_instruction>If you need wood, pick this option</task_instruction>
+				</task>
+				<task type="choose" id="19" value="2" tag="Choose Cloth Rewards" reward_node_id="17">
+					<task_instruction>For cloth, click here</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="16" tag="Give Wood Rewards" reward_type="RewardsHidden">
+			<journal_entry>All this for some wood!!!... oh well, better luck next time!</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0016.ogg" />
+			<actions>
+				<action type="give_item_to_player" id="7" tag="Receive 100 Selentine Wood" resource_name="r_new Selentine Wood" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="8" tag="Receive 100 Veilron Wood" resource_name="r_new Veilron Wood" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="9" tag="Receive 100 Neithal Wood" resource_name="r_new Neithal Wood" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="10" tag="Receive 100 Leenspar Wood" resource_name="r_new Leenspar Wood" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="11" tag="Receive 100 Theyril Wood" resource_name="r_new Theyril Wood" quantity="100" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="end_node" id="17" tag="Give Cloth Rewards" reward_type="RewardsHidden">
+			<journal_entry>After such an epic journey, you can now sell all this cloth to make some money, or just sit around wearing your Tasos mask!</journal_entry>
+			<voice_over language="English" file="audio\quests\en\9994_epictest\0017.ogg" />
+			<actions>
+				<action type="give_item_to_player" id="12" tag="Receive 100 Selentine Cloth" resource_name="r_new Selentine Cloth" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="13" tag="Receive 100 Veilron Cloth" resource_name="r_new Veilron Cloth" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="14" tag="Receive 100 Neithal Cloth" resource_name="r_new Neithal Cloth" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="15" tag="Receive 100 Leenspar Cloth" resource_name="r_new Leenspar Cloth" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="16" tag="Receive 100 Theyril Cloth" resource_name="r_new Theyril Cloth" quantity="100" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="start_node" id="18" tag="Trainer Start Node">
+			<conditions>
+				<condition type="build_mode" id="2" value="1" tag="Debug for Test Quests" build_mode="Debug" />
+				<condition type="tutorial_slide" id="1" value="1" tag="A Tutoral Slide Condition" slide_id="8" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+		<edge id="2" from="2" to="3" value="1" />
+		<edge id="3" from="2" to="4" value="2" />
+		<edge id="4" from="2" to="5" value="3" />
+		<edge id="5" from="3" to="9" value="1" />
+		<edge id="6" from="4" to="8" value="1" />
+		<edge id="7" from="5" to="6" value="1" />
+		<edge id="8" from="5" to="7" value="2" />
+		<edge id="9" from="9" to="10" value="1" />
+		<edge id="10" from="8" to="11" value="1" />
+		<edge id="11" from="6" to="12" value="1" />
+		<edge id="12" from="7" to="13" value="1" />
+		<edge id="13" from="13" to="14" value="1" />
+		<edge id="14" from="14" to="16" value="1" />
+		<edge id="15" from="14" to="17" value="2" />
+		<edge id="16" from="18" to="1" value="1" />
+	</edges>
+	<quest_item item_id="0" tag="A Test Quest Item" image_locked="quest_item_placeholder_locked.png" image_unlocked="quest_item_placeholder_unlocked.png">
+		<name_locked>Test Quest Item</name_locked>
+		<name_unlocked>Test Quest Item</name_unlocked>
+		<description_locked>A description of the locked quest item to test</description_locked>
+		<description_unlocked>A description of the unlocked quest item to test</description_unlocked>
+	</quest_item>
+	<node_locations>
+		<node_location id="0" x="71" y="156" />
+		<node_location id="1" x="198" y="156" />
+		<node_location id="2" x="325" y="156" />
+		<node_location id="3" x="452" y="40" />
+		<node_location id="4" x="452" y="156" />
+		<node_location id="5" x="452" y="332" />
+		<node_location id="6" x="579" y="274" />
+		<node_location id="7" x="579" y="390" />
+		<node_location id="8" x="579" y="156" />
+		<node_location id="9" x="579" y="40" />
+		<node_location id="10" x="706" y="40" />
+		<node_location id="11" x="706" y="156" />
+		<node_location id="12" x="706" y="274" />
+		<node_location id="13" x="706" y="390" />
+		<node_location id="14" x="833" y="390" />
+		<node_location id="16" x="960" y="274" />
+		<node_location id="17" x="960" y="390" />
+		<node_location id="18" x="71" y="274" />
+	</node_locations>
+</quest>

@@ -1,0 +1,149 @@
+#include "stdstate.frag"
+#include "shaderconfig.frag"
+#include "stdio.frag"
+#include "fog.frag"
+#include "sampler.frag"
+#include "matrix.frag"
+#include "objectmatrix.frag"
+#include "planets.frag"
+#include "objectbounding.frag"
+#include "cloudground.frag"
+#include "spenebump.frag"
+#include "environment.frag"
+#include "stdio.frag"
+#include "atmosphere.frag"
+#include "time.frag"
+
+#include "alphaHDRL.frag"
+#include "HDRLUtils.frag"
+#include "texture.frag"
+
+#include "instancing.frag"
+#include "shadowmap.frag"
+
+#include "ssao.frag"
+#include "lighting.frag"
+
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_MATERIAL_COLOR;
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+	//Instancing data
+	float4 WMat1 : TEXCOORD4;
+	float4 WMat2 : TEXCOORD5;
+	float4 WMat3 : TEXCOORD6;
+	float4 WMat4 : TEXCOORD7;
+	float  PowerMaterial : TEXCOORD8;
+	float4 Ambient : COLOR1;
+	float4 Diffuse : COLOR2;
+};
+
+
+struct VS_OUTPUT
+{
+    float4  Pos     : POSITION;
+    float2  Tex0    : TEXCOORD0;
+	float 	Glow    : TEXCOORD1;
+    float   Fog	    : FOG;
+};
+
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+   VS_OUTPUT Out = (VS_OUTPUT)0;
+   
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+
+	float PowerMaterial = Input.PowerMaterial;
+
+
+	float4 WorldPos = mul(Input.Pos,WMat);
+
+	
+    Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX);             // position (projected)
+    
+    
+	float Time = abs(sin((TOTAL_TIME+Input.Pos.y + Input.Pos.x + Input.Pos.z)*1.31f));
+    Out.Glow = Time*Time*Time; 
+   
+ 
+    Out.Tex0.x  = Input.Tex.x + frac(TOTAL_TIME) + PowerMaterial;
+	Out.Tex0.y  = Input.Tex.y; 
+    Out.Fog = CalculateFog(Out.Pos.z);   
+    
+    return Out;
+
+}
+
+
+
+
+
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	float4 Color = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex0);
+
+	Color = BaseTex;
+	Color.a = BaseTex.a*Input.Glow;
+
+	Color.xyz = lerp(Color.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	Out.Color = Color;
+	//Out.Effect.x = Input.Glow;
+	//Out.Effect.y = Input.Glow;
+#ifdef SSAO_ENABLE
+	Out.Depth = 0.0f;
+#endif
+	
+	return Out;
+}
+
+
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+
+        AlphaTestEnable = FALSE;
+
+        AlphaBlendEnable = true;
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+        
+        ZEnable = TRUE;
+		ZWriteEnable = FALSE;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

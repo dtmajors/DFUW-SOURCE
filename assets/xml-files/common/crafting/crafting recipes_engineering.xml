@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Inherit Calcs done for
+1  125 * 1.5 = 190
+1  250 * 1.5 = 375 black powder
+25 125 * 1.5 = 190
+50 125 * 1.5 = 190
+75 125 * 1.5 = 190
+75 65 for figurine eruptor
+******
+with 13.8 advancement rate
+1  65 , 1
+25 60 , 5.3
+50 55 , 14.5
+75 50 , 36
+-->
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+
+	<SFRecipe ResourceName="r_Black Powder" Quantity="10" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10">
+		<SFIngredient ResourceName="r_Gold" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Fossil" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Sulfur" Quantity="10" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="1" InheritancePortion="0.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Grenade_01" Quantity="4" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Black Powder" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Grenade_02" Quantity="4" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Anima_q01" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Gold" Quantity="16" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Black Powder" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q02" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Siege Hammer" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="30" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="12" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Glyph_q02" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Glyph_q03" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Telescope" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new leather" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Quartz" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Eye_q03" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Grenade_03" Quantity="4" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="100" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Black Powder" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Anima_q03" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Figurine Eruptor" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="60" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="40" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="40" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_new leather" Quantity="20" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_New Selentine Ingot" Quantity="5" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_New Selentine Wood" Quantity="3" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_New Veilron Ingot" Quantity="2" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_New Veilron Wood" Quantity="1" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Flash Cotton" Quantity="2" FractionLoss="0.6"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="75" InheritancePortion="49.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Requisition Gauntlet_r01" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="20">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Selentine Ingot" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_New Selentine Cloth" Quantity="3" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Requisition Crystal_01" Quantity="3" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_Glyph_q01" Quantity="3" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="1" InheritancePortion="1.01" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Requisition Gauntlet_r02" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="20" CraftingSkillLevelMax="40">
+		<SFIngredient ResourceName="r_Gold" Quantity="89" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_New Veilron Ingot" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_New Veilron Cloth" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Requisition Crystal_02" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Glyph_q02" Quantity="3" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="20" InheritancePortion="4.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Requisition Gauntlet_r03" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="40" CraftingSkillLevelMax="60">
+		<SFIngredient ResourceName="r_Gold" Quantity="158" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_New Neithal Ingot" Quantity="2" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_New Neithal Cloth" Quantity="3" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Requisition Crystal_03" Quantity="3" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Glyph_q03" Quantity="3" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="40" InheritancePortion="11.5" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Requisition Gauntlet_r04" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="60" CraftingSkillLevelMax="80">
+		<SFIngredient ResourceName="r_Gold" Quantity="281" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_New Leenspar Ingot" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_New Leenspar Cloth" Quantity="3" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Requisition Crystal_04" Quantity="3" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Glyph_q04" Quantity="3" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="60" InheritancePortion="22.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Requisition Gauntlet_r05" Quantity="1" Difficulty="0.0" DurationMultiplier="1.4" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="80" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_New Theyril Ingot" Quantity="2" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_New Theyril Cloth" Quantity="3" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Requisition Crystal_05" Quantity="3" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Glyph_q05" Quantity="3" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="80" InheritancePortion="36.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Portal Rune" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Portal Shard" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering" SkillLevel="25" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!--  ENGINEERING MASTERY  -->
+
+	<SFRecipe ResourceName="r_improved Crackshot" Quantity="4" Difficulty="0.0" DurationMultiplier="0.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="60" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="100" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="5" FractionLoss="0.8"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="1" InheritancePortion="0.13" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Gear" Quantity="1" Difficulty="0.0" DurationMultiplier="0.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="10" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="7" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Selentine Ingot" Quantity="1" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Hoof Paste" Quantity="1" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="1" InheritancePortion="0.4" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Figurine Siege Ladder" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="150" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="50" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="150" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="10" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Selentine Wood" Quantity="2" FractionLoss="0.5"/>
+		<SFIngredient ResourceName="r_New Veilron Wood" Quantity="1" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Boomshot" Quantity="4" Difficulty="0.0" DurationMultiplier="0.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="60" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="150" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="5" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new cloth" Quantity="5" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Greek Fire" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="25" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_improved Wheel" Quantity="1" Difficulty="0.0" DurationMultiplier="0.7" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="120" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="45" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="15" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_New Selentine Wood" Quantity="1" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Hoof Paste" Quantity="5" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="25" InheritancePortion="2.27" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Figurine SiegeEngine Catapult" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="600" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="100" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="50" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="500" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_improved Wheel" Quantity="4" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_improved Gear" Quantity="10" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_New Veilron Wood" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_New Neithal Wood" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_New Veilron Ingot" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_New Neithal Ingot" Quantity="1" FractionLoss="0.3"/>
+		<SFIngredient ResourceName="r_Hellforge Iron" Quantity="1" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="50" InheritancePortion="16.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Nexus Entrance Item" Quantity="1" Difficulty="0.0" DurationMultiplier="5.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="5000" FractionLoss="1.0"/>
+		<!-- <SFIngredient ResourceName="r_New Leenspar Essence" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Theyril Essence" Quantity="1" FractionLoss="1.0"/> -->
+		<SFIngredient ResourceName="r_Stone" Quantity="750" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Quartz" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Portal Rune" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Runestone" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Teleportation Dust" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_sulfur" Quantity="200" FractionLoss="1.0"/>
+		
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="25" InheritancePortion="48.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Summon Shard" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="300" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Portal Shard" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="1" InheritancePortion="32.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_Runestone" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="500" FractionLoss="1.0"/>
+		<!-- <SFIngredient ResourceName="r_New Selentine Essence" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Veilron Essence" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_New Leenspar Essence" Quantity="1" FractionLoss="1.0"/> -->
+		<SFIngredient ResourceName="r_Shadowtaint_q04" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Portal Shard" Quantity="4" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="25" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<!-- airships -->
+	
+	<SFRecipe ResourceName="r_Figurine Airship Test" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Visible="DEBUG">
+		<SFIngredient ResourceName="r_Gold" Quantity="5000" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Stone" Quantity="100" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new wood" Quantity="1000" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="100" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new cotton" Quantity="500" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_anthracite coal" Quantity="100" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_new selentine ore" Quantity="75" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Engineering Mastery" SkillLevel="1" InheritancePortion="16.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+</XML>

@@ -1,0 +1,215 @@
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "lighting.frag"
+#include "stdio.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+#include "object.frag"
+
+texture Texture0 : REPTexture0 = NULL;
+texture Texture1 : REPTexture1 = NULL;
+texture Texture2 : REPTexture2 = NULL;
+
+sampler NormalSampler = sampler_state
+{
+	texture = (Texture1);
+	AddressU = Wrap;
+	AddressV = Wrap;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+sampler LavaTextureSampler = sampler_state
+{
+	texture = (Texture2);
+	AddressU = Wrap;
+	AddressV = Wrap;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+
+struct VS_OUTPUT
+{
+    float4	Pos				: POSITION;
+	float3	Normal			: NORMAL;
+    float2	Tex				: TEXCOORD0;
+	float4	BloodStream0	: TEXCOORD1;
+	float4	BloodStream1	: TEXCOORD2;
+	float3  WorldNormal     : TEXCOORD3;
+    float3	WorldPos   		: TEXCOORD4;
+	float4	BloodStream2	: TEXCOORD5;
+	float3	WorldEyeVec		: TEXCOORD6;
+	float3	Time_ZPos 		: TEXCOORD7;
+
+    float	Fog				: FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+   
+    Out.Pos  = mul(Input.Pos, WVP);             // position (projected)
+
+    float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+	
+	Out.Time_ZPos.x = TOTAL_TIME + 100 * GUIDRand;
+
+	float3 Dist = WorldPos - EYE_POS;
+	float len =  abs(length(Dist));
+	//now check this against farplane
+	len = 1.0f - saturate(len/FOG_END);
+	
+	Out.Tex = Input.Tex;
+
+	Out.WorldPos = WorldPos.xyz / WorldPos.w;
+	Out.WorldEyeVec = normalize(Out.WorldPos - EyePos);
+	Out.Time_ZPos.yz = Out.Pos.zw;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	Out.WorldNormal = Input.Norm;
+	
+	float3 variation = ObjectWorldPosition;
+	float3 variation2 = float3(variation.x * variation.y, variation.y * variation.z, variation.z * variation.x);
+	variation += variation2;
+	variation -= floor(variation);
+	variation2 -= floor(variation2);
+	variation *= 10.1;
+	variation2 *= 10.1;
+	
+	variation = variation2 = 0;
+	
+	Out.BloodStream0 = float4(0.7, 2, 6 + variation.z, 0);
+	Out.BloodStream1 = float4(0.7 + variation2.x, 1.93 + variation2.y, 6.11 + variation2.z, 0);
+	Out.BloodStream2 = float4(0.5, 1.31, 4.11, 0);
+
+    return Out;
+}
+
+static const float StreamMinimumWidth = 0.7;
+static const float StreamFuncMultiplier = 0.5 * (1.0 - StreamMinimumWidth);
+static const float ShrinkLayer0 = 0.2;
+static const float StreamLerpRange = 0.333;
+
+
+float mod(float f, float d)
+{
+	return f - floor(f / d) * d;
+}
+
+float PeriodicSinus(float x, int p) {
+	static const float Pi = 3.14159265;
+	x = mod(x, p * Pi);
+	if (x <= Pi) return sin(x);
+	return 0.0;
+}
+
+float StreamFunc(float t, float4 Params, float Time)
+{
+	float w0 = Params.x;
+	float w1 = 1.0 - w0;
+	float f0 = Params.y;
+	float f1 = Params.z;
+	
+	
+	float NormalizedFunc = w0 * PeriodicSinus(9 * t - f0 * Time, 8);
+	 NormalizedFunc += w1 * PeriodicSinus(12 * t - f1 *  Time, 5);
+	 
+	return lerp(NormalizedFunc, 1, min(1, t + 0.4));
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	
+	float Stream0A = StreamFuncMultiplier - 
+		StreamFuncMultiplier * StreamFunc(Input.Tex.y, Input.BloodStream0, Input.Time_ZPos.x) + ShrinkLayer0 * 0.5;
+	float Stream0B = StreamMinimumWidth + StreamFuncMultiplier +
+		StreamFuncMultiplier * StreamFunc(Input.Tex.y, Input.BloodStream1, Input.Time_ZPos.x) - ShrinkLayer0 * 0.5;
+		
+	float tmp = StreamFuncMultiplier * StreamFunc(Input.Tex.y * 0.5, Input.BloodStream2, Input.Time_ZPos.x);
+	float Stream1A = StreamFuncMultiplier - tmp;
+	float Stream1B = StreamMinimumWidth + StreamFuncMultiplier + tmp;
+	
+	// HACK - scale tc in range[0,1], cause world models have a different scale
+	//float new_x = (Input.Tex.x - 0.2) / 0.475;
+	float new_x = Input.Tex.x;
+	
+	float tc0 = (new_x - Stream0A) / (Stream0B - Stream0A);
+	tc0 = 1.0 - tc0;
+	float tc1 = (new_x - Stream1A) / (Stream1B - Stream1A);
+	
+	float4 Lava0 = tex2D(DEFAULT_SAMPLER_2, float2(tc0, Input.Tex.y - 0.45 * Input.Time_ZPos.x));
+	float4 Lava1 = tex2D(DEFAULT_SAMPLER_2, float2(tc1, Input.Tex.y - 0.2 * Input.Time_ZPos.x));
+	
+	
+	int transparent = 0;
+	if (tc0 < 0 || tc0 > 1 || Lava0.a < 0.1) transparent += 1;
+	if (tc1 < 0 || tc1 > 1 || Lava1.a < 0.1) transparent += 2;
+	if (transparent == 3) clip(-1);
+
+	float3 FinalColor = (Lava0.xyz * Lava0.a + Lava1.xyz * Lava1.a) / (Lava0.a + Lava1.a);
+	Out.Color.xyz = FinalColor;
+	Out.Color.a = (Lava0.a + Lava1.a) * 0.5;
+	
+	if (Out.Color.a < 0.25) clip(-1);
+
+#ifdef DEPTH_WRITE_ENABLE
+	Out.Depth.xyz = normalize(Input.WorldNormal);
+	Out.Depth.w = Input.Time_ZPos.y / Input.Time_ZPos.z;
+#endif	
+
+	Out.Color.a = 0.05;
+	
+#ifdef SHADER_PP_QUALITY
+	Out.Color.xyz *= 0.5;
+#endif
+
+	return Out;
+}
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+		SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

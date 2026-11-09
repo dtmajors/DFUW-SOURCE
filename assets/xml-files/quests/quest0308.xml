@@ -1,0 +1,131 @@
+<quest quest_id="308" category="lore_quest" tag="The Amethyst Athenium" published="False" valid="True">
+	<title>The Amethyst Athenaeum</title>
+	<description>There was no other viable option it seemed.  The ghoulish fetish carved from the flesh of slain acolytes and used in a, thus far, unknown ritual seemed to have been created by someone who was going well out of their way to deflect any investigations.  The mere fact that there existed not one, but two fairly convoluted misdirections spoke of a mind that thought ahead in a highly strategic fashion.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="307" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Mercia: A Royal Treatise">
+			<instruction>Search for clues within the Athenaeum</instruction>
+			<journal_entry>One book, &quot;Mercia: A Royal Treatise&quot;, seemed to have several pages that had nothing to do with the volume pushed in at random intervals.  The invading pages however seemed to be from a documentation called The History of the Watchers. That seemed fairly odd in itself.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="2" value="1" tag="An Interact With Object Task" resource_name="r_qt book mercia royal treatise" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="History of the Watchers">
+			<instruction>Search for clues within the Athenaeum</instruction>
+			<journal_entry>Here was a documentation on the History of the Watchers with several pages brutally ripped out!</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="1" value="1" tag="An Interact With Object Task" resource_name="r_qt book history watchers" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Maps of Agon">
+			<instruction>Search for clues within the Athenaeum</instruction>
+			<journal_entry>A cartographer&apos;s journal entitled &quot;Maps of Agon&quot; seemed to have a number of maps squashed back inside as if someone had tried to fold them back in a hurry! Closer inspection revealed a map of a particular little island you had so recently visited.  This could be no coincidence!</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="3" value="1" tag="An Interact With Object Task" resource_name="r_qt book agon cartographical study" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="Gods and Avatars Encyclopedia">
+			<instruction>Search for clues within the Athenaeum</instruction>
+			<journal_entry>A tome entitled &quot;Gods and Avatars&quot; seemed to be missing several volumes out of it&apos;s seven book series.  This was, perhaps, important.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="An Interact With Object Task" resource_name="r_qt book gods avatars" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="5" tag="The Librarian">
+			<journal_entry>You approached the Librarian and informed him of your quest as well as the clues you had now discovered. He seemed to listen with some measure of interest, but his ire was only truly sparked when you showed him the torn book and missing volumes.  He was aghast and declared, in his own words, &quot;this criminal, the most base creature lacking in any decorum and respect must be found at all costs!&quot;</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="4" value="1" tag="An Interact With Vendor Task" vendor_id="q09_quest_acolyte_librarian" />
+			</tasks>
+		</node>
+		<node type="end_node" id="6" tag="" />
+		<node type="event_branch" id="7" tag="search for clues" />
+		<node type="event_join" id="8" tag="">
+			<journal_entry>It seemed you had definitely uncovered a pattern here.  Someone had recently been here and researching something fairly suspicious.  Plus, with the missing tomes and ripped pages, you had a feeling that the overly bibliophilic Acolyte would surely want to help you.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>As an afterthought he also agreed that stopping whatever dark machinations this defiler of books was planning would probably also be good.</journal_entry>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<journal_entry>Together, you went over the clues again, trying to glean details and possible points of interest.  Behrem noted that the pages torn out of the History of Acolytes seemed to be jammed in between pages that spoke of the lineage of the kings of Mercia.  Too, he noticed that particular attention seemed to have been given to passages about the immortality of the Acolytes, a gift from the Watcher, and the creation of mortal vessels in the form of avatars for higher beings.</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<instruction>Locate the Amethyst Athenaeum within the Tovarr lands.</instruction>
+			<journal_entry>Upon entering the area around the Athenaeum, it seemed to me that a sense of foreboding seemed to fill you.  Was there perhaps a certain dismay clouding your features as you viewed the piles and rows of books around this place of knowledge? Or was it perhaps a look of awe when you realized how much lore might be held here, a part of the land that seemed to be packed to the brim with books and volumes on everything possible?</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="5" value="1" tag="A Go To Area Task" area_id="6" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="0" tag="An Add Quest Area to World-Map Action" area_id="6" />
+			</actions>
+		</node>
+		<node type="event_simple" id="12" tag="interact with Librarian">
+			<instruction>Search for clues within the Athenaeum</instruction>
+			<journal_entry>The keeper of the books, a perpetually distracted looking Acolyte who was known as Behrem the Aesthetic informed you that you were welcome to look around and use the tomes to help your investigation.  He simply asked that you respect the books and take care not to damage any of the precious volumes.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="q09_quest_acolyte_librarian" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>The Shaman bade you make haste to the Amethyst Athenaeum in hopes that you would find answers there.  As an afterthought, he also mentioned that, should you need to contact him from afar, you could find Orkish emissaries in every capital city.</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<journal_entry>Either way, it seemed you had your work cut out for you...</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="impossible conditions" optional_tasks="False">
+			<tasks>
+				<task type="go_to_area" id="6" value="1" tag="A Go To Area Task" area_id="3" />
+				<task type="go_to_area" id="7" value="1" tag="A Go To Area Task" area_id="17" />
+			</tasks>
+		</node>
+		<node type="end_node" id="16" tag="impossible end" />
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>And finally, $[Vendors.q09_quest_acolyte_librarian_Name] also mentioned that all the books of the Athenaeum were enchanted with tracking magics to prevent theft and loss.  After several long moments of what I felt was a particularly grim stare from your direction he exclaimed that perhaps that would be a great way  to find your culprit!</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="7" to="4" value="0" />
+		<edge id="1" from="7" to="2" value="0" />
+		<edge id="2" from="7" to="1" value="0" />
+		<edge id="3" from="7" to="3" value="0" />
+		<edge id="11" from="4" to="8" value="1" />
+		<edge id="13" from="2" to="8" value="1" />
+		<edge id="10" from="1" to="8" value="1" />
+		<edge id="12" from="3" to="8" value="1" />
+		<edge id="15" from="5" to="9" value="1" />
+		<edge id="21" from="0" to="13" value="1" />
+		<edge id="14" from="8" to="5" value="0" />
+		<edge id="16" from="9" to="10" value="0" />
+		<edge id="27" from="10" to="17" value="0" />
+		<edge id="23" from="11" to="14" value="1" />
+		<edge id="20" from="7" to="12" value="0" />
+		<edge id="22" from="13" to="11" value="0" />
+		<edge id="24" from="14" to="7" value="0" />
+		<edge id="25" from="12" to="15" value="1" />
+		<edge id="26" from="15" to="16" value="1" />
+		<edge id="28" from="17" to="6" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="30" y="392" />
+		<node_location id="1" x="411" y="243" />
+		<node_location id="2" x="412" y="533" />
+		<node_location id="3" x="407" y="429" />
+		<node_location id="4" x="405" y="338" />
+		<node_location id="5" x="705" y="397" />
+		<node_location id="6" x="984" y="401" />
+		<node_location id="7" x="251" y="391" />
+		<node_location id="8" x="604" y="398" />
+		<node_location id="9" x="790" y="398" />
+		<node_location id="10" x="878" y="397" />
+		<node_location id="11" x="147" y="390" />
+		<node_location id="12" x="250" y="583" />
+		<node_location id="13" x="91" y="341" />
+		<node_location id="14" x="203" y="341" />
+		<node_location id="15" x="250" y="713" />
+		<node_location id="16" x="361" y="712" />
+		<node_location id="17" x="931" y="337" />
+	</node_locations>
+</quest>

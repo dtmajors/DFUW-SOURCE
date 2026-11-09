@@ -1,0 +1,102 @@
+//After Combiner
+#include "stdstate.frag"
+
+
+texture PrevAfter : REPTexturePrevBlendTex;
+texture ThisAfter : REPTextureSceneColor;
+float FrameTime : REPFrameTime;
+
+
+sampler2D PrevAfterSampler =
+sampler_state
+{
+    Texture = <PrevAfter>;
+    AddressU = Clamp;
+    AddressV = Clamp;
+//#ifdef SET_SAMPLERSTATE
+    MinFilter = Point;
+    MagFilter = Point;
+//#endif	
+};
+
+sampler2D ThisAfterSampler =
+sampler_state
+{
+    Texture = <ThisAfter>;
+    AddressU = Clamp;
+    AddressV = Clamp;
+#ifdef SET_SAMPLERSTATE
+    MinFilter = Point;
+    MagFilter = Point;
+#endif
+};
+
+
+
+
+float4 AfterCombiner( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    //float4 PrevAfter = tex2D(PrevAfterSampler,Tex);
+    float4 ThisAfter = tex2D(ThisAfterSampler,Tex);
+	return ThisAfter;
+/*
+//    float4 NewAfter;
+//    NewAfter.xyz = ThisAfter.xyz;
+//    NewAfter.a = PrevAfter.a*0.6f + ThisAfter.a*0.45f - (1.0f/255.0f);
+//    float4 NewAfter = PrevAfter*0.4f + ThisAfter*0.6f - (1.0f/255.0f);
+	  
+    const float PixelDirt = (1.0f/255.0f);
+//    float Mult = PrevAfter.a*0.95f + ThisAfter.a*0.05f;
+//    float Mult = PrevAfter.a*(1.0f - FrameTime) + ThisAfter.a*(FrameTime);
+    float Mult = saturate(FrameTime);
+//      float Mult = 0.7f;
+//    Mult -= 0.01f;
+	  
+//    float4 NewAfter = PrevAfter*Mult + ThisAfter*(1.0f-Mult) - PixelDirt;
+    float4 NewAfter = ThisAfter; //PrevAfter*Mult + ThisAfter*(1.0f-Mult);
+//    float4 NewAfter = (PrevAfter - PixelDirt)*Mult + (ThisAfter)*(1.0f-Mult);
+
+    return NewAfter;
+//    return ThisAfter;
+    //return float4(NewAfter,NewAfter,NewAfter,1.0f);
+	*/
+}
+
+float4 AfterCombiner_1_1( in float2 Tex : TEXCOORD0 , in float2 Tex2 : TEXCOORD1) : COLOR0
+{
+    float4 PrevAfter = tex2D(PrevAfterSampler,Tex);
+    float4 ThisAfter = tex2D(ThisAfterSampler,Tex2);
+
+	  
+    const float PixelDirt = (1.0f/255.0f);
+    //float Mult = PrevAfter.a*0.95f + ThisAfter.a*0.05f;
+    float Mult = PrevAfter.a*(1.0f - FrameTime) + ThisAfter.a*(FrameTime);
+    Mult -= 0.01f;
+	  
+    float4 NewAfter = PrevAfter*Mult + ThisAfter*(1.0f-Mult) - PixelDirt;
+    return NewAfter;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+        Lighting       = false;
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = FALSE;
+        ZEnable = FALSE;
+	ZWriteEnable = FALSE;
+	CullMode = CCW;
+   
+        VertexShader = null;
+        PixelShader = compile ps_2_a AfterCombiner();
+        ZEnable = false;
+    
+    }
+}

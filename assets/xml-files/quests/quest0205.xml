@@ -1,0 +1,131 @@
+<quest quest_id="205" category="lore_quest" tag="The Fatal Fetish" published="False" valid="True">
+	<title>The Fatal Fetish</title>
+	<description>I like to imagine that as you made your way to the capital, a feeling of dark dread crept slowly over you. Of course, this is merely a storyteller&apos;s fancy. For all I know, you may have been gleefully giddy with anticipation of the horrors ahead!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="204" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Find Remains of Ritual">
+			<instruction>Locate and investigate the site of the ritual referred to in the note.</instruction>
+			<journal_entry>...and then, SQUELCH! Even before you looked down, you somehow knew there was something positively horrid now decorating the underside of your boot. The slimy texture mingled with the suddenly overpowering stench of days old blood and flesh was prelude enough to the gory sight of the now decaying ritual site before you. Why had nobody cleaned this up?!</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="8" value="1" tag="An Interact With Object Task" resource_name="r_qt ritual blood bowl" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Go to Newbie Dungeon">
+			<instruction>Interact with the portal to enter the sewers beneath the city.</instruction>
+			<journal_entry>The pooling rivulets of blood and flesh that made their way inexorably down the sewers was sign enough that you were on the right track. &quot;Right,&quot; was, of course, a matter of perspective. What possessed you to keep following the trail is beyond me but, on the other hand, I suppose that had you not continued, we would not be telling this tale now!</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="26" value="1" tag="interact with portal" resource_name="r_Portal Sewer Entrance" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Find the Scumling Queen">
+			<instruction>Follow the trails of blood inside the sewers.</instruction>
+			<journal_entry>Finally, after a hellish trek through the bowels of a city that was apparently suffering a bout of heartburn and indigestion, you came at last to the inner chamber, and that is where you saw her...and she saw you. The $[Resource.S.r_scumling_queen_NameSingular] .</journal_entry>
+			<tasks>
+				<task type="go_near_object" id="2" value="1" tag="Find the Scumling Queen" resource_name="r_Scumling Queen" distance="20" />
+			</tasks>
+		</node>
+		<node type="end_node" id="4" tag="" />
+		<node type="event_simple" id="5" tag="Loot the Queen">
+			<instruction>Search the $[Resource.S.r_scumling_queen_NameSingular]</instruction>
+			<journal_entry>It was clear from the moment you laid your eyes upon her that the so called &quot;Queen&quot; was somehow wrong.  Some dark and rotten magic was affecting and suffusing her entire being.  Very soon, once her corpse yielded its possessions, you discovered what it was.</journal_entry>
+			<tasks>
+				<task type="loot_object" id="3" value="1" tag="Loot Scumling Queen's Grave" resource_name="r_Scumling Queen" />
+			</tasks>
+			<actions>
+				<action type="start_client_sfx_on_resource" id="1" tag="A Start Client SFX on Specific Object Action" sfx_name="se_monster_hivekin_queen_aura" resource_name="r_Scumling Queen" />
+			</actions>
+		</node>
+		<node type="event_simple" id="6" tag="Acquire Fetish">
+			<journal_entry>You felt your very soul dry heave and gag as you held the putrid fetish before you.  Here was a thing of clearly dark and twisted design, crafted from the flesh of the dead and used in some dark ritual.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="2" tag="unlock fetish" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="7" tag="Enter Capital" optional_tasks="True">
+			<instruction>Enter the Capital</instruction>
+			<journal_entry>Even as you entered through the gates, something told you it was too late. There was a tension, a palpable feeling of a horrible deed hanging in the air, in the veiled expressions of the locals and, you would soon find, on the very stones that paved the roads themselves...</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="4" value="1" tag="Enter Sanguine" area_id="3" />
+				<task type="go_to_area" id="5" value="1" tag="Enter Cor Ymirhal" area_id="18" />
+				<task type="go_to_area" id="6" value="1" tag="Enter Flaming Skull" area_id="19" />
+				<task type="go_to_area" id="7" value="1" tag="Enter Mahirim Capital" area_id="17" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>A brief investigation of the scene divulged nothing of those who had been here, yet your curiosity, or perhaps some righteous need for justice, seemed to drive you on.</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="go near portal">
+			<instruction>Follow the bloody trail.</instruction>
+			<tasks>
+				<task type="go_to_area" id="43" value="1" tag="sewer portals" area_id="48" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="12" tag="Talk to Acolyte" optional_tasks="True">
+			<instruction>Talk to an Acolyte of the Watcher about the Fetish.</instruction>
+			<journal_entry>The Acolyte you spoke to seemed to sag beneath the weight of the violence you revealed.  They simply could not understand that being peaceful does not protect one from the evil of the world.  Broken as the hooded one was, he could offer no concrete advice other than the mumbled suggestion that you seek one who could explain what the Fetish was...</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="27" value="1" tag="Acolyte Q11" vendor_id="q11_idawoll_acolyte" />
+				<task type="interact_with_vendor" id="28" value="1" tag="Acolyte P09" vendor_id="p09_gulgrumir_acolyte" />
+				<task type="interact_with_vendor" id="29" value="1" tag="Acolyte P10" vendor_id="p10_cor_ymirhal_acolyte" />
+				<task type="interact_with_vendor" id="30" value="1" tag="Acolyte P11" vendor_id="p11_maghnir_acolyte" />
+				<task type="interact_with_vendor" id="31" value="1" tag="Acolyte U19" vendor_id="u19_sandbrook_acolyte" />
+				<task type="interact_with_vendor" id="32" value="1" tag="Acolyte T18" vendor_id="t18_monkfield_acolyte" />
+				<task type="interact_with_vendor" id="33" value="1" tag="Acolyte V18" vendor_id="v18_heart_of_eanna_acolyte" />
+				<task type="interact_with_vendor" id="34" value="1" tag="Acolyte U18" vendor_id="u18_sanguine_acolyte" />
+				<task type="interact_with_vendor" id="35" value="1" tag="Acolyte L14" vendor_id="l14_whiteclaw_acolyte" />
+				<task type="interact_with_vendor" id="36" value="1" tag="Acolyte K14" vendor_id="k14_amurran_acolyte" />
+				<task type="interact_with_vendor" id="37" value="1" tag="Acolyte J15" vendor_id="j15_urranyr_acolyte" />
+				<task type="interact_with_vendor" id="38" value="1" tag="Acolyte K13" vendor_id="k13_lyran_acolyte" />
+				<task type="interact_with_vendor" id="39" value="1" tag="Acolyte U14" vendor_id="u14_firun_acolyte" />
+				<task type="interact_with_vendor" id="40" value="1" tag="Acolyte T13" vendor_id="t13_okrim_acolyte" />
+				<task type="interact_with_vendor" id="41" value="1" tag="Acolyte V13" vendor_id="v13_nerzok_acolyte" />
+				<task type="interact_with_vendor" id="42" value="1" tag="Acolyte U13" vendor_id="u13_flaming_skull_acolyte" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>You concluded that, likely, the Acolytes would like to know what happened to their fallen brethren.</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>But who?</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="6" from="0" to="7" value="1" />
+		<edge id="2" from="2" to="3" value="1" />
+		<edge id="3" from="3" to="5" value="1" />
+		<edge id="4" from="5" to="6" value="1" />
+		<edge id="21" from="6" to="13" value="0" />
+		<edge id="7" from="7" to="1" value="1" />
+		<edge id="17" from="8" to="11" value="0" />
+		<edge id="12" from="1" to="8" value="1" />
+		<edge id="23" from="12" to="15" value="1" />
+		<edge id="18" from="11" to="2" value="1" />
+		<edge id="22" from="13" to="12" value="0" />
+		<edge id="24" from="15" to="4" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Fatal Fetish" image_locked="qc_205_fatal_fetish_locked.png" image_unlocked="qc_205_fatal_fetish_unlocked.png">
+		<name_locked>Locked</name_locked>
+		<name_unlocked>Flesh Fetish</name_unlocked>
+		<description_locked>Locked</description_locked>
+		<description_unlocked>A fetish created by dark rituals and blood magic that included the flesh of Acolytes of the Watcher</description_unlocked>
+	</quest_item>
+	<node_locations>
+		<node_location id="0" x="46" y="268" />
+		<node_location id="1" x="238" y="294" />
+		<node_location id="2" x="495" y="284" />
+		<node_location id="3" x="592" y="327" />
+		<node_location id="4" x="1045" y="333" />
+		<node_location id="5" x="697" y="304" />
+		<node_location id="6" x="783" y="340" />
+		<node_location id="7" x="144" y="257" />
+		<node_location id="8" x="339" y="266" />
+		<node_location id="11" x="424" y="249" />
+		<node_location id="12" x="915" y="392" />
+		<node_location id="13" x="847" y="369" />
+		<node_location id="15" x="982" y="372" />
+	</node_locations>
+</quest>

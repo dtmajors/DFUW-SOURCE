@@ -1,0 +1,211 @@
+//WATER COAST SHADER
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "stdio.frag"
+#include "texture.frag"
+#include "lighting.frag"
+#include "ssao.frag"
+#include "combine_illumination.frag"
+#include "fake_reflections.frag"
+#include "reflections.frag"
+#include "rgbe.frag"
+#include "vectorfunctions.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+// Tell that this object is reflective
+bool Reflective : REInfoReflective = true;
+int ReflectionType : REInfoReflectionType = REFLECTION_TYPE_FAKE;
+float ReflectionHeight : REPReflectionHeight = 0 ;
+
+texture Texture0 : REPTexture0 = NULL;
+texture Texture1 : REPTexture1 = NULL;
+
+sampler NormalSampler = sampler_state
+{
+	texture = (Texture0);
+	AddressU = Wrap;
+	AddressV = Wrap;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+sampler AcidSampler = sampler_state
+{
+	texture = (Texture1);
+	AddressU = Wrap;
+	AddressV = Wrap;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos  			: POSITION;
+    float4 Tex1_2  			: TEXCOORD0;
+	float4 WorldPos   		: TEXCOORD1;
+    float4 ClipSpacePos 	: TEXCOORD2; 
+	float4 Diff				: TEXCOORD3;
+	float4 Tex3_4 			: TEXCOORD4;
+	float Fog 				: FOG;
+};
+
+static const float2 TexDist1 = {0.031f, 0.04f};
+static const float2 TexDist2 = {-0.03f, 0.02f};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+	
+	float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+	Out.WorldPos = WorldPos;
+	
+	Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX); // position (projected)
+	Out.Diff = Input.Diff ;
+	
+	float WindMultiplier = 1.0 + lerp(0.35f,1.0f,WIND_SPEED);
+	
+    WorldPos.xyz += WorldEyePos.xyz ;
+	
+	//Create coords for the bumpmaps
+    float2 BaseBump1 = WorldPos.xz * WATERCOAST_BASEBUMP_TEXTURECOORD_MULTIPLIER * 0.05f ;
+    float2 BaseBump2 = WorldPos.xz * WATERCOAST_BASEBUMP_TEXTURECOORD_MULTIPLIER * 0.1f ;
+	Out.Tex1_2.xy = float2(0.3,0.6) + BaseBump1 + frac(TexDist1 * TOTAL_TIME * WindMultiplier  * 0.2f) ; // * WIND_DIR.xz;
+	Out.Tex1_2.zw = BaseBump2 + frac(TexDist2 * TOTAL_TIME * WindMultiplier  * 0.1f); // * WIND_DIR.xz;
+	
+	float2 BaseBump3 = Input.Tex * WATERCOAST_BASEBUMP_TEXTURECOORD_MULTIPLIER ;
+    float2 BaseBump4 = Input.Tex * WATERCOAST_BASEBUMP_TEXTURECOORD_MULTIPLIER ;
+	Out.Tex3_4.xy = float2(0.3,0.6) + BaseBump3 + frac(TexDist1 * TOTAL_TIME * WindMultiplier  * 0.02f) ; // * WIND_DIR.xz;
+	Out.Tex3_4.zw = BaseBump4 + frac(TexDist2 * TOTAL_TIME * WindMultiplier  * 0.02f); // * WIND_DIR.xz;
+	
+	Out.ClipSpacePos = Out.Pos ;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	return Out;
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3)0;
+	
+	float3 NormalTexel = tex2D(NormalSampler, Input.Tex1_2.xy);
+	NormalTexel += tex2D(NormalSampler, Input.Tex1_2.zw);
+	NormalTexel = NormalTexel.xzy - 1;
+	NormalTexel = normalize(SFVectorRotateY(NormalTexel, TOTAL_TIME * 1.5));
+	
+	float4 Toxic1 = tex2D(AcidSampler,Input.Tex3_4.xy*2);
+	float4 Toxic2 = tex2D(AcidSampler,Input.Tex3_4.zw*2);
+
+	Toxic1 = lerp(Toxic1*0.4,Toxic1*0.7,sin(TOTAL_TIME));
+	Toxic2 = lerp(Toxic2*0.7,Toxic2*0.4,sin(TOTAL_TIME));
+	float4 Toxic = Toxic1 + Toxic2 ;
+	
+	float3 RayPos = mul(Input.WorldPos, VIEW_MATRIX).xyz;
+	float3 Incident = normalize(RayPos);
+	
+	float3 ViewNormal = normalize(mul(lerp(NormalTexel, float3(0, 1, 0), 0.75), (float3x3)VIEW_MATRIX));
+	float3 RayDir = reflect(Incident, ViewNormal);
+	float fresnel = 1.0 - dot(-Incident, ViewNormal);
+	
+	float4 Color = float4(0.19,0.32,0.08,1.0);
+	
+	float DepthTransparency = getDepthTransparency(Input.ClipSpacePos, Input.Diff);
+	float Octave2 = 16;
+	float Octave4 = 4;
+	float Octave8 = 1;
+	float Octave16 = 0.5;
+	float OctaveSum = Octave2 + Octave4 + Octave8 + Octave16;
+	
+	float AcidIntensity = dot(Color.xyz, Color.xyz);
+	float AcidGlow = 0;
+	AcidGlow +=	Octave2 * pow(AcidIntensity, 2);
+	AcidGlow +=	Octave4 * pow(AcidIntensity, 4);
+	AcidGlow +=	Octave8 * pow(AcidIntensity, 8);
+	AcidGlow +=	Octave16 * pow(AcidIntensity, 16);
+	
+	float AcidGlowMultiplier = 10;
+	
+	AcidGlow = saturate(AcidGlowMultiplier * AcidGlow / OctaveSum);
+	float CoastBurn = 0.8 * sin(saturate(DepthTransparency) * SF_PI);
+	AcidGlow = lerp(CoastBurn, AcidGlow, saturate(1.0 - DepthTransparency));
+	float ReflectionRatio = pow(1.0 - AcidGlow, 8); // Add more reflection at dark spots
+	Color.xyz = interpretAlphaGlowColor(float4(Color.xyz, AcidGlow));
+	
+	float3 TexReflection  = 0;
+	float3 Ln = -PLANET_LIGHTDIR_COMMON ; 
+	if (EyePos.y > Input.WorldPos.y){
+		TexReflection = getReflectedTexel(RayPos, RayDir).xyz;
+		fresnel = pow(fresnel,6);
+	}
+	else{
+		TexReflection = float3( 0.1,0.6,0.3f ) ; 	
+		Ln.y *= -1.f ;	
+	}
+	
+	float3 R = normalize( reflect( Input.WorldPos.xyz, NormalTexel  ) ); 
+	float tempdot = saturate( dot(Ln,R ) ) ;
+	tempdot = pow(tempdot, 128 ) ; 
+	if ( tempdot < 0.9 ) 
+		tempdot = 0 ;
+	float3 SunLightSpec = float3(1,1,1) * tempdot  * 0.6;
+
+	float4 FinalTex =  lerp( float4(  TexReflection  , 1.f ) + (Color*ReflectionRatio*0.4), Color,  1.0 - fresnel ) ;
+	FinalTex = lerp(FinalTex,Toxic*0.8,0.2);
+	
+	Out.Color.xyz = combineIllumination3Water( Input.WorldPos , Input.Fog , FinalTex , SunLightSpec , 0 ) ; 
+	Out.Color.a = DepthTransparency;
+
+#ifdef SHADER_PP_QUALITY
+	Out.Color.xyz *= 1.2;
+#endif
+
+	return Out;
+	
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+		
+		SeparateAlphaBlendEnable = true;
+		SrcBlendAlpha = ZERO;
+		DestBlendAlpha = INVSRCALPHA;
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

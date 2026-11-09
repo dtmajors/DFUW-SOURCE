@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="true"/>
+   <ShowOnGUI Value="true"/> 				  
+	  	
+	  <Trigger Type="HARVEST"> 
+		    <Failure Value="false"/>						
+		    <SkillName Value="s_Harvesting Skills"/> 
+      <!-- NOT OPTIONAL -->			
+		<ResourceName Value="r_Gemstones"/>  
+      <!-- OPTIONAL   -->
+		<Counter Value="2"/>         
+      <!-- NOT OPTIONAL -->
+	</Trigger>		
+	  <Points Dynamic="true" Value="" Key="r_Gemstones"/>	
+	  <Rewards> 					  
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_all_gems"/>
+		
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_amethyst"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_aventurine"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_crystal"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_emerald"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_ruby"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_pearl"/>
+		
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_amethyst_10"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_aventurine_10"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_crystal_10"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_emerald_10"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_ruby_10"/>
+		    <Item Type="UNLOCK_FEAT" Name="hv_harvest_pearl_10"/>
+	  </Rewards>			
+</Feat>

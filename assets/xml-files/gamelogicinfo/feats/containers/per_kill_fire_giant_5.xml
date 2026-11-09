@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Reset Type="DAILY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Fire Giant"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_Fire Giant" Value="93"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="1200" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Veilron Cloth" Quantity="1" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Veilron Leather" Quantity="1" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Veilron Ingot" Quantity="1" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Veilron Wood" Quantity="1" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

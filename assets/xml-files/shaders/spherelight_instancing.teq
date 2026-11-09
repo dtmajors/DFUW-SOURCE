@@ -1,0 +1,118 @@
+//Spherical Light Shader
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "mathfunctions.frag"
+#include "instancing.frag"
+#include "texture.frag"
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_CUSTOM;
+
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float2 Tex	: TEXCOORD0;
+	float4 LightColor : COLOR0;
+	float4 LightIntensity : COLOR1;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float2 Tex	: TEXCOORD0;
+	//InstanceData
+	float4 LightColor : COLOR0;
+	float4 WorldPos_Radi : TEXCOORD1;
+	float  LightIntensity : TEXCOORD2;
+};
+
+
+
+
+VS_OUTPUT SphericalLigthColor(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    float3 NewPos;
+    SFMatrix TV = SFMatrixTranspose(VIEW_MATRIX);
+    NewPos = mul(Input.Pos,(float3x3)TV);
+    NewPos *= Input.WorldPos_Radi.w;//LightRadius;
+    NewPos += Input.WorldPos_Radi.xyz;//LightPosition;
+    
+    Out.Tex = Input.Tex;
+    
+    Out.Pos = mul(float4(NewPos,1.0f),VIEW_PROJECTION_MATRIX);
+    
+	Out.LightColor = Input.LightColor;
+	Out.LightIntensity = Input.LightIntensity;
+
+    return Out;
+}
+
+
+float4 PShadeColor(VS_OUTPUT Input) : COLOR
+{
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	
+	return BaseTex *Input.LightColor * Input.LightIntensity;
+}
+
+float4 PShadeIntensity(VS_OUTPUT Input) : COLOR
+{
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	
+	return BaseTex * Input.LightIntensity;
+}
+
+
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    	FogEnable = FALSE;
+
+        AlphaTestEnable = FALSE;
+        
+        AlphaBlendEnable = TRUE;
+        ZEnable = TRUE;
+		ZWriteEnable = FALSE;
+       	CullMode = NONE;
+        
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+		ColorWriteEnable = RED|BLUE|GREEN; 
+        
+    
+    	VertexShader = compile vs_3_0 SphericalLigthColor();
+        PixelShader = compile ps_3_0 PShadeColor();
+    }    
+    pass P1
+    {
+		STD_STATE;
+    	FogEnable = FALSE;
+
+        AlphaTestEnable = FALSE;
+        
+        AlphaBlendEnable = TRUE;
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+       	CullMode = NONE;
+        
+		ColorWriteEnable = ALPHA; 
+        
+    
+    	VertexShader = compile vs_3_0 SphericalLigthColor();
+        PixelShader = compile ps_3_0 PShadeIntensity();
+    }
+    
+}
+
+

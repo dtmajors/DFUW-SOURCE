@@ -1,0 +1,67 @@
+<SFShader>
+	<Version_Info Minor="2" Major="0"/>
+	<Description>
+		<SFString Value="Volumetric Ligth Shader"/>
+	</Description>
+	<Shader>
+		<RenderEffect>
+			<SFString Value="volumlight.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="FALSE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="TRUE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="0"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="0"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqTexture>
+				<SFBool Value="FALSE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+		<TextureReqs>
+			<NumberOfTextures>
+				<SFInteger Value="0"/>
+			</NumberOfTextures>
+			<Texture0>
+				<SFString Value="SF_DEFAULT"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture0>
+			<Texture1>
+				<SFString Value="extra.tga"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture1>
+		</TextureReqs>
+		<MeshReqs>
+			<NumberOfMeshes>
+				<SFInteger Value="0"/>
+			</NumberOfMeshes>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+		<ShaderPool>
+			<SFString Value="SF_LIGHT_POOL"/>
+			<SFInteger Value="11"/>
+		</ShaderPool>
+	</Shader>
+</SFShader>

@@ -1,0 +1,240 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFEvadeSkill" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Evade" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFAngle>
+        <SFFloat Value="0.36" />
+    </SFAngle>
+    <SFBlockingName>
+        <SFString Value="Block_Only_Itself" />
+    </SFBlockingName>
+    <SFBlockingTimerBase>
+        <SFFloat Value="30.0" />
+    </SFBlockingTimerBase>
+    <SFClientParamName>
+        <SFString Value="No_Params" />
+    </SFClientParamName>
+    <SFDirectionVector>
+        <SFVector3 X="0.0" Y="0.023" Z="0.0" />
+    </SFDirectionVector>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="0.0" />
+    </SFImportance>
+    <SFReportName>
+        <SFString Value="Report_Nothing" />
+    </SFReportName>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFSpeed>
+        <SFFloat Value="14.5" />
+    </SFSpeed>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Ignore" />
+        </SFStopControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer_Restart_Blocking" />
+        </SFSkillTimerName>
+        <SFDelay>
+            <SFDouble Value="0.0" />
+        </SFDelay>
+        <SFBlockingGroupName>
+            <SFString Value="Block_Only_Self" />
+        </SFBlockingGroupName>
+        <SFNotifyOnTimeout>
+            <SFBool Value="FALSE" />
+        </SFNotifyOnTimeout>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFTimerName>
+            <SFString Value="Basic Timer" />
+        </SFTimerName>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Blocking_Restart" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Range_Spell_Restart_Timer" />
+        </SFTimerLengthSkillFunctionName>
+        <SFBlockedSkillName>
+            <SFString Value="s_Evade" />
+        </SFBlockedSkillName>
+        <SFBlockingGroupTimerSkillFunctionName>
+            <SFString Value="sf_Spell Duration Standard" />
+        </SFBlockingGroupTimerSkillFunctionName>
+    </SFSkillTimer>
+    <SFSpecialEffectInfo>
+        <SFRelativeStartTime>
+            <SFDouble Value="0.0" />
+        </SFRelativeStartTime>
+        <SFVisibilityName>
+            <SFString Value="Visibility_Public" />
+        </SFVisibilityName>
+        <SFProvideSourceObjectGUID>
+            <SFBool Value="FALSE" />
+        </SFProvideSourceObjectGUID>
+        <SFProvideSourcePosition>
+            <SFBool Value="FALSE" />
+        </SFProvideSourcePosition>
+        <SFProvideDuration>
+            <SFBool Value="FALSE" />
+        </SFProvideDuration>
+        <SFProvidePower>
+            <SFBool Value="TRUE" />
+        </SFProvidePower>
+        <SFProvideSourceRotation>
+            <SFBool Value="FALSE" />
+        </SFProvideSourceRotation>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFSpecialEffectName>
+            <SFString Value="sf_brawler_evade" />
+        </SFSpecialEffectName>
+    </SFSpecialEffectInfo>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFOperatorName>
+            <SFString Value="&gt;=" />
+        </SFOperatorName>
+        <SFLimitValue>
+            <SFFloat Value="10.0" />
+        </SFLimitValue>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFAttributeName>
+            <SFString Value="Stamina" />
+        </SFAttributeName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFOperatorName>
+            <SFString Value="&gt;=" />
+        </SFOperatorName>
+        <SFLimitValue>
+            <SFFloat Value="3.0" />
+        </SFLimitValue>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="TRUE" />
+        </SFCreateSkillConsume>
+        <SFAttributeName>
+            <SFString Value="Mana" />
+        </SFAttributeName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Attribute_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFOperatorName>
+            <SFString Value="&lt;" />
+        </SFOperatorName>
+        <SFLimitValue>
+            <SFFloat Value="0.0" />
+        </SFLimitValue>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFCreateSkillConsume>
+            <SFBool Value="FALSE" />
+        </SFCreateSkillConsume>
+        <SFAttributeName>
+            <SFString Value="Relic ID" />
+        </SFAttributeName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Value_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="TRUE" />
+        </SFInvertCheck>
+        <SFModeName>
+            <SFString Value="ModeType PostureMode" />
+        </SFModeName>
+        <SFModeValueName>
+            <SFString Value="PostureMode Swimming" />
+        </SFModeValueName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Value_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="TRUE" />
+        </SFInvertCheck>
+        <SFModeValueName>
+            <SFString Value="WaterContactMode Submerged In Water" />
+        </SFModeValueName>
+        <SFModeName>
+            <SFString Value="ModeType WaterContactMode" />
+        </SFModeName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Value_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+        <SFModeValueName>
+            <SFString Value="FlyingMode Grounded" />
+        </SFModeValueName>
+        <SFModeName>
+            <SFString Value="ModeType FlyingMode" />
+        </SFModeName>
+    </SFConstraint>
+</SFSkill>

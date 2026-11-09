@@ -1,0 +1,246 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Terrain" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="terrain_f10.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="TRUE" />
+<SFString Value="shaderterraindetailnormal.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader1>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="DefaultShader.XML" />
+<SFInteger Value="1" />
+</Shader2>
+</SubsetShaders>
+</Normal>
+<NumberOfSubsets>
+<SFInteger Value="8" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="terrain_f10_0.dds" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Texture0>
+<SFString Value="terrain_f10_1.dds" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Texture0>
+<SFString Value="terrain_f10_2.dds" />
+</Texture0>
+</Subset2>
+<Subset3>
+<Texture0>
+<SFString Value="terrain_f10_3.dds" />
+</Texture0>
+</Subset3>
+<Subset4>
+<Texture0>
+<SFString Value="terrain_f10_4.dds" />
+</Texture0>
+</Subset4>
+<Subset5>
+<Texture0>
+<SFString Value="terrain_f10_5.dds" />
+</Texture0>
+</Subset5>
+<Subset6>
+<Texture0>
+<SFString Value="terrain_f10_6.dds" />
+</Texture0>
+</Subset6>
+<Subset7>
+<Texture0>
+<SFString Value="terrain_f10_7.dds" />
+</Texture0>
+</Subset7>
+</DefaultTextures>
+</Shaders>
+<Extras>
+<Veg>
+<SFBool Value="false" />
+</Veg>
+<DetailTextures>
+<SFBool Value="TRUE" />
+</DetailTextures>
+</Extras>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-511.999939" Y="153.203476" Z="-512.0009766" />
+</Min>
+<Max>
+<SFVector3 X="511.9999695" Y="158.7239838" Z="511.999939" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.0001772055839" Y="155.4953613" Z="-0.009219245985" />
+</Center>
+<Radius>
+<SFFloat Value="724.0839233" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-340.4129639" Y="155.2639008" Z="-295.5701904" />
+</Center>
+<Radius>
+<SFFloat Value="276.9533691" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-340.2232666" Y="155.2639008" Z="137.2773743" />
+</Center>
+<Radius>
+<SFFloat Value="280.3873901" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.03605851531" Y="155.2639008" Z="-291.7089233" />
+</Center>
+<Radius>
+<SFFloat Value="277.4641418" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+<Subset3>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.1595595479" Y="155.2639008" Z="148.8740387" />
+</Center>
+<Radius>
+<SFFloat Value="278.2263184" />
+</Radius>
+</BoundingSphere>
+</Subset3>
+<Subset4>
+<BoundingSphere>
+<Center>
+<SFVector3 X="340.2667236" Y="155.2614441" Z="-295.5724487" />
+</Center>
+<Radius>
+<SFFloat Value="276.9489136" />
+</Radius>
+</BoundingSphere>
+</Subset4>
+<Subset5>
+<BoundingSphere>
+<Center>
+<SFVector3 X="340.5048218" Y="155.2669678" Z="137.2773743" />
+</Center>
+<Radius>
+<SFFloat Value="277.6742554" />
+</Radius>
+</BoundingSphere>
+</Subset5>
+<Subset6>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-27.3535881" Y="155.2639008" Z="435.3086548" />
+</Center>
+<Radius>
+<SFFloat Value="497.1180115" />
+</Radius>
+</BoundingSphere>
+</Subset6>
+<Subset7>
+<BoundingSphere>
+<Center>
+<SFVector3 X="485.5317993" Y="155.4279327" Z="433.4021912" />
+</Center>
+<Radius>
+<SFFloat Value="82.93484497" />
+</Radius>
+</BoundingSphere>
+</Subset7>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.005190711468" Y="155.4958344" Z="0.02951755002" />
+</Center>
+<Radius>
+<SFFloat Value="724.1115723" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="terrain_f10.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

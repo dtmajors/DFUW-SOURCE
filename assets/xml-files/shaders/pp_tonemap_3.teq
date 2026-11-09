@@ -1,0 +1,102 @@
+#include "stdstate.frag"
+#include "PP_ToneMappers.frag"
+#include "RGBE.frag"
+#include "texture.frag"
+#include "planets.frag"
+#include "colorGrading.frag"
+#include "DepthOfField.frag"
+#include "lumaSharpness.frag"
+
+uniform float Exposure	: REEnvExposure;
+uniform float Bloom		: REEnvBloom;
+
+//#define DEBUG_RENDER
+#ifdef DEBUG_RENDER
+static const float DebugLumiWindow_Left = 0.1;
+static const float DebugLumiWindow_Right = DebugLumiWindow_Left + 0.2;
+static const float DebugLumiWindow_Top = 0.5;
+static const float DebugLumiWindow_Bottom = DebugLumiWindow_Top + 0.2;
+#endif
+
+static const float BloomIntensity = 3.0 ;
+
+float4 Tonemap(in float2 tc : TEXCOORD0) : COLOR
+{
+#ifdef DEBUG_RENDER
+	if (tc.x > DebugLumiWindow_Left && tc.x < DebugLumiWindow_Right && tc.y >= DebugLumiWindow_Top && tc.y < DebugLumiWindow_Bottom)
+	{
+		float2 ntc = (tc - float2(DebugLumiWindow_Left, DebugLumiWindow_Top)) / float2(0.2, 0.2);
+	}
+#endif // DEBUG_RENDER
+
+	// Sample rendered image
+	float4 Sample = tex2D(SceneSampler, tc);
+	
+	Sample = ApplyDepthOfField(Sample, tc);
+	
+	// interpret alphaglow
+	Sample.rgb = interpretAlphaGlowColor(Sample);
+
+	//float3 Sample = tex2D(ImageSampler, tc).xyz;
+	
+	// Texture sample with bloomed frame
+	float3 BloomColor = tex2D(GlowSampler, tc).rgb;
+	
+	// Average luminance of rendered frame (adapted)
+	float AvgLumi = tex2D(AvgLumiSampler, tc).r;  //default
+	
+	// Exposure adjustment
+	float Ratio = Exposure * pow(AvgLumi, -0.3);
+	Sample *= Ratio;
+	
+	// Final frame calculation
+	float3 ret = Sample + (Bloom * BloomColor);
+	
+#ifdef SHADER_PP_GOD_RAYS
+	// add god rays
+	ret += tex2D(GodRaySampler, tc).xyz * 0.6; // * (Bloom + 0.2);
+#endif
+	
+	float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+	ret = lerp(lerp(ret,ToneMapFilmicALU(ret),0.5),ToneMapReinhardModified(ret),smoothstep(0.4,0.401,SunIntensity));
+	
+	//float3 filmic = ToneMapFilmicALU(ret);
+	//ret = lerp(ret, filmic, 0.2 * smoothstep(0.4, 0.1, AvgLumi) + 0.3);
+
+	float3 color = ret;                                  	//original input color
+	float3 lumCoeff = float3(0.2126, 0.7152, 0.0722);    	//Values to calculate luma with
+	float Curves_contrast_blend = 0.3;                  	//Curves_contrast
+	float luma = dot(lumCoeff, color);                 		//calculate luma (grey)
+	float3 chroma = color / luma;                      	    //calculate chroma 
+	luma = ( (luma - 0.5) / (0.5 + abs(luma-0.5)) ) + 0.5;
+	color = luma * chroma;                             		//Add back the chroma
+	float3 ret2 = lerp(ret, color, Curves_contrast_blend);	//Blend by Curves_contrast
+	
+	float3 final = lerp(ret,ret2,smoothstep(0.4,0.401,SunIntensity));
+	
+#ifndef LOW_SHADER_QUALITY
+	final = LumaSharpenPass(float4(final,0),tc).xyz;
+#endif
+	
+	final = colorGrade(final);
+	
+	return float4(final,0);
+}
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+		Lighting = false;
+		AlphaBlendEnable = FALSE;
+		AlphaTestEnable = FALSE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+		ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+		CullMode = CCW;
+
+		VertexShader = null;
+        PixelShader  = compile ps_3_0 Tonemap();
+    }
+}

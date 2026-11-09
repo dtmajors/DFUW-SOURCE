@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Reset Type="DAILY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="20"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Darkbrood Zealot"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_darkbrood zealot" Value="91"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="650" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_new iron ingot" Quantity="50" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_new leather" Quantity="50" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_new wood" Quantity="50" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_new cloth" Quantity="50" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

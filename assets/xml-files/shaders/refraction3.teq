@@ -1,0 +1,64 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+#include "reflections.frag"
+#include "fake_reflections.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+float distortion = 0.1;
+
+
+// ok tell its reflective so it gets to the final pass
+bool Reflective : REInfoReflective = true;
+int ReflectionType : REInfoReflectionType = REFLECTION_TYPE_FAKE;
+
+STD_PS_OUTPUT_3 PS(STD_VS_OUTPUT  Input, float2 screenPos : VPos)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float2 screenTC = screenPos / BackBufferParams.xy;
+	float2 centerTC = abs(screenTC * 2 - 1);
+	//float2 fadeXY = smoothstep(1.0, 0.5, centerTC);
+	//float fade = dot(fadeXY, fadeXY);
+	float2 fadeXY = smoothstep(1.0, 0.6, centerTC);
+	float fade = fadeXY.x * fadeXY.y;	
+	
+	float2 perturbedTC = screenTC + Input.viewNormal.xy * distortion * fade;
+	float4 refraction = tex2D(RefractionSampler, perturbedTC);
+	float4 reflection = 0.5;//tex2D(DEFAULT_SAMPLER_2, Input.Tex);
+	Output.Color = lerp(reflection, refraction, abs(Input.viewNormal.z));
+	Output.Color.a = 0;
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 STD_VERTEX_SHADER_();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

@@ -1,0 +1,71 @@
+
+#include "stdstate.frag"
+#include "windswing.frag"
+
+
+#include "shadowmap.frag"
+#include "instancing.frag"
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    //float3 Norm : Normal;
+	//Instancing data
+	float4 WMat1 : TEXCOORD5;
+	float4 WMat2 : TEXCOORD6;
+	float4 WMat3 : TEXCOORD7;
+	float4 WMat4 : TEXCOORD8;
+};
+
+
+
+VS_SHADOWMAP_OUTPUT_NO_TEXTURE StandardVS(VS_INPUT Input)
+{
+    VS_SHADOWMAP_OUTPUT_NO_TEXTURE Out = (VS_SHADOWMAP_OUTPUT_NO_TEXTURE)0;
+
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+	
+    SFMatrix WVP = mul(WMat,SHADOW_VIEW_PROJECTION_MATRIX);
+
+	float3 NewPos = Input.Pos.xyz / Input.Pos.w;
+
+#ifdef SHADER_CFG_ROTATE
+	NewPos = SFVectorRotateY(NewPos, TOTAL_TIME * SHADER_CFG_ROTATE_SPEED);
+#endif // SHADER_CFG_ROTATE
+
+    Out.Pos  = mul(float4(NewPos,1.0f), WVP);             // position (projected)
+    
+    Out.ScreenPos = Out.Pos;
+
+    return Out;
+}
+
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = FALSE;
+        
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+        
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+	
+		FogEnable = FALSE;
+        CullMode = CW;
+        VertexShader = compile vs_3_0 StandardVS();
+        PixelShader  = compile ps_3_0 ShadowMapPSNoTexture();
+    }
+}

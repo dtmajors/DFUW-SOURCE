@@ -1,0 +1,23 @@
+<quest quest_id="1005" category="rumor_quest" tag="The Nameless Tomb" published="False" valid="True">
+	<title>The Nameless Tomb</title>
+	<description>There is a rumor floating around about a strange, nameless tomb, whose origins seem to be completely lost.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<journal_entry>In the bustle of the city, the Agonian could hear rumors of lost cities, hidden treasures and adventures to be had out in the wilderness. What caught his attention most though was the rumor of a nameless tomb in the Mercian lands. The only thing certain is that it is place filled with ancient riches, but ancient evil as well.</journal_entry>
+			<conditions>
+				<condition type="in_area" id="2" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="" />
+		<node type="event_simple" id="2" tag="">
+			<journal_entry>The Agonian found the Tomb near the Qattenhal area.</journal_entry>
+			<tasks>
+				<task type="receive_quest" id="0" value="1" tag="A Receive Quest Task" quest_id="1006" />
+			</tasks>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="1" from="2" to="1" value="1" />
+	</edges>
+</quest>

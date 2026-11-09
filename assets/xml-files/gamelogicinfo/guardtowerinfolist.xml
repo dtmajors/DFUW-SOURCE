@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<SFXML>
+  <VersionInformation Incremental="0" Major="0" Minor="1" />
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Guardtower Human" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="80.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Humans"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+	<SuperChargeTime>
+        <SFFloat Value="2700.0"/>
+	</SuperChargeTime>
+
+	<SuperChargeDamageMultiplier>
+        <SFFloat Value="2.0"/>
+	</SuperChargeDamageMultiplier>
+	
+	<SuperChargeResource>
+		<SFString Value="r_arcane crystal"/>
+	</SuperChargeResource>
+	
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Guardtower Dwarf" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="80.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Dwarves"/>
+    </Race>
+	<SuperChargeTime>
+        <SFFloat Value="2700.0"/>
+	</SuperChargeTime>
+
+	<SuperChargeDamageMultiplier>
+        <SFFloat Value="2.0"/>
+	</SuperChargeDamageMultiplier>
+
+   	<SuperChargeResource>
+		<SFString Value="r_arcane crystal"/>
+	</SuperChargeResource>
+
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Guardtower Alfar" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="80.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Alfar"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+
+	<SuperChargeTime>
+        <SFFloat Value="2700.0"/>
+	</SuperChargeTime>
+
+	<SuperChargeDamageMultiplier>
+        <SFFloat Value="2.0"/>
+	</SuperChargeDamageMultiplier>
+
+	<SuperChargeResource>
+		<SFString Value="r_arcane crystal"/>
+	</SuperChargeResource>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Guardtower Mirdain" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="80.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Mirdain"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+
+	<SuperChargeTime>
+        <SFFloat Value="2700.0"/>
+	</SuperChargeTime>
+
+	<SuperChargeDamageMultiplier>
+        <SFFloat Value="2.0"/>
+	</SuperChargeDamageMultiplier>
+
+	<SuperChargeResource>
+		<SFString Value="r_arcane crystal"/>
+	</SuperChargeResource>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Guardtower Ork" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="80.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Orks"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+	<SuperChargeTime>
+        <SFFloat Value="2700.0"/>
+	</SuperChargeTime>
+
+	<SuperChargeDamageMultiplier>
+        <SFFloat Value="2.0"/>
+	</SuperChargeDamageMultiplier>
+
+	<SuperChargeResource>
+		<SFString Value="r_arcane crystal"/>
+	</SuperChargeResource>
+
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Guardtower Mahirim" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="80.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Mahirim"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+
+	<SuperChargeTime>
+        <SFFloat Value="2700.0"/>
+	</SuperChargeTime>
+
+	<SuperChargeDamageMultiplier>
+        <SFFloat Value="2.0"/>
+	</SuperChargeDamageMultiplier>
+
+	<SuperChargeResource>
+		<SFString Value="r_arcane crystal"/>
+	</SuperChargeResource>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  
+  <!-- END OF CLAN CITY GUARDTOWERS -->
+  
+  <!-- START HAMLET GUARDTOWERS -->
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Hamlet Guardtower Human" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="50.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Humans"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Hamlet Guardtower Dwarf" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="50.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Dwarves"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Hamlet Guardtower Alfar" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="50.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Alfar"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Hamlet Guardtower Mirdain" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="50.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Mirdain"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Hamlet Guardtower Ork" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="50.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Orks"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Clan Hamlet Guardtower Mahirim" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="50.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Mahirim"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="Clan"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_clan_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>    
+  
+  <!-- END HAMLET GUARDTOWERS -->
+  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Guard Tower Human" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="120.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Humans"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="City"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_racial_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>  
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Guard Tower Dwarf" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="120.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Dwarves"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="City"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_racial_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>    
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Guard Tower Alfar" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="120.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Alfar"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="City"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_racial_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>    
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Guard Tower Mirdain" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="120.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Mirdain"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="City"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_racial_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>    
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Guard Tower Ork" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="120.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Orks"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="City"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_racial_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>    
+  <SFGuardTowerInfo>
+    <SFResourceName>
+        <SFString Value="r_Guard Tower Mahirim" />
+    </SFResourceName>
+    
+    <!-- *** The radius of awareness -->
+    <Radius>
+        <SFFloat Value="120.0"/>
+    </Radius>
+    
+    <!-- *** Indicates to which race the territory, upon which the tower has been built, belongs -->
+    <Race>
+        <SFString Value="r_Mahirim"/>
+    </Race>
+    
+    <!-- *** Tower type CLAN or CITY-->
+    <TowerType>
+        <SFString Value="City"/>
+    </TowerType>
+    
+    <!-- *** The global rate of fire must be specified and has to be greater than 0 -->
+    <GlobalRateOfFire>        
+        <SFFloat Value="1.0"/>
+    </GlobalRateOfFire>
+    
+    <!-- 
+        *************************************************************************************************
+        MAGNITUDE = the damage that this attack will inflict.
+        
+        RATE OF FIRE = one shot every X seconds. 
+        If the rate of fire is 0, negative or it is not specified the skill will fire at the global rate. 
+        *************************************************************************************************
+    -->
+    <WeaponsAndSpellsAttacks>
+        <Attack>
+            <EffectName>
+                <SFString Value="Arcane Damage"/>
+            </EffectName>  
+            <SFXName>
+                <SFString Value="se_gt_racial_fire_01"/>
+            </SFXName>
+            <Magnitude>
+                <SFFloat Value="18.0"/>
+            </Magnitude>
+            <RateOfFire>
+                <SFFloat Value="6.0"/>
+            </RateOfFire>
+        </Attack>
+        <!-- Add attacks below -->
+    </WeaponsAndSpellsAttacks>
+    
+  </SFGuardTowerInfo>    
+</SFXML>

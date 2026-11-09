@@ -1,0 +1,116 @@
+//DownSample 4
+#include "stdstate.frag"
+
+
+
+
+texture SourceColor : REPTextureSourceColor;
+
+
+sampler2D SrcColorSampler =
+sampler_state
+{
+    Texture = <SourceColor>;
+    AddressU = Clamp;
+    AddressV = Clamp;
+/*#ifdef SET_SAMPLERSTATE
+    MinFilter = Linear;
+    MagFilter = Linear;
+#endif	*/
+};
+
+/*
+static const int KernelSize = 16;
+
+float2 PixelCoordsFilter[KernelSize] =
+{
+    { 1.5,  -1.5 },
+    { 1.5,  -0.5 },
+    { 1.5,   0.5 },
+    { 1.5,   1.5 },
+
+    { 0.5,  -1.5 },
+    { 0.5,  -0.5 },
+    { 0.5,   0.5 },
+    { 0.5,   1.5 },
+
+    {-0.5,  -1.5 },
+    {-0.5,  -0.5 },
+    {-0.5,   0.5 },
+    {-0.5,   1.5 },
+
+    {-1.5,  -1.5 },
+    {-1.5,  -0.5 },
+    {-1.5,   0.5 },
+    {-1.5,   1.5 },
+};
+
+
+float2 TexelCoordsFilter[KernelSize];
+*/
+
+
+static const int KernelSize = 4;
+
+float2 PixelCoordsFilter[KernelSize] =
+{
+
+    { 0.5,   0.5 },
+    { 0.5,  -0.5 },
+    {-0.5,   0.5 },
+    {-0.5,  -0.5 },
+};
+
+
+float2 TexelCoordsFilter[KernelSize];
+
+
+
+
+float4 DownFilter( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    for (int i = 0; i < KernelSize; i++)
+    {
+        Color += tex2D( SrcColorSampler, Tex + TexelCoordsFilter[i].xy );
+    }
+
+    return Color / KernelSize;
+}
+
+float4 DownFilterSimple( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    return tex2D( SrcColorSampler, Tex);
+}
+
+
+
+//
+//
+
+technique DownSample
+<
+  float ScaleX = 0.25f;
+  float ScaleY = 0.25f;
+>
+{
+    pass P0
+    {
+		STD_STATE;
+    	Texture[1] = NULL;
+    
+        Lighting       = false;
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = FALSE;
+	ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+        ZEnable = FALSE;
+	ZWriteEnable = FALSE;
+	CullMode = CCW;
+   
+        VertexShader = null;
+        PixelShader = compile ps_2_a DownFilterSimple();
+        ZEnable = false;
+    
+    }
+}

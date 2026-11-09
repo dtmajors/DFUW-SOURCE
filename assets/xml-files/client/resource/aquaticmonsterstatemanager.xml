@@ -1,0 +1,121 @@
+<XML>
+    <VersionInformation Major="0" Minor="1" Incremental="0" />
+<!--
+###############################################################################
+#####                         Rules for FlyingMode                        #####
+###############################################################################
+-->
+<!-- Rule for changing flyingmode to 'FlyingMode Grounded' -->
+    <SFStateChangeRule EventName="Event_Object_Gained_Contact">
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Contact="TRUE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Grounded" />
+    </SFStateChangeRule>
+<!-- Rule for changing flyingmode to 'FlyingMode Flying' -->
+    <SFStateChangeRule EventName="Event_Object_Lost_Contact">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Contact="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Flying" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType FlyingMode" ModeValueName="FlyingMode Flying" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                          Rules for LifeMode                         #####
+###############################################################################
+-->
+<!-- Rule for changing lifemode to 'LifeMode Dying' -->
+    <SFStateChangeRule EventName="Event_Object_Dying">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" />
+    </SFStateChangeRule>
+<!-- Rule for changing lifemode to 'LifeMode Dead' -->
+    <SFStateChangeRule EventName="Event_Object_Died">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dead" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                         Rules for WeaponMode                        #####
+###############################################################################
+-->
+<!-- Rules for changing weaponmode to 'WeaponMode Unarmed' -->
+<!-- #1 Changing from 'WeaponMode Combat' -->
+    <SFStateChangeRule EventName="Event_Weapon_Sheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Combat" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Unarmed" />
+    </SFStateChangeRule>
+<!-- #2 Changing from 'WeaponMode Spell' -->
+    <SFStateChangeRule EventName="Event_Magic_Staff_Sheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Spell" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Unarmed" />
+    </SFStateChangeRule>
+<!-- Rule for changing WeaponMode to 'WeaponMode Combat' -->
+    <SFStateChangeRule EventName="Event_Weapon_Unsheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Combat" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Combat" />
+    </SFStateChangeRule>
+<!-- Rule for changing WeaponMode to 'WeaponMode Spell' -->
+    <SFStateChangeRule EventName="Event_Magic_Staff_Unsheathed">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Spell" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WeaponMode" ModeValueName="WeaponMode Spell" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                           Operation Rules                           #####
+###############################################################################
+-->
+<!-- OperationRule for changing flyingmode from any value into any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType FlyingMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_FlyingMode_Changed" />
+        </SFOperationName>
+        <SFOperationName>
+            <SFString Value="Start_Flying_Animation" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing lifemode from any value to any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType LifeMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_LifeMode_Changed" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing weaponmode from any value into any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType WeaponMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_WeaponMode_Changed" />
+        </SFOperationName>
+    </SFOperationRule>
+</XML>

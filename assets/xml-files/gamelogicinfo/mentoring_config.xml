@@ -1,0 +1,18 @@
+<Mentoring version_major = "1" version_minor = "0">
+	<Enabled                     live_value = "true"   debug_value = "true"/>
+	<SystemOpenForApprentices    live_value = "true"   debug_value = "true"/>
+	<MaxApprentices              live_value = "6"      debug_value = "6"/>
+	<MentorMinProwess            live_value = "80000"  debug_value = "20000"/>
+	<ApprenticeMaxProwess        live_value = "40000"  debug_value = "10000"/>
+	<MaximumScore                live_value = "5"      debug_value = "5"/>
+	<MinRatesBeforeView          live_value = "10"     debug_value = "3"/>
+	<MinCancelScore              live_value = "2"      debug_value = "2"/>
+	<ExpirationScore             live_value = "4.5"    debug_value = "4.5"/>
+	<ProwessPointsMaxReward      live_value = "2000"   debug_value = "2000"/> <!-- Rating / MaximumScore * ProwessPointsMaxReward -->
+	<CancelCoolDown              live_value = "1440"   debug_value = "1440"/> <!-- Live value = 24h * 60m -->
+	<PendingExpirationTime       live_value = "4320"   debug_value = "300"/>  <!-- Live value = 24h * 60m * 3d -->
+	<ProwessPointsDeltaMult      live_value = "0.5"    debug_value = "1"/>    <!-- Mentor reward = Apprentice gain prowess points * ProwessPointsDelta -->
+	<ProwessPointsDeltaMultFeat  live_value = "0.1"    debug_value = "0.5"/>  <!-- Mentor reward = Apprentice gain prowess points * ProwessPointsDelta -->
+	<ProwessPointsDeltaMultHarv  live_value = "0.05"   debug_value = "0.5"/>  <!-- Mentor reward = Apprentice gain prowess points * ProwessPointsDelta -->
+	<ProwessPointsDeltaMultCraft live_value = "0.05"   debug_value = "0.5"/>  <!-- Mentor reward = Apprentice gain prowess points * ProwessPointsDelta -->
+</Mentoring>

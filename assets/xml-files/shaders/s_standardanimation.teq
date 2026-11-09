@@ -1,0 +1,82 @@
+#include "stdstate.frag"
+#include "shadowmap.frag"
+
+#include "stdio.frag"
+
+// Matrix Pallette
+static const int MAX_MATRICES = 26;
+float4x3    mWorldMatrixArray[MAX_MATRICES] : REAnimWorldMatrixArray;
+
+
+
+///////////////////////////////////////////////////////
+
+VS_SHADOWMAP_OUTPUT_NO_TEXTURE VShade_2Weight(STD_VS_SKINNING_INPUT i)
+{
+    VS_SHADOWMAP_OUTPUT_NO_TEXTURE   o = (VS_SHADOWMAP_OUTPUT_NO_TEXTURE)0;
+    float3      Pos = 0.0f;
+    //float3      Normal = 0.0f;    
+    float       LastWeight = 0.0f;
+    
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(i.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])i.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+    // calculate the pos/normal using the "normal" weights 
+    //        and accumulate the weights to calculate the last weight
+
+    //i.Pos *= 10.0f;
+    LastWeight = BlendWeightsArray[0];
+        
+    Pos = mul(i.Pos, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+    //Normal = mul(i.Normal, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+
+    LastWeight = 1.0f - LastWeight; 
+
+    // Now that we have the calculated weight, add in the final influence
+    Pos += (mul(i.Pos, mWorldMatrixArray[IndexArray[1]]) * LastWeight);
+    //Normal += (mul(i.Normal, mWorldMatrixArray[IndexArray[1]]) * LastWeight); 
+
+	//o.WorldPos = float4(Pos,1.0f);
+    
+    //Pos *= 10.0f;
+    //Pos += 50*PLANET_LIGHTDIR_COMMON;
+    //Pos -= float3(0,1,0)*10;
+    // transform position from world space into view and then projection space
+    o.Pos = mul(float4(Pos.xyz, 1.0f), SHADOW_VIEW_PROJECTION_MATRIX);
+	o.ScreenPos = o.Pos;
+
+    // normalize normals
+    //Normal = normalize(Normal);
+
+    return o;
+}
+
+
+
+
+//////////////////////////////////////
+// 
+//////////////////////////////////////
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+    	FogEnable = FALSE;
+
+        AlphaTestEnable = FALSE;
+        AlphaBlendEnable = FALSE;
+
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+       	CullMode = CW;
+    
+    	VertexShader = compile vs_3_0 VShade_2Weight();
+        PixelShader  = compile ps_3_0 ShadowMapPSNoTexture();
+    }
+}
+

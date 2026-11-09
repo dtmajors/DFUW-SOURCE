@@ -1,0 +1,161 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_Malaut Surface Beguiler" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="ANIMATEDOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="true" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <Meshes>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="malaut_surface_beguiler.sfam" />
+                    </Set0>
+                </Meshes>
+                <Animations>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="malaut_surface_beguiler.sfas" />
+                    </Set0>
+                </Animations>
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <NumberOfSubsets>
+                <SFInteger Value="4" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="False" />
+                    <SFString Value="shaderdefault.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader0>
+                        <SFString Value="shaderanimtransparentnew.xml" />
+                        <SFInteger Value="1" />
+                    </Shader0>
+                    <Shader1>
+                        <SFString Value="shaderanimtransparentnew.xml" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="shaderanimtransparentnew.xml" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                    <Shader3>
+                        <SFString Value="shaderanimalphametaltextureglow.xml" />
+                        <SFInteger Value="1" />
+                    </Shader3>
+                </SubsetShaders>
+            </Normal>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+            <AnimationSet0>
+                <SetName>
+                    <SFString Value="Idle" />
+                </SetName>
+                <SetFile>
+                    <SFString Value="SF_DEFAULT" />
+                </SetFile>
+            </AnimationSet0>
+        </AnimationInformation>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-1.27912" Y="-0.10492" Z="-1.13202" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="1.06169" Y="2.23589" Z="1.20879" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="-0.10872" Y="1.06549" Z="0.0383841" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="1.17041" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation />
+            </BoundingInformation>
+        </VisibilityInformation>
+        <DynamicHitConfigFile Enabled="true" Value="animations/malaut_surface_beguiler_dynhit_config.xml" />
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="character" />
+        <WaterTransition>
+            <Submerged Value="2" />
+            <Floating Value="1.5" />
+            <Surface Value="1" />
+            <Touching Value="0.1" />
+        </WaterTransition>
+        <ImpulseScaleFactor Value="1" />
+        <RepulsiveAngleRange Min="0" Max="3.14159" />
+    </PhysicsInformation>
+    <MassCenter>
+        <SFVector3 X="0" Y="0" Z="0" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="malaut_surface_beguiler.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFSPHERECOLLECTIONCOLLISIONSCHEME" />
+                <FileName Value="malaut_surface_beguiler.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="0" Y="0" Z="0" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="2.24211" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+    <VersionInformation Major="1" Minor="0" />
+</SFObject>

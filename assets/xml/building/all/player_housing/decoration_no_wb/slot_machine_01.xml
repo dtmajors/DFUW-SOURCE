@@ -1,0 +1,352 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Player Slot Machine" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="slot_machine_01.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="FALSE" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderprop_alphametal.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderprop_alphametal.xml" />
+<SFInteger Value="1" />
+</Shader1>
+<Shader2>
+<SFString Value="shaderprop_alphametal_cw.xml" />
+<SFInteger Value="1" />
+</Shader2>
+<Shader3>
+<SFString Value="shaderprop_alphametal_ccw.xml" />
+<SFInteger Value="1" />
+</Shader3>
+<Shader4>
+<SFString Value="shadersfx_textureanim_16f.xml" />
+<SFInteger Value="1" />
+</Shader4>
+<Shader5>
+<SFString Value="shaderarmoursharp.xml" />
+<SFInteger Value="1" />
+</Shader5>
+<Shader6>
+<SFString Value="shaderprop_alphametal.xml" />
+<SFInteger Value="1" />
+</Shader6>
+<Shader7>
+<SFString Value="shadersm_scroll.xml" />
+<SFInteger Value="1" />
+</Shader7>
+<Shader8>
+<SFString Value="shadersm_scroll.xml" />
+<SFInteger Value="1" />
+</Shader8>
+<Shader9>
+<SFString Value="shadersm_scroll.xml" />
+<SFInteger Value="1" />
+</Shader9>
+<Shader10>
+<SFString Value="shadersfx_meshexplotion_slow.xml" />
+<SFInteger Value="1" />
+</Shader10>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="metal_central_area_01.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="slotmachine_02.bmp" />
+</Texture0>
+</Subset1>
+<Subset2>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="metal_gold_01.bmp" />
+</Texture0>
+</Subset2>
+<Subset3>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="metal_gold_02.bmp" />
+</Texture0>
+</Subset3>
+<Subset4>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="particle_fire_16_f16.tga" />
+</Texture0>
+</Subset4>
+<Subset5>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="metal_grate_01.tga" />
+</Texture0>
+</Subset5>
+<Subset6>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="slotmachine_skull_01.bmp" />
+</Texture0>
+</Subset6>
+<Subset7>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="slot_machine_symbols_02.bmp" />
+</Texture0>
+</Subset7>
+<Subset8>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="slot_machine_symbols_03.bmp" />
+</Texture0>
+</Subset8>
+<Subset9>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="slot_machine_symbols_01.bmp" />
+</Texture0>
+</Subset9>
+<Subset10>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="sfx_witchcraft_warmup.tga" />
+</Texture0>
+</Subset10>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="11" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.7305890918" Y="-0.004188600462" Z="-0.8311345577" />
+</Min>
+<Max>
+<SFVector3 X="0.7305890918" Y="2.758634329" Z="1.038524032" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.0005943779252" Y="1.089178085" Z="-0.1729816496" />
+</Center>
+<Radius>
+<SFFloat Value="1.813040972" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.0009822819848" Y="0.844448328" Z="-0.1558854133" />
+</Center>
+<Radius>
+<SFFloat Value="1.114783287" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingSphere>
+<Center>
+<SFVector3 X="1.425678704e-007" Y="1.081260443" Z="-0.05339324102" />
+</Center>
+<Radius>
+<SFFloat Value="1.338965297" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+<Subset2>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.004062560853" Y="0.7457133532" Z="-0.01576181129" />
+</Center>
+<Radius>
+<SFFloat Value="0.5313298702" />
+</Radius>
+</BoundingSphere>
+</Subset2>
+<Subset3>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.004062560853" Y="0.6107646227" Z="-0.01576181129" />
+</Center>
+<Radius>
+<SFFloat Value="0.5313299298" />
+</Radius>
+</BoundingSphere>
+</Subset3>
+<Subset4>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.007063657977" Y="1.124261618" Z="-0.1259532124" />
+</Center>
+<Radius>
+<SFFloat Value="1.502194524" />
+</Radius>
+</BoundingSphere>
+</Subset4>
+<Subset5>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.01313949656" Y="0.495397836" Z="0.03172156587" />
+</Center>
+<Radius>
+<SFFloat Value="0.6901925206" />
+</Radius>
+</BoundingSphere>
+</Subset5>
+<Subset6>
+<BoundingSphere>
+<Center>
+<SFVector3 X="7.349897135e-009" Y="1.824942589" Z="-0.444588244" />
+</Center>
+<Radius>
+<SFFloat Value="1.515890121" />
+</Radius>
+</BoundingSphere>
+</Subset6>
+<Subset7>
+<BoundingSphere>
+<Center>
+<SFVector3 X="6.78896904e-005" Y="1.256727099" Z="-0.4207018614" />
+</Center>
+<Radius>
+<SFFloat Value="0.4694089592" />
+</Radius>
+</BoundingSphere>
+</Subset7>
+<Subset8>
+<BoundingSphere>
+<Center>
+<SFVector3 X="6.781270349e-005" Y="1.053878069" Z="-0.420701921" />
+</Center>
+<Radius>
+<SFFloat Value="0.4694089293" />
+</Radius>
+</BoundingSphere>
+</Subset8>
+<Subset9>
+<BoundingSphere>
+<Center>
+<SFVector3 X="6.785492587e-005" Y="1.460181475" Z="-0.4207018614" />
+</Center>
+<Radius>
+<SFFloat Value="0.4694089293" />
+</Radius>
+</BoundingSphere>
+</Subset9>
+<Subset10>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.0004919901839" Y="1.249513149" Z="-0.4820377529" />
+</Center>
+<Radius>
+<SFFloat Value="0.4713645279" />
+</Radius>
+</BoundingSphere>
+</Subset10>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="Static" />
+<WaterTransition>
+<Submerged Value="2.0" />
+<Floating Value="1.5" />
+<Surface Value="1.0" />
+<Touching Value="0.1" />
+</WaterTransition>
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.0003148681426" Y="1.28239572" Z="-0.2046874613" />
+</Center>
+<Radius>
+<SFFloat Value="1.663821697" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+<CollisionModelInformation>
+<StaticScheme>
+<Type Value="SFAABBTREECOLLISIONSCHEME" />
+<FileName Value="slot_machine_01.static.sfaabbtreecollisionscheme.sfc" />
+</StaticScheme>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+</CollisionModelInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

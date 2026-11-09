@@ -1,0 +1,201 @@
+<quest quest_id="306" category="lore_quest" tag="The Island" published="False" valid="True">
+	<title>The Island</title>
+	<description>Examining the Fetish closely, the Shaman found that, while it&apos;s purpose seemed complex, the actual design was fairly primitive.  What was odd was that it did not seem to originate from any of the barbaric tribes he knew.  There was, perhaps, one odd coincidence here.  Quite closeby there was an island shared by three primitive types of creature that each could easily have devised such an item.  He suggested, therefore, that your search began there and marked the location upon your map.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="305" />
+			</conditions>
+		</node>
+		<node type="event_branch" id="1" tag="Kill Nalaed Elder">
+			<instruction>&apos;Interrogate&apos; a $[Resource.N.r_nalaed_elder_NameSingular].</instruction>
+			<journal_entry>The Nalaed, you discovered, practiced a primitive sort of nature magic and tapped into the binding energies of the nearby spiders&apos; websacks.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="0" value="1" tag="Nalaed Elder" resource_name="r_Nalaed Elder" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="2" tag="Hobgob Veteran">
+			<instruction>&apos;Interrogate&apos; a $[Resource.H.r_hobgoblin_veteran_NameSingular].</instruction>
+			<journal_entry>The Hobgobs, your &apos;informant&apos; revealed before shuffling off his mortal coils, practiced a fairly necromantic form of primitive magic.  Their prime catalyst in their rituals was ectoplasm gathered from wisps that haunted the nearby shoreline.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="2" value="1" tag="Hobgob Veteran" resource_name="r_Hobgoblin Veteran" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Greater Matayin">
+			<instruction>&apos;Interrogate&apos; a $[Resource.G.r_greater_matayin_NameSingular]</instruction>
+			<journal_entry>Under your gentle questioning, the Matayin revealed a vile practice indeed.  The Matayin spellcrafters actually sacrificed their own progeny, in the form of their eggs, in their dark magics!</journal_entry>
+			<tasks>
+				<task type="kill_object" id="4" value="1" tag="Matayin Elder" resource_name="r_Greater Matayin" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="4" tag="" />
+		<node type="event_simple" id="5" tag="Gather Spider Websacks">
+			<journal_entry>It took some work but you eventually managed to separate the Websacks from your fingers (after you separated them from the spiders) in order to stow them in your pack.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="22" value="1" tag="A Gather Item(s) Task" resource_name="r_Websack" quantity="5" inventory_type="Backpack">
+					<task_instruction>Gather 5 $[Resource.W.r_websack_NamePlural]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="Wisp Ectoplasm">
+			<journal_entry>The ectoplasm had an infuriating habit of sliding right through your hands whilst somehow succeeding in staining you with it&apos;s gooey goodness.  Eventually, however, you managed to gather enough.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="21" value="1" tag="A Gather Item(s) Task" resource_name="r_Ectoplasm" quantity="5" inventory_type="Backpack">
+					<task_instruction>Gather 5 $[Resource.E.r_ectoplasm_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="7" tag="Gather Eggs">
+			<journal_entry>With the five eggs squelching together rather delightfully, you bound the pouch strings tightly and did your best to ignore the stench!</journal_entry>
+			<tasks>
+				<task type="gather_items" id="9" value="1" tag="A Gather Item(s) Task" resource_name="r_Matayin Egg" quantity="15" inventory_type="Backpack">
+					<task_instruction>Gather 15 $[Resource.M.r_matayin_egg_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_join" id="8" tag="gather">
+			<journal_entry>With all three prime ritualistic ingredients from the nearby denizens acquired, it was time to see which, if any, of these types of magic might have had a hand in the crafting of the Fetish.  The Shaman had provided you with a retro-ritualistic rite that should suffice.  All you needed was a handy altar!</journal_entry>
+		</node>
+		<node type="event_simple_conditional" id="13" tag="use altar" fail_fast="True">
+			<instruction>Locate and interact with a nearby altar.</instruction>
+			<conditions>
+				<condition type="item_possession" id="2" value="2" tag="An Item Possession Condition" resource_name="r_Matayin Egg" quantity="15" inventory_type="Backpack" />
+				<condition type="item_possession" id="3" value="2" tag="An Item Possession Condition" resource_name="r_Ectoplasm" quantity="5" inventory_type="Backpack" />
+				<condition type="item_possession" id="4" value="2" tag="An Item Possession Condition" resource_name="r_Websack" quantity="5" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="10" value="1" tag="An Interact With Object Task" resource_name="r_qt nalaed altar" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="3" tag="An Add Quest Area to World-Map Action" area_id="78" />
+			</actions>
+		</node>
+		<node type="event_merge" id="10" tag="Altar Effect">
+			<journal_entry>You placed the three sets of ingredients upon the altar and began the investigative spell.  Slowly, imperceptibly at first but gathering in resonance, the altar began to hum with dark power.  From what the Shaman had said, if one the ingredients was involved in the ritual in question, it would glow and you would receive a smoky vision of the perpetrators.</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="9" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="end_node" id="11" tag="" />
+		<node type="event_simple" id="12" tag="The Island S12">
+			<instruction>Follow the marker on your map</instruction>
+			<journal_entry>You arrived at the island indicated by the Shaman on your map.  At first glance it did seem eerily quiet though the number of smoke fires drifting slowly through the sky above held a foreboding feeling of the quiet before the storm.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="7" value="1" tag="To the Tri-Mob Island" area_id="78" />
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="1" tag="An Add Map-Marker to World-Map Action" world_x="2255" world_z="4654" />
+			</actions>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<journal_entry>The Shaman had said that in order to determine if any of the primitive magics of the three monster communities inhabiting the island were involved in the creation of the Fetish, you would likely have to gather the materials they used most often and perform a reverse ritualistic spell.</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>Before doing that, however, you needed to discover what these materials might be.  This, the Ork had said with a gleeful grin, would, of course, involve violence!</journal_entry>
+		</node>
+		<node type="event_simple_conditional" id="24" tag="use altar" fail_fast="True">
+			<instruction>Interact with a nearby altar.</instruction>
+			<conditions>
+				<condition type="item_possession" id="11" value="2" tag="An Item Possession Condition" resource_name="r_Matayin Egg" quantity="15" inventory_type="Backpack" />
+				<condition type="item_possession" id="12" value="2" tag="An Item Possession Condition" resource_name="r_Websack" quantity="5" inventory_type="Backpack" />
+				<condition type="item_possession" id="13" value="2" tag="An Item Possession Condition" resource_name="r_Ectoplasm" quantity="5" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="20" value="1" tag="An Interact With Object Task" resource_name="r_qt nalaed altar" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="6" tag="An Add Quest Area to World-Map Action" area_id="78" />
+			</actions>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>With that in mind then, it must have come as a small shock when all three ingredients glowed brightly and the smoky apparition that rose out of the flames belonged to none of the three tribes present on the Island!</journal_entry>
+		</node>
+		<node type="event_join" id="23" tag="gather" optional_tasks="False">
+			<instruction>You need to have all the ingredients in your backpack before you interacting with the altar.</instruction>
+			<tasks>
+				<task type="gather_items" id="17" value="1" tag="eggs" resource_name="r_Matayin Egg" quantity="15" inventory_type="Backpack">
+					<task_instruction>Gather 15 </task_instruction>
+				</task>
+				<task type="gather_items" id="18" value="1" tag="ectopl" resource_name="r_Ectoplasm" quantity="5" inventory_type="Backpack">
+					<task_instruction>Gather 5 </task_instruction>
+				</task>
+				<task type="gather_items" id="19" value="1" tag="websack" resource_name="r_Websack" quantity="5" inventory_type="Backpack">
+					<task_instruction>Gather 5 </task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="25" tag="skin wisp">
+			<tasks>
+				<task type="use_skill_on" id="23" value="1" tag="A Use Skill On Object Task" resource_name="r_Wisp" skill_name="s_Skinning_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="26" tag="get ectoplasm">
+			<actions>
+				<action type="give_item_to_player" id="7" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Ectoplasm" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="27" tag="skin spider">
+			<tasks>
+				<task type="use_skill_on" id="24" value="1" tag="A Use Skill On Object Task" resource_name="r_Spiders" skill_name="s_Skinning_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="28" tag="get web sac">
+			<actions>
+				<action type="give_item_to_player" id="8" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Websack" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="13" from="0" to="12" value="1" />
+		<edge id="1" from="4" to="1" value="0" />
+		<edge id="2" from="1" to="5" value="1" />
+		<edge id="3" from="5" to="8" value="1" />
+		<edge id="4" from="4" to="2" value="0" />
+		<edge id="5" from="2" to="6" value="1" />
+		<edge id="6" from="6" to="8" value="1" />
+		<edge id="7" from="4" to="3" value="0" />
+		<edge id="8" from="3" to="7" value="1" />
+		<edge id="40" from="23" to="24" value="1" />
+		<edge id="15" from="7" to="8" value="1" />
+		<edge id="42" from="8" to="13" value="0" />
+		<edge id="25" from="10" to="19" value="0" />
+		<edge id="18" from="12" to="14" value="1" />
+		<edge id="19" from="14" to="15" value="0" />
+		<edge id="20" from="15" to="4" value="0" />
+		<edge id="35" from="13" to="23" value="2" />
+		<edge id="29" from="13" to="10" value="1" />
+		<edge id="26" from="19" to="11" value="0" />
+		<edge id="41" from="24" to="23" value="2" />
+		<edge id="37" from="24" to="10" value="1" />
+		<edge id="44" from="2" to="25" value="1" />
+		<edge id="45" from="25" to="26" value="1" />
+		<edge id="46" from="26" to="25" value="0" />
+		<edge id="47" from="1" to="27" value="1" />
+		<edge id="48" from="27" to="28" value="1" />
+		<edge id="49" from="28" to="27" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="37" y="463" />
+		<node_location id="1" x="345" y="606" />
+		<node_location id="2" x="359" y="465" />
+		<node_location id="3" x="359" y="197" />
+		<node_location id="4" x="232" y="462" />
+		<node_location id="5" x="505" y="604" />
+		<node_location id="6" x="501" y="462" />
+		<node_location id="7" x="512" y="195" />
+		<node_location id="8" x="621" y="462" />
+		<node_location id="13" x="732" y="462" />
+		<node_location id="10" x="884" y="460" />
+		<node_location id="11" x="1029" y="461" />
+		<node_location id="12" x="120" y="466" />
+		<node_location id="14" x="150" y="399" />
+		<node_location id="15" x="173" y="347" />
+		<node_location id="24" x="884" y="345" />
+		<node_location id="19" x="955" y="462" />
+		<node_location id="23" x="731" y="348" />
+		<node_location id="25" x="395" y="382" />
+		<node_location id="26" x="438" y="293" />
+		<node_location id="27" x="403" y="706" />
+		<node_location id="28" x="483" y="785" />
+	</node_locations>
+</quest>

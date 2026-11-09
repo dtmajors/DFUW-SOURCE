@@ -1,0 +1,32 @@
+<quest quest_id="408" category="lore_quest" tag="Lead 07">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="402" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Kill Vargashi" optional_tasks="True">
+			<tasks>
+				<task type="kill_object" id="0" value="1" tag="Kill some Vargashi" resource_name="" quantity="0" />
+				<task type="go_to_area" id="1" value="1" tag="Search for Snowclan here" area_id="0" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Interogate (slay) the lord">
+			<tasks>
+				<task type="kill_object" id="2" value="1" tag="Kill Vargashi Leader" resource_name="" quantity="0" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Frozen Throne">
+			<tasks>
+				<task type="go_near_object" id="3" value="1" tag="Investigate Frozen throne" resource_name="" distance="0" />
+			</tasks>
+		</node>
+		<node type="end_node" id="4" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+		<edge id="2" from="2" to="3" value="0" />
+		<edge id="3" from="3" to="4" value="0" />
+	</edges>
+</quest>

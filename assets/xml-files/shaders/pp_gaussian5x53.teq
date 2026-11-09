@@ -1,0 +1,31 @@
+#include "stdstate.frag"
+half2 SampleOffsets[25];
+
+static const float GaussianKernel[] = {
+	0.023528, 0.033970, 0.038393, 0.033970, 0.023528, 
+	0.033970, 0.049045, 0.055432, 0.049045, 0.033970, 
+	0.038393, 0.055432, 0.062651, 0.055432, 0.038393, 
+	0.033970, 0.049045, 0.055432, 0.049045, 0.033970, 
+	0.023528, 0.033970, 0.038393, 0.033970, 0.023528
+};
+
+sampler s0 : register(s0);
+
+float4 Gaussian5x5(in float2 vScreenPosition : TEXCOORD0) : COLOR
+{
+	float4 ret = 0;
+	for (int i=0; i<25; i++)
+	{
+		ret += GaussianKernel[i] * tex2D(s0, vScreenPosition + SampleOffsets[i]);
+	}
+	return ret;
+}
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+        PixelShader  = compile ps_3_0 Gaussian5x5();
+    }
+}

@@ -1,0 +1,76 @@
+/*
+ * Decompiled with CFR.
+ */
+package com.thoughtworks.xstream.io.xml;
+
+import com.thoughtworks.xstream.io.xml.XmlFriendlyReplacer;
+
+public class XStream11XmlFriendlyReplacer
+extends XmlFriendlyReplacer {
+    private char dollarReplacementInClass = (char)45;
+    private String dollarReplacementInField = "_DOLLAR_";
+    private String underscoreReplacementInField = "__";
+    private String noPackagePrefix = "default";
+
+    public String unescapeName(String name) {
+        return name;
+    }
+
+    protected String escapeClassName(String className) {
+        if ((className = className.replace('$', this.dollarReplacementInClass)).charAt(0) == this.dollarReplacementInClass) {
+            className = this.noPackagePrefix + className;
+        }
+        return className;
+    }
+
+    protected String escapeFieldName(String fieldName) {
+        StringBuffer result = new StringBuffer();
+        int length = fieldName.length();
+        for (int i = 0; i < length; ++i) {
+            char c2 = fieldName.charAt(i);
+            if (c2 == '$') {
+                result.append(this.dollarReplacementInField);
+                continue;
+            }
+            if (c2 == '_') {
+                result.append(this.underscoreReplacementInField);
+                continue;
+            }
+            result.append(c2);
+        }
+        return result.toString();
+    }
+
+    protected String unescapeClassName(String className) {
+        if (className.startsWith(this.noPackagePrefix + this.dollarReplacementInClass)) {
+            className = className.substring(this.noPackagePrefix.length());
+        }
+        className = className.replace(this.dollarReplacementInClass, '$');
+        return className;
+    }
+
+    protected String unescapeFieldName(String xmlName) {
+        StringBuffer result = new StringBuffer();
+        int length = xmlName.length();
+        for (int i = 0; i < length; ++i) {
+            char c2 = xmlName.charAt(i);
+            if (this.stringFoundAt(xmlName, i, this.underscoreReplacementInField)) {
+                i += this.underscoreReplacementInField.length() - 1;
+                result.append('_');
+                continue;
+            }
+            if (this.stringFoundAt(xmlName, i, this.dollarReplacementInField)) {
+                i += this.dollarReplacementInField.length() - 1;
+                result.append('$');
+                continue;
+            }
+            result.append(c2);
+        }
+        return result.toString();
+    }
+
+    private boolean stringFoundAt(String name, int i, String replacement) {
+        return name.length() >= i + replacement.length() && name.substring(i, i + replacement.length()).equals(replacement);
+    }
+}
+

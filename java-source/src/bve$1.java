@@ -1,0 +1,59 @@
+// $VF: synthetic class
+class bve$1 {
+   static {
+      try {
+         dQs[bve$a.dQy.ordinal()] = 1;
+      } catch (NoSuchFieldError var11) {
+      }
+
+      try {
+         dQs[bve$a.dQz.ordinal()] = 2;
+      } catch (NoSuchFieldError var10) {
+      }
+
+      try {
+         dQs[bve$a.dQA.ordinal()] = 3;
+      } catch (NoSuchFieldError var9) {
+      }
+
+      try {
+         dQs[bve$a.dQF.ordinal()] = 4;
+      } catch (NoSuchFieldError var8) {
+      }
+
+      try {
+         dQs[bve$a.dQK.ordinal()] = 5;
+      } catch (NoSuchFieldError var7) {
+      }
+
+      try {
+         dQs[bve$a.dQu.ordinal()] = 6;
+      } catch (NoSuchFieldError var6) {
+      }
+
+      try {
+         dQs[bve$a.dQG.ordinal()] = 7;
+      } catch (NoSuchFieldError var5) {
+      }
+
+      try {
+         dQs[bve$a.dQE.ordinal()] = 8;
+      } catch (NoSuchFieldError var4) {
+      }
+
+      try {
+         dQs[bve$a.dQI.ordinal()] = 9;
+      } catch (NoSuchFieldError var3) {
+      }
+
+      try {
+         dQs[bve$a.dQw.ordinal()] = 10;
+      } catch (NoSuchFieldError var2) {
+      }
+
+      try {
+         dQs[bve$a.dQJ.ordinal()] = 11;
+      } catch (NoSuchFieldError var1) {
+      }
+   }
+}

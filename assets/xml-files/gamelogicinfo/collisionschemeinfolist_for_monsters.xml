@@ -1,0 +1,39 @@
+<XML>
+    <VersionInformation Major="0" Minor="1" Incremental="0" />
+    <SFCollisionSchemeInfo MeshFileName="gorra_dar.xml">
+        <SFCollisionSchemeMapping DefaultScheme="true">
+            <SFStaticCollisionSchemeName>
+                <SFString Value="gorra_dar.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="gorra_dar.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>			
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping DefaultScheme="false">
+            <SFStaticCollisionSchemeName>
+                <SFString Value="dummy.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="gorra_dar.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+    <SFCollisionSchemeInfo MeshFileName="gorra_slave.xml">
+        <SFCollisionSchemeMapping DefaultScheme="true">
+            <SFStaticCollisionSchemeName>
+                <SFString Value="gorra_slave.static.SFSPHERECOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="gorra_slave.dynamic.SFSPHERECOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>			
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping DefaultScheme="false">
+            <SFStaticCollisionSchemeName>
+                <SFString Value="dummy.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="gorra_slave.dynamic.SFSPHERECOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+</XML>

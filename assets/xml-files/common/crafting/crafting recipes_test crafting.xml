@@ -1,0 +1,35 @@
+
+<XML>
+    <VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+	<SFRecipe Difficulty="1.0" DurationMultiplier="1.0" Quantity="1"
+        RequiredResourceName="r_Living Creatures" ResourceName="r_Test_Craftable_Item_A">
+        <SFIngredient FractionLoss="0.0" Quantity="1" ResourceName="r_Test_Ingredient_A"/>
+        <SFIngredient FractionLoss="0.0" Quantity="10" ResourceName="r_Test_Ingredient_B"/>
+        <SFRequiredSkill InheritancePortion="1.0" SkillLevel="1.0"
+            SkillName="s_Test Crafting Skill" UseInCraftingCheck="true"/>
+    </SFRecipe>
+
+	<SFRecipe Difficulty="1.0" DurationMultiplier="1.0" Quantity="1"
+        RequiredResourceName="r_Living Creatures" ResourceName="r_Test_Craftable_Item_B">
+        <SFIngredient FractionLoss="0.0" Quantity="1" ResourceName="r_Test_Ingredient_A"/>
+        <SFIngredient FractionLoss="0.0" Quantity="11" ResourceName="r_Test_Ingredient_B"/>
+        <SFRequiredSkill InheritancePortion="1.0" SkillLevel="1.0"
+            SkillName="s_Test Crafting Skill" UseInCraftingCheck="true"/>
+    </SFRecipe>
+
+	<SFRecipe Difficulty="1.0" DurationMultiplier="1.0" Quantity="1"
+        RequiredResourceName="r_Living Creatures" ResourceName="r_Test_Craftable_Item_C">
+        <SFIngredient FractionLoss="0.0" Quantity="1" ResourceName="r_Test_Ingredient_A"/>
+        <SFIngredient FractionLoss="0.0" Quantity="1" ResourceName="r_Test_Ingredient_C"/>
+        <SFRequiredSkill InheritancePortion="1.0" SkillLevel="1.0"
+            SkillName="s_Test Crafting Skill" UseInCraftingCheck="true"/>
+    </SFRecipe>
+
+	<SFRecipe Difficulty="-1.0" DurationMultiplier="1.0" Quantity="1"
+        RequiredResourceName="r_Living Creatures" ResourceName="r_Test_Craftable_Item_D">
+        <SFIngredient FractionLoss="0.0" Quantity="1" ResourceName="r_Test_Ingredient_A"/>
+        <SFRequiredSkill InheritancePortion="1.0" SkillLevel="1.0"
+            SkillName="s_Test Crafting Skill" UseInCraftingCheck="true"/>
+    </SFRecipe>
+</XML>

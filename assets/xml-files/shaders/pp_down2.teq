@@ -1,0 +1,170 @@
+//DownSample 2x
+
+#include "stdstate.frag"
+#include "HDRLUtils.frag"
+
+
+texture SourceColor : REPTextureSourceColor;
+const float DirtRemove;
+float InvDirtRemove;
+
+sampler2D SrcColorSampler =
+sampler_state
+{
+    Texture = <SourceColor>;
+    AddressU = Clamp;
+    AddressV = Clamp;
+    MinFilter = Linear;
+    MagFilter = Linear;
+    MipFilter = Linear;
+};
+
+
+
+static const int KernelSize = 4;
+
+float2 PixelCoordsFilter[KernelSize] =
+{
+
+    { 0.5,   0.5 },
+    { 0.5,  -0.5 },
+    {-0.5,   0.5 },
+    {-0.5,  -0.5 },
+};
+
+
+float2 TexelCoordsFilter[KernelSize];
+
+
+
+
+float4 DownFilter( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    for (int i = 0; i < KernelSize; i++)
+    {
+        Color += tex2D( SrcColorSampler, Tex + TexelCoordsFilter[i].xy );
+    }
+
+    return Color / KernelSize;
+}
+
+float4 DownFilterAlpha( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    //float3 SourceColor = tex2D( SrcColorSampler, Tex ).xyz;
+    float3 DotVector = LUMINANCE_VECTOR * 0.8f;
+
+    for (int i = 0; i < KernelSize; i++)
+    {
+    	float4 TempColor = tex2D( SrcColorSampler, Tex + TexelCoordsFilter[i].xy );
+    	float Multiplier;
+        if (TempColor.a > 0.5f)
+        	Multiplier = TempColor.a * 2.0f;
+        else
+        	Multiplier = 1.0f;
+           
+
+        Color.xyz += TempColor.xyz * (TempColor.a )*(Multiplier);
+        //Color.xyz += SourceColor.xyz * dot(TempColor.xyz , LUMINANCE_VECTOR);
+        //Color.xyz += TempColor.xyz * dot(TempColor.xyz , SourceColor.xyz);
+        Color.xyz += TempColor.xyz * dot(TempColor.xyz, DotVector);
+        //Color.xyz += TempColor.xyz * dot(TempColor.xyz , LUMINANCE_VECTOR_GREEN);
+        //Color.xyz += dot(TempColor.xyz , LUMINANCE_VECTOR)*0.5f;
+        Color.a += TempColor.a;
+    }
+
+    //return Color / KernelSize;
+    Color /= KernelSize;
+    //Color.xyz += tex2D( SrcColorSampler, Tex ).xyz * dot(tex2D( SrcColorSampler, Tex ).xyz, LUMINANCE_VECTOR) * 1.2f;
+    return Color;
+}
+/*
+float4 DownFilterAlpha1x( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    float4 TempColor = tex2D( SrcColorSampler, Tex );
+    float Multiplier;
+    
+         //if (TempColor.a > 0.5f)
+        //	Multiplier = TempColor.a*2.0f;
+       // else
+       // 	Multiplier = 1.0f;
+           
+
+//        Color.xyz = TempColor.xyz * (TempColor.a )*Multiplier;
+        Color.xyz = TempColor.xyz * (TempColor.a )*2;
+        //try to remove dirty pixels
+        Multiplier = saturate(dot(TempColor.xyz, LUMINANCE_VECTOR) - DirtRemove);
+        //Multiplier = Multiplier * InvDirtRemove;
+        
+        Color.xyz += TempColor.xyz * Multiplier * 2;
+        Color.a = TempColor.a;
+
+    return Color;
+}
+*/
+
+
+float4 DownFilterAlpha1x( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    float4 TempColor = tex2D( SrcColorSampler, Tex );
+
+    float Multiplier;
+/*    
+         if (TempColor.a > 0.5f)
+        	Multiplier = TempColor.a*2.0f;
+        else
+        	Multiplier = 1.0f;
+           
+*/
+        Color.xyz = TempColor.xyz * (TempColor.a )*2;
+        //Color = TempColor * (TempColor.a ) * 2;
+
+        //Multiplier = saturate(dot(TempColor.xyz, LUMINANCE_VECTOR) - 0.2f);
+        //Multiplier = dot(TempColor.xyz, LUMINANCE_VECTOR);
+        //Multiplier -=  DirtTest;
+        //Multiplier = Multiplier * InvDirtRemove;
+        //Color.xyz += saturate(TempColor.xyz * Multiplier);// * 2;
+        //Color.xyz += TempColor.xyz * Multiplier * 2;
+
+        Color.a = TempColor.a;
+
+    return Color;
+}
+
+
+//
+//
+
+technique DownSample
+<
+  float ScaleX = 0.5f;
+  float ScaleY = 0.5f;
+>
+{
+    pass P0
+    {
+		STD_STATE;
+    	Texture[1] = NULL;
+    
+        Lighting       = false;
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = FALSE;
+        ZEnable = FALSE;
+	ZWriteEnable = FALSE;
+	CullMode = CCW;
+        
+   
+        VertexShader = null;
+        //PixelShader = compile ps_2_a DownFilterAlpha();
+        PixelShader = compile ps_2_a DownFilterAlpha1x();
+        ZEnable = false;
+    
+    }
+}

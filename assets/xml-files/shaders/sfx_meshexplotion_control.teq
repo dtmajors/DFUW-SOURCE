@@ -1,0 +1,100 @@
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "object.frag"
+
+#include "offscreenfx.frag"
+
+
+float4 AmbMaterial  : REPGlobalMaterialAmbient = { 1.0f, 1.0f, 1.0f, 1.0f };
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float2 Tex  : TEXCOORD0;
+	float4 ClipSpace : TEXCOORD1;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float4 Diff : COLOR0;
+    float2 Tex	: TEXCOORD0;
+};
+
+bool Transparent : REInfoTransparent = true;
+
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	float4 Pos = Input.Pos;
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+    Out.Pos  = mul(Pos, WVP);             // position (projected)
+    Out.Diff = DiffMaterial;
+    Out.Diff.w = (Input.Diff.g)*DiffMaterial.w;
+	Out.Tex = Input.Tex;
+	float CurrentDeltaTime = TOTAL_TIME - OBJECT_CREATION_TIME;
+
+	// AmbMaterial.x = start of interpolation (sec) 
+	// AmbMaterial.y = duration of interpolation (sec) 
+	// AmbMaterial.z = start value   
+	// AmbMaterial.w = end value 
+	float delta = ( CurrentDeltaTime - AmbMaterial.x ) / AmbMaterial.y ; 
+	delta = clamp( delta , 0 , 1 ) ; 
+	Out.Tex.y = Input.Tex.y + lerp( AmbMaterial.z, AmbMaterial.w , delta ) ; 
+	
+	Out.ClipSpace = Out.Pos;
+	
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+    return Out;
+}
+
+
+float4 PS(VS_OUTPUT Input) : COLOR
+{
+	float4 Out = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	Out = BaseTex * Input.Diff;
+	Out = lerp(Out,0,Input.Fog);
+	
+	// OffscreenFX
+	Out = ProcessOffscreenFXColor(Out, Input.ClipSpace);
+	
+	return Out;
+}
+
+//
+//
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+        SrcBlend = SrcAlpha;
+        DestBlend = One;//InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = false;
+	
+		FogEnable = true;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

@@ -1,0 +1,150 @@
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "atmosphere.frag"
+#include "texture.frag"
+#include "combine_illumination.frag"
+#include "stdio.frag"
+#include "lighting.frag"
+#include "time.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+bool Decal : REInfoDecal = true;
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+struct VS_OUTPUT
+{
+    float4 Pos			: POSITION;
+    float2 Tex			: TEXCOORD0;
+    float4 SunLight 	: TEXCOORD1;
+	float3 WorldNormal	: TEXCOORD2;
+	float2 ZPos			: TEXCOORD3;
+	float3 WorldPos 	: COLOR0;
+	#ifdef TIME_FADING
+		float  TimeFading : COLOR1;
+	#endif
+    float Fog			: FOG;
+};
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : NORMAL;
+    float2 Tex	: TEXCOORD0;
+#ifdef TIME_FADING 
+	float  StartTime 	: TEXCOORD1 ; 
+#endif
+
+};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+	
+	float4 ProjPos = mul( mul( Input.Pos , WORLD_MATRIX ) , VIEW_PROJECTION_MATRIX ) ;             // clipspace position 
+	
+	float Offset = (1.f + ProjPos.z * 0.1f) * 0.01 ;  // adjust offset based on distance from camera 
+	float4 CorrectedPos = Input.Pos + float4( Input.Norm * Offset , 0 ) ;   
+	
+    float4 WorldPos 	= mul( CorrectedPos , WORLD_MATRIX ) ; 
+	ProjPos 			= mul( WorldPos , VIEW_PROJECTION_MATRIX ) ; 
+	float3 WorldNormal 	= mul(Input.Norm , (float3x3)WORLD_MATRIX );
+
+	Out.Pos =           ProjPos ; 
+	Out.WorldPos =      WorldPos ; 
+	Out.ZPos.xy =       Out.Pos.zw;
+	Out.WorldNormal =   WorldNormal ; 
+    Out.Tex  = 			Input.Tex;
+    Out.Fog = 			CalculateFog_3_0(Out.Pos.z); // CalculateFog
+	Out.SunLight=		lightPixelDiffuseRaw(WorldNormal,DiffMaterial.xyz);
+	
+#ifdef TIME_FADING 
+	Out.TimeFading = 1.f - saturate ( ( TOTAL_TIME - Input.StartTime ) / 5.f ) ; 
+#endif
+
+    return Out;
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3) 0;
+    Output.Color = (float4)0;
+	float4 SurfaceColor = tex2D( DEFAULT_SAMPLER_2 , float2( Input.Tex.y , Input.Tex.x ) );
+
+	float3 Nn = normalize(Input.WorldNormal);
+	
+	float3 Weather = applyAtmosphere_Decals(SurfaceColor.xyz, Nn, float2( Input.Tex.y , Input.Tex.x )*0.5);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++) DynamicLight += pointLightPixelDiffuseRaw(Input.WorldPos, Nn, LightParams[i]);
+#endif
+	
+	Output.Color.xyz = combineWeatherIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Input.SunLight, DynamicLight, 0, Weather.xyz, 0);
+
+	Output.Color.w = SurfaceColor.w  ; 
+
+#ifdef ROAD_FADING	
+	float OffCenter = 2.f * abs( Input.Tex.x - 0.5f )  ;  
+	OffCenter = 1.f - OffCenter * OffCenter ; 				// fade along the width of the road
+	float OffCenter2 = 0.6f * OffCenter + 0.4f ; 
+	float Fade =  lerp ( OffCenter , OffCenter2 , abs( sin( Input.Tex.y / 1.f) ) ) ;  //fade along the length of the road
+	float DistFade =  saturate( Input.ZPos / 250.f  ) ;  // fade the far 
+	Fade *=  (1.f - DistFade * DistFade ); 
+	Output.Color.w *= Fade ; 
+#endif
+#ifdef TIME_FADING
+	Output.Color.w *= Input.TimeFading ; 
+#endif
+
+	//Output.Effect = float4(0, 0, 0, 0);
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = SurfaceColor;
+#endif
+
+
+	return Output;
+}
+
+//
+//
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = RED|BLUE|GREEN; 
+		ColorWriteEnable1 = RED|BLUE|GREEN;
+#ifdef ROAD_FADING
+		ColorWriteEnable2 = RED|BLUE|GREEN;
+#else
+		ColorWriteEnable2 = 0;
+#endif
+
+        AlphaBlendEnable = true ;
+        AlphaTestEnable = false;
+
+		SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        
+        ZEnable = true;
+        ZWriteEnable = false ;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

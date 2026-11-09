@@ -1,0 +1,2666 @@
+<XML>
+	<VersionInformation Major="0" Minor="1" Incremental="0" />
+	<!-- LESSER MAGIC START -->
+	<SpecialEffect Group="true" Name="Lesser Magic">
+		<SpecialEffect Group="false" Name="se_spell_lesser_magic_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_lesser_magic_charging_tmp"/>
+		<SpecialEffect Group="false" Name="se_spell_lesser_magic_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_lesser_magic_charging_cleanup"/>
+		<SpecialEffect Group="false" Name="se_spell_lesser_magic_charging_exit"/>		
+		<SpecialEffect Group="false" Name="se_lm_miss"/>
+		<SpecialEffect Group="true" Name="Mana Missile">	
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_missile01"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_missile01_tmp"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_impact01"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_impact01_5"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_impact01_tmp"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_missile_miss"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Heal Mount">	
+			<SpecialEffect Group="false" Name="se_lm_healmount_fire"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_fire_2"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_fire_3"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_fire_4"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_fire_5"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_impact_2"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_impact_3"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_impact_4"/>
+			<SpecialEffect Group="false" Name="se_lm_healmount_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Eldritch Sphere">	
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_missile"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_missile_2"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_missile_3"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_missile_4"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_missile_5"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_impact_2"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_impact_3"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_impact_4"/>
+			<SpecialEffect Group="false" Name="se_lm_eldritchsphere_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Blast">	
+			<SpecialEffect Group="false" Name="se_lm_blast_missile01"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_missile01_tmp"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_impact01"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_impact01_5"/>
+			<SpecialEffect Group="false" Name="se_lm_blast_impact01_tmp"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lay On Hands">	
+			<SpecialEffect Group="false" Name="se_lm_layonhands_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_impact_2"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_impact_3"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_impact_4"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_impact_5"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_fire"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_fire_2"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_fire_3"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_fire_4"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_fire_5"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_mesh_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_mesh_impact_2"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_mesh_impact_3"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_mesh_impact_4"/>
+			<SpecialEffect Group="false" Name="se_lm_layonhands_mesh_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Heal Self">	
+			<SpecialEffect Group="false" Name="se_lm_heal_self_tmp"/>
+			<SpecialEffect Group="false" Name="se_lm_heal_self"/>
+			<SpecialEffect Group="false" Name="se_lm_heal_self_2"/>
+			<SpecialEffect Group="false" Name="se_lm_heal_self_3"/>
+			<SpecialEffect Group="false" Name="se_lm_heal_self_4"/>
+			<SpecialEffect Group="false" Name="se_lm_heal_self_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Magic Shield">	
+			<SpecialEffect Group="false" Name="se_lm_magic_shield"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_shield_2"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_shield_3"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_shield_4"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_shield_5"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_shield_tmp"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Magic Ward">	
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_fire"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_fire_2"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_fire_3"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_fire_4"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_fire_5"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_fire_tmp"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_impact_2"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_impact_3"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_impact_4"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_impact_5"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_tmp"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_mesh_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_final"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_final_2"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_final_3"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_final_4"/>
+			<SpecialEffect Group="false" Name="se_lm_magic_ward_final_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mana Drain">	
+			<SpecialEffect Group="false" Name="se_lm_mana_drain_to_mana_leech"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_drain"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_drain_2"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_drain_3"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_drain_4"/>
+			<SpecialEffect Group="false" Name="se_lm_mana_drain_5"/>
+			<SpecialEffect Group="false" Name="se_lm_mana drain_missile"/>
+			<SpecialEffect Group="false" Name="se_lm_mana drain_missile_2"/>
+			<SpecialEffect Group="false" Name="se_lm_mana drain_missile_3"/>
+			<SpecialEffect Group="false" Name="se_lm_mana drain_missile_4"/>
+			<SpecialEffect Group="false" Name="se_lm_mana drain_missile_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Health 2 Mana">	
+			<SpecialEffect Group="false" Name="se_lm_health2mana"/>
+			<SpecialEffect Group="false" Name="se_lm_health2mana_2"/>
+			<SpecialEffect Group="false" Name="se_lm_health2mana_3"/>
+			<SpecialEffect Group="false" Name="se_lm_health2mana_4"/>
+			<SpecialEffect Group="false" Name="se_lm_health2mana_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mana 2 Stamina">	
+			<SpecialEffect Group="false" Name="se_lm_mana2stamina"/>
+			<SpecialEffect Group="false" Name="se_lm_mana2stamina_2"/>
+			<SpecialEffect Group="false" Name="se_lm_mana2stamina_3"/>
+			<SpecialEffect Group="false" Name="se_lm_mana2stamina_4"/>
+			<SpecialEffect Group="false" Name="se_lm_mana2stamina_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Stamina 2 Health">	
+			<SpecialEffect Group="false" Name="se_lm_stamina2health"/>
+			<SpecialEffect Group="false" Name="se_lm_stamina2health_2"/>
+			<SpecialEffect Group="false" Name="se_lm_stamina2health_3"/>
+			<SpecialEffect Group="false" Name="se_lm_stamina2health_4"/>
+			<SpecialEffect Group="false" Name="se_lm_stamina2health_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Light Area">	
+			<SpecialEffect Group="false" Name="se_lm_light01"/>
+			<SpecialEffect Group="false" Name="se_lm_light01_2"/>
+			<SpecialEffect Group="false" Name="se_lm_light01_3"/>
+			<SpecialEffect Group="false" Name="se_lm_light01_4"/>
+			<SpecialEffect Group="false" Name="se_lm_light01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Burden">	
+			<SpecialEffect Group="false" Name="se_lm_burden_missile"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_missile_2"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_missile_3"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_missile_4"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_missile_5"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_old"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_impact_2"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_impact_3"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_impact_4"/>
+			<SpecialEffect Group="false" Name="se_lm_burden_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Launch">	
+			<SpecialEffect Group="false" Name="se_lm_launch_impact"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_impact_2"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_impact_3"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_impact_4"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_impact_5"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_fire"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_fire_2"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_fire_3"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_fire_4"/>
+			<SpecialEffect Group="false" Name="se_lm_launch_fire_5"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- LESSER MAGIC END -->
+	<!-- GREATER MAGIC START -->
+	<SpecialEffect Group="true" Name="Greater Magic">
+		<SpecialEffect Group="false" Name="se_spell_greater_magic_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_greater_magic_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_greater_magic_charging_exit"/>		
+		<SpecialEffect Group="false" Name="se_gm_miss"/>		
+		<SpecialEffect Group="true" Name="UNBurden">	
+			<SpecialEffect Group="false" Name="se_gm_unburden"/>
+			<SpecialEffect Group="false" Name="se_gm_unburden_2"/>
+			<SpecialEffect Group="false" Name="se_gm_unburden_3"/>
+			<SpecialEffect Group="false" Name="se_gm_unburden_4"/>
+			<SpecialEffect Group="false" Name="se_gm_unburden_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Beacon">	
+			<SpecialEffect Group="false" Name="se_gm_beacon_fire"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_fire_2"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_fire_3"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_fire_4"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_fire_5"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_main"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_main_2"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_main_3"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_main_4"/>
+			<SpecialEffect Group="false" Name="se_gm_beacon_main_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Begone">	
+			<SpecialEffect Group="false" Name="se_gm_begone_impact01"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_impact01_5"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_missile01"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_gm_begone_missile01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Confusion">	
+			<SpecialEffect Group="false" Name="se_gm_confusion_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_impact_5"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_missile"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_missile_2"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_missile_3"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_missile_4"/>
+			<SpecialEffect Group="false" Name="se_gm_confusion_missile_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Telekinesis">	
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_fire"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_fire_2"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_fire_3"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_fire_4"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_fire_5"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_main"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_main_2"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_main_3"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_main_4"/>
+			<SpecialEffect Group="false" Name="se_gm_telekinesis_main_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Flesh Curse">	
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_missile"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_missile_2"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_missile_3"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_missile_4"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_missile_5"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_fleshcurse_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Missile Fury">	
+			<SpecialEffect Group="false" Name="se_gm_missilefury_missile"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_missile_2"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_missile_3"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_missile_4"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_missile_5"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_missilefury_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Venom">	
+			<SpecialEffect Group="false" Name="se_gm_venom_missile"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_missile_2"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_missile_3"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_missile_4"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_missile_5"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_venom_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Infliction Shield">	
+			<SpecialEffect Group="false" Name="se_gm_inflictionshield"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionshield_2"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionshield_3"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionshield_4"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionshield_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Infliction Ward">	
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_line"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_line_2"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_line_3"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_line_4"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_line_5"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_2"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_3"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_4"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_5"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_mesh_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_final"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_final_2"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_final_3"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_final_4"/>
+			<SpecialEffect Group="false" Name="se_gm_inflictionward_final_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Shrapnel">	
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_fire01"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_impact01"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_impact01_5"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_missile01"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_gm_shrapnel_debree_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Insight">	
+			<SpecialEffect Group="false" Name="se_gm_insight_old"/>
+			<SpecialEffect Group="false" Name="se_gm_insight"/>
+			<SpecialEffect Group="false" Name="se_gm_insight_2"/>
+			<SpecialEffect Group="false" Name="se_gm_insight_3"/>
+			<SpecialEffect Group="false" Name="se_gm_insight_4"/>
+			<SpecialEffect Group="false" Name="se_gm_insight_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Frailty">	
+			<SpecialEffect Group="false" Name="se_gm_frailty_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_impact_5"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_missile"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_missile_2"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_missile_3"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_missile_4"/>
+			<SpecialEffect Group="false" Name="se_gm_frailty_missile_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Rend">	
+			<SpecialEffect Group="false" Name="se_gm_rend_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_impact_5"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_missile"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_missile_2"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_missile_3"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_missile_4"/>
+			<SpecialEffect Group="false" Name="se_gm_rend_missile_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="HealOther">	
+			<SpecialEffect Group="false" Name="se_gm_healother_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_impact_5"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_fire"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_fire_2"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_fire_3"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_fire_4"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_fire_5"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_mesh_impact"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_mesh_impact_2"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_mesh_impact_3"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_mesh_impact_4"/>
+			<SpecialEffect Group="false" Name="se_gm_healother_mesh_impact_5"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- GREATER MAGIC END -->
+	<!-- WITCHCRAFT MAGIC START -->
+	<SpecialEffect Group="true" Name="WitchCraft Magic">	
+		<SpecialEffect Group="false" Name="se_spell_witchcraft_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_witchcraft_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_witchcraft_charging_exit"/>			
+		<SpecialEffect Group="false" Name="se_wc_miss"/>		
+		<SpecialEffect Group="true" Name="Exhaust">	
+			<SpecialEffect Group="false" Name="se_wc_exhaust_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_exhaust_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Sluggish">	
+			<SpecialEffect Group="false" Name="se_wc_sluggish_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_sluggish_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="SpellTurn">	
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Insect Swarm">	
+			<SpecialEffect Group="false" Name="se_wc_insectswarm"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_2"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_3"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_4"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_5"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_line"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_line_2"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_line_3"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_line_4"/>
+			<SpecialEffect Group="false" Name="se_wc_insectswarm_line_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mana Leech">	
+			<SpecialEffect Group="false" Name="se_wc_manaleech_line"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_line_2"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_line_3"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_line_4"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_line_5"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_impact_redirected"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_impact_redirected_2"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_impact_redirected_3"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_impact_redirected_4"/>
+			<SpecialEffect Group="false" Name="se_wc_manaleech_impact_redirected_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Pestilence">	
+			<SpecialEffect Group="false" Name="se_wc_pestilence_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_impact_5"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_drip"/>
+			<SpecialEffect Group="false" Name="se_wc_pestilence_drip_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Disease">	
+			<SpecialEffect Group="false" Name="se_wc_disease_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_disease_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ominous Drain">	
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile_aftershock"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile_aftershock_level4"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile_aftershock_level5"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_impact_5"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_ominousdrain_missile_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Witches Brew">	
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_line"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_line_2"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_line_3"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_line_4"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_line_5"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_witchesbrew_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Palsy">	
+			<SpecialEffect Group="false" Name="se_wc_palsy_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_impact_5"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_palsy_missile_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Stupidity">	
+			<SpecialEffect Group="false" Name="se_wc_stupidity_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_stupidity_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Needles">	
+			<SpecialEffect Group="false" Name="se_wc_needles_missile"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_missile_2"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_missile_3"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_missile_4"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_needles_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Spell Curse">	
+			<SpecialEffect Group="false" Name="se_wc_spell_curse_missile01"/>
+			<SpecialEffect Group="false" Name="se_wc_spell_curse_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_wc_spell_curse_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_wc_spell_curse_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_wc_spell_curse_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_wc_spellcurse_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_spellcurse_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_spellcurse_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_spellcurse_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_spellcurse_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Tounge Rot">	
+			<SpecialEffect Group="false" Name="se_wc_tounge_rot_missile01"/>
+			<SpecialEffect Group="false" Name="se_wc_tounge_rot_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_wc_tounge_rot_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_wc_tounge_rot_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_wc_tounge_rot_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_wc_tongue_rot_impact"/>
+			<SpecialEffect Group="false" Name="se_wc_tongue_rot_impact_2"/>
+			<SpecialEffect Group="false" Name="se_wc_tongue_rot_impact_3"/>
+			<SpecialEffect Group="false" Name="se_wc_tongue_rot_impact_4"/>
+			<SpecialEffect Group="false" Name="se_wc_tongue_rot_impact_5"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- WITCHCRAFT MAGIC END -->
+	<!-- SPELL CHANTING START -->
+	<SpecialEffect Group="true" Name="Spell Chanting">	
+		<SpecialEffect Group="false" Name="se_spell_spellchanting_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_spellchanting_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_spellchanting_charging_exit"/>
+		<SpecialEffect Group="false" Name="se_sc_miss"/>		
+		<SpecialEffect Group="true" Name="Sacrifice">	
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_line"/>
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_line_5"/>
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_impact_2"/>			
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_impact_3"/>		
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_impact_4"/>		
+			<SpecialEffect Group="false" Name="se_sc_sacrifice_impact_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mana Blast">	
+			<SpecialEffect Group="false" Name="se_sc_manablast_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_impact_2"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_impact_3"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_impact_4"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_impact_5"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_line"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_manablast_line_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Hymn Of Intellect">	
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_line"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_line_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_impact_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_impact_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_impact_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_impact_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_final"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_final_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_final_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_final_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_final_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnintellect_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Hymn Of Might">	
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_line"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_line_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_impact_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_impact_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_impact_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_impact_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_mesh_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_final"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_final_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_final_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_final_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnmight_final_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Hymn Of Vigor">	
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_line"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_line_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_impact_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_impact_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_impact_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_impact_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_final"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_final_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_final_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_final_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_final_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnvigor_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Hymn Of Skill">	
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_line"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_line_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_impact_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_impact_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_impact_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_impact_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_final"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_final_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_final_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_final_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_final_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnskill_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Hymn Of Swiftness">	
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_line"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_line_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_impact_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_impact_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_impact_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_impact_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_final"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_final_2"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_final_3"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_final_4"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_final_5"/>
+			<SpecialEffect Group="false" Name="se_sc_hymnswiftness_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Adept">	
+			<SpecialEffect Group="false" Name="se_sc_adept"/>
+			<SpecialEffect Group="false" Name="se_sc_adept_2"/>
+			<SpecialEffect Group="false" Name="se_sc_adept_3"/>
+			<SpecialEffect Group="false" Name="se_sc_adept_4"/>
+			<SpecialEffect Group="false" Name="se_sc_adept_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Max Health Bonus">	
+			<SpecialEffect Group="false" Name="se_sc_maxhealth"/>
+			<SpecialEffect Group="false" Name="se_sc_maxhealth_2"/>
+			<SpecialEffect Group="false" Name="se_sc_maxhealth_3"/>
+			<SpecialEffect Group="false" Name="se_sc_maxhealth_4"/>
+			<SpecialEffect Group="false" Name="se_sc_maxhealth_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Max Mana Bonus">	
+			<SpecialEffect Group="false" Name="se_sc_maxmana"/>
+			<SpecialEffect Group="false" Name="se_sc_maxmana_2"/>
+			<SpecialEffect Group="false" Name="se_sc_maxmana_3"/>
+			<SpecialEffect Group="false" Name="se_sc_maxmana_4"/>
+			<SpecialEffect Group="false" Name="se_sc_maxmana_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Max Stamina Bonus">	
+			<SpecialEffect Group="false" Name="se_sc_maxstamina"/>
+			<SpecialEffect Group="false" Name="se_sc_maxstamina_2"/>
+			<SpecialEffect Group="false" Name="se_sc_maxstamina_3"/>
+			<SpecialEffect Group="false" Name="se_sc_maxstamina_4"/>
+			<SpecialEffect Group="false" Name="se_sc_maxstamina_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Bless Other">	
+			<SpecialEffect Group="false" Name="se_sc_blessother_line"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_line_2"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_line_3"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_line_4"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_line_5"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_impact_2"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_impact_3"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_impact_4"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_impact_5"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_final"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_final_2"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_final_3"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_final_4"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_final_5"/>
+			<SpecialEffect Group="false" Name="se_sc_blessother_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Blessing">	
+			<SpecialEffect Group="false" Name="se_sc_blessing"/>
+			<SpecialEffect Group="false" Name="se_sc_blessing_2"/>
+			<SpecialEffect Group="false" Name="se_sc_blessing_3"/>
+			<SpecialEffect Group="false" Name="se_sc_blessing_4"/>
+			<SpecialEffect Group="false" Name="se_sc_blessing_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Healing Chant">	
+			<SpecialEffect Group="false" Name="se_sc_healingchant01"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant01_2"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant01_3"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant01_4"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant01_5"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant_exit"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant_exit_2"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant_exit_3"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant_exit_4"/>
+			<SpecialEffect Group="false" Name="se_sc_healingchant_exit_5"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- SPELL CHANTING END -->
+	<!-- AIR MAGIC START -->
+	<SpecialEffect Group="true" Name="Air Magic">	
+		<SpecialEffect Group="false" Name="se_spell_air_magic_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_air_magic_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_air_magic_charging_exit"/>
+		<SpecialEffect Group="false" Name="se_air_miss"/>		
+		<SpecialEffect Group="true" Name="Agility">	
+			<SpecialEffect Group="false" Name="se_air_agility"/>
+			<SpecialEffect Group="false" Name="se_air_agility_2"/>
+			<SpecialEffect Group="false" Name="se_air_agility_3"/>
+			<SpecialEffect Group="false" Name="se_air_agility_4"/>
+			<SpecialEffect Group="false" Name="se_air_agility_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Arrow Shield">	
+			<SpecialEffect Group="false" Name="se_air_arrow_shield"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_shield_2"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_shield_3"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_shield_4"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_shield_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Arrow Ward">	
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_line"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_line_2"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_line_3"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_line_4"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_line_5"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_2"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_3"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_4"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_5"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_final"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_final_2"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_final_3"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_final_4"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_final_5"/>
+			<SpecialEffect Group="false" Name="se_air_arrow_ward_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ball Lightning">	
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_missile01"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_impact01"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_air_ball_lightning_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Come Hither">	
+			<SpecialEffect Group="false" Name="se_air_come_hither_line"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_line_2"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_line_3"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_line_4"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_line_5"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_impact"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_impact_2"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_impact_3"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_impact_4"/>
+			<SpecialEffect Group="false" Name="se_air_come_hither_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Exploding Charge">	
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_impact01"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_impact01_5"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_missile01"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_air_exploding_charge_missile01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Guiding Wind">	
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_impact"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_impact_2"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_impact_3"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_impact_4"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_impact_5"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_missile"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_missile_2"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_missile_3"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_missile_4"/>
+			<SpecialEffect Group="false" Name="se_air_guiding_wind_missile_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lightning Bolt">	
+			<SpecialEffect Group="false" Name="se_air_lightning_bolt01"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_bolt01_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_bolt01_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_bolt01_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_bolt01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lightning Shield">	
+			<SpecialEffect Group="false" Name="se_air_lightning_shield"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_shield_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_shield_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_shield_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_shield_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lightning Strike">	
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_missile"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_missile_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_missile_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_missile_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_missile_5"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_impact"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_impact_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_impact_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_impact_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_strike_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lightning Ward">	
+			<SpecialEffect Group="false" Name="se_air_lightning_ward"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_5"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_line"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_line_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_line_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_line_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_line_5"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_final"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_final_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_final_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_final_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_final_5"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_ward_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lightning Weakness">	
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_missile"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_missile_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_missile_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_missile_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_missile_5"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_impact"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_impact_2"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_impact_3"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_impact_4"/>
+			<SpecialEffect Group="false" Name="se_air_lightning_weakness_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="StormBlast">	
+			<SpecialEffect Group="false" Name="se_air_stormblast_line"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_line_2"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_line_3"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_line_4"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_line_5"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_main"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_main_2"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_main_3"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_main_4"/>
+			<SpecialEffect Group="false" Name="se_air_stormblast_main_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Thunderstorm">
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_line"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_line_2"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_line_3"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_line_4"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_line_5"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_2"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_3"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_4"/>
+			<SpecialEffect Group="false" Name="se_air_thunderstorm_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Tornado">	
+			<SpecialEffect Group="false" Name="se_air_tornado"/>
+			<SpecialEffect Group="false" Name="se_air_tornado_2"/>
+			<SpecialEffect Group="false" Name="se_air_tornado_3"/>
+			<SpecialEffect Group="false" Name="se_air_tornado_4"/>
+			<SpecialEffect Group="false" Name="se_air_tornado_5"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- AIR MAGIC END -->
+	<!-- FIRE MAGIC START -->
+	<SpecialEffect Group="true" Name="Fire Magic">	
+		<SpecialEffect Group="false" Name="se_spell_fire_magic_charging_tmp"/>
+		<SpecialEffect Group="false" Name="se_spell_fire_magic_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_fire_magic_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_fire_magic_charging_exit"/>		
+		<SpecialEffect Group="false" Name="se_fm_miss"/>		
+		<SpecialEffect Group="true" Name="DragonBreath">	
+			<SpecialEffect Group="false" Name="se_fm_dragonbreath_main"/>
+			<SpecialEffect Group="false" Name="se_fm_dragonbreath_impact"/>
+			<SpecialEffect Group="false" Name="se_fm_dragonbreath_flash"/>			
+			<SpecialEffect Group="false" Name="se_fm_dragonbreath_switch"/>	
+			<SpecialEffect Group="false" Name="se_fm_dragonbreath_line"/>
+			<SpecialEffect Group="false" Name="se_fm_dragonbreath_main_tmp"/>
+			<SpecialEffect Group="false" Name="se_fm_dragonbreath_main_2"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="FM Explosion">	
+			<SpecialEffect Group="false" Name="se_fm_explode01"/>
+			<SpecialEffect Group="false" Name="se_fm_explode01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_explode01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_explode01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_explode01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Fire Shield">	
+			<SpecialEffect Group="false" Name="se_fm_fire_shield"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_shield_2"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_shield_3"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_shield_4"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_shield_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Fire Ward">	
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_fire"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_fire_2"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_fire_3"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_fire_4"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_fire_5"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_2"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_3"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_4"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_5"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_final"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_final_2"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_final_3"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_final_4"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_final_5"/>
+			<SpecialEffect Group="false" Name="se_fm_fire_ward_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Haste">	
+			<SpecialEffect Group="false" Name="se_fm_haste"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_2"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_3"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_4"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_5"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_line"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_line_2"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_line_3"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_line_4"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_line_5"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_final"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_final_2"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_final_3"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_final_4"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_final_5"/>
+			<SpecialEffect Group="false" Name="se_fm_haste_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Impetus">	
+			<SpecialEffect Group="false" Name="se_fm_impetus"/>
+			<SpecialEffect Group="false" Name="se_fm_impetus_2"/>
+			<SpecialEffect Group="false" Name="se_fm_impetus_3"/>
+			<SpecialEffect Group="false" Name="se_fm_impetus_4"/>
+			<SpecialEffect Group="false" Name="se_fm_impetus_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Magma Storm">	
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_missile01"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_impact01"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_magma_storm_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Rapid Shot">	
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_line"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_line_2"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_line_3"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_line_4"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_line_5"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_2"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_3"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_4"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_5"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_final"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_final_2"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_final_3"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_final_4"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_final_5"/>
+			<SpecialEffect Group="false" Name="se_fm_rapid_shot_mesh_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Volcano">	
+			<SpecialEffect Group="false" Name="se_fm_volcano01"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano01_5"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano_line"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano_line_2"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano_line_3"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano_line_4"/>
+			<SpecialEffect Group="false" Name="se_fm_volcano_line_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Weakening Blaze">	
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze"/>
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_2"/>
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_3"/>
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_4"/>
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_5"/>
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_missile"/>
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_missile_2"/>			
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_missile_3"/>
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_missile_4"/>			
+			<SpecialEffect Group="false" Name="se_fm_weakening_blaze_missile_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="FireBall">	
+			<SpecialEffect Group="false" Name="se_fm_fireball_missile01"/>
+			<SpecialEffect Group="false" Name="se_fm_fireball_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_fireball_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_fireball_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_fireball_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_fm_fireball_impact01"/>
+			<SpecialEffect Group="false" Name="se_fm_fireball_impact01_2"/>		
+			<SpecialEffect Group="false" Name="se_fm_fireball_impact01_3"/>		
+			<SpecialEffect Group="false" Name="se_fm_fireball_impact01_4"/>		
+			<SpecialEffect Group="false" Name="se_fm_fireball_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="FireBolt">	
+			<SpecialEffect Group="false" Name="se_fm_firebolt_missile01"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_impact01"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_impact01_tmp"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_firebolt_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Inferno">	
+			<SpecialEffect Group="false" Name="se_fm_inferno_missile01"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_impact01_tmp"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_impact01"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_fm_inferno_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Wall of Fire">	
+			<SpecialEffect Group="false" Name="se_fm_wall_of_fire_line"/>
+			<SpecialEffect Group="false" Name="se_fm_wall_of_fire_line_2"/>
+			<SpecialEffect Group="false" Name="se_fm_wall_of_fire_line_3"/>
+			<SpecialEffect Group="false" Name="se_fm_wall_of_fire_line_4"/>
+			<SpecialEffect Group="false" Name="se_fm_wall_of_fire_line_5"/>
+			<SpecialEffect Group="false" Name="se_wall_of_fire01"/>
+			<SpecialEffect Group="false" Name="se_wall_of_fire01_2"/>
+			<SpecialEffect Group="false" Name="se_wall_of_fire01_3"/>
+			<SpecialEffect Group="false" Name="se_wall_of_fire01_4"/>
+			<SpecialEffect Group="false" Name="se_wall_of_fire01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Smoke Signal">	
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_fire"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_fire_2"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_fire_3"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_fire_4"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_fire_5"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_main"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_main_2"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_main_3"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_main_4"/>
+			<SpecialEffect Group="false" Name="se_fm_smoke_signal_main_5"/>
+		</SpecialEffect>		
+	</SpecialEffect>
+	<!-- FIRE MAGIC END -->
+
+	<!-- EARTH MAGIC START -->
+	<SpecialEffect Group="true" Name="Earth Magic">	
+		<SpecialEffect Group="false" Name="se_spell_earth_magic_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_earth_magic_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_earth_magic_charging_exit"/>		
+		<SpecialEffect Group="false" Name="se_em_miss"/>		
+	<SpecialEffect Group="true" Name="Acid Arrow">	
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_missile01"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_impact01"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_arrow_impact01_5"/>
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Acid Rain">
+			<SpecialEffect Group="false" Name="se_em_acid_rain_line"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_line_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_line_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_line_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_line_5"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_impact"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_impact_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_impact_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_impact_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_impact_5"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_cloud_1"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_cloud_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_cloud_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_cloud_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_rain_cloud_5"/>			
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Acid Shield">	
+			<SpecialEffect Group="false" Name="se_em_acid_shield"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_31"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_41"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_5"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_51"/>
+			<SpecialEffect Group="false" Name="se_em_acid_shield_52"/>
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Acid Ward">	
+			<SpecialEffect Group="false" Name="se_em_acid_ward_line"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_line_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_line_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_line_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_line_5"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_single"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_a"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_2a"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_3a"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_4a"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_5"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_5a"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_final"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_final_2"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_final_3"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_final_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_final_5"/>
+			<SpecialEffect Group="false" Name="se_se_em_acid_ward_impact"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_extra_4"/>
+			<SpecialEffect Group="false" Name="se_em_acid_ward_extra_5"/>
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Brawn">	
+			<SpecialEffect Group="false" Name="se_em_brawn"/>
+			<SpecialEffect Group="false" Name="se_em_brawn_2"/>
+			<SpecialEffect Group="false" Name="se_em_brawn_3"/>
+			<SpecialEffect Group="false" Name="se_em_brawn_4"/>
+			<SpecialEffect Group="false" Name="se_em_brawn_5"/>
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Corrosive Blast">	
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_missile"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_missile_2"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_missile_3"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_missile_4"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_missile_5"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_impact"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_impact_2"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_impact_3"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_impact_4"/>
+			<SpecialEffect Group="false" Name="se_em_corrosive_blast_impact_5"/>
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Disintegrate">
+			<SpecialEffect Group="false" Name="se_em_disintegrate_missile"/>	
+			<SpecialEffect Group="false" Name="se_em_disintegrate_missile_2"/>
+			<SpecialEffect Group="false" Name="se_em_disintegrate_missile_3"/>
+			<SpecialEffect Group="false" Name="se_em_disintegrate_missile_4"/>
+			<SpecialEffect Group="false" Name="se_em_disintegrate_missile_5"/>
+			<SpecialEffect Group="false" Name="se_em_disintegrate_impact"/>
+			<SpecialEffect Group="false" Name="se_em_disintegrate_impact_2"/>			
+			<SpecialEffect Group="false" Name="se_em_disintegrate_impact_3"/>	
+			<SpecialEffect Group="false" Name="se_em_disintegrate_impact_4"/>				
+			<SpecialEffect Group="false" Name="se_em_disintegrate_impact_5"/>			
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Earthquake">
+			<SpecialEffect Group="false" Name="se_em_earthquake_line"/>	
+			<SpecialEffect Group="false" Name="se_em_earthquake_line_2"/>	
+			<SpecialEffect Group="false" Name="se_em_earthquake_line_3"/>	
+			<SpecialEffect Group="false" Name="se_em_earthquake_line_4"/>
+			<SpecialEffect Group="false" Name="se_em_earthquake_line_5"/>				
+			<SpecialEffect Group="false" Name="se_em_earthquake_impact"/>
+			<SpecialEffect Group="false" Name="se_em_earthquake_2"/>	
+			<SpecialEffect Group="false" Name="se_em_earthquake_3"/>
+			<SpecialEffect Group="false" Name="se_em_earthquake_4"/>
+			<SpecialEffect Group="false" Name="se_em_earthquake_5"/>		
+        </SpecialEffect>
+	<SpecialEffect Group="true" Name="Impale">
+			<SpecialEffect Group="false" Name="se_em_impale_line"/>			
+			<SpecialEffect Group="false" Name="se_em_impale_line_2"/>		
+			<SpecialEffect Group="false" Name="se_em_impale_line_3"/>		
+			<SpecialEffect Group="false" Name="se_em_impale_line_4"/>		
+			<SpecialEffect Group="false" Name="se_em_impale_line_5"/>
+			<SpecialEffect Group="false" Name="se_em_impale_impact"/>
+			<SpecialEffect Group="false" Name="se_em_impale_impact_2"/>
+			<SpecialEffect Group="false" Name="se_em_impale_impact_3"/>
+			<SpecialEffect Group="false" Name="se_em_impale_impact_4"/>
+			<SpecialEffect Group="false" Name="se_em_impale_impact_5"/>
+			<SpecialEffect Group="false" Name="se_em_impale_contract_1"/>					
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="IronSkin">
+			<SpecialEffect Group="false" Name="se_em_ironskin_line"/>			
+			<SpecialEffect Group="false" Name="se_em_ironskin_line_2"/>		
+			<SpecialEffect Group="false" Name="se_em_ironskin_line_3"/>		
+			<SpecialEffect Group="false" Name="se_em_ironskin_line_4"/>		
+			<SpecialEffect Group="false" Name="se_em_ironskin_line_5"/>
+			<SpecialEffect Group="false" Name="se_em_ironskin"/>
+			<SpecialEffect Group="false" Name="se_em_ironskin_2"/>
+			<SpecialEffect Group="false" Name="se_em_ironskin_3"/>
+			<SpecialEffect Group="false" Name="se_em_ironskin_4"/>
+			<SpecialEffect Group="false" Name="se_em_ironskin_5"/>		
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Meteor Strike">
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_line"/>			
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_line_2"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_line_3"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_line_4"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_line_5"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_impact"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_impact_2"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_impact_3"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_impact_4"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_impact_5"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_missile"/>			
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_missile_2"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_missile_3"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_missile_4"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_missile_5"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_meteor_6"/>	
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_meteor_1"/>			
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_meteor_2"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_meteor_3"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_meteor_4"/>		
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_meteor_5"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_explosion_6"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_explosion_1"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_explosion_2"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_explosion_3"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_explosion_4"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_explosion_5"/>
+			<SpecialEffect Group="false" Name="se_em_meteor_strike_impact_a"/>			
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Pungent Mist">
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_line"/>			
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_line_2"/>		
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_line_3"/>		
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_line_4"/>		
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_line_5"/>
+			<SpecialEffect Group="false" Name="se_em_pungent_mist"/>
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_2"/>
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_3"/>
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_4"/>
+			<SpecialEffect Group="false" Name="se_em_pungent_mist_5"/>			
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Stamina Leech">
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_line"/>			
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_line_2"/>		
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_line_3"/>		
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_line_4"/>		
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_line_5"/>
+			<SpecialEffect Group="false" Name="se_em_stamina_leech"/>
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_redirected"/>
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_redirected_2"/>
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_redirected_3"/>
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_redirected_4"/>
+			<SpecialEffect Group="false" Name="se_em_stamina_leech_redirected_5"/>			
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Stone Skin">
+			<SpecialEffect Group="false" Name="se_em_stoneskin"/>
+			<SpecialEffect Group="false" Name="se_em_stoneskin_2"/>
+			<SpecialEffect Group="false" Name="se_em_stoneskin_3"/>
+			<SpecialEffect Group="false" Name="se_em_stoneskin_4"/>
+			<SpecialEffect Group="false" Name="se_em_stoneskin_5"/>
+			<SpecialEffect Group="false" Name="se_em_stoneskin_ring"/>
+			
+		</SpecialEffect>
+	<SpecialEffect Group="true" Name="Tarnish">
+			<SpecialEffect Group="false" Name="se_em_tarnish_missile"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_missile_2"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_missile_3"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_missile_4"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_missile_5"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_impact"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_impact_2"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_impact_3"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_impact_4"/>
+			<SpecialEffect Group="false" Name="se_em_tarnish_impact_5"/>		
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- EARTH MAGIC END -->
+
+	<!-- WATER MAGIC START -->
+	<SpecialEffect Group="true" Name="Water Magic">
+		<SpecialEffect Group="false" Name="se_spell_water_magic_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_water_magic_charging_tmp"/>
+		<SpecialEffect Group="false" Name="se_spell_water_magic_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_water_magic_charging_exit"/>		
+		<SpecialEffect Group="false" Name="se_wat_miss"/>
+		<SpecialEffect Group="true" Name="Blizzard">
+			<SpecialEffect Group="false" Name="se_wat_blizzard_missile"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wat_blizzard_impact"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_impact_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_impact_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_impact_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_blizzard_impact_5"/>
+			<SpecialEffect Group="false" Name="se_wat_blizzard_puff"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Clear Thoughts">
+			<SpecialEffect Group="false" Name="se_wat_clear_thoughts"/>	
+			<SpecialEffect Group="false" Name="se_wat_clear_thoughts_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_clear_thoughts_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_clear_thoughts_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_clear_thoughts_5"/>
+			<SpecialEffect Group="false" Name="se_wat_clear_thoughts_ring"/>				
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Cold Shield">	
+			<SpecialEffect Group="false" Name="se_wat_cold_shield"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_shield_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_shield_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_shield_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_shield_5"/>	
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Cold Ward">
+			<SpecialEffect Group="false" Name="se_wat_cold_ward_line"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_ward"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_ward_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_ward_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_ward_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_cold_ward_5"/>
+			<SpecialEffect Group="false" Name="se_wat_cold_ward_light"/>
+			<SpecialEffect Group="false" Name="se_wat_cold_ward_flake"/>				
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Delayed Shot">
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_missile"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_impact"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_impact_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_impact_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_impact_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_delayed_shot_impact_5"/>			
+			</SpecialEffect>
+		<SpecialEffect Group="true" Name="Frost Bite">
+			<SpecialEffect Group="false" Name="se_wat_frostbite"/>	
+			<SpecialEffect Group="false" Name="se_wat_frostbite_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_frostbite_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_frostbite_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_frostbite_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Gills">
+			<SpecialEffect Group="false" Name="se_wat_gills"/>	
+			<SpecialEffect Group="false" Name="se_wat_gills_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_gills_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_gills_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_gills_5"/>
+			<SpecialEffect Group="false" Name="se_wat_gills_ring_1"/>
+			<SpecialEffect Group="false" Name="se_wat_gills_ring_2"/>				
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ice Storm">
+			<SpecialEffect Group="false" Name="se_wat_ice_storm_line"/>	
+			<SpecialEffect Group="false" Name="se_wat_ice_storm"/>	
+			<SpecialEffect Group="false" Name="se_wat_ice_storm_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_ice_storm_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_ice_storm_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_ice_storm_5"/>				
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Slow">
+			<SpecialEffect Group="false" Name="se_wat_slow_missile"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wat_slow_impact"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_impact_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_impact_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_impact_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_slow_impact_5"/>			
+		</SpecialEffect>
+			<SpecialEffect Group="true" Name="Toxic Rain">
+			<SpecialEffect Group="false" Name="se_wat_toxic_rain_fire"/>	
+			<SpecialEffect Group="false" Name="se_wat_toxic_rain"/>	
+			<SpecialEffect Group="false" Name="se_wat_toxic_rain_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_toxic_rain_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_toxic_rain_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_toxic_rain_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Water Breathing">
+			<SpecialEffect Group="false" Name="se_wat_water_breathing_line"/>	
+			<SpecialEffect Group="false" Name="se_wat_water_breathing"/>	
+			<SpecialEffect Group="false" Name="se_wat_water_breathing_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_water_breathing_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_water_breathing_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_water_breathing_5"/>						
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Weakening Chill">
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_missile"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_missile_5"/>
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_impact"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_impact_2"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_impact_3"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_impact_4"/>	
+			<SpecialEffect Group="false" Name="se_wat_weakening_chill_impact_5"/>				
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Icicle">	
+			<SpecialEffect Group="false" Name="se_wat_icicle_miss"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_missile01"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_impact01"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_impact01_2"/>		
+			<SpecialEffect Group="false" Name="se_wat_icicle_impact01_3"/>		
+			<SpecialEffect Group="false" Name="se_wat_icicle_impact01_4"/>		
+			<SpecialEffect Group="false" Name="se_wat_icicle_impact01_5"/>
+			<SpecialEffect Group="false" Name="se_wat_icicle_explosion_2"/>		
+			<SpecialEffect Group="false" Name="se_wat_icicle_explosion_3"/>		
+			<SpecialEffect Group="false" Name="se_wat_icicle_explosion_4"/>		
+			<SpecialEffect Group="false" Name="se_wat_icicle_explosion_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Shards">	
+			<SpecialEffect Group="false" Name="se_wat_shards_miss"/>
+			<SpecialEffect Group="false" Name="se_wat_shards_missile01"/>
+			<SpecialEffect Group="false" Name="se_wat_shards_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_wat_shards_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_wat_shards_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_wat_shards_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_wat_shards_impact01"/>
+			<SpecialEffect Group="false" Name="se_wat_shards_impact01_2"/>		
+			<SpecialEffect Group="false" Name="se_wat_shards_impact01_3"/>		
+			<SpecialEffect Group="false" Name="se_wat_shards_impact01_4"/>		
+			<SpecialEffect Group="false" Name="se_wat_shards_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Virulent Blizzard">	
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_miss"/>
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_missile01"/>
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_missile01_2"/>
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_missile01_3"/>
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_missile01_4"/>
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_missile01_5"/>
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_impact01"/>
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_impact01_2"/>		
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_impact01_3"/>		
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_impact01_4"/>		
+			<SpecialEffect Group="false" Name="se_wat_virulent_blizzard_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Acid Rain Reconfig">	
+			<SpecialEffect Group="false" Name="se_wat_acid_rain_fire"/>
+			<SpecialEffect Group="false" Name="se_wat_acid_rain"/>
+			<SpecialEffect Group="false" Name="se_wat_acid_rain_2"/>
+			<SpecialEffect Group="false" Name="se_wat_acid_rain_3"/>
+			<SpecialEffect Group="false" Name="se_wat_acid_rain_4"/>
+			<SpecialEffect Group="false" Name="se_wat_acid_rain_5"/>
+			<SpecialEffect Group="false" Name="se_wat_acid_rain_fire_tmp"/>
+			<SpecialEffect Group="false" Name="se_wat_acid_rain_tmp"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- WATER MAGIC END -->
+
+	<!-- NECROMANCY START-->
+	<SpecialEffect Group="true" Name="Necromancy">
+		<SpecialEffect Group="false" Name="se_spell_necromancy_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_necromancy_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_necromancy_charging_exit"/>		
+		<SpecialEffect Group="false" Name="se_nm_miss"/>		
+		<SpecialEffect Group="true" Name="Bludgeoning Weakness">
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_missile"/>			
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_missile_2"/>		
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_missile_3"/>		
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_missile_4"/>		
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_missile_5"/>
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_impact"/>
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_impact_2"/>
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_bludgeoning_weakness_impact_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Cursed Bolt">
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_missile"/>
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_missile_2"/>
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_missile_3"/>
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_missile_4"/>
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_missile_5"/>
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_impact"/>
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_impact_2"/>		
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_impact_3"/>		
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_impact_4"/>		
+			<SpecialEffect Group="false" Name="se_nm_cursed_bolt_impact_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Death Fog">
+			<SpecialEffect Group="false" Name="se_nm_death_fog_line"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog_line_2"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog_line_3"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog_line_4"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog_line_5"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog_2"/>		
+			<SpecialEffect Group="false" Name="se_nm_death_fog_3"/>		
+			<SpecialEffect Group="false" Name="se_nm_death_fog_4"/>		
+			<SpecialEffect Group="false" Name="se_nm_death_fog_5"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog_head_01"/>
+			<SpecialEffect Group="false" Name="se_nm_death_fog_head_02"/>	
+			<SpecialEffect Group="false" Name="se_nm_death_fog_head_03"/>				
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Desecration">
+			<SpecialEffect Group="false" Name="se_nm_desecration_missile"/>		
+			<SpecialEffect Group="false" Name="se_nm_desecration_missile_2"/>		
+			<SpecialEffect Group="false" Name="se_nm_desecration_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_desecration_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_desecration_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_nm_desecration_impact"/>		
+			<SpecialEffect Group="false" Name="se_nm_desecration_impact_2"/>
+			<SpecialEffect Group="false" Name="se_nm_desecration_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_desecration_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_desecration_impact_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Evil Eye">
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_missile"/>		
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_missile_2"/>
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_missile_3"/>
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_missile_4"/>
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_missile_5"/>
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_impact"/>
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_impact_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_evil_eye_impact_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Eye Rot">	
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_missile"/>
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_impact01"/>	
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_impact01_2"/>
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_impact01_3"/>
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_impact01_4"/>
+			<SpecialEffect Group="false" Name="se_nm_eye_rot_impact01_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Infernal Shield">
+			<SpecialEffect Group="false" Name="se_nm_infernal_shield"/>
+			<SpecialEffect Group="false" Name="se_nm_infernal_shield_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_infernal_shield_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_infernal_shield_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_infernal_shield_5"/>				
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Infernal Ward">
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_line"/>		
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward"/>
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_5"/>
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_spin_2"/>
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_spin_3"/>			
+			<SpecialEffect Group="false" Name="se_nm_infernal_ward_spin_4"/>
+			</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mental Weakness">
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_missile"/>
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_impact"/>	
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_impact_2"/>
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_mental_weakness_impact_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Piercing Weakness">
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_missile"/>
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_impact"/>	
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_impact_2"/>
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_piercing_weakness_impact_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Slashing Weakness">	
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_missile"/>
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_impact"/>	
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_impact_2"/>
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_slashing_weakness_impact_5"/>			
+		</SpecialEffect>		
+		<SpecialEffect Group="true" Name="Undeath">
+			<SpecialEffect Group="false" Name="se_nm_undeath_missile"/>
+			<SpecialEffect Group="false" Name="se_nm_undeath_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_undeath_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_undeath_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_undeath_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_nm_undeath_impact"/>	
+			<SpecialEffect Group="false" Name="se_nm_undeath_impact_2"/>
+			<SpecialEffect Group="false" Name="se_nm_undeath_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_undeath_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_undeath_impact_5"/>			
+		</SpecialEffect>		
+		<SpecialEffect Group="true" Name="Unholy Caress">
+			<SpecialEffect Group="false" Name="se_nm_unholy_caress_line"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Unholy Flames">
+			<SpecialEffect Group="false" Name="se_nm_unholy_fire_missile01"/>
+			<SpecialEffect Group="false" Name="se_nm_unholy_fire_missile01_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_unholy_fire_missile01_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_unholy_fire_missile01_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_unholy_fire_missile01_5"/>			
+			<SpecialEffect Group="false" Name="se_nm_unholy_flames_impact"/>	
+			<SpecialEffect Group="false" Name="se_nm_unholy_flames_impact_2"/>
+			<SpecialEffect Group="false" Name="se_nm_unholy_flames_impact_3"/>
+			<SpecialEffect Group="false" Name="se_nm_unholy_flames_impact_4"/>
+			<SpecialEffect Group="false" Name="se_nm_unholy_flames_impact_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Vampiric Touch">
+			<SpecialEffect Group="false" Name="se_nm_vampiric_touch_line"/>		
+			<SpecialEffect Group="false" Name="se_nm_vampiric_touch"/>
+			<SpecialEffect Group="false" Name="se_nm_vampiric_touch_2"/>	
+			<SpecialEffect Group="false" Name="se_nm_vampiric_touch_3"/>	
+			<SpecialEffect Group="false" Name="se_nm_vampiric_touch_4"/>	
+			<SpecialEffect Group="false" Name="se_nm_vampiric_touch_5"/>
+			<SpecialEffect Group="false" Name="se_nm_vampiric_touch_redirected"/>			
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- NECROMANCY END -->
+
+	<!-- ARCANE MAGIC START-->
+	<SpecialEffect Group="true" Name="Arcane Magic">
+		<SpecialEffect Group="false" Name="se_spell_arcane_magic_failure"/>
+		<SpecialEffect Group="false" Name="se_spell_arcane_magic_charging"/>
+		<SpecialEffect Group="false" Name="se_spell_arcane_magic_charging_exit"/>		
+		<SpecialEffect Group="false" Name="se_arc_miss"/>		
+		<SpecialEffect Group="true" Name="Flames of Vengeance">
+			<SpecialEffect Group="false" Name="se_arc_flames_vengeance_line"/>
+			<SpecialEffect Group="false" Name="se_arc_flames_vengeance"/>
+			<SpecialEffect Group="false" Name="se_arc_flames_vengeance_2"/>
+			<SpecialEffect Group="false" Name="se_arc_flames_vengeance_3"/>
+			<SpecialEffect Group="false" Name="se_arc_flames_vengeance_4"/>
+			<SpecialEffect Group="false" Name="se_arc_flames_vengeance_5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Hasten Spells">
+			<SpecialEffect Group="false" Name="se_arc_hasten_spells"/>
+			<SpecialEffect Group="false" Name="se_arc_hasten_spells_2"/>
+			<SpecialEffect Group="false" Name="se_arc_hasten_spells_3"/>
+			<SpecialEffect Group="false" Name="se_arc_hasten_spells_4"/>
+			<SpecialEffect Group="false" Name="se_arc_hasten_spells_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Holy Shield">
+			<SpecialEffect Group="false" Name="se_arc_holy_shield"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_shield_2"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_shield_3"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_shield_4"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_shield_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Holy Ward">
+			<SpecialEffect Group="false" Name="se_arc_holy_ward_line"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_ward"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_ward_2"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_ward_3"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_ward_4"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_ward_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Holy Weakness">
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_missile"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_impact"/>	
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_impact_2"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_impact_3"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_impact_4"/>
+			<SpecialEffect Group="false" Name="se_arc_holy_weakness_impact_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lend Mana">
+			<SpecialEffect Group="false" Name="se_arc_lend_mana_line"/>
+			<SpecialEffect Group="false" Name="se_arc_lend_mana"/>
+			<SpecialEffect Group="false" Name="se_arc_lend_mana_2"/>
+			<SpecialEffect Group="false" Name="se_arc_lend_mana_3"/>
+			<SpecialEffect Group="false" Name="se_arc_lend_mana_4"/>
+			<SpecialEffect Group="false" Name="se_arc_lend_mana_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mystic Shield">
+			<SpecialEffect Group="false" Name="se_arc_mystic_shield"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_shield_2"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_shield_3"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_shield_4"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_shield_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mystic Ward">
+			<SpecialEffect Group="false" Name="se_arc_mystic_ward_line"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_ward"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_ward_2"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_ward_3"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_ward_4"/>
+			<SpecialEffect Group="false" Name="se_arc_mystic_ward_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Reflect Spell">
+			<SpecialEffect Group="false" Name="se_arc_reflect_spell"/>
+			<SpecialEffect Group="false" Name="se_arc_reflect_spell_2"/>
+			<SpecialEffect Group="false" Name="se_arc_reflect_spell_3"/>
+			<SpecialEffect Group="false" Name="se_arc_reflect_spell_4"/>
+			<SpecialEffect Group="false" Name="se_arc_reflect_spell_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Sacred Missile">
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_missile"/>
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_impact"/>	
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_impact_2"/>
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_impact_3"/>
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_impact_4"/>
+			<SpecialEffect Group="false" Name="se_arc_sacred_missile_impact_5"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Spell Immunity">
+			<SpecialEffect Group="false" Name="se_arc_spell_immunity_line"/>
+			<SpecialEffect Group="false" Name="se_arc_spell_immunity"/>
+			<SpecialEffect Group="false" Name="se_arc_spell_immunity_2"/>
+			<SpecialEffect Group="false" Name="se_arc_spell_immunity_3"/>
+			<SpecialEffect Group="false" Name="se_arc_spell_immunity_4"/>
+			<SpecialEffect Group="false" Name="se_arc_spell_immunity_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Virtuous Wrath">
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_missile"/>
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_missile_2"/>	
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_missile_3"/>	
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_missile_4"/>	
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_missile_5"/>			
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_impact"/>	
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_impact_2"/>
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_impact_3"/>
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_impact_4"/>
+			<SpecialEffect Group="false" Name="se_arc_virtuous_wrath_impact_5"/>		
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Wall of Force">	
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_main"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_main_2"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_main_3"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_main_4"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_main_5"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_line"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_line_2"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_line_3"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_line_4"/>
+			<SpecialEffect Group="false" Name="se_arc_wall_of_force_line_5"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- ARCANE MAGIC END -->
+	<!-- GAMBLING EFFECTS START -->
+	<SpecialEffect Group="true" Name="Gambling Effects">
+		<SpecialEffect Group="true" Name="Slot Machine Effects">	
+			<SpecialEffect Group="false" Name="se_gmbl_normal_win"/>
+			<SpecialEffect Group="false" Name="se_gmbl_jackpot"/>
+			<SpecialEffect Group="false" Name="se_gmbl_jackpot_global"/>
+			<SpecialEffect Group="false" Name="se_gmbl_slotmachine_start"/>
+			<SpecialEffect Group="false" Name="se_gmbl_slotmachine_win"/>
+			<SpecialEffect Group="false" Name="se_gmbl_slotmachine_ding_1"/>
+			<SpecialEffect Group="false" Name="se_gmbl_slotmachine_ding_2"/>
+			<SpecialEffect Group="false" Name="se_gmbl_slotmachine_ding_3"/>
+		</SpecialEffect>	
+	</SpecialEffect>
+	<!-- GAMBLING EFFECTS END -->
+
+	<!-- FORTRESS EFFECTS START -->
+	<SpecialEffect Group="true" Name="Fortress Systems Effects">
+		<SpecialEffect Group="true" Name="Fortress Explosion">
+			<SpecialEffect Group="false" Name="se_fs_explode"/>
+			<SpecialEffect Group="false" Name="se_fs_explode_2"/>
+			<SpecialEffect Group="false" Name="se_fs_explode_3"/>
+			<SpecialEffect Group="false" Name="se_fs_explode_4"/>
+			<SpecialEffect Group="false" Name="se_fs_explode_5"/>
+			<SpecialEffect Group="false" Name="se_fs_flash"/>
+			<SpecialEffect Group="false" Name="se_fs_seashockwave"/>			
+		</SpecialEffect>	
+		<SpecialEffect Group="true" Name="Fortress Client Side Effects">
+			<SpecialEffect Group="false" Name="se_fs_no_touch"/>
+		</SpecialEffect>	
+		<SpecialEffect Group="true" Name="Fortress Invuln to Vuln">
+			<SpecialEffect Group="false" Name="se_fs_invuln_to_vuln"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Fortress Damaged to Invuln">		
+			<SpecialEffect Group="false" Name="se_fs_damaged_to_invuln"/>
+		</SpecialEffect>			
+			<SpecialEffect Group="false" Name="se_fs_clan_conquered"/>
+			<SpecialEffect Group="false" Name="se_fs_clan_conquered_global"/>
+			<SpecialEffect Group="false" Name="se_fs_clan_reward"/>
+			<SpecialEffect Group="false" Name="se_fs_clan_lost"/>
+			<SpecialEffect Group="false" Name="se_fs_vulnerable"/>
+	</SpecialEffect>
+	
+	<!-- FORTRESS EFFECTS END -->
+	
+	<!-- PLAYER EFFECTS START -->
+	<SpecialEffect Group="true" Name="Player Effects">
+		<SpecialEffect Group="true" Name="Misc Effects">
+			<SpecialEffect Group="false" Name="se_pe_spawn_effect_01"/>		
+			<SpecialEffect Group="false" Name="se_pe_invulnerability"/>
+			<SpecialEffect Group="false" Name="se_pe_gm_01"/>
+			<SpecialEffect Group="false" Name="se_pe_admin_01"/>
+			<SpecialEffect Group="false" Name="se_pe_chest_opened"/>
+			<SpecialEffect Group="false" Name="se_pe_clan_member"/>
+			<SpecialEffect Group="false" Name="se_pe_party_member"/>
+			<SpecialEffect Group="false" Name="se_pe_backpack_small"/>
+			<SpecialEffect Group="false" Name="se_pe_backpack_big"/>
+			<SpecialEffect Group="false" Name="se_pe_newbie_protection"/>			
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Player Effect Bits Effects">	
+			<SpecialEffect Group="false" Name="se_pe_bloodcraft_01"/>
+			<SpecialEffect Group="false" Name="se_pe_bloodcraft_02"/>
+			<SpecialEffect Group="false" Name="se_pe_bloodcraft_03"/>
+			<SpecialEffect Group="false" Name="se_pe_bloodcraft_04"/>
+			<SpecialEffect Group="false" Name="se_pe_shadecraft_01"/>
+			<SpecialEffect Group="false" Name="se_pe_shadecraft_02"/>
+			<SpecialEffect Group="false" Name="se_pe_shadecraft_03"/>
+			<SpecialEffect Group="false" Name="se_pe_shadecraft_04"/>
+			<SpecialEffect Group="false" Name="se_pe_nonblock_01"/>
+			<SpecialEffect Group="false" Name="se_pe_nonblock_02"/>
+		</SpecialEffect>
+		
+		<SpecialEffect Group="true" Name="Skill Effects Self">	
+			<SpecialEffect Group="false" Name="se_pe_skillup"/>
+			<SpecialEffect Group="false" Name="se_pe_skillmax"/>
+			<SpecialEffect Group="false" Name="se_pe_skillpointup"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Attribute Effects Self">	
+			<SpecialEffect Group="false" Name="se_pe_attribute_up"/>
+			<SpecialEffect Group="false" Name="se_pe_attribute_down"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Hits And Kills">	
+			<SpecialEffect Group="false" Name="se_pe_hitsound"/>
+			<SpecialEffect Group="false" Name="se_pe_hitsound_implementation"/>
+			<SpecialEffect Group="false" Name="se_pe_player_hitsound"/>
+			<SpecialEffect Group="false" Name="se_pe_player_hitsound_implementation"/>
+			<SpecialEffect Group="false" Name="se_pe_monster_hitsound"/>
+			<SpecialEffect Group="false" Name="se_pe_monster_hitsound_implementation"/>
+
+			<SpecialEffect Group="false" Name="se_pe_you_killed_player"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_monster"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_ship"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_warhulk"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_cannon"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_mount"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_clan_structure"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_clanstone_city"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_clanstone_hamlet"/>
+			<SpecialEffect Group="false" Name="se_pe_you_killed_other"/>
+			
+			<SpecialEffect Group="false" Name="se_pe_player_killed_you"/>
+			<SpecialEffect Group="false" Name="se_pe_monster_killed_you"/>
+			<SpecialEffect Group="false" Name="se_pe_other_killed_you"/>
+
+			<SpecialEffect Group="false" Name="se_pe_you_ganked_player"/>
+			<SpecialEffect Group="false" Name="se_pe_player_ganked_you"/>
+
+			<SpecialEffect Group="false" Name="se_pe_you_revived_player"/>
+			<SpecialEffect Group="false" Name="se_pe_player_revived_you"/>
+		</SpecialEffect>
+
+		<SpecialEffect Group="true" Name="Alignment">	
+			<SpecialEffect Group="false" Name="se_align_good"/>
+			<SpecialEffect Group="false" Name="se_align_bad"/>
+			<SpecialEffect Group="false" Name="se_pe_alignment_positive_hit"/>
+			<SpecialEffect Group="false" Name="se_pe_alignment_negative_hit"/>
+			<SpecialEffect Group="false" Name="se_pe_alignment_good_change"/>
+			<SpecialEffect Group="false" Name="se_pe_alignment_evil_change"/>
+			<SpecialEffect Group="false" Name="se_pe_alignment_suspicious_true"/>
+			<SpecialEffect Group="false" Name="se_pe_alignment_suspicious_false"/>
+		</SpecialEffect>
+		
+		
+		<SpecialEffect Group="true" Name="Effect 2 SpecialEffect">	
+			<SpecialEffect Group="false" Name="se_bloodsplatter01"/>
+			<SpecialEffect Group="false" Name="se_bloodsplatter02"/>
+			<SpecialEffect Group="false" Name="se_bloodsplatter03"/>
+			<SpecialEffect Group="false" Name="se_impact_acid"/>
+			<SpecialEffect Group="false" Name="se_impact_arcane"/>
+			<SpecialEffect Group="false" Name="se_arrow_impact"/>
+			<SpecialEffect Group="false" Name="se_impact_cold"/>
+			<SpecialEffect Group="false" Name="se_player_on_fire"/>
+			<SpecialEffect Group="false" Name="se_player_on_fire_old"/>
+			<SpecialEffect Group="false" Name="se_impact_holy"/>
+			<SpecialEffect Group="false" Name="se_impact_fire"/>
+			<SpecialEffect Group="false" Name="se_impact_lightning"/>
+			<SpecialEffect Group="false" Name="se_impact_piercing"/>
+			<SpecialEffect Group="false" Name="se_impact_slashing"/>
+			<SpecialEffect Group="false" Name="se_impact_bludgeoning"/>
+			<SpecialEffect Group="false" Name="se_impact_unholy"/>
+			<SpecialEffect Group="false" Name="se_impact_poison"/>
+			<SpecialEffect Group="false" Name="se_impact_bleeding"/>
+			<SpecialEffect Group="false" Name="se_impact_piercing"/>
+		</SpecialEffect>
+		
+		<SpecialEffect Group="true" Name="Animation Effects">	
+			<SpecialEffect Group="false" Name="se_pe_arrow_load"/>
+			<SpecialEffect Group="false" Name="se_pe_crafting"/>
+			<SpecialEffect Group="false" Name="se_pe_drinking"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="WaterImpact">				
+			<SpecialEffect Group="false" Name="se_pe_watersplash1"/>
+			<SpecialEffect Group="false" Name="se_pe_watersplash2"/>
+			<SpecialEffect Group="false" Name="se_pe_watersplash3"/>
+			<SpecialEffect Group="false" Name="se_pe_watersplash4"/>
+			<SpecialEffect Group="false" Name="se_pe_watersplash5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="LandImpact">				
+			<SpecialEffect Group="false" Name="se_pe_landimpact1"/>
+			<SpecialEffect Group="false" Name="se_pe_landimpact2"/>
+			<SpecialEffect Group="false" Name="se_pe_landimpact3"/>
+			<SpecialEffect Group="false" Name="se_pe_landimpact4"/>
+			<SpecialEffect Group="false" Name="se_pe_landimpact5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Parrying">				
+			<SpecialEffect Group="false" Name="se_pe_hit_in_back"/>
+			<SpecialEffect Group="false" Name="se_pe_parry_shield"/>
+			<SpecialEffect Group="false" Name="se_pe_parry_1_hand"/>
+			<SpecialEffect Group="false" Name="se_pe_parry_2_hand"/>
+			<SpecialEffect Group="false" Name="se_pe_parry_daggers"/>
+			<SpecialEffect Group="false" Name="se_pe_parry_halberd"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ganking">
+			<SpecialEffect Group="false" Name="se_gank"/>
+			<SpecialEffect Group="false" Name="se_gank_pool"/>			
+			<SpecialEffect Group="false" Name="se_gank_exit"/>				
+			<SpecialEffect Group="false" Name="se_pe_gank_blood_fountain_01"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Emotes">
+		<SpecialEffect Group="true" Name="Alfar">				
+			<SpecialEffect Group="false" Name="se_pc_alfar_male_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_alfar_male_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_alfar_male_laugh"/>
+			<SpecialEffect Group="false" Name="se_pc_alfar_female_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_alfar_female_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_alfar_female_laugh"/>
+		</SpecialEffect>	
+		<SpecialEffect Group="true" Name="Dwarf">				
+			<SpecialEffect Group="false" Name="se_pc_dwarf_male_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_dwarf_male_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_dwarf_male_laugh"/>
+			<SpecialEffect Group="false" Name="se_pc_dwarf_female_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_dwarf_female_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_dwarf_female_laugh"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Human">				
+			<SpecialEffect Group="false" Name="se_pc_human_male_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_human_male_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_human_male_laugh"/>
+			<SpecialEffect Group="false" Name="se_pc_human_female_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_human_female_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_human_female_laugh"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mahirim">				
+			<SpecialEffect Group="false" Name="se_pc_mahirim_male_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_mahirim_male_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_mahirim_male_laugh"/>
+			<SpecialEffect Group="false" Name="se_pc_mahirim_female_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_mahirim_female_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_mahirim_female_laugh"/>	
+		</SpecialEffect>			
+		<SpecialEffect Group="true" Name="Mirdain">				
+			<SpecialEffect Group="false" Name="se_pc_mirdain_male_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_mirdain_male_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_mirdain_male_laugh"/>
+			<SpecialEffect Group="false" Name="se_pc_mirdain_female_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_mirdain_female_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_mirdain_female_laugh"/>
+		</SpecialEffect>			
+		<SpecialEffect Group="true" Name="Ork">				
+			<SpecialEffect Group="false" Name="se_pc_ork_male_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_ork_male_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_ork_male_laugh"/>
+			<SpecialEffect Group="false" Name="se_pc_ork_female_nonono"/>
+			<SpecialEffect Group="false" Name="se_pc_ork_female_yawn"/>
+			<SpecialEffect Group="false" Name="se_pc_ork_female_laugh"/>
+		</SpecialEffect>	
+	</SpecialEffect>
+	</SpecialEffect>
+	<!-- PLAYER EFFECTS END -->
+	<!-- MOUNT EFFECTS START -->
+	<SpecialEffect Group="true" Name="Mount Effects">
+		<SpecialEffect Group="false" Name="se_mount_spawn_01"/>
+		<SpecialEffect Group="true" Name="MountWaterImpact">				
+			<SpecialEffect Group="false" Name="se_mount_watersplash1"/>
+			<SpecialEffect Group="false" Name="se_mount_watersplash2"/>
+			<SpecialEffect Group="false" Name="se_mount_watersplash3"/>
+			<SpecialEffect Group="false" Name="se_mount_watersplash4"/>
+			<SpecialEffect Group="false" Name="se_mount_watersplash5"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="MountLandImpact">				
+			<SpecialEffect Group="false" Name="se_mount_landimpact1"/>
+			<SpecialEffect Group="false" Name="se_mount_landimpact2"/>
+			<SpecialEffect Group="false" Name="se_mount_landimpact3"/>
+			<SpecialEffect Group="false" Name="se_mount_landimpact4"/>
+			<SpecialEffect Group="false" Name="se_mount_landimpact5"/>
+		</SpecialEffect>
+	    <SpecialEffect Group="true" Name="Deathpig">
+			<SpecialEffect Group="false" Name="se_deathpig_attack_back"/>
+			<SpecialEffect Group="false" Name="se_deathpig_attack_front"/>
+			<SpecialEffect Group="false" Name="se_deathpig_idle"/>
+			<SpecialEffect Group="false" Name="se_deathpig_die"/>
+		</SpecialEffect>
+	    <SpecialEffect Group="true" Name="Garmir">
+			<SpecialEffect Group="false" Name="se_garmir_attack_back"/>
+			<SpecialEffect Group="false" Name="se_garmir_attack_front"/>
+			<SpecialEffect Group="false" Name="se_garmir_idle"/>
+			<SpecialEffect Group="false" Name="se_garmir_die"/>
+		</SpecialEffect>		
+	    <SpecialEffect Group="true" Name="Horse">
+			<SpecialEffect Group="false" Name="se_horse_attack_back"/>
+			<SpecialEffect Group="false" Name="se_horse_attack_front"/>
+			<SpecialEffect Group="false" Name="se_horse_idle"/>
+			<SpecialEffect Group="false" Name="se_horse_die"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- MOUNT EFFECTS END -->
+
+	<!-- QUEST EFFECTS START -->
+	<SpecialEffect Group="true" Name="Quest Effects">
+			<SpecialEffect Group="false" Name="se_qe_killcount"/>
+			<SpecialEffect Group="false" Name="se_qe_gathercount"/>
+			<SpecialEffect Group="false" Name="se_qe_success"/>
+			<SpecialEffect Group="false" Name="se_qe_onscreen_success"/>
+			<SpecialEffect Group="false" Name="se_qe_failure"/>
+			<SpecialEffect Group="false" Name="se_qe_generic"/>
+			<SpecialEffect Group="false" Name="se_quest_objective1"/>			
+			<SpecialEffect Group="false" Name="se_quest_objective2"/>
+			<SpecialEffect Group="false" Name="se_quest_multiple1"/>			
+			<SpecialEffect Group="false" Name="se_quest_multiple2"/>
+			<SpecialEffect Group="false" Name="se_quest_single1"/>			
+			<SpecialEffect Group="false" Name="se_quest_single2"/>				
+			<SpecialEffect Group="false" Name="se_quest_single03"/>
+		</SpecialEffect>
+	<!-- QUEST EFFECTS END-->
+
+	<!-- ARROW EFFECTS START -->
+	<SpecialEffect Group="true" Name="Arrows">
+			<SpecialEffect Group="false" Name="se_arrow01"/>
+			<SpecialEffect Group="false" Name="se_general_arrow_01"/>
+	</SpecialEffect>
+	<!-- ARROW EFFECTS END-->
+
+	<!-- GUARDTOWER EFFECTS START -->
+	<SpecialEffect Group="true" Name="Guardtowers">
+			<SpecialEffect Group="false" Name="se_gt_racial_fire_01"/>
+			<SpecialEffect Group="false" Name="se_gt_racial_fire_sound_01"/>
+			<SpecialEffect Group="false" Name="se_gt_clan_fire_01"/>
+			<SpecialEffect Group="false" Name="se_gt_clan_fire_sound_01"/>
+	</SpecialEffect>
+	<!-- GUARDTOWER  EFFECTS END-->
+
+	<!-- GRENADE EFFECTS START -->
+	<SpecialEffect Group="true" Name="Grenades">
+			<SpecialEffect Group="false" Name="se_throw_grenade_01"/>
+			<SpecialEffect Group="false" Name="se_throw_grenade_01_impact"/>
+			<SpecialEffect Group="false" Name="se_throw_grenade_02"/>
+			<SpecialEffect Group="false" Name="se_throw_grenade_02_impact"/>
+			<SpecialEffect Group="false" Name="se_throw_grenade_03"/>
+			<SpecialEffect Group="false" Name="se_throw_grenade_03_impact"/>
+	</SpecialEffect>
+	<!-- GRENADE EFFECTS END -->
+
+	<!-- PARTY EFFECTS START -->
+	<SpecialEffect Group="true" Name="Party">
+			<SpecialEffect Group="false" Name="se_party_waypoint"/>
+	</SpecialEffect>
+	<!-- PARTY EFFECTS END -->
+	
+	<!-- DRAGON EFFECTS START -->
+	<SpecialEffect Group="true" Name="TEH DRAGONS. THEY BURN!">
+			<SpecialEffect Group="false" Name="se_dragon_firebreath"/>
+			<SpecialEffect Group="false" Name="se_dragon_firebreath_fire"/>
+			<SpecialEffect Group="false" Name="se_dragon_firebreath_impact"/>
+	</SpecialEffect>
+	<!-- DRAGON EFFECTS END -->
+	
+	<!-- WARHULK EFFECTS START -->
+	<SpecialEffect Group="true" Name="WarHulks">
+		<SpecialEffect Group="false" Name="se_warhulks_spawn"/>
+		<SpecialEffect Group="false" Name="se_warhulks_unspawn"/>
+		<SpecialEffect Group="true" Name="Vileforge">	
+			<SpecialEffect Group="false" Name="se_warhulk_vf_flamethrower"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_flamethrower_fire"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_flamethrower_impact"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_fireballcannon_missile"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_fireballcannon_impact"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_prekill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_kill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_damage_1"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_damage_2"/>
+			<SpecialEffect Group="false" Name="se_warhulk_vf_damage_3"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Stormhammer">	
+			<SpecialEffect Group="false" Name="se_warhulk_sh_lightningcannon_fire"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sh_electracannon_missile"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sh_electracannon_impact"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sh_prekill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sh_kill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sh_damage_1"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sh_damage_2"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sh_damage_3"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Battle Ark">	
+			<SpecialEffect Group="false" Name="se_warhulk_ba_cannon_missile"/>
+			<SpecialEffect Group="false" Name="se_warhulk_ba_cannon_impact"/>
+			<SpecialEffect Group="false" Name="se_warhulk_ba_prekill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_ba_kill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_ba_damage_1"/>
+			<SpecialEffect Group="false" Name="se_warhulk_ba_damage_2"/>
+			<SpecialEffect Group="false" Name="se_warhulk_ba_damage_3"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Spider Scarab">	
+			<SpecialEffect Group="false" Name="se_warhulk_sc_cannon_missile"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sc_cannon_impact"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sc_prekill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sc_kill"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sc_damage_1"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sc_damage_2"/>
+			<SpecialEffect Group="false" Name="se_warhulk_sc_damage_3"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- WARHULK EFFECTS END -->
+	<!-- STATIONARY CANNON EFFECTS START -->
+	<SpecialEffect Group="true" Name="Stationary Cannons">
+		<SpecialEffect Group="true" Name="Mortar">	
+			<SpecialEffect Group="false" Name="se_sc_mortar_missile"/>
+			<SpecialEffect Group="false" Name="se_sc_mortar_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_mortar_noammo"/>
+			<SpecialEffect Group="false" Name="se_sc_mortar_damage"/>
+			<SpecialEffect Group="false" Name="se_sc_mortar_spawn"/>
+			<SpecialEffect Group="false" Name="se_sc_mortar_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Dragon">	
+			<SpecialEffect Group="false" Name="se_sc_dragon_missile"/>
+			<SpecialEffect Group="false" Name="se_sc_dragon_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_dragon_impact_debris"/>
+			<SpecialEffect Group="false" Name="se_sc_dragon_noammo"/>
+			<SpecialEffect Group="false" Name="se_sc_dragon_damage"/>
+			<SpecialEffect Group="false" Name="se_sc_dragon_spawn"/>
+			<SpecialEffect Group="false" Name="se_sc_dragon_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Headshot">	
+			<SpecialEffect Group="false" Name="se_sc_headshot_missile"/>
+			<SpecialEffect Group="false" Name="se_sc_headshot_impact"/>
+			<SpecialEffect Group="false" Name="se_sc_headshot_noammo"/>
+			<SpecialEffect Group="false" Name="se_sc_headshot_damage"/>
+			<SpecialEffect Group="false" Name="se_sc_headshot_spawn"/>
+			<SpecialEffect Group="false" Name="se_sc_headshot_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="SC Common">	
+			<SpecialEffect Group="false" Name="se_sc_preparetodie"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- STATIONARY CANNON EFFECTS END -->
+	<!-- CLANCITY EFFECTS START -->
+	<SpecialEffect Group="true" Name="ClanCity">
+		<SpecialEffect Group="true" Name="SpawnEffects">	
+			<SpecialEffect Group="true" Name="GeneralSpawnEffects">	
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_small"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_small_variation_1"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_small_variation_2"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_small_variation_3"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_small_variation_4"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_large"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_single"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawnup_end"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawndown_small"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawndown_large"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawndown_single"/>
+				<SpecialEffect Group="false" Name="se_clancity_general_spawndown_end"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="Walls">	
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_small"/>
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_small_variation_1"/>
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_small_variation_2"/>
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_small_variation_3"/>
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_small_variation_4"/>
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_large"/>
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_single"/>
+				<SpecialEffect Group="false" Name="se_clancity_walls_spawnup_end"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="Entrance">	
+				<SpecialEffect Group="false" Name="se_clancity_entrance_door_move"/>
+				<SpecialEffect Group="false" Name="se_clancity_entrance_door_stop"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="Workstations">	
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_small"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_small_variation_1"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_small_variation_2"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_small_variation_3"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_small_variation_4"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_large"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_single"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawnup_end"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawndown_small"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawndown_large"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawndown_single"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstations_spawndown_end"/>
+			</SpecialEffect>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Damage">	
+			<SpecialEffect Group="true" Name="GeneralDamageEffects">	
+				<SpecialEffect Group="false" Name="se_clan_city_damage"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var1"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var2"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var3"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var4"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var5"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var6"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var7"/>
+				<SpecialEffect Group="false" Name="se_clan_city_damage_var8"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="Workstation Damage Effects">	
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var1"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var2"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var3"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var4"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var5"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var6"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var7"/>
+				<SpecialEffect Group="false" Name="se_clancity_workstation_damage_var8"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="Big Structure Damage Effects">	
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var1"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var2"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var3"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var4"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var5"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var6"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var7"/>
+				<SpecialEffect Group="false" Name="se_clancity_big_structure_damage_var8"/>
+			</SpecialEffect>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Activation">	
+			<SpecialEffect Group="false" Name="se_clancity_initiate_deactivation"/>
+			<SpecialEffect Group="false" Name="se_clancity_initiate_activation"/>
+			<SpecialEffect Group="false" Name="se_clancity_deactivated"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Clan City Cannons">	
+			<SpecialEffect Group="true" Name="CC Normal Cannon">	
+				<SpecialEffect Group="false" Name="se_clancity_cannon_normal_missile"/>
+				<SpecialEffect Group="false" Name="se_clancity_cannon_normal_impact"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="CC Flamethrower">	
+				<SpecialEffect Group="false" Name="se_clancity_cannon_flamethrower"/>
+				<SpecialEffect Group="false" Name="se_clancity_cannon_flamethrower_fire"/>
+				<SpecialEffect Group="false" Name="se_clancity_cannon_flamethrower_impact"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="CC Acid Cannon">	
+				<SpecialEffect Group="false" Name="se_clancity_cannon_acid_missile"/>
+				<SpecialEffect Group="false" Name="se_clancity_cannon_acid_impact"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="CC Fireball Cannon">	
+				<SpecialEffect Group="false" Name="se_clancity_cannon_fireball_missile"/>
+				<SpecialEffect Group="false" Name="se_clancity_cannon_fireball_impact"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="CC Lightning Cannon">	
+				<SpecialEffect Group="false" Name="se_clancity_cannon_lightning_fire"/>
+			</SpecialEffect>
+			<SpecialEffect Group="true" Name="CC Shrapnel Cannon">	
+				<SpecialEffect Group="false" Name="se_clancity_cannon_shrapnel_missile"/>
+				<SpecialEffect Group="false" Name="se_clancity_cannon_shrapnel_impact"/>
+				<SpecialEffect Group="false" Name="se_clancity_cannon_shrapnel_debree_impact"/>
+			</SpecialEffect>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- CLANCITY EFFECTS END -->
+
+	<!-- CLAN EFFECTS START -->
+	<SpecialEffect Group="true" Name="Clan Effects">
+		<SpecialEffect Group="true" Name="Conquest">	
+			<SpecialEffect Group="false" Name="se_clan_conquest_war"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_allied"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_peace"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_wary"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_friendly"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_neutral"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_peace_treaty_offered"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_peace_treaty_rejected"/>
+
+			<SpecialEffect Group="false" Name="se_clan_conquest_challenge"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_city_conquered"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_city_lost"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_victory"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_defeat"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_draw"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_vulnerable"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_dead"/>
+			
+			<SpecialEffect Group="false" Name="se_clan_conquest_war_global"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_allied_global"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_peace_global"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_wary_global"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_friendly_global"/>
+			<SpecialEffect Group="false" Name="se_clan_conquest_neutral_global"/>
+			
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- CLAN EFFECTS END -->
+
+	<!-- PLAYER VILLAGE EFFECTS START -->
+	<SpecialEffect Group="true" Name="Player Village">
+		<SpecialEffect Group="true" Name="Player Houses">	
+			<SpecialEffect Group="false" Name="se_player_house_door_open"/>
+			<SpecialEffect Group="false" Name="se_player_house_door_close"/>
+			<SpecialEffect Group="false" Name="se_player_house_door_stop"/>
+			<SpecialEffect Group="false" Name="se_player_house_extension_placement"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- PLAYER VILLAGE EFFECTS END -->
+
+	<!-- FLUFF EFFECTS START -->
+	<SpecialEffect Group="true" Name="Fluff Effects">
+		<SpecialEffect Group="true" Name="Fireworks">
+		<SpecialEffect Group="false" Name="se_fireworks_01"/>
+		<SpecialEffect Group="false" Name="se_fireworks_02"/>	
+		<SpecialEffect Group="false" Name="se_fireworks_03"/>	
+		<SpecialEffect Group="false" Name="se_fireworks_04"/>	
+		<SpecialEffect Group="false" Name="se_fireworks_05"/>	
+		<SpecialEffect Group="false" Name="se_fireworks_06"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_missile_01"/>
+		<SpecialEffect Group="false" Name="se_fireworks_missile_02"/>		
+		<SpecialEffect Group="false" Name="se_fireworks_missile_03"/>		
+		<SpecialEffect Group="false" Name="se_fireworks_missile_04"/>		
+		<SpecialEffect Group="false" Name="se_fireworks_missile_05"/>		
+		<SpecialEffect Group="false" Name="se_fireworks_missile_06"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_01"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_02"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_03"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_04"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_05"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_06"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_07"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_08"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_09"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_10"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_11"/>			
+		<SpecialEffect Group="false" Name="se_fireworks_impact_12"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_13"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_14"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_15"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_16"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_17"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_18"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_19"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_20"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_21"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_22"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_23"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_24"/>
+		<SpecialEffect Group="false" Name="se_fireworks_impact_25"/>		
+		</SpecialEffect>	
+	</SpecialEffect>	
+    <!-- FLUFF EFFECTS END -->
+	
+	<!-- TELEPORTER EFFECTS START -->
+	<SpecialEffect Group="true" Name="Teleporters">
+		<SpecialEffect Group="false" Name="se_teleporter_placement"/>
+		<SpecialEffect Group="false" Name="se_teleporter_destruction"/>
+	</SpecialEffect>
+	<!-- TELEPORTER EFFECTS END -->
+	
+	
+	<SpecialEffect Group="true" Name="Environment">
+		<SpecialEffect Group="true" Name="Animals">
+			<SpecialEffect Group="false" Name="se_env_fish01"/>
+			<SpecialEffect Group="false" Name="se_env_fish02"/>		
+			<SpecialEffect Group="false" Name="se_env_fish03"/>		
+			<SpecialEffect Group="false" Name="se_env_fish04"/>		
+			<SpecialEffect Group="false" Name="se_env_fish05"/>		
+			<SpecialEffect Group="false" Name="se_env_fish06"/>
+			<SpecialEffect Group="false" Name="se_env_shark01"/>
+			<SpecialEffect Group="false" Name="se_bird01"/>
+			<SpecialEffect Group="false" Name="se_bird02"/>
+			<SpecialEffect Group="false" Name="se_env_birdflock01"/>
+			<SpecialEffect Group="false" Name="se_env_birdflock02"/>
+			<SpecialEffect Group="false" Name="se_env_vulture_circle_40"/>	
+			<SpecialEffect Group="false" Name="se_env_dragon_circle_200"/>				
+			<SpecialEffect Group="false" Name="se_env_dragon_circle_200_black"/>	
+			<SpecialEffect Group="false" Name="se_env_dragon_circle_200_green"/>	
+			<SpecialEffect Group="false" Name="se_env_albatross_circle_100"/>	
+			<SpecialEffect Group="false" Name="se_env_junglebird_circle_80"/>	
+			<SpecialEffect Group="false" Name="se_env_eagle_circle_200"/>	
+			<SpecialEffect Group="false" Name="se_env_ptenarodon_circle_170"/>
+			</SpecialEffect>
+		<SpecialEffect Group="true" Name="Vulcano">	
+			<SpecialEffect Group="false" Name="se_env_vulcano_smoke_01"/>
+			<SpecialEffect Group="false" Name="se_env_vulcano_smoke_02"/>
+			<SpecialEffect Group="false" Name="se_env_vulcano_smoke_03"/>
+			<SpecialEffect Group="false" Name="se_env_audio_volcano_distant_rumble"/>
+			<SpecialEffect Group="false" Name="se_env_audio_volcano_near_rumble"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="CampFire">	
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_01"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_02"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_03"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_04"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_05"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_06"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_07"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_08"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_09"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_10"/>
+			<SpecialEffect Group="false" Name="se_env_audio_camp_fire_11"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Cave Entrance">	
+			<SpecialEffect Group="false" Name="se_env_audio_cave_entrance_01"/>
+			<SpecialEffect Group="false" Name="se_env_audio_cave_entrance_02"/>
+			<SpecialEffect Group="false" Name="se_env_audio_cave_entrance_03"/>
+			<SpecialEffect Group="false" Name="se_env_audio_cave_entrance_04"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Torches">	
+			<SpecialEffect Group="false" Name="se_env_audio_torch_01"/>
+			<SpecialEffect Group="false" Name="se_env_audio_torch_02"/>
+			<SpecialEffect Group="false" Name="se_env_audio_torch_03"/>
+			<SpecialEffect Group="false" Name="se_env_audio_torch_04"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Insects">	
+			<SpecialEffect Group="false" Name="se_env_audio_insectswarm_01"/>
+			<SpecialEffect Group="false" Name="se_env_audio_insectswarm_02"/>
+			<SpecialEffect Group="false" Name="se_env_audio_insectswarm_03"/>
+			<SpecialEffect Group="false" Name="se_env_insectswarm_01"/>
+			<SpecialEffect Group="false" Name="se_env_insectswarm_red"/>
+			<SpecialEffect Group="false" Name="se_env_insectswarm_green"/>
+			<SpecialEffect Group="false" Name="se_butterfly01"/>		
+			<SpecialEffect Group="false" Name="se_butterfly02"/>	
+			<SpecialEffect Group="false" Name="se_butterfly03"/>	
+			<SpecialEffect Group="false" Name="se_butterfly04"/>
+			<SpecialEffect Group="false" Name="se_env_butterfly_purple"/>
+			<SpecialEffect Group="false" Name="se_env_butterfly_blue"/>
+			<SpecialEffect Group="false" Name="se_env_butterfly_green"/>
+			<SpecialEffect Group="false" Name="se_fly01"/>
+			<SpecialEffect Group="false" Name="se_fly02"/>
+			<SpecialEffect Group="false" Name="se_env_fly01"/>
+			<SpecialEffect Group="false" Name="se_env_fly02"/>			
+			<SpecialEffect Group="false" Name="se_env_wasp01"/>
+			<SpecialEffect Group="false" Name="se_wasp01"/>			
+			<SpecialEffect Group="false" Name="se_env_firefly_green"/>
+			<SpecialEffect Group="false" Name="se_env_firefly_red"/>
+			<SpecialEffect Group="false" Name="se_env_firefly_blue"/>
+			<SpecialEffect Group="false" Name="se_env_firefly_purple"/>
+			<SpecialEffect Group="false" Name="se_env_firefly_01"/>
+			<SpecialEffect Group="false" Name="se_env_dragonfly_green"/>			
+			<SpecialEffect Group="false" Name="se_env_dragonfly_blue"/>
+			<SpecialEffect Group="false" Name="se_env_dragonfly01"/>
+			<SpecialEffect Group="false" Name="se_env_insectswarm01"/>		
+			<SpecialEffect Group="false" Name="se_env_moth01"/>
+			<SpecialEffect Group="false" Name="se_env_pixie01"/>				
+			</SpecialEffect>
+		<SpecialEffect Group="true" Name="Mountains">	
+			<SpecialEffect Group="false" Name="se_env_audio_mountain_01"/>
+			<SpecialEffect Group="false" Name="se_env_audio_mountain_02"/>
+			<SpecialEffect Group="false" Name="se_env_audio_mountain_03"/>
+			<SpecialEffect Group="false" Name="se_env_audio_mountain_04"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lava">	
+			<SpecialEffect Group="false" Name="se_env_lava_smoke_01"/>
+			<SpecialEffect Group="false" Name="se_env_lava_smoke_02"/>
+			<SpecialEffect Group="false" Name="se_env_lava_smoke_03"/>
+			<SpecialEffect Group="false" Name="se_env_lava_smoke_spread_01"/>
+			<SpecialEffect Group="false" Name="se_env_lava_smoke_spread_02"/>
+			<SpecialEffect Group="false" Name="se_env_audio_lava_angry_loop"/>
+			<SpecialEffect Group="false" Name="se_env_audio_lava_bubbles_01"/>
+			<SpecialEffect Group="false" Name="se_env_audio_lava_bubbles_02"/>
+			<SpecialEffect Group="false" Name="se_env_audio_lava_calm_loop"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Waterfall">	
+			<SpecialEffect Group="false" Name="se_env_waterfall_splash_01"/>
+			<SpecialEffect Group="false" Name="se_env_waterfall_splash_02"/>
+			<SpecialEffect Group="false" Name="se_env_waterfall_splash_03"/>
+			<SpecialEffect Group="false" Name="se_env_waterfall_splash_04"/>
+			<SpecialEffect Group="false" Name="se_env_waterfall_steam_01"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Steam">	
+			<SpecialEffect Group="false" Name="se_env_steam_01"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Lights">	
+			<SpecialEffect Group="false" Name="se_env_lightburn_01"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Markers">	
+			<SpecialEffect Group="false" Name="se_env_marker_01"/>
+			<SpecialEffect Group="false" Name="se_marker_5min"/>
+			<SpecialEffect Group="false" Name="se_marker_10min"/>
+			<SpecialEffect Group="false" Name="se_marker_30min"/>
+			<SpecialEffect Group="false" Name="se_marker_inf"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Smoke/Dust">
+			<SpecialEffect Group="false" Name="se_smoke01"/>
+			<SpecialEffect Group="false" Name="se_smoke02"/>			
+			<SpecialEffect Group="false" Name="se_smoke03"/>
+			<SpecialEffect Group="false" Name="se_smoke04"/>		
+			<SpecialEffect Group="false" Name="se_env_smoke01"/>
+			<SpecialEffect Group="false" Name="se_env_smoke02"/>			
+			<SpecialEffect Group="false" Name="se_env_smoke03"/>
+			<SpecialEffect Group="false" Name="se_env_smoke04"/>
+			<SpecialEffect Group="false" Name="se_env_magic_dust01"/>
+			<SpecialEffect Group="false" Name="se_env_magic_dust02"/>			
+			<SpecialEffect Group="false" Name="se_env_magic_dust03"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- ENVIRONMENTAL EFFECTS END-->
+	<!-- SHIP EFFECTS START -->
+	<SpecialEffect Group="true" Name="Ships">
+		<SpecialEffect Group="true" Name="Generic Ship Effects">	
+			<SpecialEffect Group="false" Name="se_ship_kill"/>
+			<SpecialEffect Group="false" Name="se_ship_damage"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_01"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_02"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_03"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_04"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_05"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_06"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_07"/>
+			<SpecialEffect Group="false" Name="se_ship_dmg_08"/>
+			<SpecialEffect Group="false" Name="se_ship_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_pre_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship Cannon">	
+			<SpecialEffect Group="false" Name="se_ship_cannon missile"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon_shot_1"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon_shot_2"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon_shot_3"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon noammo"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon impact"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon_1_impact"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon_2_impact"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon_3_impact"/>
+			<SpecialEffect Group="false" Name="se_ship_cannon_4_impact"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Raft 01">	
+			<SpecialEffect Group="false" Name="se_raft_01_spawn"/>
+			<SpecialEffect Group="false" Name="se_raft_01_unspawn"/>
+			<SpecialEffect Group="false" Name="se_raft_01_sink"/>
+			<SpecialEffect Group="false" Name="se_raft_01_prekill"/>
+			<SpecialEffect Group="false" Name="se_raft_01_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship 01">	
+			<SpecialEffect Group="false" Name="se_ship_01_spawn"/>
+			<SpecialEffect Group="false" Name="se_ship_01_unspawn"/>
+			<SpecialEffect Group="false" Name="se_ship_01_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_01_prekill"/>
+			<SpecialEffect Group="false" Name="se_ship_01_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship 02">	
+			<SpecialEffect Group="false" Name="se_ship_02_spawn"/>
+			<SpecialEffect Group="false" Name="se_ship_02_unspawn"/>
+			<SpecialEffect Group="false" Name="se_ship_02_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_02_prekill"/>
+			<SpecialEffect Group="false" Name="se_ship_02_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship 03">	
+			<SpecialEffect Group="false" Name="se_ship_03_spawn"/>
+			<SpecialEffect Group="false" Name="se_ship_03_unspawn"/>
+			<SpecialEffect Group="false" Name="se_ship_03_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_03_prekill"/>
+			<SpecialEffect Group="false" Name="se_ship_03_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship 04">	
+			<SpecialEffect Group="false" Name="se_ship_04_spawn"/>
+			<SpecialEffect Group="false" Name="se_ship_04_unspawn"/>
+			<SpecialEffect Group="false" Name="se_ship_04_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_04_prekill"/>
+			<SpecialEffect Group="false" Name="se_ship_04_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship 05">	
+			<SpecialEffect Group="false" Name="se_ship_05_spawn"/>
+			<SpecialEffect Group="false" Name="se_ship_05_unspawn"/>
+			<SpecialEffect Group="false" Name="se_ship_05_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_05_prekill"/>
+			<SpecialEffect Group="false" Name="se_ship_05_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship 06">	
+			<SpecialEffect Group="false" Name="se_ship_06_spawn"/>
+			<SpecialEffect Group="false" Name="se_ship_06_unspawn"/>
+			<SpecialEffect Group="false" Name="se_ship_06_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_06_prekill"/>
+			<SpecialEffect Group="false" Name="se_ship_06_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Ship 07">	
+			<SpecialEffect Group="false" Name="se_ship_07_spawn"/>
+			<SpecialEffect Group="false" Name="se_ship_07_unspawn"/>
+			<SpecialEffect Group="false" Name="se_ship_07_sink"/>
+			<SpecialEffect Group="false" Name="se_ship_07_prekill"/>
+			<SpecialEffect Group="false" Name="se_ship_07_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Warship 01">	
+			<SpecialEffect Group="false" Name="se_warship_01_spawn"/>
+			<SpecialEffect Group="false" Name="se_warship_01_unspawn"/>
+			<SpecialEffect Group="false" Name="se_warship_01_sink"/>
+			<SpecialEffect Group="false" Name="se_warship_01_prekill"/>
+			<SpecialEffect Group="false" Name="se_warship_01_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Warship 02">	
+			<SpecialEffect Group="false" Name="se_warship_02_spawn"/>
+			<SpecialEffect Group="false" Name="se_warship_02_unspawn"/>
+			<SpecialEffect Group="false" Name="se_warship_02_sink"/>
+			<SpecialEffect Group="false" Name="se_warship_02_prekill"/>
+			<SpecialEffect Group="false" Name="se_warship_02_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Warship 03">	
+			<SpecialEffect Group="false" Name="se_warship_03_spawn"/>
+			<SpecialEffect Group="false" Name="se_warship_03_unspawn"/>
+			<SpecialEffect Group="false" Name="se_warship_03_sink"/>
+			<SpecialEffect Group="false" Name="se_warship_03_prekill"/>
+			<SpecialEffect Group="false" Name="se_warship_03_kill"/>
+		</SpecialEffect>
+		<SpecialEffect Group="true" Name="Warship 04">	
+			<SpecialEffect Group="false" Name="se_warship_04_spawn"/>
+			<SpecialEffect Group="false" Name="se_warship_04_unspawn"/>
+			<SpecialEffect Group="false" Name="se_warship_04_sink"/>
+			<SpecialEffect Group="false" Name="se_warship_04_prekill"/>
+			<SpecialEffect Group="false" Name="se_warship_04_kill"/>
+		</SpecialEffect>
+	</SpecialEffect>
+	<!-- SHIP EFFECTS END -->
+	<!-- MONSTER SFX START -->
+	<SpecialEffect Group="true" Name="Monster SFX">
+	<SpecialEffect Group="false" Name="se_mob_teleport_effect_01"/>		
+	<SpecialEffect Group="false" Name="se_mob_spawn_effect_01"/>		
+	<SpecialEffect Group="false" Name="se_kraken_water_splashes_01"/>
+	</SpecialEffect>
+	<!-- MONSTER SFX END -->
+</XML>

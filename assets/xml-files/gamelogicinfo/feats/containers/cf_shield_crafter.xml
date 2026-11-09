@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="CRAFTING">
+    <Counter Value="2"/>
+    <Failure Value="false"/>
+    <ResourceName Value="r_Shields"/>
+    <SkillName Value="s_Crafting Skills"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Shields" Value="1"/>
+  <Rewards>
+    <Item Name="cf_shields_r1" Type="UNLOCK_FEAT"/>
+    <Item Name="cf_shields_barbaric_r1" Type="UNLOCK_FEAT"/>
+    <Item Name="cf_shields_militant_r1" Type="UNLOCK_FEAT"/>
+    <Item Name="cf_shields_stoic_r1" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

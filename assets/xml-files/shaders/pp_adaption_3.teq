@@ -1,0 +1,38 @@
+#include "stdstate.frag"
+#include "rgbe.frag"
+
+uniform float FrameDT;
+
+
+sampler AdaptedSampler		: register(s0);
+sampler CurrSampler			: register(s1);
+
+float RatioPerFrame = 0.01;
+
+float4 Adapt(float2 tc : TEXCOORD0) : COLOR
+{
+	float Adapted = tex2D(AdaptedSampler, tc).r;
+	float Curr = tex2D(CurrSampler, tc).r;
+	
+	float New = Adapted + (Curr - Adapted) * (1.0 - pow( abs(1.0 - RatioPerFrame), 30 * FrameDT));
+	New = clamp(New, MIN_LUMINANCE, MAX_LUMINANCE);
+	return float4(New, New, New, 1);
+}
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+		Lighting = false;
+		AlphaBlendEnable = FALSE;
+		AlphaTestEnable = FALSE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+		ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+		CullMode = CCW;
+
+		VertexShader = null;
+        PixelShader  = compile ps_3_0 Adapt();
+    }
+}

@@ -1,0 +1,148 @@
+<XML>
+    <VersionInformation Major="0" Minor="1" Incremental="0" />
+<!--
+###############################################################################
+#####                          Rules for LifeMode                         #####
+###############################################################################
+-->
+<!-- Rules for changing lifemode from 'LifeMode Alive' to 'LifeMode Dying' -->
+    <SFStateChangeRule EventName="Event_Object_Dying">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" />
+    </SFStateChangeRule>
+<!-- Rule for changing lifemode to 'LifeMode Dead' -->
+    <SFStateChangeRule EventName="Event_Object_Died">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Dying" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType LifeMode" ModeValueName="LifeMode Dead" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                        Rules for MovementMode                       #####
+###############################################################################
+-->
+<!-- Rule for changing movementmode to 'MovementMode Idle' -->
+    <SFStateChangeRule EventName="Event_Object_Stopped_Moving">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="PhysicsStateRequirement" Rest="TRUE" />
+        <SFRequirement CheckInverse="FALSE" Contact="TRUE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" InTheWater="FALSE" Name="PhysicsStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="NULL" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Idle" />
+    </SFStateChangeRule>
+<!-- Rule for changing movementmode to 'MovementMode Slow' -->
+    <SFStateChangeRule EventName="Event_MovementSkill_Started">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Slow" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="s_Warhulk" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Slow" />
+    </SFStateChangeRule>
+<!-- Rule for changing movementmode to 'MovementMode Normal' -->
+    <SFStateChangeRule EventName="Event_MovementSkill_Started">
+        <SFRequirement CheckInverse="FALSE" ModeName="ModeType LifeMode" ModeValueName="LifeMode Alive" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType MovementMode" ModeValueName="MovementMode Normal" Name="ObjectStateRequirement" />
+        <SFRequirement CheckInverse="FALSE" Name="MovementSkillRequirement">
+            <SFMovementSkillName>
+                <SFString Value="s_Warhulk" />
+            </SFMovementSkillName>
+        </SFRequirement>
+        <SFStateChange ModeName="ModeType MovementMode" ModeValueName="MovementMode Normal" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                      Rules for WaterContactMode                     #####
+###############################################################################
+-->
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode No Water Contact' -->
+    <SFStateChangeRule EventName="Event_Object_Left_The_Water">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode No Water Contact" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode No Water Contact" />
+    </SFStateChangeRule>
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode Touching Water' -->
+    <SFStateChangeRule EventName="Event_Object_Wading">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Touching Water" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Touching Water" />
+    </SFStateChangeRule>
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode On Water Surface' -->
+    <SFStateChangeRule EventName="Event_Object_Started_Swimming">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode On Water Surface" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode On Water Surface" />
+    </SFStateChangeRule>
+<!-- Rule for changing watercontactmode from any value to 'WaterContactMode On Water Surface' -->
+    <SFStateChangeRule EventName="Event_Object_Dived">
+        <SFRequirement CheckInverse="TRUE" ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Submerged In Water" Name="ObjectStateRequirement" />
+        <SFStateChange ModeName="ModeType WaterContactMode" ModeValueName="WaterContactMode Submerged In Water" />
+    </SFStateChangeRule>
+<!--
+###############################################################################
+#####                           Operation Rules                           #####
+###############################################################################
+-->
+<!-- OperationRule for changing movementmode from any value to Idle. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="MovementMode Idle" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_Object_Stopped_Moving" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing movementmode (New != Idle). -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationRequirement>
+            <SFCheckInverse>
+                <SFBool Value="TRUE" />
+            </SFCheckInverse>
+            <SFCheckNewModeValue>
+                <SFBool Value="TRUE" />
+            </SFCheckNewModeValue>
+            <SFModeName>
+                <SFString Value="ModeType MovementMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="MovementMode Idle" />
+            </SFModeValueName>
+        </SFOperationRequirement>
+        <SFOperationName>
+            <SFString Value="Update_MaxContactVelocity" />
+        </SFOperationName>
+    </SFOperationRule>
+<!-- OperationRule for changing watercontactmode from any value to any value. -->
+    <SFOperationRule>
+        <SFModeName>
+            <SFString Value="ModeType WaterContactMode" />
+        </SFModeName>
+        <SFPreviousModeValueName>
+            <SFString Value="Any Value" />
+        </SFPreviousModeValueName>
+        <SFNewModeValueName>
+            <SFString Value="Any Value" />
+        </SFNewModeValueName>
+        <SFOperationName>
+            <SFString Value="Handle_WaterContactMode_Changed" />
+        </SFOperationName>
+    </SFOperationRule>
+</XML>

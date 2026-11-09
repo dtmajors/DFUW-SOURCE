@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SFObjectSpace>
+    <ObjectSpaceGuid>
+        <SFInteger Value="13" />
+    </ObjectSpaceGuid>
+    <VersionInformation Incremental="0" Major="0" Minor="1" />
+    <Active>
+        <SFBool Value="TRUE" />
+    </Active>
+    <Locked>
+        <SFBool Value="FALSE" />
+    </Locked>
+    <Inlined>
+        <SFBool Value="FALSE" />
+    </Inlined>
+    <ObjectSpaceType>
+        <SFInteger Value="9" />
+    </ObjectSpaceType>
+    <SFHemisphere>
+        <Guid>
+            <SFInteger Value="208" />
+        </Guid>
+        <HemisphereTranslation>
+            <SFVector3 X="0.0" Y="1000.0" Z="0.0" />
+        </HemisphereTranslation>
+        <HemisphereRotation>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+        </HemisphereRotation>
+        <HemisphereScale>
+            <SFFloat Value="1.0" />
+        </HemisphereScale>
+        <HemisphereTextureList>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_01.bmp" />
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_02.bmp" />
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_03.bmp" />
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_04.bmp" />
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_05.dds" />
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_06.dds" />
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_07.dds" />
+            </HemisphereTexture>
+            <HemisphereTexture>
+                <SFString Value="clouds_gray_08.dds" />
+            </HemisphereTexture>
+        </HemisphereTextureList>
+    </SFHemisphere>
+    <SFAtmosphere>
+        <Guid>
+            <SFInteger Value="209" />
+        </Guid>
+        <CloudColor>
+            <SFColor A="1.0" B="0.050980393" G="0.48235294" R="1.0" />
+        </CloudColor>
+        <CloudCover>
+            <SFFloat Value="0.09" />
+        </CloudCover>
+        <CloudThickness>
+            <SFFloat Value="0.67" />
+        </CloudThickness>
+        <AtmosphericLight>
+            <SFColor A="1.0" B="0.27" G="0.30" R="0.62" />
+        </AtmosphericLight>
+    </SFAtmosphere>
+    <SFWorldGlobalLinearFogObject>
+        <Guid>
+            <SFInteger Value="210" />
+        </Guid>
+        <FogColor>
+            <SFColor A="1.0" B="0.23" G="0.45" R="0.81" />
+        </FogColor>
+        <Density>
+            <SFFloat Value="1.00" />
+        </Density>
+        <FogStart>
+            <SFFloat Value="0.54" />
+        </FogStart>
+        <FogEnd>
+            <SFFloat Value="0.99" />
+        </FogEnd>
+        <RangeBased>
+            <SFBool Value="TRUE" />
+        </RangeBased>
+        <VertexFog>
+            <SFBool Value="TRUE" />
+        </VertexFog>
+        <FogOn>
+            <SFBool Value="TRUE" />
+        </FogOn>
+        <FogMethod>
+            <SFInteger Value="1" />
+        </FogMethod>
+    </SFWorldGlobalLinearFogObject>
+  <SFWorldGlobalPostFXObject>
+	<Guid>
+	  <SFInteger Value="218"/>
+	</Guid>
+	<Exposure>
+	  <SFFloat Value="0.6"/>
+	</Exposure>
+	<BrightPass>
+	  <SFFloat Value="1.0"/>
+	</BrightPass>
+	<Bloom>
+	  <SFFloat Value="1.0"/>
+	</Bloom>
+  </SFWorldGlobalPostFXObject>
+    <SFLightManagerSetup>
+        <Guid>
+            <SFInteger Value="666" />
+        </Guid>
+        <Color0>
+            <SFColor A="0.7" B="0.1" G="0.3" R="0.1" />
+        </Color0>
+        <Color1>
+            <SFColor A="0.9" B="0.1" G="0.1" R="0.1" />
+        </Color1>
+        <Color2>
+            <SFColor A="0.81" B="1.0" G="1.0" R="1.0" />
+        </Color2>
+        <LerpColorStart>
+            <SFColor A="0.0" B="0.2" G="0.2" R="0.2" />
+        </LerpColorStart>
+        <LerpColorEnd>
+            <SFColor A="0.0" B="0.6" G="1.0" R="1.0" />
+        </LerpColorEnd>
+        <LerpFrequency>
+            <SFFloat Value="5.0" />
+        </LerpFrequency>
+    </SFLightManagerSetup>
+    <SFPlanet>
+        <Guid>
+            <SFInteger Value="203" />
+        </Guid>
+        <LightColor>
+            <SFColor A="1.0" B="0.29" G="0.65" R="0.88" />
+        </LightColor>
+        <LogicalDistance>
+            <SFFloat Value="1500.0" />
+        </LogicalDistance>
+        <Intensity>
+            <SFFloat Value="1.0" />
+        </Intensity>
+        <Distance>
+            <SFVector3 X="0.0" Y="350.0" Z="0.0" />
+        </Distance>
+        <Rotation>
+            <SFVector3 X="1.1115927" Y="3.1415925" Z="-0.0015925486" />
+        </Rotation>
+        <LocalRotation>
+            <SFVector3 X="-0.0" Y="0.0" Z="0.0" />
+        </LocalRotation>
+        <Visible>
+            <SFBool Value="TRUE" />
+        </Visible>
+        <Active>
+            <SFBool Value="TRUE" />
+        </Active>
+        <SelfLightingDirection>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+        </SelfLightingDirection>
+        <XMLFilename>
+            <SFString Value="planets\sun.xml" />
+        </XMLFilename>
+        <PlanetLocalRotationRadiansPerSecond>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+        </PlanetLocalRotationRadiansPerSecond>
+        <PlanetRotationRadiansPerSecond>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+        </PlanetRotationRadiansPerSecond>
+    </SFPlanet>
+    <SFPlanet>
+        <Guid>
+            <SFInteger Value="205" />
+        </Guid>
+        <LightColor>
+            <SFColor A="0.0" B="0.0" G="0.0" R="0.0" />
+        </LightColor>
+        <LogicalDistance>
+            <SFFloat Value="300.0" />
+        </LogicalDistance>
+        <Intensity>
+            <SFFloat Value="0.25" />
+        </Intensity>
+        <Distance>
+            <SFVector3 X="0.0" Y="150.0" Z="0.0" />
+        </Distance>
+        <Rotation>
+            <SFVector3 X="-0.65000015" Y="4.6795208E-9" Z="3.0886185" />
+        </Rotation>
+        <LocalRotation>
+            <SFVector3 X="-0.41744924" Y="1.740717" Z="-3.0424976" />
+        </LocalRotation>
+        <Visible>
+            <SFBool Value="TRUE" />
+        </Visible>
+        <Active>
+            <SFBool Value="TRUE" />
+        </Active>
+        <SelfLightingDirection>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+        </SelfLightingDirection>
+        <XMLFilename>
+            <SFString Value="planets\red_moon.xml" />
+        </XMLFilename>
+        <PlanetLocalRotationRadiansPerSecond>
+            <SFVector3 X="-0.03" Y="0.0" Z="0.0" />
+        </PlanetLocalRotationRadiansPerSecond>
+        <PlanetRotationRadiansPerSecond>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0066" />
+        </PlanetRotationRadiansPerSecond>
+    </SFPlanet>
+    <SFPlanet>
+        <Guid>
+            <SFInteger Value="204" />
+        </Guid>
+        <LightColor>
+            <SFColor A="1.0" B="0.30" G="0.70" R="1.00" />
+        </LightColor>
+        <LogicalDistance>
+            <SFFloat Value="200.0" />
+        </LogicalDistance>
+        <Intensity>
+            <SFFloat Value="0.19" />
+        </Intensity>
+        <Distance>
+            <SFVector3 X="0.0" Y="150.0" Z="0.0" />
+        </Distance>
+        <Rotation>
+            <SFVector3 X="0.73" Y="0.0" Z="-2.7389224" />
+        </Rotation>
+        <LocalRotation>
+            <SFVector3 X="-0.43707526" Y="2.1511557" Z="2.1511557" />
+        </LocalRotation>
+        <Visible>
+            <SFBool Value="TRUE" />
+        </Visible>
+        <Active>
+            <SFBool Value="TRUE" />
+        </Active>
+        <SelfLightingDirection>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+        </SelfLightingDirection>
+        <XMLFilename>
+            <SFString Value="planets\blue_moon.xml" />
+        </XMLFilename>
+        <PlanetLocalRotationRadiansPerSecond>
+            <SFVector3 X="0.04" Y="0.0" Z="0.0" />
+        </PlanetLocalRotationRadiansPerSecond>
+        <PlanetRotationRadiansPerSecond>
+            <SFVector3 X="0.0" Y="0.0" Z="0.021" />
+        </PlanetRotationRadiansPerSecond>
+    </SFPlanet>
+    <SFWind>
+        <Guid>
+            <SFInteger Value="207" />
+        </Guid>
+        <WindDirection>
+            <SFVector3 X="-0.2" Y="0.0" Z="-0.2" />
+        </WindDirection>
+        <WindGustSpeed>
+            <SFFloat Value="0.2" />
+        </WindGustSpeed>
+        <WindSpeed>
+            <SFFloat Value="0.29" />
+        </WindSpeed>
+        <WindStrength>
+            <SFFloat Value="0.26" />
+        </WindStrength>
+        <WindTurbidity>
+            <SFFloat Value="0.4" />
+        </WindTurbidity>
+    </SFWind>
+    <SFPlanet>
+        <Guid>
+            <SFInteger Value="206" />
+        </Guid>
+        <LightColor>
+            <SFColor A="1.0" B="1.0" G="1.0" R="1.0" />
+        </LightColor>
+        <LogicalDistance>
+            <SFFloat Value="300.0" />
+        </LogicalDistance>
+        <Intensity>
+            <SFFloat Value="0.19" />
+        </Intensity>
+        <Distance>
+            <SFVector3 X="0.0" Y="130.0" Z="0.0" />
+        </Distance>
+        <Rotation>
+            <SFVector3 X="-0.0" Y="0.0" Z="0.46575597" />
+        </Rotation>
+        <LocalRotation>
+            <SFVector3 X="0.18230554" Y="3.1415925" Z="-2.1415927" />
+        </LocalRotation>
+        <Visible>
+            <SFBool Value="TRUE" />
+        </Visible>
+        <Active>
+            <SFBool Value="TRUE" />
+        </Active>
+        <SelfLightingDirection>
+            <SFVector3 X="0.0" Y="0.0" Z="0.0" />
+        </SelfLightingDirection>
+        <XMLFilename>
+            <SFString Value="planets\ghost_moon.xml" />
+        </XMLFilename>
+        <PlanetLocalRotationRadiansPerSecond>
+            <SFVector3 X="0.04" Y="0.0" Z="0.0" />
+        </PlanetLocalRotationRadiansPerSecond>
+        <PlanetRotationRadiansPerSecond>
+            <SFVector3 X="0.0" Y="0.0" Z="0.024" />
+        </PlanetRotationRadiansPerSecond>
+    </SFPlanet>
+</SFObjectSpace>

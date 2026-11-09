@@ -1,0 +1,172 @@
+<SFSkill>
+    <VersionInformation Incremental="0" Major="0" Minor="3" />
+    <SFSkillClassName>
+        <SFString Value="SFCraftingSkillClient" />
+    </SFSkillClassName>
+    <SFSkillName>
+        <SFString Value="s_Tanning" />
+    </SFSkillName>
+    <SFAdvancementRate>
+        <SFFloat Value="0.0" />
+    </SFAdvancementRate>
+    <SFBlockingName>
+        <SFString Value="Block_All_Skills_Except_Movement_Skills" />
+    </SFBlockingName>
+    <SFClientParamName>
+        <SFString Value="No_Params" />
+    </SFClientParamName>
+    <SFDurationSkillModifier>
+        <SFFloat Value="0.0" />
+    </SFDurationSkillModifier>
+    <SFDurationTimerBase>
+        <SFFloat Value="3.0" />
+    </SFDurationTimerBase>
+    <SFFunctionName>
+        <SFString Value="Empty Function" />
+    </SFFunctionName>
+    <SFImportance>
+        <SFFloat Value="1.0" />
+    </SFImportance>
+    <SFReportName>
+        <SFString Value="Report_Skill_Failure_And_Success" />
+    </SFReportName>
+    <SFSkillCheckAttributeModifier>
+        <SFFloat Value="0.0" />
+    </SFSkillCheckAttributeModifier>
+    <SFSkillCheckBase>
+        <SFFloat Value="0.75" />
+    </SFSkillCheckBase>
+    <SFSkillCheckModifier>
+        <SFFloat Value="0.0" />
+    </SFSkillCheckModifier>
+    <SFSpecialEffectDuration>
+        <SFFloat Value="0.0" />
+    </SFSpecialEffectDuration>
+    <SFAnimationInfo>
+        <SFAnimationInfoName>
+            <SFString Value="AnimationInfo_Simple" />
+        </SFAnimationInfoName>
+        <SFOperationOnSkillPartExitName>
+            <SFString Value="Do_Nothing" />
+        </SFOperationOnSkillPartExitName>
+        <SFStartAnimationOnClient>
+            <SFBool Value="FALSE" />
+        </SFStartAnimationOnClient>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTargetObjectName>
+            <SFString Value="TargetObject_Mesh_Position" />
+        </SFTargetObjectName>
+        <SFAnimationStateName>
+            <SFString Value="crafting_emtyhand" />
+        </SFAnimationStateName>
+    </SFAnimationInfo>
+    <SFPerformingObject>
+        <SFPerformingObjectName>
+            <SFString Value="Performing_Object_Progressbar" />
+        </SFPerformingObjectName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFProgressName>
+            <SFString Value="Progress_Skill" />
+        </SFProgressName>
+        <SFShowCancelButton>
+            <SFBool Value="TRUE" />
+        </SFShowCancelButton>
+        <SFSkillFunctionName>
+            <SFString Value="sf_Crafting Timer" />
+        </SFSkillFunctionName>
+    </SFPerformingObject>
+    <SFSkillController>
+        <SFSkillControllerName>
+            <SFString Value="SkillController_Simple" />
+        </SFSkillControllerName>
+        <SFStartControllerOperationName>
+            <SFString Value="Controller_Operation_Start_Skill" />
+        </SFStartControllerOperationName>
+        <SFStopControllerOperationName>
+            <SFString Value="Controller_Operation_Stop_Skill" />
+        </SFStopControllerOperationName>
+    </SFSkillController>
+    <SFSkillTimer>
+        <SFSkillTimerName>
+            <SFString Value="SkillTimer" />
+        </SFSkillTimerName>
+        <SFGeneralSkillFunction>
+            <SFBool Value="TRUE" />
+        </SFGeneralSkillFunction>
+        <SFTimerName>
+            <SFString Value="Repeating Timer" />
+        </SFTimerName>
+        <SFRepeatCount>
+            <SFInteger Value="0" />
+        </SFRepeatCount>
+        <SFSkillPartName>
+            <SFString Value="SkillPart_Performing" />
+        </SFSkillPartName>
+        <SFTimerLengthSkillFunctionName>
+            <SFString Value="sf_Crafting Timer" />
+        </SFTimerLengthSkillFunctionName>
+    </SFSkillTimer>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Object_State_Value_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFModeValueName>
+            <SFString Value="MovementMode Idle" />
+        </SFModeValueName>
+        <SFModeName>
+            <SFString Value="ModeType MovementMode" />
+        </SFModeName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Crafting_Ingredient_Constraint" />
+        </SFConstraintName>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Crafting_Requirement_Constraint" />
+        </SFConstraintName>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial" />
+        </SFCheckName>
+    </SFConstraint>
+    <SFConstraint>
+        <SFConstraintName>
+            <SFString Value="Distance_To_WorkStation_Constraint" />
+        </SFConstraintName>
+        <SFCraftingWorkStation>
+            <SFBool Value="TRUE" />
+        </SFCraftingWorkStation>
+        <SFMinDistance>
+            <SFFloat Value="0.0" />
+        </SFMinDistance>
+        <SFMaxDistance>
+            <SFFloat Value="11.0" />
+        </SFMaxDistance>
+        <SFInvertCheck>
+            <SFBool Value="FALSE" />
+        </SFInvertCheck>
+        <SFCheckName>
+            <SFString Value="Check_Initial_And_Performing" />
+        </SFCheckName>
+    </SFConstraint>
+</SFSkill>

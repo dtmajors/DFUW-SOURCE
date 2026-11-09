@@ -1,0 +1,261 @@
+
+<!--
+
+	Use DisablePrecompiled="true", as an attribute of "ConfigOption". This will disable
+	precompiled shaders for this option, reducing total configurations. In this configuration
+	shaders will be loaded from source.
+
+-->
+
+<ShaderManifest>
+	<ConfigUnits>
+		<ConfigUnit Name="Shadow enable">
+			<ConfigOption Name="SH0"/>
+			<ConfigOption Name="SH1" MacroName="SHADER_SHADOW_ENABLE" Value="1"/>
+		</ConfigUnit>
+		
+		<ConfigUnit Name="Shadow smoothing quality">
+			<ConfigOption Name="SQ0" MacroName="SHADER_SHADOW_SMOOTHING_QUALITY" Value="1"/>
+			<ConfigOption Name="SQ1" MacroName="SHADER_SHADOW_SMOOTHING_QUALITY" Value="2"/>
+			<ConfigOption Name="SQ2" MacroName="SHADER_SHADOW_SMOOTHING_QUALITY" Value="3"/>
+		</ConfigUnit>
+		
+		<ConfigUnit Name="Quality post effects enable">
+			<ConfigOption Name="PP0" />
+			<ConfigOption Name="PP1" MacroName="SHADER_PP_QUALITY" Value="1"/>
+		</ConfigUnit>
+		
+		<ConfigUnit Name="Texture filtering">
+			<ConfigOption Name="TF1" MacroName="USER_TEXTURE_FILTER" Value="LINEAR"/>
+			
+			<ConfigOption Name="TF2" MacroName="USER_TEXTURE_FILTER" Value="ANISOTROPIC"/>
+		</ConfigUnit>
+		
+		<ConfigUnit Name="God rays enable">
+			<ConfigOption Name="GR0" />
+			<ConfigOption Name="GR1" MacroName="SHADER_PP_GOD_RAYS" Value="1"/>
+		</ConfigUnit>
+		
+		<ConfigUnit Name="Shader quality">
+			<ConfigOption MacroName="LOW_SHADER_QUALITY" Name="SQ0" Value="1" />
+			<ConfigOption Name="SQ1" />
+		</ConfigUnit>
+		
+		<!-- Single option units will always define their macros -->
+		<ConfigUnit Name="Voxel lighting enable">
+			<ConfigOption Name="VX1" MacroName="VOXEL_LIGHTING_ENABLE" Value="1"/>
+		</ConfigUnit>
+		
+		<ConfigUnit Name="Dynamic lights enable">
+			<ConfigOption Name="DL1" MacroName="SHADER_DYNAMIC_LIGHTS_ENABLE" Value="1"/>
+		</ConfigUnit>
+		
+		<ConfigUnit Name="Deferred lights enable">
+			<ConfigOption Name="DF1" MacroName="SHADER_DEFERRED_ENABLE" Value="1"/>
+		</ConfigUnit>
+	</ConfigUnits>
+	
+
+	<AvailableShaders>
+	
+		<Shader File="skygradient3.teq"/>
+		<Shader File="SkyShaderWind3.teq"/>
+		<Shader File="StarDome.teq"/>
+		
+		<Shader File="PlanetSunShader3.teq"/>
+		<Shader File="moonshader3.teq"/>
+		
+		<Shader File="terrain_new_4mat3.teq"/>
+		<Shader File="terrain_new_3mat3.teq"/>
+		<Shader File="terrain_new_2mat3.teq"/>
+		<Shader File="terrain_new_1mat3.teq"/>
+		<Shader File="terrain_new3.teq"/>
+	
+		<Shader File="vegetation_shadow.teq"/>
+		
+		<Shader File="tracershader3.teq"/>
+		<Shader File="decalshader3.teq"/>
+		<Shader File="roadshader3.teq"/>
+		<Shader File="decaltimefadingshader3.teq"/>
+		
+		<!--Liquid-->
+		<Shader File="lavalake3.teq"/>
+		<Shader File="LavaShaderSoft3.teq"/>
+		<Shader File="Water_Coast3.teq"/>
+		<Shader File="Water_Coast3_fake.teq"/>
+		<Shader File="water_acid3.teq"/>
+		<Shader File="water_swamp3.teq"/>
+		<Shader File="blood_lake3.teq"/>
+		<Shader File="tarshader_3.teq"/>
+		<Shader File="water_river3.teq"/>
+		
+		<Shader File="waverwaves_full_ambient_instancing.teq"/>
+		<Shader File="waverwaves_low_ambient_instancing.teq"/>
+		<Shader File="waterwaves_static_instancing.teq"/>
+		<Shader File="waverwaves_instancing.teq"/>
+		
+		<Shader File="waterfall3.teq"/>
+		<Shader File="waterfall_acid3.teq"/>
+		<Shader File="waterfall_tar3.teq"/>
+		<Shader File="bloodstreamshader3.teq"/>
+		<Shader File="blood_fountain3.teq"/>
+		
+		<!--Props With Normals-->
+		<Shader File="normal_specular_snow_instancing.teq"/>
+		<Shader File="NormalSpecularAlphaGlowInstancing.teq"/>
+		<Shader File="normalspeculartransparentinstancing.teq"/>
+		<Shader File="bannershader_normalspecular_instance.teq"/>
+		<Shader File="sailshader_normalspecular_instancing.teq"/>
+		<Shader File="iceshadernew3.teq"/>
+		
+		<!--Trees,Bushes-->
+		<Shader File="TreePineShader_instance.teq"/>
+		<Shader File="TreePineShaderVP_instance.teq"/>
+		<Shader File="treepineshadervp_normalspecular_instance.teq"/>
+		
+		<!--Props No Normals-->
+		<Shader File="defaultshader_instancing.teq"/>
+		<Shader File="defaultshader_a_instancing.teq"/>
+		<Shader File="defaultshader_a_cw_instancing.teq"/>
+		<Shader File="defaultshader_a_ccw_instancing.teq"/>
+		<Shader File="prop_alphametal_instancing.teq"/>
+		<Shader File="prop_alphametal_cw_instancing.teq"/>
+		<Shader File="prop_alphametal_ccw_instancing.teq"/>
+		<Shader File="ArmourSharp_instancing.teq"/>
+		<Shader File="armoursharp_instancing_cw.teq"/>
+		<Shader File="alphaglow_instancing.teq"/>
+		<Shader File="tentshader_instancing.teq"/>
+		<Shader File="sailshader_instancing.teq"/>
+		<Shader File="WaveHangBanner_instance.teq"/>
+		<Shader File="wobble_instancing.teq"/>
+		<Shader File="transparent_glass_instancing.teq"/>
+		<Shader File="transparent_move_instancing.teq"/>
+		
+		<Shader File="alphaglowmetal_instancing.teq"/>
+		<Shader File="alphametaltextureglow_instancing.teq"/>
+		<Shader File="iceshader_instancing.teq"/>
+		<Shader File="crystalshader_highlight_instancing.teq"/>
+		<Shader File="levitation_alphaglow_instancing.teq"/>
+		
+		<!--Players-->
+		<Shader File="StandardAnimationCharacterNew3.teq"/>
+		<Shader File="eyeshader_instancing.teq"/>
+		<Shader File="StandardAnimationNew3.teq"/>
+		<Shader File="normal_specular_armour_instancing.teq"/>
+		<Shader File="normal_specular_instancing.teq"/>
+		<Shader File="BeardCKeyAnimationNew3.teq"/>
+		<Shader File="hairshaderckey3.teq"/>
+		<Shader File="normal_specular_transparency_headwear.teq"/>
+		<Shader File="normal_specular_glow_headwear.teq"/>
+		
+		<!--Player Jewels-->
+		<Shader File="HairShader_volume3.teq"/>
+		<Shader File="hairshader_volumeckey3.teq"/>
+		<Shader File="shadertransparent.teq"/>
+		
+		<!--New Monsters with Normals-->
+		<Shader File="standardanimationtransparentnew3.teq"/>
+		<Shader File="standardanimationalphaglownew3.teq"/>
+		<Shader File="standardanimationalphaglow_nopulse_new3.teq"/>
+		
+		<!--Old Monsters-->
+		<Shader File="standardanimation3.teq"/>
+		<Shader File="standardanimationckey3.teq"/>
+		<Shader File="animationalphametal3.teq"/>
+		
+		<Shader File="animationelemental3.teq"/>
+		<Shader File="animationalphaglow3.teq"/>
+		<Shader File="animationalphaglowalternative3.teq"/>
+		<Shader File="animationghost3.teq"/>
+		<Shader File="animationalphaglowmetal3.teq"/>
+		<Shader File="animationalphametaltextureglow3.teq"/>
+		<Shader File="anim_tex_anim16f3.teq"/>
+		
+		<!--Special Effects-->
+		<Shader File="QuadParticle_instancing.teq"/>
+		<Shader File="EParticle_depth_instancing.teq"/>
+		<Shader File="sfx_meshexplotion_control.teq"/>
+		<Shader File="sfx_spell3.teq"/>
+		<Shader File="sfx_firemagic_instancing.teq"/>
+		<Shader File="sfx_firemagic_alt_instancing.teq"/>
+		<Shader File="sfx_depthblurmotion_3.teq"/>
+		<Shader File="sfx_meshalphagrow_instancing.teq"/>
+		<Shader File="sfx_meshexplotion3.teq"/>
+		<Shader File="sfx_meshexplotion_additive3.teq"/>
+		<Shader File="sfx_meshexplotion_control_ckey3.teq"/>
+		<Shader File="sfx_meshexplotion_slow3.teq"/>
+		<Shader File="sfx_meshexplotion_slow_ccw3.teq"/>
+		<Shader File="sfx_meshexplotion_slow_cw3.teq"/>
+		<Shader File="sfx_meshshieldtransparent_instancing.teq"/>
+		<Shader File="sfx_meshtexturescroll3.teq"/>
+		<Shader File="sfx_meshtransparent_instancing.teq"/>
+		<Shader File="sfx_nolight_textureanim_16f_instancing.teq"/>
+		<Shader File="sfx_nolight_textureanim_16f_cw_instancing.teq"/>
+		<Shader File="sfx_nolight_textureanim_4f_instancing.teq"/>
+		<Shader File="sfx_nolight_textureanim_64f_instancing.teq"/>
+		<Shader File="sfx_timed_explosion3.teq"/>
+		<Shader File="sfx_timed_reverse_explosion3.teq"/>
+		<Shader File="sfx_transparent_cw3.teq"/>
+		<Shader File="sfx_textureanim_64f_instancing.teq"/>
+		
+		<!--Shadow-->
+		<Shader File="s_standardanimation.teq"/>
+		<Shader File="s_standard_instance.teq"/>
+		<Shader File="s_sailshader_instancing.teq"/>
+		<Shader File="s_tentshader_instancing.teq"/>
+		<Shader File="s_wavehangbanner_instance.teq"/>
+		<Shader File="s_wavebanner_instance.teq"/>
+		<Shader File="s_standard_ckey_instance.teq"/>
+		<Shader File="s_standard_ckey_ccw_instance.teq"/>
+		<Shader File="s_standard_ckey_cw_instance.teq"/>
+		<Shader File="s_armoursharp_cw.teq"/>
+		<Shader File="s_armoursharp_ccw.teq"/>
+		<Shader File="s_alphaglowmetal_cw.teq"/>
+		<Shader File="s_alphaglowmetal_ccw.teq"/>
+		<Shader File="s_prop_alphametal.teq"/>
+		<Shader File="s_prop_alphametal_ccw.teq"/>
+		<Shader File="s_prop_alphametal_cw.teq"/>
+		<Shader File="s_treepineshader_instance.teq"/>
+		<Shader File="s_treepineshadervp_instance.teq"/>
+		
+		<!--UnderWater-->
+		<Shader File="pp_final_underwater3.teq"/>
+		
+		<!--PP Shaders-->
+		<Shader File="pp_bloom4.teq"/>
+		<Shader File="pp_down4.teq"/>
+		<Shader File="pp_down2.teq"/>
+		<Shader File="pp_aftercombiner.teq"/>
+		<Shader File="PP_FinalHDRL_3.teq"/>
+		<Shader File="PP_BrightPass3.teq"/>
+		<Shader File="PP_Tonemap_3.teq"/>
+		
+		<Shader File="pp_godrayradial.teq"/>
+		<Shader File="pp_godrayocclusion.teq"/>
+		
+		<!--Deferred-->
+		<Shader File="defered_light3.teq"/>
+		
+		<!--Character Creator-->
+		<Shader File="screenspace2d3.teq"/>
+		
+	<!--Disabled for Test
+		<Shader File="SMAA_BlendWeightCalculation_3.teq"/>
+		<Shader File="SMAA_NeighbourhoodBlending_3.teq"/>
+		<Shader File="SMAA_EdgeDetect_3.teq"/>
+	-->
+		
+	<!--Not Frequently Used
+		<Shader File="sm_scroll3.teq"/>
+		<Shader File="levitation_instancing.teq"/>
+		<Shader File="s_prop_ckey_tc_instance.teq"/>
+	-->
+	
+	<!-- Do NOT include these:
+		PP_SampleLumInitial_3.teq
+		PP_Adaption_3.teq
+	-->
+	
+	</AvailableShaders>
+
+</ShaderManifest>

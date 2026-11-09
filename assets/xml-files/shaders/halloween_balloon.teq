@@ -1,0 +1,91 @@
+// Note: ADD SPECULAR
+#include "stdstate.frag"
+#include "time.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "shadowmap.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+#include "offscreenfx.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+STD_VS_INSTANCE_OUTPUT VS(STD_VS_INSTANCE_INPUT Input) {
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE(Input);
+	Output.Misc = Output.Pos;
+	return Output;
+}
+
+STD_PS_OUTPUT_3 PS(STD_VS_INSTANCE_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float3 LightDir = normalize(CalculateSpeneBumpLightQuat(Input.WorldNormal, -PLANET_LIGHTDIR_COMMON));
+	
+	float3 Normal = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldPos - EYE_POS);
+	
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+	//float3 R = reflect(-Vn, Normal);
+	//float4 Local_Reflection = texCUBE(Environment_Sampler,R);
+	float DiffDot = saturate(dot(Normal, -LightDir));
+	float4 Diff = DiffDot * PLANET_LIGHTCOLOR_COMMON + ATMOSPHERE_AMBIENT;
+	float4 BaseColor = BaseTex;
+
+	float4 SunLight = Diff;
+	float4 DynamicLight = float4(0,0,0,0);
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelDiffuseRaw(Input.WorldPos, Normal, LightParams[i]);
+		//Color.xyz += pointLightPixelDiffuse(Input.WorldPos, Normal, LightParams[i]) * BaseColor.xyz;
+	}
+#endif
+	
+	Output.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, BaseColor, SunLight, DynamicLight);
+	Output.Color.a = 0.025 + (BaseColor.a * 0.35);
+	
+#ifdef SSAO_ENABLE
+	Output.Depth = SSAO_getZVal(Input.ZPos);
+#endif
+
+	// OffscreenFX
+	Output.Color = ProcessOffscreenFXColor(Output.Color, Input.Misc);
+	Output.Color = lerp(Output.Color,0,smoothstep(0.9,1,Input.Fog));
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaBlendEnable = true;
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+		        
+        ZEnable = true;
+		ZWriteEnable = false;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

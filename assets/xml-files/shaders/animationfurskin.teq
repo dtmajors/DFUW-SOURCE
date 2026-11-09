@@ -1,0 +1,200 @@
+
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "sampler.frag"
+#include "fog.frag"
+#include "atmosphere.frag"
+#include "alphaHDRL.frag"
+
+
+
+// Matrix Pallette
+static const int MAX_MATRICES = 26;
+float4x3    mWorldMatrixArray[MAX_MATRICES] : REAnimWorldMatrixArray;
+
+texture Tex0 : REPTextureDirect;
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+///////////////////////////////////////////////////////
+
+struct VS_INPUT
+{
+    float4  Pos             : POSITION;
+    float4  BlendWeights    : BLENDWEIGHT;
+    float4  BlendIndices    : BLENDINDICES;
+    float3  Normal          : NORMAL;
+    float3  Tex0            : TEXCOORD0;
+};
+
+/*
+struct VS_INPUT
+{
+    float4  Pos             : POSITION;
+    float3  Normal          : NORMAL;
+    float3  Tex0            : TEXCOORD0;
+    float4  BlendWeights    : BLENDWEIGHT;
+    float4  BlendIndices    : BLENDINDICES;
+};
+*/
+
+struct VS_OUTPUT
+{
+    float4  Pos     : POSITION;
+    float4  Diffuse : COLOR0;
+    float4  Light   : COLOR1;
+    float2  Tex0    : TEXCOORD0;
+    float   Fog	    : FOG;
+};
+
+/*
+float3 Diffuse(float3 Normal)
+{
+    float CosTheta;
+    
+    // N.L Clamped
+    CosTheta = max(0.0f, dot(Normal, lhtDir.xyz));
+       
+    // propogate scalar result to vector
+    return (CosTheta);
+}
+*/
+
+VS_OUTPUT SimpleVShader(VS_INPUT i)
+{
+ 	VS_OUTPUT o = (VS_OUTPUT)0;
+ 	matrix ViewProj;
+    	ViewProj = mul(VIEW_MATRIX,PROJECTION_MATRIX);
+    	o.Pos = mul(i.Pos,ViewProj);
+    	o.Diffuse = 1.0f;
+    	o.Light = 1.0f;
+    	o.Tex0 = i.Tex0;
+    	
+    	return o;  
+}
+
+
+
+
+VS_OUTPUT VShade_2Weight(VS_INPUT i)
+{
+    VS_OUTPUT   o;
+    float3      Pos = 0.0f;
+    float3      Normal = 0.0f;    
+    float       LastWeight = 0.0f;
+    
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(i.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])i.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+    // calculate the pos/normal using the "normal" weights 
+    //        and accumulate the weights to calculate the last weight
+
+    LastWeight = BlendWeightsArray[0];
+        
+    Pos = mul(i.Pos, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+    Normal = mul(i.Normal, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+
+    LastWeight = 1.0f - LastWeight; 
+
+    // Now that we have the calculated weight, add in the final influence
+    Pos += (mul(i.Pos, mWorldMatrixArray[IndexArray[1]]) * LastWeight);
+    Normal += (mul(i.Normal, mWorldMatrixArray[IndexArray[1]]) * LastWeight); 
+    
+    
+    // transform position from world space into view and then projection space
+    o.Pos = mul(float4(Pos.xyz, 1.0f), VIEW_PROJECTION_MATRIX);
+
+    // normalize normals
+    Normal = normalize(Normal);
+
+    float3 LDir = CalculateSpeneBumpLightQuat(Normal,-PLANET_LIGHTDIR_COMMON);
+    o.Light.xyz = LDir;
+    o.Light.w = 1.0f;
+
+    // Shade (Ambient + etc.)
+    o.Diffuse.xyz = saturate((max(0.0f,dot(Normal,-PLANET_LIGHTDIR_COMMON)) * PLANET_LIGHTCOLOR_COMMON * DiffMaterial) +  ATMOSPHERE_AMBIENT);
+    o.Diffuse.w = 1.0f;
+
+    // copy the input texture coordinate through
+    o.Tex0  = i.Tex0.xy;
+    
+    o.Fog = CalculateFog(o.Pos.z);
+
+
+    return o;
+}
+
+float4 PShade(VS_OUTPUT Input) : COLOR
+{
+	float4 Out = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER,Input.Tex0);
+	
+	float dotter = CalculateSpeneBumpPixel(BaseTex.xyz,Input.Light.xyz);
+	
+	//float FinalVal = dotter*4;// + 0.5f;
+	Out = BaseTex * (Input.Diffuse);
+	Out.xyz += BaseTex * dotter;
+	
+	//Out *= Input.Diffuse;
+	
+	//dotter *=8;
+	//Out *= dotter *2;
+	//Out *= 0.5f;
+	//Out += Out*dotter*8;
+	//Out *= dotter*Input.Diffuse;
+	//Out += Out*dotter;
+	//Out *= saturate(dotter*8*Input.Diffuse);
+	//Out.a = getAlphaTestValHDR(BaseTex.a);
+	Out.a = getAlphaTestValHDR_One(BaseTex.a);
+	//Out.a = 0.0f;
+
+	return Out;
+	
+	
+	//return From*Input.Diff;
+	//return saturate(From*Input.Diff);
+	//return From;
+}
+
+
+//////////////////////////////////////
+// Techniques specs follow
+//////////////////////////////////////
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+   	Texture[0] = (Tex0);
+	Texture[1] = NULL;
+    	Lighting = FALSE;
+    	FogEnable = TRUE;
+    	Lighting = FALSE;
+
+        AlphaTestEnable = TRUE;
+        ALPHAREF = 255;
+        ALPHAFUNC = NOTEQUAL;
+        
+        AlphaBlendEnable = FALSE;
+        ZEnable = TRUE;
+	ZWriteEnable = TRUE;
+	SpecularEnable = FALSE;
+       	CullMode = CCW;
+        Shademode      = Gouraud;
+        FillMode       = Solid;
+	ADDRESSU[0] = Wrap;
+	ADDRESSV[0] = Wrap;
+        
+	ColorWriteEnable = ALPHA|RED|BLUE|GREEN; //Don't write to the alpha channel
+    
+    	VertexShader = compile vs_2_0 VShade_2Weight();
+        PixelShader = compile ps_2_a PShade();
+    }
+}
+

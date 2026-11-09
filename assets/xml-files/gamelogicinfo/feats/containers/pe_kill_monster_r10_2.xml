@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="2"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Monsters"/>
+    <ResourceRank Value="10"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_celestial" Value="2"/>
+  <Steam SteamAchievement="true" SteamIcon="steam_monstrosity_01"/>
+  <Rewards>
+    <Item Name="pe_kill_monster_r10_20" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

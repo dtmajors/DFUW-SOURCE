@@ -1,0 +1,207 @@
+<quest quest_id="1105" category="side_quest" tag="Fishing Frenzy" published="False" valid="True">
+	<title>Fishing Frenzy</title>
+	<description>Fish are in high demand lately. The merchant is willing to pay a good amount of money for fresh fish brought to him in a timely manner. Some of the seafood requires the use of a $[Resource.S.r_ship_fishing_trawler_NameSingular] .</description>
+	<nodes>
+		<node type="event_simple" id="378" tag="talk to any merchant to retry">
+			<tasks>
+				<task type="interact_with_vendor" id="154" value="1" tag="An Interact With Vendor Task" vendor_id="v12_wilderness_merchant">
+					<task_instruction>Talk to $[Vendors.v12_wilderness_merchant_Name] when you want to try again</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="401" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="3" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="200" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="4" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Trout Caserole" quantity="4" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="end_node" id="400" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="1" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="150" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="2" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Spirit Beads" quantity="40" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="end_node" id="399" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="0" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="100" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="396" tag="talk to any merchant">
+			<tasks>
+				<task type="interact_with_vendor" id="159" value="1" tag="An Interact With Vendor Task" vendor_id="v12_wilderness_merchant">
+					<task_instruction>Talk to $[Vendors.v12_wilderness_merchant_Name] to collect your reward</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="395" tag="talk to any merchant">
+			<tasks>
+				<task type="interact_with_vendor" id="158" value="1" tag="An Interact With Vendor Task" vendor_id="v12_wilderness_merchant">
+					<task_instruction>Talk to $[Vendors.v12_wilderness_merchant_Name] to collect your reward</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="394" tag="time out" />
+		<node type="event_simple" id="393" tag="time out" />
+		<node type="event_simple" id="352" tag="time out" />
+		<node type="event_simple_conditional" id="392" tag="fish 3 timer 3">
+			<conditions>
+				<condition type="remaining_time" id="206" value="1" tag="A Time Remaining Condition" timer_length="900" />
+			</conditions>
+			<tasks>
+				<task type="harvest_resource" id="162" value="2" tag="A Harvest Resource(s) Task" resource_name="r_Seaweed" quantity="7">
+					<task_instruction>Fish 7 $[Resource.S.r_seaweed_NameSingular] in 15 minutes</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="391" tag="fish 2 timer 2">
+			<conditions>
+				<condition type="remaining_time" id="205" value="1" tag="A Time Remaining Condition" timer_length="900" />
+			</conditions>
+			<tasks>
+				<task type="harvest_resource" id="161" value="2" tag="A Harvest Resource(s) Task" resource_name="r_Nacre" quantity="4">
+					<task_instruction>Fish 4 $[Resource.N.r_nacre_NameSingular] in 15 minutes</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="388" tag="let's fish" />
+		<node type="event_simple" id="387" tag="let's fish" />
+		<node type="event_simple" id="341" tag="" />
+		<node type="event_simple" id="386" tag="talk to any merchant to retry">
+			<tasks>
+				<task type="interact_with_vendor" id="156" value="1" tag="An Interact With Vendor Task" vendor_id="v12_wilderness_merchant">
+					<task_instruction>Talk to $[Vendors.v12_wilderness_merchant_Name] when you want to try again</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="385" tag="talk to any merchant to retry">
+			<tasks>
+				<task type="interact_with_vendor" id="155" value="1" tag="An Interact With Vendor Task" vendor_id="v12_wilderness_merchant">
+					<task_instruction>Talk to $[Vendors.v12_wilderness_merchant_Name] when you want to try again</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="339" tag="let's fish" />
+		<node type="event_simple_conditional" id="342" tag="fish 1 timer 1">
+			<conditions>
+				<condition type="remaining_time" id="196" value="1" tag="A Time Remaining Condition" timer_length="900" />
+			</conditions>
+			<tasks>
+				<task type="harvest_resource" id="160" value="2" tag="A Harvest Resource(s) Task" resource_name="r_Trout" quantity="10">
+					<task_instruction>Fish 10 $[Resource.T.r_trout_NameSingular] in 15 minutes</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="start_node" id="282" tag="Player talks to a merchant">
+			<conditions>
+				<condition type="period_of_day" id="170" value="1" tag="A Period-of-Day Condition" day_period="Morning" />
+				<condition type="vendor_interaction" id="171" value="1" tag="A Vendor Interaction Condition" vendor_id="v12_wilderness_merchant" />
+				<condition type="weather_state" id="197" value="1" tag="A Weather Condition" weather_state="Fine" />
+			</conditions>
+		</node>
+		<node type="event_merge" id="384" tag="when the player is ready he chooses yes.">
+			<instruction>Are you ready to go fishing?</instruction>
+			<tasks>
+				<task type="choose" id="153" value="1" tag="yes" reward_node_id="-1">
+					<task_instruction>Go fishing</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="347" tag="talk to any merchant">
+			<tasks>
+				<task type="interact_with_vendor" id="157" value="1" tag="An Interact With Vendor Task" vendor_id="v12_wilderness_merchant">
+					<task_instruction>Talk to $[Vendors.v12_wilderness_merchant_Name] to collect your reward</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="383" tag="when the player is ready he chooses yes.">
+			<instruction>Are you ready to go fishing?</instruction>
+			<tasks>
+				<task type="choose" id="152" value="1" tag="yes" reward_node_id="-1">
+					<task_instruction>Go fishing</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="337" tag="when the player is ready he chooses yes.">
+			<instruction>Are you ready to go fishing?</instruction>
+			<tasks>
+				<task type="choose" id="151" value="1" tag="yes" reward_node_id="-1">
+					<task_instruction>Go fishing</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="start_node" id="379" tag="Player talks to a merchant">
+			<conditions>
+				<condition type="period_of_day" id="198" value="1" tag="A Period-of-Day Condition" day_period="Morning" />
+				<condition type="vendor_interaction" id="199" value="1" tag="A Vendor Interaction Condition" vendor_id="v12_wilderness_merchant" />
+				<condition type="weather_state" id="200" value="1" tag="A Weather Condition" weather_state="Snowing" />
+			</conditions>
+		</node>
+		<node type="start_node" id="380" tag="Player talks to a merchant">
+			<conditions>
+				<condition type="weather_state" id="201" value="1" tag="A Weather Condition" weather_state="Raining" />
+				<condition type="vendor_interaction" id="202" value="1" tag="A Vendor Interaction Condition" vendor_id="v12_wilderness_merchant" />
+				<condition type="period_of_day" id="204" value="1" tag="A Period-of-Day Condition" day_period="Morning" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="381" tag="" />
+		<node type="event_simple" id="382" tag="" />
+	</nodes>
+	<edges>
+		<edge id="479" from="352" to="378" value="0" />
+		<edge id="480" from="393" to="385" value="0" />
+		<edge id="451" from="378" to="337" value="1" />
+		<edge id="474" from="386" to="384" value="1" />
+		<edge id="471" from="392" to="394" value="1" />
+		<edge id="416" from="282" to="341" value="1" />
+		<edge id="419" from="337" to="339" value="1" />
+		<edge id="417" from="341" to="337" value="0" />
+		<edge id="484" from="347" to="399" value="1" />
+		<edge id="468" from="392" to="396" value="2" />
+		<edge id="469" from="388" to="392" value="0" />
+		<edge id="420" from="339" to="342" value="0" />
+		<edge id="461" from="381" to="383" value="0" />
+		<edge id="470" from="384" to="388" value="1" />
+		<edge id="430" from="342" to="347" value="2" />
+		<edge id="482" from="396" to="401" value="1" />
+		<edge id="481" from="394" to="386" value="0" />
+		<edge id="464" from="387" to="391" value="0" />
+		<edge id="475" from="391" to="393" value="1" />
+		<edge id="463" from="383" to="387" value="1" />
+		<edge id="478" from="385" to="383" value="1" />
+		<edge id="425" from="342" to="352" value="1" />
+		<edge id="465" from="391" to="395" value="2" />
+		<edge id="462" from="382" to="384" value="0" />
+		<edge id="483" from="395" to="400" value="1" />
+		<edge id="460" from="380" to="382" value="1" />
+		<edge id="459" from="379" to="381" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="378" x="306" y="108" />
+		<node_location id="401" x="715" y="366" />
+		<node_location id="400" x="738" y="220" />
+		<node_location id="399" x="762" y="42" />
+		<node_location id="396" x="614" y="371" />
+		<node_location id="395" x="620" y="216" />
+		<node_location id="394" x="493" y="449" />
+		<node_location id="393" x="515" y="293" />
+		<node_location id="352" x="548" y="108" />
+		<node_location id="392" x="517" y="370" />
+		<node_location id="391" x="521" y="216" />
+		<node_location id="388" x="431" y="370" />
+		<node_location id="387" x="439" y="216" />
+		<node_location id="341" x="205" y="45" />
+		<node_location id="386" x="293" y="449" />
+		<node_location id="385" x="293" y="293" />
+		<node_location id="339" x="441" y="45" />
+		<node_location id="342" x="542" y="44" />
+		<node_location id="282" x="74" y="47" />
+		<node_location id="384" x="296" y="370" />
+		<node_location id="347" x="655" y="43" />
+		<node_location id="383" x="299" y="216" />
+		<node_location id="337" x="304" y="45" />
+		<node_location id="379" x="67" y="217" />
+		<node_location id="380" x="73" y="370" />
+		<node_location id="381" x="201" y="218" />
+		<node_location id="382" x="193" y="367" />
+	</node_locations>
+</quest>

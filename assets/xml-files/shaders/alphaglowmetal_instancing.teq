@@ -1,0 +1,90 @@
+// Note: Frequently used shader
+
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "cloudground.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+STD_VS_INSTANCE_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE(Input);
+	float Time = abs(sin((TOTAL_TIME + Input.Pos.y + Input.Pos.x + Input.Pos.z) * 1.31f));
+    Output.Glow = Time * Time * Time * Time;
+    return Output;
+}
+
+STD_PS_OUTPUT_3 PS(STD_VS_INSTANCE_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+	
+	float3 Nn = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldEyeVec);
+	
+	
+	float4 Sunlight = lightPixelSpecularDiffuseEnvironmentRaw(Nn, Vn, -PLANET_LIGHTDIR_COMMON, ALPHAGLOWMETAL_SPECULAR_EXPONENT, ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, Nn, Vn, ALPHAGLOWMETAL_SPECULAR_EXPONENT, ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION, LightParams[i]);
+	}
+#endif
+
+	float Glow = Input.Glow * BaseTex.a;
+	Output.Color.xyz = combineIllumination3glow(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, BaseTex.xyz, Sunlight, DynamicLight, Glow);
+	Output.Color.a = saturate(Glow + (Sunlight.a + DynamicLight.a)/ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION) * (1.0 - smoothstep(0,1,Input.Fog));
+		
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(BaseTex.xyz, ALPHAGLOWMETAL_SPECULAR_CONTRIBUTION);
+#endif
+	
+	return Output;
+
+}
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaTestEnable = false;
+
+        AlphaBlendEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = true;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+       
+
+    }
+}

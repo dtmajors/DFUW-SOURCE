@@ -1,0 +1,88 @@
+#include "stdstate.frag"
+#include "shaderconfig.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "sampler.frag"
+#include "texture.frag"
+#include "offscreenfx.frag"
+
+bool Transparent : REInfoTransparent = true;
+
+// Tell that this object is reflective
+bool Reflective : REInfoReflective = true;
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.5f;
+
+struct VS_OUTPUT_TERR
+{
+    float4 Pos       	: POSITION;
+    float4 Diff 	 	: COLOR0;
+	float4 ClipSpace 	: TEXCOORD0;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+};
+
+
+
+VS_OUTPUT_TERR PropVS1_1(VS_INPUT Input)
+{
+    VS_OUTPUT_TERR Out = (VS_OUTPUT_TERR)0;
+	
+	float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+	Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX);
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+   
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+	
+    float Diff = max(0,dot(WorldNorm, L));
+    
+    Out.Diff = DiffMaterial;
+    //Out.Diff.w = PowerMaterial;
+    
+	Out.ClipSpace = Out.Pos;
+	
+    return Out;
+}
+
+
+float4 PropPS1_1(VS_OUTPUT_TERR Input) : COLOR
+{	
+
+	float4 Out = (float4)0;
+	Out = Input.Diff;
+	
+	return Out;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaBlendEnable = true;
+    
+        SrcBlend = SrcAlpha;
+        DestBlend = INVSRCALPHA;
+
+	    ZEnable = TRUE;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+	    CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 PropVS1_1();
+        PixelShader  = compile ps_3_0 PropPS1_1();
+
+    }
+}

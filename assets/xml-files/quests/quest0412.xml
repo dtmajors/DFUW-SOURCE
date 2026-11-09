@@ -1,0 +1,51 @@
+<quest quest_id="412" category="lore_quest" tag="Supercollidor: Riddles">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="Lead 01" quest_id="403" />
+				<condition type="quest_completion" id="1" value="1" tag="Lead 02" quest_id="404" />
+				<condition type="quest_completion" id="2" value="1" tag="Lead 03" quest_id="405" />
+				<condition type="quest_completion" id="3" value="1" tag="Lead 04" quest_id="-1" />
+				<condition type="quest_completion" id="4" value="1" tag="Lead 05" quest_id="406" />
+				<condition type="quest_completion" id="5" value="1" tag="Lead 06" quest_id="407" />
+				<condition type="quest_completion" id="6" value="1" tag="Lead 07" quest_id="408" />
+				<condition type="quest_completion" id="7" value="1" tag="Lead 08" quest_id="-1" />
+			</conditions>
+		</node>
+		<node type="event_simple_conditional" id="1" tag="Go to Stonehenge (riddle)" fail_fast="False">
+			<conditions>
+				<condition type="time_of_day" id="9" value="1" tag="Be night" hour_of_day="0" />
+				<condition type="weather_state" id="10" value="1" tag="Be rainy" weather_state="Raining" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="0" value="1" tag="Go to Stonehenge" area_id="0" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Get to Elharrat (riddle)">
+			<tasks>
+				<task type="go_to_area" id="1" value="1" tag="Get to the Nithron Structure" area_id="0" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Nithron Stones (Puzzle)" optional_tasks="False">
+			<tasks>
+				<task type="use_skill_on" id="2" value="1" tag="Water Spell on stone" resource_name="" skill_name="" />
+				<task type="use_skill_on" id="3" value="1" tag="Acid Damage on Stone" resource_name="" skill_name="" />
+				<task type="use_skill_on" id="4" value="1" tag="Fire Damage on Stone" resource_name="" skill_name="" />
+				<task type="use_skill_on" id="6" value="1" tag="Holy Damage Batman!" resource_name="" skill_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="Underwater Altar">
+			<tasks>
+				<task type="interact_with_object" id="7" value="1" tag="Submerged Altar" resource_name="" />
+			</tasks>
+		</node>
+		<node type="end_node" id="5" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+		<edge id="2" from="2" to="3" value="0" />
+		<edge id="3" from="3" to="4" value="0" />
+		<edge id="4" from="4" to="5" value="0" />
+	</edges>
+</quest>

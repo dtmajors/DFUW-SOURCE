@@ -1,0 +1,140 @@
+<quest quest_id="313" category="lore_quest" tag="Finale" published="False" valid="True">
+	<title>An End to a Beginning</title>
+	<description>A frenzied buzzing that assaulted your soul through the nostrils of your mind rose to a blood-curdling crescendo as you forced your way out of the bowels of Svartvann.  The Darkbrood would no doubt very soon descend upon their conduit, the Doombringer, and an end of sorts was coming to this affair.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="312" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="9" tag="shaman">
+			<journal_entry>Bone-weary, you finally returned to the Shaman, a sense of closure settling over your adventure like a fine, mountain mist.</journal_entry>
+		</node>
+		<node type="event_branch" id="3" tag="" optional_tasks="True">
+			<instruction>Contact the Shaman, either directly or via an emissary.</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="p10_quest_ork_emissary" />
+				<task type="interact_with_vendor" id="9" value="1" tag="An Interact With Vendor Task" vendor_id="k14_quest_ork_emissary" />
+				<task type="interact_with_vendor" id="10" value="1" tag="An Interact With Vendor Task" vendor_id="u18_quest_ork_emissary" />
+				<task type="interact_with_vendor" id="11" value="4" tag="An Interact With Vendor Task" vendor_id="v13_quest_ork_shaman" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="4" tag="Head to the Librarian">
+			<instruction>Return to Behrem in the Amethyst Athenaeum</instruction>
+			<journal_entry>Even as you entered the soft purple glow that surrounded this place of gathered knowledge, I would think you could sense the frenzy of activity emanating from the resident Acolyte.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="4" value="1" tag="Return to the librarian" vendor_id="q09_quest_acolyte_librarian" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="5" tag="Next">
+			<journal_entry>Behrem looked up at you from his little kingdom of scattered papers and piled books.  Scrolls were pinned to maps, connected to other scrolls or tomes by little red threads, half written notes adorned a number of papers, and the frenzied eyes of the acolyte peeked at you from the center of it all.  With little warning he launched into a hasty monologue,</journal_entry>
+		</node>
+		<node type="end_node" id="6" tag="" />
+		<node type="event_simple" id="7" tag="emissary" optional_tasks="True">
+			<journal_entry>Bone-weary, you finally approached the Emissary seeking to end your journey and the adventure that began what surely felt like an eternity ago.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="5" value="1" tag="An Interact With Vendor Task" vendor_id="p10_quest_ork_emissary" />
+				<task type="interact_with_vendor" id="6" value="1" tag="An Interact With Vendor Task" vendor_id="k14_quest_ork_emissary" />
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="u18_quest_ork_emissary" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>But, you would soon discover my dear, it was simply the end of a beginning.  Now, it was time to inform your Orkish benefactors that their deed had been accomplished and their punishment meted out.</journal_entry>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<journal_entry>Cheering crowds, adoring children, trumpets and flowers in the air.  All of these things utterly failed to hail your heroic arrival.  Rather, the Emissary gave you a once-over and observed that there were trollish dung heaps in the hills that gave the appearance of a better constitution than you at the moment.</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>Nevertheless, he did admit that your survival was rather impressive and your accomplishment did earn you a fair amount of approval from the Iron Hand.  The favor of an Ork was rarely gifted lightly.  When it was, however, it was given honestly and with no reservation.</journal_entry>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>The Emissary handed you a package, a bounty authorized by the Shamen of the Burning Path in reward for bringing the Doombringer to justice.  As to the Fetish and the apparent conspiracy behind it, the Orks were sure such things would come to light eventually.  As they were sure they would be there to provide the appropriate penalties...</journal_entry>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>Somehow, the recent additions to your pouch and money-bags notwithstanding, to me it you seemed a tad dissatisfied.  You needed answers yet and perhaps, just perhaps, there was one left who could supply some.</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<journal_entry>I still remember the ashen streets of Nerzok as you approached.  The glow of lava like a translucent blanket that utterly failed to illuminate any cheering crowds, trumpeting fanfare or general adoration...</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>Still, perhaps this was the way a true hero returns victorious.  Like the dawn slowly moving through the empty streets, spreading the glow that none will see...</journal_entry>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>The Shaman, at least, wore a grin that marked him as both pleased and more than a little impressed.  I noticed that during his whole spiel about how you were a true embodiment of Orkish ideals he never called you maggot once!</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>With a glint in his eye, like that of a parent handing a frost-feast gift to their child, the Shaman handed you the bounty for bringing painful justice to the Doombringer.  The Fetish and it&apos;s underlying portents did not seem to bother him much.  Sure and unwavering in the Orkish belief that such things would, like all sewage, float to the surface eventually and be dealt with in true Orkish fashion!</journal_entry>
+		</node>
+		<node type="event_simple" id="18" tag="">
+			<journal_entry>Somehow, the recent additions to your pouch and money-bags notwithstanding, to me it you seemed a tad dissatisfied.  You needed answers yet and perhaps, just perhaps, there was one left who could supply some.</journal_entry>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>&quot;My friend! You have returned, as I knew you must! There is too much here, too much to end in the notes of a humble scribe!</journal_entry>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>Listen! I have been pouring over everything you have brought me and much more.  There are some connections here that point to a great and cunning deflection of attention that could only be conceived by a mind of grand and malicious design!</journal_entry>
+		</node>
+		<node type="event_simple" id="21" tag="">
+			<journal_entry>The Darkbrood were major players in this, but mere players nonetheless.  You touched upon something though, something you were not meant to I would surmise, when you interacted with their strange, hand shaped altar! I use the term altar, however, rather loosely! The Darkbrood you see, do not worship, they are incapable of such a thing! The voice you touched, hidden behind their collective thought process, was in fact, i believe, communicating with them.</journal_entry>
+		</node>
+		<node type="event_simple" id="22" tag="">
+			<journal_entry>The books you found, and the pages that were torn out.  They all deal with a very specific rite that, I believe, was partly used to grant the Doombringer his power.  Yet, from what I can see, this was merely meant to act as a deception.. a misdirection if you will!</journal_entry>
+		</node>
+		<node type="event_simple" id="23" tag="">
+			<journal_entry>The passages from the stolen books and the research done here, combined with the Fetish itself and the ritual you found in the Capital points to an ancient rite used in the creation of an Avatar! In short.. someone, someone powerful, is creating a mortal vessel for themselves!&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="24" tag="">
+			<journal_entry>It took a moment for the Acolytes words to sink in...if something needed a mortal vessel, then something was not mortal.. and it was coming! The Acolyte would have talked well into the night but eventually you had to take your leave.  It mattered not, you had a feeling you would be hearing from him soon enough...</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="9" from="0" to="8" value="1" />
+		<edge id="12" from="7" to="10" value="1" />
+		<edge id="11" from="3" to="9" value="4" />
+		<edge id="7" from="3" to="7" value="1" />
+		<edge id="10" from="8" to="3" value="0" />
+		<edge id="5" from="4" to="5" value="1" />
+		<edge id="23" from="5" to="19" value="0" />
+		<edge id="13" from="10" to="11" value="0" />
+		<edge id="14" from="11" to="12" value="0" />
+		<edge id="15" from="12" to="13" value="0" />
+		<edge id="16" from="9" to="14" value="0" />
+		<edge id="17" from="14" to="15" value="0" />
+		<edge id="18" from="15" to="16" value="0" />
+		<edge id="19" from="16" to="17" value="0" />
+		<edge id="20" from="17" to="18" value="0" />
+		<edge id="21" from="13" to="4" value="0" />
+		<edge id="22" from="18" to="4" value="0" />
+		<edge id="24" from="19" to="20" value="0" />
+		<edge id="25" from="20" to="21" value="0" />
+		<edge id="26" from="21" to="22" value="0" />
+		<edge id="27" from="22" to="23" value="0" />
+		<edge id="28" from="23" to="24" value="0" />
+		<edge id="29" from="24" to="6" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="48" y="374" />
+		<node_location id="9" x="305" y="310" />
+		<node_location id="3" x="224" y="374" />
+		<node_location id="4" x="636" y="373" />
+		<node_location id="5" x="731" y="369" />
+		<node_location id="6" x="1240" y="391" />
+		<node_location id="7" x="240" y="494" />
+		<node_location id="8" x="137" y="376" />
+		<node_location id="10" x="282" y="597" />
+		<node_location id="11" x="401" y="612" />
+		<node_location id="12" x="500" y="592" />
+		<node_location id="13" x="592" y="546" />
+		<node_location id="14" x="264" y="189" />
+		<node_location id="15" x="347" y="128" />
+		<node_location id="16" x="434" y="139" />
+		<node_location id="17" x="520" y="137" />
+		<node_location id="18" x="612" y="158" />
+		<node_location id="19" x="809" y="373" />
+		<node_location id="20" x="879" y="366" />
+		<node_location id="21" x="972" y="318" />
+		<node_location id="22" x="1014" y="251" />
+		<node_location id="23" x="1114" y="254" />
+		<node_location id="24" x="1177" y="313" />
+	</node_locations>
+</quest>

@@ -1,0 +1,233 @@
+//Bloom 4 sample
+
+
+#include "stdstate.frag"
+#include "camera.frag"
+
+texture SourceColor : REPTextureSourceColor;
+
+
+sampler2D SrcColorSampler =
+sampler_state
+{
+    Texture = <SourceColor>;
+    AddressU = Clamp;
+    AddressV = Clamp;
+/*#ifdef SET_SAMPLERSTATE
+    MinFilter = Point;
+    MagFilter = Linear;
+    MipFilter = Linear;
+#endif	*/
+};
+
+
+
+
+/*
+//4 sample poins
+float2 PixelCoordsFilter[KernelSize] =
+{
+    {  0.5f, -0.5f },
+    {  0.5f,  0.5f },
+    { -0.5f, -0.5f },
+    { -0.5f,  0.5f },
+};
+*/
+
+/*
+//9 quadratic sample points
+float2 PixelCoordsFilter[KernelSize] =
+{
+    { -0.5f, -0.5f },
+    { -0.5f, 0.0f  },
+    { -0.5f, 0.5f  },
+
+    { 0.0f, -0.5f  },
+    //{ 0.0f, 0.0f  },
+    { 0.0f, 0.5f  },
+
+    { 0.5f, -0.5f },
+    { 0.5f, 0.0f  },
+    { 0.5f, 0.5f  },
+};
+*/
+
+/*
+
+static const int KernelSize = 5;
+static const float CenterPixelInfluence = 0.25f;
+
+//star shaped samples
+float2 PixelCoordsFilter[KernelSize] =
+{
+    { -0.5f, -0.5f },
+    { 0.0f, 0.0f  },
+    { 0.5f, 0.5f  },
+
+    { 0.5f, -0.5f  },
+    { -0.5f, 0.5f  },
+};
+*/
+
+//Horizontal
+static const int KernelSize = 5;
+static const float CenterPixelInfluence = 0.25f;
+/*
+float2 PixelCoordsFilter[KernelSize] =
+{
+    { -1.5f, 0.0f   },
+    { -0.5f, 0.0f   },
+    {  0.5f,  0.0f  },
+    {  1.5f,  0.0f  },
+};
+*/
+
+static const float StandardOffset = 1.5f;
+
+float2 PixelCoordsFilter[KernelSize] =
+{
+    { -StandardOffset, -StandardOffset   },
+    { +StandardOffset, -StandardOffset   },
+    { +StandardOffset, +StandardOffset  },
+    { -StandardOffset, +StandardOffset  },
+	{ +0.0f, +0.0f },
+};
+
+
+float2 TexelCoordsFilter[KernelSize];
+
+
+
+
+float BloomScale = 1.0f;
+
+static const float OtherWeights = 0.5f/4.0f;
+
+static const float BlurWeights[KernelSize] = 
+{
+	OtherWeights,
+	OtherWeights,
+	OtherWeights,
+	OtherWeights,
+	0.5f,
+};
+
+float4 BloomFilter( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+	/*
+    for (int i = 0; i < KernelSize; i++)
+    {    
+        float4 TempCol = tex2D( SrcColorSampler, Tex + TexelCoordsFilter[i].xy );
+        Color += TempCol * BlurWeights[i];
+    }*/
+	
+	
+	float2 Offset = 4.0 / (BackBufferParams.xy);
+	
+	for (int j=-2; j<=2; j++) {
+		for (int i=-2; i<=2; i++) {
+			Color += tex2D(SrcColorSampler, Tex + float2(i, j) * Offset);
+		}
+	}
+	
+	Color /= 25;
+
+    return Color;
+
+}
+
+
+float4 BloomFilter_9( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    for (int i = 0; i < KernelSize; i++)
+    {    
+        float4 TempCol = tex2D( SrcColorSampler, Tex + TexelCoordsFilter[i].xy );
+        Color += TempCol * ((1.0f-CenterPixelInfluence)/KernelSize);
+    }
+    
+    Color += tex2D( SrcColorSampler, Tex ) * (CenterPixelInfluence);
+
+    return Color;// * BloomScale;
+}
+
+
+float4 BloomFilter_Star( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    for (int i = 0; i < KernelSize; i++)
+    {    
+        float4 TempCol = tex2D( SrcColorSampler, Tex + TexelCoordsFilter[i].xy );
+        Color += TempCol * (1.0f/KernelSize);
+    }
+
+    return Color;// * BloomScale;
+}
+
+float4 BloomFilter_Horizontal( in float2 Tex : TEXCOORD0 ) : COLOR0
+{
+    float4 Color = 0;
+
+    for (int i = 0; i < KernelSize; i++)
+    {    
+        float4 TempCol = tex2D( SrcColorSampler, Tex + TexelCoordsFilter[i].xy );
+        Color += TempCol * (1.0f/KernelSize);
+    }
+
+    return Color;// * BloomScale;
+}
+
+
+struct VS_INPUT
+{
+    float2 Tex0	: TEXCOORD0;
+    float2 Tex1	: TEXCOORD1;
+    float2 Tex2	: TEXCOORD2;
+    float2 Tex3	: TEXCOORD3;
+};
+
+
+float4 BloomFilter_1_1(VS_INPUT Input ) : COLOR0
+{
+    float4 Color = 0;
+    float4 TempCol = 0;
+    TempCol = tex2D( SrcColorSampler, Input.Tex0) * 0.25f;
+    Color += TempCol;
+    TempCol = tex2D( SrcColorSampler, Input.Tex1) * 0.25f;
+    Color += TempCol;
+    TempCol = tex2D( SrcColorSampler, Input.Tex2) * 0.25f;
+    Color += TempCol;
+    TempCol = tex2D( SrcColorSampler, Input.Tex3) * 0.25f;
+    Color += TempCol;
+    return Color;
+}
+
+
+
+//
+//
+
+technique Bloom4
+{
+    pass P0
+    {
+		STD_STATE;
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = FALSE;
+        ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+		CullMode = CCW;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+   
+        VertexShader = null;
+        //PixelShader = compile ps_2_a BloomFilter_Horizontal();
+        //PixelShader = compile ps_2_a BloomFilter_Star();
+        //PixelShader = compile ps_2_a BloomFilter_9();
+        PixelShader = compile ps_2_a BloomFilter();
+    
+    }
+}

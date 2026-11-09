@@ -1,0 +1,56 @@
+<quest quest_id="9993" category="test_quest" tag="Test Quest 04 - Interact, Use Skill On, Receive Quest, Take Damage, Join" published="False" valid="True">
+	<title>A name</title>
+	<description>A description</description>
+	<nodes>
+		<node type="start_node" id="0" tag="Interact With Foundry">
+			<conditions>
+				<condition type="build_mode" id="0" value="1" tag="Debug for Test Quests" build_mode="Debug" />
+				<condition type="object_interaction" id="1" value="1" tag="Interact With Foundry" resource_name="r_Clan Foundry" />
+			</conditions>
+		</node>
+		<node type="event_branch" id="1" tag="Empty Node">
+			<journal_entry>Do one of the 3 tasks</journal_entry>
+		</node>
+		<node type="event_simple" id="2" tag="Staff-Bolt Workbench">
+			<instruction>Staff-bolt a workbench</instruction>
+			<tasks>
+				<task type="use_skill_on" id="0" value="1" tag="Staff-Bolt Workbench" resource_name="r_Clan Workbench" skill_name="s_Staff Bolt" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Receive Test Quest 02">
+			<instruction>Complete test quest 01</instruction>
+			<tasks>
+				<task type="receive_quest" id="1" value="1" tag="Receive Test Quest 02" quest_id="9991" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="Take 10 Damage">
+			<instruction>Be hurt for 10 damage</instruction>
+			<tasks>
+				<task type="take_damage" id="4" value="1" tag="Take Damage" magnitude="10" />
+			</tasks>
+		</node>
+		<node type="event_join" id="5" tag="Join All - No Tasks">
+			<journal_entry>You did one of the 3 tasks</journal_entry>
+		</node>
+		<node type="end_node" id="6" tag="Complete Quest - No Rewards" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="2" value="0" />
+		<edge id="2" from="1" to="3" value="0" />
+		<edge id="3" from="1" to="4" value="0" />
+		<edge id="4" from="2" to="5" value="1" />
+		<edge id="5" from="3" to="5" value="1" />
+		<edge id="6" from="4" to="5" value="1" />
+		<edge id="7" from="5" to="6" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="115" y="162" />
+		<node_location id="1" x="293" y="162" />
+		<node_location id="2" x="471" y="281" />
+		<node_location id="3" x="471" y="43" />
+		<node_location id="4" x="471" y="162" />
+		<node_location id="5" x="649" y="162" />
+		<node_location id="6" x="827" y="162" />
+	</node_locations>
+</quest>

@@ -1,0 +1,154 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_Props" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="ANIMATEDOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="true" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFBool Value="FALSE" />
+<Meshes>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="arthain_fleshdog.sfam" />
+</Set0>
+</Meshes>
+<Animations>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<Set0>
+<SFString Value="arthain_fleshdog.sfas" />
+</Set0>
+</Animations>
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<NumberOfSubsets>
+<SFInteger Value="2" />
+</NumberOfSubsets>
+<DefaultTextures>
+<Subset0>
+<Texture0>
+<SFString Value="" />
+</Texture0>
+</Subset0>
+</DefaultTextures>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="True" />
+<SFString Value="shaderanimtransparentnew.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderanimnew.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderanimtransparentnew.xml" />
+<SFInteger Value="1" />
+</Shader1>
+</SubsetShaders>
+</Normal>
+</Shaders>
+<AnimationInformation>
+<NumberOfSets>
+<SFInteger Value="1" />
+</NumberOfSets>
+<AnimationSet0>
+<SetName>
+<SFString Value="Idle" />
+</SetName>
+<SetFile>
+<SFString Value="SF_DEFAULT" />
+</SetFile>
+</AnimationSet0>
+</AnimationInformation>
+<DynamicHitConfigFile Enabled="true" Value="animations/arthain_fleshdog_dynhit_config.xml" />
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-0.7106050849" Y="-0.3578850925" Z="-0.8586398959" />
+</Min>
+<Max>
+<SFVector3 X="0.7032148242" Y="1.055934787" Z="0.5551800132" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="-0.003695145948" Y="0.3490248621" Z="-0.1517299414" />
+</Center>
+<Radius>
+<SFFloat Value="0.7069099545" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation></SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="character" />
+<WaterTransition>
+<Submerged Value="1.28859" />
+<Surface Value="0.297366" />
+<Touching Value="0.0162685" />
+<Floating Value="0.792976" />
+</WaterTransition>
+<ImpulseScaleFactor Value="1" />
+<RepulsiveAngleRange Max="3.14159" Min="0" />
+</PhysicsInformation>
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<DynamicScheme>
+<Type Value="SFSPHERECOLLISIONSCHEME" />
+<FileName Value="arthain_fleshdog.dynamic.SFSPHERECOLLISIONSCHEME.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+<StaticScheme>
+<Type Value="SFSPHERECOLLISIONSCHEME" />
+<FileName Value="arthain_fleshdog.static.SFSPHERECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0" Y="0" Z="0" />
+</Center>
+<Radius>
+<SFFloat Value="2.47805" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+<VersionInformation Major="1" Minor="0" />
+</SFObject>

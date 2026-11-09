@@ -1,0 +1,160 @@
+/*
+ * Decompiled with CFR.
+ */
+public final class lrt
+extends lrp {
+    private static final lrt sFj = new lrt();
+    @lok(value="Sulfur Gatherer")
+    @lpl(value="The hv_harvest_sulfur feat display name")
+    public static final lox sFk = sFj.a("hv_harvest_sulfur_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Sulfur.")
+    @lpl(value="The hv_harvest_sulfur feat description")
+    public static final lox sFl = sFj.a("hv_harvest_sulfur_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Stone Gatherer")
+    @lpl(value="The hv_harvest_stone feat display name")
+    public static final lox sFm = sFj.a("hv_harvest_stone_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Stone.")
+    @lpl(value="The hv_harvest_stone feat description")
+    public static final lox sFn = sFj.a("hv_harvest_stone_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Rust Gatherer")
+    @lpl(value="The hv_harvest_rust feat display name")
+    public static final lox sFo = sFj.a("hv_harvest_rust_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Rust.")
+    @lpl(value="The hv_harvest_rust feat description")
+    public static final lox sFp = sFj.a("hv_harvest_rust_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Lichen Gatherer")
+    @lpl(value="The hv_harvest_lichen feat display name")
+    public static final lox sFq = sFj.a("hv_harvest_lichen_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Lichen.")
+    @lpl(value="The hv_harvest_lichen feat description")
+    public static final lox sFr = sFj.a("hv_harvest_lichen_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Iron Ore Gatherer")
+    @lpl(value="The hv_harvest_iron feat display name")
+    public static final lox sFs = sFj.a("hv_harvest_iron_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Iron Ore.")
+    @lpl(value="The hv_harvest_iron feat description")
+    public static final lox sFt = sFj.a("hv_harvest_iron_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Minor Miner")
+    @lpl(value="The hv_harvest_all_ore feat display name")
+    public static final lox sFu = sFj.a("hv_harvest_all_ore_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest one of every mining resource.")
+    @lpl(value="The hv_harvest_all_ore feat description")
+    public static final lox sFv = sFj.a("hv_harvest_all_ore_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Miner")
+    @lpl(value="The hv_harvest_two_ore feat display name")
+    public static final lox sFw = sFj.a("hv_harvest_two_ore_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest two mining resources.")
+    @lpl(value="The hv_harvest_two_ore feat description")
+    public static final lox sFx = sFj.a("hv_harvest_two_ore_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Average Rust Gatherer")
+    @lpl(value="The hv_harvest_rust_200 feat display name")
+    public static final lox sFy = sFj.a("hv_harvest_rust_200_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 200 pieces of Rust.")
+    @lpl(value="The hv_harvest_rust_200 feat description")
+    public static final lox sFz = sFj.a("hv_harvest_rust_200_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Minor Rust Gatherer")
+    @lpl(value="The hv_harvest_rust_10 feat display name")
+    public static final lox sFA = sFj.a("hv_harvest_rust_10_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Rust.")
+    @lpl(value="The hv_harvest_rust_10 feat description")
+    public static final lox sFB = sFj.a("hv_harvest_rust_10_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Major Lichen Gatherer")
+    @lpl(value="The hv_harvest_lichen_3000 feat display name")
+    public static final lox sFC = sFj.a("hv_harvest_lichen_3000_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 3000 pieces of Lichen.")
+    @lpl(value="The hv_harvest_lichen_3000 feat description")
+    public static final lox sFD = sFj.a("hv_harvest_lichen_3000_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Average Lichen Gatherer")
+    @lpl(value="The hv_harvest_lichen_200 feat display name")
+    public static final lox sFE = sFj.a("hv_harvest_lichen_200_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 200 pieces of Lichen.")
+    @lpl(value="The hv_harvest_lichen_200 feat description")
+    public static final lox sFF = sFj.a("hv_harvest_lichen_200_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Minor Lichen Gatherer")
+    @lpl(value="The hv_harvest_lichen_10 feat display name")
+    public static final lox sFG = sFj.a("hv_harvest_lichen_10_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Lichen.")
+    @lpl(value="The hv_harvest_lichen_10 feat description")
+    public static final lox sFH = sFj.a("hv_harvest_lichen_10_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Major Iron Ore Gatherer")
+    @lpl(value="The hv_harvest_iron_ore_3000 feat display name")
+    public static final lox sFI = sFj.a("hv_harvest_iron_ore_3000_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 3000 pieces of Iron Ore.")
+    @lpl(value="The hv_harvest_iron_ore_3000 feat description")
+    public static final lox sFJ = sFj.a("hv_harvest_iron_ore_3000_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Average Iron Ore Gatherer")
+    @lpl(value="The hv_harvest_iron_ore_200 feat display name")
+    public static final lox sFK = sFj.a("hv_harvest_iron_ore_200_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 200 pieces of Iron Ore.")
+    @lpl(value="The hv_harvest_iron_ore_200 feat description")
+    public static final lox sFL = sFj.a("hv_harvest_iron_ore_200_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Minor Iron Ore Gatherer")
+    @lpl(value="The hv_harvest_iron_ore_10 feat display name")
+    public static final lox sFM = sFj.a("hv_harvest_iron_ore_10_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Iron Ore.")
+    @lpl(value="The hv_harvest_iron_ore_10 feat description")
+    public static final lox sFN = sFj.a("hv_harvest_iron_ore_10_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Minor Sulfur Gatherer")
+    @lpl(value="The hv_harvest_sulfur_10 feat display name")
+    public static final lox sFO = sFj.a("hv_harvest_sulfur_10_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Sulfur.")
+    @lpl(value="The hv_harvest_sulfur_10 feat description")
+    public static final lox sFP = sFj.a("hv_harvest_sulfur_10_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Average Sulfur Gatherer")
+    @lpl(value="The hv_harvest_sulfur_150 feat display name")
+    public static final lox sFQ = sFj.a("hv_harvest_sulfur_150_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 150 pieces of Sulfur.")
+    @lpl(value="The hv_harvest_sulfur_150 feat description")
+    public static final lox sFR = sFj.a("hv_harvest_sulfur_150_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Major Sulfur Gatherer")
+    @lpl(value="The hv_harvest_sulfur_1500 feat display name")
+    public static final lox sFS = sFj.a("hv_harvest_sulfur_1500_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 1500 pieces of Sulfur.")
+    @lpl(value="The hv_harvest_sulfur_1500 feat description")
+    public static final lox sFT = sFj.a("hv_harvest_sulfur_1500_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Average Miner")
+    @lpl(value="The hv_ore_average feat display name")
+    public static final lox sFU = sFj.a("hv_ore_average_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Complete all the tier two Mining Feats.")
+    @lpl(value="The hv_ore_average feat description")
+    public static final lox sFV = sFj.a("hv_ore_average_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Major Rust Gatherer")
+    @lpl(value="The hv_harvest_rust_3000 feat display name")
+    public static final lox sFW = sFj.a("hv_harvest_rust_3000_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 3000 pieces of Rust.")
+    @lpl(value="The hv_harvest_rust_3000 feat description")
+    public static final lox sFX = sFj.a("hv_harvest_rust_3000_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Minor Stone Gatherer")
+    @lpl(value="The hv_harvest_stone_10 feat display name")
+    public static final lox sFY = sFj.a("hv_harvest_stone_10_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Stone.")
+    @lpl(value="The hv_harvest_stone_10 feat description")
+    public static final lox sFZ = sFj.a("hv_harvest_stone_10_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Average Stone Gatherer")
+    @lpl(value="The hv_harvest_stone_200 feat display name")
+    public static final lox sGa = sFj.a("hv_harvest_stone_200_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 200 pieces of Stone.")
+    @lpl(value="The hv_harvest_stone_200 feat description")
+    public static final lox sGb = sFj.a("hv_harvest_stone_200_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Major Stone Gatherer")
+    @lpl(value="The hv_harvest_stone_3000 feat display name")
+    public static final lox sGc = sFj.a("hv_harvest_stone_3000_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Harvest 3000 pieces of Stone.")
+    @lpl(value="The hv_harvest_stone_3000 feat description")
+    public static final lox sGd = sFj.a("hv_harvest_stone_3000_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Major Miner")
+    @lpl(value="The hv_ore_major feat display name")
+    public static final lox sGe = sFj.a("hv_ore_major_DisplayName", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+    @lok(value="Complete all the tier three Mining Feats.")
+    @lpl(value="The hv_ore_major feat description")
+    public static final lox sGf = sFj.a("hv_ore_major_Description", lrt.Bl("Resource"), lrt.Bl("Weapon"), lrt.Bm("Skill"), lrt.Bl("NodeResource"), lrt.Bl("ContainerResource"), lrt.Bh("Counter"), lrt.Bk("Booster"), lrt.Bk("Tile"), lrt.Bk("Area"), lrt.Bk("Attribute"));
+
+    public lrt() {
+        super("hv_ore");
+    }
+
+    public lrt(String string) {
+        super("hv_ore." + string);
+    }
+}
+

@@ -1,0 +1,338 @@
+<XML>
+	<!-- Duration : days:hours:minutes:seconds -->
+
+	<!-- Auto activatable items -->
+	<SelentineItems>
+	
+		<Item Name = 'r_premium item pvp lovers' Duration = '30:00:00:00' Equip = 'true' Cost = '170' NonMarketable="true" NonTransferable="true" NonLootable="true"> 
+			<ProwessGain        Value = '0.1'/>			
+			<RecallTimers       Value = '0.2'/>
+			
+			<InventoryMaxWeight Value = '0.2'/>
+			<MountSpeed         Value = '0.05'/>
+			<Autoloot           Value = 'true'/>
+			
+			<Gold               Value = '0.2'/>								
+			<SkinningRate       Value = '0.1'/>						
+		</Item>
+		
+		<Item Name = 'r_premium item craft lovers' Duration = '30:00:00:00' Equip = 'true' Cost = '210' NonMarketable="true" NonTransferable="true" NonLootable="true"> 
+			<ProwessGain        Value = '0.1'/>
+			<RecallTimers       Value = '0.2'/>
+			
+			<InventoryMaxWeight Value = '0.5'/>
+			<MountSpeed         Value = '0.07'/>
+			<Autoloot           Value = 'true'/>
+			
+			<MarketTaxFee       Value = '0.1'/>
+			<HarvestTimers      Value = '0.3'/>			
+			<CraftingTimers     Value = '0.1'/>
+			<CraftingSkillGain  Value = '0.1'/>			
+		</Item>
+		
+		<!--
+		<Item Name = 'r_premium item auto' Duration = '00:00:00:00' Equip = 'false' Cost = '0'> 
+			<ProwessGain        Value = '0.15'/>				
+			<RecallTimers       Value = '0.2'/>
+			
+			<SkinningRate       Value = '0.1'/>		
+			<MarketTaxFee       Value = '0.1'/>
+			<HarvestTimers      Value = '0.3'/>
+		</Item>
+		-->
+		
+		<Item Name = 'r_reset prowess'          Equip = 'true'  Cost = '275' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_costume test'           Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Costume Samurai'        Equip = 'true'  Cost = '220' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Costume Choongmugong'   Equip = 'true'  Cost = '220' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		
+		<Item Name = 'r_Name Change'            Equip = 'true'  Cost = '198' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Clan Name Change'       Equip = 'true'  Cost = '187' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Scroll Of Vengeance'    Equip = 'false' Cost = '70' Duration = '15:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		
+		<Item Name = 'r_Premium Arrow'          Equip = 'true'  Cost = '3' 					NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Premium Elemental Dust' Equip = 'true'  Cost = '3' 					NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Premium Spirit Beads'   Equip = 'true'  Cost = '3' 					NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Premium Portal Shard'   Equip = 'true'  Cost = '9' Quantity = '10'  NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+<!--	<Item Name = 'r_Premium Potion Rejuvenation'   Equip = 'true'  Cost = '16' Quantity = '10'/>  -->
+		<Item Name = 'r_Premium Rejuvenation Stack'   Equip = 'true'  Cost = '23' Quantity = '20' EquipedResourceName='r_Premium Potion Rejuvenation' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Premium Potion Rejuvenation'   Equip = 'true'  Cost = '11' Quantity = '10' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Premium Runestone'   Equip = 'true'  Cost = '11' Quantity = '10' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_Premium Teleport Rune'   Equip = 'true'  Cost = '11' Quantity = '10' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+
+		<Item Name = 'r_Mask Korean Brownie'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Goblin'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Gnoll Butcher'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Troll'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Khamset Hand'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Ogre Boss'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Shadow Knight'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Feielrin'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Ghoul Devourer'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Grungroc'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+
+		<Item Name = 'r_Mask Korean Beastman Warlord'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Dark Drake'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Darkbrood Mystic'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Kobold Strongman'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Malaut Dungeon'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Malaut Surface'   Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Sarlid'   			Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Shadow Spirit'   	Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Mask Korean Zombie'   			Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		
+		<Item Name = 'r_mask korean gibbering stalker'   			Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_mask korean grindermaws'   			Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<!--<Item Name = 'r_mask korean hell razed cannibal'   			Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>-->
+		<Item Name = 'r_mask korean chittering death'   			Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+
+		<Item Name = 'r_Headpiece Korean Barbaric'   	Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Headpiece Korean Stoic'   		Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Headpiece Korean Militant'   	Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+
+		<Item Name = 'r_Premium Telescope'   	Equip = 'true'  Cost = '9' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+
+		<Item Name = 'r_dye remover'     Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_01'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_02'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_03'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_04'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_05'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_06'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_07'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_08'          Equip = 'true'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_09'          Equip = 'true'  Cost = '2' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_10'          Equip = 'true'  Cost = '2' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		
+		<Item Name = 'r_dye_11'          Equip = 'true'  Cost = '2' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_12'          Equip = 'true'  Cost = '2' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_13'          Equip = 'true'  Cost = '2' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_14'          Equip = 'true'  Cost = '2' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_15'          Equip = 'true'  Cost = '2' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_16'          Equip = 'true'  Cost = '3' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_17'          Equip = 'true'  Cost = '3' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_18'          Equip = 'true'  Cost = '3' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_19'          Equip = 'true'  Cost = '3' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_20'          Equip = 'true'  Cost = '3' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+
+		<Item Name = 'r_dye_21'          Equip = 'true'  Cost = '3' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_22'          Equip = 'true'  Cost = '3' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_23'          Equip = 'true'  Cost = '4' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_24'          Equip = 'true'  Cost = '4' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_25'          Equip = 'true'  Cost = '4' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_26'          Equip = 'true'  Cost = '4' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_27'          Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_28'          Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_29'          Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_30'          Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		
+		<!--Shop dyes only 26-9-2014 Start-->
+		<Item Name = 'r_dye_31' Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_32' Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_33' Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_34' Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<Item Name = 'r_dye_35' Equip = 'true'  Cost = '5' NonMarketable="true" NonTransferable="true" NonLootable="true"/>
+		<!--Shop dyes only 26-9-2014 End-->
+		
+		<Item Name = 'r_Premium Skinner_01'   	Equip = 'true'  Cost = '2' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Skinner_02'   	Equip = 'true'  Cost = '4' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Skinner_03'   	Equip = 'true'  Cost = '9' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Skinner_04'   	Equip = 'true'  Cost = '11' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Skinner_05'   	Equip = 'true'  Cost = '17' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		
+		<Item Name = 'r_Premium Wood Axe_01'   	Equip = 'true'  Cost = '2' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Wood Axe_02'   	Equip = 'true'  Cost = '4' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Wood Axe_03'   	Equip = 'true'  Cost = '11' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Wood Axe_04'   	Equip = 'true'  Cost = '13' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Wood Axe_05'   	Equip = 'true'  Cost = '19' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+
+		<Item Name = 'r_Premium Sickle_01'   	Equip = 'true'  Cost = '2' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Sickle_02'   	Equip = 'true'  Cost = '4' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Sickle_03'   	Equip = 'true'  Cost = '5' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Sickle_04'   	Equip = 'true'  Cost = '7' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Sickle_05'   	Equip = 'true'  Cost = '11' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+
+		<Item Name = 'r_Premium Pickaxe_01'   	Equip = 'true'  Cost = '2' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Pickaxe_02'   	Equip = 'true'  Cost = '4' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Pickaxe_03'   	Equip = 'true'  Cost = '11' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Pickaxe_04'   	Equip = 'true'  Cost = '13' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Premium Pickaxe_05'   	Equip = 'true'  Cost = '19' Duration='07:00:00:00' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+	
+		<!-- the following are listed here because we want them to behave like selentine items but they are not sellable through the shop.-->
+		<!-- Quest unlootable items -->
+		<Item Name = 'r_Recipe Scroll Liquified Granite' Equip = 'false'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Recipe Scroll Liquified Rubysand' Equip = 'false'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		<Item Name = 'r_Recipe Scroll Extraordinary Bottle' Equip = 'false'  Cost = '1' NonMarketable="true" NonTransferable="true" NonLootable="true" NonDestructible="true"/>
+		
+	</SelentineItems>
+	
+	<!-- Performing Time Reduction by spending selentine gold -->
+	<SelentineSkills>
+		<Skill Name = 's_House Recall'         Value = '0.33'/> <!-- Value ==> TimerLengthMultiplier -->
+		<Skill Name = 's_Bindstone Recall'     Value = '0.33'/>
+	</SelentineSkills>
+	
+	<!--
+		The total time reduction in seconds, for crafting skills, for every selentine gold spend.
+		The time for each crafting item can not be less than 5 seconds. This means, that a player
+		can not spent selentine gold to speed up the crafting proccess, for an item which needs less
+		that 2 minutes and 5 seconds to be crafted.
+	-->
+	<CraftingSkillReduction TimeReduction = "60" MinimumTime = "60"/> <!-- TimeReduction and MinimumTime are in seconds -->
+	
+	<!-- The cost in selentine gold for transactions -->
+	<SelentineItemTransactions>
+		<Transaction Name = 'BUY_SELENTINE_ITEM'         Cost = '2'/> 
+		<Transaction Name = 'SKILL_RESET_COOLDOWN_TIME'  Cost = '5'/>
+		<Transaction Name = 'SKILL_SHORTEN_TIME'         Cost = '3'/> 
+		<Transaction Name = 'IMMEDIATE_REVIVE'           Cost = '2'/> 
+		<Transaction Name = 'IMMEDIATE_ROLE_CHANGE'      Cost = '2'/>
+	</SelentineItemTransactions>
+
+	<SelentineShop> 
+		<Item Resource = "r_Premium Buffs">
+			<Item Resource = "r_premium item pvp lovers"/>
+			<Item Resource = "r_premium item craft lovers"/>
+		</Item>
+		<Item Resource = "r_Premium Services">
+			<Item Resource = "r_reset prowess"/>
+			<Item Resource = "r_Scroll Of Vengeance"/>
+			<Item Resource = "r_name change"/>
+			<Item Resource = "r_Clan Name Change"/>
+		</Item>
+		<Item Resource = "r_Premium Consumables">
+			<Item Resource = "r_Premium Arrow"/>
+			<Item Resource = "r_Premium Elemental Dust"/>
+			<Item Resource = "r_Premium Spirit Beads"/>
+			<Item Resource = "r_Premium Portal Shard"/>
+			<Item Resource = "r_Premium Potion Rejuvenation"/>
+			<Item Resource = "r_Premium Rejuvenation Stack"/>
+			<Item Resource = "r_Premium Runestone"/>
+			<Item Resource = "r_Premium Telescope"/>
+		</Item>
+		<Item Resource = "r_Premium Costumes">
+			<Item Resource = "r_Costume Samurai"/>
+			<Item Resource = "r_Costume Choongmugong"/>
+		</Item> 
+		<Item Resource = "r_Premium Headwear">
+			<Item Resource= "r_Mask Korean Brownie"/>
+			<Item Resource= "r_Mask Korean Goblin"/>
+			<Item Resource= "r_Mask Korean Gnoll Butcher"/>
+			<Item Resource= "r_Mask Korean Troll"/>
+			<Item Resource= "r_Mask Korean Khamset Hand"/>
+			<Item Resource= "r_Mask Korean Ogre Boss"/>
+			<Item Resource= "r_Mask Korean Shadow Knight"/>
+			<Item Resource= "r_Mask Korean Feielrin"/>
+			<Item Resource= "r_Mask Korean Ghoul Devourer"/>
+			<Item Resource= "r_Mask Korean Grungroc"/>
+			<Item Resource = "r_Mask Korean Beastman Warlord"/>
+			<Item Resource = "r_Mask Korean Dark Drake"/>
+			<Item Resource = "r_Mask Korean Darkbrood Mystic"/>
+			<Item Resource = "r_Mask Korean Kobold Strongman"/>
+			<Item Resource = "r_Mask Korean Malaut Dungeon"/>
+			<Item Resource = "r_Mask Korean Malaut Surface"/>
+			<Item Resource = "r_Mask Korean Sarlid"/>
+			<Item Resource = "r_Mask Korean Shadow Spirit"/>
+			<Item Resource = "r_Mask Korean Zombie"/>
+			<Item Resource = 'r_Headpiece Korean Barbaric'/>
+			<Item Resource = 'r_Headpiece Korean Stoic'/>
+			<Item Resource = 'r_Headpiece Korean Militant'/>
+		</Item>
+		<Item Resource = "r_Premium Dyes">
+			<Item Resource= "r_dye remover"/>
+			<Item Resource= "r_dye_01"/>
+			<Item Resource= "r_dye_02"/>
+			<Item Resource= "r_dye_03"/>
+			<Item Resource= "r_dye_04"/>
+			<Item Resource= "r_dye_05"/>
+			<Item Resource= "r_dye_06"/>
+			<Item Resource= "r_dye_07"/>
+			<Item Resource= "r_dye_08"/>
+			<Item Resource= "r_dye_09"/>
+			<Item Resource= "r_dye_10"/>
+			<Item Resource= "r_dye_11"/>
+			<Item Resource= "r_dye_12"/>
+			<Item Resource= "r_dye_13"/>
+			<Item Resource= "r_dye_14"/>
+			<Item Resource= "r_dye_15"/>
+			<Item Resource= "r_dye_16"/>
+			<Item Resource= "r_dye_17"/>
+			<Item Resource= "r_dye_18"/>
+			<Item Resource= "r_dye_19"/>
+			<Item Resource= "r_dye_20"/>
+			<Item Resource= "r_dye_21"/>
+			<Item Resource= "r_dye_22"/>
+			<Item Resource= "r_dye_23"/>
+			<Item Resource= "r_dye_24"/>
+			<Item Resource= "r_dye_25"/>
+			<Item Resource= "r_dye_26"/>
+			<Item Resource= "r_dye_27"/>
+			<Item Resource= "r_dye_28"/>
+			<Item Resource= "r_dye_29"/>
+			<Item Resource= "r_dye_30"/>
+
+			<!--Shop dyes only 26-9-2014 Start-->
+			<Item Resource= "r_dye_31"/>
+			<Item Resource= "r_dye_32"/>
+			<Item Resource= "r_dye_33"/>
+			<Item Resource= "r_dye_34"/>
+			<Item Resource= "r_dye_35"/>
+			<!--Shop dyes only 26-9-2014 End-->
+			
+		</Item>
+
+		<Item Resource = "r_Premium Tools">
+			<Item Resource = "r_Premium Skinner_01"/>
+			<Item Resource = "r_Premium Skinner_02"/>
+			<Item Resource = "r_Premium Skinner_03"/>
+			<Item Resource = "r_Premium Skinner_04"/>
+			<Item Resource = "r_Premium Skinner_05"/>
+			<Item Resource = "r_Premium Pickaxe_01"/>
+			<Item Resource = "r_Premium Pickaxe_02"/>
+			<Item Resource = "r_Premium Pickaxe_03"/>
+			<Item Resource = "r_Premium Pickaxe_04"/>
+			<Item Resource = "r_Premium Pickaxe_05"/>
+			<Item Resource = "r_Premium Sickle_01"/>
+			<Item Resource = "r_Premium Sickle_02"/>
+			<Item Resource = "r_Premium Sickle_03"/>
+			<Item Resource = "r_Premium Sickle_04"/>
+			<Item Resource = "r_Premium Sickle_05"/>
+			<Item Resource = "r_Premium Wood Axe_01"/>
+			<Item Resource = "r_Premium Wood Axe_02"/>
+			<Item Resource = "r_Premium Wood Axe_03"/>
+			<Item Resource = "r_Premium Wood Axe_04"/>
+			<Item Resource = "r_Premium Wood Axe_05"/>
+		</Item>
+		<!-- 
+		<Item Resource = "r_premium item auto"/>
+		-->
+		<!--
+		<Item Resource = "r_costume test"/>
+		<Item Resource = "r_Sack">
+			<Item Resource= "r_shovel"/>
+			<Item Resource = "r_pickaxe"/>
+		</Item>
+		<Item Resource = "r_Wood Axe"/> 
+		-->
+	</SelentineShop>
+</XML>
+
+<!--
+
+New Attributes
+
+	Selentine Currency      (Client side also)
+	Selentine Free Currency (Client side also)
+
+Selentine Currency Manager
+
+	Checking Operations
+	Withdrawal Operations
+ 	Addition Operations (Handle Message Coming From MGame WebSite)
+	Activation Of Any Neccessary Operations/Flags
+	Notify Client About Any  Premium Item Manager
+
+	Keep reference of any activated premium items and there remaining active duration
+	Make methods for other managers to be able to check what is active and what is not and the benefits for the active ones
+	Notify client for any updates
+-->

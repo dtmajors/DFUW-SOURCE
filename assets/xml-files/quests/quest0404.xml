@@ -1,0 +1,31 @@
+<quest quest_id="404" category="lore_quest" tag="Lead 02">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="402" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Go to L13">
+			<tasks>
+				<task type="go_to_area" id="0" value="1" tag="Go to L13" area_id="0" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Collect 07 runes" optional_tasks="True">
+			<tasks>
+				<task type="interact_with_object" id="1" value="1" tag="Find Rune 01" resource_name="" />
+				<task type="interact_with_object" id="2" value="2" tag="Fine Rune 02" resource_name="" />
+				<task type="interact_with_object" id="3" value="3" tag="Find Rune 03" resource_name="" />
+				<task type="interact_with_object" id="4" value="4" tag="Find Rune 04" resource_name="" />
+				<task type="interact_with_object" id="5" value="5" tag="Find Rune 05" resource_name="" />
+				<task type="interact_with_object" id="6" value="6" tag="Find Rune 06" resource_name="" />
+				<task type="interact_with_object" id="7" value="7" tag="Find Rune 07" resource_name="" />
+			</tasks>
+		</node>
+		<node type="end_node" id="3" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+		<edge id="2" from="2" to="3" value="0" />
+	</edges>
+</quest>

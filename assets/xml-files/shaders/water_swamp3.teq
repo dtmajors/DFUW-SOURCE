@@ -1,0 +1,181 @@
+//SWAMP SHADER
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "stdio.frag"
+#include "texture.frag"
+#include "lighting.frag"
+#include "ssao.frag"
+#include "combine_illumination.frag"
+#include "fake_reflections.frag"
+#include "reflections.frag"
+
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+// Tell that this object is reflective
+bool Reflective : REInfoReflective = true;
+int ReflectionType : REInfoReflectionType = REFLECTION_TYPE_FAKE;
+float ReflectionHeight : REPReflectionHeight = 0 ;
+
+texture Texture0 : REPTexture0 = NULL;
+
+sampler NormalSampler = sampler_state
+{
+	texture = (Texture0);
+	AddressU = Wrap;
+	AddressV = Wrap;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos  			: POSITION;
+    float4 Tex1_2  			: TEXCOORD0;
+	float4 WorldPos   		: TEXCOORD1;
+    float4 ClipSpacePos 	: TEXCOORD2; 
+	float4 Diff				: TEXCOORD3;
+	float Fog 				: FOG;
+};
+
+static const float2 TexDist1 = {0.031f, 0.04f};
+static const float2 TexDist2 = {-0.03f, 0.02f};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+	Out.WorldPos = WorldPos;
+
+	Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX); // position (projected)
+	Out.Diff = Input.Diff ;
+	
+	float WindMultiplier = lerp(0.35f,1.0f,WIND_SPEED);
+
+    WorldPos.xyz += WorldEyePos.xyz ;
+	
+	//Create coords for the bumpmaps
+    float2 BaseBump1 = WorldPos.xz * WATERCOAST_BASEBUMP_TEXTURECOORD_MULTIPLIER * 0.5f  ;
+    float2 BaseBump2 = WorldPos.xz * WATERCOAST_BASEBUMP_TEXTURECOORD_MULTIPLIER * 0.05f  ;
+	Out.Tex1_2.xy = float2(0.3,0.6) + BaseBump1 + frac(TexDist1 * TOTAL_TIME * WindMultiplier  * 0.8f) ; // * WIND_DIR.xz;
+	Out.Tex1_2.zw = BaseBump2 + frac(TexDist2 * TOTAL_TIME * WindMultiplier  * 0.8f); // * WIND_DIR.xz;
+	
+	Out.ClipSpacePos = Out.Pos ;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	return Out;
+}
+
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3)0;
+	
+	float3 NormalTexel = tex2D(NormalSampler, Input.Tex1_2.xy);
+	NormalTexel += tex2D(NormalSampler, Input.Tex1_2.zw);
+	NormalTexel = NormalTexel.xzy - 1;
+	
+	float3 RayPos = mul(Input.WorldPos, VIEW_MATRIX).xyz;
+	float3 Incident = normalize(RayPos);
+	
+	float3 ViewNormal = normalize(mul(lerp(NormalTexel, float3(0, 1, 0), 0.75), (float3x3)VIEW_MATRIX));
+	float3 RayDir = reflect(Incident, ViewNormal);
+	float fresnel = 1.0 - dot(-Incident, ViewNormal);
+	
+	float DepthTransparency = getDepthTransparency(Input.ClipSpacePos, Input.Diff);
+	float3 TexReflection  = 0;
+	float dist = Input.WorldPos.y - EyePos.y;
+	float3 Ln = -PLANET_LIGHTDIR_COMMON ; 
+	
+	if (EyePos.y > Input.WorldPos.y) {
+		TexReflection = getReflectedTexel(RayPos, RayDir).xyz;
+		fresnel = pow(fresnel, 8.0);
+		Out.Color.a = saturate(DepthTransparency*1.2);
+	}
+	else{
+		TexReflection = float3( 0.38f,0.4f,0.21f ) ; 
+		fresnel = pow(fresnel, 1.2); //underwater
+		Ln.y *= -1.f ; 
+		
+		float MinAlpha = 0.95;
+		float MaxAlpha = 1.0; 
+		float MinDepth = 1.0; 
+		float MaxDepth = 20.0;
+		float underAlpha = lerp(MinAlpha, MaxAlpha, smoothstep(MinDepth, MaxDepth, dist));
+		Out.Color.a = underAlpha;
+	}
+	
+	float3 R = normalize( reflect( Input.WorldPos.xyz, NormalTexel  ) );
+	float tempdot = saturate( dot(Ln,R) ) ;
+	tempdot = pow(tempdot, 128 ) ; 
+	if ( tempdot < 0.9 ) 
+		tempdot = 0 ;
+	float3 SunLightSpec = float3(1,1,1) * tempdot * 0.6;
+	
+	
+	float3 amb = ATMOSPHERE_AMBIENT * 0.5f;
+	float4 Refraction = float4( amb.x ,  amb.y  , amb.z , 0.9f) ;
+	float4 FinalTex = lerp( float4(  TexReflection  , 1.f ) , Refraction,  1.0 - fresnel ) ; 
+	
+	float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+	float4 SwampNight  = float4(120/255.0f ,120/255.0f ,60/255.0f ,255/255.0f);
+	float4 SwampDay  = float4(240/255.0f ,220/255.0f ,120/255.0f ,255/255.0f);
+	float4 Swamp = lerp(SwampNight,SwampDay,SunIntensity);
+	
+	Out.Color.xyz = combineIllumination3Water( Input.WorldPos , Input.Fog , FinalTex * Swamp , SunLightSpec , 0 ) ; 
+	
+	// This is a trick to add tint to the refraction.
+	if (dist < 0){
+		float Alpha = Out.Color.a;
+		Out.Color.a = 1.0 - pow(1.0 - Alpha, 2.0);
+		float3 Tint1 = float3(15 / 255.0f, 15 / 255.0f,  5 / 255.0f);
+		float3 Tint2 = float3(110 / 255.0f, 100 / 255.0f, 40 / 255.0f);
+		float3 FinalTint = lerp(Tint1 ,Tint2,SunIntensity);
+		Out.Color.rgb += Alpha * (1.0 - Alpha) * FinalTint;
+	}
+
+	return Out;
+}
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+		
+		SeparateAlphaBlendEnable = true;
+		SrcBlendAlpha = ZERO;
+		DestBlendAlpha = INVSRCALPHA;
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

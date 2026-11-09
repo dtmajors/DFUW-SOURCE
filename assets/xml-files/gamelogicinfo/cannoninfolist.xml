@@ -1,0 +1,4201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SFXML>
+	<VersionInformation Incremental="0" Major="0" Minor="1"/>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Mortar"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_Mortar_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="35.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="200"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_sc_mortar_spawn"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_sc_mortar_damage"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_sc_mortar_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_sc_mortar_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_preparetodie"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="10.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="20.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Dragon Cannon"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="50.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="200"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_sc_dragon_spawn"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_sc_dragon_damage"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_sc_dragon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_sc_dragon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_dragon_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_dragon_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_preparetodie"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="10.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="20.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Cannon Headshot"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_Headshot_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Unholy Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="25.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="250"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="0.75"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_sc_headshot_spawn"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_sc_headshot_damage"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_sc_headshot_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_sc_headshot_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_headshot_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_headshot_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_preparetodie"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="10.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="10.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="20.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Small Cannon"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="50.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="1.4"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.2"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="3.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<!-- Stormhammer -->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Stormhammer Cannon"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="TRUE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_StormHammer_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="5.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="50.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.3"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.0"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.15"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_warhulk_sh_electracannon_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_warhulk_sh_electracannon_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Lightning Cannon_01"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_LINE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_warhulk_sh_lightningcannon_fire"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="50.0"/>
+		</SFCannonInfoLineLength>
+		<SFMissileRadius>
+			<SFFloat Value="50.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="50.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<!--- VILEFORGE -->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_vileforge cannon"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="TRUE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_VileForge_FireballCannon_Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="30.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.3"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.3"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.1"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_warhulk_vf_fireballcannon_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_warhulk_vf_fireballcannon_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_vileforge cannon back"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_VileForge_FireballCannon_Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="50.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_warhulk_vf_fireballcannon_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_warhulk_vf_fireballcannon_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_vileforge flamethrower"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_FLAMETHROWER"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_warhulk_vf_flamethrower"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileRadius>
+			<SFFloat Value="5.0"/>
+		</SFMissileRadius>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="20.0"/>
+		</SFCannonInfoLineLength>
+		<SFDamageName>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="60.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<!-- Battle Ark -->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_battle ark cannon"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_BattleArk_Cannon_Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="55.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_warhulk_ba_cannon_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_warhulk_ba_cannon_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<!-- Spider Scarab -->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Spider Scarab Cannon"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="TRUE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SpiderScarab_Cannon_Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="28.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_warhulk_sc_cannon_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_warhulk_sc_cannon_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<!-- Clan Cities -->
+	<!-- Human Cities -->
+
+	<!--NEW CLAN CANNON-->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Human"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Normal Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="85.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.25"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_uw_cannon_small_damaged"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Human Acid"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Acid Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Acid Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Human Flamethrower"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_FLAMETHROWER"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_flamethrower"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileRadius>
+			<SFFloat Value="10.0"/>
+		</SFMissileRadius>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="100.0"/>
+		</SFCannonInfoLineLength>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Human Fireball"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Fireball Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Human Shrapnel"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Shrapnel Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Bludgeoning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Human Lightning"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_LINE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_lightning_fire"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="150.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="60.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<!-- Mahirim Cities -->
+	<!--NEW CLAN CANNON-->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Mahirim"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Normal Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="85.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.25"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_uw_cannon_small_damaged"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon mahirim Acid"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Acid Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Acid Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon mahirim Flamethrower"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_FLAMETHROWER"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_flamethrower"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileRadius>
+			<SFFloat Value="10.0"/>
+		</SFMissileRadius>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="100.0"/>
+		</SFCannonInfoLineLength>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon mahirim Fireball"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Fireball Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon mahirim Shrapnel"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Shrapnel Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Bludgeoning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon mahirim Lightning"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_LINE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_lightning_fire"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="150.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="60.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+
+	<!-- Ork Cities -->
+	<!--NEW CLAN CANNON-->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Ork"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Normal Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="85.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.25"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_uw_cannon_small_damaged"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Ork Acid"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Acid Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Acid Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Ork Flamethrower"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_FLAMETHROWER"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_flamethrower"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileRadius>
+			<SFFloat Value="10.0"/>
+		</SFMissileRadius>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="100.0"/>
+		</SFCannonInfoLineLength>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Ork Fireball"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Fireball Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Ork Shrapnel"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Shrapnel Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Bludgeoning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Ork Lightning"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_LINE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_lightning_fire"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="150.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="60.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+
+	<!-- Dwarf Cities -->
+	<!--NEW CLAN CANNON-->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Dwarf"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Normal Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="85.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.25"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_uw_cannon_small_damaged"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Dwarf Acid"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Acid Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Acid Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Dwarf Flamethrower"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_FLAMETHROWER"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_flamethrower"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileRadius>
+			<SFFloat Value="10.0"/>
+		</SFMissileRadius>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="100.0"/>
+		</SFCannonInfoLineLength>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Dwarf Fireball"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Fireball Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Dwarf Shrapnel"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Shrapnel Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Bludgeoning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Dwarf Lightning"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_LINE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_lightning_fire"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="150.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="60.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+
+	<!-- Alfar Cities -->
+	<!--NEW CLAN CANNON-->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Alfar"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Normal Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="85.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.25"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_uw_cannon_small_damaged"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Alfar Acid"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Acid Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Acid Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Alfar Flamethrower"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_FLAMETHROWER"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_flamethrower"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileRadius>
+			<SFFloat Value="10.0"/>
+		</SFMissileRadius>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="100.0"/>
+		</SFCannonInfoLineLength>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Alfar Fireball"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Fireball Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Alfar Shrapnel"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Shrapnel Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Bludgeoning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Alfar Lightning"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_LINE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_lightning_fire"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="150.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="60.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+
+	<!-- Mirdain Cities -->
+	<!--NEW CLAN CANNON-->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Mirdain"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Normal Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="85.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.25"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_uw_cannon_small_damaged"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Mirdain Acid"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Acid Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Acid Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_acid_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Mirdain Flamethrower"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_FLAMETHROWER"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_flamethrower"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileRadius>
+			<SFFloat Value="25.0"/>
+		</SFMissileRadius>
+		<SFCannonInfoLineLength>
+			<SFFloat Value="100.0"/>
+		</SFCannonInfoLineLength>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_cannonball_explosion01"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Mirdain Fireball"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Fireball Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_fireball_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Mirdain Shrapnel"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_ClanCity_Cannon Shrapnel Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Bludgeoning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="40.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_clancity_cannon_shrapnel_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Clan Tower Cannon Mirdain Lightning"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_LINE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFCannonInfoLineFireEffect>
+			<SFString Value="se_clancity_cannon_lightning_fire"/>
+		</SFCannonInfoLineFireEffect>
+		<SFMissileInfoName>
+			<SFString Value="m_DragonCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="150.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Lightning Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="60.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_sea fortress cannon"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_SmallCannon_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="7.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="45.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="1.3"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="0.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.75"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<!-- Funhulk 01 -->
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Funhulk_01 Cannon_01"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="TRUE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_Funhulk01_Cannon_Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="28.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="1.7"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.2613"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.20"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_funhulk_cannon_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_funhulk_cannon_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+		<SFCannonInfoRelationSFX>
+			<SFString Value="se_gun_targeting_line_01"/>
+		</SFCannonInfoRelationSFX>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Funhulk_02 Cannon_01"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="TRUE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_Funhulk02_Cannon_Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="28.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="1.7"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.2613"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.20"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_funhulk_cannon_impact_02"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_funhulk_cannon_impact_02"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+		<SFCannonInfoRelationSFX>
+			<SFString Value="se_gun_targeting_line_02"/>
+		</SFCannonInfoRelationSFX>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Funhulk_03 Cannon_01"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="TRUE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_Funhulk03_Cannon_Missile"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="28.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="1.7"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.2613"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.20"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_funhulk_cannon_impact_03"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_funhulk_cannon_impact_03"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+		<SFCannonInfoRelationSFX>
+			<SFString Value="se_gun_targeting_line_03"/>
+		</SFCannonInfoRelationSFX>
+
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_Cannon Eruptor"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_Eruptor_Missile_01"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="4.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="65.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="150"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_uw_cannon_small_spawn"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_uw_cannon_small_damaged"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_uw_cannon_small_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_ship_cannon noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_dummy"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="10.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="5.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="25.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_improved crackshot"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_CatapultFire"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="5.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamage>
+			<SFFloat Value="100.0"/>
+		</SFDamage>
+		<SFDamageName2>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName2>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="4.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_siege_engine_catapult_boulder_missile_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_improved boomshot"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_CatapultFireFire"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="16.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value="Fire Damage"/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="135.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="4.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_siege_engine_catapult_fire_missile_impact"/>
+			<!--se_siege_engine_catapult_fire_aoe-->
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_ship_cannon impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	
+	<SFCannonInfo>
+		<SFResourceName>
+			<SFString Value="r_siegeengine catapult test"/>
+		</SFResourceName>
+		<SFCannonInfoGunType>
+			<SFString Value="GUN_MISSILE"/>
+		</SFCannonInfoGunType>
+		<SFCannonInfoMainGun>
+			<SFBool Value="FALSE"/>
+		</SFCannonInfoMainGun>
+		<SFMissileInfoName>
+			<SFString Value="m_CatapultFire"/>
+		</SFMissileInfoName>
+		<SFMissileRadius>
+			<SFFloat Value="6.0"/>
+		</SFMissileRadius>
+		<SFDamageName>
+			<SFString Value="Impact Damage"/>
+		</SFDamageName>
+		<SFDamageName2>
+			<SFString Value=""/>
+		</SFDamageName2>
+		<SFDamage>
+			<SFFloat Value="70.0"/>
+		</SFDamage>
+		<SFCannonInfoAmmo>
+			<SFInteger Value="-1"/>
+		</SFCannonInfoAmmo>
+		<SFCannonInfoMaxSpeed>
+			<SFFloat Value="0.8"/>
+		</SFCannonInfoMaxSpeed>
+		<SFCannonInfoYawTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoYawTurnAngle>
+		<SFCannonInfoPitchTurnAngle>
+			<SFFloat Value="0.785"/>
+		</SFCannonInfoPitchTurnAngle>
+		<SFCannonInfoAccelerationTime>
+			<SFFloat Value="1.5"/>
+		</SFCannonInfoAccelerationTime>
+		<SFCannonInfoReloadTimer>
+			<SFFloat Value="2.0"/>
+		</SFCannonInfoReloadTimer>
+		<SFCannonInfoSpawnEffect>
+			<SFString Value="se_fire01"/>
+		</SFCannonInfoSpawnEffect>
+		<SFCannonInfoDamageEffect>
+			<SFString Value="se_cannon_dmg_01"/>
+		</SFCannonInfoDamageEffect>
+		<SFCannonInfoKillEffect>
+			<SFString Value="se_cannon_kill"/>
+		</SFCannonInfoKillEffect>
+		<SFCannonInfoNoAmmoEffect>
+			<SFString Value="se_cannon_noammo"/>
+		</SFCannonInfoNoAmmoEffect>
+		<SFCannonInfoExplosionEffectNormal>
+			<SFString Value="se_siege_engine_catapult_fire_missile_impact"/>
+		</SFCannonInfoExplosionEffectNormal>
+		<SFCannonInfoExplosionEffectWater>
+			<SFString Value="se_siege_engine_catapult_fire_missile_impact"/>
+		</SFCannonInfoExplosionEffectWater>
+		<SFCannonInfoPrepareToKillEffect>
+			<SFString Value="se_sc_mortar_impact"/>
+		</SFCannonInfoPrepareToKillEffect>
+		<SFCannonInfoCannonKillExplosionRadius>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionRadius>
+		<SFCannonInfoCannonKillExplosionForce>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillExplosionForce>
+		<SFCannonInfoCannonKillDamageMagnitude>
+			<SFFloat Value="1.0"/>
+		</SFCannonInfoCannonKillDamageMagnitude>
+	</SFCannonInfo>
+	
+</SFXML>

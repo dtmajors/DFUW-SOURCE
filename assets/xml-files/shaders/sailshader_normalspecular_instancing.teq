@@ -1,0 +1,162 @@
+// Note: MOVE LIGHTS TO PS!!
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "windswing.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+#ifdef SHADER_SHADOW_ENABLE
+#define SHADOWS_ENABLED_HERE
+#endif
+
+struct VS_OUTPUT
+{
+    float4 Pos  	: POSITION;
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+    float4 DynamicLight : COLOR2;
+#endif
+    float2 Tex  		 : TEXCOORD0;
+    float4 WorldPos		 : TEXCOORD1;
+	float2 ZPos 		 : TEXCOORD2;
+	float3 WorldNormal	 : TEXCOORD3;
+	float3 WorldEyeVec   : TEXCOORD4;
+	float3 WorldTangent	 : TANGENT;
+	float3 WorldBinormal : BINORMAL;
+    float Fog 			 : FOG;
+};
+
+VS_OUTPUT VS(STD_VS_INSTANCE_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+	
+	float3 TempPos = Input.Pos;
+	//Wave it along the normal	
+	float WaveFactor = saturate(1.0f - Input.Diff.y);
+	float VertexOffset = Input.Pos.x + Input.Pos.y + Input.Pos.z;
+	
+	float SinVal  = sin((TOTAL_TIME * 10.0f * WIND_SPEED)  + VertexOffset );
+	TempPos += Input.Norm * SinVal * WaveFactor * 0.5f;
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WMat));
+	Out.WorldNormal = WorldNorm;
+    float4 WorldPos = mul(float4(TempPos,1.0f),WMat);
+	Out.WorldPos = WorldPos;
+	Out.Pos = mul(WorldPos,VIEW_PROJECTION_MATRIX);
+	Out.ZPos.xy = Out.Pos.zw;
+	float3 FracOffset = normalize(frac(Input.Pos));
+	
+	Out.WorldTangent = mul(Input.Tang, (float3x3)WMat);
+	Out.WorldBinormal = mul(Input.BNor, (float3x3)WMat);
+    
+	WorldNorm += SinVal * (FracOffset * 0.15f);
+	WorldNorm = normalize(WorldNorm);
+	
+	Out.WorldEyeVec = normalize(WorldPos.xyz - EyePos);
+    Out.Tex  = Input.Tex;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	Out.DynamicLight = float4(0,0,0,0);
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+		Out.DynamicLight +=  pointLightPixelDiffuseRawAbs(WorldPos, WorldNorm, LightParams[i]);
+#endif
+	
+    return Out;
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	if (SurfaceColor.a < ALPHA_TEST_VALUE) clip(-1);
+	
+	float4 NormalSample = SurfaceColor.g * 0.2;
+	float SpecularContribution = NormalSample.w;
+	float SunSpecularExponent = lerp(16,40,RAIN_FACTOR);
+	
+	float3 WorldNormal = normalize(Input.WorldNormal);
+	float3 Nn = WorldNormal;
+	float3 Vn = normalize(Input.WorldEyeVec);
+
+#ifdef LOW_SHADER_QUALITY
+	NormalSample = tex2D(LinearSampler_Normal,Input.Tex);
+	SpecularContribution = NormalSample.w;
+	
+	float3 WorldTangent = normalize(Input.WorldTangent);
+	float3 WorldBinormal = normalize(Input.WorldBinormal);
+	
+	float3 BumpNormal = 2.0 * (NormalSample.xyz - float3(0.5, 0.5, 0.5));
+	Nn = normalize(Input.WorldNormal + BumpNormal.x * WorldTangent + BumpNormal.y * WorldBinormal);
+#endif
+	
+	if ( dot(normalize(Input.WorldPos) , Input.WorldNormal ) > 0 )
+		Nn *= -1;
+	
+	float4 Weather = applyAtmosphere(SurfaceColor.xyz,Input.WorldPos,Vn,WorldNormal,Nn,Input.Tex*0.5,SpecularContribution,0.3);
+	SpecularContribution = Weather.w;
+	
+	float3 Ln = -PLANET_LIGHTDIR_COMMON;
+	float SunIntensity = (PLANET_LIGHTCOLOR_COMMON.r + PLANET_LIGHTCOLOR_COMMON.g + PLANET_LIGHTCOLOR_COMMON.b) / 3.0;
+	float SunSpecularContribution = lerp(SpecularContribution,SpecularContribution*lerp(2.5,1.5,smoothstep(0.7,0.9,SunIntensity)),saturate(dot(Ln,Vn)));
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, SunSpecularExponent, STANDARD_PROP_DIFFUSE_WRAP,SunSpecularContribution);
+	
+	float4 DynamicLight = float4(0,0,0,0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	DynamicLight = Input.DynamicLight;
+#endif
+	
+	Output.Color.xyz = combineWeatherIllumination3(Input.WorldPos,Input.ZPos,Input.Fog, SurfaceColor.xyz,Sunlight, DynamicLight, 0, Weather.xyz, 0);
+	Output.Color.w = 0;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, NormalSample.w);
+#endif
+	
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = false;
+        
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

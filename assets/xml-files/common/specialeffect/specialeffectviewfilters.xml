@@ -1,0 +1,10 @@
+<XML>
+	<VersionInformation Major="0" Minor="1" Incremental="0" />
+	<!--
+		NodeName is the name of the treenode
+		CheckType = [ Contains | Starts_With ]
+		Expression is the case-insensitive string to match the specialeffectname against
+	-->
+    <ViewFilter PriorityLevel="1" NodeName="Test1" CheckTypeName="Starts_With" Expression="se_w" />
+    <ViewFilter PriorityLevel="2" NodeName="Test2" CheckTypeName="Contains" Expression="se_smo" />
+</XML>

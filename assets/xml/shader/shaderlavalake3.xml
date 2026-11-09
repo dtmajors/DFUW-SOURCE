@@ -1,0 +1,79 @@
+<SFShader>
+	<Version_Info Minor="0" Major="1"/>
+	<Description>
+		<SFString Value="Lava Shader"/>
+	</Description>
+	<Shader>
+		<RenderEffect>
+			<SFString Value="lavalake3.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="TRUE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="TRUE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="0"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="0"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqTexture>
+				<SFBool Value="TRUE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+		<TextureReqs>
+			<NumberOfTextures>
+				<SFInteger Value="4"/>
+			</NumberOfTextures>
+			<Texture0>
+				<SFString Value="SF_DEFAULT"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture0>
+			<Texture1>
+				<SFString Value="nrand.bmp"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture1>
+			<Texture2>
+				<SFString Value="lava_02.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture2>
+			<Texture3>
+				<SFString Value="lava_03.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture3>
+		</TextureReqs>
+		<MeshReqs>
+			<NumberOfMeshes>
+				<SFInteger Value="0"/>
+			</NumberOfMeshes>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+		<ShaderPool>
+			<SFString Value="SF_OUTDOOR_POOL"/>
+			<SFInteger Value="1"/>
+		</ShaderPool>
+	</Shader>
+</SFShader>

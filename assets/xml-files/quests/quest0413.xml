@@ -1,0 +1,26 @@
+<quest quest_id="413" category="lore_quest" tag="Ymir's Hammer">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="item_possession" id="1" value="1" tag="Scythe" resource_name="" quantity="0" inventory_type="None" />
+				<condition type="item_possession" id="2" value="1" tag="Extractor" resource_name="" quantity="0" inventory_type="None" />
+				<condition type="item_possession" id="3" value="1" tag="Supercollidor" resource_name="" quantity="0" inventory_type="None" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Craft the Hammer">
+			<tasks>
+				<task type="craft_item" id="0" value="1" tag="Craft the Hammer" resource_name="" quantity="0" />
+			</tasks>
+			<actions>
+				<action type="give_item_to_player" id="0" tag="Give Recipe" resource_name="" quantity="0" inventory_type="None" />
+			</actions>
+		</node>
+		<node type="event_simple" id="2" tag="Do Something Awesome with the Hammer in Cor Ymirhal" />
+		<node type="end_node" id="4" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+		<edge id="3" from="2" to="4" value="0" />
+	</edges>
+</quest>

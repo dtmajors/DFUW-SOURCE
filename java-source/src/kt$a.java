@@ -1,0 +1,20 @@
+public enum kt$a {
+   arB,
+   arC,
+   arD,
+   arE,
+   arF,
+   arG,
+   arH,
+   arI,
+   arJ,
+   arK,
+   arL,
+   arM,
+   arN,
+   arO,
+   arP,
+   arQ,
+   arR,
+   arS;
+}

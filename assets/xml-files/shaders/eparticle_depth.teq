@@ -1,0 +1,198 @@
+
+
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "time.frag"
+#include "mathfunctions.frag"
+#include "texture.frag"
+
+texture Texture0 : REPTexture0 = NULL;
+texture Texture1 : REPTexture1 = NULL;
+
+//Input params for VS
+const float3 ParticlePosition;
+const float ParticleLifeTime;
+const int NumTextures;
+const float StartScale;
+const float EndScale;
+const float StartRotation;
+const float EndRotation;
+const float StartTime;
+const float4 StartColor;
+const float4 EndColor;
+const float DepthModifier;
+
+struct PARTICLE_VS_INPUT
+{
+   float3 Pos	: POSITION;
+   float2 Tex		: TEXCOORD0;
+};
+
+
+struct PARTICLE_VS_OUTPUT
+{
+   float4 Pos 	: POSITION;
+   float2 Tex	: TEXCOORD0;
+   float2 Tex2  : TEXCOORD1;
+   float4 PSPos   : TEXCOORD2;
+   float3 ViewDir : TEXCOORD3;
+   float  Scale : TEXCOORD4;
+   float4 Diff	: COLOR0;
+   float  Fog	: FOG;
+};
+
+sampler depth_sampler = sampler_state
+{
+	texture = (Texture1);
+#ifdef SET_SAMPLERSTATE
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+#endif
+};
+
+
+PARTICLE_VS_OUTPUT Particle_VS(PARTICLE_VS_INPUT Input)
+{
+    PARTICLE_VS_OUTPUT Out = (PARTICLE_VS_OUTPUT)0;
+    
+    float3 NewPos = Input.Pos;
+    
+    float LifeScale = (TOTAL_TIME_ACCURATE - StartTime)/ParticleLifeTime;    
+	
+	LifeScale = saturate(LifeScale);
+	if (LifeScale >= 1.0f)
+		LifeScale = 0.99999f;
+	
+	float Expo = LifeScale*LifeScale*LifeScale;
+	//LifeScale = LifeScale*LifeScale;//*LifeScale*LifeScale;
+	
+	
+
+    float Scale = lerp(StartScale, EndScale, LifeScale);
+    float Rotation = lerp(StartRotation,EndRotation, LifeScale);
+    float4 Color = lerp(StartColor,EndColor, Expo );
+
+    NewPos = SFVectorRotateZ(NewPos,Rotation);
+    NewPos = mul(NewPos,(float3x3)VIEW_MATRIX_TRANSPOSE);    
+    NewPos *= Scale;
+	NewPos += ParticlePosition;
+
+	
+    
+    
+    //Time ta do da texture 
+    float TextureFactor = 1.0f/NumTextures;
+    
+    int RealNumTextures = NumTextures * NumTextures;
+   
+    float CurrentTex = RealNumTextures * LifeScale;
+    
+    CurrentTex  = floor(CurrentTex);
+    //find out where we are
+    float Y = floor(CurrentTex/NumTextures);
+    float X = CurrentTex - (Y * NumTextures);
+    
+    float2 TexOut;
+    TexOut.x = X * TextureFactor + Input.Tex.x * TextureFactor;
+    TexOut.y = Y * TextureFactor + Input.Tex.y * TextureFactor;
+    
+    
+    
+    
+    Out.Pos = mul(float4(NewPos,1.0f),VIEW_PROJECTION_MATRIX);
+	Out.ViewDir = mul(float3(0.0f,0.0f,1.0f),(float3x3)VIEW_MATRIX_TRANSPOSE); 
+    Out.Tex = TexOut;
+	Out.Tex2 = Input.Tex;
+    Out.Diff = Color;
+	Out.PSPos = float4(NewPos,1.0f);
+	Out.Scale = Scale * DepthModifier;
+    
+    Out.Fog = CalculateFog(Out.Pos.z);
+
+    
+    return Out;
+}
+
+struct PARTICLE_PS_OUTPUT
+{
+	float4 Color : COLOR;
+	float Depth : DEPTH;
+};
+
+PARTICLE_PS_OUTPUT Particle_PS(PARTICLE_VS_OUTPUT Input)
+{
+	PARTICLE_PS_OUTPUT Out = (PARTICLE_PS_OUTPUT)0;
+	float4 Tex1 = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	float4 Depth = tex2D(depth_sampler,Input.Tex2);
+	//Tex1.a = getAlphaTestValHDR(Tex1.a);	
+	Out.Color = Tex1*Input.Diff;
+	
+	float4 NewPos = Input.PSPos;
+	NewPos.xyz = NewPos.xyz - (Depth.x*Input.Scale)*Input.ViewDir;
+	//NewPos.z = NewDepth;
+	float4 OutPos = mul(NewPos,VIEW_PROJECTION_MATRIX);
+	Out.Depth = OutPos.z/OutPos.w;
+	//return Tex1*Input.Diff;
+	//return Input.Diff;
+	
+	return Out;
+}
+
+
+
+//-0
+// 
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = TRUE;
+        ZEnable = TRUE;
+		ZWriteEnable = FALSE;
+
+		SRCBlend = SRCALPHA;
+		DestBlend = One;//InvSrcAlpha;
+	
+		FogEnable = TRUE;
+        CullMode = CCW;
+	
+		ColorWriteEnable = RED|BLUE|GREEN;
+        VertexShader = compile vs_2_0 Particle_VS();
+        PixelShader  = compile ps_2_a Particle_PS();
+        
+
+    }
+}
+
+
+technique T1
+{
+    pass P0
+    {
+		STD_STATE;
+        AlphaTestEnable = false;
+        AlphaBlendEnable = TRUE;
+        ZEnable = TRUE;
+		ZWriteEnable = FALSE;
+
+
+	   	SRCBlend = SRCALPHA;
+	   	DestBlend = INVSRCALPHA;
+	
+		FogEnable = TRUE;
+        CullMode = CCW;
+	
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+        VertexShader = compile vs_2_0 Particle_VS();
+        PixelShader  = compile ps_2_a Particle_PS();
+        
+
+    }
+}

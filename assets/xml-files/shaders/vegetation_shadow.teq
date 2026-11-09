@@ -1,0 +1,159 @@
+// Note: Test this shader
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "wind.frag"
+#include "time.frag"
+#include "mathfunctions.frag"
+#include "texture.frag"
+#include "stdio.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+#include "matrix.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+static const float FadeStart = 10.0f;
+static const float FadeEnd = 29.0f;
+static const float HeightFadeStart = 30.0f;
+static const float HeightFadeEnd = 90.0f;
+
+struct VS_OUTPUT
+{
+    float4 Position		: POSITION;    // position of the vertex
+    float4 SunLight 	: COLOR0;      // diffuse color of the vertex
+    float2 Tex			: TEXCOORD0;   // texcoord of the vertex
+    float4 WorldPos		: TEXCOORD1;
+	float3 WorldNormal	: TEXCOORD2;
+	float2 ZPos			: TEXCOORD3;
+    float Fog			: FOG;
+};
+
+struct VS_INPUT
+{
+    float3 Position	: POSITION;
+    float2 Tex		: TEXCOORD0;
+    float2 BW		: TEXCOORD1;
+    float4 Rotation	: TEXCOORD2;
+    float3 Offset	: TEXCOORD3;
+};
+
+VS_OUTPUT VegShader(VS_INPUT In)
+{
+    VS_OUTPUT Output = (VS_OUTPUT)0;
+
+    float XFrac = frac(In.Offset.x + In.Position.x);
+    float ZFrac = frac(In.Offset.z + In.Position.z);
+
+    float ZXFrac = XFrac*ZFrac;
+
+    float Multiplier = (SIN_TIME)*WIND_SPEED*WIND_SPEED;
+    float3 Temp = (WindDir*Multiplier*In.BW.x*(ZXFrac*4));
+	
+/*
+	float Frequency =0.04;
+	float Frequency_Rain =0.15;
+	float Phase = In.Position;
+	
+	//NO RAIN
+	float Time = TOTAL_TIME * Frequency + Phase;
+    float Multiplier = sin(Time*SF_PI) * cos(Time*3*SF_PI) * cos(Time*5*SF_PI) * cos(Time*7*SF_PI);
+	
+	//RAIN
+	float Time_Rain = TOTAL_TIME * Frequency_Rain + Phase;
+	float Multiplier_Rain = cos(Time_Rain*SF_PI) * cos(Time_Rain*SF_PI) * cos(Time_Rain*3*SF_PI) * cos(Time_Rain*5*SF_PI) * cos(Time_Rain*7*SF_PI) + sin(Time_Rain*9*SF_PI) * 1.5;
+	
+	Multiplier = lerp(Multiplier,Multiplier_Rain,RAIN_FACTOR);
+	Multiplier *= smoothstep(0.05,1.8,In.Position.y);
+	
+	float3 Temp = (lerp(WIND_DIR,float3(0,0,-0.2),sin(TOTAL_TIME))*Multiplier*In.BW.x * (ZXFrac));
+*/
+
+    float3 NewPos = In.Position + Temp;
+    NewPos.y += (XFrac * ZFrac * 0.3f) * In.BW.x;
+
+    //now rotate the newpos
+    float3x3 RotMat = SFQuaternionToMat3(In.Rotation);    
+    NewPos = mul(NewPos,RotMat);
+    NewPos += In.Offset;
+	
+	NewPos.y -= smoothstep(70,80,distance(NewPos - WORLD_EYE_POS,EyePos));
+	
+	float3 ViewSpacePos = NewPos - WORLD_EYE_POS;
+	float3 ViewPos = mul(ViewSpacePos,(float3x3)VIEW_MATRIX);
+
+    float3 NewNormal = normalize(mul(float3(0,1,0),RotMat));
+    
+    //Generate a wavefix based on position
+    Output.Position = mul(float4(ViewPos,1),PROJECTION_MATRIX);
+
+	//Assume that when shadowing is enabled, transfer to viewspace is enabled
+	Output.WorldPos = float4(ViewSpacePos,1);
+	Output.WorldNormal = NewNormal;
+	Output.ZPos = Output.Position.zw;
+    Output.Fog = CalculateFog_3_0(Output.Position.z);
+    
+    Output.Tex = In.Tex;
+	Output.SunLight = lightPixelDiffuseRaw(NewNormal);
+    
+    return Output;
+}
+
+STD_PS_OUTPUT_3 VegShaderPS( VS_OUTPUT Input )
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3) 0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	if (BaseTex.a < ALPHA_TEST_VALUE) clip(-1);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+	float3 Nn = normalize(Input.WorldNormal);
+	//float3 Ln = -PLANET_LIGHTDIR_COMMON;
+	
+	//Snow
+	float3 lumCoeff = float3(0.2126, 0.7152, 0.0722);
+	float3 chroma = dot(lumCoeff,BaseTex.xyz);
+	float3 Weather = lerp(BaseTex.xyz,lerp(BaseTex.xyz,chroma.xyz*2,0.5),SNOW_FACTOR);
+	
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++) DynamicLight += pointLightPixelDiffuseRaw(Input.WorldPos.xyz, Nn, LightParams[i]);
+#endif
+	
+	Output.Color.xyz = combineWeatherIllumination3(Input.WorldPos, Input.ZPos, Input.Fog, BaseTex.xyz,Input.SunLight,DynamicLight, 0, Weather, 0);
+	//Output.Color.xyz += lerp(0,BaseTex.xyz*PLANET_LIGHTCOLOR_COMMON*0.2,smoothstep(-1,1,dot(Ln,CamDir)));
+	Output.Color.w = 0;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(BaseTex.xyz, 0);
+#endif
+	
+    return Output;
+}
+
+// Technique 0
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+        
+		AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+		
+        VertexShader = compile vs_3_0 VegShader();
+        PixelShader  = compile ps_3_0 VegShaderPS();
+    }
+}

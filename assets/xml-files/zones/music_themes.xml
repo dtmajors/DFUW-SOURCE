@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<SFMusicThemes> 
+	<!--  
+Darkfall 2.0
+Music Implementation System
+
+1.	CATEGORIES, GROUPS & TRACKS
+
+	The Music in Darkfall 2.0 is organized into Categories and Groups:
+	
+		CAT A: 	Generic Ambient Tracks (1 group)
+		CAT B:	Racial Themes (6 different groups)
+		CAT C:	Subcontinent Themes (4 different groups)
+		CAT D:	Other Tracks
+		
+	______________________________________________________________________________________________________________________________________
+	Each Groups has the following attributes:
+		
+		“Priority” 				– 	For now all the categories have the same priority.
+									If the player moves from a lower priority zone to a higher one while a track from the first (low priority) category is playing,
+									then the track will fade out and a new one from the higher priority playlist will start playing. If the zones have the same priority, nothing happens.
+									default value = 0
+
+		“PauseDuration” – 	Is measured in seconds and describes the time of silence (pause) between consecutive tracks.
+									
+		“Loop” 				– 	Takes values of “0” or “1”. The “1” is currently used only for the Loading Screen Music group. 
+										
+
+		“Volume”				 – Takes values from "0.0" to "1.0". The main volume of the group for mixing purposes (currently not used).
+										default value = 1
+
+	______________________________________________________________________________________________________________________________________	
+	Each Group is consisted of tracks (.ogg files). Each file has the following attributes:
+		
+		“Time” 							– Takes values of “Day” or “Night”. This tells the system on what time of day is the track available for play. 
+													So in a category (eg. Ambient tracks) there are tracks that only play during the day and tracks that only play during the night.
+													If not existent, the track playes during both day and night.
+
+		“TimeLock” 					–	Is measured in seconds. This is a safety net that tells the system how much time MUST pass after a track has played, 
+													until that track is available again. It is currently used in the Racial Themes and in the Continent Theme tracks. 
+													default value = o
+
+		“PlayFirst” 						– Takes values of “true” or “false”. This attribute tells the system if the specific track is to be played first from the current group. 
+													default value = false
+													
+		“PlayOnlyOnTransition”	 – Takes values of “True” or “False”. This attribute tells the system that the current track should only be played if the was a Group transition involved. 
+													default value = false
+	
+	
+
+2.	CATEGORIES
+	A.	Ambient Track. 
+		
+		The first Category is consisted of the Ambient Tracks Group. This is the general group that governs most of the world of Agon. 
+		There are tracks that play during the day and tracks that play during the night with 30 minutes silence intervals. 
+	
+	B.	Racial Themes. The second Category is consisted of 6 different Groups. Each group has all of the Ambient Tracks (CAT A) plus one extra track for the specific race. So we have the following groups:
+		
+		1.	Human Group: CAT A traks + Human Theme.
+		2.	Orc Group: CAT A tracks + Orc Theme.
+		3.	Alar Group: CAT A track + Alfar Theme.
+		4.	Mirdain Group: CAT A tracks + Mirdain Theme.
+		5.	Mahirim Group: CAT A tracks + Mahirim Theme.
+		6.	Dwarf Group: CAT A Tracks + Dwarf Theme.
+	
+		The Racial Themes Groups functions as follows:
+	
+		The race theme track will play first when the player enters a CAT B zone. When the track finishes, it won’t be heard again, unless 2 hours have passed (“TimeLock”) and the player re-enters the zone (“PlayOnlyOnTransition”=”true”). Also after the racial theme is heard, the other tracks (ambient tracks) will be drawn from the system randomly every 30 minutes. 
+
+	C.	Subcontinent Themes. The third Category is consisted of 4 different Groups. Each group has all of the Ambient Tracks (CAT A) plus one extra track for the specific subcontinent. So we have the following groups:
+	
+		1.	Niflheim Group: CAT A tracks + Ice theme.
+		2.	Yssam Group: CAT A tracks + Jungle theme.
+		3.	Rubaiyat Group: CAT A tracks + Desert theme.
+		4.	Cairn Group: CAT A tracks + Wasteland theme.
+		
+		This Category’s Groups function as the Racial Themes Category. The subcontinent theme track will play first when the player enters a CAT C zone. When the track finishes, it won’t be heard again, unless 2 hours have passed (“TimeLock”) and the player re-enters the zone (“PlayOnlyOnTransition”=”true”). Also after the subcontinent theme is heard, the other tracks (ambient tracks) will be drawn from the system randomly every 30 minutes.
+
+	D.	Other Tracks. In this Category are placed all other Groups. For example Central Area, the Central Castle and the dungeon groups.
+	--> 
+	
+	<!-- Tiles Associations -->
+	
+	<SFDefaultTileThemes>
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "1"  Tiles = "U13,U18,O15,O17,M10,Q24,P13,U21,V15,M16,O11,S20,P14,J19,U15,M12,K18,T20,O13,N16,P11,Q20,O14,I19,W15,N12,L18,R20,N17,N13,Q21,M11,R15,L19,R21,N14,I18,O12,M13,M17,S21,N11,U20,T15,T21,M14,J18,S15,P12,O08,K11,I16,N10,L13,L17,I12,O18,L14,N09,N19,Q23,P08,L11,J16,K13,K17,J12,P18,K14,M19,K16,T22,J13,J17,M18,S22,K12,P09,P19,J14,L16,R22,I13,O10,N18,Q22,L12,O09,O19,I14,T10,O25,S09,S19,M23,K15,S10,T19,K21,J20,V18,R10,Q09,Q19,N23,L15,W18,O22,Q10,R09,R19,L21,I20,X18,W19,O23,Q18,N22,I15,R08,X19,I21,R18,L20,Q08,U19,P23,S18,M22,J15,V19,J21,U10,K20,T18,H16,Q12,R16,V11,L22,W14,R12,U11,N20,W13,W17,O21,S12,T16,K22,U14,V13,V17,T12,M20,S16,V14,N24,U17,P21,R11,V16,J22,M15,U12,T13,T17,S14,Q11,U16,P20,V12,O24,S13,S17,M21,T14,T11,X16,I22,N15,W12,R17,R13,Q14,S11,W16,O20,P24,Q13,N21,R14"/> <!-- Generic Ambience-->
+		<!-- Human Capital
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "2"  Tiles = "U18"/>  
+		-->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "3"  Tiles = "P22"/> <!-- Alfar Capital-->
+		<!-- Dwarf Capital
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "4"  Tiles = "P10"/>    
+		-->
+		<!-- Mahirim Capital
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "5"  Tiles = "K14"/> 
+		-->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "6"  Tiles = "K19"/> <!-- Mirdain Capital-->
+		<!-- Ork Capital
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "7"  Tiles = "U13"/>
+		-->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "8"  Tiles = "K08,J09,I09,I08,J08,K09,G07,G09,H08,H09,G08,I10,H10,K07,L08,F08"/> <!-- Ice -->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "9"  Tiles = "V08,Y07,U08,X08,W08,W09,X09,U09,V09,Y09,U07,V07,Y08,W07,X07"/> <!-- Jungle -->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "10"  Tiles = "G23,H25,G22,H23,G25,G24,I26,F25,K26,H24,G26,I24,J24,K24,H26,I23,K25,J23,I25,J25"/> <!-- Desert -->	
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "11"  Tiles = "Y23,Y25,V24,W24,X24,V25,Y24,U25,Z24,X25,W25,V23,X23,W23"/> <!-- Wasteland -->	
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "12"  Tiles = "Q16,P16"/> <!-- Central Area -->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "14"  Tiles = "N07,S25"/> <!-- Sea Fortress -->
+		<SFDefaultTileTheme Dungeon = "true" ThemeId = "15"  Tiles = "F14,Z15,F06,F19,Z20,U26,Y11,O06,Q26,Z06"/> <!--Starting Area -->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "17"  Tiles = "I07,I06J10,V06,K06,N26,Z23,H14,Y12,Z16,U06,H13,H17,V21,R24,T09,H22,Z12,Z07,F09,Y16,F21,X06,P25,Z26,M26,S24,W21,F18,X15,G12,W06,Y26,F06,X21,T24,H11,G16,F15,N07,U24,Z25,P26,M25,G14,L10,R06,X10,F19,W20,Z11,F20,L09,F10,Q06,G17,G13,X20,O07,Y11,N25,Z17,Z13,O26,V10,J06,Y14,F24,K10,T06,H12,Z22,T08,Y17,Y13,Z14,S06,Y22,V20,P07,G11,S08,G20,X22,Q07,G19,O06,R23,J26,F14,X17,X13,T26,F22,W22,R07,F13,F17,X14,M24,S26,G10,H18,X11,S07,V22,Y20,P06,Z10,H21,Y19,L25,R26,T23,F11,W11,T07,J07,H15,Z20,U22,Y10,Q26,Z19,Z09,M09,H06,S23,I11,Y18,M08,H20,Z15,Z08,Y21,L26,R25,K23,X26,Z06,H19,Z18,Y15,Q25,Z21,U23,W26,Y06,F26,F12,J11,G18,F07,N08,L23,V26,I17,T25,N06,G21,G15,F16,X12,U26,S25,G06,F23"/> <!-- Sea Tiles -->
+		
+		<!-- <SFDefaultTileTheme Dungeon = "false" ThemeId = "18"  Tiles = ""/> Fire Dragon -->
+		<SFDefaultTileTheme Dungeon = "false" ThemeId = "19"  Tiles = "L07,M07,L06,M06"/> <!-- Ice Dragon -->
+		<!--Dungeons-->
+		<SFDefaultTileTheme Dungeon = "true" ThemeId = "50"  Tiles = "K14, P10, U13, U18"/> <!-- Sewers -->
+		<SFDefaultTileTheme Dungeon = "true" ThemeId = "51"  Tiles = "J18"/> <!-- Wet jungly cave -->
+		<SFDefaultTileTheme Dungeon = "true" ThemeId = "52"  Tiles = "S17"/> <!-- Horror Dungeon -->
+		<SFDefaultTileTheme Dungeon = "true" ThemeId = "53"  Tiles = "P08"/> <!-- Ice Dungeon -->
+		<SFDefaultTileTheme Dungeon = "true" ThemeId = "54"  Tiles = "U11"/> <!-- Cathedral Dungeon -->
+	</SFDefaultTileThemes>
+	
+	
+	
+	
+	
+	<!-- Loading Screen -->
+	
+	<SFMusicTheme GlobalId = "100" Name = "LoadingScreen"  Description = "Music for the loading screen" PauseDuration = "0" Priority = "1" Loop = "1" Volume="0.7">  	
+		<Oggs> 
+			<Ogg FileName = "music/loading screen.ogg" /> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	
+	
+	<!--Ambient Tracks -->
+	
+	<SFMusicTheme GlobalId = "1" Name = "Ambient"  Description = "Generic ambient tracks" PauseDuration = "480" Priority = "0" Loop = "0"   >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />			
+		</Oggs>
+	</SFMusicTheme> 
+
+	
+	
+	
+	
+	<!-- Racial Themes -->
+	
+
+
+	<SFMusicTheme GlobalId = "2" Name = "Human"  Description = "Human Capital music" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/theme - human.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true" Volume="1"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />			
+		</Oggs>
+	</SFMusicTheme> 
+	
+
+	
+	<SFMusicTheme GlobalId = "3" Name = "Alfar"  Description = "Alfar Capital music" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/theme - alfar.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true" Volume="1"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />			
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+
+	<SFMusicTheme GlobalId = "4" Name = "Dwarf"  Description = "Dwarf Capital music" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/theme - dwarf.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true" Volume="1"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />			
+		</Oggs>
+	</SFMusicTheme>       
+	
+
+	
+	<SFMusicTheme GlobalId = "5" Name = "Mahirim"  Description = "Mahirim Capital music" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/theme - mahirim.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true" Volume="0.8"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />			
+		</Oggs>
+	</SFMusicTheme> 
+	
+
+	
+	<SFMusicTheme GlobalId = "6" Name = "Mirdain"  Description = "Mirdain Capital music" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/theme - mirdain.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true" Volume="1"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />			
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	<SFMusicTheme GlobalId = "7" Name = "Ork"  Description = "Ork Capital music" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/theme - ork.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true" Volume="1"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />			
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	
+<!-- Subcontinents -->	
+
+	
+	<SFMusicTheme GlobalId = "8" Name = "Niflheim"  Description = "Theme and ambient tracks for the Ice subcontinent" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/subcontinent - ice.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	<SFMusicTheme GlobalId = "9" Name = "Yssam"  Description = "Theme and ambient tracks for the Jungle subcontinent" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/subcontinent - jungle.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	<SFMusicTheme GlobalId = "10" Name = "Rubaiyat"  Description = "Theme and ambient tracks for the Desert subcontinent" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/subcontinent - desert.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	<SFMusicTheme GlobalId = "11" Name = "Cairn"  Description = "Theme and ambient tracks for the Wasteland subcontinent" PauseDuration = "480" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/subcontinent - wasteland.ogg"  TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true"/>
+			<Ogg FileName = "music/area - day 01 a.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - day 02 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 04 a.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 01 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 02 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - day 03 v.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - night 01 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 a.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 01 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 02 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 03 v.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - night 04 v.ogg" Time="Night"  />
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	
+	
+	<!-- Various  -->
+	
+	
+	<SFMusicTheme GlobalId = "12" Name = "Central_Ambience"  Description = "Music for Central area" PauseDuration = "1800" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - central day.ogg"  Time="Day" TimeLock="3600"/> 
+			<Ogg FileName = "music/area - central night.ogg"  Time="Night" TimeLock="3600"/>
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	<SFMusicTheme GlobalId = "13" Name = "Central_Castle"  Description = "Music for Central Castle" PauseDuration = "1800" Priority = "2" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - central castle.ogg" TimeLock="7200" PlayOnlyOnTransition="true"/> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	<SFMusicTheme GlobalId = "14" Name = "Sea_Fortress"  Description = "Music for sea fortress tiles" PauseDuration = "1800" Priority = "0" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - sea fortress.ogg" TimeLock="7200" PlayOnlyOnTransition="true" /> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	<SFMusicTheme GlobalId = "18" Name = "Fire_Dragon"  Description = "Music for the fire dragon area" PauseDuration = "1800" Priority = "0" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - fire dragon.ogg" TimeLock="7200"  PlayOnlyOnTransition="true" /> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	<SFMusicTheme GlobalId = "19" Name = "Ice_Dragon"  Description = "Music for the ice dragon area" PauseDuration = "1800" Priority = "0" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - ice dragon.ogg" TimeLock="3600" PlayFirst="true" PlayOnlyOnTransition="true"/> 
+			<Ogg FileName = "music/area - sea day 01.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - sea day 02.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - sea night 01.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - sea night 02.ogg" Time="Night"  />
+		</Oggs>
+	</SFMusicTheme> 
+	
+	<!-- Starting area -->
+	
+		
+	<SFMusicTheme GlobalId = "15" Name = "Starting_are_cue"  Description = "1st in game music track" PauseDuration = "1800" Priority = "0" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - starting cue.ogg" TimeLock="21600" PlayOnlyOnTransition="true" /> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	<SFMusicTheme GlobalId = "16" Name = "Starting_area_cave"  Description = "music track for the starting cave" PauseDuration = "1800" Priority = "0" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - starting cave.ogg" TimeLock="10800" PlayOnlyOnTransition="true" /> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	
+	
+	<!-- Sea Ambience -->
+	
+		<SFMusicTheme GlobalId = "17" Name = "Sea Ambience"  Description = "Generic sea ambience tracks" PauseDuration = "720" Priority = "0" Loop = "0"   >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - sea day 01.ogg" Time="Day"  /> 	
+			<Ogg FileName = "music/area - sea day 02.ogg" Time="Day"  />
+			<Ogg FileName = "music/area - sea night 01.ogg" Time="Night"  />
+			<Ogg FileName = "music/area - sea night 02.ogg" Time="Night"  />
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	
+	
+	
+	<!-- Dungleon -->
+	
+	
+	<SFMusicTheme GlobalId = "50" Name = "DungeonK14"  Description = "Sewer Dungeon K14" PauseDuration = "900" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/dungeon - newbie.ogg" /> 
+		</Oggs>
+	</SFMusicTheme> 
+		
+
+		
+	<SFMusicTheme GlobalId = "51" Name = "DungeonJ18"  Description = "Wet jungly cave dungeon" PauseDuration = "900" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/dungeon - nature.ogg" /> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+		
+	<SFMusicTheme GlobalId = "52" Name = "Horror Dungeon"  Description = "Horror dungeon" PauseDuration = "900" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/dungeon - horror.ogg" /> 
+		</Oggs>
+	</SFMusicTheme> 
+	
+	
+	<SFMusicTheme GlobalId = "53" Name = "Magic Dungeon"  Description = "Magic dungeon" PauseDuration = "900" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/dungeon - magic.ogg" /> 
+		</Oggs>
+	</SFMusicTheme> 
+
+	
+	<SFMusicTheme GlobalId = "54" Name = "Cathedral Dungeon"  Description = "Cathedral Dungeon" PauseDuration = "10800" Priority = "1" Loop = "0" >  	
+		<Oggs> 
+			<Ogg FileName = "music/area - central castle.ogg" /> 
+		</Oggs>
+	</SFMusicTheme> 
+
+	
+</SFMusicThemes>

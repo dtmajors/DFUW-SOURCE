@@ -1,0 +1,30 @@
+<quest quest_id="403" category="lore_quest" tag="Lead 01">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="1" value="1" tag="A Quest Completion Condition" quest_id="402" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Collect the Runes" optional_tasks="True">
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="Copy Rune" resource_name="" />
+				<task type="interact_with_object" id="1" value="2" tag="Copy Rune 02" resource_name="" />
+				<task type="interact_with_object" id="2" value="3" tag="Copy Rune 03" resource_name="" />
+			</tasks>
+		</node>
+		<node type="end_node" id="5" tag="" />
+		<node type="event_simple" id="4" tag="Go to R10">
+			<tasks>
+				<task type="go_to_area" id="3" value="1" tag="Go to R10" area_id="0" />
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="0" tag="An Add Map-Marker to World-Map Action" marker_type="-1" world_x="0" world_z="0" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="4" value="0" />
+		<edge id="1" from="4" to="1" value="0" />
+		<edge id="2" from="1" to="5" value="0" />
+	</edges>
+</quest>

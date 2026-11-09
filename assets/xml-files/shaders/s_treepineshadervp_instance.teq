@@ -1,0 +1,77 @@
+//ShadowShader For TreePineShader
+
+
+#include "stdstate.frag"
+#include "windswing.frag"
+
+
+#include "shadowmap.frag"
+
+#include "instancing.frag"
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+	//Instancing data
+	float4 WMat1 : TEXCOORD5;
+	float4 WMat2 : TEXCOORD6;
+	float4 WMat3 : TEXCOORD7;
+	float4 WMat4 : TEXCOORD8;
+};
+
+
+
+VS_SHADOWMAP_OUTPUT TreeVS(VS_INPUT Input)
+{
+    VS_SHADOWMAP_OUTPUT Out = (VS_SHADOWMAP_OUTPUT)0;
+
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+    
+    
+    SFVector3 WorldPos = CalculateWindPosObjectSpaceInstanceVPShadow(Input.Pos,Input.Norm,WMat,Input.Diff);
+
+    Out.Pos  = mul(float4(WorldPos,1), SHADOW_VIEW_PROJECTION_MATRIX);             // position (projected)
+    
+    Out.Tex  = Input.Tex;
+    Out.ScreenPos = Out.Pos;
+
+    return Out;
+}
+
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+        AlphaBlendEnable = FALSE;
+        AlphaTestEnable = FALSE;
+        
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+        
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE;
+	
+		FogEnable = FALSE;
+        CullMode = CW;
+        VertexShader = compile vs_3_0 TreeVS();
+        PixelShader  = compile ps_3_0 ShadowMapPS();
+    }
+}

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Inherit Calcs done for
+1  300
+25 300
+50 300
+75 300
+******
+1  100 * 2 = 200
+25 90  * 2 = 180
+50 80  * 2 = 160
+75 70  * 2 = 140
+-->
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+	<SFRecipe ResourceName="r_kourampies" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="TRUE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Flour" Quantity="4" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Sugar" Quantity="8" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Almonds" Quantity="24" FractionLoss="0.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_melomakarono" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25" Lockable="TRUE">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Flour" Quantity="8" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Honey" Quantity="10" FractionLoss="0.0"/>
+		<SFIngredient ResourceName="r_Almonds" Quantity="16" FractionLoss="0.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	
+	<SFRecipe ResourceName="r_Baked Potato" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Vegetable Soup" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="2" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Grilled Meat" Quantity="1" Difficulty="0.0" DurationMultiplier="1.1" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Meat" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="1" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Meat Stew" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Meat" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="25" InheritancePortion="5.1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Grilled Bass" Quantity="1" Difficulty="0.0" DurationMultiplier="1.2" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Bass" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="3" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Bass Stew" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="25" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Bass" Quantity="3" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="7" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="5" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="50" InheritancePortion="13.3" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Grilled Cod" Quantity="1" Difficulty="0.0" DurationMultiplier="1.3" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Cod" Quantity="4" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="5" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Cod Stew" Quantity="1" Difficulty="0.0" DurationMultiplier="1.4" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="50" FractionLoss="0.9"/>
+		<SFIngredient ResourceName="r_Cod" Quantity="6" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="10" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="8" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="8" FractionLoss="1.0"/>
+		<SFRequiredSkill SkillName="s_Cooking" SkillLevel="75" InheritancePortion="25.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<!--         COOKING MASTERY           -->
+	
+	<SFRecipe ResourceName="r_Baked Trout" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="15">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Trout" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="2" FractionLoss="0.8"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Trout Caserole" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="25">
+		<SFIngredient ResourceName="r_Gold" Quantity="95" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Trout" Quantity="3" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="3" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Egg" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_Seaweed" Quantity="1" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="1" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Baked Salmon" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="40">
+		<SFIngredient ResourceName="r_Gold" Quantity="155" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Salmon" Quantity="2" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="3" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="4" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="3" FractionLoss="0.6"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="25" InheritancePortion="5.69" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Salmon Caserole" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="25" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="155" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Salmon" Quantity="3" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="4" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="3" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Egg" Quantity="3" FractionLoss="0.6"/>
+		<SFIngredient ResourceName="r_Seaweed" Quantity="2" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="25" InheritancePortion="5.69" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Baked Swordfish" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="65">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Swordfish" Quantity="2" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="4" FractionLoss="0.4"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="50" InheritancePortion="16.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Swordfish Caserole" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="235" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Swordfish" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="4" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="4" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="3" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Egg" Quantity="4" FractionLoss="0.4"/>
+		<SFIngredient ResourceName="r_Seaweed" Quantity="3" FractionLoss="0.3"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="50" InheritancePortion="16.7" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Baked Crab" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="90">
+		<SFIngredient ResourceName="r_Gold" Quantity="340" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Crab" Quantity="2" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="6" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="5" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="6" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="75" InheritancePortion="36.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Crab Caserole" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="340" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Crab" Quantity="3" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="6" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="5" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Egg" Quantity="5" FractionLoss="0.2"/>
+		<SFIngredient ResourceName="r_Seaweed" Quantity="4" FractionLoss="0.2"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="75" InheritancePortion="36.6" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Baked Lobster" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="115">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Lobster" Quantity="2" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="8" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="6" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Spices" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	<SFRecipe ResourceName="r_Lobster Caserole" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="475" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Lobster" Quantity="3" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Potato" Quantity="10" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Onion" Quantity="8" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Carrot" Quantity="8" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Egg" Quantity="6" FractionLoss="0.1"/>
+		<SFIngredient ResourceName="r_Seaweed" Quantity="6" FractionLoss="0.1"/>
+		<SFRequiredSkill SkillName="s_Cooking Mastery" SkillLevel="100" InheritancePortion="1.0" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+</XML>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Type Value="PARTY"/>
+  <Reset Type="WEEKLY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="15"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Monsters"/>
+    <ResourceRank Value="10"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_celestial" Value="1128"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="4000" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_improved Leenspar Chest Key" Quantity="2" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_Treasure Map Item" Quantity="1" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

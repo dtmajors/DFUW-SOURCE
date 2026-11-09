@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="10"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Monsters"/>
+    <ResourceRank Value="11"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_demon" Value="10"/>
+  <Steam SteamAchievement="true" SteamIcon="steam_horror_02"/>
+  <Rewards>
+    <Item Name="pe_kill_monster_r11_100" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

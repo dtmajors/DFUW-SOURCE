@@ -1,0 +1,30 @@
+<quest quest_id="9991" category="test_quest" tag="Test Quest 02 - Use Skill" published="False" valid="True">
+	<title>A name</title>
+	<description>A description</description>
+	<nodes>
+		<node type="start_node" id="0" tag="Complete Test Quest 01">
+			<conditions>
+				<condition type="build_mode" id="0" value="1" tag="Test Quests Only In Debug!" build_mode="Debug" />
+				<condition type="quest_completion" id="1" value="1" tag="Complete Test Quest 01" quest_id="9990" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Use Light Skill">
+			<instruction>Use Light Skill</instruction>
+			<tasks>
+				<task type="use_skill" id="0" value="1" tag="Use Light Skill Task" skill_name="s_Light">
+					<task_instruction>Use Light Skill</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="2" tag="Complete - No Rewards" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="157" y="85" />
+		<node_location id="1" x="296" y="85" />
+		<node_location id="2" x="453" y="85" />
+	</node_locations>
+</quest>

@@ -1,0 +1,75 @@
+// offscreenfx_composite.teq
+
+#include "stdstate.frag"
+#include "texture.frag"
+
+struct VS_Input {
+	float4 pos		: POSITION;
+	float2 tc		: TEXCOORD0;
+};
+
+struct VS_Output {
+	float4 pos		: POSITION;
+	float2 tc		: TEXCOORD0;
+};
+
+VS_Output VS(VS_Input Input) {
+	VS_Output Output = (VS_Output) 0;
+	Output.pos = Input.pos;
+	Output.tc = Input.tc;
+	
+	return Output;
+}
+
+float4 Composite( in float2 TC : TEXCOORD0 ) : COLOR0 {
+
+    float4 sample = tex2D(OffscreenFXSampler, TC);
+	
+	
+	// Invert alpha again
+	sample.a = 1.0 - sample.a;
+	
+	float mx = sample.x;
+	if (sample.y > mx) mx = sample.y;
+	if (sample.z > mx) mx = sample.z;
+	
+	float threshold = 0;
+	float boostIntensity = 0.7;
+	
+	float boost = smoothstep(threshold, 1, mx);
+	
+	sample.xyz *= 1.0 + boost * boostIntensity;
+
+	return sample;
+}
+
+
+//
+//
+
+technique Compositing
+{
+    pass P0
+    {
+		STD_STATE;
+    
+		ColorWriteEnable = RED | GREEN | BLUE /* | ALPHA */;
+	
+		StencilEnable = false;
+        AlphaTestEnable = false;
+        ZEnable = false;
+		ZWriteEnable = false;
+		CullMode = None;
+
+		AlphaBlendEnable = true;
+		SrcBlend = One;
+        DestBlend = InvSrcAlpha;
+		
+		SeparateAlphaBlendEnable = true;
+		SrcBlendAlpha = Zero;
+		DestBlendAlpha = One;
+		
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 Composite();    
+    }
+}

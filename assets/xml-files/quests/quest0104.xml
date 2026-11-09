@@ -1,0 +1,32 @@
+<quest quest_id="104" category="side_quest" tag="Cave Letter" published="False" valid="True">
+	<title>Cave Letter</title>
+	<description>A mysterious letter found inside a cave.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="cave_letter">
+			<conditions>
+				<condition type="object_interaction" id="0" value="1" tag="An Object Interaction Condition" resource_name="r_qt love letter cave" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="4" tag="The Letter's Writtings">
+			<journal_entry>&quot;Oh those memories from the lighthouse! Second only to the one I have from this place. I&apos;ll never forget that night. You know after we saw the ritual. It was wonderful. That was the night I conceived him. Our little boy.Oh there is so much I had to tell you but didn&apos;t when I had the time. You knew from the day you met me that I wasn&apos;t just another mercian girl. You knew that. I need you to gather some items from the area surrounding the outpost where I told my father about us. It is the one he build before invading your lands... and I think unintentionally I played a part in that... Please be careful. I believe the small fort east of the outpost is now occupied by hobgoblins. Oh and please stay away from the lake. I heard that Matayins lurk in the waters. Pass by the temple ruins northeast from the outpost. I need you to trap one of the wisps that dwell there. You&apos;ll need it. You will find my next letter at the top of the mountain that oversees your capital city. Bring the wisp and the present I gave you on our third moon anniversary. Yes, the blood vial that I told you it will protect you in dark times. Bring an empty bottle too.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>&quot;...water...&quot;</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="0" tag="An Unlock Quest Item Within The Quest Action" item_id="0" />
+			</actions>
+		</node>
+		<node type="end_node" id="6" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="4" value="1" />
+		<edge id="6" from="4" to="7" value="0" />
+		<edge id="7" from="7" to="6" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Cave Letter" image_locked="qc_104_letter_cave_locked.png" image_unlocked="qc_104_letter_cave_unlocked.png">
+		<name_locked>Locked</name_locked>
+		<name_unlocked>A letter found in a cave</name_unlocked>
+		<description_locked>Locked</description_locked>
+		<description_unlocked>&amp;quot;Oh those memories from the lighthouse! Second only to the one I have from this place. I&amp;apos;ll never forget that night. You know after we saw the ritual. It was wonderful. That was the night I conceived him. Our little boy.Oh there is so much I had to tell you but didn&amp;apos;t when I had the time. You knew from the day you met me that I wasn&amp;apos;t just another mercian girl. You knew that. I need you to gather some items from the area surrounding the outpost where I told my father about us. It is the one he build before invading your lands... and I think unintentionally I played a part in that... Please be careful. I believe the small fort east of the outpost is now occupied by hobgoblins. Oh and please stay away from the lake. I heard that Matayins lurk in the waters. Pass by the temple ruins northeast from the outpost. I need you to trap one of the wisps that dwell there. You&amp;apos;ll need it. You will find my next letter at the top of the mountain that oversees your capital city. Bring the wisp and the present I gave you on our third moon anniversary. Yes, the blood vial that I told you it will protect you in dark times. Bring an empty bottle too.&amp;quot;</description_unlocked>
+	</quest_item>
+</quest>

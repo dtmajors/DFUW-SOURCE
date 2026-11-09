@@ -1,0 +1,7 @@
+#include "stdstate.frag"
+#include "time.frag"
+#include "vectorfunctions.frag"
+#define SHADER_CFG_ROTATE
+#define SHADER_CFG_TIME_OF_ONE_FRAME 1.0f/SFX_NOLIGHT_TEXANIM_NUM_FRAMES_PER_SECOND_CW
+#define SHADER_CFG_ROTATE_SPEED SFX_NOLIGHT_TEXTUREANIM_16f_ROTATE_SPEED_CW
+#include "sfx_nolight_textureanim_16f_instancing.teq"

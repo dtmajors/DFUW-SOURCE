@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFAnimationStateTemplate>
+    <VersionInformation Incremental="0" Major="0" Minor="3"/>
+    <Name>
+        <SFString Value="Human State Template"/>
+    </Name>
+    <AnimationStateList>
+        <AnimationState Duration="1.2" ID="99" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false" SetName="2handed_attack_01"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0">
+            <AlternativeSets>
+                <AlternativeSet SetName="2handed_attack_02"/>
+                <AlternativeSet SetName="2handed_attack_03"/>
+            </AlternativeSets>
+        </AnimationState>
+        <AnimationState Duration="1.2" ID="100" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false" SetName="2handed_attack_02"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.2" ID="101" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false" SetName="2handed_attack_03"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="46" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="attackmode_2handed_idle" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="30" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="attackmode_idle"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="118" Loop="true" Partial="true"
+            PlaybackType="0" RemovePartial="false" SetName="bow_aim" Speed="1.0"
+            StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="119" Loop="false"
+            Partial="true" PlaybackType="0" RemovePartial="false"
+            SetName="bow_fire" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.7" ID="117" Loop="true" Partial="true"
+            PlaybackType="0" RemovePartial="false" SetName="bow_load"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0">
+            <ChainedStates>
+                <ChainedState StateID="184549494"/>
+            </ChainedStates>
+        </AnimationState>
+        <AnimationState Duration="2.0333335" ID="175" Loop="false"
+            Partial="true" PlaybackType="0" RemovePartial="false"
+            SetName="emote_taunt_01" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="2.5333335" ID="301" Loop="false"
+            Partial="false" PlaybackType="0" RemovePartial="true"
+            SetName="gank_death_01" Speed="1.0" StopAtPosition="true" StopPositionNormalized="0.95">
+            <AlternativeSets>
+                <AlternativeSet SetName="gank_death_02"/>
+            </AlternativeSets>
+        </AnimationState>
+        <AnimationState Duration="2.5333335" ID="302" Loop="false"
+            Partial="false" PlaybackType="0" RemovePartial="true"
+            SetName="gank_death_02" Speed="1.0" StopAtPosition="true" StopPositionNormalized="0.95"/>
+        <AnimationState Duration="0.23333335" ID="185" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="jump_01" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="14" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="15" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="18" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="40" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="41" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="44" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="56" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="57" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="60" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="17" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_left" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="43" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_left" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="59" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_left" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="16" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_right" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="42" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_right" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="0.86666673" ID="58" Loop="true"
+            Partial="false" PlaybackType="0" RemovePartial="false"
+            SetName="neutral_run_right" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="9" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="10" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="11" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="35" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="36" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="37" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="51" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="52" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="53" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="6" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="7" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="13" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="32" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="33" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="39" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="48" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="49" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="neutral_walk_forward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="12" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="neutral_walk_left"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="38" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="neutral_walk_left"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="54" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="neutral_walk_left"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="8" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="neutral_walk_right"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="34" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="neutral_walk_right"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.3666668" ID="50" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="neutral_walk_right"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="2.0333335" ID="3" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false" SetName="normal_idle"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="2.7" ID="1" Loop="true" Partial="false"
+            PlaybackType="0" RemovePartial="false"
+            SetName="normal_idle_looking_left-right" Speed="1.0"
+            StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.0333334" ID="94" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false"
+            SetName="singlehand_attack_01" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0">
+            <AlternativeSets>
+                <AlternativeSet SetName="singlehand_attack_02"/>
+                <AlternativeSet SetName="singlehand_attack_03"/>
+            </AlternativeSets>
+        </AnimationState>
+        <AnimationState Duration="1.0333334" ID="95" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false"
+            SetName="singlehand_attack_02" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.0333334" ID="96" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false"
+            SetName="singlehand_attack_03" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.7" ID="226" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false" SetName="singlehand_stab"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.8666668" ID="45" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false" SetName="unsheathe_2handed"
+            Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.8666668" ID="229" Loop="false"
+            Partial="true" PlaybackType="0" RemovePartial="false"
+            SetName="unsheathe_bow" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+        <AnimationState Duration="1.0333334" ID="29" Loop="false" Partial="true"
+            PlaybackType="0" RemovePartial="false"
+            SetName="unsheathe_singlehand" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    </AnimationStateList>
+</SFAnimationStateTemplate>

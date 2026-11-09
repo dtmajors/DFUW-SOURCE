@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="false"/>
+   <ShowOnGUI Value="true"/>     
+    
+   <Trigger Type="HARVEST"> 
+      <Failure Value="false"/>   
+      <SkillName Value="s_Crafting Skills"/>  
+      <!-- NOT OPTIONAL -->  
+ <ResourceName Value="r_Gem Ruby"/>  
+      <!-- OPTIONAL   -->
+ <Counter Value="10"/>          
+      <!-- NOT OPTIONAL -->
+ </Trigger>
+   <Points Dynamic="true" Value="" Key="r_Gem Ruby"/> 
+   <Rewards>     
+      <Item Type="UNLOCK_FEAT" Name="hv_harvest_ruby_150"/> 
+  </Rewards> 
+</Feat>

@@ -1,0 +1,196 @@
+// Note: Frequently used shader
+//Default Shader instancing
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+#include "objectbounding.frag"
+#include "vectorfunctions.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+static float RimContribution = 0.1;
+static float3 RimColor = float3(0.9, 0.7, 0.8);
+static float RimEnvironmentColorContribution = 0.85;
+static float RimGlow = 0.05;
+
+static float3 LightRigDirectionViewSpace = float3(-1, -0.4, 0.4);
+static float LightRigContribution = 0.6;
+static float3 LightRigColor = float3(0.75, 0.8, 0.85);
+static float LightRigDiffuseAmount = 0.6;
+static float LightRigSpecularAmount = 2.0;
+static float LightRigEnvironmentColorContribution = 0.7;
+static float LightRigSpecularExponent = 6.0;
+
+static float MinDistanceToFadeCharacterLights = 4.0;
+static float MaxDistanceToFadeCharacterLights = 8.0;
+
+struct CustomVSOutput
+{
+    float4 Pos				: POSITION;
+	float3 WorldTangent		: TANGENT;
+	float3 WorldBinormal		: BINORMAL;
+    float3 WorldNormal		: TEXCOORD0;
+    float3 WorldEyeVec		: TEXCOORD1;
+	float2 Tc				: TEXCOORD2;
+	float4 ZPos				: TEXCOORD3;
+	float3 ModelPos			: TEXCOORD4;
+    float3 WorldPos			: TEXCOORD5;
+	float  Fog				: TEXCOORD6;
+	float4 MappingWeights	: TEXCOORD7;
+	
+};
+
+//Tell that this one is an instancing shader
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+float psin(float x) {return sin(x) * 0.5 + 0.5;}
+
+CustomVSOutput Unwrap(STD_VS_INSTANCE_INPUT Input)
+{
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE_VPAINT(Input);
+	
+	CustomVSOutput O;
+	O.Pos = Output.Pos;
+	O.WorldTangent = Output.WorldTangent;
+	O.WorldBinormal = Output.WorldBinormal;
+    O.WorldNormal = Output.WorldNormal;
+	O.WorldNormal = Output.WorldNormal;
+    O.WorldEyeVec = Output.WorldEyeVec;
+	O.Tc = Output.Tc;
+	O.ZPos = Output.ZPos;
+	O.ModelPos = Input.Pos;
+    O.WorldPos = Output.WorldPos;
+	O.Fog = Output.Fog;
+	O.MappingWeights = Output.Misc;
+/*
+	float3 AbsNormal = abs(Input.Norm);
+	O.MappingWeights.xyz = AbsNormal / (AbsNormal.x + AbsNormal.y + AbsNormal.z);
+	O.MappingWeights.w = 1.0 - Output.Misc.b; // because the default vertex color is white
+*/
+	return O;
+}
+
+STD_PS_OUTPUT_3 PS(CustomVSOutput Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+	float4 NormalSample = SurfaceColor.g * 0.2;
+	
+	float SpecularContribution = NormalSample.w;
+	float SunSpecularExponent = lerp(20,40,RAIN_FACTOR);
+	
+	float3 WorldNormal = normalize(Input.WorldNormal);
+	float3 Nn = WorldNormal;
+	float3 Vn = normalize(Input.WorldEyeVec);
+
+#ifndef LOW_SHADER_QUALITY
+	NormalSample = tex2D(LinearSampler_Normal, Input.Tc);
+	SpecularContribution = NormalSample.w;
+	
+	float3 WorldTangent = normalize(Input.WorldTangent);
+	float3 WorldBinormal = normalize(Input.WorldBinormal);//normalize(cross(WorldNormal, WorldTangent));
+	
+	float3 BumpNormal = 3.0 * (NormalSample.xyz - float3(0.5, 0.5, 0.5));
+	Nn = normalize(WorldNormal + BumpNormal.x * WorldTangent + BumpNormal.y * WorldBinormal);
+#endif
+	
+	SpecularContribution = lerp(SpecularContribution,SpecularContribution*0,SNOW_FACTOR);
+	SpecularContribution = lerp(SpecularContribution,SpecularContribution*1.5,RAIN_FACTOR);
+	
+	float3 Ln = -PLANET_LIGHTDIR_COMMON;
+	float SunSpecularContribution = lerp(SpecularContribution,SpecularContribution*2.5,saturate(dot(Ln,Vn)));
+	float4 Sunlight = lightPixelSpecularDiffuseWrapRaw(Nn, Vn, SunSpecularExponent, STANDARD_PROP_DIFFUSE_WRAP, SunSpecularContribution);
+	
+	float3 Weather = 0;
+#ifndef LOW_SHADER_QUALITY
+	Weather = applyAtmosphere_Weapons(SurfaceColor.xyz,Nn,Vn);
+#else
+	Weather = applyAtmosphere_Animated_Monsters_Old(SurfaceColor.xyz,Nn,Input.Tc * 0.5);
+#endif
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, STANDARD_PROP_SPECULAR_EXPONENT, 
+			STANDARD_PROP_DIFFUSE_WRAP, SpecularContribution, Vn, LightParams[i]);
+	}
+#endif
+
+	//Output.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight);
+	Output.Color.xyz = combineWeatherIllumination3anim(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, SurfaceColor.xyz, Sunlight, DynamicLight, 0, Weather.xyz);
+	Output.Color.w = 0;
+	
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, SpecularContribution);
+#endif
+
+#ifndef LOW_SHADER_QUALITY
+	// Lightrig light direction
+	float3 CameraUp = float3(0, 1, 0);
+	float3 CameraRight = normalize(cross(CameraUp, CamDir));
+	CameraUp = normalize(cross(CamDir, CameraRight));
+	float3 LightRigDirection = normalize(LightRigDirectionViewSpace.x * CameraRight + LightRigDirectionViewSpace.y * CameraUp + LightRigDirectionViewSpace.z * CamDir);
+
+	// Rim lighting
+	float rdn = saturate(dot(-Vn, Nn));
+	rdn = saturate(1.0 - rdn - 0.4);
+	rdn = smoothstep(0, 1, rdn);
+	//rdn = pow(rdn, 10);
+	
+	// light rig
+	float4 LR = lightPixelSpecularDiffuseWrapRaw(LightRigDirection, Nn, Vn, LightRigSpecularExponent, STANDARD_ANIMATION_DIFFUSE_WRAP, SpecularContribution * 1.2);
+	float3 LightRigTotal = LightRigDiffuseAmount * LR.xyz + LightRigSpecularAmount * LR.w;
+
+	float3 TotalCharacterLights = RimContribution * rdn * lerp(RimColor, ATMOSPHERE_AMBIENT, RimEnvironmentColorContribution);
+	TotalCharacterLights += LightRigContribution * lerp(LightRigColor, ATMOSPHERE_AMBIENT, LightRigEnvironmentColorContribution) * SurfaceColor .xyz * LightRigTotal * smoothstep(MaxDistanceToFadeCharacterLights, MinDistanceToFadeCharacterLights, length(Input.WorldPos));
+	Output.Color.xyz += lerp(TotalCharacterLights,TotalCharacterLights*0.5,SNOW_FACTOR);
+	Output.Color.w += RimGlow * dot(TotalCharacterLights, TotalCharacterLights);
+
+	//Output.Color = LR.w;
+	//Output.Color = rdn;
+	//Output.Color = Sunlight.w;
+#endif
+
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+    
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        //VertexShader = compile vs_3_0 STD_VERTEX_SHADER_INSTANCE_VPAINT();
+		VertexShader = compile vs_3_0 Unwrap();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

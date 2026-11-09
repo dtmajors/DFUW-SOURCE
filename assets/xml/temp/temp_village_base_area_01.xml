@@ -1,0 +1,171 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_Generic Prop" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="MESHOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="false" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <SFString Value="temp_village_base_area_01.x" />
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="TRUE" />
+                    <SFString Value="ShaderDefault.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader1>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                </SubsetShaders>
+            </Normal>
+            <NumberOfSubsets>
+                <SFInteger Value="2" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="temp_tex_pink_01.bmp" />
+                    </Texture0>
+                </Subset0>
+                <Subset1>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset1>
+            </DefaultTextures>
+        </Shaders>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-74.9999847412" Y=".0000000000" Z="-74.9999847412" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="74.9999847412" Y="30.0495777130" Z="74.9999847412" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="10.5329399109" Y="27.6812210083" Z="-2.4289281368" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="90.1581649780" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation>
+                    <Subset0>
+                        <BoundingBox>
+                            <Min>
+                                <SFVector3 X="-74.9999847412" Y=".0000000000" Z="-74.9999847412" />
+                            </Min>
+                            <Max>
+                                <SFVector3 X="74.9999847412" Y="30.0495777130" Z="74.9999847412" />
+                            </Max>
+                        </BoundingBox>
+                        <BoundingSphere>
+                            <Center>
+                                <SFVector3 X="10.5329399109" Y="27.6812210083" Z="-2.4289281368" />
+                            </Center>
+                            <Radius>
+                                <SFFloat Value="90.1581649780" />
+                            </Radius>
+                        </BoundingSphere>
+                    </Subset0>
+                    <Subset1>
+                        <BoundingBox>
+                            <Min>
+                                <SFVector3 X="-40.3882179260" Y=".0000000000" Z="-74.9999847412" />
+                            </Min>
+                            <Max>
+                                <SFVector3 X="40.3882141113" Y="30.0495777130" Z="74.9999847412" />
+                            </Max>
+                        </BoundingBox>
+                        <BoundingSphere>
+                            <Center>
+                                <SFVector3 X="11.6545820236" Y="29.0417442322" Z="-2.6875822544" />
+                            </Center>
+                            <Radius>
+                                <SFFloat Value="88.5138092041" />
+                            </Radius>
+                        </BoundingSphere>
+                    </Subset1>
+                </SubsetInformation>
+            </BoundingInformation>
+        </VisibilityInformation>
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="Static" />
+        <WaterTransition>
+            <Submerged Value="-18.0316329956" />
+            <Surface Value="18.0316329956" />
+            <Touching Value="54.0948989868" />
+        <Floating Value="0.0" /></WaterTransition>
+    </PhysicsInformation>
+    <VersionInformation Major="1" Minor="0" />
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFAABBTREECOLLISIONSCHEME" />
+                <FileName Value="temp_village_base_area_01.xSFAABBTREECOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingBox>
+                <Min>
+                    <SFVector3 X="-74.9999847412" Y=".0000000000" Z="-74.9999847412" />
+                </Min>
+                <Max>
+                    <SFVector3 X="74.9999847412" Y="30.0495777130" Z="74.9999847412" />
+                </Max>
+            </BoundingBox>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="10.5329399109" Y="27.6812210083" Z="-2.4289281368" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="90.1581649780" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+    <MassCenter>
+        <SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+    </MassCenter>
+</SFObject>

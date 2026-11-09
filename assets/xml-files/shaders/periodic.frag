@@ -1,0 +1,23 @@
+//  Procedural Stuff
+//
+//
+//
+
+#ifndef __PERIODIC__FRAG__
+#define __PERIODIC__FRAG__
+
+#define SF_PERIODIC_SIN 1
+#define SF_PERIODIC_TRIANGLE 2
+#define SF_PERIODIC_SQUARE 3
+#define SF_PERIODIC_SAWTOOTH 4
+#define SF_PERIODIC_INVERSESAWTOOTH 5
+#define SF_PERIODIC_SIGMOIDAL 6
+#define SF_PERIODIC_BRACKETED 7
+#define SF_PERIODIC_SAWTOOTH_NO_FLOOR 8
+
+#define SF_X_AXIS 1
+#define SF_Y_AXIS 2
+#define SF_Z_AXIS 4
+
+
+#endif

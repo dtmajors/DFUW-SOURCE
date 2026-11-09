@@ -1,0 +1,32 @@
+<quest quest_id="102" category="side_quest" tag="Lighthouse Letter" published="False" valid="True">
+	<title>Lighthouse Letter</title>
+	<description>A mysterious letter found on top of a lighthouse.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="lighthouse_letter">
+			<conditions>
+				<condition type="object_interaction" id="0" value="1" tag="An Object Interaction Condition" resource_name="r_qt love letter lighthouse" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="4" tag="The Letter's Writtings">
+			<journal_entry>&quot;I really didn&apos;t want to leave the wagon. I wanted to meet you there but as soon as the guards mysteriously disappeared, I knew I had to leave the bridge and get as far away as I could. This is the first place I run to. You remember this place? I remember you telling me about your people and how much misunderstood they are. I didn&apos;t really care. All I wanted was look into your eyes. Here you promised me that you&apos;d take me to see your city and watch the ways of your people... Look for my next letter at the cave where you took me to see the Sadayel ritual. I remember we were hiding and that I was so afraid that they would catch us. You know the cave I&apos;m talking about right? The one with the beautiful waters and the big tree inside.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>&quot;...fire...&quot;</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="0" tag="An Unlock Quest Item Within The Quest Action" item_id="0" />
+			</actions>
+		</node>
+		<node type="end_node" id="6" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="4" value="1" />
+		<edge id="6" from="4" to="7" value="0" />
+		<edge id="7" from="7" to="6" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Lighthouse Letter" image_locked="qc_102_letter_lighthouse_locked.png" image_unlocked="qc_102_letter_lighthouse_unlocked.png">
+		<name_locked>Locked</name_locked>
+		<name_unlocked>A letter found on a lighthouse.</name_unlocked>
+		<description_locked>Locked</description_locked>
+		<description_unlocked>&amp;quot;I really didn&amp;apos;t want to leave the wagon. I wanted to meet you there but as soon as the guards mysteriously disappeared, I knew I had to leave the bridge and get as far away as I could. This is the first place I run to. You remember this place? I remember you telling me about your people and how much misunderstood they are. I didn&amp;apos;t really care. All I wanted was look into your eyes. Here you promised me that you&amp;apos;d take me to see your city and watch the ways of your people... Look for my next letter at the cave where you took me to see the Sadayel ritual. I remember we were hiding and that I was so afraid that they would catch us. You know the cave I&amp;apos;m talking about right? The one with the beautiful waters and the big tree inside.&amp;quot;</description_unlocked>
+	</quest_item>
+</quest>

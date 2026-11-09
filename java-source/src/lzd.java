@@ -1,0 +1,166 @@
+/*
+ * Decompiled with CFR.
+ */
+public final class lzd
+extends lpa {
+    private static final lzd tQN = new lzd();
+    @lok(value="Aer Tithil")
+    @lpl(value="Display name for city Aer Tithil")
+    public static final lox tQO = tQN.BC("aer_tithil");
+    @lok(value="Aerngardh")
+    @lpl(value="Display name for city Aerngardh")
+    public static final lox tQP = tQN.BC("aerngardh");
+    @lok(value="Alberworth")
+    @lpl(value="Display name for city Alberworth")
+    public static final lox tQQ = tQN.BC("alberworth");
+    @lok(value="Aldan Enak")
+    @lpl(value="Display name for city Aldan Enak")
+    public static final lox tQR = tQN.BC("aldan_enak");
+    @lok(value="Andruk")
+    @lpl(value="Display name for city Andruk")
+    public static final lox tQS = tQN.BC("andruk");
+    @lok(value="Angfrost")
+    @lpl(value="Display name for city Angfrost")
+    public static final lox tQT = tQN.BC("angfrost");
+    @lok(value="Apautan")
+    @lpl(value="Display name for city Apautan")
+    public static final lox tQU = tQN.BC("apautan");
+    @lok(value="Aradoth")
+    @lpl(value="Display name for city Aradoth")
+    public static final lox tQV = tQN.BC("aradoth");
+    @lok(value="Brockmoore")
+    @lpl(value="Display name for city Brockmoore")
+    public static final lox tQW = tQN.BC("brockmoore");
+    @lok(value="Calfardar")
+    @lpl(value="Display name for city Calfardar")
+    public static final lox tQX = tQN.BC("calfardar");
+    @lok(value="Caxtla")
+    @lpl(value="Display name for city Caxtla")
+    public static final lox tQY = tQN.BC("caxtla");
+    @lok(value="Darkmoore")
+    @lpl(value="Display name for city Darkmoore")
+    public static final lox tQZ = tQN.BC("darkmoore");
+    @lok(value="Elharrat")
+    @lpl(value="Display name for city Elharrat")
+    public static final lox tRa = tQN.BC("elharrat");
+    @lok(value="Erinthel")
+    @lpl(value="Display name for city Erinthel")
+    public static final lox tRb = tQN.BC("erinthel");
+    @lok(value="Eronetil")
+    @lpl(value="Display name for city Eronetil")
+    public static final lox tRc = tQN.BC("eronetil");
+    @lok(value="Hammerdale")
+    @lpl(value="Display name for city Hammerdale")
+    public static final lox tRd = tQN.BC("hammerdale");
+    @lok(value="Izkand")
+    @lpl(value="Display name for city Izkand")
+    public static final lox tRe = tQN.BC("izkand");
+    @lok(value="Jeradan")
+    @lpl(value="Display name for city Jeradan")
+    public static final lox tRf = tQN.BC("jeradan");
+    @lok(value="Khanruk")
+    @lpl(value="Display name for city Khanruk")
+    public static final lox tRg = tQN.BC("khanruk");
+    @lok(value="Kharhendak")
+    @lpl(value="Display name for city Kharhendak")
+    public static final lox tRh = tQN.BC("kharhendak");
+    @lok(value="Kholesh")
+    @lpl(value="Display name for city Kholesh")
+    public static final lox tRi = tQN.BC("kholesh");
+    @lok(value="Khosgar")
+    @lpl(value="Display name for city Khosgar")
+    public static final lox tRj = tQN.BC("khosgar");
+    @lok(value="Kvitstein")
+    @lpl(value="Display name for city Kvitstein")
+    public static final lox tRk = tQN.BC("kvitstein");
+    @lok(value="Long March")
+    @lpl(value="Display name for city Long March")
+    public static final lox tRl = tQN.BC("long_march");
+    @lok(value="Lost Untilik")
+    @lpl(value="Display name for city Lost Untilik")
+    public static final lox tRm = tQN.BC("lost_untilik");
+    @lok(value="Mar Shral")
+    @lpl(value="Display name for city Mar Shral")
+    public static final lox tRn = tQN.BC("mar_shral");
+    @lok(value="Marithain")
+    @lpl(value="Display name for city Marithain")
+    public static final lox tRo = tQN.BC("marithain");
+    @lok(value="Mathyra")
+    @lpl(value="Display name for city Mathyra")
+    public static final lox tRp = tQN.BC("mathyra");
+    @lok(value="Mavengar")
+    @lpl(value="Display name for city Mavengar")
+    public static final lox tRq = tQN.BC("mavengar");
+    @lok(value="Mehatil")
+    @lpl(value="Display name for city Mehatil")
+    public static final lox tRr = tQN.BC("mehatil");
+    @lok(value="Moherah")
+    @lpl(value="Display name for city Moherah")
+    public static final lox tRs = tQN.BC("moherah");
+    @lok(value="Moradar")
+    @lpl(value="Display name for city Moradar")
+    public static final lox tRt = tQN.BC("moradar");
+    @lok(value="Rhagaus")
+    @lpl(value="Display name for city Rhagaus")
+    public static final lox tRu = tQN.BC("rhagaus");
+    @lok(value="Serruk")
+    @lpl(value="Display name for city Serruk")
+    public static final lox tRv = tQN.BC("serruk");
+    @lok(value="Shargal")
+    @lpl(value="Display name for city Shargal")
+    public static final lox tRw = tQN.BC("shargal");
+    @lok(value="Skaranibben")
+    @lpl(value="Display name for city Skaranibben")
+    public static final lox tRx = tQN.BC("skaranibben");
+    @lok(value="Somerstone")
+    @lpl(value="Display name for city Somerstone")
+    public static final lox tRy = tQN.BC("somerstone");
+    @lok(value="Spiderfang")
+    @lpl(value="Display name for city Spiderfang")
+    public static final lox tRz = tQN.BC("spiderfang");
+    @lok(value="Sunthrone")
+    @lpl(value="Display name for city Sunthrone")
+    public static final lox tRA = tQN.BC("sunthrone");
+    @lok(value="Sweetwater")
+    @lpl(value="Display name for city Sweetwater")
+    public static final lox tRB = tQN.BC("sweetwater");
+    @lok(value="Tenaland")
+    @lpl(value="Display name for city Tenaland")
+    public static final lox tRC = tQN.BC("tenaland");
+    @lok(value="Tiquiya")
+    @lpl(value="Display name for city Tiquiya")
+    public static final lox tRD = tQN.BC("tiquiya");
+    @lok(value="Tirghan")
+    @lpl(value="Display name for city Tirghan")
+    public static final lox tRE = tQN.BC("tirghan");
+    @lok(value="Tlaloc")
+    @lpl(value="Display name for city Tlaloc")
+    public static final lox tRF = tQN.BC("tlaloc");
+    @lok(value="Tughri")
+    @lpl(value="Display name for city Tughri")
+    public static final lox tRG = tQN.BC("tughri");
+    @lok(value="Ul'Hamra")
+    @lpl(value="Display name for city Ul'Hamra")
+    public static final lox tRH = tQN.BC("ul_hamra");
+    @lok(value="Ul'Sulak")
+    @lpl(value="Display name for city Ul'Sulak")
+    public static final lox tRI = tQN.BC("ul_sulak");
+    @lok(value="Unelak")
+    @lpl(value="Display name for city Unelak")
+    public static final lox tRJ = tQN.BC("unelak");
+    @lok(value="Vinterhein")
+    @lpl(value="Display name for city Vinterhein")
+    public static final lox tRK = tQN.BC("vinterhein");
+    @lok(value="Zaghuroth")
+    @lpl(value="Display name for city Zaghuroth")
+    public static final lox tRL = tQN.BC("zaghuroth");
+
+    public lzd() {
+        super("Holdings");
+    }
+
+    public lzd(String string) {
+        super("Holdings." + string);
+    }
+}
+

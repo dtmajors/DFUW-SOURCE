@@ -1,0 +1,155 @@
+<quest quest_id="11" category="training_quest" tag="Bowl of Earth and Sea" published="False" valid="True">
+	<title>Bowl of Earth and Sea</title>
+	<description>Talk to Magic Supplier to learn about the importance of digging, how much fun fishing is, hunting wildlife and cooking nutritious meals.</description>
+	<nodes>
+		<node type="end_node" id="1" tag="reward" />
+		<node type="event_simple" id="2" tag="" optional_tasks="True">
+			<instruction>Talk to a Magic Supplier</instruction>
+			<journal_entry>If you are feeling hungry or maybe a bit weak, you might have wondered what it feels like to cook your own food. There are various foodstuff one can use in $[Skill.C.s_cooking_NameSingular], including $[Resource.M.r_meat_NameSingular] and a variety of fish, but most importantly the basic food materials like $[Resource.P.r_potato_NamePlural], $[Resource.C.r_carrot_NamePlural], and $[Resource.O.r_onion_NamePlural], the famous miripoix. While $[Resource.P.r_potato_NamePlural] can be harvested from a  $[Resource.P.r_potato_plant_NameSingular], they can also be dug up using a $[Resource.S.r_shovel_NameSingular] pretty much anywhere, but you cannot just dig them up all the time. These basic food ingredients can also be found in $[Resource.F.r_food_crate_NamePlural] as well as some monsters. Now pick up that $[Resource.S.r_shovel_NameSingular] and give it a try.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_arcanist" />
+				<task type="interact_with_vendor" id="1" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_arcanist" />
+				<task type="interact_with_vendor" id="2" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_arcanist" />
+				<task type="interact_with_vendor" id="3" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_arcanist" />
+				<task type="interact_with_vendor" id="4" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_arcanist" />
+				<task type="interact_with_vendor" id="5" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_arcanist" />
+				<task type="interact_with_vendor" id="6" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_arcanist" />
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_arcanist" />
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_arcanist" />
+				<task type="interact_with_vendor" id="9" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_arcanist" />
+				<task type="interact_with_vendor" id="10" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_arcanist" />
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_arcanist" />
+				<task type="interact_with_vendor" id="12" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_arcanist" />
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_arcanist" />
+				<task type="interact_with_vendor" id="14" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_arcanist" />
+				<task type="interact_with_vendor" id="15" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_arcanist" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="">
+			<instruction>Cook a $[Resource.B.r_baked_potato_NameSingular]</instruction>
+			<journal_entry>Although not considered the pinnacle of the culinary arts, it&apos;s easy, fast and cheap to cook. A $[Resource.B.r_baked_potato_NameSingular] also is not without its nutritious effect. Eat and notice how beneficial it is.</journal_entry>
+			<tasks>
+				<task type="craft_item" id="18" value="1" tag="A Craft Item(s) Task" resource_name="r_Baked Potato" quantity="1">
+					<task_instruction>Bake a $[Resource.P.r_potato_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="">
+			<instruction>Dig up some $[Resource.P.r_potato_NamePlural]</instruction>
+			<journal_entry>Now that you have some $[Resource.P.r_potato_NamePlural], let&apos;s see what tasty stuff you can cook with them. $[Skill.C.s_cooking_NameSingular] is an art, but let&apos;s start with the basics: Find an $[Resource.O.r_oven_NameSingular] and use it to cook a $[Resource.B.r_baked_potato_NameSingular].</journal_entry>
+			<tasks>
+				<task type="harvest_resource" id="17" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Potato" quantity="2">
+					<task_instruction>Harvest 2 $[Resource.P.r_potato_NamePlural]</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="give_item_to_player" id="2" tag="shovel" resource_name="r_Shovel" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="5" tag="">
+			<instruction>Eat a $[Resource.B.r_baked_potato_NameSingular]</instruction>
+			<journal_entry>There&apos;s numerous recipes to cook - some are harder to master than others, so you will need to cook a lot before you are able to learn how to cook all of them. They also require ingredients like $[Resource.S.r_spices_NameSingular], $[Resource.M.r_meat_NameSingular] and Fish. To get some fresh $[Resource.M.r_meat_NameSingular], you will need to find some from the monsters around Agon, or by killing some wildlife, like a $[Resource.D.r_deer_NamePlural]. While relatively rare, wildlife is easy to kill. Go for some hunting - be it a $[Resource.C.r_chicken_white_NameSingular] that is laden with $[Resource.E.r_egg_NamePlural], a $[Resource.F.r_fox_NameSingular] or any small animal or monster and get some $[Resource.M.r_meat_NameSingular]. Remember, not all monsters can be killed for meat.</journal_entry>
+			<tasks>
+				<task type="activate_item" id="19" value="1" tag="An Activate Item Task" resource_name="r_Baked Potato" consume="True">
+					<task_instruction>Eat the $[Resource.B.r_baked_potato_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<instruction>Gather some $[Resource.M.r_meat_NameSingular]</instruction>
+			<journal_entry>Although hunting might not feel really fulfilling, a properly cooked meat will please both the mind and body. Try your hand at cooking some $[Resource.M.r_meat_stew_NameSingular] and have a go at it!</journal_entry>
+			<tasks>
+				<task type="gather_items" id="30" value="1" tag="A Gather Item(s) Task" resource_name="r_Meat" quantity="3" inventory_type="Backpack">
+					<task_instruction>Get 3 $[Resource.M.r_meat_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<tasks>
+				<task type="craft_item" id="24" value="1" tag="A Craft Item(s) Task" resource_name="r_Meat Stew" quantity="1">
+					<task_instruction>Cook a $[Resource.M.r_meat_stew_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<actions>
+				<action type="give_item_to_player" id="1" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_improved Fishing Pole" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<instruction>Equip your fishing pole and go fishing</instruction>
+			<journal_entry>Fishing can be relaxing at times, but what it really boils down to sometimes is, well, stew that. Really, cook some $[Resource.B.r_bass_stew_NameSingular]. Remember that if you&apos;re out in the open, you can always use a $[Resource.C.r_camp_fire_NameSingular] and if you&apos;re lucky enough to own some kind of $[Resource.H.r_house_01_NameSingular] or $[Resource.H.r_house_02_NameSingular] you can also get a $[Resource.S.r_small_oven_NameSingular] to place and use at your leisure.</journal_entry>
+			<tasks>
+				<task type="harvest_resource" id="27" value="1" tag="A Harvest Resource(s) Task" resource_name="r_Bass" quantity="4">
+					<task_instruction>Fish 4 $[Resource.B.r_bass_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<tasks>
+				<task type="craft_item" id="28" value="1" tag="A Craft Item(s) Task" resource_name="r_Bass Stew" quantity="1">
+					<task_instruction>Cook a $[Resource.B.r_bass_stew_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>Feel free to taste your cooking from time to time. The more experienced you become in cooking, the more recipes you will be able to cook and use to your advantage in combat.</journal_entry>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>While meat can be easy to acquire and imparts some benefits for a while, fish can be just as tasty and even more beneficial. To fish, you need either a $[Resource.F.r_fishing_pole_NameSingular] or a $[Resource.S.r_ship_fishing_trawler_NameSingular]. A ship is kind of expensive but you will need it for certain kinds of fish. A $[Resource.F.r_fishing_pole_NameSingular] though is pretty easy to craft or buy and you can still fish on your own, on any body of water. Here&apos;s one - spend some time fishing some $[Resource.B.r_bass_NameSingular].</journal_entry>
+			<tasks>
+				<task type="activate_item" id="29" value="1" tag="An Activate Item Task" resource_name="r_Meat Stew" consume="False">
+					<task_instruction>Taste some $[Resource.M.r_meat_stew_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>Here, take this to help you get started in cooking.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="3" tag="50 potatos" resource_name="r_Potato" quantity="50" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="4" tag="50 onions" resource_name="r_Onion" quantity="50" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="5" tag="10 eggs" resource_name="r_Egg" quantity="10" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="6" tag="10 blueberries" resource_name="r_Blueberries" quantity="10" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="7" tag="10 apple" resource_name="r_Apple" quantity="10" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="8" tag="10 strawber" resource_name="r_Strawberries" quantity="10" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="9" tag="10 wildber" resource_name="r_Wildberries" quantity="10" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="start_node" id="46" tag="">
+			<conditions>
+				<condition type="quest_completion" id="33" value="1" tag="A Quest Completion Condition" quest_id="14" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="1" from="2" to="4" value="1" />
+		<edge id="2" from="4" to="3" value="1" />
+		<edge id="3" from="3" to="5" value="1" />
+		<edge id="4" from="5" to="6" value="1" />
+		<edge id="5" from="6" to="7" value="1" />
+		<edge id="13" from="11" to="13" value="0" />
+		<edge id="7" from="8" to="9" value="0" />
+		<edge id="8" from="9" to="10" value="1" />
+		<edge id="9" from="10" to="11" value="1" />
+		<edge id="14" from="13" to="1" value="0" />
+		<edge id="11" from="7" to="12" value="1" />
+		<edge id="12" from="12" to="8" value="1" />
+		<edge id="47" from="46" to="2" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="1" x="967" y="333" />
+		<node_location id="2" x="167" y="221" />
+		<node_location id="3" x="327" y="332" />
+		<node_location id="4" x="245" y="334" />
+		<node_location id="5" x="388" y="333" />
+		<node_location id="6" x="448" y="334" />
+		<node_location id="7" x="514" y="334" />
+		<node_location id="8" x="627" y="333" />
+		<node_location id="9" x="710" y="334" />
+		<node_location id="10" x="788" y="335" />
+		<node_location id="11" x="872" y="333" />
+		<node_location id="12" x="566" y="262" />
+		<node_location id="13" x="916" y="238" />
+		<node_location id="46" x="39" y="211" />
+	</node_locations>
+</quest>

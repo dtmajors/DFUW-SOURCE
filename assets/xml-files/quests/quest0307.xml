@@ -1,0 +1,139 @@
+<quest quest_id="307" category="lore_quest" tag="The Sadayel" published="False" valid="True">
+	<title>Cold Blood and Hot Trails</title>
+	<description>The retro-ritualistic rite you cast indicated all of the ingredients but, rather than indicate one of the nearby monster tribes as the culprit, it bestowed instead an image of a Sadayel!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="306" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Kill Some Sadayel">
+			<instruction>Interrogate the Sadayel</instruction>
+			<journal_entry>At first, the Sadayel seemed to wholeheartedly claim responsibility for the Fetish.  Even before you even had a chance to ask, the snarling beast, who appeared to be making a spirited attempt at disemboweling you, gleefully gloated how the entire affair was an attempt to punish their Orkish enemies!</journal_entry>
+			<tasks>
+				<task type="kill_object" id="0" value="1" tag="A Kill Object(s) Task" resource_name="r_Sadayels" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="2" tag="">
+			<instruction>Locate the Sadayel Camp to continue your investigation.</instruction>
+			<journal_entry>As you entered the camp, a couple of things seemed to hit you.  First, the stench! Sadayel, it seemed, were not known for their hygienic habits. Second, something was off here.  There were just elements of the campsite that seemed wrong and warranted further investigation.  Third, you were NOT welcome here!</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="9" value="1" tag="A Go To Area Task" area_id="49" />
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="1" tag="An Add Map-Marker to World-Map Action" world_x="5333" world_z="1150" />
+			</actions>
+		</node>
+		<node type="event_simple" id="3" tag="burned letter">
+			<journal_entry>A partially burnt letter indicated a hasty (and unsuccessful) attempt to hide something important! What you could make out from the charred words spoke of a dark client, a dark pact, and the reward for dark deeds! It was a dark note indeed...</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="4" value="1" tag="An Interact With Object Task" resource_name="r_qt sadayel burned letter" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="Kill More Sadayel">
+			<instruction>Interrogate the Sadayel some more!</instruction>
+			<journal_entry>As the first reptilian had not lived long enough to clarify his statement,you decided it would be prudent to ask another.  This rabid fellow seemed to repeat the same thing as his late colleague.  Word for word...</journal_entry>
+			<tasks>
+				<task type="kill_object" id="2" value="1" tag="A Kill Object(s) Task" resource_name="r_Sadayels" quantity="2" />
+			</tasks>
+		</node>
+		<node type="end_node" id="5" tag="" />
+		<node type="event_simple" id="12" tag="Kill More Sadayel">
+			<instruction>Continue your Interrogation of  the Sadayel.</instruction>
+			<journal_entry>Your third attempt to garner some truth from the lizardfolk proved a little more successful.  The Sadayel, perhaps inspired to truth by the plight of his late brethren, squealed something about a deal with someone else.  The Sadayel were to take responsibility for the  ritual of the fetish should anyone ask in exchange for weapons and armors far beyond their craftsmanship.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="22" value="1" tag="A Kill Object(s) Task" resource_name="r_Sadayels" quantity="5" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="7" tag="Return to the Shaman">
+			<instruction>Return to the Shaman of the Burning Path in Nerzok.</instruction>
+			<journal_entry>The Shaman&apos;s already brooding brow furrowed even further upon your revelations and he stood, stoic as the volcano above, pondering for some long moments.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="v13_quest_ork_shaman" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="armor rack">
+			<journal_entry>The armors that stood on racks around the camp, given that they looked able to withstand more than the average pebble, looked highly out of place here.  Hands belonging to another species had forged these.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="10" value="1" tag="An Interact With Object Task" resource_name="r_qt sadayel armor rack" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="10" tag="weapon rack">
+			<journal_entry>The weapons you found, housed on racks within the camp, definitely did not seem something that belonged clutched in the primitive claws of the Sadayel.  Somebody had delivered these.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="18" value="1" tag="An Interact With Object Task" resource_name="r_qt sadayel weapon rack" />
+			</tasks>
+		</node>
+		<node type="event_join" id="11" tag="">
+			<journal_entry>It was fairly evident therefore that the Sadayel were neither working alone nor, in fact, even the &apos;brains&apos; (and i use the term loosely) behind the entire affair.  An affair that seemed even more shrouded in mystery than when you began!</journal_entry>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>Curioser and curiosier, it seemed that your twisted trail led farther afield.  It was time to find the Sadayel, a primitive form of lizardfolk with a known enmity for the Orks, and see how they would fit into the gruesome puzzle of the Fetish.</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<journal_entry>There was definitely something wrong with their story.</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>In attempt to stay your deathstroke it even babbled something about a letter indicating as much that had probably not been burnt yet.</journal_entry>
+		</node>
+		<node type="event_simple" id="16" tag="impossible conditions" optional_tasks="False">
+			<tasks>
+				<task type="go_to_area" id="23" value="1" tag="A Go To Area Task" area_id="3" />
+				<task type="go_to_area" id="24" value="1" tag="A Go To Area Task" area_id="17" />
+			</tasks>
+		</node>
+		<node type="end_node" id="17" tag="impossible end" />
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>It was now perhaps time to return to the Shaman of the Burning Path.</journal_entry>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>He agreed that the entire situation, the use of three cultures ritualistic practices and the Sadayel involvement stank like a week old carcass.  This kind of cunning and the depth of the coverup could never have originated from the primitive minds of the Sadayel.</journal_entry>
+		</node>
+		<node type="event_simple" id="21" tag="">
+			<journal_entry>Furthermore, it could be no small coincidence that the Island you had visited lay directly on the border of Orkish and Dwarvish lands.  One lead, therefore, may lay in the  Amethyst Athenaeum, an ancient repository of knowledge in the Tovarr lands run by the Acolytes of the Watcher.  Surely, if the villain behind all of this had researched this spellcraft it would have been done there.  If you were to retrace his or her steps, that would be your next destination!</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="18" from="0" to="13" value="1" />
+		<edge id="1" from="2" to="1" value="1" />
+		<edge id="2" from="1" to="4" value="1" />
+		<edge id="22" from="12" to="15" value="1" />
+		<edge id="4" from="2" to="3" value="1" />
+		<edge id="20" from="4" to="14" value="1" />
+		<edge id="27" from="7" to="20" value="1" />
+		<edge id="9" from="2" to="8" value="1" />
+		<edge id="10" from="2" to="10" value="1" />
+		<edge id="11" from="10" to="11" value="1" />
+		<edge id="12" from="8" to="11" value="1" />
+		<edge id="13" from="3" to="11" value="1" />
+		<edge id="25" from="11" to="19" value="0" />
+		<edge id="19" from="13" to="2" value="0" />
+		<edge id="21" from="14" to="12" value="0" />
+		<edge id="23" from="15" to="16" value="0" />
+		<edge id="24" from="16" to="17" value="1" />
+		<edge id="26" from="19" to="7" value="0" />
+		<edge id="28" from="20" to="21" value="0" />
+		<edge id="29" from="21" to="5" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="56" y="395" />
+		<node_location id="1" x="393" y="474" />
+		<node_location id="2" x="214" y="394" />
+		<node_location id="3" x="448" y="315" />
+		<node_location id="4" x="521" y="472" />
+		<node_location id="5" x="986" y="390" />
+		<node_location id="12" x="671" y="470" />
+		<node_location id="7" x="827" y="389" />
+		<node_location id="8" x="450" y="217" />
+		<node_location id="10" x="451" y="98" />
+		<node_location id="11" x="621" y="213" />
+		<node_location id="13" x="129" y="333" />
+		<node_location id="14" x="583" y="399" />
+		<node_location id="15" x="762" y="569" />
+		<node_location id="16" x="881" y="573" />
+		<node_location id="17" x="987" y="571" />
+		<node_location id="19" x="727" y="303" />
+		<node_location id="20" x="864" y="319" />
+		<node_location id="21" x="911" y="248" />
+	</node_locations>
+</quest>

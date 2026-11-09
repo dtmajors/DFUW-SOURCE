@@ -1,0 +1,265 @@
+<XML>
+	<VersionInformation Major="0" Minor="1" Incremental="0" />
+	
+	<!--  CRAFTING SKILLS CAN NOT BE EXECUTED WHILE THERE IS A SHIELD ATTACHED -->
+	<Mapping SkillName="s_Crafting Skills">
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType PostureMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="PostureMode Crouching" />
+			</SFModeValueName>
+		</SFConstraint>
+	    <SFConstraint>
+	        <SFConstraintName>
+	            <SFString Value="Inventory_Item_In_Layer_Constraint" />
+	        </SFConstraintName>
+	        <SFLayerName>
+	            <SFString Value="Layer_Shield" />
+	        </SFLayerName>
+	        <SFInvertCheck>
+	            <SFBool Value="FALSE" />
+	        </SFInvertCheck>
+	        <SFCheckName>
+	            <SFString Value="Check_Initial_And_Performing" />
+	        </SFCheckName>
+	    </SFConstraint>
+	</Mapping>
+	
+	<!--  SPELLS CAN NOT BE EXECUTED WHILE PLAYER IS ON A MOUNT OR IN WATER -->
+	<Mapping SkillName="s_Spells">
+		<SFException SkillName = "s_staff bolt"/>
+		<SFException SkillName = "s_disabling bolt"/>
+		<!-- <SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode Submerged In Water" />
+			</SFModeValueName>
+		</SFConstraint>	
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode On Water Surface" />
+			</SFModeValueName>
+		</SFConstraint>			 -->
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType PostureMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="PostureMode Mounted" />
+			</SFModeValueName>
+		</SFConstraint>				
+	</Mapping>
+	
+	<!--  RANGE SKILLS CAN NOT BE EXECUTED WHILE PLAYER IS ON A MOUNT OR IN WATER -->
+	<Mapping SkillName="s_Ranged Skills">
+		<SFException SkillName = "s_Archery"/>
+		<SFException SkillName = "s_disabling Shot"/>
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType PostureMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="PostureMode Mounted" />
+			</SFModeValueName>
+		</SFConstraint>				
+		<!-- <SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode Submerged In Water" />
+			</SFModeValueName>
+		</SFConstraint>	
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode On Water Surface" />
+			</SFModeValueName>
+		</SFConstraint>				 -->	
+	</Mapping>	
+	
+	<!--  COMMON SKILLS CAN NOT BE EXECUTED WHILE PLAYER IS ON A MOUNT -->	
+	<Mapping SkillName="s_Common Skills">
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType PostureMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="PostureMode Mounted" />
+			</SFModeValueName>
+		</SFConstraint>
+		<!--
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode Submerged In Water" />
+			</SFModeValueName>
+		</SFConstraint>	
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode On Water Surface" />
+			</SFModeValueName>
+		</SFConstraint>
+		-->
+	</Mapping>	
+
+	<!--  MELEE SPECIAL SKILLS CAN NOT BE EXECUTED WHILE PLAYER IS ON A MOUNT OR IN WATER -->
+	<Mapping SkillName="s_Melee Special Skills">
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType PostureMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="PostureMode Mounted" />
+			</SFModeValueName>
+		</SFConstraint>			
+	<!-- 	<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode Submerged In Water" />
+			</SFModeValueName>
+		</SFConstraint>	
+		<SFConstraint>
+			<SFConstraintName>
+				<SFString Value="Object_State_Value_Constraint" />
+			</SFConstraintName>
+			<SFCheckName>
+				<SFString Value="Check_Initial_And_Performing" />
+			</SFCheckName>
+			<SFInvertCheck>
+				<SFBool Value="TRUE" />
+			</SFInvertCheck>
+			<SFModeName>
+				<SFString Value="ModeType WaterContactMode" />
+			</SFModeName>
+			<SFModeValueName>
+				<SFString Value="WaterContactMode On Water Surface" />
+			</SFModeValueName>
+		</SFConstraint>			 -->
+	</Mapping>	
+	
+</XML>

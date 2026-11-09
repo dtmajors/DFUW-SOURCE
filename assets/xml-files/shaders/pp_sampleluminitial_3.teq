@@ -1,0 +1,47 @@
+static const float3 LUMINANCE_VECTOR  = float3(0.2125f, 0.7154f, 0.0721f);
+float2 SampleOffsets[16];
+
+#include "stdstate.frag"
+#include "RGBE.frag"
+
+sampler s0 : register(s0);
+
+float4 SampleLumInitial(in float2 vScreenPosition : TEXCOORD0) : COLOR
+{
+	float3 vSample = 0.0f;
+	float fLogLumSum = 0.0f;
+
+	for(int i = 0; i < 16; i++)
+	{
+		// Compute the sum of log(luminance) throughout the sample points
+		vSample = interpretAlphaGlowColor(tex2D(s0, vScreenPosition + SampleOffsets[i]));
+		float samp = dot(vSample.xyz, LUMINANCE_VECTOR);
+		/*if (isnan(samp)) samp = 0.5;*/
+		samp = clamp(samp, MIN_LUMINANCE, MAX_LUMINANCE);
+		samp = log(samp);
+		fLogLumSum += samp;
+	}
+
+	// Divide the sum to complete the average
+	fLogLumSum /= 16;
+	
+	return float4(fLogLumSum, fLogLumSum, fLogLumSum, 1.0f);
+}
+
+technique t0
+{
+    pass P0
+    {    
+		STD_STATE;
+		Lighting = false;
+		AlphaBlendEnable = FALSE;
+		AlphaTestEnable = FALSE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+		ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+		CullMode = CCW;
+
+		VertexShader = null;
+		PixelShader  = compile ps_3_0 SampleLumInitial();
+    }
+}

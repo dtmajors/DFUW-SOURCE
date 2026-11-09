@@ -1,0 +1,221 @@
+<Relics Enabled = "true" Testing = "false" TestingPosition = "[7279.5723,224.33633,509]" SpawnInWater = "true" DistanceCheck = "20.0" RelicChestTimeToLive = "86400" TimeBetweenChests = "60">	
+	<!-- TimeToLive set to 24hours - time to respawn -->
+	<DelayConfing>
+		<UnlockRelicChest Delay = "5"  AnimationState = "relic_interact1"/>
+		<PlaceRelic       Delay = "15" AnimationState = "relic_interact3"/>
+		<StealRelic       Delay = "15" AnimationState = "relic_interact4"/>
+		<SacrificeRelic   Delay = "30" AnimationState = "relic_destroy"/>		
+	</DelayConfing>
+	
+	<!-- Player personal buff upon relic destroy -->
+	<Buffs AttributeName = "RPB" TimeToLive = "360"> <!-- In minutes, 12 hours  -->
+		<Attributes>
+			<Attribute Name = "Health Max"  Value = "4000"/>
+			<Attribute Name = "Mana Max"    Value = "800"/>
+			<Attribute Name = "Stamina Max" Value = "800"/>
+		</Attributes>
+		<Special>
+			<HealEffectMagnitude Value = "0.1"/>
+			<CriticalHits        Value = "true"/>
+		</Special>
+	</Buffs>			
+	
+	<!-- Build = 1(western build)  Build = 2(korean build) Build = 0(whatever build) -->
+	<!-- ALL RELICS ATTRIBUTES ARE PLAYER ATTRIBUTES AND WE CAN CHANGE THE MIN MAX VALUES -->
+
+	<!-- Relic Of Ability -->
+	<Relic RelicID = "RELIC_2" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_02" InactiveSpecialEffectName = "se_relic_base_02_inactive">
+		<ChestResourceName       Value = "r_relic 02 world" />
+		<WorldObjectResourceName Value = "r_relic_02" />
+		<PlayerEffect            Value = "se_relic_back_02" />
+		<DestroySpecialEffectName Value = ""/>		
+		<Attributes>
+			<Attribute Name = "Max Health Bonus" Type = "Float"   Value = "50.0"  Scope = "GlobalPlayerScope"/>				
+			<Attribute Name = "Max Mana Bonus"   Type = "Float"   Value = "50.0"  Scope = "GlobalPlayerScope"/>	 		
+		</Attributes>
+	</Relic>
+
+	<!-- Relic Of Avidity -->
+	<Relic RelicID = "RELIC_3" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_03" InactiveSpecialEffectName = "se_relic_base_03_inactive">
+		<ChestResourceName       Value = "r_relic 03 world" />
+		<WorldObjectResourceName Value = "r_relic_03" />
+		<PlayerEffect            Value = "se_relic_back_03" />
+		<DestroySpecialEffectName Value = ""/>		
+		<Attributes>
+			<Attribute Name = "Max Mana Bonus"    Type = "Float"   Value = "50.0"  Scope = "GlobalPlayerScope"/>	
+			<Attribute Name = "Max Stamina Bonus" Type = "Float"   Value = "50.0"  Scope = "GlobalPlayerScope"/>	 		
+		</Attributes>
+	</Relic>
+
+	<!-- Relic Of Alacrity -->
+	<Relic RelicID = "RELIC_4" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_04" InactiveSpecialEffectName = "se_relic_base_04_inactive">
+		<ChestResourceName       Value = "r_relic 04 world" />
+		<WorldObjectResourceName Value = "r_relic_04" />
+		<PlayerEffect            Value = "se_relic_back_04" />
+		<DestroySpecialEffectName Value = ""/>		
+		<Attributes>
+			<Attribute Name = "Max Stamina Bonus" Type = "Float"   Value = "50.0"  Scope = "GlobalPlayerScope"/>				
+			<Attribute Name = "Max Health Bonus"  Type = "Float"   Value = "50.0"  Scope = "GlobalPlayerScope"/>	 		
+		</Attributes>
+	</Relic>
+
+	<!-- Relic Of Mass Destruction -->
+
+	<Relic RelicID = "RELIC_7" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_07" InactiveSpecialEffectName = "se_relic_base_07_inactive">
+		<ChestResourceName       Value = "r_relic 07 world" />
+		<WorldObjectResourceName Value = "r_relic_07" />
+		<PlayerEffect            Value = "se_relic_back_07" />
+		<DestroySpecialEffectName Value = ""/>			
+		<Attributes>
+			<!-- Increase cannon damage multiplier, [flat value 0.0f - 500.0f] (Magnitude + Attribute Value)-->	
+			<Attribute Name = "Relic RCDAM" Type = "Float"   Value = "40.0"  Scope = "GlobalPlayerScope"/>				 		
+		</Attributes>
+	</Relic>
+	
+	
+	<!-- Relic Of Brawn -->
+	<Relic RelicID = "RELIC_8" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_08" InactiveSpecialEffectName = "se_relic_base_08_inactive">
+		<ChestResourceName       Value = "r_relic 08 world" />
+		<WorldObjectResourceName Value = "r_relic_08" />
+		<PlayerEffect            Value = "se_relic_back_08" />
+		<DestroySpecialEffectName Value = ""/>			
+		<Attributes>		
+			<!-- Increase weight capacity , [flat value 0.0f - 500.0f] (Weight + Attribute Value)-->	
+			<Attribute Name = "Relic RIWC" Type = "Float"   Value = "200.0"  Scope = "GlobalPlayerScope"/>				 		
+			<!--  faster walk speed when encumbered modifier [percentage 0.0f - 1.0f] (Encumbered Walk Speed + Encumbered Walk Speed * Modifier) -->
+			<Attribute Name = "Relic RIWSM" Type = "Float"   Value = "1.00"  Scope = "GlobalPlayerScope"/>				 		
+		</Attributes>
+	</Relic>	
+	
+	<!-- Relic of Hearth and Home -->
+	<Relic RelicID = "RELIC_11" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_11" InactiveSpecialEffectName = "se_relic_base_11_inactive">
+		<ChestResourceName       Value = "r_relic 11 world" />
+		<WorldObjectResourceName Value = "r_relic_11" />
+		<PlayerEffect            Value = "se_relic_back_11" />
+		<DestroySpecialEffectName Value = ""/>	
+		<Attributes>		
+			<!-- Recall cast time modifier, [percentage 0.0f - 1.0f] cast time *(1 - modifier) -->	
+			<Attribute Name = "Relic RCTM" Type = "Float"   Value = "0.5"     Scope = "GlobalPlayerScope"/>
+			<!-- recall cooldown modifier, [percentage 0.0f - 1.0f] cooldown time * (1 - modifier) -->	
+			<Attribute Name = "Relic RCDM" Type = "Float"  Value = "0.5"    Scope = "GlobalPlayerScope"/>			
+		</Attributes>
+	</Relic>	
+	
+	
+	<!-- Relic of Deception -->
+	<Relic RelicID = "RELIC_12" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_12" InactiveSpecialEffectName = "se_relic_base_12_inactive">
+		<ChestResourceName       Value = "r_relic 12 world" />
+		<WorldObjectResourceName Value = "r_relic_12" />
+		<PlayerEffect            Value = "se_relic_back_12" />
+		<DestroySpecialEffectName Value = ""/>	
+		<Attributes>		
+			<!-- Increase crouch speed multiplier, [percentage 0.0f - 4.0f] (speed + speed * modifier)-->	
+			<Attribute Name = "Relic FCM" Type = "Float"   Value = "0.25"     Scope = "GlobalPlayerScope"/>
+			<!-- Hide player info -->	
+			<Attribute Name = "Relic HI" Type = "Boolean"  Value = "true"    Scope = "GlobalPlayerScope"/>			
+			<!-- Silent attacks -->	
+			<Attribute Name = "Relic SA" Type = "Boolean"  Value = "true"    Scope = "GlobalPlayerScope"/>
+			<!-- Silent movement -->	
+			<Attribute Name = "Relic SM" Type = "Boolean"  Value = "true"    Scope = "GlobalPlayerScope"/>
+		</Attributes>
+	</Relic>	
+		
+	<!-- Relic of Corsair -->
+<!--	
+	<Relic RelicID = "RELIC_13" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_13" InactiveSpecialEffectName = "se_relic_base_13_inactive">
+		<ChestResourceName       Value = "r_relic 13 world" />
+		<WorldObjectResourceName Value = "r_relic_13" />
+		<PlayerEffect            Value = "se_relic_back_13" />
+		<DestroySpecialEffectName Value = ""/>		
+		<Attributes>
+			<!-\- ship maneuvarability, [percentage 0.0f - 4.0f] -\->
+			<Attribute Name = "Relic SHIPM"  Type = "Float"   Value = "4.5"  Scope = "GlobalPlayerScope"/>	
+			<!-\- ship speed modifier	-\->
+			<Attribute Name = "Relic SHIPS"  Type = "Float"   Value = "10.0" Scope = "GlobalPlayerScope"/>	 		
+			<!-\- ship ramming damage 	-\->
+			<Attribute Name = "Relic SHIPD"  Type = "Float"   Value = "1.5"  Scope = "GlobalPlayerScope"/>
+			<!-\- ship captain protection -\->	
+			<Attribute Name = "Relic SHIPCP" Type = "Float"   Value = "5.0"  Scope = "GlobalPlayerScope"/>
+		</Attributes>
+	</Relic>		
+	-->
+	
+	<!-- Relic of Warfare -->
+	<Relic RelicID = "RELIC_14" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_14" InactiveSpecialEffectName = "se_relic_base_14_inactive">
+		<ChestResourceName        Value = "r_relic 14 world" />
+		<WorldObjectResourceName  Value = "r_relic_14" />
+		<PlayerEffect             Value = "se_relic_back_14" />
+		<DestroySpecialEffectName Value = ""/>
+		<Attributes>
+			<!-- Decrease ladder spawn time multiplier, [percentage 0.0f - 1.0f] -->
+			<!-- From 30 seconds to 10 -->
+			<!-- sf_Siege Ladder Spawn Timer: 30.0f * (1.0f - Relic DLS) -->
+			<Attribute Name = "Relic DLS"               Type = "Float" Value = "0.67" Scope = "GlobalPlayerScope"/>
+			<!-- Delay enter city message, [Seconds 0.0f - 20.0f] -->
+			<Attribute Name = "Relic DECM"              Type = "Float" Value = "20.0" Scope = "GlobalPlayerScope"/>
+			<Attribute Name = "Arcane Protection Bonus" Type = "Float" Value = "5" Scope = "GlobalPlayerScope"/>
+		</Attributes>
+	</Relic>
+	
+	<!-- Relic of Greed -->
+	<Relic RelicID = "RELIC_15" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_15" InactiveSpecialEffectName = "se_relic_base_15_inactive">
+		<ChestResourceName        Value = "r_relic 15 world" />
+		<WorldObjectResourceName  Value = "r_relic_15" />
+		<PlayerEffect             Value = "se_relic_back_15" />
+		<DestroySpecialEffectName Value = ""/>
+		<Attributes>
+			<!-- Decrease globule consumption, [percentage 0.0f - 1.0f, 0.0f means that will consume the globule, 1.0f means that it will not consume it at all] -->
+			<Attribute Name = "Relic DGC" Type = "Float"   Value = "0.5"    Scope = "GlobalPlayerScope"/> 
+			<!-- Increase requisitioning speed multiplier, [percentage 0.0f - 1.0f] -->	
+			<!-- sf_Timer Performing Requisition: 1.0f - 1.0f*[A: Relic IRS] -->
+			<Attribute Name = "Relic IRS" Type = "Float"   Value = "0.5"    Scope = "GlobalPlayerScope"/>
+		</Attributes>
+	</Relic>
+	
+	<!-- Relic of Aegis -->
+	<Relic RelicID = "RELIC_16" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_16" InactiveSpecialEffectName = "se_relic_base_16_inactive">
+		<ChestResourceName       Value = "r_relic 16 world" />
+		<WorldObjectResourceName Value = "r_relic_16" />
+		<PlayerEffect            Value = "se_relic_back_16" />
+		<DestroySpecialEffectName Value = ""/>
+		<Attributes>
+			<!-- Increase block absord multiplier, [percentage 0.0f - 1.0f] -->	
+			<!-- ParryModifier = ParryModifier + Relic IBA -->
+
+			<!-- ParryModifier of shields 0 - 100 is converted /100 in Code -->
+			<Attribute Name = "Relic IBA" Type = "Float"   Value = "0.05"    Scope = "GlobalPlayerScope"/>
+			<!-- Increase blocking penetration multiplier, [percentage 0.0f - 1.0f] -->	
+			<!-- Target's ParryModifier = ParryModifier - ParryModifier*RelicBlockPenetrationModifier -->
+			<Attribute Name = "Relic IBP" Type = "Float"   Value = "0.3"    Scope = "GlobalPlayerScope"/>
+		</Attributes>
+	</Relic>	
+	
+	<!-- Relic of Gluttony -->
+	<Relic RelicID = "RELIC_17" ProwessGain = "0" Build = "1" ActiveSpecialEffectName = "se_relic_base_17" InactiveSpecialEffectName = "se_relic_base_17_inactive">
+		<ChestResourceName       Value = "r_relic 17 world" />
+		<WorldObjectResourceName Value = "r_relic_17" />
+		<PlayerEffect            Value = "se_relic_back_17" />
+		<DestroySpecialEffectName Value = ""/>			
+		<Attributes>		
+			<!--Increase food duration multiplier, [percentage 0.0f - 1.0f]-->	
+			<!-- duration = duration + durtion*Relic IFD -->
+			<Attribute Name = "Relic IFD" Type = "Float"   Value = "1.0"    Scope = "GlobalPlayerScope"/>
+			<!--Decrease potion cooldown multiplier, [percentage 0.0f - 1.0f]	-->
+			<!-- sf_Drink Blocking Timer: 50.0f*(1.0f - [A: Relic DPC]) -->
+			<Attribute Name = "Relic DPC" Type = "Float"   Value = "0.5"    Scope = "GlobalPlayerScope"/>
+		</Attributes>
+	</Relic>		
+
+	<!--
+	<Relic RelicID = "RELIC_10" ProwessGain = "1000" Build = "1" ActiveSpecialEffectName = "se_relic_base_10" InactiveSpecialEffectName = "se_relic_base_10">
+		<ChestResourceName        Value = "r_relic 10 world" />
+		<WorldObjectResourceName  Value = "r_relic_10" />
+		<PlayerEffect             Value = "se_relic_back_10" />
+		<DestroySpecialEffectName Value = "se_fireworks_impacts_green_bb"/>		
+		<Attributes>
+			<Attribute Name = "Relic IRM"         Type = "Float"   Value = "30.0"  Scope = "GlobalPlayerScope"/>				
+			<Attribute Name = "Max Health Bonus"  Type = "Float"   Value = "30.0"  Scope = "GlobalPlayerScope"/>	 		
+		</Attributes>
+	</Relic>	
+	-->
+</Relics>

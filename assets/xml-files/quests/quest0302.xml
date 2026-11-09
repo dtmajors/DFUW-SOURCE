@@ -1,0 +1,302 @@
+<quest quest_id="302" category="lore_quest" tag="Mental Trials" published="False" valid="True">
+	<title>Trial of the Mind</title>
+	<description>I have oft found that Orks, in their wonderfully simply savagery, hide a delightfully cerebral set of morals often lost on the average bystander. (Usually because the average bystander&apos;s brain has been caved in before they have a chance to make such an observation).</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="301" />
+			</conditions>
+		</node>
+		<node type="event_branch" id="28" tag="answer 4" optional_tasks="True">
+			<instruction>Answer the question</instruction>
+			<tasks>
+				<task type="choose" id="26" value="1" tag="yes" reward_node_id="-1">
+					<task_instruction>Answer: Yes</task_instruction>
+				</task>
+				<task type="choose" id="27" value="2" tag="no" reward_node_id="-1">
+					<task_instruction>Answer: No</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_branch" id="2" tag="answer 1" optional_tasks="True">
+			<instruction>Answer the question</instruction>
+			<tasks>
+				<task type="choose" id="10" value="1" tag="yes" reward_node_id="-1">
+					<task_instruction>Answer: Yes</task_instruction>
+				</task>
+				<task type="choose" id="21" value="2" tag="no" reward_node_id="-1">
+					<task_instruction>Answer: No</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_branch" id="3" tag="answer3" optional_tasks="True">
+			<instruction>Answer the question</instruction>
+			<tasks>
+				<task type="choose" id="9" value="1" tag="the Goddess" reward_node_id="-1">
+					<task_instruction>Answer: The Goddess</task_instruction>
+				</task>
+				<task type="choose" id="25" value="2" tag="The Demosn" reward_node_id="-1">
+					<task_instruction>Answer: The Demons</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_fork" id="6" tag="Orkish history">
+			<instruction>Interact with the Orkish Lore Banners to learn about the Unholy Wars.</instruction>
+		</node>
+		<node type="event_branch" id="5" tag="answer 2" optional_tasks="True">
+			<instruction>Answer the question</instruction>
+			<tasks>
+				<task type="choose" id="12" value="1" tag="The Mirdain" reward_node_id="-1">
+					<task_instruction>Answer: The Mirdain</task_instruction>
+				</task>
+				<task type="choose" id="22" value="2" tag="The Alfar" reward_node_id="-1">
+					<task_instruction>Answer: The Alfar</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="8" tag="" />
+		<node type="event_simple" id="9" tag="Goddess banner">
+			<instruction>Interact with the four lorebanners located within Flaming Skull.</instruction>
+			<journal_entry>The Orkish Runescript on the leathery banner titled it as, &quot;Her Reckoning.&quot;</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="14" value="1" tag="banner 01" resource_name="r_qt ork banner godess">
+					<task_instruction>Interact with the Goddesse&apos;s banner</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="10" tag="Intervention banner">
+			<instruction>Interact with the four lorebanners located within Flaming Skull.</instruction>
+			<journal_entry>The Orkish Runespeak on this smoke stained banner titled it as &quot;The Iron Fist&quot;.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="15" value="1" tag="banner 02" resource_name="r_qt ork banner intervention">
+					<task_instruction>Interact with the Intervantion banner</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="11" tag="Melek banner">
+			<instruction>Interact with the four lorebanners located within Flaming Skull.</instruction>
+			<journal_entry>This banner, stained black and brown by the soot of a thousand fires, was titled, &quot;The Fall of Madness.&quot;</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="16" value="1" tag="banner 03" resource_name="r_qt ork banner malek">
+					<task_instruction>Interact with Melek&apos;s banner</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="12" tag="sacrifice banner">
+			<instruction>Interact with the four lorebanners located within Flaming Skull.</instruction>
+			<journal_entry>This banner, covered in Orkish runespeak titling it, &quot;The Humbling&quot;, seemed in far better condition than the others.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="18" value="1" tag="banner 04" resource_name="r_qt ork banner sacrifice">
+					<task_instruction>Interact with the Sacrifice banner</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="Back to the Fist">
+			<tasks>
+				<task type="interact_with_vendor" id="19" value="1" tag="Back to the Fist" vendor_id="u13_flaming_skull_fistofthelaw" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="14" tag="question 1">
+			<journal_entry>&quot;Tell me runt, if you could stop the Dwarve&apos;s sacrifice in order to save their race, would ya do it?&quot;</journal_entry>
+		</node>
+		<node type="event_merge" id="15" tag="question 2">
+			<journal_entry>&quot;Our Iron Fist crushed the Elvish Nations in order to end their bickering.  Which would you see brought back? The Mirdain or the Alfari?&quot;</journal_entry>
+		</node>
+		<node type="event_merge" id="27" tag="question 4">
+			<journal_entry>&quot;The Orks cast out their god. Once we worshipped the slumbering mountain, now we worship ourselves. Once we sacrificed our own to appease the dragon, now we sacrifice our enemies to appease ourselves. Do men need gods?&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="26" tag="result the demons">
+			<journal_entry>&quot;Wrong. There is no life but a free life. If we must die to protect our mortal freedom then let the demons rule over our liberated corpses!&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="18" tag="result yes">
+			<journal_entry>&quot;Wrong. You cannot deny any being the Ultimate Honor to die for their beliefs.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="19" tag="result no">
+			<journal_entry>&quot;Wrong. Slaying an enemy is good, slaying their offspring, their descendants, is not.  For who shall grow to challenge you tomorrow? A race, even an enemy&apos;s, should always be preserved.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="20" tag="result The Mirdain">
+			<journal_entry>&quot;Wrong. The Mirdain sought to Punish their Alfari brethren for crimes long past.  If you don&apos;t have the stones to avenge yourself in the here and now, let it go and accept your feebleness.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="25" tag="result the goddess">
+			<journal_entry>&quot;Wrong. None may judge us but ourselves, especially not a god who has been peeking at the world from their hiding place! This is our world now.. our time, and we shall judge, rule, and execute ourselves!&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="22" tag="result The Alfar">
+			<journal_entry>&quot;Wrong. The Alfari hide behind their mewling Godling, hoping to avoid accountability.  Everyone must have the stones to own their choices, be they good or bad.&quot;</journal_entry>
+		</node>
+		<node type="event_merge" id="24" tag="question 3">
+			<journal_entry>&quot;The Goddess seeks to cleanse the land of the unworthy. The Demons want to rule everything regardless of moral standing. Who would you side with?&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="29" tag="result yes">
+			<journal_entry>&quot;Wrong. You must be your own God.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="30" tag="result no">
+			<journal_entry>&quot;Wrong. You must be your own God.&quot;</journal_entry>
+		</node>
+		<node type="event_merge" id="31" tag="End of Mental trial">
+			<journal_entry>The scarred, chiseled Ork glared at you for what seemed like an eternity.  Then, he let out a loud guffaw! His parting words seemed to serve as the end of your trial!</journal_entry>
+		</node>
+		<node type="event_simple" id="32" tag="e">
+			<journal_entry>The Trials of the Mind would delve into your mental process to ascertain your level of guilt.  (Which to Orks, is always 100%.  This would simply allow them to glean your level of redeemability.)</journal_entry>
+		</node>
+		<node type="event_simple" id="33" tag="">
+			<journal_entry>Your first task, therefore, was to find the four nearby lorebanners and enlighten yourself as to certain historical events that were considered, by the Orks, and important landmarks.</journal_entry>
+		</node>
+		<node type="event_simple" id="34" tag="empty node" />
+		<node type="event_simple" id="35" tag="">
+			<journal_entry>It told of the Goddess of old, of her ruling during the ancient age long past and her betrayal by the &quot;Usurpers&quot;.  Cast out and thought to have died, it seemed the Goddess had retreated to the celestial shadows, watching the world and licking her wounds, all the time gathering knowledge in the guise of a being known as &quot;the Watcher.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="36" tag="">
+			<journal_entry>It told of her recent revelation and judgement of a world unfit to exist anymore; her declaration of war on the mortal races.  Her children had disappointed her, and it was time to punish them, into oblivion.</journal_entry>
+		</node>
+		<node type="event_simple" id="37" tag="">
+			<journal_entry>She gathered those Acolytes still loyal to her and her celestial forces and began to wage Unholy War both upon the mortal races and the demons seeking to conquer.  Her victory would have been absolute, had it not been for one race&apos;s unspeakable act of selflessness...</journal_entry>
+		</node>
+		<node type="event_simple" id="38" tag="">
+			<journal_entry>It spoke of an awakening of sorts in the Orkish nation.  Always a culture of strength and honor, the Orks found themselves both humbled and shamed by the supreme sacrifice of their neighbors and enemies, the Dwarves.</journal_entry>
+		</node>
+		<node type="event_simple" id="39" tag="">
+			<journal_entry>When the Dwarves literally lay down every single one of their lives in one terrible and cunning move that wrought untold destruction to the forces of the Goddess and the Dark Coven, the Orks looked upon the world around them with freshly opened eyes.</journal_entry>
+		</node>
+		<node type="event_simple" id="40" tag="">
+			<journal_entry>Seeing how close to doom the mortal races had come with their eternal bickering and battles for dominion, the Orkish nation steeled themselves and slammed their Iron Fist down onto the world.</journal_entry>
+		</node>
+		<node type="event_simple" id="41" tag="">
+			<journal_entry>The Alfar and Mirdain nation, deep in a bitter war of vengeance since Melek&apos;s fall, looked up one day to see a steely ring of Orks surrounding the field of battle.</journal_entry>
+		</node>
+		<node type="event_simple" id="42" tag="">
+			<journal_entry>The elves had no choice but to lay down their arms and see the Orkish point of view.  Their enlightenment was all the more poignant, illuminated on the point of a thousand Orkish spears, lit by the blaze of the now burning Elvish nations...</journal_entry>
+		</node>
+		<node type="event_simple" id="43" tag="">
+			<journal_entry>The jagged and tribal Orkish runespeak depicted the fall of Melek, the Mad God-King of the Alfari nation.</journal_entry>
+		</node>
+		<node type="event_simple" id="44" tag="">
+			<journal_entry>Ever the opportunist, Melek sought to offer an alliance to the Goddess upon her revelation.  His arrogance, however, proved terminal.  Barely an afterthought, the Goddess&apos;s will tore him from his lofty celestial perch and cast him down.  His body, mangled and crushed is rumored to brought down the cavernous ceiling of Shoal itself.</journal_entry>
+		</node>
+		<node type="event_simple" id="45" tag="">
+			<journal_entry>His fall crushed more than just the city however.  The Alfari, free of the maddening and insidious whispers they had followed for so many centuries suddenly found themselves godless and alone.  A vulnerability that was not lost on their mortal enemies.  The Mirdain descended upon them like a tidal wave of vengeance and fury...</journal_entry>
+		</node>
+		<node type="event_simple" id="46" tag="">
+			<journal_entry>The late nation of the Dwarves, ancestors of the Tovarr, followed an ancient blueprint set forth by their master philoso-engineer, Ymir.  Ymir had set forward a dogmatic plan for the dwarvish nations every cultural, ideological, and pragmatic development for thousands of years to come.  To the techno-magically minded Dwarves, this blueprint served as a bible of sorts and culminated in the climatic realization of their civilization.</journal_entry>
+		</node>
+		<node type="event_simple" id="47" tag="">
+			<journal_entry>This realization finally came to fruition during the Unholy Wars.  Thousands of years, trials, research and lives had come together to one focal point that would save the world, at the cost of almost every single Dwarven life.</journal_entry>
+		</node>
+		<node type="event_simple" id="48" tag="">
+			<journal_entry>During the time when the forces of the Goddess and the Dark Coven fought with unbridled fury, venting their rage on the world around them as well as on each other, an immense host of Dwarves marched forth from Cor Ymirhal.  Their army fought to the center of the battlefield, thousands grimly laying down their lives in order to protect a giant techno-magical device hidden at the center of their company.</journal_entry>
+		</node>
+		<node type="event_simple" id="49" tag="">
+			<journal_entry>And then they unveiled it.  A device of unspeakable techno-magical power, linked to the life-force of every single Dwarf that glistened with pent up energy, but not for long.</journal_entry>
+		</node>
+		<node type="event_simple" id="50" tag="">
+			<journal_entry>The device erupted in a blinding flash of searing light that sent every soul within a thousand miles screaming into the nether-realms.  Some would be destined to return, via the machinations of the Vale, others would not.  Such was the price of buying Agon a brief moment of reprieve, a brief moment to gather its people and perhaps, just perhaps, survive...</journal_entry>
+		</node>
+		<node type="event_join" id="51" tag="">
+			<journal_entry>With your newfound knowledge on the current histories of the world through Orkish eyes, it was time to return to the Fist.  He would have questions...</journal_entry>
+		</node>
+		<node type="event_simple" id="52" tag="">
+			<journal_entry>&quot;GOOD. you hold your composure despite my trolling your intelligence and integrity.  Strive to emulate the volcano that shelters us all, contain your fiery wrath within impenetrable walls of granite stone!&quot;</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="6" from="6" to="9" value="0" />
+		<edge id="36" from="25" to="27" value="0" />
+		<edge id="7" from="6" to="10" value="0" />
+		<edge id="8" from="6" to="11" value="0" />
+		<edge id="9" from="6" to="12" value="0" />
+		<edge id="49" from="9" to="35" value="1" />
+		<edge id="55" from="39" to="40" value="0" />
+		<edge id="54" from="38" to="39" value="0" />
+		<edge id="53" from="10" to="38" value="1" />
+		<edge id="18" from="13" to="14" value="1" />
+		<edge id="45" from="0" to="32" value="1" />
+		<edge id="19" from="14" to="2" value="0" />
+		<edge id="20" from="2" to="18" value="1" />
+		<edge id="21" from="2" to="19" value="2" />
+		<edge id="22" from="18" to="15" value="0" />
+		<edge id="23" from="15" to="5" value="0" />
+		<edge id="30" from="19" to="15" value="0" />
+		<edge id="33" from="24" to="3" value="0" />
+		<edge id="26" from="5" to="20" value="1" />
+		<edge id="27" from="5" to="22" value="2" />
+		<edge id="32" from="22" to="24" value="0" />
+		<edge id="31" from="20" to="24" value="0" />
+		<edge id="34" from="3" to="25" value="1" />
+		<edge id="35" from="3" to="26" value="2" />
+		<edge id="37" from="26" to="27" value="0" />
+		<edge id="39" from="27" to="28" value="0" />
+		<edge id="40" from="28" to="29" value="1" />
+		<edge id="41" from="28" to="30" value="2" />
+		<edge id="42" from="29" to="31" value="0" />
+		<edge id="43" from="30" to="31" value="0" />
+		<edge id="74" from="31" to="52" value="0" />
+		<edge id="46" from="32" to="33" value="0" />
+		<edge id="47" from="33" to="34" value="0" />
+		<edge id="48" from="34" to="6" value="0" />
+		<edge id="50" from="35" to="36" value="0" />
+		<edge id="51" from="36" to="37" value="0" />
+		<edge id="72" from="50" to="51" value="0" />
+		<edge id="56" from="40" to="41" value="0" />
+		<edge id="57" from="41" to="42" value="0" />
+		<edge id="71" from="45" to="51" value="0" />
+		<edge id="59" from="11" to="43" value="1" />
+		<edge id="60" from="43" to="44" value="0" />
+		<edge id="61" from="44" to="45" value="0" />
+		<edge id="70" from="42" to="51" value="0" />
+		<edge id="63" from="12" to="46" value="1" />
+		<edge id="64" from="46" to="47" value="0" />
+		<edge id="65" from="47" to="48" value="0" />
+		<edge id="66" from="48" to="49" value="0" />
+		<edge id="67" from="49" to="50" value="0" />
+		<edge id="69" from="37" to="51" value="0" />
+		<edge id="73" from="51" to="13" value="0" />
+		<edge id="75" from="52" to="8" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="46" y="751" />
+		<node_location id="28" x="1174" y="643" />
+		<node_location id="2" x="642" y="400" />
+		<node_location id="3" x="959" y="632" />
+		<node_location id="6" x="30" y="174" />
+		<node_location id="5" x="822" y="498" />
+		<node_location id="8" x="1317" y="844" />
+		<node_location id="9" x="71" y="37" />
+		<node_location id="10" x="92" y="98" />
+		<node_location id="11" x="179" y="178" />
+		<node_location id="12" x="84" y="254" />
+		<node_location id="13" x="373" y="544" />
+		<node_location id="14" x="529" y="530" />
+		<node_location id="15" x="822" y="398" />
+		<node_location id="27" x="1103" y="642" />
+		<node_location id="26" x="1041" y="688" />
+		<node_location id="18" x="721" y="333" />
+		<node_location id="19" x="724" y="453" />
+		<node_location id="20" x="902" y="440" />
+		<node_location id="25" x="1042" y="596" />
+		<node_location id="22" x="895" y="548" />
+		<node_location id="24" x="958" y="500" />
+		<node_location id="29" x="1249" y="577" />
+		<node_location id="30" x="1248" y="686" />
+		<node_location id="31" x="1320" y="643" />
+		<node_location id="32" x="47" y="646" />
+		<node_location id="33" x="52" y="562" />
+		<node_location id="34" x="40" y="381" />
+		<node_location id="35" x="220" y="37" />
+		<node_location id="36" x="330" y="38" />
+		<node_location id="37" x="517" y="41" />
+		<node_location id="38" x="195" y="103" />
+		<node_location id="39" x="276" y="112" />
+		<node_location id="40" x="364" y="119" />
+		<node_location id="41" x="454" y="110" />
+		<node_location id="42" x="525" y="113" />
+		<node_location id="43" x="289" y="199" />
+		<node_location id="44" x="392" y="195" />
+		<node_location id="45" x="489" y="185" />
+		<node_location id="46" x="165" y="275" />
+		<node_location id="47" x="241" y="307" />
+		<node_location id="48" x="337" y="303" />
+		<node_location id="49" x="416" y="292" />
+		<node_location id="50" x="518" y="260" />
+		<node_location id="51" x="661" y="157" />
+		<node_location id="52" x="1318" y="756" />
+	</node_locations>
+</quest>

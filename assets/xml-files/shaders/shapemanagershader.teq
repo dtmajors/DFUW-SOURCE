@@ -1,0 +1,96 @@
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "instancing.frag"
+
+bool Transparent : REInfoTransparent = true;
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+float4 SHAPE_COLOR   = { 0.5f, 0.5f, 0.5f, 0.5f };
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+	//Instance Data
+	float4 WMat1 : TEXCOORD5;
+	float4 WMat2 : TEXCOORD6;
+	float4 WMat3 : TEXCOORD7;
+	float4 WMat4 : TEXCOORD8;
+	
+};
+
+
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+	
+    SFMatrix WVP = mul(WMat,VIEW_PROJECTION_MATRIX);
+
+    Out.Pos  = mul(Input.Pos,WVP);
+
+    Out.Diff = SHAPE_COLOR;
+    
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+    return Out;
+}
+
+
+float4 PS(VS_OUTPUT Input) : COLOR
+{
+	float4 Out = (float4)0;
+	Out = Input.Diff;
+
+	Out.xyz = lerp(Out.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	return Out;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+    
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+
+	    ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+	    CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

@@ -1,0 +1,150 @@
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "camera.frag"
+#include "dynamic_lights.frag"
+#include "light_constants.frag"
+#include "fog.frag"
+
+texture ZBuffer: REPZBufferTexture ; 
+sampler2D ZBufferSampler = sampler_state
+{
+	Texture = <ZBuffer>;
+	AddressU = CLAMP;
+	AddressV = CLAMP;
+
+    MinFilter = Point;
+    MagFilter = Point;
+};
+
+
+texture MaterialTex: REPMaterialTexture ; 
+sampler2D MaterialSampler = sampler_state
+{
+	Texture = <MaterialTex>;
+	AddressU = CLAMP;
+	AddressV = CLAMP;
+
+    MinFilter = Point;
+    MagFilter = Point;
+};
+
+struct VS_IN 
+{
+	// Geometry data
+	float4 Pos				: POSITION;
+	
+	// Instance Data
+	float4 LightParams0		: TEXCOORD0;
+	float4 LightParams1		: TEXCOORD1;
+	float4 LightParams2		: TEXCOORD2;
+	float4 LightParams3		: TEXCOORD3;
+};
+
+struct VS_OUT 
+{
+	float4 Pos				: POSITION;
+	float4 ClipSpace		: TEXCOORD0;
+	float3 WorldPos			: TEXCOORD1;
+	float3 WorldEyeVec		: TEXCOORD2;
+	
+	float4 LightParams0		: TEXCOORD4;
+	float4 LightParams1		: TEXCOORD5;
+	float4 LightParams2		: TEXCOORD6;
+	float4 LightParams3		: TEXCOORD7;
+};
+
+float3 WorldPosFromClip(float3 ClipXYZByW)
+{
+    float4 WorldPos = mul(float4(ClipXYZByW, 1.0f), INV_VIEW_PROJECTION_MATRIX);  
+    return WorldPos.xyz / WorldPos.w;  
+}
+
+VS_OUT VS(VS_IN Input)
+{
+	VS_OUT Out = (VS_OUT)0;
+	
+	float4x4 LightParams = float4x4(Input.LightParams0, Input.LightParams1, Input.LightParams2, Input.LightParams3);
+	float3 LightPosition = unpackLightPosition(LightParams);
+	float LightRange = unpackLightRange(LightParams);
+	float4 WorldPos = float4(Input.Pos.xyz * LightRange, 1) + float4(LightPosition, 0);
+	
+	Out.Pos = mul(WorldPos, VIEW_PROJECTION_MATRIX);
+	
+	Out.ClipSpace = Out.Pos;
+	Out.WorldPos = WorldPos.xyz / WorldPos.w;	
+	
+	Out.WorldEyeVec = normalize(EyePos - WorldPos.xyz / WorldPos.w);
+
+	Out.LightParams0 = Input.LightParams0;
+	Out.LightParams1 = Input.LightParams1;
+	Out.LightParams2 = Input.LightParams2;
+	Out.LightParams3 = Input.LightParams3;
+	
+	return Out;
+}
+
+float4 PS(VS_OUT Input) : COLOR
+{
+	float4x4 LightParams = float4x4(Input.LightParams0, Input.LightParams1, Input.LightParams2, Input.LightParams3);
+	
+	float2 ClipXYByW = Input.ClipSpace.xy / Input.ClipSpace.w;
+	float2 TexCoord = (ClipXYByW * float2(1, -1) + 1) / 2;
+	TexCoord += 0.5 / BackBufferParams;
+	float4 NormalDepthSample = tex2D(ZBufferSampler, TexCoord);
+	float4 tmp = mul(float4(Input.ClipSpace.xy / Input.ClipSpace.w, NormalDepthSample.w, 1), INV_VIEW_PROJECTION_MATRIX);
+	float3 WorldPos = tmp.xyz / tmp.w;
+	if (dot(unpackLightPlane(LightParams), float4(WorldPos, 1)) < 0) clip(-1);
+	float AttenFar = unpackLightRange(LightParams);
+	float3 LightPos = unpackLightPosition(LightParams);
+	float3 LightVec = LightPos - WorldPos;
+	float LightDist = length(LightVec);
+	if (LightDist > AttenFar) clip(-1);
+	
+	float3 Vn = normalize(EYE_POS - WorldPos);
+	
+	float AttenNear = AttenFar * NearFarAttenRatio;
+	LightVec /= LightDist;
+	float3 Nn = normalize(NormalDepthSample.xyz);
+	float Atten = 1.0 - saturate(smoothstep(AttenNear, AttenFar, LightDist));
+	
+	float4 MaterialSample = tex2D(MaterialSampler, TexCoord);
+	
+	float3 Hn = normalize(Vn + LightVec);
+	float ldn = saturate(dot(LightVec, Nn));
+	//ldn = smoothstep(-DIFFUSE_WRAP, 1.0, ldn);
+	float hdn = saturate(dot(Hn, Nn));
+	float4 litVec = lit(ldn, hdn, DEFERRED_SPECULAR_EXPONENT);
+	float Diffuse = ldn;
+	float Specular = saturate(litVec.y * litVec.z * litVec.x) * unpackLightIntensity(LightParams);
+	
+	float3 UnpackColor = unpackLightColor(LightParams);
+	float3 DiffuseColor = Diffuse * UnpackColor * MaterialSample.xyz;
+	float3 SpecularColor = Specular * MaterialSample.w * lerp(UnpackColor*2.5,UnpackColor,(UnpackColor.r + UnpackColor.g + UnpackColor.b)/3);
+	//SpecularColor = lerp(SpecularColor,SpecularColor*2.0,saturate(dot(-LightVec,Vn)));
+	
+	float4 ClipPos = mul(float4(WorldPos, 1), VIEW_PROJECTION_MATRIX);
+	float Fog = CalculateFog_3_0(ClipPos.z);
+	return (1.0 - Fog) * float4(Atten * (DiffuseColor + SpecularColor), 0);
+}
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+		Lighting = false;
+		AlphaBlendEnable = true;
+		SrcBlend	= One;
+		DestBlend = One;
+		AlphaTestEnable = FALSE;
+		ColorWriteEnable = RED|BLUE|GREEN; 
+		ZEnable = false;
+		ZWriteEnable = FALSE;
+		CullMode = CCW;
+
+		VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}
+
+

@@ -1,0 +1,39 @@
+/*
+ * Decompiled with CFR.
+ * 
+ * Could not load the following classes:
+ *  cbx
+ */
+public abstract class att
+extends btk
+implements bto,
+cbq {
+    @Override
+    public void doTick(ldz ldz2) {
+    }
+
+    @Override
+    public void b(cbx cbx2) {
+        if (cbx2 instanceof cox) {
+            this.a((cox)cbx2);
+        } else if (cbx2 instanceof cop) {
+            this.a((cop)cbx2);
+        } else assert (false) : "Unknown PO";
+    }
+
+    @Override
+    public boolean b(cbx cbx2, et et2) {
+        return true;
+    }
+
+    @Override
+    public void a(cbx cbx2, et et2) {
+    }
+
+    public void a(cox cox2) {
+    }
+
+    public void a(cop cop2) {
+    }
+}
+

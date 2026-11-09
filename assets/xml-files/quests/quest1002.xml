@@ -1,0 +1,26 @@
+<quest quest_id="1002" category="rumor_quest" tag="Sanguine's Lost Book" published="False" valid="True">
+	<title>Sanguine&apos;s Lost Book</title>
+	<description>The local chapter of the Sons of Riada offers a lucrative reward for any adventurer willing to aid them in the recovery of a lost tome.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="player enters Sanguine">
+			<conditions>
+				<condition type="in_area" id="0" value="1" tag="A Character Position Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="">
+			<journal_entry>The Agonian talked to $[Vendors.u18_sanguine_mage_Name] in order to get more information about the matter.</journal_entry>
+			<tasks>
+				<task type="receive_quest" id="0" value="1" tag="A Receive Quest Task" quest_id="1003" />
+			</tasks>
+		</node>
+		<node type="end_node" id="3" tag="" />
+		<node type="event_simple" id="4" tag="">
+			<journal_entry>The Sons of Riada serve as a guild of mages, arcanists and enchanters in the greater Mercian area (Sanguine, Sandbrook, Heart of Eanna, Monkfield). Upholding a set of magical ideals that they claim originated back from the ancient continent that humans originally came from, the Sons seek to guide and council their people in all things magical and arcane.  Their crest reads &quot;The candle in the darkness.&quot;</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="4" from="0" to="4" value="1" />
+		<edge id="3" from="1" to="3" value="1" />
+		<edge id="5" from="4" to="1" value="0" />
+	</edges>
+</quest>

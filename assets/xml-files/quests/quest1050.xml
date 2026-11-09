@@ -1,0 +1,349 @@
+<quest quest_id="1050" category="side_quest" tag="Field Crystallography" published="False" valid="False">
+	<title>Field Crystallography</title>
+	<description>Take pristine measurements of the magical nodes dotted around Agon.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="proximity to magic column">
+			<conditions>
+				<condition type="object_proximity" id="0" value="1" tag="An Object Proximity Condition" resource_name="" distance="5" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="">
+			<actions>
+				<action type="give_item_to_player" id="11" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Compass" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="12" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Lodestone" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="13" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sunstone" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="14" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Quartz" quantity="4" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="15" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Large Treasure Map Item" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="16" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Leenspar Chest Key" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="17" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Gold" quantity="6000" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="2" tag="">
+			<actions>
+				<action type="show_map_marker" id="0" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="-8792" world_z="-1301" />
+				<action type="show_map_marker" id="1" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="-4916" world_z="5955" />
+				<action type="show_map_marker" id="2" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="-4482" world_z="601" />
+				<action type="show_map_marker" id="3" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="-3994" world_z="-6774" />
+				<action type="show_map_marker" id="4" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="-593" world_z="64" />
+				<action type="show_map_marker" id="5" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="-455" world_z="772" />
+				<action type="show_map_marker" id="6" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="55" world_z="370" />
+				<action type="show_map_marker" id="7" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="2326" world_z="6479" />
+				<action type="show_map_marker" id="8" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="2837" world_z="-6994" />
+				<action type="show_map_marker" id="9" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="7913" world_z="2716" />
+				<action type="unlock_quest_item" id="10" tag="An Unlock Quest Item Within The Quest Action" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="19" tag="">
+			<conditions>
+				<condition type="in_area" id="6" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="53" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="18" tag="">
+			<conditions>
+				<condition type="in_area" id="5" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="52" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="17" tag="">
+			<conditions>
+				<condition type="in_area" id="4" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="51" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="16" tag="">
+			<conditions>
+				<condition type="in_area" id="3" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="50" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="15" tag="">
+			<conditions>
+				<condition type="in_area" id="2" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="49" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="14" tag="">
+			<conditions>
+				<condition type="in_area" id="1" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="48" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="" optional_tasks="True">
+			<instruction>Talk to a Magic Supplier</instruction>
+			<journal_entry>If you are feeling hungry or maybe a bit weak, you might have wondered what it feels like to cook your own food. There are various foodstuff one can use in $[Skill.C.s_cooking_Description_NameSingular], including $[Resource.M.r_meat_NameSingular] and a variety of fish, but most importantly the basic food materials like $[Resource.P.r_potato_NamePlural], $[Resource.C.r_carrot_NamePlural], and $[Resource.O.r_onion_NamePlural], the famous miripoix. While $[Resource.P.r_potato_NamePlural] can be harvested from a  $[Resource.P.r_potato_plant_NameSingular], they can also be dug up using a $[Resource.S.r_shovel_NameSingular] pretty much anywhere, but you cannot just dig them up all the time. These basic food ingredients can also be found in $[Resource.F.r_food_crate_NamePlural] as well as some monsters. Now pick up that $[Resource.S.r_shovel_NameSingular] and give it a try.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="32" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_arcanist" />
+				<task type="interact_with_vendor" id="33" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_arcanist" />
+				<task type="interact_with_vendor" id="34" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_arcanist" />
+				<task type="interact_with_vendor" id="35" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_arcanist" />
+				<task type="interact_with_vendor" id="36" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_arcanist" />
+				<task type="interact_with_vendor" id="37" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_arcanist" />
+				<task type="interact_with_vendor" id="38" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_arcanist" />
+				<task type="interact_with_vendor" id="39" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_arcanist" />
+				<task type="interact_with_vendor" id="40" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_arcanist" />
+				<task type="interact_with_vendor" id="41" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_arcanist" />
+				<task type="interact_with_vendor" id="42" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_arcanist" />
+				<task type="interact_with_vendor" id="43" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_arcanist" />
+				<task type="interact_with_vendor" id="44" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_arcanist" />
+				<task type="interact_with_vendor" id="45" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_arcanist" />
+				<task type="interact_with_vendor" id="46" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_arcanist" />
+				<task type="interact_with_vendor" id="47" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_arcanist" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="12" tag="" optional_tasks="True">
+			<tasks>
+				<task type="gather_items" id="27" value="1" tag="A Gather Item(s) Task" resource_name="r_Quartz" quantity="2" inventory_type="Backpack">
+					<task_instruction>Gather 2 pieces of $[Resource.Q.r_quartz_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="28" value="1" tag="A Gather Item(s) Task" resource_name="r_Anima_q05" quantity="1" inventory_type="Backpack">
+					<task_instruction>Gather one $[Resource.A.r_anima_q05_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="29" value="1" tag="A Gather Item(s) Task" resource_name="r_Lodestone" quantity="1" inventory_type="Backpack">
+					<task_instruction>Gather one $[Resource.L.r_lodestone_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="30" value="1" tag="A Gather Item(s) Task" resource_name="r_Tar Material" quantity="1" inventory_type="Backpack">
+					<task_instruction>Gather one piece of $[Resource.T.r_tar_material_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="31" value="1" tag="A Gather Item(s) Task" resource_name="r_new Selentine Ingot" quantity="1" inventory_type="Backpack">
+					<task_instruction>Gather one $[Resource.S.r_selentine_ingot_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="11" tag="" optional_tasks="True">
+			<instruction>Talk to any Sage in a safe zone city</instruction>
+			<journal_entry>Agon is filled with treasure, were you aware of that fact? There are $[Resource.T.r_treasure_chest_NamePlural] and chests that require keys to be opened, like a $[Resource.S.r_selentine_chest_key_NameSingular] that opens a $[Resource.S.r_selentine_chest_NameSingular]. There are also big cube-shaped $[Resource.C.r_chaos_chest_NamePlural] that can be found nearly everywhere in the world and can either be empty or filled with fantastic loot depending on how lucky you are each time. And last but not least, the ever present $[Resource.S.r_small_treasure_map_item_NameSingular], $[Resource.T.r_treasure_map_item_NameSingular] and the $[Resource.L.r_large_treasure_map_item_NameSingular].</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_councillor" />
+				<task type="interact_with_vendor" id="12" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_councillor" />
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_councillor" />
+				<task type="interact_with_vendor" id="14" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_councillor" />
+				<task type="interact_with_vendor" id="15" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_councillor" />
+				<task type="interact_with_vendor" id="16" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_councillor" />
+				<task type="interact_with_vendor" id="17" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_councillor" />
+				<task type="interact_with_vendor" id="18" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_councillor" />
+				<task type="interact_with_vendor" id="19" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_councillor" />
+				<task type="interact_with_vendor" id="20" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_councillor" />
+				<task type="interact_with_vendor" id="21" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_councillor" />
+				<task type="interact_with_vendor" id="22" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_councillor" />
+				<task type="interact_with_vendor" id="23" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_councillor" />
+				<task type="interact_with_vendor" id="24" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_councillor" />
+				<task type="interact_with_vendor" id="25" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_councillor" />
+				<task type="interact_with_vendor" id="26" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_councillor" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="20" tag="">
+			<conditions>
+				<condition type="in_area" id="7" value="2" tag="An In Quest Area Condition" area_id="53" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="54" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="21" tag="">
+			<conditions>
+				<condition type="in_area" id="8" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="55" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="22" tag="">
+			<conditions>
+				<condition type="in_area" id="9" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="56" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="23" tag="">
+			<conditions>
+				<condition type="in_area" id="10" value="2" tag="An In Quest Area Condition" area_id="0" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="57" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="24" tag="" />
+		<node type="event_branch" id="25" tag="" />
+		<node type="event_join" id="26" tag="" />
+		<node type="event_simple_conditional" id="27" tag="">
+			<conditions>
+				<condition type="remaining_time" id="13" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="59" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="28" tag="">
+			<conditions>
+				<condition type="remaining_time" id="14" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="60" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="29" tag="">
+			<conditions>
+				<condition type="remaining_time" id="15" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="61" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="30" tag="">
+			<conditions>
+				<condition type="remaining_time" id="16" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="62" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="31" tag="">
+			<conditions>
+				<condition type="remaining_time" id="17" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="63" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="32" tag="">
+			<conditions>
+				<condition type="remaining_time" id="18" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="64" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="33" tag="">
+			<conditions>
+				<condition type="remaining_time" id="19" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="65" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="34" tag="">
+			<conditions>
+				<condition type="remaining_time" id="20" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="66" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="35" tag="">
+			<conditions>
+				<condition type="remaining_time" id="21" value="1" tag="A Time Remaining Condition" timer_length="45" />
+			</conditions>
+			<tasks>
+				<task type="take_damage_from" id="67" value="2" tag="A Take Damage from Object Task" magnitude="50" resource_name="r_Shadow Knight" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="37" tag="" />
+		<node type="event_simple" id="49" tag="" optional_tasks="True">
+			<instruction>Talk to any Sage in a safe zone city</instruction>
+			<journal_entry>Agon is filled with treasure, were you aware of that fact? There are $[Resource.T.r_treasure_chest_NamePlural] and chests that require keys to be opened, like a $[Resource.S.r_selentine_chest_key_NameSingular] that opens a $[Resource.S.r_selentine_chest_NameSingular]. There are also big cube-shaped $[Resource.C.r_chaos_chest_NamePlural] that can be found nearly everywhere in the world and can either be empty or filled with fantastic loot depending on how lucky you are each time. And last but not least, the ever present $[Resource.S.r_small_treasure_map_item_NameSingular], $[Resource.T.r_treasure_map_item_NameSingular] and the $[Resource.L.r_large_treasure_map_item_NameSingular].</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="68" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_councillor" />
+				<task type="interact_with_vendor" id="69" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_councillor" />
+				<task type="interact_with_vendor" id="70" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_councillor" />
+				<task type="interact_with_vendor" id="71" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_councillor" />
+				<task type="interact_with_vendor" id="72" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_councillor" />
+				<task type="interact_with_vendor" id="73" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_councillor" />
+				<task type="interact_with_vendor" id="74" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_councillor" />
+				<task type="interact_with_vendor" id="75" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_councillor" />
+				<task type="interact_with_vendor" id="76" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_councillor" />
+				<task type="interact_with_vendor" id="77" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_councillor" />
+				<task type="interact_with_vendor" id="78" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_councillor" />
+				<task type="interact_with_vendor" id="79" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_councillor" />
+				<task type="interact_with_vendor" id="80" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_councillor" />
+				<task type="interact_with_vendor" id="81" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_councillor" />
+				<task type="interact_with_vendor" id="82" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_councillor" />
+				<task type="interact_with_vendor" id="83" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_councillor" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="48" tag="" />
+		<node type="event_merge" id="50" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="11" value="1" />
+		<edge id="2" from="11" to="12" value="1" />
+		<edge id="3" from="12" to="13" value="1" />
+		<edge id="4" from="13" to="2" value="1" />
+		<edge id="95" from="2" to="50" value="0" />
+		<edge id="6" from="25" to="20" value="0" />
+		<edge id="7" from="20" to="24" value="1" />
+		<edge id="8" from="24" to="26" value="2" />
+		<edge id="9" from="25" to="15" value="0" />
+		<edge id="10" from="25" to="18" value="0" />
+		<edge id="11" from="25" to="14" value="0" />
+		<edge id="12" from="25" to="17" value="0" />
+		<edge id="13" from="25" to="16" value="0" />
+		<edge id="14" from="25" to="19" value="0" />
+		<edge id="15" from="25" to="23" value="0" />
+		<edge id="16" from="25" to="22" value="0" />
+		<edge id="17" from="25" to="21" value="0" />
+		<edge id="47" from="27" to="37" value="1" />
+		<edge id="19" from="15" to="27" value="1" />
+		<edge id="20" from="18" to="28" value="1" />
+		<edge id="21" from="14" to="29" value="1" />
+		<edge id="22" from="17" to="30" value="1" />
+		<edge id="23" from="16" to="31" value="1" />
+		<edge id="24" from="19" to="32" value="1" />
+		<edge id="25" from="23" to="33" value="1" />
+		<edge id="26" from="22" to="34" value="1" />
+		<edge id="27" from="21" to="35" value="1" />
+		<edge id="28" from="27" to="26" value="2" />
+		<edge id="29" from="28" to="26" value="2" />
+		<edge id="30" from="29" to="26" value="2" />
+		<edge id="31" from="30" to="26" value="2" />
+		<edge id="32" from="31" to="26" value="2" />
+		<edge id="33" from="32" to="26" value="2" />
+		<edge id="34" from="33" to="26" value="2" />
+		<edge id="35" from="34" to="26" value="2" />
+		<edge id="36" from="35" to="26" value="2" />
+		<edge id="55" from="33" to="37" value="1" />
+		<edge id="54" from="32" to="37" value="0" />
+		<edge id="53" from="32" to="37" value="1" />
+		<edge id="52" from="31" to="37" value="1" />
+		<edge id="51" from="30" to="37" value="1" />
+		<edge id="50" from="29" to="37" value="1" />
+		<edge id="49" from="28" to="37" value="1" />
+		<edge id="48" from="24" to="37" value="1" />
+		<edge id="81" from="20" to="48" value="2" />
+		<edge id="56" from="34" to="37" value="1" />
+		<edge id="57" from="35" to="37" value="1" />
+		<edge id="96" from="50" to="25" value="0" />
+		<edge id="82" from="15" to="48" value="2" />
+		<edge id="83" from="18" to="48" value="2" />
+		<edge id="84" from="14" to="48" value="2" />
+		<edge id="85" from="17" to="48" value="2" />
+		<edge id="86" from="16" to="48" value="2" />
+		<edge id="87" from="19" to="48" value="2" />
+		<edge id="88" from="23" to="48" value="2" />
+		<edge id="89" from="22" to="48" value="2" />
+		<edge id="90" from="21" to="48" value="2" />
+		<edge id="98" from="37" to="50" value="0" />
+		<edge id="93" from="26" to="49" value="0" />
+		<edge id="94" from="49" to="1" value="1" />
+		<edge id="97" from="48" to="50" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Wulff Diffraction Goniometer" image_locked="quest_item_placeholder_locked.png" image_unlocked="quest_item_placeholder_unlocked.png">
+		<name_locked>A magical device</name_locked>
+		<name_unlocked>Wulff Diffraction Goniometer</name_unlocked>
+		<description_locked>A magical device that uses materials somewhat similar to the $[Skill.T.s_telescope_Description_NameSingular] and the $[Resource.C.r_compass_NameSingular]</description_locked>
+		<description_unlocked>A magical device used in the measurement of arcane crystallography properties. Handle with care.</description_unlocked>
+	</quest_item>
+</quest>

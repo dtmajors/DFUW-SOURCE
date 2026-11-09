@@ -1,0 +1,124 @@
+<quest quest_id="309" category="lore_quest" tag="The Darkbrood" published="False" valid="True">
+	<title>The Darkbrood</title>
+	<description>You left the Amethyst Athenaeum fairly quickly. One possible reason for your haste that I could fathom was perhaps to spare yourself from murdering the Acolyte.  His belated revelation that the stolen books could be tracked magically left you feeling a tad irksome I would imagine! Nevertheless, you quickly made your way to the area he had indicated hoping to finally track down the mysterious villain behind the Fetish.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="308" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Find the Books in the Church" optional_tasks="True">
+			<instruction>Locate the missing tomes.</instruction>
+			<journal_entry>An oddly unadorned church drew you inside.  The lack of idols or images seemed deliberate, almost as if the emptiness itself was a thing of worship. Inside the building you located a chest with $[Vendors.q09_quest_acolyte_librarian_Name]&apos;s missing tomes. It seemed that you had finally discovered your elusive villains!</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="An Interact With Object Task" resource_name="r_Treasure Chest" />
+				<task type="go_to_area" id="17" value="1" tag="A Go To Area Task" area_id="50" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="2" tag="">
+			<instruction>Go to the area marked on your map.</instruction>
+			<journal_entry>The location you arrived at was odd, even by my standards.  Various dark, dwarf-like beings were walking about, patrolling and working in an eerie silence.   Finding the books was your current priority but, given that the entire Dwarven race was believed to have been wiped out, it couldn&apos;t hurt to dig a little deeper too.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="4" value="1" tag="A Go To Area Task" area_id="50" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="2" tag="An Add Quest Area to World-Map Action" area_id="50" />
+			</actions>
+		</node>
+		<node type="event_simple" id="3" tag="Interact with the Weird Hand">
+			<journal_entry>The eerie, hand shaped altar pulsed with a dark presence.  Even as you approached you could hear an insidious whispering, just on the edge of your mind, beckoning you ever closer.  Reaching out, you had barely touched the structure when the voice erupted in your mind.  You had the impression that it was not addressing you, perhaps not even aware of your presence because it was so saturated.  It was an amalgam of voices, of minds, all whispering over each other and clamoring into your consciousness like a thousand bees pouring into your skull.  You broke contact...</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="1" value="1" tag="An Interact With Object Task" resource_name="r_qt  darkbrood hand" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="Malaut Sound Effect">
+			<actions>
+				<action type="start_client_sfx_on_resource" id="0" tag="activation" sfx_name="se_darkbrood_altar_activation" resource_name="r_qt  darkbrood hand" />
+				<action type="start_client_sfx_on_player" id="4" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quests_below_forge_01" />
+			</actions>
+		</node>
+		<node type="event_simple" id="5" tag="The Forge">
+			<journal_entry>The forge seemed to draw your eye from the start, something was simply out of place about it. The tools and half finished weapons around it definitely resembled those you found in the Sadayel camp earlier but there was also something more.  A feeling of power emanated from here, something that felt old, forgotten, but biding its time...</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="2" value="1" tag="An Interact With Object Task" resource_name="r_qt Darkbrood Forge" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="mageblast dmg" optional_tasks="True">
+			<journal_entry>Their magics struck just as hard and precisely as their weapons.  The darkbrood, you would later learn, functioned through  a hive mind.  A dark pact with a greedy god that went horribly wrong (at least for the god, poor twisted and ever-ravenous Sahul...)</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="3" value="1" tag="A Go To Area Task" area_id="50" />
+				<task type="take_damage_from_skill" id="9" value="1" tag="A Take Damage from Skill Task" magnitude="1" skill_name="s_Natural Mageblast" />
+			</tasks>
+		</node>
+		<node type="end_node" id="7" tag="" />
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>Why were they here however, and who were the denizens of this odd place. I never claimed to understand your methods, but I assume you had to test them a little, see what they were made of.  Either that, or you felt like a fight!</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="darkbrood dmg" optional_tasks="True">
+			<journal_entry>These were no ordinary Dwarves.  The cold, dead eyes that peered right into your soul were a stark contrast to the almost bestial rage that fueled their unnaturally cohesive attack strategies.  They moved as one, struck as one... you did not know it at the time, but you had just encountered the Darkbrood.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="10" value="1" tag="A Go To Area Task" area_id="50" />
+				<task type="take_damage_from" id="12" value="1" tag="A Take Damage from Object Task" magnitude="100" resource_name="r_Darkbroods" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="10" tag="" />
+		<node type="event_join" id="11" tag="">
+			<journal_entry>You had Behrem&apos;s missing tomes and you finally had someone dark and sinister enough to qualify as the villain of your tale.  What you did not have, however, was motive...and that meant you also had more questions.</journal_entry>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>It was time to return to the Shamman.  Questions and books alike belonged there.</journal_entry>
+		</node>
+		<node type="end_node" id="16" tag="impossible end" />
+		<node type="end_node" id="17" tag="impossible end" />
+		<node type="event_simple" id="18" tag="impossible tasks" optional_tasks="False">
+			<tasks>
+				<task type="go_to_area" id="13" value="1" tag="A Go To Area Task" area_id="3" />
+				<task type="go_to_area" id="14" value="1" tag="A Go To Area Task" area_id="17" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="19" tag="impossible tasks" optional_tasks="False">
+			<tasks>
+				<task type="go_to_area" id="15" value="1" tag="A Go To Area Task" area_id="3" />
+				<task type="go_to_area" id="16" value="1" tag="A Go To Area Task" area_id="17" />
+			</tasks>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="1" from="2" to="1" value="1" />
+		<edge id="2" from="2" to="3" value="1" />
+		<edge id="3" from="3" to="4" value="1" />
+		<edge id="4" from="2" to="5" value="1" />
+		<edge id="8" from="1" to="8" value="1" />
+		<edge id="19" from="14" to="11" value="1" />
+		<edge id="16" from="10" to="14" value="0" />
+		<edge id="18" from="6" to="11" value="1" />
+		<edge id="12" from="8" to="10" value="0" />
+		<edge id="17" from="10" to="6" value="0" />
+		<edge id="22" from="11" to="12" value="0" />
+		<edge id="23" from="12" to="7" value="0" />
+		<edge id="29" from="19" to="16" value="1" />
+		<edge id="28" from="5" to="19" value="1" />
+		<edge id="26" from="4" to="18" value="0" />
+		<edge id="27" from="18" to="17" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="49" y="338" />
+		<node_location id="1" x="240" y="205" />
+		<node_location id="2" x="169" y="336" />
+		<node_location id="3" x="437" y="556" />
+		<node_location id="4" x="604" y="565" />
+		<node_location id="5" x="429" y="349" />
+		<node_location id="6" x="616" y="126" />
+		<node_location id="7" x="979" y="295" />
+		<node_location id="8" x="362" y="199" />
+		<node_location id="14" x="609" y="253" />
+		<node_location id="10" x="478" y="200" />
+		<node_location id="11" x="776" y="245" />
+		<node_location id="12" x="877" y="264" />
+		<node_location id="16" x="692" y="353" />
+		<node_location id="17" x="876" y="560" />
+		<node_location id="18" x="759" y="562" />
+		<node_location id="19" x="565" y="352" />
+	</node_locations>
+</quest>

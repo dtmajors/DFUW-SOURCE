@@ -1,0 +1,86 @@
+// Note: Test this shader
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "texture.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+STD_PS_OUTPUT_3 PS(STD_VS_INSTANCE_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float4 Color;
+	float4 SurfaceColor = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+    float3 Ln = -PLANET_LIGHTDIR_COMMON;
+    float3 Nn = normalize(Input.WorldNormal);
+    float3 Vn = normalize(Input.WorldEyeVec);
+    float3 Hn = normalize(Vn + Ln);
+    float ldn = dot(Ln, Nn);
+    ldn = smoothstep(-SPECULAR_DIFFUSE_WRAPAROUND, 1.0, ldn);
+    float hdn = dot(Hn, Nn);
+    float vdn = pow(dot(Vn, Nn), SPECULAR_ROLLOVER);
+    float exp2 = lerp(SPECULAR_EDGE_EXPONENT, SPECULAR_MAIN_EXPONENT, vdn);
+    float4 litVec = lit(ldn, hdn, exp2);
+    float3 diffContrib = SurfaceColor * (litVec.y * PLANET_LIGHTCOLOR_COMMON + ATMOSPHERE_AMBIENT);
+    float3 specContrib = litVec.y * litVec.z * PLANET_LIGHTCOLOR_COMMON; 
+    Color =  float4((diffContrib + specContrib).xyz, 0);
+
+#ifdef SHADOWS_ENABLED_HERE
+	L = CalculateCascadedShadowDirLight(float4(Input.WorldPos, 1), Input.ZPos);
+	Color = GetShadowValue(Color, L);
+#endif
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		Color.xyz += pointLightPixelSpecularDiffuseWrapRaw(Input.WorldPos, Nn, /*SurfaceColor.xyz,*/
+			STANDARD_PROP_SPECULAR_EXPONENT, STANDARD_PROP_DIFFUSE_WRAP, STANDARD_PROP_SPECULAR_CONTRIBUTION, Vn, LightParams[i]).xyz;
+	}
+#endif
+
+	Color.xyz = lerp(Color.xyz, FOG_COLOR.xyz, Input.Fog);
+
+	Output.Color = Color;
+	//Output.Effect = 0.0f;
+
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = Nn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(SurfaceColor.xyz, STANDARD_PROP_SPECULAR_CONTRIBUTION);
+#endif	
+
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 STD_VERTEX_SHADER_INSTANCE();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

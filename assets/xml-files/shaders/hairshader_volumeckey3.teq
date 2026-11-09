@@ -1,0 +1,172 @@
+// Note: MOVE LIGHTS TO PS!!!
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "windswing.frag"
+#include "atmosphere.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+#include "offscreenfx.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+bool Transparent : REInfoTransparent = true;
+ 
+float4 DiffMaterial : REPMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPMaterialPower = 0.0f;
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 SunLight : COLOR0;
+    float2 Tex  : TEXCOORD0;
+    float3 WorldPos   		: TEXCOORD1;
+	float3 WorldNorm		: TEXCOORD2;
+	float ZPos 				: TEXCOORD3;
+	float4 ClipSpace		: TEXCOORD4;
+    float Fog : FOG;
+};
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+//the frequency
+const float LerpFrequency : REInfoLerpPositionDirectionFrequency = 1.0f/20.0f;
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    float3 ObjectSize = getBBScale();
+    
+    float3 MinValues;
+
+    float3 NewPos = Input.Pos;
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+	int4 IndexVector = D3DCOLORtoUBYTE4(Input.Diff);
+	
+	float Checker = (float)IndexVector[1]/255.0f;
+    
+   float MPly = saturate(1.0f - Checker);
+   float3 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+   float3 NormLerpPos = normalize(LERP_POS_DIRECTION);
+
+   //float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+   float3 WorldNorm = normalize(mul(float3(0,0,-1),(float3x3)WORLD_MATRIX));
+
+   float Move = saturate(dot(NormLerpPos,-WorldNorm));
+   float Move_inv = saturate(dot(NormLerpPos,WorldNorm));
+   Move = max(Move,Move_inv);
+
+   float Move2 = saturate(dot(WIND_DIR,-WorldNorm));
+   float Move2_inv = saturate(dot(WIND_DIR,WorldNorm));
+   Move2 = max(Move2,Move2_inv);
+
+   float FracWorld = saturate(0.7f + frac(WorldPos.x));
+
+   float WindFactor = SFGetPeriodicSinTimeValue(0.0f, MPly, WIND_SPEED*10.0f*(MPly*FracWorld*0.5f),0.0f);
+   WindFactor *=WindFactor;
+   
+   //get the length of the vector
+   float Len = length(LERP_POS_DIRECTION);
+   float LenMul = 1.0f;
+   if (Len > (ObjectSize.x*0.5f))
+   {
+   		LenMul = ObjectSize.x*0.5f/Len;
+   }
+      
+   float3 DirOffset = 2*LERP_POS_DIRECTION*MPly*Move*LenMul;
+   DirOffset += WIND_DIR * MPly * (ObjectSize.x + ObjectSize.z)*0.125f*0.15f*Move2*WindFactor;
+   
+	WorldPos -= DirOffset;   
+	//WorldPos -= WorldNorm*MPly;   
+	
+    Out.Pos = mul(float4(WorldPos,1.0f),VIEW_PROJECTION_MATRIX);
+	Out.ZPos = Out.Pos.z;
+    WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+	
+	Out.WorldPos = WorldPos;
+	Out.WorldNorm = WorldNorm;
+
+	Out.SunLight = lightPixelDiffuseRaw(WorldNorm);
+
+    Out.Tex  = Input.Tex;
+	Out.ClipSpace = Out.Pos;
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	
+    return Out;
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3)0;	
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+
+	if (BaseTex.a < 0.1f)
+	{
+		clip(-0.5f);
+	}
+
+	//Lep is from [0.1,1.0]
+	float LerpVal = saturate(BaseTex.a - 0.10);
+	//[0.0,0.9]
+	LerpVal = LerpVal * (1.0/0.90);
+
+	float4 OrigTex = BaseTex;
+
+	BaseTex *= DiffMaterial;
+
+
+	float4 FinalTex = lerp(BaseTex,OrigTex,LerpVal);
+	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	float3 Nn = normalize(Input.WorldNorm);
+	[loop] for (int i=0; i<ActiveLightCount; i++) DynamicLight += pointLightPixelDiffuseRaw(Input.WorldPos, Nn, LightParams[i]);
+#endif
+
+	Out.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, FinalTex.xyz, Input.SunLight, DynamicLight);
+    Out.Color.w = 0.0f;
+
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_NO_EFFECT; //SSAO_getZVal(Input.ZPos);
+#endif
+
+	// OffscreenFX
+	Out.Color = ProcessOffscreenFXColor(Out.Color, Input.ClipSpace);
+   
+	return Out;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+}

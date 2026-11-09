@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<SFXML>
+  <VersionInformation Incremental="0" Major="0" Minor="1" />
+  
+<!-- ********************************************************************
+
+        STORMHAMMER
+	
+*********************************************************************** -->
+  
+  <SFLandVehicleInfo>
+    <SFResourceName>
+      <SFString Value="r_Stormhammer" />
+    </SFResourceName>
+    <SFLandVehicleInfoStartSpawningSpecialEffect>
+      <SFString Value="se_warhulks_spawn" />
+    </SFLandVehicleInfoStartSpawningSpecialEffect>
+    <SFLandVehicleInfoPreKillSpecialEffect>
+      <SFString Value="se_warhulk_sh_prekill" />
+    </SFLandVehicleInfoPreKillSpecialEffect>
+    <SFLandVehicleInfoKillSpecialEffect>
+      <SFString Value="se_warhulk_sh_kill" />
+    </SFLandVehicleInfoKillSpecialEffect>
+    <SFLandVehicleInfoUnspawnSpecialEffect>
+      <SFString Value="se_warhulks_unspawn" />
+    </SFLandVehicleInfoUnspawnSpecialEffect>
+    <SFLandVehicleInfoDamageSpecialEffect>
+      <SFString Value="se_warhulk_sh_damage_1" />
+    </SFLandVehicleInfoDamageSpecialEffect>
+    <SFTankMainCannonInfoResourceName>
+      <SFString Value="r_Stormhammer Cannon" />
+    </SFTankMainCannonInfoResourceName>
+    <SFTankCannon2InfoResourceName>
+      <SFString Value="r_Lightning Cannon_01" />
+    </SFTankCannon2InfoResourceName>
+    <SFTankCannon3InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon3InfoResourceName>
+    <SFTankCannon4InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon4InfoResourceName>
+    <SFTankCannon5InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon5InfoResourceName>
+    <SFTankCannon6InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon6InfoResourceName>
+    <SFTankCannon7InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon7InfoResourceName>
+    <SFTankCannon8InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon8InfoResourceName>
+    <SFTankCannon9InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon9InfoResourceName>
+    <TankLadderResourceName>
+      <SFString Value="r_Warhulk Ladder_01" />
+    </TankLadderResourceName>
+
+
+    <SFTankTurnRadius>
+        <SFFloat Value="7.5" />
+    </SFTankTurnRadius>
+    <SFTankAccelerationRate>
+        <SFFloat Value="1.0" />
+    </SFTankAccelerationRate>
+    <SFTankDecelerationRate>
+        <SFFloat Value="2.0" />
+    </SFTankDecelerationRate>
+    <SFTankRollToRestDecelerationRate>
+        <SFFloat Value="3.0" />
+    </SFTankRollToRestDecelerationRate>
+    <SFTankBackwardSpeedMultiplier>
+        <SFFloat Value="0.75" />
+    </SFTankBackwardSpeedMultiplier>
+    <SFTankVelocityMultiplierThresholdAngle>
+        <SFFloat Value="0.2" />
+    </SFTankVelocityMultiplierThresholdAngle>
+    <SFTankVelocityMultiplierBoostFactor>
+        <SFFloat Value="0.1" />
+    </SFTankVelocityMultiplierBoostFactor>
+    <SFTankMaxPitchRockAngle>
+        <SFFloat Value="0.2" />
+    </SFTankMaxPitchRockAngle>
+    <SFTankMaxRollRockAngle>
+        <SFFloat Value="0.1" />
+    </SFTankMaxRollRockAngle>
+    <SFTankMaxContactVelocity>
+        <SFFloat Value="5.0"/>
+    </SFTankMaxContactVelocity>
+    <SFTankMinObjectCollisionRadius>
+        <SFFloat Value="4.0"/>
+    </SFTankMinObjectCollisionRadius>
+    <SFTankTurnAccelerationRate>
+        <SFFloat Value="0.5"/>
+    </SFTankTurnAccelerationRate>
+    <SFTankTurnDecelerationRate>
+        <SFFloat Value="0.75"/>
+    </SFTankTurnDecelerationRate>
+    
+
+
+	<SFIdleUnusedAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_stormhammer_idle_unused_loop.xml" />
+	</SFIdleUnusedAudioName>
+	<SFIdleAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_stormhammer_idle_used_loop.xml" />
+	</SFIdleAudioName>
+	<SFStartAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_stormhammer_start_using.xml" />
+	</SFStartAudioName>
+	<SFStopAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_stormhammer_stop_using.xml" />
+	</SFStopAudioName>
+	<SFStartMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_stormhammer_start_moving.xml" />
+	</SFStartMovingAudioName>
+	<SFStopMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_stormhammer_stop_moving.xml" />
+	</SFStopMovingAudioName>
+	<SFMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_stormhammer_moving_loop.xml" />
+	</SFMovingAudioName>
+
+<!--
+	<SFTankSpecialEffect0>
+      <SFString Value="se_ship_kill" />
+	<SFTankSpecialEffect0/>
+-->
+
+	<SFKillExplosionRadius>
+		<SFFloat Value="10.0" />
+	</SFKillExplosionRadius>
+	<SFKillExplosionForce>
+		<SFFloat Value="1.0" />
+	</SFKillExplosionForce>
+	<SFKillDamageMagnitude>
+		<SFFloat Value="20.0" />
+	</SFKillDamageMagnitude>
+
+  </SFLandVehicleInfo>
+  
+  
+  
+<!-- ********************************************************************
+
+	SPIDER SCARAB
+	
+*********************************************************************** -->
+
+  <SFLandVehicleInfo>
+    <SFResourceName>
+      <SFString Value="r_Spider Scarab" />
+    </SFResourceName>
+    <SFLandVehicleInfoStartSpawningSpecialEffect>
+      <SFString Value="se_warhulks_spawn" />
+    </SFLandVehicleInfoStartSpawningSpecialEffect>
+    <SFLandVehicleInfoPreKillSpecialEffect>
+      <SFString Value="se_warhulk_sc_prekill" />
+    </SFLandVehicleInfoPreKillSpecialEffect>
+    <SFLandVehicleInfoKillSpecialEffect>
+      <SFString Value="se_warhulk_sc_kill" />
+    </SFLandVehicleInfoKillSpecialEffect>
+    <SFLandVehicleInfoUnspawnSpecialEffect>
+      <SFString Value="se_warhulks_unspawn" />
+    </SFLandVehicleInfoUnspawnSpecialEffect>
+    <SFLandVehicleInfoDamageSpecialEffect>
+      <SFString Value="se_warhulk_sc_damage_1" />
+    </SFLandVehicleInfoDamageSpecialEffect>
+    <SFTankMainCannonInfoResourceName>
+      <SFString Value="r_Spider Scarab Cannon" />
+    </SFTankMainCannonInfoResourceName>
+    <SFTankCannon2InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon2InfoResourceName>
+    <SFTankCannon3InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon3InfoResourceName>
+    <SFTankCannon4InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon4InfoResourceName>
+    <SFTankCannon5InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon5InfoResourceName>
+    <SFTankCannon6InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon6InfoResourceName>
+    <SFTankCannon7InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon7InfoResourceName>
+    <SFTankCannon8InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon8InfoResourceName>
+    <SFTankCannon9InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon9InfoResourceName>
+    <TankLadderResourceName>
+      <SFString Value="r_Warhulk Spider Scarab Ladder_01" />
+    </TankLadderResourceName>
+
+
+    <SFTankTurnRadius>
+        <SFFloat Value="7.5" />
+    </SFTankTurnRadius>
+    <SFTankAccelerationRate>
+        <SFFloat Value="1.0" />
+    </SFTankAccelerationRate>
+    <SFTankDecelerationRate>
+        <SFFloat Value="2.0" />
+    </SFTankDecelerationRate>
+    <SFTankRollToRestDecelerationRate>
+        <SFFloat Value="3.0" />
+    </SFTankRollToRestDecelerationRate>
+    <SFTankBackwardSpeedMultiplier>
+        <SFFloat Value="0.75" />
+    </SFTankBackwardSpeedMultiplier>
+    <SFTankVelocityMultiplierThresholdAngle>
+        <SFFloat Value="0.2" />
+    </SFTankVelocityMultiplierThresholdAngle>
+    <SFTankVelocityMultiplierBoostFactor>
+        <SFFloat Value="0.1" />
+    </SFTankVelocityMultiplierBoostFactor>
+    <SFTankMaxPitchRockAngle>
+        <SFFloat Value="0.2" />
+    </SFTankMaxPitchRockAngle>
+    <SFTankMaxRollRockAngle>
+        <SFFloat Value="0.1" />
+    </SFTankMaxRollRockAngle>
+    <SFTankMaxContactVelocity>
+        <SFFloat Value="5.5"/>
+    </SFTankMaxContactVelocity>
+    <SFTankMinObjectCollisionRadius>
+        <SFFloat Value="4.0"/>
+    </SFTankMinObjectCollisionRadius>
+    <SFTankTurnAccelerationRate>
+        <SFFloat Value="0.5"/>
+    </SFTankTurnAccelerationRate>
+    <SFTankTurnDecelerationRate>
+        <SFFloat Value="0.75"/>
+    </SFTankTurnDecelerationRate>
+
+	<SFIdleUnusedAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_spiderscarab_idle_unused.xml" />
+	</SFIdleUnusedAudioName>
+	<SFIdleAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_spiderscarab_using.xml" />
+	</SFIdleAudioName>
+	<SFStartAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_spiderscarab_start_using.xml" />
+	</SFStartAudioName>
+	<SFStopAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_spiderscarab_stop_using.xml" />
+	</SFStopAudioName>
+	<SFStartMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_spiderscarab_start_moving.xml" />
+	</SFStartMovingAudioName>
+	<SFStopMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_spiderscarab_stop_moving.xml" />
+	</SFStopMovingAudioName>
+	<SFMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_spiderscarab_moving.xml" />
+	</SFMovingAudioName>
+
+<!--
+	<SFTankSpecialEffect0>
+      <SFString Value="se_ship_kill" />
+	<SFTankSpecialEffect0/>
+-->
+
+	<SFKillExplosionRadius>
+		<SFFloat Value="10.0" />
+	</SFKillExplosionRadius>
+	<SFKillExplosionForce>
+		<SFFloat Value="5.0" />
+	</SFKillExplosionForce>
+	<SFKillDamageMagnitude>
+		<SFFloat Value="30.0" />
+	</SFKillDamageMagnitude>
+
+  </SFLandVehicleInfo>
+
+
+<!-- ********************************************************************
+
+        VILEFORGE
+	
+*********************************************************************** -->
+
+  <SFLandVehicleInfo>
+    <SFResourceName>
+      <SFString Value="r_vileforge" />
+    </SFResourceName>
+    <SFLandVehicleInfoStartSpawningSpecialEffect>
+      <SFString Value="se_warhulks_spawn" />
+    </SFLandVehicleInfoStartSpawningSpecialEffect>
+    <SFLandVehicleInfoPreKillSpecialEffect>
+      <SFString Value="se_warhulk_vf_prekill" />
+    </SFLandVehicleInfoPreKillSpecialEffect>
+    <SFLandVehicleInfoKillSpecialEffect>
+      <SFString Value="se_warhulk_vf_kill" />
+    </SFLandVehicleInfoKillSpecialEffect>
+    <SFLandVehicleInfoUnspawnSpecialEffect>
+      <SFString Value="se_warhulks_unspawn" />
+    </SFLandVehicleInfoUnspawnSpecialEffect>
+    <SFLandVehicleInfoDamageSpecialEffect>
+      <SFString Value="se_warhulk_vf_damage_1" />
+    </SFLandVehicleInfoDamageSpecialEffect>
+    <SFTankMainCannonInfoResourceName>
+      <SFString Value="r_Vileforge Cannon" />
+    </SFTankMainCannonInfoResourceName>
+    <SFTankCannon2InfoResourceName>
+      <SFString Value="r_Vileforge Cannon Back" />
+    </SFTankCannon2InfoResourceName>
+    <SFTankCannon3InfoResourceName>
+      <SFString Value="r_Vileforge Flamethrower" />
+    </SFTankCannon3InfoResourceName>
+    <SFTankCannon4InfoResourceName>
+      <SFString Value="r_Vileforge Flamethrower" />
+    </SFTankCannon4InfoResourceName>
+    <SFTankCannon5InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon5InfoResourceName>
+    <SFTankCannon6InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon6InfoResourceName>
+    <SFTankCannon7InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon7InfoResourceName>
+    <SFTankCannon8InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon8InfoResourceName>
+    <SFTankCannon9InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon9InfoResourceName>
+    <TankLadderResourceName>
+      <SFString Value="r_Warhulk Vileforge Ladder_01" />
+    </TankLadderResourceName>
+
+
+    <SFTankTurnRadius>
+        <SFFloat Value="15.0" />
+    </SFTankTurnRadius>
+    <SFTankAccelerationRate>
+        <SFFloat Value="0.75" />
+    </SFTankAccelerationRate>
+    <SFTankDecelerationRate>
+        <SFFloat Value="1.5" />
+    </SFTankDecelerationRate>
+    <SFTankRollToRestDecelerationRate>
+        <SFFloat Value="3.0" />
+    </SFTankRollToRestDecelerationRate>
+    <SFTankBackwardSpeedMultiplier>
+        <SFFloat Value="0.75" />
+    </SFTankBackwardSpeedMultiplier>
+    <SFTankVelocityMultiplierThresholdAngle>
+        <SFFloat Value="0.2" />
+    </SFTankVelocityMultiplierThresholdAngle>
+    <SFTankVelocityMultiplierBoostFactor>
+        <SFFloat Value="0.1" />
+    </SFTankVelocityMultiplierBoostFactor>
+    <SFTankMaxPitchRockAngle>
+        <SFFloat Value="0.2" />
+    </SFTankMaxPitchRockAngle>
+    <SFTankMaxRollRockAngle>
+        <SFFloat Value="0.1" />
+    </SFTankMaxRollRockAngle>
+    <SFTankMaxContactVelocity>
+        <SFFloat Value="4.5"/>
+    </SFTankMaxContactVelocity>
+    <SFTankMinObjectCollisionRadius>
+        <SFFloat Value="4.0"/>
+    </SFTankMinObjectCollisionRadius>
+    <SFTankTurnAccelerationRate>
+        <SFFloat Value="0.4"/>
+    </SFTankTurnAccelerationRate>
+    <SFTankTurnDecelerationRate>
+        <SFFloat Value="0.6"/>
+    </SFTankTurnDecelerationRate>
+
+	<SFIdleUnusedAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_vineforge_unused.xml" />
+	</SFIdleUnusedAudioName>
+	<SFIdleAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_vineforge_using.xml" />
+	</SFIdleAudioName>
+	<SFStartAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_vineforge_startusing.xml" />
+	</SFStartAudioName>
+	<SFStopAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_vineforge_stopusing.xml" />
+	</SFStopAudioName>
+	<SFStartMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_vineforge_startmoving.xml" />
+	</SFStartMovingAudioName>
+	<SFStopMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_vineforge_stopmoving.xml" />
+	</SFStopMovingAudioName>
+	<SFMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_vineforge_moving.xml" />
+	</SFMovingAudioName>
+
+<!--
+	<SFTankSpecialEffect0>
+      <SFString Value="se_ship_kill" />
+	<SFTankSpecialEffect0/>
+-->
+
+	<SFKillExplosionRadius>
+		<SFFloat Value="10.0" />
+	</SFKillExplosionRadius>
+	<SFKillExplosionForce>
+		<SFFloat Value="5.0" />
+	</SFKillExplosionForce>
+	<SFKillDamageMagnitude>
+		<SFFloat Value="30.0" />
+	</SFKillDamageMagnitude>
+
+
+
+  </SFLandVehicleInfo>
+
+<!-- ********************************************************************
+
+	BATTLE ARK
+	
+*********************************************************************** -->
+
+  <SFLandVehicleInfo>
+    <SFResourceName>
+      <SFString Value="r_battle ark" />
+    </SFResourceName>
+    <SFLandVehicleInfoStartSpawningSpecialEffect>
+      <SFString Value="se_warhulks_spawn" />
+    </SFLandVehicleInfoStartSpawningSpecialEffect>
+    <SFLandVehicleInfoPreKillSpecialEffect>
+      <SFString Value="se_warhulk_ba_prekill" />
+    </SFLandVehicleInfoPreKillSpecialEffect>
+    <SFLandVehicleInfoKillSpecialEffect>
+      <SFString Value="se_warhulk_ba_kill" />
+    </SFLandVehicleInfoKillSpecialEffect>
+    <SFLandVehicleInfoUnspawnSpecialEffect>
+      <SFString Value="se_warhulks_unspawn" />
+    </SFLandVehicleInfoUnspawnSpecialEffect>
+    <SFLandVehicleInfoDamageSpecialEffect>
+      <SFString Value="se_warhulk_ba_damage_1" />
+    </SFLandVehicleInfoDamageSpecialEffect>
+    <SFTankMainCannonInfoResourceName>
+      <SFString Value="" />
+    </SFTankMainCannonInfoResourceName>
+    <SFTankCannon2InfoResourceName>
+      <SFString Value="r_battle ark cannon" />
+    </SFTankCannon2InfoResourceName>
+    <SFTankCannon3InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon3InfoResourceName>
+    <SFTankCannon4InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon4InfoResourceName>
+    <SFTankCannon5InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon5InfoResourceName>
+    <SFTankCannon6InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon6InfoResourceName>
+    <SFTankCannon7InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon7InfoResourceName>
+    <SFTankCannon8InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon8InfoResourceName>
+    <SFTankCannon9InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon9InfoResourceName>
+    <TankLadderResourceName>
+      <SFString Value="r_Warhulk Battle Ark Ladder_01" />
+    </TankLadderResourceName>
+
+
+    <SFTankTurnRadius>
+        <SFFloat Value="15.0" />
+    </SFTankTurnRadius>
+    <SFTankAccelerationRate>
+        <SFFloat Value="0.75" />
+    </SFTankAccelerationRate>
+    <SFTankDecelerationRate>
+        <SFFloat Value="1.5" />
+    </SFTankDecelerationRate>
+    <SFTankRollToRestDecelerationRate>
+        <SFFloat Value="3.0" />
+    </SFTankRollToRestDecelerationRate>
+    <SFTankBackwardSpeedMultiplier>
+        <SFFloat Value="0.75" />
+    </SFTankBackwardSpeedMultiplier>
+    <SFTankVelocityMultiplierThresholdAngle>
+        <SFFloat Value="0.2" />
+    </SFTankVelocityMultiplierThresholdAngle>
+    <SFTankVelocityMultiplierBoostFactor>
+        <SFFloat Value="0.1" />
+    </SFTankVelocityMultiplierBoostFactor>
+    <SFTankMaxPitchRockAngle>
+        <SFFloat Value="0.2" />
+    </SFTankMaxPitchRockAngle>
+    <SFTankMaxRollRockAngle>
+        <SFFloat Value="0.1" />
+    </SFTankMaxRollRockAngle>
+    <SFTankMaxContactVelocity>
+        <SFFloat Value="4.5"/>
+    </SFTankMaxContactVelocity>
+    <SFTankMinObjectCollisionRadius>
+        <SFFloat Value="4.0"/>
+    </SFTankMinObjectCollisionRadius>
+    <SFTankTurnAccelerationRate>
+        <SFFloat Value="0.4"/>
+    </SFTankTurnAccelerationRate>
+    <SFTankTurnDecelerationRate>
+        <SFFloat Value="0.6"/>
+    </SFTankTurnDecelerationRate>
+
+	<SFIdleUnusedAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_battleark_idle_unused.xml" />
+	</SFIdleUnusedAudioName>
+	<SFIdleAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_battleark_using.xml" />
+	</SFIdleAudioName>
+	<SFStartAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_battleark_start_using.xml" />
+	</SFStartAudioName>
+	<SFStopAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_battleark_stop_using.xml" />
+	</SFStopAudioName>
+	<SFStartMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_battleark_start_moving.xml" />
+	</SFStartMovingAudioName>
+	<SFStopMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_battleark_stop_moving.xml" />
+	</SFStopMovingAudioName>
+	<SFMovingAudioName>
+      <SFString Value="audio/warhulks/df_warhulk_battleark_moving.xml" />
+	</SFMovingAudioName>
+
+<!--
+	<SFTankSpecialEffect0>
+      <SFString Value="se_ship_kill" />
+	<SFTankSpecialEffect0/>
+-->
+
+	<SFKillExplosionRadius>
+		<SFFloat Value="10.0" />
+	</SFKillExplosionRadius>
+	<SFKillExplosionForce>
+		<SFFloat Value="5.0" />
+	</SFKillExplosionForce>
+	<SFKillDamageMagnitude>
+		<SFFloat Value="30.0" />
+	</SFKillDamageMagnitude>
+
+  </SFLandVehicleInfo>
+
+<!-- ********************************************************************
+
+	FUNHULK 01
+	
+*********************************************************************** -->
+
+  <SFLandVehicleInfo>
+    <SFResourceName>
+      <SFString Value="r_Funhulk_01" />
+    </SFResourceName>
+    <SFLandVehicleInfoStartSpawningSpecialEffect>
+      <SFString Value="se_funhulk_spawn" />
+    </SFLandVehicleInfoStartSpawningSpecialEffect>
+    <SFLandVehicleInfoPreKillSpecialEffect>
+      <SFString Value="se_funhulk_prekill" />
+    </SFLandVehicleInfoPreKillSpecialEffect>
+    <SFLandVehicleInfoKillSpecialEffect>
+      <SFString Value="se_funhulk_kill" />
+    </SFLandVehicleInfoKillSpecialEffect>
+    <SFLandVehicleInfoUnspawnSpecialEffect>
+      <SFString Value="se_funhulk_unspawn" />
+    </SFLandVehicleInfoUnspawnSpecialEffect>
+    <SFLandVehicleInfoDamageSpecialEffect>
+      <SFString Value="se_funhulk_damage_1" />
+    </SFLandVehicleInfoDamageSpecialEffect>
+    <SFTankMainCannonInfoResourceName>
+      <SFString Value="r_Funhulk_01 Cannon_01" />
+    </SFTankMainCannonInfoResourceName>
+    <SFTankCannon2InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon2InfoResourceName>
+    <SFTankCannon3InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon3InfoResourceName>
+    <SFTankCannon4InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon4InfoResourceName>
+    <SFTankCannon5InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon5InfoResourceName>
+    <SFTankCannon6InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon6InfoResourceName>
+    <SFTankCannon7InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon7InfoResourceName>
+    <SFTankCannon8InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon8InfoResourceName>
+    <SFTankCannon9InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon9InfoResourceName>
+    <TankLadderResourceName>
+      <SFString Value="" />
+    </TankLadderResourceName>
+
+
+    <SFTankTurnRadius>
+        <SFFloat Value="2.5" />
+    </SFTankTurnRadius>
+    <SFTankAccelerationRate>
+        <SFFloat Value="4.0" />
+    </SFTankAccelerationRate>
+    <SFTankDecelerationRate>
+        <SFFloat Value="6.0" />
+    </SFTankDecelerationRate>
+    <SFTankRollToRestDecelerationRate>
+        <SFFloat Value="3.0" />
+    </SFTankRollToRestDecelerationRate>
+    <SFTankBackwardSpeedMultiplier>
+        <SFFloat Value="0.9" />
+    </SFTankBackwardSpeedMultiplier>
+    <SFTankVelocityMultiplierThresholdAngle>
+        <SFFloat Value="0.4" />
+    </SFTankVelocityMultiplierThresholdAngle>
+    <SFTankVelocityMultiplierBoostFactor>
+        <SFFloat Value="0.8" />
+    </SFTankVelocityMultiplierBoostFactor>
+    <SFTankMaxPitchRockAngle>
+        <SFFloat Value="0.35" />
+    </SFTankMaxPitchRockAngle>
+    <SFTankMaxRollRockAngle>
+        <SFFloat Value="0.35" />
+    </SFTankMaxRollRockAngle>
+    <SFTankMaxContactVelocity>
+        <SFFloat Value="5.0"/>
+    </SFTankMaxContactVelocity>
+    <SFTankMinObjectCollisionRadius>
+        <SFFloat Value="3.0"/>
+    </SFTankMinObjectCollisionRadius>
+    <SFTankTurnAccelerationRate>
+        <SFFloat Value="0.3"/>
+    </SFTankTurnAccelerationRate>
+    <SFTankTurnDecelerationRate>
+        <SFFloat Value="5.0"/>
+    </SFTankTurnDecelerationRate>
+
+	<SFIdleUnusedAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_idle_unused.xml" />
+	</SFIdleUnusedAudioName>
+	<SFIdleAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_using.xml" />
+	</SFIdleAudioName>
+	<SFStartAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_start_using.xml" />
+	</SFStartAudioName>
+	<SFStopAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_stop_using.xml" />
+	</SFStopAudioName>
+	<SFStartMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_start_moving.xml" />
+	</SFStartMovingAudioName>
+	<SFStopMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_stop_moving.xml" />
+	</SFStopMovingAudioName>
+	<SFMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_moving.xml" />
+	</SFMovingAudioName>
+
+
+	<SFKillExplosionRadius>
+		<SFFloat Value="10.0" />
+	</SFKillExplosionRadius>
+	<SFKillExplosionForce>
+		<SFFloat Value="5.0" />
+	</SFKillExplosionForce>
+	<SFKillDamageMagnitude>
+		<SFFloat Value="30.0" />
+	</SFKillDamageMagnitude>
+
+  </SFLandVehicleInfo>
+
+  <SFLandVehicleInfo>
+    <SFResourceName>
+      <SFString Value="r_Funhulk_02" />
+    </SFResourceName>
+    <SFLandVehicleInfoStartSpawningSpecialEffect>
+      <SFString Value="se_funhulk_spawn" />
+    </SFLandVehicleInfoStartSpawningSpecialEffect>
+    <SFLandVehicleInfoPreKillSpecialEffect>
+      <SFString Value="se_funhulk_prekill" />
+    </SFLandVehicleInfoPreKillSpecialEffect>
+    <SFLandVehicleInfoKillSpecialEffect>
+      <SFString Value="se_funhulk_kill" />
+    </SFLandVehicleInfoKillSpecialEffect>
+    <SFLandVehicleInfoUnspawnSpecialEffect>
+      <SFString Value="se_funhulk_unspawn" />
+    </SFLandVehicleInfoUnspawnSpecialEffect>
+    <SFLandVehicleInfoDamageSpecialEffect>
+      <SFString Value="se_funhulk_damage_1" />
+    </SFLandVehicleInfoDamageSpecialEffect>
+    <SFTankMainCannonInfoResourceName>
+      <SFString Value="r_Funhulk_02 Cannon_01" />
+    </SFTankMainCannonInfoResourceName>
+    <SFTankCannon2InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon2InfoResourceName>
+    <SFTankCannon3InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon3InfoResourceName>
+    <SFTankCannon4InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon4InfoResourceName>
+    <SFTankCannon5InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon5InfoResourceName>
+    <SFTankCannon6InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon6InfoResourceName>
+    <SFTankCannon7InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon7InfoResourceName>
+    <SFTankCannon8InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon8InfoResourceName>
+    <SFTankCannon9InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon9InfoResourceName>
+    <TankLadderResourceName>
+      <SFString Value="" />
+    </TankLadderResourceName>
+
+
+    <SFTankTurnRadius>
+        <SFFloat Value="2.5" />
+    </SFTankTurnRadius>
+    <SFTankAccelerationRate>
+        <SFFloat Value="4.0" />
+    </SFTankAccelerationRate>
+    <SFTankDecelerationRate>
+        <SFFloat Value="6.0" />
+    </SFTankDecelerationRate>
+    <SFTankRollToRestDecelerationRate>
+        <SFFloat Value="3.0" />
+    </SFTankRollToRestDecelerationRate>
+    <SFTankBackwardSpeedMultiplier>
+        <SFFloat Value="0.9" />
+    </SFTankBackwardSpeedMultiplier>
+    <SFTankVelocityMultiplierThresholdAngle>
+        <SFFloat Value="0.4" />
+    </SFTankVelocityMultiplierThresholdAngle>
+    <SFTankVelocityMultiplierBoostFactor>
+        <SFFloat Value="0.8" />
+    </SFTankVelocityMultiplierBoostFactor>
+    <SFTankMaxPitchRockAngle>
+        <SFFloat Value="0.35" />
+    </SFTankMaxPitchRockAngle>
+    <SFTankMaxRollRockAngle>
+        <SFFloat Value="0.35" />
+    </SFTankMaxRollRockAngle>
+    <SFTankMaxContactVelocity>
+        <SFFloat Value="5.0"/>
+    </SFTankMaxContactVelocity>
+    <SFTankMinObjectCollisionRadius>
+        <SFFloat Value="3.0"/>
+    </SFTankMinObjectCollisionRadius>
+    <SFTankTurnAccelerationRate>
+        <SFFloat Value="0.3"/>
+    </SFTankTurnAccelerationRate>
+    <SFTankTurnDecelerationRate>
+        <SFFloat Value="5.0"/>
+    </SFTankTurnDecelerationRate>
+
+	<SFIdleUnusedAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_idle_unused.xml" />
+	</SFIdleUnusedAudioName>
+	<SFIdleAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_using.xml" />
+	</SFIdleAudioName>
+	<SFStartAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_start_using.xml" />
+	</SFStartAudioName>
+	<SFStopAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_stop_using.xml" />
+	</SFStopAudioName>
+	<SFStartMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_start_moving.xml" />
+	</SFStartMovingAudioName>
+	<SFStopMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_stop_moving.xml" />
+	</SFStopMovingAudioName>
+	<SFMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_moving.xml" />
+	</SFMovingAudioName>
+
+
+	<SFKillExplosionRadius>
+		<SFFloat Value="10.0" />
+	</SFKillExplosionRadius>
+	<SFKillExplosionForce>
+		<SFFloat Value="5.0" />
+	</SFKillExplosionForce>
+	<SFKillDamageMagnitude>
+		<SFFloat Value="30.0" />
+	</SFKillDamageMagnitude>
+
+  </SFLandVehicleInfo>
+  
+  <SFLandVehicleInfo>
+    <SFResourceName>
+      <SFString Value="r_Funhulk_03" />
+    </SFResourceName>
+    <SFLandVehicleInfoStartSpawningSpecialEffect>
+      <SFString Value="se_funhulk_spawn" />
+    </SFLandVehicleInfoStartSpawningSpecialEffect>
+    <SFLandVehicleInfoPreKillSpecialEffect>
+      <SFString Value="se_funhulk_prekill" />
+    </SFLandVehicleInfoPreKillSpecialEffect>
+    <SFLandVehicleInfoKillSpecialEffect>
+      <SFString Value="se_funhulk_kill" />
+    </SFLandVehicleInfoKillSpecialEffect>
+    <SFLandVehicleInfoUnspawnSpecialEffect>
+      <SFString Value="se_funhulk_unspawn" />
+    </SFLandVehicleInfoUnspawnSpecialEffect>
+    <SFLandVehicleInfoDamageSpecialEffect>
+      <SFString Value="se_funhulk_damage_1" />
+    </SFLandVehicleInfoDamageSpecialEffect>
+    <SFTankMainCannonInfoResourceName>
+      <SFString Value="r_Funhulk_03 Cannon_01" />
+    </SFTankMainCannonInfoResourceName>
+    <SFTankCannon2InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon2InfoResourceName>
+    <SFTankCannon3InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon3InfoResourceName>
+    <SFTankCannon4InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon4InfoResourceName>
+    <SFTankCannon5InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon5InfoResourceName>
+    <SFTankCannon6InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon6InfoResourceName>
+    <SFTankCannon7InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon7InfoResourceName>
+    <SFTankCannon8InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon8InfoResourceName>
+    <SFTankCannon9InfoResourceName>
+      <SFString Value="" />
+    </SFTankCannon9InfoResourceName>
+    <TankLadderResourceName>
+      <SFString Value="" />
+    </TankLadderResourceName>
+
+
+    <SFTankTurnRadius>
+        <SFFloat Value="2.5" />
+    </SFTankTurnRadius>
+    <SFTankAccelerationRate>
+        <SFFloat Value="4.0" />
+    </SFTankAccelerationRate>
+    <SFTankDecelerationRate>
+        <SFFloat Value="6.0" />
+    </SFTankDecelerationRate>
+    <SFTankRollToRestDecelerationRate>
+        <SFFloat Value="3.0" />
+    </SFTankRollToRestDecelerationRate>
+    <SFTankBackwardSpeedMultiplier>
+        <SFFloat Value="0.9" />
+    </SFTankBackwardSpeedMultiplier>
+    <SFTankVelocityMultiplierThresholdAngle>
+        <SFFloat Value="0.4" />
+    </SFTankVelocityMultiplierThresholdAngle>
+    <SFTankVelocityMultiplierBoostFactor>
+        <SFFloat Value="0.8" />
+    </SFTankVelocityMultiplierBoostFactor>
+    <SFTankMaxPitchRockAngle>
+        <SFFloat Value="0.35" />
+    </SFTankMaxPitchRockAngle>
+    <SFTankMaxRollRockAngle>
+        <SFFloat Value="0.35" />
+    </SFTankMaxRollRockAngle>
+    <SFTankMaxContactVelocity>
+        <SFFloat Value="5.0"/>
+    </SFTankMaxContactVelocity>
+    <SFTankMinObjectCollisionRadius>
+        <SFFloat Value="3.0"/>
+    </SFTankMinObjectCollisionRadius>
+    <SFTankTurnAccelerationRate>
+        <SFFloat Value="0.3"/>
+    </SFTankTurnAccelerationRate>
+    <SFTankTurnDecelerationRate>
+        <SFFloat Value="5.0"/>
+    </SFTankTurnDecelerationRate>
+
+	<SFIdleUnusedAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_idle_unused.xml" />
+	</SFIdleUnusedAudioName>
+	<SFIdleAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_using.xml" />
+	</SFIdleAudioName>
+	<SFStartAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_start_using.xml" />
+	</SFStartAudioName>
+	<SFStopAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_stop_using.xml" />
+	</SFStopAudioName>
+	<SFStartMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_start_moving.xml" />
+	</SFStartMovingAudioName>
+	<SFStopMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_stop_moving.xml" />
+	</SFStopMovingAudioName>
+	<SFMovingAudioName>
+      <SFString Value="audio/warhulks/df_funhulk_moving.xml" />
+	</SFMovingAudioName>
+
+
+	<SFKillExplosionRadius>
+		<SFFloat Value="10.0" />
+	</SFKillExplosionRadius>
+	<SFKillExplosionForce>
+		<SFFloat Value="5.0" />
+	</SFKillExplosionForce>
+	<SFKillDamageMagnitude>
+		<SFFloat Value="30.0" />
+	</SFKillDamageMagnitude>
+
+  </SFLandVehicleInfo>
+  
+</SFXML>

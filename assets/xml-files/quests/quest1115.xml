@@ -1,0 +1,43 @@
+<quest quest_id="1115" category="side_quest" tag="No more Fish" published="False" valid="True">
+	<title>No more fish</title>
+	<description>Fishing all around Agon has been quite an experience!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="1101" />
+				<condition type="quest_completion" id="1" value="1" tag="A Quest Completion Condition" quest_id="1102" />
+				<condition type="quest_completion" id="2" value="1" tag="A Quest Completion Condition" quest_id="1103" />
+				<condition type="quest_completion" id="3" value="1" tag="A Quest Completion Condition" quest_id="1104" />
+				<condition type="quest_completion" id="4" value="1" tag="A Quest Completion Condition" quest_id="1105" />
+				<condition type="quest_completion" id="5" value="1" tag="A Quest Completion Condition" quest_id="1106" />
+				<condition type="quest_completion" id="6" value="1" tag="A Quest Completion Condition" quest_id="1107" />
+				<condition type="quest_completion" id="7" value="1" tag="A Quest Completion Condition" quest_id="1108" />
+				<condition type="quest_completion" id="8" value="1" tag="A Quest Completion Condition" quest_id="1109" />
+				<condition type="quest_completion" id="9" value="1" tag="A Quest Completion Condition" quest_id="1110" />
+				<condition type="quest_completion" id="10" value="1" tag="A Quest Completion Condition" quest_id="1111" />
+				<condition type="quest_completion" id="11" value="1" tag="A Quest Completion Condition" quest_id="1112" />
+				<condition type="quest_completion" id="12" value="1" tag="A Quest Completion Condition" quest_id="1113" />
+				<condition type="quest_completion" id="13" value="1" tag="A Quest Completion Condition" quest_id="1114" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="" reward_type="RewardsVisible">
+			<actions>
+				<action type="give_item_to_player" id="0" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Ship Sea Scraper" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="1" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Ship Fishing Trawler" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="2" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_improved Fishing Pole" quantity="7" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="2" tag="">
+			<journal_entry>The Agonian&apos;s name brought a smile to every merchant around Agon who was looking for fresh fish of every kind. His fame was accompanied by some pretty salty rewards.</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="1" from="2" to="1" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="31" y="30" />
+		<node_location id="1" x="220" y="31" />
+		<node_location id="2" x="130" y="32" />
+	</node_locations>
+</quest>

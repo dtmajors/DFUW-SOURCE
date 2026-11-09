@@ -1,0 +1,16 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class mvu$3 implements ActionListener {
+   mvu$3(mvu var1) {
+      this.EMm = var1;
+   }
+
+   @Override
+   public void actionPerformed(ActionEvent var1) {
+      mvu.b(this.EMm).setValue((int)(mvu.a(this.EMm) / 1.5F * mvu.b(this.EMm).getMaximum() + 0.5F));
+      mvu.d(this.EMm).setValue((int)(mvu.c(this.EMm) / 8.0F * mvu.d(this.EMm).getMaximum() + 0.5F));
+      mvu.f(this.EMm).setValue((int)(mvu.e(this.EMm) / 8.0F * mvu.f(this.EMm).getMaximum() + 0.5F));
+      this.EMm.eQK().setSelectedItem(new String(mvu.g(this.EMm)));
+   }
+}

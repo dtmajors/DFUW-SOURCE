@@ -1,0 +1,146 @@
+// Note: Frequently used shader
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "lighting.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+// Matrix Pallette
+static const int MAX_MATRICES = 26;
+float4x3    mWorldMatrixArray[MAX_MATRICES] : REAnimWorldMatrixArray;
+
+float4 AmbMaterial : REPMaterialAmbient = { 0.3f, 0.0f, 0.0f, 0.0f };
+float4 DiffMaterial : REPMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPMaterialPower = 0.0f;
+
+struct VS_OUTPUT
+{
+    float4  Pos     : POSITION;
+    float2  Tex0    : TEXCOORD0;
+    float3 ViewNormal 		: TEXCOORD1;
+    float3 ViewEyeVec 		: TEXCOORD2;
+	float3 ViewLight		: TEXCOORD3;
+    float3 WorldPos			: TEXCOORD4;
+	float2 ZPos				: TEXCOORD5;
+	float3 WorldNorm 		: TEXCOORD6;
+	float3 WorldEyeVec		: TEXCOORD7;
+    float   Fog	    : FOG;
+};
+
+VS_OUTPUT VShade_2Weight(STD_VS_SKINNING_INPUT i)
+{
+    VS_OUTPUT   Output = (VS_OUTPUT)0;
+    float3      Pos = 0.0f;
+    float3      Normal = 0.0f;    
+    float       LastWeight = 0.0f;
+    
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(i.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])i.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+    // calculate the pos/normal using the "normal" weights 
+    //        and accumulate the weights to calculate the last weight
+
+    LastWeight = BlendWeightsArray[0];
+        
+    Pos = mul(i.Pos, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+    Normal = mul(i.Normal, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+
+    LastWeight = 1.0f - LastWeight; 
+
+    // Now that we have the calculated weight, add in the final influence
+    Pos += (mul(i.Pos, mWorldMatrixArray[IndexArray[1]]) * LastWeight);
+    Normal += (mul(i.Normal, mWorldMatrixArray[IndexArray[1]]) * LastWeight); 
+    
+	Output.WorldPos = Pos;
+	Output.WorldNorm = Normal;
+	Output.WorldEyeVec = normalize(Output.WorldPos - EyePos);
+    
+    float4 PView = mul(float4(Pos,1.0f),VIEW_MATRIX);
+
+    float3 LView = normalize(mul(-PLANET_LIGHTDIR_COMMON, (float3x3)VIEW_MATRIX));
+    // normalize normals
+    Normal = normalize(Normal);
+    
+    float3 NView = mul(Normal , (float3x3)VIEW_MATRIX);
+    NView = normalize(NView);
+
+	Output.ViewNormal = NView;
+	Output.ViewEyeVec = normalize(PView.xyz);
+	Output.ViewLight = LView;
+
+    Output.Pos = mul(PView, PROJECTION_MATRIX);
+	Output.ZPos.xy = Output.Pos.zw;
+    // copy the input texture coordinate through
+    Output.Tex0  = i.Tex0.xy;
+    
+    Output.Fog = CalculateFog_3_0(Output.Pos.z);
+    
+    return Output;
+}
+
+
+STD_PS_OUTPUT_3 PShade(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex0);
+	
+	if (BaseTex.a < 0.02f)
+	{
+		clip(-0.5f);
+	}
+	
+	float4 SunLight = lightPixelSpecularDiffuseEnvironmentAlphaTestRaw(Input.ViewNormal,Input.ViewEyeVec,Input.ViewLight,BaseTex.w,ARMOURSHARP_SPECULAR_EXPONENT,ARMOURSHARP_SPECULAR_CONTRIBUTION);
+
+	float4 DynamicLight = float4(0, 0, 0, 0);
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	[loop] for (int LightIndex=0; LightIndex<ActiveLightCount; LightIndex++)
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, Input.WorldNorm, Input.WorldEyeVec, ARMOURSHARP_SPECULAR_EXPONENT, ARMOURSHARP_SPECULAR_CONTRIBUTION, LightParams[LightIndex]);
+#endif
+
+	Output.Color.xyz = combineIllumination3anim(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, BaseTex.xyz, SunLight, DynamicLight);
+	Output.Color.w = (SunLight.w + DynamicLight.w)/ARMOURSHARP_SPECULAR_CONTRIBUTION;
+	//Output.Effect = 0;
+
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = normalize(Input.WorldNorm);
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(BaseTex.xyz, ARMOURSHARP_SPECULAR_CONTRIBUTION);
+#endif
+
+	return Output;
+}
+
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+    	FogEnable = false;
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+        ZEnable = true;
+		ZWriteEnable = true;
+       	CullMode = CCW;
+    
+    	VertexShader = compile vs_3_0 VShade_2Weight();
+        PixelShader = compile ps_3_0 PShade();
+    }
+}
+

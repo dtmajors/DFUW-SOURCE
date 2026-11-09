@@ -1,0 +1,285 @@
+<SFChatFilter>
+    <Filter TableName="GLOBAL">
+        <Rule Index="0" Option="Continue">
+            <Match Index="0" Type="IsSet" Inverted="false" CheckAllInSet="true" Value="" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Chat" Variable="DefaultWindow" />
+            <Action Index="1" Type="SetValue" Value="darkfall" Variable="BaseColor" />
+            <Action Index="2" Type="CallTable" Value="CHAT_FORMATTING" Variable="" />
+        </Rule>
+        <Rule Index="1" Option="Continue">
+            <Match Index="0" Type="IsSet" Inverted="true" CheckAllInSet="true" Value="" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="System" Variable="DefaultWindow" />
+            <Action Index="1" Type="SetValue" Value="white" Variable="BaseColor" />
+            <Action Index="2" Type="CallTable" Value="NOTICE_FORMATTING" Variable="" />
+        </Rule>
+        <Rule Index="2" Option="Continue">
+            <Match Index="0" Type="IsSet" Inverted="false" CheckAllInSet="true" Value="" Variable="Text" />
+            <Action Index="0" Type="CallTable" Value="WORDFILTER" Variable="" />
+        </Rule>
+        <Rule Index="3" Option="Continue">
+            <Action Index="0" Type="CallTable" Value="DEBUG" Variable="" />
+        </Rule>
+    </Filter>
+    <Filter TableName="WORDFILTER">
+        <Rule Index="0" Option="Continue">
+            <Match Index="0" Type="IsSet" Inverted="false" CheckAllInSet="true" Value="" Variable="Text" />
+            <Action Index="0" Type="ReplaceText" Value="testingthewordfilter|^Cred^WORKS!!^N^" Variable="Text" />
+        </Rule>
+    </Filter>
+    <Filter TableName="CHAT_FORMATTING">
+        <Rule Index="0" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="Darkfall Server" Variable="FromName" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_AREA" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Public|say" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^($(FromName))^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="1" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_AREA" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Public|say" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="2" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_USER" Variable="ChatTarget" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="&lt;self&gt;" Variable="FromName" />
+            <Action Index="0" Type="SetValue" Value="$(ToName)|msg $(ToName)" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cpurple^($(OwnName))^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="3" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_USER" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="$(FromName)|msg $(FromName)" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+            <Action Index="2" Type="SetValue" Value="3" Variable="HighlightLevel" />
+            <Action Index="3" Type="AddValue" Value="Effect" Variable="DisplayTargets" />
+            <Action Index="4" Type="SetValue" Value="se_pe_priv_message_sound" Variable="UserString1" />
+        </Rule>
+        <Rule Index="4" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_CLAN" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Clan|say_clan" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^Cwhite^$(SenderClanRank) ^Cred^^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="5" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_PARTY" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Party|say_party" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="6" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_CLAN_OFFICERS" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Clan Officers|say_clan_officers" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="7" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_GM" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="GM|say_gm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="8" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_MGM" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Master GM|say_mgm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="9" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_ADMIN" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Admins|say_admin" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="10" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_NODE" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Public|say" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="[node] ^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="11" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_GLOBAL" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Global|say_global" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="12" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_RACE" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Race|say_race" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="13" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_RACE_ALLIANCE" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Race Alliance|say_alliance" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="14" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_CLAN_FROM_ALLIANCE" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Clan Alliance|say_clan_alliance" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^Cwhite^$(SenderClanName) $(SenderClanRank) ^Cred^^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="15" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_GM_HELP" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="GM|say_gm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Request&gt; ^Cffffff^(^L$(FromName)^): $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="16" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_GM_REPORT" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="GM|say_gm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Report&gt; ^C00adef^(^L$(FromName)^): $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="17" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_TRADE" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Trade|say_trade" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="18" Option="Return">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="CHATTARGET_CHAOS" Variable="ChatTarget" />
+            <Action Index="0" Type="SetValue" Value="Chaos Racial|say_chaos" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cred^(^L$(FromName)^)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+    </Filter>
+    <Filter TableName="NOTICE_FORMATTING">
+        <Rule Index="0" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_AI_TALK" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="Monsters|say" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cgreen^($(NotificationParam1))^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="1" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_OWNED_VENDOR" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="^Cgreen^(Vendor)^N^: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="2" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CONSTRAINT_ATTRIBUTE_VALUE_WRONG" Variable="SystemNotificationType" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="Enable Parry" Variable="NotificationParam1" />
+            <Action Index="0" Type="SetValue" Value="Parry skill is currently blocked." Variable="DisplayText" />
+        </Rule>
+        <Rule Index="3" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="OnScreenLarge" Variable="ChatBucket" />
+            <Action Index="0" Type="AddValue" Value="OnScreenLarge" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="4" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="OnScreenSmall" Variable="ChatBucket" />
+            <Action Index="0" Type="AddValue" Value="OnScreenSmall" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="5" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="MessageBoxOnly" Variable="ChatBucket" />
+            <Action Index="0" Type="SetValue" Value="MessageBox" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="6" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="MessageBox" Variable="ChatBucket" />
+            <Action Index="0" Type="AddValue" Value="MessageBox" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="7" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="OnScreenMedium" Variable="ChatBucket" />
+            <Action Index="0" Type="AddValue" Value="OnScreenMedium" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="8" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CLIENT_CONNECT" Variable="SystemNotificationType" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="GM" Variable="NotificationParam2" />
+            <Action Index="0" Type="SetValue" Value="GM|say_gm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Connect&gt; $(NotificationParam2) $(NotificationParam1) " Variable="DisplayText" />
+        </Rule>
+        <Rule Index="9" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CLIENT_DISCONNECT" Variable="SystemNotificationType" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="GM" Variable="NotificationParam2" />
+            <Action Index="0" Type="SetValue" Value="GM|say_gm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Disconnect&gt; $(NotificationParam2) $(NotificationParam1) " Variable="DisplayText" />
+        </Rule>
+        <Rule Index="10" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CLIENT_CONNECT" Variable="SystemNotificationType" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="MGM" Variable="NotificationParam2" />
+            <Action Index="0" Type="SetValue" Value="Master GM|say_mgm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Connect&gt; $(NotificationParam2) $(NotificationParam1) " Variable="DisplayText" />
+        </Rule>
+        <Rule Index="11" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CLIENT_DISCONNECT" Variable="SystemNotificationType" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="MGM" Variable="NotificationParam2" />
+            <Action Index="0" Type="SetValue" Value="Master GM|say_mgm" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Disconnect&gt; $(NotificationParam2) $(NotificationParam1) " Variable="DisplayText" />
+        </Rule>
+        <Rule Index="12" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CLIENT_CONNECT" Variable="SystemNotificationType" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="Admin" Variable="NotificationParam2" />
+            <Action Index="0" Type="SetValue" Value="Admins|say_admin" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Connect&gt; $(NotificationParam2) $(NotificationParam1) " Variable="DisplayText" />
+        </Rule>
+        <Rule Index="13" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CLIENT_DISCONNECT" Variable="SystemNotificationType" />
+            <Match Index="1" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="Admin" Variable="NotificationParam2" />
+            <Action Index="0" Type="SetValue" Value="Admins|say_admin" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="&lt;Disconnect&gt; $(NotificationParam2) $(NotificationParam1) " Variable="DisplayText" />
+        </Rule>
+        <Rule Index="14" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_EVENT_CLAN" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="ClanKills" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="$(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="15" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_EVENT_PARTY" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="PartyKills" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="$(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="16" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_QUEST_TAB" Variable="SystemNotificationType" />
+            <Action Index="0" Type="AddValue" Value="Quest" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="$(Text)" Variable="DisplayText" />
+            <Action Index="2" Type="RemoveValue" Value="System" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="17" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_ONLY_ON_SCREEN" Variable="SystemNotificationType" />
+            <Action Index="0" Type="AddValue" Value="OnScreenLarge" Variable="DisplayTargets" />
+            <Action Index="1" Type="RemoveValue" Value="System" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="18" Option="Continue">
+            <Match Index="0" Type="LexicalEqual" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_GM_PERSONAL" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="$(NotificationParam1)|msg $(NotificationParam1)" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="^Cwhite^Game master ^Cred^$(NotificationParam1)^Cwhite^:^N^ $(NotificationParam2)" Variable="DisplayText" />
+            <Action Index="2" Type="SetValue" Value="3" Variable="HighlightLevel" />
+        </Rule>
+        <Rule Index="19" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_ROLL_RESULT_PARTY" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="Party|say_party" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="Roll Result: ^Clight red^$(NotificationParam3)^N^ $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="20" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_ROLL_RESULT_PERSONAL" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="Roll Result: $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="21" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_ROLL_RESULT_CLAN" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="Clan|say_clan" Variable="DisplayTargets" />
+            <Action Index="1" Type="SetValue" Value="Roll Result: ^Clight red^$(NotificationParam3)^N^ $(Text)" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="22" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CHAT_ACCESS_DENIED_FOR_REDS" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value='^Cred^Access Denied!^N^ You are ^Cred^Evil^N^, you cannot use Racial, Racial Alliance or Trade chat!... Use &quot;/say_chaos &lt;msg&gt;&quot; to write to the Racial Chaos channel instead!' Variable="DisplayText" />
+        </Rule>
+        <Rule Index="23" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CHAT_RED_RESTRICTIONS_ENABLED" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value='You are ^Cred^Evil^N^, you can no longer access Racial, Racial Alliance or Trade chat!... You can use &quot;/say_chaos &lt;msg&gt;&quot; to write to the Racial Chaos channel!' Variable="DisplayText" />
+        </Rule>
+        <Rule Index="24" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CHAT_RED_RESTRICTIONS_DISABLED" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="You are ^Ccyan^Good^N^, access to Racial, Racial Alliance and Trade chat has been restored!" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="25" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_CHAT_ACCESS_DENIED_FOR_NON_REDS" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="^Cred^Access Denied!^N^ You are ^Ccyan^Good^N^, only ^Cred^Evil^N^ players can write to Chaos chat!" Variable="DisplayText" />
+        </Rule>
+        <Rule Index="26" Option="Continue">
+            <Match Index="0" Type="BeginsWithString" Inverted="false" CheckAllInSet="true" Value="NOTIFICATION_WELCOME_TO_DARKFALL" Variable="SystemNotificationType" />
+            <Action Index="0" Type="SetValue" Value="^Cdarkfall^Welcome to ^Cred^Darkfall!^N^" Variable="DisplayText" />
+            <Action Index="1" Type="AddValue" Value="Public|say" Variable="DisplayTargets" />
+            <Action Index="2" Type="RemoveValue" Value="System" Variable="DisplayTargets" />
+        </Rule>
+    </Filter>
+    <Filter TableName="DEBUG">
+        <Rule Index="0" Option="Continue">
+            <Match Index="0" Type="ContainsString" Inverted="false" CheckAllInSet="true" Value="bothscroll" Variable="Text" />
+            <Action Index="0" Type="AddValue" Value="OnScreenSmall" Variable="DisplayTargets" />
+            <Action Index="1" Type="AddValue" Value="OnScreenLarge" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="1" Option="Continue">
+            <Match Index="0" Type="ContainsString" Inverted="false" CheckAllInSet="true" Value="smallscroll" Variable="Text" />
+            <Action Index="0" Type="AddValue" Value="OnScreenSmall" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="2" Option="Continue">
+            <Match Index="0" Type="ContainsString" Inverted="false" CheckAllInSet="true" Value="largescroll" Variable="Text" />
+            <Action Index="0" Type="AddValue" Value="OnScreenLarge" Variable="DisplayTargets" />
+        </Rule>
+        <Rule Index="3" Option="Continue">
+            <Match Index="0" Type="ContainsString" Inverted="false" CheckAllInSet="true" Value="mediumscroll" Variable="Text" />
+            <Action Index="0" Type="AddValue" Value="OnScreenMedium" Variable="DisplayTargets" />
+        </Rule>
+    </Filter>
+</SFChatFilter>

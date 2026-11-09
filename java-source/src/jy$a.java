@@ -1,0 +1,19 @@
+enum jy$a {
+   amE,
+   amF,
+   amG,
+   amH,
+   amI,
+   amJ,
+   amK,
+   amL,
+   amM,
+   amN,
+   amO,
+   amP,
+   amQ,
+   amR,
+   amS,
+   amT,
+   amU;
+}

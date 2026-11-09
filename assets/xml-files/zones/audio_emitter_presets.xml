@@ -1,0 +1,137 @@
+<SFEmitterPresets>
+	<!--
+		-Id must be integer
+		-Id  3 is the default preset ( any audio xml without the preset attribute set will default to 3 ) 
+		-Id -1 is reserved ( means parameters will come from the game system i.e. -the sfx settings) 
+		-Rolloff  0 = logarithmic 1 = linear 
+		-in logarithmic max distance does not affect the sound but is instead the radius of the 3d emitter in the scenegraph. i.e. when the player
+		listener touches the sphere of radius MaxDistance the audio gets activated(a rule of thumb is MaxDistance = 8 * MinDistance which means that at worse cases the volume will go from 0 to 1/8 of max volume of the sound when the sound is first activated)
+		-we can have as many presets as we like but 
+		-ids should be sequential i.e. dont leave large gaps ( e.g. id 100  ) 
+		- in the sounds xmls specify the preset by adding attribute Preset in the node "SoundInformation" e.g. :
+		<SoundInformation ObjectType="3DAUDIO" FileName="/damage/df_damage_unholy_1.wav" Preset = "11">
+		</SoundInformation>
+		- preset system is completely ignored for environmental 3d sounds ( 3d randomizers and placeable sound emitters )  
+		
+		Pitch Randomization: ( in cents  picks a random number  in  random[- PitchRandomization , PitchRandomization ] + PitchRandomizationOffset  )  
+		VolumeRandomization: ( Picks a random number in  1.f - random[0 , VolumeRandomization]  and multiplies the volume by it. so if VolumeRandomization is 0.1f then it will adjust by 90% - 100% of the current volume 
+	--> 
+	<SFEmitterPreset Id = "1" RollOff = "1" MinDistance = "3" MaxDistance = "16" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0" />
+	<!-- Player Voices-->
+	<SFEmitterPreset Id = "2" RollOff = "1" MinDistance = "5" MaxDistance = "40" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	<!--Default-->
+	<SFEmitterPreset Id = "3" RollOff = "0" MinDistance = "3.0" MaxDistance = "40" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	<SFEmitterPreset Id = "1003" RollOff = "1" MinDistance = "3.0" MaxDistance = "40" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<SFEmitterPreset Id = "4" RollOff = "1" MinDistance = "30" MaxDistance = "320" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	<SFEmitterPreset Id = "5" RollOff = "1" MinDistance = "40" MaxDistance = "400" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+
+	<!--Weapon Swings with randomization-->
+	<SFEmitterPreset Id = "10" RollOff = "0" MinDistance = "3.0" MaxDistance = "20" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.4"/>
+	
+	<!--Footsteps with randomization-->
+		<!--run-->
+		<SFEmitterPreset Id = "11" RollOff = "1" MinDistance = "8.0" MaxDistance = "50" PitchRandomization = "80" PitchRandomizationOffset="20" VolumeRandomization="0.1"/>
+		<!--walk-->
+		<SFEmitterPreset Id = "27" RollOff = "1" MinDistance = "5.0" MaxDistance = "30" PitchRandomization = "80" PitchRandomizationOffset="20" VolumeRandomization="0.1"/>
+		<!--crouch-->
+		<SFEmitterPreset Id = "28" RollOff = "1" MinDistance = "3.0" MaxDistance = "10" PitchRandomization = "80" PitchRandomizationOffset="20" VolumeRandomization="0.1"/>
+		<!--Big Footsteps-->
+		<SFEmitterPreset Id = "14" RollOff = "1" MinDistance = "13.0" MaxDistance = "70" PitchRandomization = "80" PitchRandomizationOffset="20" VolumeRandomization="0.1"/>
+	
+	<!--Debris with randomization-->
+	<SFEmitterPreset Id = "12" RollOff = "0" MinDistance = "1.0" MaxDistance = "20" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.9"/>
+	<!--Explosions with randomization-->
+	<SFEmitterPreset Id = "13" RollOff = "0" MinDistance = "35" MaxDistance = "240" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.5"/>
+	<SFEmitterPreset Id = "19" RollOff = "1" MinDistance = "7" MaxDistance = "90" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.5"/>
+	<!--Explosions & Impacts-->
+	<SFEmitterPreset Id = "16" RollOff = "1" MinDistance = "8" MaxDistance = "75" PitchRandomization = "100" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--Mining-->
+	<SFEmitterPreset Id = "17" RollOff = "1" MinDistance = "8" MaxDistance = "80" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	<!--Logging-->
+	<SFEmitterPreset Id = "18" RollOff = "1" MinDistance = "8" MaxDistance = "80" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+		
+	<!--Shadow Dragon -->
+	<SFEmitterPreset Id = "15" RollOff = "1" MinDistance = "40" MaxDistance = "100" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	<!--THE Kraken -->
+	<SFEmitterPreset Id = "20" RollOff = "0" MinDistance = "200" MaxDistance = "500" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--Weapon Sheathe / Unsheath-->
+	<SFEmitterPreset Id = "21" RollOff = "0" MinDistance = "1.0" MaxDistance = "20" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	<!--Mount's Footsteps run with randomization-->
+	<SFEmitterPreset Id = "22" RollOff = "1" MinDistance = "10.0" MaxDistance = "70" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.3"/>
+	<!--Mount's Footsteps walk with randomization-->
+	<SFEmitterPreset Id = "37" RollOff = "1" MinDistance = "8.0" MaxDistance = "55" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.3"/>
+	
+	
+	<!--Spells -noExplosions -projectiles-->
+	<SFEmitterPreset Id = "23" RollOff = "0" MinDistance = "5.0" MaxDistance = "50" PitchRandomization = "50" PitchRandomizationOffset="20" VolumeRandomization="0"/>
+	<!--Spells -Explosions-->
+	<SFEmitterPreset Id = "24" RollOff = "0" MinDistance = "10" MaxDistance = "75" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--BOSSES: Troll Boss, Below Nightmare, Erodach,-->
+	<SFEmitterPreset Id = "25" RollOff = "1" MinDistance = "13.0" MaxDistance = "70" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	
+	<!--Personal FX-->
+	<SFEmitterPreset Id = "26" RollOff = "1" MinDistance = "1" MaxDistance = "8.5" PitchRandomization = "100" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+		
+	<!--Monsters Medium to Large size-->
+	<SFEmitterPreset Id = "29" RollOff = "1" MinDistance = "5.0" MaxDistance = "50" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--Big Wings Flapping-->
+	<SFEmitterPreset Id = "30" RollOff = "1" MinDistance = "40.0" MaxDistance = "220" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.3"/>
+	
+	<!--Cathedral Dynamic Doors-->
+	<SFEmitterPreset Id = "31" RollOff = "1" MinDistance = "15" MaxDistance = "60" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	
+	<!--BOSSES: DAVOS-->
+	<SFEmitterPreset Id = "32" RollOff = "1" MinDistance = "10.0" MaxDistance = "80" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+
+	<!--Davos's totem-->
+	<SFEmitterPreset Id = "33" RollOff = "1" MinDistance = "10.0" MaxDistance = "20" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+
+	<!--2D Tile Announcments-->
+	<SFEmitterPreset Id = "34" RollOff = "0" MinDistance = "200" MaxDistance = "500" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	
+	<!--Prowess Monolith-->
+	<SFEmitterPreset Id = "35" RollOff = "1" MinDistance = "20" MaxDistance = "100" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	
+	<!-- Duel Wall -->
+	<SFEmitterPreset Id = "36" RollOff = "1" MinDistance = "15" MaxDistance = "50" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	
+	<!--Shadow Dragon Flapping-->
+	<SFEmitterPreset Id = "38" RollOff = "1" MinDistance = "20.0" MaxDistance = "100" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.3"/>
+	
+	<!--Dragons-->
+	<SFEmitterPreset Id = "39" RollOff = "1" MinDistance = "40.0" MaxDistance = "220" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0.3"/>
+	
+	<!-- Levy Collector -->
+	<SFEmitterPreset Id = "40" RollOff = "1" MinDistance = "3.0" MaxDistance = "40" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.3"/>
+	<SFEmitterPreset Id = "41" RollOff = "1" MinDistance = "6.0" MaxDistance = "60" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.3"/>
+	
+	<!--Fireworks-->
+	<SFEmitterPreset Id = "42" RollOff = "0" MinDistance = "10" MaxDistance = "400" PitchRandomization = "100" PitchRandomizationOffset="30" VolumeRandomization="0"/>
+	
+	<!--baby Krakens -->
+	<SFEmitterPreset Id = "43" RollOff = "1" MinDistance = "5" MaxDistance = "60" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--Buildings-->
+	<SFEmitterPreset Id = "44" RollOff = "1" MinDistance = "20" MaxDistance = "100" PitchRandomization = "100" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--Catapult-->
+	<SFEmitterPreset Id = "45" RollOff = "1" MinDistance = "35" MaxDistance = "100" PitchRandomization = "100" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--Big Fire - Ladder channeling-->
+	<SFEmitterPreset Id = "46" RollOff = "1" MinDistance = "8" MaxDistance = "125" PitchRandomization = "100" PitchRandomizationOffset="0" VolumeRandomization="0"/>
+	
+	<!--Ships-->
+	<SFEmitterPreset Id = "47" RollOff = "1" MinDistance = "20" MaxDistance = "160" PitchRandomization = "100" PitchRandomizationOffset="20" VolumeRandomization="0"/>
+	
+	<!--Lighthouse FX-->
+	<SFEmitterPreset Id = "48" RollOff = "0" MinDistance = "15" MaxDistance = "60" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	
+	<!--Relic World & Destroy FX-->
+	<SFEmitterPreset Id = "49" RollOff = "0" MinDistance = "15" MaxDistance = "60" PitchRandomization = "0" PitchRandomizationOffset="0" VolumeRandomization="0.0"/>
+	
+</SFEmitterPresets>

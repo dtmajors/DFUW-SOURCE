@@ -1,0 +1,400 @@
+<quest quest_id="14" category="training_quest" tag="Here be monsters" published="False" valid="True">
+	<title>Here be monsters</title>
+	<description>Learn a little bit about hunting down the monsters that inhabit the world of Agon</description>
+	<nodes>
+		<node type="end_node" id="1" tag="">
+			<journal_entry>Take a $[Resource.L.r_large_treasure_map_item_NameSingular] and try to find out its location. When you are headed in the right direction, the border around your minimap flashes green faster. When you are headed the wrong way, it flashes red in the same manner. When you are spot on right above the treasure, it stays solid green and you should use a $[Resource.S.r_shovel_NameSingular] to dig it out. Happy hunting - maybe you will be lucky enough to get $[Resource.H.r_house_deed_04_NameSingular]!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="62" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Large Treasure Map Item" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="2" tag="" optional_tasks="True">
+			<instruction>Talk to any of the Battlemasters in the safe zone</instruction>
+			<journal_entry>When battle is joined, things can get tough. Fear not though because with the array of skills at your disposal, when you are able to master them and you are well-equipped, your worst enemy will be yourself. Even if your most formidable enemies will most likely be other Agonians, the monsters around Agon are not to be so easily discarded. Go after the ones the less dangerous ones that inhabit the safe zones to familiarize yourself with their tactics and treasure.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_fighter" />
+				<task type="interact_with_vendor" id="1" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_fighter" />
+				<task type="interact_with_vendor" id="2" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_fighter" />
+				<task type="interact_with_vendor" id="3" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_fighter" />
+				<task type="interact_with_vendor" id="4" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_fighter" />
+				<task type="interact_with_vendor" id="5" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_fighter" />
+				<task type="interact_with_vendor" id="6" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_fighter" />
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_fighter" />
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_fighter" />
+				<task type="interact_with_vendor" id="9" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_fighter" />
+				<task type="interact_with_vendor" id="10" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_fighter" />
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_fighter" />
+				<task type="interact_with_vendor" id="12" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_fighter" />
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_fighter" />
+				<task type="interact_with_vendor" id="14" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_fighter" />
+				<task type="interact_with_vendor" id="15" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_fighter" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="">
+			<journal_entry>Think of it as getting some real practice - there will be other Agonians out there vying for the same loot and prowess as you. Remember that although you cannot get damaged by player attacks and skills while inside the safe zone, monsters can be deadly. If you die, the contents of your backpack if you decide to recall to your bindstone, will become available to anyone who might happen to wander by.</journal_entry>
+		</node>
+		<node type="event_simple" id="5" tag="">
+			<journal_entry>Start by killing some Zombies. They are generally slow and easy to kill - they are only dangerous in large numbers. To give you a head start, you will need some mobility - a nice mount will cover that. Mobility is key, but protection is just as important, so I&apos;ll let you pick some robes, leather or metal armor - whichever fits your style. Last but not least a good weapon can make the difference so we&apos;re willing to give away a sample of your choice. Remember although you can always rely on your $[Resource.L.r_leafblade_NameSingular]$[Resource.D.r_dawnstaff_NameSingular] and $[Resource.C.r_conscript_bow_NameSingular]. Just talk to any of the Battlemasters again when you&apos;re ready to choose.</journal_entry>
+		</node>
+		<node type="event_branch" id="6" tag="" optional_tasks="True">
+			<instruction>Pick a mount</instruction>
+			<tasks>
+				<task type="choose" id="18" value="1" tag="eradan" reward_node_id="9">
+					<task_instruction>Pick an $[Resource.E.r_eradan_NameSingular]</task_instruction>
+				</task>
+				<task type="choose" id="19" value="2" tag="deathpig" reward_node_id="10">
+					<task_instruction>Pick a $[Resource.D.r_death_pig_NameSingular]</task_instruction>
+				</task>
+				<task type="choose" id="20" value="3" tag="garmir" reward_node_id="11">
+					<task_instruction>Pick a $[Resource.G.r_garmir_NameSingular]</task_instruction>
+				</task>
+				<task type="choose" id="21" value="4" tag="bear" reward_node_id="12">
+					<task_instruction>Pick a $[Resource.T.r_tribeland_bear_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>Remember that you can use $[Skill.H.s_heal_mount_NameSingular] on a wounded mount. It&apos;s useful to know that mounts will vanish if noone is riding them for some minutes and even in a safe zone will be up for grabs for anyone else after a couple of minutes. Pay attention to any warnings to that effect - you might need to walk back a long distance.</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>Otherwise, you might have a friend that can summon you near him or ask for a portal from someone - be ready to compensate them with at least a $[Resource.P.r_portal_shard_NameSingular] and always get invited to their party to check their true location - you never know where you might end up. If you are willing to find and pay for a $[Resource.P.r_portal_stone_NameSingular] you can travel across large distances, but these are few and far between. You can always recall to your bindstone, but that might be too far for comfort sometimes.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="" reward_type="RewardsVisible">
+			<journal_entry>An $[Resource.E.r_eradan_NameSingular] it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="0" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Eradan" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="10" tag="" reward_type="RewardsVisible">
+			<journal_entry>A $[Resource.D.r_death_pig_NameSingular] it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="1" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Death Pig" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="11" tag="" reward_type="RewardsVisible">
+			<journal_entry>A $[Resource.G.r_garmir_NameSingular] it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="2" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Garmir" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="12" tag="" reward_type="RewardsVisible">
+			<journal_entry>A $[Resource.T.r_tribeland_bear_NameSingular] it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="3" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Figurine Tribeland Bear" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="14" tag="">
+			<journal_entry>Now that you&apos;ve picked a mount, have a go at selecting some protection. Depending on the skills you later choose to maximize and the tradeoffs between protection, mana consumption and spell magnitude you will find which set best suits you and your playstyle. Although you can mix and match, it&apos;s best to start with something which offers more protection, like metal armor. You can though, pick a leather or cloth set.</journal_entry>
+		</node>
+		<node type="event_branch" id="15" tag="" optional_tasks="True">
+			<instruction>Choose an armor set</instruction>
+			<tasks>
+				<task type="choose" id="23" value="1" tag="chain mail" reward_node_id="24">
+					<task_instruction>Chain Mail Armor set</task_instruction>
+				</task>
+				<task type="choose" id="24" value="2" tag="banded leather set" reward_node_id="21">
+					<task_instruction>Banded Leather set</task_instruction>
+				</task>
+				<task type="choose" id="25" value="3" tag="ele robes" reward_node_id="22">
+					<task_instruction>Elementalist Robes set</task_instruction>
+				</task>
+				<task type="choose" id="26" value="4" tag="prim robes" reward_node_id="23">
+					<task_instruction>Primalist Robes set</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="24" tag="" reward_type="RewardsVisible">
+			<journal_entry>A Chain mail armor set it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="44" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Arms" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="45" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Elbows" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="46" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Girdle" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="47" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="48" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Greaves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="49" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="50" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="51" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Shoes" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="52" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="53" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Chain Mail Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="23" tag="" reward_type="RewardsVisible">
+			<journal_entry>An Simple Primalist armor set it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="34" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="35" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="36" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="37" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="38" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_C Simple Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="22" tag="" reward_type="RewardsVisible">
+			<journal_entry>An Simple Elementalist armor set it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="24" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="25" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="26" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="27" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="28" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Simple Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="21" tag="" reward_type="RewardsVisible">
+			<journal_entry>A Padded Leather armor set it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="14" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Arms" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="15" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Elbows" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="16" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Girdle" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="17" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Gloves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="18" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Greaves" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="19" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Helmet" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="20" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Pants" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="21" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Shoes" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="22" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Shoulders" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="23" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Armor Padded Leather Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="20" tag="">
+			<journal_entry>Now it is time to select your weapon of choice. The sword and shield is a good way to have damage and extra protection. The arrow is a two-handed weapon that lets you keep a distance from your enemies, though you&apos;ll need a lot of training if you want to do any serious damage. The staff will let you use elementalist and primalist spells but remember that those spells require either $[Resource.E.r_elemental_dust_NameSingular] or $[Resource.S.r_spirit_beads_NameSingular] respectively.</journal_entry>
+		</node>
+		<node type="event_branch" id="25" tag="" optional_tasks="True">
+			<tasks>
+				<task type="choose" id="27" value="1" tag="sword and shield" reward_node_id="29">
+					<task_instruction>Sword and Shield</task_instruction>
+				</task>
+				<task type="choose" id="28" value="2" tag="bow and arrows" reward_node_id="28">
+					<task_instruction>Bow and arrows</task_instruction>
+				</task>
+				<task type="choose" id="29" value="3" tag="staff dust and beads" reward_node_id="27">
+					<task_instruction>Staff, dust and beads</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="30" tag="">
+			<journal_entry>Now that you have picked items to your fancy, gear up, mount up, and head out there for a bit of challenge. Open up your map and search the safe zone for some Zombie, Goblin, Skeleton, Troll and Spider spawns and kill a few of each. Oh, and make sure they get to hit you first.</journal_entry>
+		</node>
+		<node type="event_simple" id="27" tag="" reward_type="RewardsVisible">
+			<journal_entry>A Staff with $[Resource.E.r_elemental_dust_NameSingular] and $[Resource.S.r_spirit_beads_NameSingular] it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="58" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Staff_p01_r01" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="59" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Elemental Dust" quantity="100" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="60" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Spirit Beads" quantity="100" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="28" tag="" reward_type="RewardsVisible">
+			<journal_entry>The Bow and Arrows it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="56" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Bow_p01_r01" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="57" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_improved Arrow_01" quantity="400" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="29" tag="" reward_type="RewardsVisible">
+			<journal_entry>A Sword and Shield it is!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="54" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Sword_p01_r01" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="55" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Shield_p01_r01" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="31" tag="">
+			<journal_entry>Notice how monsters can damage you. You have to try and dodge their attacks and land consistent hits. You can try using $[Skill.H.s_heal_self_NameSingular] to heal some damage, transfer from the rest of your pools using  $[Skill.S.s_stamina_to_health_NameSingular] to gain some health while losing stamina and then using $[Skill.M.s_mana_to_stamina_NameSingular] to replenish the lost stamina. When you are at full health and out of danger, you can then use $[Skill.H.s_health_to_mana_NameSingular] to replenish your mana pool. This is a very useful cycle you should get used to over time in order to adapt to all combat situations.</journal_entry>
+			<tasks>
+				<task type="take_damage_from" id="33" value="1" tag="A Take Damage from Object Task" magnitude="1" resource_name="r_Monsters">
+					<task_instruction>Receive at least one point of damage from a monster</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="32" tag="" optional_tasks="True">
+			<instruction>Complete one of the tasks below.</instruction>
+			<journal_entry>Now that you seem to be getting the hang of fighting with these monsters, you should try venturing out in the open, past the safe zone and into the danger zone level one areas. Try locating a Hobgoblin camp and kill one of them nasty fellows. Remember, there could be others just like you out there and it&apos;s quite likely they won&apos;t be friendly.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="34" value="1" tag="A Kill Object(s) Task" resource_name="r_Zombies" quantity="4">
+					<task_instruction>Kill a few zombies</task_instruction>
+				</task>
+				<task type="kill_object" id="35" value="1" tag="A Kill Object(s) Task" resource_name="r_Goblins" quantity="4">
+					<task_instruction>Kill a small group of Goblins</task_instruction>
+				</task>
+				<task type="kill_object" id="36" value="1" tag="A Kill Object(s) Task" resource_name="r_Spiders" quantity="4">
+					<task_instruction>Kill a nest of spiders</task_instruction>
+				</task>
+				<task type="kill_object" id="37" value="1" tag="A Kill Object(s) Task" resource_name="r_Skeletons" quantity="4">
+					<task_instruction>Kill a group of skeletons</task_instruction>
+				</task>
+				<task type="kill_object" id="38" value="1" tag="A Kill Object(s) Task" resource_name="r_Trolls" quantity="4">
+					<task_instruction>Kill a pack of Trolls</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="33" tag="">
+			<journal_entry>With the Hobgoblin dead, grab what you can and double time it back to the safe zone and talk to a Battlemaster. It will be worth your while.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="39" value="1" tag="A Kill Object(s) Task" resource_name="r_Hobgoblins" quantity="1">
+					<task_instruction>Kill a Hobgoblin</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="35" tag="" optional_tasks="True">
+			<instruction>Talk to any of the Battlemasters in the safe zone</instruction>
+			<journal_entry>Now that you seem to be battle-ready at least until you can grow in prowess and be able to use more skills, you will find out hunting monsters out in the open can be quite dangerous. The worse part is the more you stay out in the open, the more risky it is carrying around all your loot. Don&apos;t worry though, here&apos;s a $[Resource.D.r_deployable_personal_strongbox_NameSingular] to store things in while you are out there in the danger zones. Just pick a nice secluded spot that seems to be well-hidden, double-click the $[Resource.D.r_deployable_personal_strongbox_item_NameSingular] and put all your loot in it. It will be safely stored for a couple of hours in there, unless someone finds it and destroys it first.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="40" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_fighter" />
+				<task type="interact_with_vendor" id="41" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_fighter" />
+				<task type="interact_with_vendor" id="42" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_fighter" />
+				<task type="interact_with_vendor" id="43" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_fighter" />
+				<task type="interact_with_vendor" id="44" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_fighter" />
+				<task type="interact_with_vendor" id="45" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_fighter" />
+				<task type="interact_with_vendor" id="46" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_fighter" />
+				<task type="interact_with_vendor" id="47" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_fighter" />
+				<task type="interact_with_vendor" id="48" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_fighter" />
+				<task type="interact_with_vendor" id="49" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_fighter" />
+				<task type="interact_with_vendor" id="50" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_fighter" />
+				<task type="interact_with_vendor" id="51" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_fighter" />
+				<task type="interact_with_vendor" id="52" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_fighter" />
+				<task type="interact_with_vendor" id="53" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_fighter" />
+				<task type="interact_with_vendor" id="54" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_fighter" />
+				<task type="interact_with_vendor" id="55" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_fighter" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="36" tag="">
+			<journal_entry>Now when you feel a bit more confident about venturing in the open, you should try going to an active $[Resource.P.r_prowess_monolith_NameSingular]. $[Resource.P.r_prowess_monolith_NamePlural] become active when a specific number of monsters have been killed in the world of Agon - this you can learn from your map when you hover over the monolith. There are three tiers of $[Resource.P.r_prowess_monolith_NamePlural] and each one enables you to gain a certain amount of prowess which is shared with everyone else within its walls, while it remains active. Keep an eye out for the details for each monolith when you approach one and watch out for the blasts!</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="61" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_improved Deployable Personal Strongbox Item" quantity="1" inventory_type="Backpack" />
+				<action type="show_map_marker" id="63" tag="An Add Map-Marker to World-Map Action" world_x="-2497" world_z="564" />
+			</actions>
+		</node>
+		<node type="event_simple" id="37" tag="">
+			<journal_entry>Now that you have at least been near a monolith, talk again with a Battlemaster in a safe zone city to receive a parting gift.</journal_entry>
+			<tasks>
+				<task type="go_near_object" id="73" value="1" tag="A Go Near Object Task" resource_name="r_Prowess Monolith" distance="28">
+					<task_instruction>Visit a $[Resource.P.r_prowess_monolith_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="38" tag="" optional_tasks="True">
+			<instruction>Talk to any of the Battlemasters in the safe zone</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="57" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_fighter" />
+				<task type="interact_with_vendor" id="58" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_fighter" />
+				<task type="interact_with_vendor" id="59" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_fighter" />
+				<task type="interact_with_vendor" id="60" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_fighter" />
+				<task type="interact_with_vendor" id="61" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_fighter" />
+				<task type="interact_with_vendor" id="62" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_fighter" />
+				<task type="interact_with_vendor" id="63" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_fighter" />
+				<task type="interact_with_vendor" id="64" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_fighter" />
+				<task type="interact_with_vendor" id="65" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_fighter" />
+				<task type="interact_with_vendor" id="66" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_fighter" />
+				<task type="interact_with_vendor" id="67" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_fighter" />
+				<task type="interact_with_vendor" id="68" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_fighter" />
+				<task type="interact_with_vendor" id="69" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_fighter" />
+				<task type="interact_with_vendor" id="70" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_fighter" />
+				<task type="interact_with_vendor" id="71" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_fighter" />
+				<task type="interact_with_vendor" id="72" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_fighter" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="41" tag="" optional_tasks="True">
+			<instruction>Talk to any of the Battlemasters in the safe zone</instruction>
+			<journal_entry>It&apos;s plainly obvious you&apos;re ready to go for some monster hunting - choose from the items you&apos;d like to start with, no strings attached. Mounts are basically beasts you can summon after you have crafted their figurine at a $[Resource.L.r_laboratory_NameSingular] once you&apos;ve gathered the required mats. You can pick amongst the menacing $[Resource.E.r_eradan_NameSingular], the hideous $[Resource.D.r_death_pig_NameSingular], the stubborn $[Resource.G.r_garmir_NameSingular] and the noble $[Resource.T.r_tribeland_bear_NameSingular]. Whichever you pick, they will serve nicely in the same manner as any other.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="74" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_fighter" />
+				<task type="interact_with_vendor" id="75" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_fighter" />
+				<task type="interact_with_vendor" id="76" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_fighter" />
+				<task type="interact_with_vendor" id="77" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_fighter" />
+				<task type="interact_with_vendor" id="78" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_fighter" />
+				<task type="interact_with_vendor" id="79" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_fighter" />
+				<task type="interact_with_vendor" id="80" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_fighter" />
+				<task type="interact_with_vendor" id="81" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_fighter" />
+				<task type="interact_with_vendor" id="82" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_fighter" />
+				<task type="interact_with_vendor" id="83" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_fighter" />
+				<task type="interact_with_vendor" id="84" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_fighter" />
+				<task type="interact_with_vendor" id="85" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_fighter" />
+				<task type="interact_with_vendor" id="86" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_fighter" />
+				<task type="interact_with_vendor" id="87" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_fighter" />
+				<task type="interact_with_vendor" id="88" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_fighter" />
+				<task type="interact_with_vendor" id="89" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_fighter" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="42" tag="explaining armors">
+			<journal_entry>In more detail let me tell you that: Metal armor has the best protections, Leather armor gives you attack speed but a low protection, the Elementalist armor will give you spell and skill magnitude but very low protection and finaly the Primalist set will give you a very descent protection and better stat regeneration.</journal_entry>
+		</node>
+		<node type="start_node" id="75" tag="">
+			<conditions>
+				<condition type="quest_completion" id="33" value="1" tag="A Quest Completion Condition" quest_id="10" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="1" from="2" to="4" value="1" />
+		<edge id="3" from="4" to="5" value="0" />
+		<edge id="55" from="41" to="7" value="1" />
+		<edge id="7" from="7" to="8" value="0" />
+		<edge id="8" from="8" to="6" value="0" />
+		<edge id="9" from="6" to="9" value="1" />
+		<edge id="10" from="6" to="10" value="2" />
+		<edge id="11" from="6" to="11" value="3" />
+		<edge id="12" from="6" to="12" value="4" />
+		<edge id="13" from="9" to="14" value="0" />
+		<edge id="14" from="10" to="14" value="0" />
+		<edge id="15" from="11" to="14" value="0" />
+		<edge id="16" from="12" to="14" value="0" />
+		<edge id="56" from="14" to="42" value="0" />
+		<edge id="33" from="24" to="20" value="0" />
+		<edge id="31" from="21" to="20" value="0" />
+		<edge id="29" from="23" to="20" value="0" />
+		<edge id="27" from="15" to="22" value="3" />
+		<edge id="26" from="15" to="21" value="2" />
+		<edge id="28" from="15" to="23" value="4" />
+		<edge id="30" from="22" to="20" value="0" />
+		<edge id="32" from="15" to="24" value="1" />
+		<edge id="34" from="20" to="25" value="0" />
+		<edge id="39" from="27" to="30" value="0" />
+		<edge id="36" from="25" to="27" value="3" />
+		<edge id="37" from="25" to="28" value="2" />
+		<edge id="38" from="25" to="29" value="1" />
+		<edge id="40" from="28" to="30" value="0" />
+		<edge id="41" from="29" to="30" value="0" />
+		<edge id="42" from="30" to="31" value="0" />
+		<edge id="43" from="31" to="32" value="1" />
+		<edge id="44" from="32" to="33" value="1" />
+		<edge id="46" from="33" to="35" value="1" />
+		<edge id="47" from="35" to="36" value="1" />
+		<edge id="48" from="36" to="37" value="0" />
+		<edge id="50" from="37" to="38" value="1" />
+		<edge id="51" from="38" to="1" value="1" />
+		<edge id="54" from="5" to="41" value="0" />
+		<edge id="57" from="42" to="15" value="0" />
+		<edge id="74" from="75" to="2" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="1" x="1342" y="851" />
+		<node_location id="2" x="76" y="165" />
+		<node_location id="4" x="175" y="117" />
+		<node_location id="5" x="165" y="234" />
+		<node_location id="6" x="433" y="231" />
+		<node_location id="7" x="294" y="197" />
+		<node_location id="8" x="352" y="272" />
+		<node_location id="9" x="515" y="116" />
+		<node_location id="10" x="518" y="195" />
+		<node_location id="11" x="518" y="266" />
+		<node_location id="12" x="522" y="345" />
+		<node_location id="14" x="620" y="228" />
+		<node_location id="15" x="748" y="234" />
+		<node_location id="24" x="838" y="126" />
+		<node_location id="23" x="834" y="353" />
+		<node_location id="22" x="833" y="271" />
+		<node_location id="21" x="834" y="198" />
+		<node_location id="20" x="922" y="229" />
+		<node_location id="25" x="1014" y="231" />
+		<node_location id="30" x="1189" y="239" />
+		<node_location id="27" x="1100" y="300" />
+		<node_location id="28" x="1102" y="224" />
+		<node_location id="29" x="1103" y="154" />
+		<node_location id="31" x="1278" y="236" />
+		<node_location id="32" x="1332" y="297" />
+		<node_location id="33" x="1341" y="391" />
+		<node_location id="35" x="1345" y="492" />
+		<node_location id="36" x="1356" y="583" />
+		<node_location id="37" x="1358" y="666" />
+		<node_location id="38" x="1353" y="763" />
+		<node_location id="41" x="241" y="310" />
+		<node_location id="42" x="690" y="293" />
+		<node_location id="75" x="37" y="274" />
+	</node_locations>
+</quest>

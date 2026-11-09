@@ -1,0 +1,476 @@
+<quest quest_id="1006" category="side_quest" tag="The Nameless Tomb" published="False" valid="False">
+	<title>The Nameless Tomb</title>
+	<description>This is a quest based on Daedrus Dragoneye&apos;s entry to our 2014 quest contest.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<journal_entry>The Nameless Tomb in Qattenhal is rumoured to hold a mysterious, long lost secret as well as untold riches behind its closed doors.</journal_entry>
+			<conditions>
+				<condition type="in_area" id="7" value="1" tag="An In Quest Area Condition" area_id="36" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="">
+			<actions>
+				<action type="give_item_to_player" id="1" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_new Veilron Cloth" quantity="10" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="2" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Staff_p01_r06" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="4" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Dye_17" quantity="3" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="6" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Mask Korean Malaut Surface" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="7" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Elegant" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="2" tag="NEED PROP OBJECT">
+			<instruction>Inspect the tomb</instruction>
+			<journal_entry>The tomb seems to be mysteriously void of anything else other than a strange carved inscription that only contains three letters. M.L.K. Immaculate and bereft of any other evidence of its origins and purpose, the Agonian had to seek more information in the nearby city of Monkfield. The Acolytes of the Watcher should have some information.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="38" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Monkified">
+			<instruction>Go to Minkfield</instruction>
+			<tasks>
+				<task type="go_to_area" id="1" value="1" tag="A Go To Area Task" area_id="38" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="Acolyte">
+			<instruction>Ask $[Vendors.t18_monkfield_acolyte_Name] in Monkfield about the tomb</instruction>
+			<journal_entry>The Agonian found the distinctive Acolyte of the Watcher with relative ease. After the Agonian inquired about the tomb he had happened upon, the Acolyte was a bit reluctant to divulge his share of knowledge at first. Once the Acolyte felt the Agonian was honestly intrigued and possibly quite up to the task that lay ahead, he directed him to the city of Sanguine. If there were one place in Agon where the mystery of the tomb could be untangled, that would be Sanguine. The Acolyte was reticent to answer any further questions the Agonian had about the tomb.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="2" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_acolyte" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="5" tag="">
+			<instruction>Go to Sanguine</instruction>
+			<tasks>
+				<task type="go_to_area" id="3" value="1" tag="A Go To Area Task" area_id="3" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>The Agonian approached $[Vendors.u18_sanguine_blacksmith_Name] and asked him about the tomb. The Battle Supplier at length, talked to the Agonian about the nameless tomb although there was no hiding the fact that he had never been there himself.</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="battlemaster">
+			<journal_entry>$[Vendors.u18_sanguine_fighter_Name] had just finished practice when the Agonian approached him. Eyeing him suspiciously at first, the battlemaster was quite eager to recount what he knew of the Qattenhal tomb.</journal_entry>
+		</node>
+		<node type="event_merge" id="9" tag="merchant">
+			<journal_entry>$[Vendors.u18_sanguine_merchant_Name] was doing inventory when the Agonian approached her and asked her if she had heard tales of the nameless tomb. The merchant came off as somewhat surprised and told the Agonian what she had learned over the years mainly from her clientele.</journal_entry>
+		</node>
+		<node type="event_simple" id="10" tag="">
+			<journal_entry>$[Vendors.u18_sanguine_mage_Name] woke up from his reverie when the Agonian nudged his shoulder gently. The spellmaster gazed away from his books and his eyes settled on the Agonian. Once the Agonian apologized for the distruption and asked the spellmaster if he had found any information about the tomb in his studies, the spellmaster was more than happy to oblige him, although his face turned dark when he began telling the Agonian what he knew.</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>$[Vendors.u18_quest_ork_emissary_Name] was distant and disapproving of the Agonian. She grunted, rather than spoke, and in the most certain manner made the Agonian aware she had not even heard of the tomb mentioned.</journal_entry>
+		</node>
+		<node type="event_merge" id="12" tag="magic supplier">
+			<journal_entry>$[Vendors.u18_sanguine_arcanist_Name] was sifting through various raw materials, preparing some conconctions. The Agonian asked with some hesitation, whether the nameless tomb was anything more than a rumor. $[Vendors.u18_sanguine_arcanist_Name] recounted what she knew of the tomb with a smile across her face.</journal_entry>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>$[Vendors.u18_sanguine_councillor_Name] was meditating. Feeling loath to distract him, the Agonian was hesitant to speak. But the sage felt his quandary and as if by magic, told him as much as he knew about the nameless tomb.</journal_entry>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<journal_entry>His grandfather told him bedtime stories when he was just a child, about the time of the founding and the first settlers. He could still remember how the story of the mysterious nameless tomb always drew him in and captivated him immensely, especially the mythical birthplace of the Mercian founders and the evil that followed them across the seas.</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>The stories about the tomb were old and numerous. Many an adventurer had seeked the tomb&apos;s riches and thrills and most, if not everyone, had perished. The tomb was cursed and the legend was that the family that had built it originally, still kept a close eye on it, protecting its terrible secret. An old companion of the battlemaster was now the Sage of Sandbrook, the city where the living descendants of the family who purportedly built the tomb were to be found. If someone knew anything else, that would be the Sage of Sandbrook.</journal_entry>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>The merchant was very much aware of the history of the tomb and its ancient date of construction. She had heard its original purpose was as a mausoleum for the founders of the Mercian cities, but most importantly she knew what it was made of and that was Broadherne sandstone. It wasn&apos;t much, but it was a concrete piece of information.</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>One thing was certain about the nameless tomb according to the spellmaster, and that was that it reeked of the malevolent signs of Malaut and his disciples. And whenever the name of Malaut was heard, there was nothing good to be expected, other than evil lurking in its many forms.</journal_entry>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>In days past, she had conducted an extensive research of the surrounding area, looking for promising, magically attuned materials. During that research, it became evident that the area around the nameless tomb was latently magical. Digging deeper into the why or how that was possible, she approached her mentor at that time who upon running her own investigation immediately warned her of grave danger lurking in the area. Whether or not she continued her research the magic supplier could not say, but if that were the case and she was willing to share information she could be found plying her wares just like her mentee, at Heart of Eanna.</journal_entry>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>According to the sage, the tomb was meant to be the final resting place of the noble family that first settled the Mercian area, driven out of their birthplace by a powerful malevolent entity. The interesting thing about the tomb was that it never fulfilled the purpose it was built for. What worried the Agonian the most though was that the malevolent entity they were trying to run away from, can still be felt in these lands, even today.</journal_entry>
+		</node>
+		<node type="event_simple" id="22" tag="eanna">
+			<instruction>Talk with $[Vendors.v18_heart_of_eanna_arcanist_Name] at Heart of Eanna</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_arcanist" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="23" tag="">
+			<instruction>Seek more information in Broadherne</instruction>
+			<journal_entry>The source of the tomb&apos;s material was crawling with Malaut&apos;s disciples. It was most certain that even if the tomb had not been so from the start, the material it was made from was tainted with Malaut&apos;s magic.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="14" value="1" tag="go to Broadherne  malaut spawn" area_id="37" />
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="16" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="2618" world_z="-592" />
+			</actions>
+		</node>
+		<node type="event_simple" id="24" tag="Sandbrook - sage">
+			<instruction>Talk with $[Vendors.u19_sandbrook_councillor_Name] at Sandbrook</instruction>
+			<journal_entry>The Agonian approached the Sage somewhat reluctantly. The Sage looked at the Agonian from the corner of his eye, and as if by magic, smiled knowingly at him. He told him he knew what he sought, but such sensitive information cost. The kind of sensitive information the Agonian sought, would cost him 60 $[Resource.G.r_gold_NameSingular] . One is not ennobled simply because of his actions, the Agonian said out loud, and the Sage nodded in agreement. His eyes remained fixed on the Agonians purse, his smile unwaveringly friendly.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_councillor" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="25" tag="" optional_tasks="True">
+			<tasks>
+				<task type="choose" id="15" value="1" tag="bribe the sage" end_node_id="-1">
+					<task_instruction>Pay for the information</task_instruction>
+				</task>
+				<task type="choose" id="16" value="2" tag="leave disgusted" end_node_id="-1">
+					<task_instruction>Leave showing disgust</task_instruction>
+				</task>
+				<task type="choose" id="17" value="3" tag="act offended" end_node_id="-1">
+					<task_instruction>Act offended</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="26" tag="">
+			<journal_entry>The Agonian climbed onto the hill and saw the carvings - it was just as most had feared - the Disciples of Malaut were still working their evil ways, to fulfill their master&apos;s evil designs. The marble from which the nameless tomb was built indeed had the signature of Malaut about it, that much was plain. If anyone knew more about this, that would be the Disciples themselves.</journal_entry>
+		</node>
+		<node type="event_simple" id="27" tag="">
+			<journal_entry>$[Vendors.v18_heart_of_eanna_arcanist_Name] received the Agonian with open arms once it became evident he had already contacted her mentee. She was more than eager to tell him all that she had found out about the tomb, but at the same time, quite insistent on pointing out the danger lurking about it. Her research was conclusive - the Disciples of Malaut were at work at the tomb, perhaps since it was built. Any further gleam into their designs, would need to be acquired first hand, the hard way, possibly over their dead bodies.</journal_entry>
+		</node>
+		<node type="event_simple_conditional" id="28" tag="">
+			<instruction>Talk to $[Vendors.u19_sandbrook_councillor_Name] to give him the $[Resource.G.r_gold_NameSingular]</instruction>
+			<conditions>
+				<condition type="item_possession" id="2" value="1" tag="60 gold" resource_name="r_Gold" quantity="60" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_vendor" id="51" value="2" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_councillor" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="30" tag="">
+			<journal_entry>The Sage explained to the Agonian that his demand was just a test. Surely, someone of his stature and career would not stoop so low as to trade in tidbits of information. After all, information should be free. The sage told him what he knew of the mysterious noble family.</journal_entry>
+		</node>
+		<node type="event_merge" id="31" tag="">
+			<journal_entry>The Sage smiled and nodded appreciatively to the Agonian after pocketing his coin. He then recounted what he knew of the noble family that had built the nameless tombs in ages past.</journal_entry>
+			<actions>
+				<action type="take_item_from_player" id="0" tag="take 60 gold" resource_name="r_Gold" quantity="60" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_merge" id="74" tag="" />
+		<node type="event_merge" id="33" tag="">
+			<journal_entry>Noone talks about them, the Sage recounted to the Agonian. Their forefathers were rumoured to have settled Mercia themselves at some distant point in the past. They have people of their own everywhere, and are very secretive about their dealings. Some have even gone so far of accusing them of being a cult, associated with the Disciples of Malaut. If there was any truth to these accusations, the only way to found out would be looking for the Disciples of Malaut which still roam the land at Broadherne.</journal_entry>
+		</node>
+		<node type="event_simple" id="34" tag="">
+			<instruction>Find evidence of the corruption spread by Malaut in Broadherne</instruction>
+			<tasks>
+				<task type="go_to_area" id="18" value="1" tag="go to Broadherne  malaut spawn" area_id="37">
+					<task_instruction>Find any of Malaut&apos;s Disciples in Broadherne </task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="15" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="2618" world_z="-592" />
+			</actions>
+		</node>
+		<node type="event_merge" id="35" tag="">
+			<instruction>Search among the Disciples of Malaut for information about the tomb</instruction>
+			<journal_entry>After bringing down the Daughter of Malaut, the Agonian rummages through her meager belongings. The single important piece of information he can gather seems to be indecipherable - a note scribbled with writings of Malaut seems to be the only clue. If there is someone capable of reading this, it must be one trained in the arts of spellcrafting with knowledge of the area.</journal_entry>
+			<tasks>
+				<task type="kill_object" id="19" value="1" tag="A Kill Object(s) Task" resource_name="r_Malaut Surface Acolyte" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="36" tag="unlock collectible" optional_tasks="True">
+			<instruction>Decipher the Malaut Daughter&apos;s note with the help of a Mercian Spellmaster</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="20" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_mage" />
+				<task type="interact_with_vendor" id="21" value="2" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_mage" />
+				<task type="interact_with_vendor" id="22" value="3" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_mage" />
+				<task type="interact_with_vendor" id="23" value="4" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_mage" />
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="10" tag="An Unlock Quest Item Within The Quest Action" item_id="1" />
+			</actions>
+		</node>
+		<node type="event_simple" id="37" tag="">
+			<journal_entry>$[Vendors.v18_heart_of_eanna_mage_Name] was quite intrigued when the Agonian first showed the note with the indecipherable writings of Malaut&apos;s Disciples. But when he began to transcribe what was written down word for word, he began sweating profusely. When at last he was done, he was pale. The feeling of ash made his mouth dry. The Agonian and the spellmaster heard the words in the note echo in their minds - they now knew that only three hours remained until the ritual at the Malaut Disciple&apos;s lair at Qattenhal took place. If they were not stopped, there was no telling how powerful they could grow.</journal_entry>
+		</node>
+		<node type="event_simple" id="38" tag="">
+			<journal_entry>$[Vendors.u19_sandbrook_mage_Name] was familiar with the alphabet, even though it appeared as nothing but scribbles to the plain, untrained eye. At first he looked intrigued, but by the time he was done deciphering the note the Agonian had handed to him, there was no hiding the fact he was shaking visibly. Tremors overtook his body and the evil, incoherent words filled their minds. They both knew that the Agonian had two and a half hours to put an end to the Malaut ritual that they had just triggered. The Malaut at Qattenhal had to be stopped, or else their ritual would unleash what lay hidden in the tomb forever.</journal_entry>
+		</node>
+		<node type="event_simple" id="39" tag="">
+			<journal_entry>Sanguine was a busy place but one was never busy when something as evil as a Malaut writing was to be found. Piece by piece $[Vendors.u18_sanguine_mage_Name] stitched along words and meanings, at first with excitement. But with the final word deciphered, the spellmaster wretched. He told his vision of a ritual that started the moment he finished reading the fateful note. He urged the Agonian to seek the Malaut Disciples&apos; lair at Qattenhal and put an end to the ritual in time, lest an evil that hadn&apos;t been seen for hundreds of years was released from its prison. The Agonian had two hours left.</journal_entry>
+		</node>
+		<node type="event_simple" id="40" tag="">
+			<journal_entry>It wasn&apos;t an unfamiliar sight for $[Vendors.t18_monkfield_mage_Name]. She had seen the writings of Malaut scribbled here amd there in places better left untouched, and she was no stranger to the Disciples&apos; dark and evil messages. But as she put the last pieces together, her face became drawn with horror. She was barely able to contain her panic. Unbeknownst to her, reading the note had summoned the disciples of Malaut to perform a powerful ritual. She urged the Agonian to run, implored him to be victorious - an hour and a half was all that stood between them and the Disciples unleashing a terrible power. The ritual at their Qattenhal lair had to be stopped.</journal_entry>
+		</node>
+		<node type="event_simple_conditional" id="54" tag="">
+			<instruction>Kill the $[Resource.M.r_malaut_surface_warlock_NameSingular] before time runs out</instruction>
+			<conditions>
+				<condition type="remaining_time" id="4" value="1" tag="A Time Remaining Condition" timer_length="7200" />
+			</conditions>
+			<tasks>
+				<task type="kill_object" id="32" value="2" tag="A Kill Object(s) Task" resource_name="r_Malaut Surface Warlock" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="55" tag="">
+			<instruction>Kill the $[Resource.M.r_malaut_surface_warlock_NameSingular] before time runs out</instruction>
+			<conditions>
+				<condition type="remaining_time" id="5" value="1" tag="A Time Remaining Condition" timer_length="9000" />
+			</conditions>
+			<tasks>
+				<task type="kill_object" id="33" value="2" tag="A Kill Object(s) Task" resource_name="r_Malaut Surface Warlock" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="56" tag="">
+			<instruction>Kill the $[Resource.M.r_malaut_surface_warlock_NameSingular]before time runs out</instruction>
+			<conditions>
+				<condition type="remaining_time" id="6" value="1" tag="A Time Remaining Condition" timer_length="10800" />
+			</conditions>
+			<tasks>
+				<task type="kill_object" id="34" value="2" tag="A Kill Object(s) Task" resource_name="r_Malaut Surface Warlock" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="45" tag="">
+			<instruction>Kill the $[Resource.M.r_malaut_surface_warlock_NameSingular] before time runs out</instruction>
+			<conditions>
+				<condition type="remaining_time" id="3" value="1" tag="A Time Remaining Condition" timer_length="5400" />
+			</conditions>
+			<tasks>
+				<task type="kill_object" id="31" value="2" tag="A Kill Object(s) Task" resource_name="r_Malaut Surface Warlock" quantity="1" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="46" tag="" />
+		<node type="event_branch" id="47" tag="battlemaster" optional_tasks="True">
+			<instruction>Ask around in Sanguine to find out details about the tomb</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="25" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_fighter" />
+				<task type="interact_with_vendor" id="41" value="2" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_merchant" />
+				<task type="interact_with_vendor" id="42" value="3" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_arcanist" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="66" tag="b" optional_tasks="True">
+			<instruction>Ask around in Sanguine to find information about the tomb</instruction>
+			<tasks>
+				<task type="interact_with_vendor" id="44" value="2" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_merchant" />
+				<task type="interact_with_vendor" id="45" value="3" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_arcanist" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="49" tag="spellmaster">
+			<tasks>
+				<task type="interact_with_vendor" id="27" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_mage" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="69" tag="">
+			<instruction>Find the Malaut in Broadherne</instruction>
+			<tasks>
+				<task type="go_to_area" id="46" value="1" tag="go to Broadherne  malaut spawn" area_id="37" />
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="17" tag="An Add Map-Marker to World-Map Action" marker_type="QuestSearchTarget" world_x="2618" world_z="-529" />
+			</actions>
+		</node>
+		<node type="event_simple" id="51" tag="sage">
+			<tasks>
+				<task type="interact_with_vendor" id="29" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_councillor" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="52" tag="ork emissary">
+			<tasks>
+				<task type="interact_with_vendor" id="30" value="1" tag="An Interact With Vendor Task" vendor_id="u18_quest_ork_emissary" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="53" tag="battle supplier">
+			<tasks>
+				<task type="interact_with_vendor" id="24" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_blacksmith" />
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="57" tag="">
+			<instruction>You need to have the gold in your backpack. Talk to the $[Vendors.u19_sandbrook_councillor_Name] when you have the money.</instruction>
+			<conditions>
+				<condition type="item_possession" id="10" value="2" tag="An Item Possession Condition" resource_name="r_Gold" quantity="60" inventory_type="Backpack" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_vendor" id="35" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_councillor" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="58" tag="" />
+		<node type="event_simple" id="59" tag="">
+			<journal_entry>The Agonian had never before come across that kind of a demand from a Sage before. The feeling of disgust showed on the Agonian&apos;s face. There was no option other than returning to Sanguine to seek other venues of information.</journal_entry>
+		</node>
+		<node type="event_merge" id="60" tag="time out">
+			<journal_entry>After failing to stop the ritual in time, the Agonian knew it in his heart that he had to go back to the tomb. Whatever evil the Disciples of Malaut had unleashed, there was no telling what plans of theirs this ritual would further and what lay in the future.</journal_entry>
+		</node>
+		<node type="event_merge" id="61" tag="unlock tomb key">
+			<instruction>Search the Nameless Tomb</instruction>
+			<journal_entry>After killing the Apostle of Malaut just in time to stop the ritual from being completed, the Agonian found a small, miniscule key with the same three letters inscribed in the tomb. Whatever lay within, was now within the Agonian&apos;s reach. All he had to do was go to the tomb.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="11" tag="An Unlock Quest Item Within The Quest Action" item_id="1" />
+			</actions>
+		</node>
+		<node type="event_join" id="62" tag="impossible task" optional_tasks="False">
+			<tasks>
+				<task type="go_to_area" id="39" value="1" tag="A Go To Area Task" area_id="17" />
+				<task type="go_to_area" id="40" value="1" tag="A Go To Area Task" area_id="3" />
+			</tasks>
+		</node>
+		<node type="end_node" id="63" tag="Impossible End" />
+		<node type="event_simple" id="70" tag="interact with tomb">
+			<journal_entry>The Agonian&apos;s face had the expression of real, intrinsic fear written all over it and approached the tomb with uneasiness. The air felt heavy and thick. A strange odor wafted in the air. The Agonian saw the three letters M.L.K. glow with malevolent purity. Whatever this meant, it made the Agonian shiver truly and he felt that this was only a beginning. His stare fixed at the tomb, he noticed what was left behind by one of the cultists that had apparently beat him to the tomb.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="49" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="end_node" id="71" tag="">
+			<actions>
+				<action type="give_item_to_player" id="12" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Mask Malaut Surface" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="13" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Staff_p03_r06" quantity="1" inventory_type="Backpack" />
+				<action type="give_item_to_player" id="14" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Robes_M Elegant Torso" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="72" tag="">
+			<journal_entry>The tomb stood still and silent as ever. Etched markings  and decrepit walls told of the unkind passage of time, yet there was a mysterious, forlorn sense to the monument. Once the Agonian reached for the sarcophagus, he saw the lock inviting to be opened. He placed the key inside and turned it with mixed feelings of awe and fear. A grinding sound reverberated around him and in a few moments a small compartment lay open.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="48" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="73" tag="">
+			<journal_entry>The riches inside the compartment now belonged to the Agonian. But the mystery of the sarcophagus and the tomb lay still unanaswered...</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="1" from="2" to="3" value="1" />
+		<edge id="2" from="3" to="4" value="1" />
+		<edge id="3" from="4" to="5" value="1" />
+		<edge id="70" from="52" to="11" value="1" />
+		<edge id="69" from="51" to="13" value="1" />
+		<edge id="106" from="66" to="9" value="2" />
+		<edge id="67" from="49" to="10" value="1" />
+		<edge id="103" from="47" to="9" value="2" />
+		<edge id="65" from="47" to="8" value="1" />
+		<edge id="64" from="53" to="7" value="1" />
+		<edge id="12" from="7" to="14" value="0" />
+		<edge id="13" from="8" to="15" value="0" />
+		<edge id="14" from="9" to="16" value="0" />
+		<edge id="15" from="10" to="17" value="0" />
+		<edge id="17" from="12" to="19" value="0" />
+		<edge id="18" from="13" to="20" value="0" />
+		<edge id="119" from="5" to="46" value="1" />
+		<edge id="24" from="15" to="24" value="0" />
+		<edge id="25" from="16" to="23" value="0" />
+		<edge id="26" from="19" to="22" value="0" />
+		<edge id="122" from="57" to="31" value="1" />
+		<edge id="28" from="23" to="26" value="1" />
+		<edge id="29" from="22" to="27" value="1" />
+		<edge id="30" from="25" to="28" value="1" />
+		<edge id="32" from="25" to="30" value="3" />
+		<edge id="74" from="28" to="31" value="2" />
+		<edge id="123" from="57" to="74" value="2" />
+		<edge id="120" from="28" to="74" value="1" />
+		<edge id="37" from="30" to="33" value="0" />
+		<edge id="38" from="31" to="33" value="0" />
+		<edge id="39" from="33" to="34" value="0" />
+		<edge id="40" from="26" to="35" value="0" />
+		<edge id="41" from="34" to="35" value="1" />
+		<edge id="111" from="69" to="35" value="1" />
+		<edge id="43" from="35" to="36" value="1" />
+		<edge id="44" from="36" to="37" value="1" />
+		<edge id="45" from="36" to="38" value="2" />
+		<edge id="46" from="36" to="39" value="3" />
+		<edge id="47" from="36" to="40" value="4" />
+		<edge id="55" from="40" to="45" value="0" />
+		<edge id="73" from="37" to="56" value="0" />
+		<edge id="72" from="38" to="55" value="0" />
+		<edge id="71" from="39" to="54" value="0" />
+		<edge id="57" from="46" to="53" value="0" />
+		<edge id="58" from="46" to="47" value="0" />
+		<edge id="104" from="47" to="12" value="3" />
+		<edge id="60" from="46" to="49" value="0" />
+		<edge id="107" from="66" to="12" value="3" />
+		<edge id="62" from="46" to="51" value="0" />
+		<edge id="63" from="46" to="52" value="0" />
+		<edge id="77" from="58" to="25" value="0" />
+		<edge id="78" from="24" to="58" value="1" />
+		<edge id="79" from="25" to="59" value="2" />
+		<edge id="80" from="56" to="60" value="1" />
+		<edge id="81" from="55" to="60" value="1" />
+		<edge id="82" from="54" to="60" value="1" />
+		<edge id="83" from="45" to="60" value="1" />
+		<edge id="84" from="45" to="61" value="2" />
+		<edge id="85" from="54" to="61" value="2" />
+		<edge id="86" from="55" to="61" value="2" />
+		<edge id="87" from="56" to="61" value="2" />
+		<edge id="118" from="60" to="70" value="0" />
+		<edge id="114" from="61" to="72" value="0" />
+		<edge id="90" from="17" to="62" value="0" />
+		<edge id="91" from="11" to="62" value="0" />
+		<edge id="92" from="14" to="62" value="0" />
+		<edge id="93" from="20" to="62" value="0" />
+		<edge id="105" from="59" to="66" value="0" />
+		<edge id="95" from="62" to="63" value="1" />
+		<edge id="124" from="74" to="57" value="0" />
+		<edge id="110" from="27" to="69" value="0" />
+		<edge id="113" from="70" to="71" value="1" />
+		<edge id="116" from="72" to="73" value="1" />
+		<edge id="117" from="73" to="1" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Malaut Daughter note" image_locked="quest_item_placeholder_locked.png" image_unlocked="quest_item_placeholder_unlocked.png">
+		<name_locked>Indecipherable note</name_locked>
+		<name_unlocked>The Ritual</name_unlocked>
+		<description_locked>An ineligible note found on a dead Daughter of Malaut</description_locked>
+		<description_unlocked>HATUM ATOTH - ARFUN AZOTH - URMAN ZETOM</description_unlocked>
+	</quest_item>
+	<quest_item item_id="1" tag="Tomb key" image_locked="quest_item_placeholder_locked.png" image_unlocked="quest_item_placeholder_unlocked.png">
+		<name_locked>Quest Item 1: Locked Name</name_locked>
+		<name_unlocked>Quest Item 1: Unlocked Name</name_unlocked>
+		<description_locked>Quest Item 1: Locked Description</description_locked>
+		<description_unlocked>Quest Item 1: Unlocked Description</description_unlocked>
+	</quest_item>
+	<node_locations>
+		<node_location id="0" x="56" y="441" />
+		<node_location id="1" x="1947" y="508" />
+		<node_location id="2" x="127" y="485" />
+		<node_location id="3" x="214" y="439" />
+		<node_location id="4" x="305" y="419" />
+		<node_location id="5" x="376" y="400" />
+		<node_location id="7" x="654" y="175" />
+		<node_location id="8" x="645" y="467" />
+		<node_location id="9" x="796" y="661" />
+		<node_location id="10" x="636" y="37" />
+		<node_location id="11" x="648" y="95" />
+		<node_location id="12" x="696" y="841" />
+		<node_location id="13" x="664" y="256" />
+		<node_location id="14" x="744" y="166" />
+		<node_location id="15" x="732" y="443" />
+		<node_location id="16" x="880" y="663" />
+		<node_location id="17" x="735" y="30" />
+		<node_location id="19" x="787" y="846" />
+		<node_location id="20" x="754" y="251" />
+		<node_location id="22" x="878" y="845" />
+		<node_location id="23" x="1001" y="658" />
+		<node_location id="24" x="809" y="409" />
+		<node_location id="25" x="961" y="395" />
+		<node_location id="26" x="1099" y="644" />
+		<node_location id="27" x="984" y="833" />
+		<node_location id="28" x="998" y="313" />
+		<node_location id="30" x="1051" y="399" />
+		<node_location id="31" x="1102" y="316" />
+		<node_location id="74" x="999" y="215" />
+		<node_location id="33" x="1144" y="404" />
+		<node_location id="34" x="1213" y="506" />
+		<node_location id="35" x="1254" y="616" />
+		<node_location id="36" x="1327" y="616" />
+		<node_location id="37" x="1437" y="427" />
+		<node_location id="38" x="1447" y="525" />
+		<node_location id="39" x="1449" y="630" />
+		<node_location id="40" x="1450" y="743" />
+		<node_location id="54" x="1583" y="634" />
+		<node_location id="55" x="1572" y="520" />
+		<node_location id="56" x="1544" y="422" />
+		<node_location id="45" x="1626" y="741" />
+		<node_location id="46" x="461" y="396" />
+		<node_location id="47" x="534" y="666" />
+		<node_location id="66" x="690" y="563" />
+		<node_location id="49" x="536" y="33" />
+		<node_location id="69" x="1131" y="772" />
+		<node_location id="51" x="582" y="266" />
+		<node_location id="52" x="569" y="96" />
+		<node_location id="53" x="582" y="173" />
+		<node_location id="57" x="1099" y="214" />
+		<node_location id="58" x="887" y="391" />
+		<node_location id="59" x="903" y="520" />
+		<node_location id="60" x="1754" y="257" />
+		<node_location id="61" x="1740" y="512" />
+		<node_location id="62" x="944" y="78" />
+		<node_location id="63" x="1127" y="76" />
+		<node_location id="70" x="1839" y="258" />
+		<node_location id="71" x="1925" y="258" />
+		<node_location id="72" x="1807" y="513" />
+		<node_location id="73" x="1877" y="507" />
+	</node_locations>
+</quest>

@@ -1,0 +1,19 @@
+<quest quest_id="402" category="lore_quest" tag="The Assistant's Manuscript">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="object_interaction" id="0" value="1" tag="Interact with Ymir's Legacy" resource_name="" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="2" tag="Excerpt from the Manuscript">
+			<actions>
+				<action type="give_item_to_player" id="0" tag="Add &quot;fake item&quot; Excerpt" resource_name="" quantity="0" inventory_type="None" />
+			</actions>
+		</node>
+		<node type="end_node" id="3" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="0" />
+		<edge id="1" from="2" to="3" value="0" />
+	</edges>
+</quest>

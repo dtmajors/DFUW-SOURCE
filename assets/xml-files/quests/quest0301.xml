@@ -1,0 +1,61 @@
+<quest quest_id="301" category="lore_quest" tag="Meet the Fist" published="False" valid="True">
+	<title>Meet the Fist</title>
+	<description>&quot;Greetings citizen.  You are in possession of an illegal magical artifact.  Proceed at once to Flaming Skull for immediate processing and redemption.  Failure to comply will result in...inevitability&quot;</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="colpete prologue" quest_id="205" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="talk to the fist">
+			<instruction>Meet the Fist of the Law in Flaming Skull.</instruction>
+			<journal_entry>Nevertheless you made your way up the path to the barracks to face the Fist of the Law.  I would not have blamed you if you had been scared, he was terrifying! A brick wall of an ork whose bearing could only be described as resembling...inevitability</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="talk to fist" vendor_id="u13_flaming_skull_fistofthelaw" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="">
+			<journal_entry>He thus offered you three trials, all compulsory, though their order of execution (I pun) was left to you.  In order to determine your worth, you would need to weigh your mind, spirit, and body... this just did not bode well.</journal_entry>
+		</node>
+		<node type="event_simple" id="3" tag="empty node" />
+		<node type="event_simple" id="4" tag="">
+			<journal_entry>With little pomp or frill he looked you up and down and repeated your so called &apos;crime&apos;.  He cut through any potential appeals you may have considered by informing you that in Orkish law, everyone was guilty...judgement was preempted and due process was bypassed in favor of redemption or, that failing, execution!</journal_entry>
+		</node>
+		<node type="end_node" id="5" tag="" />
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>The voice rang out loudly in your head; brazen, Orkish and brooking no quarter.  Orkish law was never something to be trifled with lightly, though ignoring the command was certainly an option.  Then again, this was perhaps the only chance of seeing what was behind the mystery of the fetish.</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>I can only imagine, in retrospect, what must have been going through your mind at this point.  An orkish guarantee of execution, at the best of times, can inspire any number of emotions.  Even more so when communicated directly into one&apos;s mind, bypassing all those pesky mediums like mouth or ears.</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>You know, of all of...Agons, children, i&apos;d never thought it would be the orks that would elicit such surprise from me.  I&apos;d always pegged them as fairly predictable in their savagery but,  like an elder brother thrust into the role of guardian, they truly stepped up and put a stop to their siblings petty squabbles... but then, demolishing a couple of nations and threatening to execute every last citizen has a way of sobering even the heaviest of bloodlusts.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>To this day, i can still remember your expression as you entered Flaming Skull, the capital city, and i use the term loosely, of the orkish peoples.  It was utterly unreadable.  Even with the deepest scrutiny i had no idea if you were terrified, curious, or even eager! Perhaps you will tell me one day...</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="5" from="0" to="6" value="1" />
+		<edge id="1" from="1" to="4" value="1" />
+		<edge id="2" from="4" to="2" value="0" />
+		<edge id="3" from="2" to="3" value="0" />
+		<edge id="4" from="3" to="5" value="0" />
+		<edge id="7" from="6" to="7" value="0" />
+		<edge id="8" from="7" to="8" value="0" />
+		<edge id="9" from="8" to="9" value="0" />
+		<edge id="10" from="9" to="1" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="34" y="345" />
+		<node_location id="1" x="342" y="346" />
+		<node_location id="2" x="557" y="345" />
+		<node_location id="3" x="704" y="345" />
+		<node_location id="4" x="456" y="347" />
+		<node_location id="5" x="838" y="348" />
+		<node_location id="6" x="111" y="334" />
+		<node_location id="7" x="161" y="292" />
+		<node_location id="8" x="220" y="274" />
+		<node_location id="9" x="279" y="226" />
+	</node_locations>
+</quest>

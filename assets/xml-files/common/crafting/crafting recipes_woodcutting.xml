@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Inherit calculations done for
+	1. 4500
+	*******
+	1.  500
+	25. 400
+	50. 300
+	75. 200
+	
+	refined ores have half the rate (double the pieces) and go up to 5 less fron the refined ingots
+-->
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+	<SFRecipe ResourceName="r_new timber" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="10">
+		<SFIngredient ResourceName="r_Gold" Quantity="2" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_cracked timber" Quantity="3" FractionLoss="0.8"/>
+		<SFRequiredSkill SkillName="s_Woodcutting" SkillLevel="1" InheritancePortion="1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_new wood" Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="1" FractionLoss="1.0"/>
+		<SFIngredient ResourceName="r_new timber" Quantity="2" FractionLoss="0.8"/>
+		<SFRequiredSkill SkillName="s_Woodcutting" SkillLevel="1" InheritancePortion="2" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_New Selentine Wood" Quantity="1" Difficulty="0.0" DurationMultiplier="1.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="20" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new timber" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Selentine Ore" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Woodcutting" SkillLevel="75" InheritancePortion="12" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_New Veilron Wood" Quantity="1" Difficulty="0.0" DurationMultiplier="2.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="1" CraftingSkillLevelMax="50">
+		<SFIngredient ResourceName="r_Gold" Quantity="30" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new timber" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Veilron Ore" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Woodcutting Mastery" SkillLevel="1" InheritancePortion="8" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+	
+	<SFRecipe ResourceName="r_New Neithal Wood" Quantity="1" Difficulty="0.0" DurationMultiplier="2.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="50" CraftingSkillLevelMax="75">
+		<SFIngredient ResourceName="r_Gold" Quantity="80" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new timber" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Neithal Ore" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Woodcutting Mastery" SkillLevel="50" InheritancePortion="16" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_New Leenspar Wood" Quantity="1" Difficulty="0.0" DurationMultiplier="3.0" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="75" CraftingSkillLevelMax="100">
+		<SFIngredient ResourceName="r_Gold" Quantity="110" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new timber" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Leenspar Ore" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Woodcutting Mastery" SkillLevel="75" InheritancePortion="32" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+
+	<SFRecipe ResourceName="r_New Theyril Wood" Quantity="1" Difficulty="0.0" DurationMultiplier="3.5" RequiredResourceName="r_Living Creatures" CraftingSkillLevelMin="100" CraftingSkillLevelMax="125">
+		<SFIngredient ResourceName="r_Gold" Quantity="140" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_new timber" Quantity="2" FractionLoss="0.8"/>
+		<SFIngredient ResourceName="r_New Theyril Ore" Quantity="2" FractionLoss="0.5"/>
+		<SFRequiredSkill SkillName="s_Woodcutting Mastery" SkillLevel="100" InheritancePortion="1" UseInCraftingCheck="TRUE"/>
+	</SFRecipe>
+</XML>

@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML>
+	<Range>
+		<Step Points="50000"  Value="4.0"/>
+		<Step Points="100000" Value="3.7"/>
+		<Step Points="150000" Value="3.4"/>
+		<Step Points="200000" Value="3.1"/>
+		<Step Points="250000" Value="2.8"/>
+		<Step Points="300000" Value="2.5"/>
+		<Step Points="350000" Value="2.2"/>
+		<Step Points="400000" Value="1.9"/>
+		<Step Points="450000" Value="1.6"/>
+		<Step Points="500000" Value="1.3"/>
+		<Step Points="550000" Value="1.0"/>
+		<ComparisonOnCurrentPlayerPoints Value="false"/>
+	</Range>
+	
+	<Multipliers>
+		<Multiplier Type="Monster"    Value="1.0" EventMultiplier = "1.0"/>
+		<Multiplier Type="Harvesting" Value="0.5" EventMultiplier = "1.0"/>
+		<Multiplier Type="Crafting"   Value="0.5" EventMultiplier = "1.0"/>
+		<Multiplier Type="Salvaging"  Value="0.3" EventMultiplier = "1.0"/>
+		<!-- return TM * ResourcePoints * StepMultiplier -->
+		<Multiplier Type="SkillGains" Value="0.0" EventMultiplier = "1.0"/>
+		<!--       return StepMultiplier * TM       -->
+		<Multiplier Type="ResourceDestroying" Value="2.0" EventMultiplier = "1.0"/>
+		<Multiplier Type="BuildingDestroying" Value="1.0" EventMultiplier = "1.0"/>
+		<Multiplier Type="PlayerGank"         Value="1.0" EventMultiplier = "1.0"/>
+		<Multiplier Type="ProwessMonolith"    Value="1.0" EventMultiplier = "1.0"/>
+		<!-- 
+			Resource stealing is not an actual multiplier 
+			but the actual points the player gets per tick
+		-->
+		<Multiplier Type="ResourceStealing" Value="8.2" EventMultiplier = "1.0"/>
+	</Multipliers>
+	<Resources>
+		<!--***************************************-->
+		<!--              Harvesting               -->
+		<!--***************************************-->
+		<Harvesting>
+			<Node ResourceName="r_flour" Rank="1" Points="0.01" FeatsMult="0.1"/>
+			<Node ResourceName="r_almonds" Rank="1" Points="0.01" FeatsMult="0.1"/>
+			<Node ResourceName="r_sugar" Rank="1" Points="0.01" FeatsMult="0.1"/>
+			<Node ResourceName="r_honey" Rank="1" Points="0.01" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_Iron Ore Inferior" Rank="1.5" Points="0.0258" FeatsMult="0.1"/>
+			<Node ResourceName="r_new Iron Ore" Rank="1.5" Points="0.129" FeatsMult="0.1"/>
+			<Node ResourceName="r_Quicklime" Rank="1.5" Points="0.129" FeatsMult="0.1"/>
+			<Node ResourceName="r_Timber Inferior" Rank="1" Points="0.02" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Timber" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Hay" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dirt" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Water Bottle" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Pine Timber" Rank="1" Points="0.11" FeatsMult="0.1"/>
+			<Node ResourceName="r_Oak Timber" Rank="1" Points="0.12" FeatsMult="0.1"/>
+			<Node ResourceName="r_Beech Timber" Rank="1" Points="0.13" FeatsMult="0.1"/>
+			<Node ResourceName="r_Lye" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Cotton Inferior" Rank="1" Points="0.02" FeatsMult="0.1"/>
+			<Node ResourceName="r_Hemp" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Cotton" Rank="1" Points="0.2" FeatsMult="0.1"/>
+			<Node ResourceName="r_Jute" Rank="1" Points="0.3" FeatsMult="0.1"/>
+			<Node ResourceName="r_Silk" Rank="1" Points="0.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Leenseed" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Rawhide Inferior" Rank="1" Points="0.02" FeatsMult="0.1"/>
+			<Node ResourceName="r_Stone" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Coal" Rank="1" Points="0.1" FeatsMult="0.1"/>
+			<Node ResourceName="r_Sulfur" Rank="2" Points="0.278" FeatsMult="0.1"/>
+			<Node ResourceName="r_Rust" Rank="2.5" Points="0.359" FeatsMult="0.1"/>
+			<Node ResourceName="r_Bass" Rank="3" Points="0.464" FeatsMult="0.1"/>
+			<!--<Node ResourceName="r_Trout" Rank="3" Points="0.464" FeatsMult="0.1"/>--> <!--TRAWLER-->
+			<Node ResourceName="r_Trout" Rank="3.0" Points="0.0464" FeatsMult="10.0"/> <!--TRAWLER NEW *0.1 PP, /0.1 FEAT -->
+			<Node ResourceName="r_Carrot" Rank="3.5" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Cod" Rank="3.5" Points="1.0" FeatsMult="0.1"/>
+			<!--<Node ResourceName="r_Salmon" Rank="3.5" Points="1.0" FeatsMult="0.1"/>--> <!--TRAWLER-->
+			<Node ResourceName="r_Salmon" Rank="3.5" Points="0.1" FeatsMult="10.0"/> <!--TRAWLER NEW *0.1 PP, /0.1 FEAT -->
+			<Node ResourceName="r_Onion" Rank="3.5" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potato" Rank="3.5" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Larva" Rank="4" Points="2.55" FeatsMult="0.1"/>
+			<Node ResourceName="r_Mandrake" Rank="4" Points="2.55" FeatsMult="0.1"/>
+			<Node ResourceName="r_Resin" Rank="4" Points="2.55" FeatsMult="0.1"/>
+			<Node ResourceName="r_Seeds" Rank="4" Points="2.55" FeatsMult="0.1"/>
+			<!--<Node ResourceName="r_Swordfish" Rank="4" Points="2.55" FeatsMult="0.1"/>--> <!--TRAWLER-->
+			<Node ResourceName="r_Swordfish" Rank="4.0" Points="0.255" FeatsMult="10.0"/> <!--TRAWLER NEW *0.1 PP, /0.1 FEAT -->
+			<Node ResourceName="r_Lichen" Rank="4.5" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Nacre" Rank="4.5" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Shells" RRank="4.5" Points="4.0" FeatsMult="0.1"/>
+			<!--<Node ResourceName="r_Crab" Rank="4" Points="2.55" FeatsMult="0.1"/>--> <!--TRAWLER-->
+			<Node ResourceName="r_Crab" Rank="4.0" Points="0.255" FeatsMult="10.0"/> <!--TRAWLER NEW *0.1 PP, /0.1 FEAT -->
+			<Node ResourceName="r_steedgrass" Rank="5" Points="5.995" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_Lobster" Rank="5.0" Points="0.5995" FeatsMult="10.0"/> <!--TRAWLER NEW *0.1 PP, /0.1 FEAT -->
+			<Node ResourceName="r_Seaweed" Rank="6.0" Points="0.7743" FeatsMult="10.0"/> <!--TRAWLER NEW *0.1 PP, /0.1 FEAT -->
+			<Node ResourceName="r_Fossil" Rank="6.5" Points="10.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Small Treasure Map Item" Rank="10" Points="46.416" FeatsMult="0.1"/>
+			<Node ResourceName="r_Runestone" Rank="11" Points="59.948" FeatsMult="0.1"/>
+			<Node ResourceName="r_Treasure Map Item" Rank="11" Points="59.948" FeatsMult="0.1"/>
+			
+			<!-- <Node ResourceName="r_Soft Skin" Rank="7.42857142857143" Points="1.05" FeatsMult="0.1"/>
+			<Node ResourceName="r_Animal Skin" Rank="7.42857142857143" Points="1.65" FeatsMult="0.1"/>
+			<Node ResourceName="r_Tough Skin" Rank="7.42857142857143" Points="2.15" FeatsMult="0.1"/> -->
+			<Node ResourceName="r_new Rawhide" Rank="7.42857142857143" Points="2.85" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_New Selentine Ore" Rank="55.6428571428571" Points="5.25" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Veilron Ore" Rank="64.2857142857143" Points="7.9055" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Neithal Ore" Rank="73.2142857142857" Points="12.75" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Leenspar Ore" Rank="82.1428571428571" Points="18.75" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Theyril Ore" Rank="91.0714285714286" Points="25.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_catalyst selentine" Rank="1" Points="1" FeatsMult="0.1"/>
+			<Node ResourceName="r_catalyst veilron" Rank="25" Points="2" FeatsMult="0.1"/>
+			<Node ResourceName="r_catalyst neithal" Rank="50" Points="3" FeatsMult="0.1"/>
+			<Node ResourceName="r_catalyst leenspar" Rank="75" Points="4" FeatsMult="0.1"/>			
+			
+		</Harvesting>
+		<!--***************************************-->
+		<!--               Crafting                -->
+		<!--***************************************-->
+		<Crafting>
+		    <Node ResourceName="r_kourampies" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_melomakarono" Rank="1" Points="1.0" FeatsMult="0.1"/>
+		
+			<Node ResourceName="r_Elemental Dust" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Spirit Beads" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_air ulti reagent" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_chaos ulti reagent" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_baresark ulti reagent" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_brawler ulti reagent" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Health Minor" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Stamina Minor" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Mana Minor" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Anima_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Bile_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Blood_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Eye_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fragment_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fungus_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Glyph_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Gristle_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Mana Flakes_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Marrow_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Ooze_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Shadowtaint_q02" Rank="9.64285714285714" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Rejuvenation Lesser" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Health Moderate" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Stamina Moderate" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Mana Moderate" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Health Major" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Stamina Major" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Mana Major" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion PVE Revive_01" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Anima_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Bile_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Blood_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Eye_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fragment_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fungus_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Glyph_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Gristle_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Mana Flakes_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Marrow_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Ooze_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Shadowtaint_q03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Baked Trout" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Trout Caserole" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Rejuvenation Greater" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Baked Salmon" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Salmon Caserole" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Antidote" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Water Breathing" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Slashing Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Piercing Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Bludgeoning Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Infliction Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Fire Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Acid Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Cold Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Lightning Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Holy Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Unholy Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Arcane Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Arrow Protection Minor" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Slashing Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Piercing Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Bludgeoning Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Infliction Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Fire Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Acid Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Cold Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Lightning Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Holy Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Unholy Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Arcane Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Arrow Protection Moderate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Anima_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Bile_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Blood_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Eye_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fragment_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fungus_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Glyph_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Gristle_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Mana Flakes_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Marrow_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Ooze_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Shadowtaint_q04" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Baked Swordfish" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Swordfish Caserole" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Suppress Weakness" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Clean Slate" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Clear Mind" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Remedy" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Baked Crab" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Crab Caserole" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Anima_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Bile_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Blood_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Eye_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fragment_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Fungus_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Glyph_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Gristle_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Mana Flakes_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Marrow_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Ooze_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Shadowtaint_q05" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Baked Lobster" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Lobster Caserole" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion Panacea" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Potion PVP Revive_01" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_02" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_03" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_04" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_05" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_06" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_07" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_08" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_09" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_10" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_11" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_12" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_13" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_14" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_15" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_16" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_17" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_18" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_19" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_20" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_21" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_22" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_23" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_24" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_25" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_26" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_27" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_28" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_29" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Dye_30" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			
+			<!--Got Caserole PPs and divided from 3 for 01 down to 2 for 05 because they have rare mats but do not need mastery-->
+			<Node ResourceName="r_improved Requisition Gauntlet_r01" Rank="28.5714285714286" Points="9.52380952380953" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Requisition Gauntlet_r02" Rank="55.6428571428571" Points="20.2337662337662" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Requisition Gauntlet_r03" Rank="64.2857142857143" Points="25.7142857142857" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Requisition Gauntlet_r04" Rank="73.2142857142857" Points="32.5396825396825" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Requisition Gauntlet_r05" Rank="82.1428571428571" Points="41.0714285714285" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_improved Crackshot" Rank="54.6" Points="5.125" FeatsMult="0.1"/> <!--div by 4 no rare mats-->
+			<Node ResourceName="r_improved Gear" Rank="54.6" Points="6.833333" FeatsMult="0.1"/> <!--div by 3 very few rare mats-->
+			<Node ResourceName="r_Figurine Siege Ladder" Rank="55.6" Points="10.5" FeatsMult="0.1"/> <!--div by 2 very few rare mats-->
+			<Node ResourceName="r_improved Boomshot" Rank="64.3" Points="10.54093" FeatsMult="0.1"/> <!--div by 3 very few rare mats-->
+			<Node ResourceName="r_improved Wheel" Rank="64.3" Points="10.54093" FeatsMult="0.1"/> <!--div by 3 very few rare mats-->
+			<Node ResourceName="r_Figurine SiegeEngine Catapult" Rank="73.2" Points="51.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_Greek Fire" Rank="64.3" Points="7.90569415" FeatsMult="0.1"/> <!--div by 4 no rare mats-->
+			
+			<Node ResourceName="r_improved armor Chain Mail Arms" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Elbows" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Girdle" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Gloves" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Greaves" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Helmet" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Pants" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Shoes" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Shoulders" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Chain Mail Torso" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Arms" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Elbows" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Girdle" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Gloves" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Greaves" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Helmet" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Pants" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Shoes" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Shoulders" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Scale Torso" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Arms" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Elbows" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Girdle" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Gloves" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Greaves" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Helmet" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Pants" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Shoes" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Shoulders" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Banded Mail Torso" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Arms" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Elbows" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Girdle" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Gloves" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Greaves" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Helmet" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Pants" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Shoes" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Shoulders" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Plate Torso" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Arms" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Elbows" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Girdle" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Gloves" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Greaves" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Helmet" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Pants" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Shoes" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Shoulders" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Full Plate Torso" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Arms" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Elbows" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Girdle" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Gloves" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Greaves" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Helmet" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Pants" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Shoes" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Shoulders" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dread Plate Torso" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Arms" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Elbows" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Girdle" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Gloves" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Greaves" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Helmet" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Pants" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Shoes" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Shoulders" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bulwark Torso" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Arms" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Elbows" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Girdle" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Gloves" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Greaves" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Helmet" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Pants" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Shoes" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Shoulders" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Dragon Scale Torso" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>			
+			<Node ResourceName="r_improved Arrow_01" Rank="1" Points="1.0" FeatsMult="0.1"/>			
+			<Node ResourceName="r_Improved Bow_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Bow_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_improved Shovel" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Fishing Pole" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Pickaxe" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Pickaxe_01" Rank="10.714285714" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Pickaxe_02" Rank="19.642857143" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Pickaxe_03" Rank="27.0" Points="5.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Pickaxe_04" Rank="35.0" Points="7.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Pickaxe_05" Rank="45.0" Points="10.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Wood Axe" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Wood Axe_01" Rank="10.714285714" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Wood Axe_02" Rank="19.642857143" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Wood Axe_03" Rank="27.0" Points="5.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Wood Axe_04" Rank="35.0" Points="7.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Wood Axe_05" Rank="45.0" Points="10.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sickle" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sickle_01" Rank="10.714285714" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sickle_02" Rank="19.642857143" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sickle_03" Rank="27.0" Points="5.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sickle_04" Rank="35.0" Points="7.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sickle_05" Rank="45.0" Points="10.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Skinner" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Skinner_01" Rank="10.714285714" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Skinner_02" Rank="19.642857143" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Skinner_03" Rank="27.0" Points="5.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Skinner_04" Rank="35.0" Points="7.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Skinner_05" Rank="45.0" Points="10.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Repair Tools" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_new Repair Shard" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Player Use Flag 01 Item" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Player Use Flag 02 Item" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Player Use Flag 03 Item" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Construction Mortar" Rank="1" Points="0.2" FeatsMult="0.1"/>
+			<Node ResourceName="r_Mud Bricks" Rank="1" Points="0.2" FeatsMult="0.1"/>
+			<Node ResourceName="r_Canvas" Rank="1" Points="0.3" FeatsMult="0.1"/>
+			<Node ResourceName="r_Painting Canvas" Rank="1" Points="0.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Stone Bricks" Rank="1" Points="0.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Module Building" Rank="10" Points="1.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_Front Door" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Camp Fire Item" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Deployable Personal Strongbox Item" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Deployable Party Strongbox Item" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Deployable Siege Strongbox Item" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+
+			<Node ResourceName="r_Baked Potato" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Vegetable Soup" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Grilled Meat" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Meat Stew" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Grilled Bass" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Bass Stew" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Grilled Cod" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Cod Stew" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Black Powder" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Grenade_01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Grenade_02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Siege Hammer" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Telescope" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Grenade_03" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Eruptor" Rank="28.5714285714286" Points="12.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved bag" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Scarecrow Item" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Snowball" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Abominable Snowman Item" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Ganksgiving Feast Item" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Turkey Item" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Saddle" Rank="1" Points="0.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Bag Red" Rank="9.64285714285714" Points="1.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Bag Green" Rank="9.64285714285714" Points="1.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Bag Blue" Rank="9.64285714285714" Points="1.8" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_improved armor Padded Leather Arms" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Elbows" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Girdle" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Gloves" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Greaves" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Helmet" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Pants" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Shoes" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Shoulders" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Padded Leather Torso" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Arms" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Elbows" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Girdle" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Gloves" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Greaves" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Helmet" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Pants" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Shoes" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Shoulders" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Leather Torso" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Arms" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Elbows" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Girdle" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Gloves" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Greaves" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Helmet" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Pants" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Shoes" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Shoulders" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Hardened Leather Torso" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Arms" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Elbows" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Girdle" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Gloves" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Greaves" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Helmet" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Pants" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Shoes" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Shoulders" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Studded Leather Torso" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Arms" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Elbows" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Girdle" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Gloves" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Greaves" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Helmet" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Pants" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Shoes" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Shoulders" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Spiked Leather Torso" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Arms" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Elbows" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Girdle" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Gloves" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Greaves" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Helmet" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Pants" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Shoes" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Shoulders" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Intricate Leather Torso" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Arms" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Elbows" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Girdle" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Gloves" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Greaves" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Helmet" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Pants" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Shoes" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Shoulders" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Mercian Manhunter Torso" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Arms" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Elbows" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Girdle" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Gloves" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Greaves" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Helmet" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Pants" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Shoes" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Shoulders" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved armor Bonescale Torso" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_Figurine Death Pig" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Tribeland Bear" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Eradan" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Garmir" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Steadfast Death Pig" Rank="4.07142857142857" Points="3.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Hearty Tribeland Bear" Rank="4.07142857142857" Points="3.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Feral Eradan" Rank="4.07142857142857" Points="3.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Sturdy Garmir" Rank="4.07142857142857" Points="3.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Stoic Death Pig" Rank="4.07142857142857" Points="7.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Venerable Tribeland Bear" Rank="8.07142857142857" Points="7.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Vicious Eradan" Rank="8.07142857142857" Points="7.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Strong Garmir" Rank="8.07142857142857" Points="7.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Zealous Death Pig" Rank="16.07142857142857" Points="14.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Patriarch Tribeland Bear" Rank="16.07142857142857" Points="14.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Deadly Eradan" Rank="16.07142857142857" Points="14.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Atlas Garmir" Rank="16.07142857142857" Points="14.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Portal Rune" Rank="12.07142857142857" Points="5.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Runestone" Rank="50.07142857142857" Points="25.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Summon Shard" Rank="75.07142857142857" Points="50.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Nexus Entrance Item" Rank="99.07142857142857" Points="75.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_improved Shield_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Shield_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_Figurine Ship Wherry" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_new Module Ship" Rank="6.42857142857143" Points="1.6" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Launch" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Fishing Trawler" Rank="19.6" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Coastal Runner" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Sea Scraper" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Compass" Rank="55.6428571428571" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_new Module Ship Selentine" Rank="55.6428571428571" Points="10.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Pinnace" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Sloop" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_new Module Ship Veilron" Rank="64.2857142857143" Points="15.811" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Schooner" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Brigantine" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_new Module Ship Neithal" Rank="73.2142857142857" Points="25.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Junk" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Barque" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_new Module Ship Leenspar" Rank="82.1428571428571" Points="37.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Frigate" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Figurine Ship Ship of the Line" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+
+			<Node ResourceName="r_Improved Staff_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Staff_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_improved Sack" Rank="1" Points="1.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sack Red" Rank="9.64285714285714" Points="1.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sack Green" Rank="9.64285714285714" Points="1.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved Sack Blue" Rank="9.64285714285714" Points="1.8" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_improved robes_M Simple Gloves" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Simple Helmet" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Simple Pants" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Simple Shoulders" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Simple Torso" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Frayed Gloves" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Frayed Helmet" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Frayed Pants" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Frayed Shoulders" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Frayed Torso" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Fine Gloves" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Fine Helmet" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Fine Pants" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Fine Shoulders" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Fine Torso" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Bulky Gloves" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Bulky Helmet" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Bulky Pants" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Bulky Shoulders" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Bulky Torso" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Elegant Gloves" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Elegant Helmet" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Elegant Pants" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Elegant Shoulders" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Elegant Torso" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Extravagant Gloves" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Extravagant Helmet" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Extravagant Pants" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Extravagant Shoulders" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Extravagant Torso" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Veiled Magistrate Gloves" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Veiled Magistrate Helmet" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Veiled Magistrate Pants" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Veiled Magistrate Shoulders" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Veiled Magistrate Torso" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Widowsilk Gloves" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Widowsilk Helmet" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Widowsilk Pants" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Widowsilk Shoulders" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_M Widowsilk Torso" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Simple Gloves" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Simple Helmet" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Simple Pants" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Simple Shoulders" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Simple Torso" Rank="3.85714285714286" Points="1.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Frayed Gloves" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Frayed Helmet" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Frayed Pants" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Frayed Shoulders" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Frayed Torso" Rank="15.0" Points="2.26" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Fine Gloves" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Fine Helmet" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Fine Pants" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Fine Shoulders" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Fine Torso" Rank="21.4285714285714" Points="4.9" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Bulky Gloves" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Bulky Helmet" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Bulky Pants" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Bulky Shoulders" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Bulky Torso" Rank="30.0" Points="7.7" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Elegant Gloves" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Elegant Helmet" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Elegant Pants" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Elegant Shoulders" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Elegant Torso" Rank="57.4285714285714" Points="24.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Extravagant Gloves" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Extravagant Helmet" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Extravagant Pants" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Extravagant Shoulders" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Extravagant Torso" Rank="75" Points="55.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Vengeful Arbiter Gloves" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Vengeful Arbiter Helmet" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Vengeful Arbiter Pants" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Vengeful Arbiter Shoulders" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Vengeful Arbiter Torso" Rank="75" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Widowsilk Gloves" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Widowsilk Helmet" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Widowsilk Pants" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Widowsilk Shoulders" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_improved robes_C Widowsilk Torso" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+
+			<Node ResourceName="r_Improved Axe_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p01_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p02_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Axe_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Club_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Sword_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greataxe_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatclub_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Greatsword_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Knives_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r01" Rank="2.07142857142857" Points="1.4" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r02" Rank="10.7142857142857" Points="2.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r03" Rank="19.6428571428571" Points="4.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r04" Rank="28.5714285714286" Points="6.8" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r05" Rank="55.6428571428571" Points="21.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r06" Rank="64.2857142857143" Points="31.623" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r07" Rank="73.2142857142857" Points="51.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r08" Rank="82.1428571428571" Points="75.0" FeatsMult="0.1"/>
+			<Node ResourceName="r_Improved Polearm_p03_r09" Rank="91.0714285714286" Points="100.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_new Iron Ingot" Rank="7.42857142857143" Points="1.7" FeatsMult="0.1"/>			
+			<Node ResourceName="r_New Selentine Ingot" Rank="55.6428571428571" Points="10.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Veilron Ingot" Rank="64.2857142857143" Points="15.811" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Neithal Ingot" Rank="73.2142857142857" Points="25.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Leenspar Ingot" Rank="82.1428571428571" Points="37.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Theyril Ingot" Rank="91.0714285714286" Points="50.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_new Cloth" Rank="7.42857142857143" Points="1.7" FeatsMult="0.1"/>			
+			<Node ResourceName="r_New Selentine Cloth" Rank="55.6428571428571" Points="10.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Veilron Cloth" Rank="64.2857142857143" Points="15.811" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Neithal Cloth" Rank="73.2142857142857" Points="25.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Leenspar Cloth" Rank="82.1428571428571" Points="37.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Theyril Cloth" Rank="91.0714285714286" Points="50.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_new Wood" Rank="7.42857142857143" Points="1.7" FeatsMult="0.1"/>			
+			<Node ResourceName="r_New Selentine Wood" Rank="55.6428571428571" Points="10.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Veilron Wood" Rank="64.2857142857143" Points="15.811" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Neithal Wood" Rank="73.2142857142857" Points="25.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Leenspar Wood" Rank="82.1428571428571" Points="37.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Theyril Wood" Rank="91.0714285714286" Points="50.0" FeatsMult="0.1"/>
+			
+			<Node ResourceName="r_new Leather" Rank="7.42857142857143" Points="1.7" FeatsMult="0.1"/>			
+			<Node ResourceName="r_New Selentine Leather" Rank="55.6428571428571" Points="10.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Veilron Leather" Rank="64.2857142857143" Points="15.811" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Neithal Leather" Rank="73.2142857142857" Points="25.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Leenspar Leather" Rank="82.1428571428571" Points="37.5" FeatsMult="0.1"/>
+			<Node ResourceName="r_New Theyril Leather" Rank="91.0714285714286" Points="50.0" FeatsMult="0.1"/>					
+		</Crafting>
+		<!--***************************************-->
+		<!--               Monsters                -->
+		<!--***************************************-->
+		<!--
+		Rank 1: This is the wildlife rank
+		Rank 2: Varmint
+		Rank 3: Creep
+		Rank 4: Freak
+		Rank 5: Beast
+		Rank 6: Fiend
+		Rank 7: Villain
+		Rank 8: Terror
+		Rank 9: Scourge
+		Rank 10: Monstrosity
+		Rank 11: Horror
+		-->
+		<!--		
+		Online Bestiary link
+		https://docs.google.com/spreadsheet/ccc?key=0AhUjlY5ga1cydElRU21ObWtBVnNmZUJoejhCLVN0Qmc&usp=sharing#gid=0
+		-->
+		<!--		
+		Online Server Wealth link
+		https://docs.google.com/spreadsheet/ccc?key=0AnNVYmVO73pWdDVEWHlVU19Yc2tWYlc4YnVicGVURGc#gid=0
+		-->
+		<PPE>
+			<Node ResourceName="r_imp shadow" Rank="0" Points="0.1" FeatsMult="1"/>
+			<Node ResourceName="r_shadow golem" Rank="0" Points="0.1" FeatsMult="1"/>
+			<Node ResourceName="r_dragon shadow" Rank="0" Points="0.1" FeatsMult="1"/>
+			<Node ResourceName="r_brownie" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_Xmas Brownie Easy" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_Xmas Brownie Hard" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_brownie_01" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_brownie_02" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_brownie_03" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_goblin scout" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_hivekin forager" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_kobold scrounger" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_sarnakh minor" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_scumling worker" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_skeleton brittle" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_spider hairy" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_rockbanger_01" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_wisp" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_zombie shambler" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_zombie shambler_01" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_zombie shambler_02" Rank="2" Points="0.4786" FeatsMult="1"/>
+			<Node ResourceName="r_bandit dwarf bully" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_bandit human ruffian" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_bandit mahirim cutthroat" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_goblin fighter" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_goblin fighter event" Rank="3" Points="1.0169" FeatsMult="1" EventMultiplier = "2.0"/>
+			<Node ResourceName="r_heielhim" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_heielhim event" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_hivekin soldier" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_kobold scrapper" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_salamander" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_salamander event" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_scumling guard" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_skeleton archer" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_skeleton warrior" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_spider giant" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_spider giant event" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_troll" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_troll shaman" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_zombie warrior" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_zombie warrior_01" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_zombie warrior_02" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_zombie crawler_01" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_zombie crawler_02" Rank="3" Points="1.0169" FeatsMult="1"/>
+			<Node ResourceName="r_akathar" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_bandit alfar assassin" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_bandit mirdain stalker" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_bandit orc thug" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_bear brown" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_bone knight" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_bone knight_event" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_imp brown" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<!-- Not in game yet -->
+			<Node ResourceName="r_centaur warrior" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_ciel fey defender" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood maniac" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_ghoul devourer" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_gnoll tribesman" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_goblin marauder" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_goblin shaman" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_hivekin broodguard" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_hivekin queen" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_hobgoblin grunt" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_kobold raider" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_kobold shaman" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_sadayel guardian" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_sadayel shaman" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_sarlid guard" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_sarnakh" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_servant of malaut" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_scumling queen" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_spider bone" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_spirit" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_spirit event" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_swamp hag" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_troll ice" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_troll warrior" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_zombie dire" Rank="4" Points="2.1297" FeatsMult="1"/>
+			<Node ResourceName="r_bandit human basher" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_bandit orc butcher" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_beastman destroyer" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_centaur huntress" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_centaur reaver" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_ciel fey druid" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_ciel fey forester" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood fanatic" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood fiend" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_deadeye" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_deadeye_event" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_deathless servant" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_forest prophet ranger" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_forest prophet ranger event" Rank="5" Points="20.0" FeatsMult="1"/>
+			<Node ResourceName="r_ghoul fleshcrafter" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_gnoll hunter" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_gnoll shaman" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_goblin warlord" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_gorra slave" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_hobgoblin veteran" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_kobold strongman" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_malaut shadow guardian" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_malaut surface acolyte" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_matayin" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_Neithal orb" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_ogre bully" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_sadayel chief" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_stonelord" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_sarlid defender" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_sarlid poison adept" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_severii archer" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_severii legionnaire" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_shark" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_spider doom" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_troll lord" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_troll cave" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_Veilron orb" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_wildtribe pathfinder" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_windlord" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_air elemental lesser" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_air elemental lesser event" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_bandit alfar boss" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_bear arctic" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_bear arctic event" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_beastman rampager" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_centaur chieftain" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood cabalist" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood general" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood zealot" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_earth elemental lesser" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_earth elemental lesser event" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_fire elemental lesser" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_fire elemental lesser event" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_forest prophet runechanter" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_forest prophet runechanter event" Rank="6" Points="40.0" FeatsMult="1"/>
+			<Node ResourceName="r_grungroc" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_hobgoblin officer" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_Leenspar orb" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_malaut surface beguiler" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_malaut acolyte" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_nalaed" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_night hag" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_cave hag" Rank="6" Points="9.0515" FeatsMult="1"/>
+
+			<!--***** DELETE THIS AND UNCOMMENT NEXT LINE WHEN NEW OAK LORD IS IN *****-->
+			<Node ResourceName="r_oak lord" Rank="5" Points="4.41" FeatsMult="1"/>
+			<Node ResourceName="r_oak lord new" Rank="6" Points="9.0515" FeatsMult="1" EventMultiplier = "11.0"/>
+
+			<Node ResourceName="r_ogre boss" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_raven standard grunt" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_sarnakh vile" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_serpentine" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_serpentine event" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_severii centurion" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_khamset slave" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_khamset slave event" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_spellgazer" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_spider cave" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_Theyril orb" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_troll cave shaman" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_vargashi defender" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_wildtribe mage" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_wildtribe warrior" Rank="6" Points="9.0515" FeatsMult="1"/>
+			<Node ResourceName="r_shadow spirit" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_kraken broodling" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<!-- THIS IS WORNG -->
+			<!--<Node ResourceName="r_shadow spirit" Rank="6" Points="9.0515" FeatsMult="1"/>-->
+			<!-- THIS IS RIGHT -->
+			<Node ResourceName="r_beastman warlord" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_black knight" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_crypt guard" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood mystic" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood warmaster" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_khamset child" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_khamset child_event" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_earth elemental greater" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_feielrin" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_feielrin event2" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_feielrin_event" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_gnoll butcher" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_gnoll butcher_event" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_greater matayin" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_hill giant slugger" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_ice elemental lesser" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_ice elemental lesser event" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_malaut beguiler" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_malaut surface warlock" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_menhir custodian" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_raven standard veteran" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_troll cave warrior" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_vargashi runewielder" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_vargashi blademaster" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_vargashi blademaster_event" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_wildtribe chieftain" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_wildtribe shaka" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_winterbound" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<Node ResourceName="r_sandstone golem" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<!-- THIS IS WORNG -->
+			<!--<Node ResourceName="r_sandstone golem" Rank="7" Points="18.4341" FeatsMult="1"/>-->
+			<!-- THIS IS RIGHT -->
+			<Node ResourceName="r_junglestomper" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<!-- THIS IS WORNG -->
+			<!--<Node ResourceName="r_junglestomper" Rank="7" Points="18.4341" FeatsMult="1"/>-->
+			<!-- THIS IS RIGHT -->
+			<Node ResourceName="r_shadow spirit dungeon" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_darkbrood doombringer" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_air elemental greater" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_khamset chosen" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_khamset chosen_event" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_fire elemental greater" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_gravelord" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_fire giant" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_fire giant_event" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_frostjarl" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_gnoll vilegaunt" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_gorra dar" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_hill giant clobber" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_ice elemental greater" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_malaut warlock" Rank="7" Points="18.4341" FeatsMult="1"/>
+			<!-- THIS IS WORNG -->
+			<!--<Node ResourceName="r_malaut warlock" Rank="8" Points="37.3066" FeatsMult="1"/>-->
+			<!-- THIS IS RIGHT -->
+			<Node ResourceName="r_menhir aelder" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_nalaed elder" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_raven standard officer" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_raven standard officer_event" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_seidbound" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_shadow knight" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_troll cave lord" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_vargashi warthane" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_vargashi warthane_event" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_beastman devastator" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<Node ResourceName="r_below nightmare" Rank="8" Points="37.3066" FeatsMult="1"/>
+			<!-- THIS IS WORNG -->
+			<!--<Node ResourceName="r_below nightmare" Rank="9" Points="75.0836" FeatsMult="1"/>-->
+			<!-- THIS IS RIGHT -->
+			<Node ResourceName="r_minotaur hero" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<!-- Not in game yet -->
+			<Node ResourceName="r_black lord" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_necroguardian" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_gravelord dungeon" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_gravelord dungeon event" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_shadow knight dungeon" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_shadow knight dungeon event" Rank="9" Points="75.0836" FeatsMult="1" EventMultiplier = "5.0"/>
+			<Node ResourceName="r_deathless mage" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_eodrin" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_evil eye" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<!-- Not in game yet -->
+			<Node ResourceName="r_firescourge" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_forestwalker" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_khamset hand" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_khamset hand event" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_icejarl" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_menhir sentinel" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_Neithal golem" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_Veilron golem" Rank="9" Points="75.0836" FeatsMult="1"/>
+			<Node ResourceName="r_baradron" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_celestial" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_davos" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_erodach" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_dragon dark" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_dragon dark event" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_Leenspar golem" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_Theyril golem" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_Theyril golem event" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_kraken" Rank="10" Points="150.3979" FeatsMult="1"/>
+			<Node ResourceName="r_demon" Rank="11" Points="300" FeatsMult="1"/>
+			<Node ResourceName="r_dragon fire" Rank="11" Points="300" FeatsMult="1"/>
+			<Node ResourceName="r_dragon fire event" Rank="11" Points="300" FeatsMult="1"/>
+			<Node ResourceName="r_dragon ice" Rank="11" Points="300" FeatsMult="1"/>
+			<Node ResourceName="r_armadillo" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_badger" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_beaver" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_bighorn arctic" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_bighorn" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_cassowary" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_cat black" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_cat brown" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_chicken brown" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_chicken white" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_Growling Gobbler" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_Xmas Brownie Hard" Rank="1" Points="0.3" FeatsMult="1"/>
+			<Node ResourceName="r_Xmas Brownie Easy" Rank="1" Points="0.221" FeatsMult="1"/>			
+			<Node ResourceName="r_deer" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_fox arctic" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_fox" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_kangaroo" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_moose" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_pheasant" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_porcupine" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_rabbit" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_rat" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_Bombardier" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_Bombardier Red" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_Bombardier Green" Rank="1" Points="0.221" FeatsMult="1"/>
+			<Node ResourceName="r_Spider Manthe" Rank="1" Points="0.221" FeatsMult="1"/>
+		</PPE>
+
+		<!--*************************************************************************-->
+		<!--           PARENT NODES                                                  -->
+		<!--           For now these have been done manually                         -->
+		<!--           by selecting the minimum player points                        -->
+		<!--           for the all resources under the resource node parent          -->
+		<!--*************************************************************************-->
+
+		<Crafting>
+			<Node ResourceName="r_armors metal" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_armor" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_armors leather" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_robes magic" Rank="3.85714285714286" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_m simple" Rank="3.85714285714286" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_m fine" Rank="21.4285714285714" Points="4.9" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_m elegant" Rank="57.4285714285714" Points="24.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_m extravagant" Rank="75.0" Points="55.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_m veiled magistrate" Rank="75.0" Points="75.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_m widowsilk" Rank="91.0714285714286" Points="100.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_robes cleric" Rank="3.85714285714286" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_c simple" Rank="3.85714285714286" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_c fine" Rank="21.4285714285714" Points="4.9" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_c elegant" Rank="57.4285714285714" Points="24.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_c extravagant" Rank="75.0" Points="55.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_c vengeful arbiter" Rank="75.0" Points="75.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved robes_c widowsilk" Rank="91.0714285714286" Points="100.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_potions" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_food" Rank="1.5" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Shields" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor bonescale" Rank="91.0714285714286" Points="100.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor hardened leather" Rank="19.6428571428571" Points="4.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor intricate leather" Rank="75.0" Points="55.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor mercian manhunter" Rank="75.0" Points="75.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor leather" Rank="10.7142857142857" Points="2.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor padded leather" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor spiked leather" Rank="57.4285714285714" Points="24.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor studded leather" Rank="28.5714285714286" Points="6.8" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor banded mail" Rank="19.6428571428571" Points="4.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor chain mail" Rank="75.0" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor dragon scale" Rank="91.0714285714286" Points="100.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor bulwark" Rank="75.0" Points="75.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor dread plate" Rank="75.0" Points="55.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor full plate" Rank="55.6428571428571" Points="21.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor plate" Rank="28.5714285714286" Points="6.8" FeatsMult="1.0"/>
+			<Node ResourceName="r_improved armor scale" Rank="10.7142857142857" Points="2.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_weapons" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_swords" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_Figurines Boats" Rank="2.07142857142857" Points="1.4" FeatsMult="1.0"/>
+		</Crafting>
+		
+		<Gathering>
+			<!-- r_treasure map items is used for treasure maps in fishing feats -->
+			<Node ResourceName="r_spark of generosity" Rank="1" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_snowflake" Rank="1" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_treasure map items" Rank="10" Points="46.416" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin anima" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin bile" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin blood" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin eye" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin fragment" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin fungus" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin glyph" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin gristle" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin mana flakes" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin marrow" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin ooze" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_skin shadowtaint" Rank="9.64285714285714" Points="1.5" FeatsMult="1.0"/>
+			<Node ResourceName="r_ores" Rank="1.0" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_herbs" Rank="1.0" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_skinning items" Rank="1.5" Points="0.167" FeatsMult="1.0"/>
+			<Node ResourceName="r_tree materials" Rank="1" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_Fish" Rank="3" Points="0.464" FeatsMult="1.0"/>
+		</Gathering>
+		
+
+		<!--  MONSTERS PARENTS PROWESS POINTS. -->
+		<!--  These must be updated by hand according to Monsters Prowess Points -->
+		<!--  Parent should be equal to the lowest rank monster of its subtree -->
+		<PPE>
+			<Node ResourceName="r_air elementals" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_akathars" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_alfar monsters" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_animals" Rank="1.0" Points="0.221" FeatsMult="1.0"/>
+			<Node ResourceName="r_Xmas Brownies" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_bandits" Rank="3.0" Points="1.0169" FeatsMult="1.0"/>
+			<Node ResourceName="r_beastmen" Rank="5.0" Points="4.41" FeatsMult="1.0"/>
+			<Node ResourceName="r_black knights" Rank="7.0" Points="18.4341" FeatsMult="1.0"/>
+			<Node ResourceName="r_centaurs" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_constructs" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_earth elementals" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_elementals" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_evil eyes" Rank="9.0" Points="75.0836" FeatsMult="1.0"/>
+			<Node ResourceName="r_fire elementals" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_fire giants" Rank="8.0" Points="37.3066" FeatsMult="1.0"/>			
+			<Node ResourceName="r_ghosts" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_ghouls" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_giants" Rank="5.0" Points="4.41" FeatsMult="1.0"/>
+			<Node ResourceName="r_gnolls" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_goblinoids" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_golems" Rank="8.0" Points="37.3066" FeatsMult="1.0"/>
+			<Node ResourceName="r_grungrocs" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_hags" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_hill giants" Rank="7.0" Points="18.4341" FeatsMult="1.0"/>
+			<Node ResourceName="r_hivekins" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_humanoids" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_human monsters" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_ice elementals" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_khamsets" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_kobolds" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_magical beasts" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_matayins" Rank="5.0" Points="4.41" FeatsMult="1.0"/>
+			<Node ResourceName="r_menhirs" Rank="7.0" Points="18.4341" FeatsMult="1.0"/>
+			<Node ResourceName="r_minotaurs" Rank="9.0" Points="75.0836" FeatsMult="1.0"/>
+			<Node ResourceName="r_grounded monsters" Rank="0.0" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_plant monsters" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_monsters" Rank="0.0" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_ogres" Rank="5.0" Points="4.41" FeatsMult="1.0"/>
+			<Node ResourceName="r_orbs" Rank="6.0" Points="9.0515" FeatsMult="1.0"/>
+			<Node ResourceName="r_outerplanars" Rank="0.0" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_sadayels" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_sarlids" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_scumlings" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_skeletons" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_spiders" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_stone constructs" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_trollkin" Rank="3.0" Points="1.0169" FeatsMult="1.0"/>
+			<Node ResourceName="r_undead" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_vermins" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_wildlife" Rank="1.0" Points="0.221" FeatsMult="1.0"/>
+			<Node ResourceName="r_zombies" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+			<Node ResourceName="r_hobgoblins" Rank="4.0" Points="2.1297" FeatsMult="1.0"/>
+			<Node ResourceName="r_gathered" Rank="1.0" Points="0.1" FeatsMult="1.0"/>
+			<Node ResourceName="r_salamanders" Rank="3.0" Points="1.0169" FeatsMult="1.0"/>
+			<Node ResourceName="r_trolls" Rank="3.0" Points="1.0169" FeatsMult="1.0"/>
+			<Node ResourceName="r_skeletons lesser" Rank="2.0" Points="0.4786" FeatsMult="1.0"/>
+
+			<!--***************************************-->
+			<!--                   PVP                 -->
+			<!--***************************************-->
+			<Node ResourceName="r_Alfar Female" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Alfar Male" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ork Female" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ork Male" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Mirdain Female" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Mirdain Male" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Human Female" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Human Male" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Dwarf Female" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Dwarf Male" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Mahirim Female" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Mahirim Male" Rank="1.0" Points="1.0" FeatsMult="1.0"/>
+
+			<Node ResourceName="r_Village Control Point" Rank="1.0" Points="150.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Siege Bindstone Large" Rank="1.0" Points="50.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Siege Bindstone Small" Rank="1.0" Points="25.0" FeatsMult="1.0"/>
+
+			<Node ResourceName="r_Raft_01" Rank="1.0" Points="1.2" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Wherry" Rank="1.0" Points="1.4" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Launch" Rank="1.0" Points="2.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Fishing Trawler" Rank="1.0" Points="4.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Coastal Runner" Rank="1.0" Points="6.8" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Sea Scraper" Rank="1.0" Points="6.8" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Pinnace" Rank="1.0" Points="21.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Sloop" Rank="1.0" Points="21.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Schooner" Rank="1.0" Points="31.623" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Brigantine" Rank="1.0" Points="31.623" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Junk" Rank="1.0" Points="51.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Barque" Rank="1.0" Points="51.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Frigate" Rank="1.0" Points="75.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Ship Ship of the Line" Rank="1.0" Points="75.0" FeatsMult="1.0"/>
+
+			<!--<Node ResourceName="r_Ship Man o War"        Rank="1.0" Points="100.0" FeatsMult="1.0"/>-->
+			
+			<Node ResourceName="r_Cannon Eruptor" Rank="1.0" Points="12.0" FeatsMult="1.0"/>
+			<Node ResourceName="r_Siege Ladder" Rank="1.0" Points="10.5" FeatsMult="1.0"/> <!--div by 2 very few rare mats-->
+			<Node ResourceName="r_SiegeEngine Catapult" Rank="1.0" Points="51.0" FeatsMult="1.0"/>
+			
+		</PPE>
+	</Resources>
+</XML>

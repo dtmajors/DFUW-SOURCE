@@ -1,0 +1,160 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_matayin" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="ANIMATEDOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="true" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+                <Meshes>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="matayin.sfam" />
+                    </Set0>
+                </Meshes>
+                <Animations>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="matayin.sfas" />
+                    </Set0>
+                </Animations>
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <NumberOfSubsets>
+                <SFInteger Value="0" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="True" />
+                    <SFString Value="shaderanimckey.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader0>
+                        <SFString Value="shaderdefault.xml" />
+                        <SFInteger Value="1" />
+                    </Shader0>
+                </SubsetShaders>
+            </Normal>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+            <AnimationSet0>
+                <SetName>
+                    <SFString Value="Idle" />
+                </SetName>
+                <SetFile>
+                    <SFString Value="SF_DEFAULT" />
+                </SetFile>
+            </AnimationSet0>
+        </AnimationInformation>
+        <DynamicHitConfigFile Enabled="true" Value="animations/matayin_dynhit_config.xml" />
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-1.47187" Y="-1.06163" Z="-2.05054" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X="1.5116" Y="1.92184" Z="0.932934" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X="0.0198613" Y="0.430104" Z="-0.558801" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value="1.49173" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation />
+            </BoundingInformation>
+        </VisibilityInformation>
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="character" />
+        <WaterTransition>
+            <Submerged Value="1.54486" />
+            <Surface Value="0.76408" />
+            <Touching Value="0.0167012" />
+            <Floating Value="1.15447" />
+        </WaterTransition>
+        <ImpulseScaleFactor Value="1" />
+        <RepulsiveAngleRange Min="0" Max="3.14159" />
+    </PhysicsInformation>
+    <MassCenter>
+        <SFVector3 X="0" Y="0" Z="0" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFSPHERECOLLISIONSCHEME" />
+                <FileName Value="matayin.static.SFSPHERECOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFSPHERECOLLISIONSCHEME" />
+                <FileName Value="matayin.dynamic.SFSPHERECOLLISIONSCHEME.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="dummy.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X="0" Y="0" Z="0" />
+                </Center>
+                <Radius>
+                    <SFFloat Value="2.19717" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+    <VersionInformation Major="1" Minor="0" />
+</SFObject>

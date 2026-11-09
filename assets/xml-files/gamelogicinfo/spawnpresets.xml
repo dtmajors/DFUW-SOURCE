@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SFSpawnPresets>
+	<VersionInformation Incremental="0" Major="0" Minor="1" />
+
+	<SFSpawnPreset Name="zombies1">
+		<SFDisplayName>
+			<SFString Value="Easy Zombies" />
+		</SFDisplayName>
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>
+			<ResourceSpawn ResourceName="r_zombie shambler_01" Probability="50" />
+			<ResourceSpawn ResourceName="r_zombie shambler_02" Probability="50" />
+		</ResourceSpawnList>
+		<RespawnDelay MaxSpawnTime="0.3" MinSpawnTime="0.2" />
+		<RequiredMaterialList>
+			<RequiredMaterial ResourceName="r_potato" Quantity="5"/>
+			<RequiredMaterial ResourceName="r_improved arrow_01" Quantity="10"/>
+		</RequiredMaterialList>
+	</SFSpawnPreset>
+	<SFSpawnPreset Name="zombies2">
+		<SFDisplayName>
+			<SFString Value="Medium Zombies" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_zombie dire" SpawnCondition="X_MINIONS" SpawnConditionValue="20" />
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>
+			<ResourceSpawn ResourceName="r_zombie warrior_01" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_02" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_03" Probability="34" />
+		</ResourceSpawnList>
+		<RespawnDelay MaxSpawnTime="0.3" MinSpawnTime="0.2" />
+		<RequiredMaterialList>
+			<RequiredMaterial ResourceName="r_potato" Quantity="20"/>
+			<RequiredMaterial ResourceName="r_improved arrow_01" Quantity="30"/>
+		</RequiredMaterialList>
+	</SFSpawnPreset>
+	<SFSpawnPreset Name="zombies3">
+		<SFDisplayName>
+			<SFString Value="Hard Zombies" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_zombie dire" SpawnCondition="X_MINIONS" SpawnConditionValue="2" />
+		<SpawnPointMOBSNumber Value="10" />
+		<ResourceSpawnList>
+			<ResourceSpawn ResourceName="r_zombie warrior_01" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_02" Probability="33" />
+			<ResourceSpawn ResourceName="r_zombie warrior_03" Probability="34" />
+		</ResourceSpawnList>
+		<RespawnDelay MaxSpawnTime="0.3" MinSpawnTime="0.2" />
+		<RequiredMaterialList>
+			<RequiredMaterial ResourceName="r_potato" Quantity="50"/>
+			<RequiredMaterial ResourceName="r_improved arrow_01" Quantity="100"/>
+		</RequiredMaterialList>
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_oak_lord">
+		<SFDisplayName>
+			<SFString Value="Santa Oak Lord" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_Oak Lord New" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="2" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_Forest Prophet Runechanter Event"    Probability="25" />
+			<ResourceSpawn ResourceName="r_Forest Prophet Ranger Event" Probability="25" />
+			<ResourceSpawn ResourceName="r_Feielrin_Event" Probability="50" />			
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="5.0" MinSpawnTime="2.0" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_easy_skeletons">
+		<SFDisplayName>
+			<SFString Value="Skeleton Boss" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_severii centurion" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="10" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_skeleton warrior"    Probability="25" />
+			<ResourceSpawn ResourceName="r_skeleton archer" Probability="25" />
+			<ResourceSpawn ResourceName="r_skeleton brittle" Probability="50" />			
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_easy_zombies">
+		<SFDisplayName>
+			<SFString Value="Zombie Boss" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_khamset slave" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="10" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_zombie shambler_01"    Probability="25" />
+			<ResourceSpawn ResourceName="r_zombie warrior_02" Probability="25" />
+			<ResourceSpawn ResourceName="r_zombie crawler_02" Probability="50" />			
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_arachnophobia">
+		<SFDisplayName>
+			<SFString Value="Arachne Boss" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_spider cave" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="10" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_spider hairy"    Probability="60" />
+			<ResourceSpawn ResourceName="r_spider giant" Probability="40" />						
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_easy_beastoids">
+		<SFDisplayName>
+			<SFString Value="Troll Lord" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_troll lord" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="10" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_brownie_01"    Probability="38" />
+			<ResourceSpawn ResourceName="r_brownie_02" Probability="38" />
+			<ResourceSpawn ResourceName="r_troll" Probability="24" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_medium_skeletons">
+		<SFDisplayName>
+			<SFString Value="Gravelord" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_gravelord" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="5" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_severii archer"    Probability="50" />			
+			<ResourceSpawn ResourceName="r_severii legionnaire" Probability="25" />
+			<ResourceSpawn ResourceName="r_severii centurion" Probability="25" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_medium_zombies">
+		<SFDisplayName>
+			<SFString Value="Shadow Knight" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_shadow knight" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="5" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_zombie dire"    Probability="33" />			
+			<ResourceSpawn ResourceName="r_khamset slave" Probability="33" />
+			<ResourceSpawn ResourceName="r_deathless servant" Probability="34" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_insects">
+		<SFDisplayName>
+			<SFString Value="Gorra Dar" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_gorra dar" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="5" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_gorra slave"    Probability="33" />			
+			<ResourceSpawn ResourceName="r_sarlid defender" Probability="33" />
+			<ResourceSpawn ResourceName="r_sarlid poison adept" Probability="34" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_reptilians">
+		<SFDisplayName>
+			<SFString Value="Dragon Dark" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_dragon dark event" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="5" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_sadayel chief"    Probability="33" />			
+			<ResourceSpawn ResourceName="r_kobold strongman" Probability="33" />
+			<ResourceSpawn ResourceName="r_sarnakh" Probability="34" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_hard_zombies">
+		<SFDisplayName>
+			<SFString Value="Erodach" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_khamset hand event" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>		
+			<!--<ResourceSpawn ResourceName="r_khamset hand"    Probability="33" />-->			
+			<ResourceSpawn ResourceName="r_deathless mage" Probability="50" />
+			<ResourceSpawn ResourceName="r_khamset chosen" Probability="50" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_hard_skeletons">
+		<SFDisplayName>
+			<SFString Value="Davos" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_gravelord dungeon event" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_deathless mage"    Probability="70" />			
+			<ResourceSpawn ResourceName="r_shadow knight dungeon" Probability="30" />
+			<!--<ResourceSpawn ResourceName="r_gravelord dungeon" Probability="34" />-->
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_hard_reptilians">
+		<SFDisplayName>
+			<SFString Value="Dragon Fire" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_dragon fire event" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_sarnakh vile"    Probability="33" />			
+			<ResourceSpawn ResourceName="r_serpentine" Probability="33" />
+			<ResourceSpawn ResourceName="r_nalaed elder" Probability="34" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+	
+	<SFSpawnPreset Name="event_hard_beastoids">
+		<SFDisplayName>
+			<SFString Value="Dragon Dark" />
+		</SFDisplayName>
+		<SpawnPointBossMob MaxSpawnTime="1.8" MinSpawnTime="1.1" ResourceName="r_dragon dark event" SpawnCondition="TIMER" SpawnConditionValue="1" />
+		<SpawnPointMOBSNumber Value="3" />
+		<ResourceSpawnList>		
+			<ResourceSpawn ResourceName="r_beastman devastator"    Probability="33" />			
+			<ResourceSpawn ResourceName="r_gnoll vilegaunt" Probability="33" />
+			<ResourceSpawn ResourceName="r_troll cave warrior" Probability="34" />
+		</ResourceSpawnList>		
+		<RespawnDelay MaxSpawnTime="2.3" MinSpawnTime="1.2" />
+	</SFSpawnPreset>
+
+</SFSpawnPresets>

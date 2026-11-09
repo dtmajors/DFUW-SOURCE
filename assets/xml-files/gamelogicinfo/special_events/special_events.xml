@@ -1,0 +1,68 @@
+<Events version_major = "1" version_minor = "0">
+	
+	<!--
+		TODO : 
+		1) Random selection at server start should check for progress to all the events to force select the one with an existing progress [DONE]
+		2) Dynamic marker icons for bosses                                                                                                [DONE]
+		3) Translations for different messages with dynamic parameters for steps		                                                  [DONE]
+		4) Test for 2 running events from same group   [CAN NOT BE DONE FOR NOW, SHOULD ITERATE THROUGH GROUP EVENTS INSTEAD OF SELECT RANDOMLY ONE ON PERS LOAD]
+		5) Test for running events from different groups	                                                                              [DONE]	
+		
+		6) Check for area based events (SENSOR OR SPAWNPOINT EXISTING CURSOR) which will open the "local" event window
+		7) Check for player progression in an event global or not, probably only local
+	
+		MISC : Check doTick() taking to much in server module manager
+	-->
+	
+	<!-- Christmas event 
+	<Event Name = "test_event" DisplayName = "test_event" Description = "The Frost Fest is upon us! A time to celebrate the longest night and hoard your gifts! Be wary though, the Feastlord and his Brownies are about, and they like to regulate the stealing of people's presents!"/>
+	-->
+	
+	<!-- No events gui window default message -->
+	<NoEventsMessage Value = "No Events Active At This Time"/>
+	
+	<!-- Easy events -->
+	<Group Name = "EASY" NumberOfSimultaneouslyRunningEvents = "2">
+		<Event Name = "easy_1" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_easy.png" DisplayName = "Surging Skeletal Peons" Description = "Brittle men of bone are strangely surging around the land! Slay them and find the ethereal caches mysteriously left behind."/>		
+		<Event Name = "easy_2" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_easy.png" DisplayName = "Surging Zombie Peons" Description = "The shambling dead are strangely surging out of their graves! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "easy_3" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_easy.png" DisplayName = "Surging Arachnid Peons" Description = "Eight Legged Freaks are strangely surging! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "easy_4" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_easy.png" DisplayName = "Surging Beastoid Peons" Description = "All manner of beastly creatures are strangely surging! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Conditions>
+			<Select  Value = "RANDOM"/>
+			<Start   Value = "SERVER_UP"/>
+			<Restart Value = "TIME_WINDOW" MinMinutesBeforeRestart = "15" MaxMinutesBeforeRestart = "45"/>
+			<Repeat  Value = "LIMITED"     Limit = "10"/>
+		</Conditions>
+	</Group>
+	
+	<!-- Medium events -->
+	<Group Name = "MEDIUM" NumberOfSimultaneouslyRunningEvents = "2">
+		<Event Name = "medium_1" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_medium.png" DisplayName = "Surging Skeletal Helots" Description = "Brittle men of bone are strangely surging around the land! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "medium_2" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_medium.png" DisplayName = "Surging Zombie Helots" Description = "The shambling dead are strangely surging out of their graves! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "medium_3" Enabled = "false" Persistent = "true" IconName = "ei_monster_kill_medium.png" DisplayName = "Surging Insectoid Helots" Description = "The swarms are strangely surging!Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "medium_4" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_medium.png" DisplayName = "Surging Reptilian Helots" Description = "Cold blooded reptilians are strangely surging! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Conditions>
+			<Select  Value = "RANDOM"/>
+			<Start   Value = "SERVER_UP"/>
+			<Restart Value = "TIME_WINDOW" MinMinutesBeforeRestart = "15" MaxMinutesBeforeRestart = "45"/>
+			<Repeat  Value = "LIMITED"     Limit = "10"/>
+			<!--<Repeat  Value = "INFINITE"/>-->
+		</Conditions>
+	</Group>
+	
+	 <!--Hard events-->
+	<Group Name = "HARD" NumberOfSimultaneouslyRunningEvents = "2">
+		<Event Name = "hard_1" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_hard.png" DisplayName = "Surging Zombie Elites" Description = "The shambling dead are strangely surging out of their graves! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "hard_2" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_hard.png" DisplayName = "Surging Skeletal Elites" Description = "Brittle men of bone are strangely surging around the land! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "hard_3" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_hard.png" DisplayName = "Surging Reptilian Elites" Description = "Cold blooded reptilians are strangely surging! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Event Name = "hard_4" Enabled = "true" Persistent = "true" IconName = "ei_monster_kill_hard.png" DisplayName = "Surging Beastoid Elites" Description = "All manner of beastly creatures are strangely surging! Slay them and find the ethereal caches mysteriously left behind."/>
+		<Conditions>
+			<Select  Value = "RANDOM"/>
+			<Start   Value = "SERVER_UP"/>
+			<Restart Value = "TIME_WINDOW" MinMinutesBeforeRestart = "15" MaxMinutesBeforeRestart = "45"/>
+			<Repeat  Value = "LIMITED"     Limit = "10"/>
+			<!--<Repeat  Value = "INFINITE"/>-->
+		</Conditions>
+	</Group>
+	
+</Events>

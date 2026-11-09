@@ -1,0 +1,1122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CharacterCreatorSetup>
+    <VersionInformation Incremental="0" Major="0" Minor="1"/>
+
+    <Race Type="Human" Title="Mercians">
+        <StartingVillageConfig texture="gui/character_creator/chr_cr_start_map_background_human.dds">
+            <StartingVillage index="0" x="43" y="84" bindstone_name="Monkfield"
+                location_name="Monkfield" texture="gui/character_creator/chr_cr_start_map_ring1.dds"
+            />
+        </StartingVillageConfig>
+        <Description
+            Text="Hailing from a continent long sunk beneath the seas, Mercians are the only race not originally native to Agon.  Since arriving on these shores many centuries ago, the Mercians have established one of the richest and most prolific empires on Agon.  Their inherent adaptability to any situation and passionate approach to life has amassed them a powerful and prosperous nation-empire on the banks of the river Eanna among the ruins of the ancient civilization of Chal' Dea."/>
+        <FactionDescription Text=""/>
+        <EnvConfig>
+            <SFString Value="cc_human.xml"/>
+        </EnvConfig>
+        <CamPosRace>
+            <Position>
+                <SFVector3 X="-1848.4813" Y="220.32831" Z="1862.9811"/>
+            </Position>
+            <Rotation>
+                <SFVector3 X="-0.010809298" Y="2.4254262" Z="0.0"/>
+            </Rotation>
+        </CamPosRace>
+
+        <Female>
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5616.502" Y="346.11652" Z="-8104.956"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="-3.0365927" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_human_female.xml"/>
+            </FeatureSetConfig>
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="100.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1847.0729" Y="220.89377" Z="1861.2361"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.042513132" Y="2.7468078" Z="-1.2798622E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+				<Position>
+				 <SFVector3 X="-5616.311" Y="347.5677" Z="-8104.0366"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+				</Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+				<Position>
+				 <SFVector3 X="-5616.143" Y="347.2622" Z="-8102.574"/>
+				</Position>
+				<Rotation>
+                 <SFVector3 X="0.0699998" Y="3.1415925" Z="4.896975E-15"/>
+				</Rotation>
+            </CamPosRole>
+			
+	
+	
+			<CamPosRace>
+				<Position>
+				 <SFVector3 X="-5616.5137" Y="347.54382" Z="-8102.7046"/>
+				</Position>
+				<Rotation>
+					<SFVector3 X="0.23749903" Y="2.9731972" Z="1.1881933E-7"/>
+				</Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Female>
+
+        <Male>
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5617.8364" Y="346.11652" Z="-8107.468"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+            
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_human_male.xml"/>
+            </FeatureSetConfig>
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="120.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1846.6555" Y="221.00743" Z="1861.7603"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.09251038" Y="2.371805" Z="-1.1523166E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+                <Position>
+                    <SFVector3 X="-5618.0137" Y="347.75464" Z="-8108.312"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+                <Position>
+                    <SFVector3 X="-5618.37" Y="347.34845" Z="-8110.246"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.07000005" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+                <Position>
+                    <SFVector3 X="-5617.869" Y="347.50507" Z="-8109.809"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.19595" Y="-0.16839547" Z="0.0"/>
+                </Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Male>
+    </Race>
+
+
+    <Race Type="Ork" Title="Ork">
+        <StartingVillageConfig texture="gui/character_creator/chr_cr_start_map_background_ork.dds">
+            <StartingVillage index="0" x="33" y="177" bindstone_name="Lesser Faukul"
+                location_name="Chopping Necks"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="1" x="258" y="219" bindstone_name="Fire Run"
+                location_name="Metal Heart"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="2" x="352" y="158" bindstone_name="Western Spiderfang"
+                location_name="New Flayed Elf"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+        </StartingVillageConfig>
+        <Description
+            Text="The powerful Ork  embody the traits of the volcanoes under which they have lived since their warring tribes were united under one banner many centuries ago.  Veins of explosive flame housed in a mountain of rock, this is how the Ork see themselves.   During the early Unholy wars, when the races warred with each other, only the steely resolve and mighty, green, iron fist of the Ork nation was able to unite them against the combined threat of Goddess and Demon."/>
+        <FactionDescription Text=""/>
+        <EnvConfig>
+            <SFString Value="cc_ork.xml"/>
+        </EnvConfig>
+
+        <CamPosRace>
+            <Position>
+                <SFVector3 X="-1854.8291" Y="220.2462" Z="1877.8298"/>
+            </Position>
+            <Rotation>
+                <SFVector3 X="-0.06499674" Y="1.004996" Z="-3.3598557E-8"/>
+            </Rotation>
+        </CamPosRace>
+
+        <Female>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5566.502" Y="346.11652" Z="-8104.8174"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+			
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_ork_female.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="140.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1852.748" Y="221.0322" Z="1878.8063"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.092515215" Y="1.1443006" Z="-1.694804E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+				<Position>
+				 <SFVector3 X="-5566.311" Y="347.5677" Z="-8104.0366"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+				</Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+				<Position>
+				 <SFVector3 X="-5566.143" Y="347.2622" Z="-8102.574"/>
+				</Position>
+				<Rotation>
+                 <SFVector3 X="0.0699998" Y="3.1415925" Z="4.896975E-15"/>
+				</Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+				<Position>
+				 <SFVector3 X="-5566.5137" Y="347.54382" Z="-8102.7046"/>
+				</Position>
+				<Rotation>
+					<SFVector3 X="0.23749903" Y="2.9731972" Z="1.1881933E-7"/>
+				</Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Female>
+
+        <Male>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5567.8364" Y="346.11652" Z="-8107.468"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+			
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_ork_male.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="160.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1853.5225" Y="221.26596" Z="1879.7101"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.08751657" Y="1.1292933" Z="-1.6304665E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+                <Position>
+                    <SFVector3 X="-5568.0137" Y="347.75464" Z="-8108.312"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+                <Position>
+                    <SFVector3 X="-5568.37" Y="347.34845" Z="-8110.246"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.07000005" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+                <Position>
+                    <SFVector3 X="-5567.869" Y="347.50507" Z="-8109.809"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.19595" Y="-0.16839547" Z="0.0"/>
+                </Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Male>
+
+
+
+    </Race>
+    <Race Type="Dwarf" Title="Tovarr">
+        <StartingVillageConfig texture="gui/character_creator/chr_cr_start_map_background_dwarf.dds">
+            <StartingVillage index="0" x="92" y="132" bindstone_name="Western Heimdal Plains"
+                location_name="Eirhjelm" texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="1" x="203" y="41" bindstone_name="Southwestern Ringfain"
+                location_name="Hammerdelve"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="2" x="279" y="269" bindstone_name="Eastern Idawoll"
+                location_name="Valfather's Edge"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+        </StartingVillageConfig>
+        <Description
+            Text="Descendants of the Dwarves of old, the Tovarr are a stalwart and stoic peoples living under the mountains of Cor Ymirhal.  Honoring the great sacrifice of the Dwarven nation during the early Unholy Wars, they embody their descendant's love for all things techno-magical as well as their fierce sense of honor.  At the same time the Tovarr share the human traits of versatility and creativity garnered from generations of inter-marrying between the surviving Dwarves and their Mercian benefactors."/>
+        <FactionDescription Text=""/>
+        <EnvConfig>
+            <SFString Value="cc_dwarf.xml"/>
+        </EnvConfig>
+
+        <CamPosRace>
+            <Position>
+                <SFVector3 X="-1875.0736" Y="220.13083" Z="1888.2922"/>
+            </Position>
+            <Rotation>
+                <SFVector3 X="-0.047453936" Y="0.032494746" Z="-2.4276637E-6"/>
+            </Rotation>
+        </CamPosRace>
+
+
+        <Female>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5516.502" Y="346.11652" Z="-8104.8174"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_dwarf_female.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="180.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1874.7858" Y="220.86652" Z="1890.2517"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.15002008" Y="0.23429155" Z="-1.8725009E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+				<Position>
+				 <SFVector3 X="-5516.311" Y="347.5677" Z="-8104.0366"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+				</Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+				<Position>
+				 <SFVector3 X="-5516.143" Y="347.2622" Z="-8102.574"/>
+				</Position>
+				<Rotation>
+                 <SFVector3 X="0.0699998" Y="3.1415925" Z="4.896975E-15"/>
+				</Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+				<Position>
+				 <SFVector3 X="-5516.5137" Y="347.54382" Z="-8102.7046"/>
+				</Position>
+				<Rotation>
+					<SFVector3 X="0.23749903" Y="2.9731972" Z="1.1881933E-7"/>
+				</Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Female>
+
+
+        <Male>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5517.8364" Y="346.11652" Z="-8107.468"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+			
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_dwarf_male.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="200.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1875.4287" Y="220.89453" Z="1890.0013"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.13002984" Y="-0.16070865" Z="-2.0541434E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+                <Position>
+                    <SFVector3 X="-5518.0137" Y="347.75464" Z="-8108.312"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+                <Position>
+                    <SFVector3 X="-5518.37" Y="347.34845" Z="-8110.246"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.07000005" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+                <Position>
+                    <SFVector3 X="-5517.869" Y="347.50507" Z="-8109.809"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.19595" Y="-0.16839547" Z="0.0"/>
+                </Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Male>
+    </Race>
+	
+    <Race Type="Mahirim" Title="Mahirim">
+        <StartingVillageConfig
+            texture="gui/character_creator/chr_cr_start_map_background_mahirim.dds">
+            <StartingVillage index="0" x="49" y="171" bindstone_name="Northern Sarthain"
+                location_name="Silverspear"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="1" x="168" y="72" bindstone_name="Inner Ormhold"
+                location_name="Leenglow" texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="2" x="322" y="233" bindstone_name="Southern Whiteclaw"
+                location_name="Hunter's Moon"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+        </StartingVillageConfig>
+        <Description
+            Text="The youngest of the races to join civilization, the fierce and proud Mahirim maintain their hunting grounds in the Tribelands of the west.  Tracing their origins back to a pit-fighting slave race bred for the savage entertainment of the Vargashi empire, the Mahirim defend their developing homeland with a fierce pride.  Their capital, Amurran is named in the honor of their first hunter-prophet who brought them from the forests and showed them the ways of civilization."/>
+        <FactionDescription Text=""/>
+        <EnvConfig>
+            <SFString Value="cc_mahirim.xml"/>
+        </EnvConfig>
+        <CamPosRace>
+            <Position>
+                <SFVector3 X="-1892.8624" Y="220.24934" Z="1887.1154"/>
+            </Position>
+            <Rotation>
+                <SFVector3 X="-0.064998776" Y="-1.057493" Z="2.669219E-7"/>
+            </Rotation>
+        </CamPosRace>
+		
+        <Female>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5466.502" Y="346.11652" Z="-8104.8174"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+			
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_mahirim_female.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+			
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="220.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+			
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1894.8021" Y="221.324" Z="1888.6404"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.10753622" Y="-0.87820965" Z="-1.9858749E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+				<CamPosAppearance>
+				<Position>
+				 <SFVector3 X="-5466.311" Y="347.5677" Z="-8104.0366"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+				</Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+				<Position>
+				 <SFVector3 X="-5466.143" Y="347.2622" Z="-8102.574"/>
+				</Position>
+				<Rotation>
+                 <SFVector3 X="0.0699998" Y="3.1415925" Z="4.896975E-15"/>
+				</Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+				<Position>
+				 <SFVector3 X="-5466.5137" Y="347.54382" Z="-8102.7046"/>
+				</Position>
+				<Rotation>
+					<SFVector3 X="0.23749903" Y="2.9731972" Z="1.1881933E-7"/>
+				</Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Female>
+		
+        <Male>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5467.8364" Y="346.11652" Z="-8107.468"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_mahirim_male.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+			
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="240.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+			
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1894.9918" Y="221.3608" Z="1887.2034"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.105037995" Y="-0.9632106" Z="-2.0340428E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+                <Position>
+                    <SFVector3 X="-5468.0137" Y="347.75464" Z="-8108.312"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+                <Position>
+                    <SFVector3 X="-5468.37" Y="347.34845" Z="-8110.246"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.07000005" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+                <Position>
+                    <SFVector3 X="-5467.869" Y="347.50507" Z="-8109.809"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.19595" Y="-0.16839547" Z="0.0"/>
+                </Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Male>
+    </Race>
+	
+    <Race Type="Alfar" Title="Alfari">
+        <StartingVillageConfig texture="gui/character_creator/chr_cr_start_map_background_alfar.dds">
+            <StartingVillage index="0" x="33" y="224" bindstone_name="Bel-Melek"
+                location_name="Onghral" texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="1" x="160" y="106" bindstone_name="Deep Yishku"
+                location_name="Deep Yishku"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="2" x="345" y="160" bindstone_name="Northern Sorgom"
+                location_name="Akathos" texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+        </StartingVillageConfig>
+        <Description
+            Text="Once a race of Elves much like the Mirdain, the Alfari minds and bodies were long ago twisted by their mad god-king Melek.  Responsible for such acts as the genocide of the Chal'dean empire, the Alfari were a much reviled race. Yet now, due to the death of their god at the hands of the Goddess, the Alfari find themselves with no guidance and no twisting influence.  Were it not for the steely resolve of the Orks they would have been slaughtered by the vengeful Mirdain.  Now, they seek to find a way to fit into a world bereft of divine guidance."/>
+        <FactionDescription Text=""/>
+        <EnvConfig>
+            <SFString Value="cc_alfar.xml"/>
+        </EnvConfig>
+        <CamPosRace>
+            <Position>
+                <SFVector3 X="-1874.4393" Y="220.22011" Z="1850.4395"/>
+            </Position>
+            <Rotation>
+                <SFVector3 X="-0.046671342" Y="-3.03243" Z="4.334462E-5"/>
+            </Rotation>
+        </CamPosRace>
+		
+        <Female>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5366.502" Y="346.11652" Z="-8104.8174"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_alfar_female.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="260.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+			
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1874.7675" Y="220.91104" Z="1848.3331"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.16004805" Y="-2.6007164" Z="-2.4490123E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+				<Position>
+				 <SFVector3 X="-5366.311" Y="347.5677" Z="-8104.0366"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+				</Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+				<Position>
+				 <SFVector3 X="-5366.143" Y="347.2622" Z="-8102.574"/>
+				</Position>
+				<Rotation>
+                 <SFVector3 X="0.0699998" Y="3.1415925" Z="4.896975E-15"/>
+				</Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+				<Position>
+				 <SFVector3 X="-5366.5137" Y="347.54382" Z="-8102.7046"/>
+				</Position>
+				<Rotation>
+					<SFVector3 X="0.23749903" Y="2.9731972" Z="1.1881933E-7"/>
+				</Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->	
+        
+		</Female>
+		
+        <Male>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5367.8364" Y="346.11652" Z="-8107.468"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+			
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_alfar_male.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="280.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1874.2632" Y="220.92577" Z="1848.3884"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.13505344" Y="2.9724677" Z="-2.44933E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+                <Position>
+                    <SFVector3 X="-5368.0137" Y="347.75464" Z="-8108.312"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+                <Position>
+                    <SFVector3 X="-5368.37" Y="347.34845" Z="-8110.246"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.07000005" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+                <Position>
+                    <SFVector3 X="-5367.869" Y="347.50507" Z="-8109.809"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.19595" Y="-0.16839547" Z="0.0"/>
+                </Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Male>
+    </Race>
+
+
+
+    <Race Type="Mirdain" Title="Mirdain">
+        <StartingVillageConfig
+            texture="gui/character_creator/chr_cr_start_map_background_mirdain.dds">
+            <StartingVillage index="0" x="40" y="50" bindstone_name="Southern Iriendir"
+                location_name="Leafhelm" texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="1" x="223" y="260" bindstone_name="Western Valahir"
+                location_name="King's Holdfast"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+            <StartingVillage index="2" x="331" y="100" bindstone_name="Northern Valahir"
+                location_name="Beladin's Rest"
+                texture="gui/character_creator/chr_cr_start_map_ring1.dds"/>
+
+        </StartingVillageConfig>
+        <Description
+            Text="The elves of the Mirdain nation are amongst the oldest surviving races on Agon.  Since the days of their freedom after their benevolent masters known as the Nithron mysteriously vanished eons ago, the Mirdain have established their nation among the vast forests of Mirendil.  From there the roots of the Emerald Throne, a vast network of spies and informants, stretches to all parts of Agon.  Like all elves, the Mirdain move with a grace and haughty nobility that sets them apart from the younger races."/>
+        <FactionDescription Text=""/>
+        <EnvConfig>
+            <SFString Value="cc_mirdain.xml"/>
+        </EnvConfig>
+
+        <CamPosRace>
+            <Position>
+                <SFVector3 X="-1893.3403" Y="220.3658" Z="1875.4899"/>
+            </Position>
+            <Rotation>
+                <SFVector3 X="-0.034940884" Y="-2.0724804" Z="3.978244E-6"/>
+            </Rotation>
+        </CamPosRace>
+
+        <Female>
+		
+            <MeshPosition>
+                <Position>
+                    <SFVector3 X="-5416.502" Y="346.11652" Z="-8104.8174"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+			
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_mirdain_female.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="300.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1895.5204" Y="221.087" Z="1874.9373"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.100040264" Y="-2.308216" Z="-2.34375E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+		
+			<CamPosAppearance>
+				<Position>
+				 <SFVector3 X="-5416.311" Y="347.5677" Z="-8104.0366"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="3.1415925" Z="0.0"/>
+				</Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+				<Position>
+				 <SFVector3 X="-5416.143" Y="347.2622" Z="-8102.574"/>
+				</Position>
+				<Rotation>
+                 <SFVector3 X="0.0699998" Y="3.1415925" Z="4.896975E-15"/>
+				</Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+				<Position>
+				 <SFVector3 X="-5416.5137" Y="347.54382" Z="-8102.7046"/>
+				</Position>
+				<Rotation>
+					<SFVector3 X="0.23749903" Y="2.9731972" Z="1.1881933E-7"/>
+				</Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Female>
+
+
+        <Male>
+		
+            <MeshPosition>
+              <Position>
+                    <SFVector3 X="-5417.8364" Y="346.11652" Z="-8107.468"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </MeshPosition>
+
+            <FeatureSetConfig>
+                <SFString Value="cc_feature_set_mirdain_male.xml"/>
+            </FeatureSetConfig>
+			
+            <SkillSetConfig>
+                <SFString Value="cc_skill_set_human_female.xml"/>
+            </SkillSetConfig>
+
+            <CamPosCloseup>
+                <Position>
+                    <SFVector3 X="-1847.5" Y="320.9" Z="1857.5"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.02" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosCloseup>
+
+            <CamPosCloseupFace>
+                <Position>
+                    <SFVector3 X="-1894.783" Y="221.11415" Z="1873.9523"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0825411" Y="-2.208216" Z="-2.4035446E-6"/>
+                </Rotation>
+            </CamPosCloseupFace>
+			
+			<!-- BEGIN NEW CAMERA POSITIONS -->
+			
+			<CamPosAppearance>
+                <Position>
+                    <SFVector3 X="-5418.0137" Y="347.75464" Z="-8108.312"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.0" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosAppearance>
+			
+			<CamPosRole>
+                <Position>
+                    <SFVector3 X="-5418.37" Y="347.34845" Z="-8110.246"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.07000005" Y="0.0" Z="0.0"/>
+                </Rotation>
+            </CamPosRole>
+			
+			<CamPosRace>
+                <Position>
+                    <SFVector3 X="-5417.869" Y="347.50507" Z="-8109.809"/>
+                </Position>
+                <Rotation>
+                    <SFVector3 X="0.19595" Y="-0.16839547" Z="0.0"/>
+                </Rotation>
+            </CamPosRace>
+			
+			<CamPosHidden>
+                <Position>
+				 <SFVector3 X="-5598.89" Y="325.8851" Z="-8106.2285"/>
+				</Position>
+				<Rotation>
+				 <SFVector3 X="-0.0" Y="0.0" Z="0.0"/>
+				</Rotation>
+            </CamPosHidden>
+			
+			<!-- END NEW CAMERA POSITIONS -->
+			
+        </Male>
+    </Race>
+</CharacterCreatorSetup>

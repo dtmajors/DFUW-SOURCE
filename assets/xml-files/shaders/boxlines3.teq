@@ -1,0 +1,91 @@
+//Box Lines Shader
+
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "texture.frag"
+
+
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float4 DiffMaterial2 = { 1.0f, 0.0f, 0.0f, 0.0f };
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float2 Tex	: TEXCOORD0;
+    float  Fog  : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float2 Tex	: TEXCOORD0;
+};
+
+
+
+
+VS_OUTPUT BoxLineShader(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    Out.Pos = mul(Input.Pos,VIEW_PROJECTION_MATRIX);
+    
+    Out.Tex = Input.Tex;
+    
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+    
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PShadeColor(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	
+	float4 Color = BaseTex* DiffMaterial;
+
+	Color.xyz = lerp(Color.xyz,FOG_COLOR.xyz,Input.Fog);
+	
+	Out.Color = Color;
+	float2 MBlur;
+	MBlur.x = Input.Tex.x*Input.Tex.y*BaseTex.r;
+	MBlur.y = Input.Tex.x*Input.Tex.y*BaseTex.g;
+	//Out.Effect = float4(MBlur,0.0f,0.0f);
+#ifdef SSAO_ENABLE
+	Out.Depth = 0.0f;
+#endif
+	return Out;
+}
+
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    	FogEnable = true;
+
+        AlphaBlendEnable = true;
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+        ZEnable = true;
+		ZWriteEnable = false;
+
+       	CullMode = NONE;
+
+		ColorWriteEnable = RED|BLUE|GREEN; 
+        
+    
+    	VertexShader = compile vs_3_0 BoxLineShader();
+        PixelShader = compile ps_3_0 PShadeColor();
+    }    
+    
+}
+
+

@@ -1,0 +1,37 @@
+#include "stdstate.frag"
+uniform float2 SampleOffsets[12];
+uniform int SampleCount;
+
+sampler s0 : register(s0);
+
+float4 SampleLumIter(in float2 tc : TEXCOORD0) : COLOR
+{
+	float sum = 0;
+	for (int i=0; i<SampleCount; i++)
+	{
+		sum += tex2D(s0, tc + (float2) SampleOffsets[i]).r;
+	}
+	
+	// Divide the sum to complete the average
+	sum /= SampleCount;
+	
+	return float4(sum, sum, sum, 1.0f);
+}
+
+technique t0
+{
+    pass P0
+    {
+		STD_STATE;
+		Lighting = false;
+		AlphaBlendEnable = FALSE;
+		AlphaTestEnable = FALSE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+		ZEnable = FALSE;
+		ZWriteEnable = FALSE;
+		CullMode = CCW;
+
+		VertexShader = null;
+        PixelShader  = compile ps_2_a SampleLumIter();
+    }
+}

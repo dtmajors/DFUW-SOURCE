@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SFAnimationStateTemplate>
+  <VersionInformation Incremental="0" Major="0" Minor="3"/>
+  <Name>
+    <SFString Value="Human State Template"/>
+  </Name>
+  <AnimationStateList>
+    <AnimationState Duration="2.0333333" FallbackState="true" ID="3" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_idle" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.3666667" FallbackState="false" ID="254" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_attack_back" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.7" FallbackState="false" ID="255" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_attack_front" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.3666667" FallbackState="false" ID="256" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_attack_back" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="2.3666666" FallbackState="false" ID="337" Loop="false" Partial="false" PlaybackType="0" RemovePartial="true" SetName="mount_death" Speed="1.0" StopAtPosition="true" StopPositionNormalized="0.97"/>
+    <AnimationState Duration="2.0333333" FallbackState="true" ID="257" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_idle" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="2.0333333" FallbackState="false" ID="264" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_idle_extra_01" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0">
+      <AlternativeSets>
+        <AlternativeSet SetName="mount_idle_extra_02"/>
+      </AlternativeSets>
+    </AnimationState>
+    <AnimationState Duration="2.0333333" FallbackState="false" ID="265" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_idle_extra_02" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="0.7" FallbackState="false" ID="258" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_jump" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="0.53333336" FallbackState="false" ID="350" Loop="false" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_jump_end" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="0.53333336" FallbackState="false" ID="349" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_jump_start" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0">
+      <ChainedStates>
+        <ChainedState StateID="262402"/>
+      </ChainedStates>
+    </AnimationState>
+    <AnimationState Duration="0.6333333" FallbackState="true" ID="259" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_run" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="0.7" FallbackState="false" ID="266" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_swim" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.3666667" FallbackState="false" ID="395" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_swim_idle" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.3666667" FallbackState="true" ID="260" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_walk" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="1.3666667" FallbackState="true" ID="261" Loop="true" Partial="false" PlaybackType="0" RemovePartial="false" SetName="mount_walk_backward" Speed="1.0" StopAtPosition="false" StopPositionNormalized="0.0"/>
+    <AnimationState Duration="2.3666666" FallbackState="false" ID="318" Loop="false" Partial="false" PlaybackType="0" RemovePartial="true" SetName="mount_death" Speed="1.0" StopAtPosition="true" StopPositionNormalized="0.95"/>
+  </AnimationStateList>
+</SFAnimationStateTemplate>

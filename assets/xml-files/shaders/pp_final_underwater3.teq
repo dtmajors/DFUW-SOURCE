@@ -1,0 +1,202 @@
+////Final pass shader
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "time.frag"
+#include "ssao.frag"
+#include "texture.frag"
+#include "RGBE.frag"
+#include "PP_ToneMappers.frag"
+#include "fog.frag"
+#include "colorGrading.frag"
+
+// Configuration
+static const float WaterSpeed = 0.2;
+static const float RefractionAmount = 0.015;
+
+//static const float3 WaterLiquidColor = float3(0.1, 0.5, 0.9);
+static const float3 WaterLiquidColor = float3(0.5, 0.8, 0.9);
+static const float3 LavaLiquidColor = float3(0.9, 0.3, 0);
+static const float3 AcidLiquidColor = float3(0, 0.8, 0.3);
+static const float3 SwampLiquidColor = float3(0.3, 0.3, 0.2);
+static const float3 TarLiquidColor = float3(0.15, 0.05, 0.1);
+static const float3 BloodLiquidColor = float3(0.15, 0.05, 0.1);
+
+static const float ParticleIntensity = 0.015;
+static const float BloomIntensity = 1.4;
+static const float ExposureBoost = 1.35;
+
+// THIS IS A TOTAL HACK
+static const float3 WaterFogColor = float3(15 / 255.0f, 70 / 255.0f, 90 / 255.0f);
+static const float3 LavaFogColor = float3(255 / 255.0f, 50 / 255.0f, 0 / 255.0f);
+static const float3 AcidFogColor = float3(0 / 255.0f, 255 / 255.0f, 110 / 255.0f);
+static const float3 SwampFogColor = float3(210 / 255.0f, 180 / 255.0f, 40 / 255.0f);
+static const float3  TarFogColor = float3(120 / 255.0f, 0 / 255.0f, 40 / 255.0f);
+static const float3  BloodFogColor = float3(120 / 255.0f, 0 / 255.0f, 40 / 255.0f);
+
+
+uniform float Exposure	: REEnvExposure;
+
+uniform float Bloom		: REEnvBloom;
+
+texture BloomColor  : REPTexturePrevBlendTex;
+
+const float BloomMultiplier = 0.5f;
+static const float BlurFactor = 4.0f;
+
+float SSAO_Factor : REPSSAO_Factor = 1.1f;
+
+static const float NumberOfPostProcessSamples = 4.0f;
+
+float4 FinalColor : REEnvFinalPassColor;
+
+sampler2D BloomSampler =
+sampler_state
+{
+    Texture = <BloomColor>;
+    AddressU = Clamp;
+    AddressV = Clamp;
+/*	
+#ifdef SET_SAMPLERSTATE
+    MinFilter = Linear;
+    MagFilter = Linear;
+#endif	
+*/
+};
+
+
+
+struct VS_INPUT
+{
+    float4 Pos					: POSITION;
+    float2 Tex				    : TEXCOORD4;
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos  			: POSITION;
+    float4 Tex  			: TEXCOORD0;
+	float3 LiquidColor : TEXCOORD1;
+};
+
+VS_OUTPUT VS2(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+	Out.Pos = Input.Pos;
+	Out.Tex.xy = 	Input.Tex.xy;
+	Out.Tex.z = 	(Input.Tex.x * BACKBUFFER_WIDTH ) / 4.0f;
+	Out.Tex.w = 	(Input.Tex.y * BACKBUFFER_HEIGHT) / 4.0f;
+
+		
+	return Out;
+}
+
+
+
+float4 FinalHDRL(VS_OUTPUT Input) : COLOR0
+{
+	float2 Tex = Input.Tex;
+	Tex.x = SFGetPeriodicSinTimeValue(Input.Tex.x, (1.0f/BACKBUFFER_WIDTH) * 10, 0.2f, 2 * Input.Tex.y);
+	
+	float Timer =  TOTAL_TIME * WaterSpeed;
+
+	float2 ScrollingTexCoord = Input.Tex;
+	ScrollingTexCoord.y += Timer;	
+	
+	float4 NormalSample = tex2D(UnderwaterNormalSampler, ScrollingTexCoord) * 2 - 1;
+	float2 TexCoordDisplacement = NormalSample * RefractionAmount;
+	
+/*
+	float2 Tex = Input.Tex + TexCoordDisplacement;	
+*/	
+
+#ifdef SHADER_PP_QUALITY
+	float AvgLumi = tex2D(AvgLumiSampler, Tex).r;
+	float4 SceneSample = float4( interpretAlphaGlowColor(tex2D(SceneSampler, Tex)) , 1);
+	float4 BloomSample = tex2D(GlowSampler, Tex);
+	
+	// apply exposure
+	float Ratio = ExposureBoost * Exposure * pow( AvgLumi, -0.3f);
+	SceneSample *= Ratio;
+	SceneSample.xyz = ToneMapReinhardModified(SceneSample);	
+    
+#else
+	float4 SceneSample = tex2D(SceneSampler, Tex) ;
+    float4 BloomSample = tex2D(BloomSampler, Tex);
+#endif
+
+
+	//float4 SceneSample = tex2D(SceneSampler, Tex) ;
+    //float4 BloomSample = tex2D(BloomSampler, Tex);
+
+	// "Rotate" particles with camera
+	float LookHorizontal = -4 * atan2(CamDir.z, CamDir.x) / SF_PI;
+	float LookVertical = -2 * atan2(CamDir.y, abs(CamDir.x)) / SF_PI;
+		
+	float3 LiquidColor = 0;
+		
+	float LavaDistance = length(FogColor - LavaFogColor);
+	float TarDistance = length(FogColor - TarFogColor);
+	float AcidDistance = length(FogColor - AcidFogColor);
+	float SwampDistance = length(FogColor - SwampFogColor);
+	float WaterDistance = length(FogColor - WaterFogColor);
+	float BloodDistance = length(FogColor - BloodFogColor);
+	
+	
+	if (BloodDistance < TarDistance && BloodDistance < AcidDistance && BloodDistance < SwampDistance && BloodDistance < WaterDistance && BloodDistance < LavaDistance) {
+		LiquidColor = BloodLiquidColor;
+	} else if (LavaDistance < TarDistance && LavaDistance < AcidDistance && LavaDistance < SwampDistance && LavaDistance < WaterDistance) {
+		LiquidColor = LavaLiquidColor;
+	} else if (TarDistance < AcidDistance && TarDistance < SwampDistance && TarDistance < WaterDistance) {
+		LiquidColor = TarLiquidColor;
+	} else if (AcidDistance < SwampDistance && AcidDistance < WaterDistance) {
+		LiquidColor = AcidLiquidColor;
+	} else if (SwampDistance < WaterDistance) {
+		LiquidColor = SwampLiquidColor;
+	} else {
+		LiquidColor = WaterLiquidColor;
+	}
+		
+	float4 ParticleSample = tex2D(UnderwaterParticleSampler, Input.Tex + TexCoordDisplacement.x + Timer * 0.2 + float2(LookHorizontal, LookVertical));	
+	float3 final = (SceneSample + BloomSample * Bloom * BloomIntensity) * LiquidColor+ (ParticleIntensity * ParticleSample) ;
+    
+	float3 color = final;                                  	//original input color
+	float3 lumCoeff = float3(0.2126, 0.7152, 0.0722);    	//Values to calculate luma with
+	float Curves_contrast_blend = 0.5;                  	//Curves_contrast
+	float luma = dot(lumCoeff, color);                 		//calculate luma (grey)
+	float3 chroma = color / luma;                      	    //calculate chroma 
+	luma = ( (luma - 0.5) / (0.5 + abs(luma-0.5)) ) + 0.5;
+	color = luma * chroma;                             		//Add back the chroma
+	float3 ret = lerp(final, color, Curves_contrast_blend);	//Blend by Curves_contrast
+	
+	ret = colorGrade(ret);
+	
+    return float4(ret, 0);
+}
+
+
+technique FinalHDRLTechnique
+<
+  float ScaleX = 4.0f;
+  float ScaleY = 4.0f;
+>
+{
+    pass P0
+    {
+		STD_STATE;
+        ZEnable = false;
+		ZWriteEnable = false;
+		CullMode = CCW;
+    
+        Lighting       = false;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+        
+   
+        VertexShader = compile vs_3_0 VS2();
+        PixelShader = compile ps_3_0 FinalHDRL();
+        ZEnable = false;
+    
+    }
+}

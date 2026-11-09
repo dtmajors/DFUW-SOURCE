@@ -1,0 +1,107 @@
+<trial_accounts_config version_major="1" version_minor="0">
+
+	<!-- ========================================================================================== -->
+
+	<!--
+		Values here affect the prowess of a trial account player
+	-->
+	<prowess_restrictions>
+		<!-- Maximum prowess that a trial account player can earn/use... additional prowess will be set aside for when/if the account becomes non-trial -->
+		<prowess_cap value="10000" />
+	</prowess_restrictions>
+	
+	<!-- ========================================================================================== -->
+	
+	<!--
+		Values here affect the encumbrance of a trial account player
+	-->
+	<encumbrance_restrictions>
+		<!-- Modifier applied to all encumbrance thresholds for trial account players (min: 0.0, max:1.0) -->
+		<encumbrance_modifier value="0.5" />
+	</encumbrance_restrictions>
+	
+	<!-- ========================================================================================== -->
+	
+	<!--
+		Values here affect the types of object that a trial account player can own
+	-->
+	<ownership_restrictions>
+		<!-- Indicates if a trial account player can own a house or not -->
+		<own_house value="false" />
+	</ownership_restrictions>
+	
+	<!-- ========================================================================================== -->
+	
+	<!--
+		Values here affect the ways that a trial account player can interact with, or contribute to, clans
+	-->
+	<clan_restrictions>
+		<!-- Indicates if a trial account player can create a new clan or not -->
+		<create_clan value="false" />
+		<!-- Indicates if a trial account player can become the leader of a clan or not -->
+		<become_leader value="false" />
+		<!-- Indicates if a trial account player can initiate conquest challenges on behalf of a clan or not -->
+		<initiate_conquest value="false" />
+		<!-- Indicates if a trail accoutn player can capture territorial objects (holdings, villages or fortresses) for their clan or not -->
+		<capture_territorial_objects value="false" />
+	</clan_restrictions>
+	
+	<!-- ========================================================================================== -->
+	
+	<!--
+		Values here affect the access that a trial account player has to the markets
+	-->
+	<market_restrictions>
+		<!-- Indicates if a trial account player is allowed to place an order to buy goods, that are not currently listed, from the markets or not -->
+		<issue_buy_orders value="false" />
+		<!-- Indicates if a trial account player is allowed to put goods for sale on the markets or not -->
+		<issue_sell_orders value="false" />
+		<!-- Indicates if a trial account player is allowed to sell items on the markets, via other players' buy orders, or not -->
+		<fulfil_buy_orders value="false" />
+		<!-- Indicates if a trial account player is allowed to buy currently listed items from the markets or not -->
+		<fulfil_sell_orders value="true" />
+	</market_restrictions>
+	
+	<!-- ========================================================================================== -->
+	
+	<!--
+		Values here affect the resources that a trial account player can harvest, per-day
+	-->
+	<harvesting_restrictions clear_defaults="true">
+		<!-- Each limit entry is for the total number of resources retrieved using the indicated skill, per-day (server-cycle) -->
+		<harvesting_limit skill="s_digging" value="100" />
+		<harvesting_limit skill="s_fishing" value="100" />
+		<harvesting_limit skill="s_herb gathering" value="100" />
+		<harvesting_limit skill="s_logging" value="100" />
+		<harvesting_limit skill="s_mining" value="100" />
+		<harvesting_limit skill="s_skinning_advanced" value="100" />
+	</harvesting_restrictions>
+	
+	<!-- ========================================================================================== -->
+	
+	<!--
+		Values here affect the resources that a trial account player can use (attach to, activate or interact with)
+	-->
+	<use_restrictions clear_defaults="true">
+		<!-- Each entry indicates if that resource can be used by a trial account player or not (parent resource nodes will apply to all child-nodes, unless a specific entry exists for the child) -->
+		<use_restriction resource="r_artillery" value="false" />
+		<use_restriction resource="r_siegeengine wheel" value="false" />
+		<use_restriction resource="r_ships helm" value="false" />
+		<use_restriction resource="r_deeds" value="false" />
+	</use_restrictions>
+	
+	<!-- ========================================================================================== -->
+	
+	<!--
+		Values here affect the access that a trial account player has to chat
+		
+		Valid Chat Channel Values Are:
+			GLOBAL, NODE, AREA, USER, CLAN, CLAN_OFFICERS, PARTY, GM, GM_HELP, MGM, ADMIN, RACE, RACE_ALLIANCE, CLAN_ALLIANCE,
+			CLAN_FROM_ALLIANCE, CLAN_NAME, GM_REPORT, TRADE, CLAN_KILLS, PARTY_KILLS, CHAOS, GLOBAL_JAPAN, HELP
+	-->
+	<chat_restrictions clear_defaults="true">
+		<!-- Each entry indicates if a trial account player can read or write to a specific chat channel or not -->
+		<chat_restriction channel="GLOBAL" read="true" write="false" />
+		<chat_restriction channel="TRADE" read="true" write="false" />
+	</chat_restrictions>
+</trial_accounts_config>

@@ -1,0 +1,97 @@
+// Note: fixed shadows affecting point lights
+
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "time.frag"
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "std_vertex.frag"
+#include "combine_illumination.frag"
+#include "offscreenfx.frag"
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_AMBIENT_DIFFUSE;
+
+STD_VS_INSTANCE_OUTPUT VS(STD_VS_INSTANCE_INPUT Input) {
+	STD_VS_INSTANCE_OUTPUT Output = STD_VERTEX_SHADER_INSTANCE(Input);
+	Output.Misc = Output.Pos;
+	return Output;
+}
+
+STD_PS_OUTPUT_3 PS(STD_VS_INSTANCE_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2, Input.Tc);
+
+	float3 Nn = normalize(Input.WorldNormal);
+	float3 Vn = normalize(Input.WorldEyeVec);
+
+	float4 SunLight = lightPixelDiffuseRaw(Nn);
+	
+	/*
+	float Highlight = abs(dot(-Vn, Nn));
+	Highlight *= Highlight * Highlight;
+	SunLight.w = Highlight*0.2;
+	*/
+	SunLight.w = 0;
+	
+	float3 R = normalize(reflect(-Vn, Nn));
+	float4 Local_Reflection = texCUBE(Environment_Sampler, -R);
+	float3 FinalTex = BaseTex.xyz * Local_Reflection * 1.4f;
+	
+
+	float4 DynamicLight = float4(0,0,0,0);
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, Nn, Vn, 40*BaseTex.b, CRYSTAL_SHADER_SPECULAR_CONTRIBUTION*BaseTex.g, LightParams[i]);
+#endif
+	Out.Color.xyz = combineIllumination3(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, FinalTex, SunLight, DynamicLight);
+	Out.Color.w = lerp(0.6,0,smoothstep(0,1,Input.Fog));
+	//Out.Color.w = saturate(Highlight + 0.3f);
+
+#ifdef SSAO_ENABLE
+	//Out.Depth = SSAO_getZVal(Input.ZPos);
+	Out.Depth = CAMERA_FAR_PLANE;
+#endif
+
+
+	// OffscreenFX
+	Out.Color = ProcessOffscreenFXColor(Out.Color, Input.Misc);
+
+	return Out;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaBlendEnable = true;
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = true;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

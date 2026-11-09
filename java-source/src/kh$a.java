@@ -1,0 +1,22 @@
+public enum kh$a {
+   aon,
+   aoo,
+   aop,
+   aoq,
+   aor,
+   aos,
+   aot,
+   aou,
+   aov,
+   aow,
+   aox,
+   aoy,
+   aoz,
+   aoA,
+   aoB,
+   aoC,
+   aoD,
+   aoE,
+   aoF,
+   aoG;
+}

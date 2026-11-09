@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<Tasks>
+  <VersionInformation Incremental = "1" Major = "0" Minor = "0"/>
+  <StarterAreaMessage Value = ""/>
+  <BackPackEnable     Index = "15"/>
+  <PaperDollEnable    Index = "16"/>
+  <RadialEnable       Index = "24"/>
+  <MainMenuEnabled    Index = "27"/>
+  
+  <Barriers>
+	<Barrier SpecialEffectName = "f14_intro_area_sensor_collision_02"  Sensor = "1" Task = "9"/>  
+	<Barrier SpecialEffectName = "f14_intro_area_sensor_collision"     Sensor = "3" Task = "32"/>  
+  </Barriers>
+   
+  <Task Index="0" Name="Run">
+    <StartMessage       Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_01_run.dds"/>	
+    <Trigger Type="SKILL">     
+      <SkillName Value = "s_Run"/>
+      <Duration  Value = "false"/>
+	  <Counter   Value = "1"/>
+    </Trigger>	
+  </Task>
+
+
+  <Task Index="1" Name="Sprint">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_02_sprint.dds"/>	
+    <Trigger Type="SKILL">      
+      <SkillName  Value = "s_Sprint"/>
+      <Duration   Value = "false"/>
+	  <Counter    Value = "1"/>
+    </Trigger>
+  </Task>
+
+
+  <Task Index="2" Name="Walk">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_03_walk.dds"/>
+    <Trigger Type="SKILL">      
+      <SkillName Value = "s_Walk"/>
+      <Duration  Value = "false"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+  </Task>
+
+  <Task Index="3" Name="Jump">    
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_04_jump.dds"/>
+    <Trigger Type="SKILL">      
+      <SkillName Value = "s_Jump"/>
+      <Duration  Value = "false"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+  </Task>
+
+
+  <Task Index="4" Name="Crouch">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+    <ImageName         Value = "texture/gui/runtime/tutorial/advisor_05_crouch.dds"/>
+    <Trigger Type="SKILL">
+      <SkillName Value = "s_Crouch walk"/>
+      <Duration  Value = "false"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+  </Task>
+
+  <Task Index="5" Name="Rest">    
+    <StartMessage       Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+    <ImageName          Value = "texture/gui/runtime/tutorial/advisor_06_rest.dds"/>
+    <Trigger Type="SKILL">      
+      <SkillName            Value = "s_Rest"/>
+      <Duration             Value = "false"/>
+	  <Counter              Value = "1"/>
+    </Trigger>
+  </Task>  
+  
+  <Task Index="6" Name="Stand up">    
+    <StartMessage       Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+    <ImageName          Value = "texture/gui/runtime/tutorial/advisor_06-5_stand_up.dds"/>
+    <Trigger Type="POSTURE_MODE">      
+      <SFPostureModeName    Value = "PostureMode Standing"/>
+	  <Counter              Value = "1"/>
+    </Trigger>
+  </Task>    
+
+  <Task Index="7" Name="Eguip leafblade">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_07_equip_leafblade.dds"/>    
+    <Trigger Type="EQUIP_UNSHEATH">      
+	  <Equip        Value = "true"/>
+      <ResourceName Value = "r_Leafblade"/>
+	  <Counter      Value = "1"/>
+    </Trigger>	
+	<Configuration Type = "QUICKSLOT" Index = "0" Item = "r_Leafblade"/>
+  </Task> 
+
+  <Task Index="8" Name="Unsheath leafblade">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_08_unsheathe_leafblade.dds"/>    
+    <Trigger Type="EQUIP_UNSHEATH">      
+	  <Unsheath     Value = "true"/>
+      <ResourceName Value = "r_Leafblade"/>
+	  <Counter      Value = "1"/>
+    </Trigger>
+  </Task> 
+  
+  <Task Index="9" Name="follow the path">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_08-5_go_to_dummies.dds"/>    
+      <Trigger Type="LOCATION">
+		<Sensor  Value = "2"/>
+		<Counter Value = "1"/>  
+	  </Trigger>
+  </Task>   
+    
+  <Task Index="10" Name="Battle with Dummies">    
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_09_attack_melee.dds"/>    
+    <Trigger Type="SKILL">      
+      <ResourceName Value = "r_training dummies"/>
+      <SkillName    Value = "s_melee attack"/>
+      <Duration     Value = "false"/>
+	  <Counter      Value = "1"/>     
+    </Trigger>	
+    <Reward ContainerName="">
+      <Item Counter="1" ResourceName="r_Arrow_02"/>
+    </Reward>
+  </Task>
+
+  <Task Index="11" Name="Parry">    
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_10_parry.dds"/>    
+    <Trigger Type="SKILL">      
+      <SkillName    Value = "s_Parry"/>
+      <Duration     Value = "false"/>
+	  <Counter      Value = "1"/>     
+    </Trigger>	   					
+  </Task>
+  
+  <Task Index="12" Name="Unsheath Bow">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_11_equip_bow.dds"/>    	
+    <Trigger Type="EQUIP_UNSHEATH">      
+	  <Unsheath     Value = "true"/>
+      <ResourceName Value = "r_conscript bow"/>
+	  <Counter      Value = "1"/>
+    </Trigger>	
+	<Configuration Type = "QUICKSLOT" Index = "1" Item = "r_conscript bow"/>
+  </Task> 
+
+  <Task Index="13" Name="Hit archery targets">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_12_attack_archery.dds"/>    	
+    <Trigger Type="SKILL">
+      <ResourceName Value = "r_training targets"/>
+      <SkillName    Value = "s_Archery"/>
+      <Duration     Value = "false"/>
+	  <Counter      Value = "1"/>
+    </Trigger>
+	<Reward ContainerName="">
+	  <Item Counter="100" ResourceName="r_improved Arrow_01"/>
+	  <Item Counter="-1" ResourceName="r_Arrow_02"/>
+    </Reward>				
+  </Task>  
+
+  <Task Index="14" Name="Access GUI">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_13_open_gui.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action  Value = "ACCESS_GUI"/>
+	  <Counter Value = "1"/>
+    </Trigger>
+  </Task> 
+  
+  <Task Index="15" Name="Access Backpack">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_14_open_backpack.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action  Value = "ACCESS_BACKPACK"/>
+	  <Counter Value = "1"/>
+    </Trigger>
+  </Task> 
+
+  <Task Index="16" Name="Access Paperdoll">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_15_open_paperdoll.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action  Value = "ACCESS_PAPERDOLL"/>
+	  <Counter Value = "1"/>
+    </Trigger>
+  </Task> 
+
+  <Task Index="17" Name="Put magic staff on a quickslot">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_16_move_staff_to_quickslot.dds"/>    
+	<Trigger  Type="GUI">      
+      <Action       Value = "QUICKSLOT_ADD"/>
+      <ItemName     Value = "r_Dawnstaff"/>	  
+	  <SlotIndex    Value = "-1"/>
+	  <Counter      Value = "1"/>
+    </Trigger>
+  </Task> 
+
+  <Task Index="18" Name="Access Gamemode">
+    <StartMessage      Value = ""/>
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_17_return_to_action_menu.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action  Value = "ACCESS_GAMEMODE"/>
+	  <Counter Value = "1"/>
+    </Trigger>
+  </Task> 
+
+  <Task Index="19" Name="Equip Staff">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_17_return_to_action_menu.dds"/>    	
+    <Trigger Type="EQUIP_UNSHEATH">      
+	  <Equip        Value = "true"/>
+      <ResourceName Value = "r_Dawnstaff"/>
+	  <Counter      Value = "1"/>
+    </Trigger>	
+  </Task> 
+  
+  <Task Index="20" Name="Unsheath Staff">
+    <StartMessage      Value = ""/>
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_18_unsheathe_staff.dds"/>    	
+    <Trigger Type="EQUIP_UNSHEATH">      
+	  <Unsheath     Value = "true"/>
+      <ResourceName Value = "r_Dawnstaff"/>
+	  <Counter      Value = "1"/>
+    </Trigger>	
+  </Task> 
+
+  <Task Index="21" Name="Harnessing the Arcane.">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_19_attack_magic.dds"/>    
+    <Trigger Type="SKILL">    
+      <ResourceName  Value = "r_mage totem"/>
+      <SkillName     Value = "s_Staff Bolt"/>
+      <Duration      Value = "false"/>
+	  <Counter       Value = "1"/>	  
+    </Trigger>	
+  </Task>    
+  
+   
+  <Task Index="22" Name="Activate skill from right radial wheel">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_20_select_heal_spell.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action    Value = "ACTIVATE_RADIAL_RIGHT_SLOT"/>
+	  <ItemName  Value = "s_Heal Self"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+	<!--<Configuration Type = "RADIALSLOT" Index = "1" Item = "s_heal self"/>-->
+  </Task> 
+  
+  
+  <Task Index="23" Name="Cast Heal Self">    
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName          Value = "texture/gui/runtime/tutorial/advisor_21_cast_heal_self.dds"/>    
+    <Trigger Type="SKILL">      
+      <SkillName    Value = "s_Heal Self"/>
+      <Duration     Value = "false"/>
+	  <Counter      Value = "1"/>     
+    </Trigger>
+  </Task>  
+  
+
+   <Task Index="24" Name="Access roles skills assignment tab">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_22_a_access_skill_assignment_window.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action    Value = "ACCESS_GUI"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+  </Task>
+  
+   <Task Index="25" Name="Open skills window">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_22_b_skill_tray.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action    Value = "OPEN_SKILLS_WINDOW"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+  </Task>
+  
+  <Task Index="26" Name="Open common skills">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_22_c_double_click_common_skills.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action    Value = "DOUBLE_CLICK_FOLDER_SKILLS"/>
+	  <ItemName  Value = "s_Common Skills"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+  </Task>
+
+  
+  <Task Index="27" Name="Drop light spell">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_23_assign_light_spell.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action    Value = "DROP_RADIAL_RIGHT"/>
+	  <ItemName  Value = "s_Light"/>
+	  <SlotIndex  Value = "-1" />
+	  <Counter   Value  = "1"/>
+    </Trigger>
+  </Task> 
+  
+  
+  <Task Index="28" Name="Apply build">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_23_b_apply_changes.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action    Value = "APPLY_BUILD"/>
+	  <Counter   Value  = "1"/>
+    </Trigger>
+  </Task> 
+
+ <Task Index="29" Name="Access Gamemode">
+    <StartMessage      Value = ""/>
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_23_c_action_mode.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action  Value = "ACCESS_GAMEMODE"/>
+	  <Counter Value = "1"/>
+    </Trigger>
+  </Task> 
+  
+  <Task Index="30" Name="Activate skill from right radial wheel">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_23_d_highlight_light_spell.dds"/>    
+    <Trigger  Type="GUI">      
+      <Action    Value = "ACTIVATE_RADIAL_RIGHT_SLOT"/>
+	  <ItemName  Value = "s_Light"/>
+	  <Counter   Value = "1"/>
+    </Trigger>
+  </Task> 
+
+
+  <Task Index="31" Name="Cast light spell">
+    <StartMessage      Value = ""/>
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_24_cast_light_spell.dds"/>    
+	<SpecialEffectName Value = "se_starting_area_shake_01"/> 	
+    <Trigger  Type="SKILL">      
+	  <SkillName  Value = "s_Light"/>
+	  <Duration     Value = "false"/>
+	  <Counter   Value  = "1"/>
+    </Trigger>
+  </Task> 
+  
+  <Task Index="32" Name="Move further down">
+	<StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_25_move_further_down.dds"/>        
+    <Trigger Type="LOCATION">
+	  <Sensor  Value = "4"/>
+	  <Counter Value = "1"/>      
+    </Trigger>			
+  </Task>    
+  
+  <Task Index="33" Name="Loot a grave">
+	<StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_25-5_kill_shadow_imp.dds"/>        
+    <Trigger Type="SKILL">    
+      <ResourceName  Value = "r_monster corpse"/>
+      <SkillName     Value = "s_use object"/>
+      <Duration      Value = "false"/>
+	  <Counter       Value = "1"/>	  
+    </Trigger>	
+  </Task>    
+
+  <Task Index="34" Name="Enter shadow cave">
+	<StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_26_enter_shadow_cave.dds"/>        
+    <Trigger Type="LOCATION">
+	  <Sensor  Value = "5"/>
+	  <Counter Value = "1"/>      
+    </Trigger>			
+  </Task>    
+  
+
+  <Task Index="35" Name="Go deeper">
+	<StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+	<ImageName         Value = "texture/gui/runtime/tutorial/advisor_26-5_go_deeper.dds"/>        
+	<Trigger Type="LOCATION">
+		<Sensor  Value = "6"/>
+		<Counter Value = "1"/>  
+	</Trigger>
+  </Task>    
+
+ <Task Index="36" Name="Shadow dragon">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+    <ImageName         Value = "texture/gui/runtime/tutorial/advisor_27_shadow_dragon.dds"/>    
+    <Trigger Type="LOCATION">
+	  <Sensor  Value = "7"/>
+	  <Counter Value = "1"/>      
+    </Trigger>			
+  </Task>    
+  
+ 
+ <Task Index="37" Name="Portal!">
+    <StartMessage      Value = ""/>
+	<SpecialEffectName  Value = "guide_changes_objective"/>	
+    <ImageName         Value = "texture/gui/runtime/tutorial/advisor_28_shadow_portal.dds"/>    
+	<Trigger Type="LAST"/>
+ </Task>     
+  
+</Tasks>

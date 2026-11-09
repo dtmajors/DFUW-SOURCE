@@ -1,0 +1,92 @@
+<quest quest_id="417" category="lore_quest" tag="Lead 04">
+	<nodes>
+		<node type="start_node" id="0" tag="" />
+		<node type="event_simple" id="1" tag="" />
+		<node type="event_simple" id="2" tag="Gather Acid from Acid Waterfall" optional_tasks="True">
+			<tasks>
+				<task type="receive_quest" id="2" value="1" tag="Bottle Quest" quest_id="-1" />
+				<task type="activate_item" id="3" value="2" tag="Acid Bottle" resource_name="" consume="False" />
+				<task type="go_to_area" id="4" value="3" tag="Acid Waterfall" area_id="0" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="Bandage from the Sarcophagus">
+			<tasks>
+				<task type="interact_with_object" id="5" value="1" tag="Meleks Sarcophagus" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="5 cotton">
+			<tasks>
+				<task type="harvest_resource" id="6" value="1" tag="Supernode Cotton" resource_name="" quantity="5" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="5" tag="5 Wood">
+			<tasks>
+				<task type="harvest_resource" id="7" value="1" tag="5 Supernode Wood" resource_name="" quantity="0" />
+			</tasks>
+		</node>
+		<node type="event_join" id="6" tag="Remove Stuff, Get Torches">
+			<actions>
+				<action type="give_item_to_player" id="4" tag="Add 5 Torches" resource_name="" quantity="0" inventory_type="None" />
+			</actions>
+		</node>
+		<node type="event_simple" id="7" tag="Light Tower 01">
+			<tasks>
+				<task type="interact_with_object" id="8" value="1" tag="Light Tower Fire" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="Light Tower 02">
+			<tasks>
+				<task type="interact_with_object" id="9" value="1" tag="Light Tower Fire" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="Light Tower 03">
+			<tasks>
+				<task type="interact_with_object" id="10" value="1" tag="Light Tower 03" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="10" tag="Light Tower 04">
+			<tasks>
+				<task type="interact_with_object" id="11" value="1" tag="Light Tower 04" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="11" tag="" />
+		<node type="event_simple" id="12" tag="Tower Fire 01" />
+		<node type="event_simple" id="13" tag="Tower Fire 02" />
+		<node type="event_simple" id="14" tag="Tower Fire 03" />
+		<node type="event_simple" id="15" tag="Tower Fire 04" />
+		<node type="event_merge" id="16" tag="Altar" optional_tasks="True">
+			<tasks>
+				<task type="go_near_object" id="12" value="1" tag="Go Near the Altar" resource_name="" distance="0" />
+				<task type="interact_with_object" id="13" value="2" tag="Interact With Altar" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="17" tag="5 torches around the Altar" />
+		<node type="end_node" id="18" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+		<edge id="2" from="1" to="3" value="0" />
+		<edge id="3" from="1" to="4" value="0" />
+		<edge id="4" from="1" to="5" value="0" />
+		<edge id="5" from="5" to="6" value="0" />
+		<edge id="6" from="4" to="6" value="0" />
+		<edge id="7" from="3" to="6" value="0" />
+		<edge id="8" from="2" to="6" value="0" />
+		<edge id="10" from="6" to="11" value="0" />
+		<edge id="11" from="11" to="7" value="0" />
+		<edge id="12" from="11" to="8" value="0" />
+		<edge id="13" from="11" to="9" value="0" />
+		<edge id="14" from="11" to="10" value="0" />
+		<edge id="15" from="7" to="12" value="0" />
+		<edge id="16" from="8" to="13" value="0" />
+		<edge id="17" from="9" to="14" value="0" />
+		<edge id="18" from="10" to="15" value="0" />
+		<edge id="19" from="12" to="16" value="0" />
+		<edge id="20" from="13" to="16" value="0" />
+		<edge id="21" from="14" to="16" value="0" />
+		<edge id="22" from="15" to="16" value="0" />
+		<edge id="23" from="16" to="17" value="0" />
+		<edge id="24" from="17" to="18" value="0" />
+	</edges>
+</quest>

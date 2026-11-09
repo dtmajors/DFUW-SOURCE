@@ -1,0 +1,215 @@
+// Note: Test this shader
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "stdio.frag"
+#include "shadowmap.frag"
+#include "texture.frag"
+#include "lighting.frag"
+#include "ssao.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+//Tell that this one is transparent
+bool Transparent : REInfoTransparent = true;
+
+texture Texture0 : REPTexture0 = NULL;
+texture Texture1 : REPTexture1 = NULL;
+
+sampler FresnelSampler = sampler_state
+{
+	texture = (Texture0);
+	AddressU = Wrap;
+	AddressV = Wrap;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+sampler NormalSampler = sampler_state
+{
+	texture = (Texture1);
+	AddressU = Wrap;
+	AddressV = Wrap;
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float4 Tex1_2  : TEXCOORD0;
+	float2 BaseTex : TEXCOORD1;
+    float3 Normal : TEXCOORD2;
+    float3 ViewEyeVec: TEXCOORD3;
+	float3 ViewNormal: TEXCOORD4;
+	float3 ViewLight : TEXCOORD5;
+    float4 WorldPos   : TEXCOORD6;
+	float ZPos 		: TEXCOORD7;
+    float Fog : FOG;
+};
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Diff : COLOR0;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+static const float2 TexDist1 = {0.031f, 0.04f};
+static const float2 TexDist2 = {-0.03f, 0.02f};
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+   
+	float4 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+	Out.WorldPos = WorldPos;
+
+	Out.ViewEyeVec = normalize(mul(WorldPos.xyz,(float3x3)VIEW_MATRIX));
+	Out.ViewLight = normalize(mul(L, (float3x3)VIEW_MATRIX));
+
+	float YOffset = sin(TOTAL_TIME*0.2f)*2;
+	float3 NewNorm = abs(normalize(Input.Pos));
+	NewNorm.y = (YOffset);
+
+	Out.Normal = normalize(NewNorm);
+	float3 WorldNorm = float3(0,1,0);
+	WorldNorm.xz = Out.Normal.xz * 0.2f;
+	Out.ViewNormal = normalize(mul(WorldNorm, (float3x3)VIEW_MATRIX));
+
+	Out.Diff.x = Input.Diff.r;
+	Out.Diff.y = min(Input.Diff.r,WATERMOAT_MIN_TRANSPARENCY);
+	Out.Diff.zw = 0.0f;
+
+    Out.Pos  = mul(WorldPos, VIEW_PROJECTION_MATRIX);             // position (projected)
+	float WindMultiplier = lerp(0.35f,1.0f,WIND_SPEED);
+	float WindMultiplier2 = lerp(0.45f,1.2f,WIND_SPEED);
+    //Create coords for the bumpmaps
+	Out.BaseTex = Input.Tex + frac(TOTAL_TIME * 0.01f);
+    float2 BaseBump = Input.Tex * WATERMOAT_BASEBUMP_TEXTURECOORD_MULTIPLIER;
+    Out.Tex1_2.xy = BaseBump + frac(TexDist1 * TOTAL_TIME * WindMultiplier); // * WIND_DIR.xz;
+    Out.Tex1_2.zw = BaseBump + frac(TexDist2 * TOTAL_TIME * WindMultiplier2); // * WIND_DIR.xz;
+
+	Out.ZPos = Out.Pos.z;
+
+
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+
+    return Out;
+}
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3)0;
+	float4 Color = (float4)0;
+	float3 Normal = tex2D(NormalSampler,Input.Tex1_2.xy);
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.BaseTex);
+	float3 Normal2 = tex2D(NormalSampler,Input.Tex1_2.zw);
+	Normal = normalize(Normal + Normal2 + Input.ViewNormal);
+	Normal = 2.0f * (Normal - 0.5f);
+
+	float3 Nn = normalize(Input.ViewNormal);
+	float3 Vn = normalize(Input.ViewEyeVec);
+	float3 Ln = normalize(Input.ViewLight);
+
+	float ldn = saturate(dot(Ln,Nn));
+
+	float3 WaterDiff = saturate( (ldn) + ATMOSPHERE_AMBIENT + 0.5f);
+
+	float3 Reflect = reflect(Vn,Nn);
+
+	float tempdot = saturate(dot(Ln,Reflect));
+
+	float3 Specular = pow(tempdot , WATERMOAT_SPECULAR_EXPONENT)  * PLANET_LIGHTCOLOR_COMMON * WATERMOAT_SPECULAR_CONTRIBUTION;
+
+	float3 R = normalize(reflect(Vn,Normal));
+	float3 Local_Reflection = texCUBE(Environment_Sampler,R) * WATERMOAT_ENVIRONMENT_REFLECTION_CONTRIBUTION;
+	float3 Reflection = Local_Reflection;
+	float3 Refraction = BaseTex;
+	float d = dot(R,Normal);
+
+	float fresnel = tex1D(FresnelSampler,d); 
+	fresnel += Normal.y/4;
+
+	float Reverse = saturate(1.0f - Input.Diff.x);
+	float Reverse2 = saturate(1.0f - Input.Diff.y);
+
+	Color.xyz = lerp(Reflection,Refraction,fresnel);
+
+	float2 RealEffect = (Normal.xz)*Normal.y;
+	RealEffect *= Reverse2;
+	RealEffect *= WATERMOAT_REFRACTION_MB_MULTIPLIER;
+
+#ifdef 	SHADER_SHADOW_ENABLE
+	float L;
+	Input.WorldPos.xz += Normal.xz*0.5f;
+	L = CalculateCascadedShadowDirLight(Input.WorldPos,Input.ZPos);
+	Color = GetShadowValue(Color,L);
+#endif
+
+
+	float4 DynamicLight = float4(0, 0, 0, 0);
+	float3 WNn = normalize(Input.Normal);
+#ifdef SHADER_DYNAMIC_LIGHTS_ENABLE
+	float3 WVn = normalize(Input.WorldPos.xyz - EyePos);
+	[loop] for (int LightIndex=0; LightIndex<ActiveLightCount; LightIndex++)
+	{
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, WNn, WVn, 
+			WATERMOAT_SPECULAR_EXPONENT, WATERMOAT_SPECULAR_CONTRIBUTION, LightParams[LightIndex]);
+	}
+#endif
+
+	float4 SunLight = float4(WaterDiff.xyz, (Specular.x + Specular.y + Specular.z) / 3.0);
+	Color.xyz = combineIllumination3(Input.WorldPos, Input.ZPos, Input.Fog, Color, SunLight, DynamicLight);
+
+	float Alpha = Input.Diff.y;
+	Color.w = Alpha;
+
+	Out.Color = Color;
+	//Out.Effect = RealEffect.xyxy;
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_NO_EFFECT; //SSAO_getZVal(Input.ZPos);
+	//Out.Depth = SSAO_getZVal(Input.ZPos);
+#endif
+
+	return Out;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = RED|BLUE|GREEN; //Don't write to the alpha channel
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+
+        SrcBlend = SrcAlpha;
+        DestBlend = InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = false;
+        //CullMode = CCW;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

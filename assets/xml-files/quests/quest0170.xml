@@ -1,0 +1,24 @@
+<quest quest_id="170" category="rumor_quest" tag="Bountiful Bottle" published="False" valid="True">
+	<title>The Bountiful Bottle</title>
+	<description>Legends tell of an extraordinarily devised bottle that could hold any liquid known to man, even Acid! Perhaps some investigation in a place of knowledge could uncover secrets of the crafting of this wondrous receptacle.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="in_area" id="2" value="1" tag="enter purple library" area_id="6" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Legends tell of a special bottle that can hold any liquid...discuss.">
+			<journal_entry>A book titled &quot;Magnificent Devices&quot; found inside the Amethyst Athenaeum had more information about how to craft the bottle.</journal_entry>
+			<tasks>
+				<task type="receive_quest" id="1" value="1" tag="bootle extro" quest_id="171">
+					<task_instruction>Search the Amethyst Athenaum for clues about the bottle</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="2" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+	</edges>
+</quest>

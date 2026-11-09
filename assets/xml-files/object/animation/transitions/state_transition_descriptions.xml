@@ -1,0 +1,598 @@
+<!-- Notes 
+	Target is the target animation state of the transition. This is a mandatory parameter. If you want to describe a transition from a current state to a non state for exqample a secondary animation back to fallback state then Target should take the special value "none" 
+	Source is the source animation state of the transition. This is an optional parametar unless the target state is set as "none".  
+	Resource	is the resource name of the animation entity. This is an optional parameter. You can specify an actual resource type or a resource branch. for example r_player races will cover all player races. If you leave this blank then the rule will apply for all animated entities
+	
+	Transition is the time it takes to transition to the target state expressed in percent of the target animation duration (i.e. 0.3 =30%). If the target animation is "none" then it will be the percent of the source animation duration 
+
+	use /anim_reload_transitions chat command to reload this file into memory 
+	
+	in case some transition rules overlap the following prioritization takes place 
+target animation state + source animation state 			> target animation state 
+target animation state + resource 							> target animation state 
+target animation state + source animation state + resource 	> all other combinations 
+target animation state + resource 							> target animation state + source animation state 
+	
+-->
+<SFStateTransitionDescs StrafeSpeed = "35" TurnSpeed="5" > 
+<!--
+	<SFStateTransitionDesc Target = "char_horse_unsheathe_idle" 	Source = "" Resource = "" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "char_horse_unsheathe_run"  	Source = "" Resource = "" Transition = "0.3" /> 
+	<SFStateTransitionDesc Target = "normal_idle"  	Source = "" Resource = "r_player races" Transition = "0.37" /> 
+	<SFStateTransitionDesc Target = "normal_run"  	Source = "" Resource = "r_player races" Transition = "0.07" /> 
+	
+	<SFStateTransitionDesc Target = "attackmode_idle"  	Source = "" Resource = "r_player races" Transition = "0.37" /> 
+	<SFStateTransitionDesc Target = "attackmode_run"  	Source = "" Resource = "r_player races" Transition = "0.07" /> 
+-->
+
+	<SFStateTransitionDesc Target = "normal_walk_backward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "normal_run_forward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "normal_sprint_forward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_walk_backward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_run_forward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_sprint_forward"  	Source = "" Resource = "r_player races" Transition = "0.05" /> 
+	<SFStateTransitionDesc Target = "attackmode_2handed_walk_backward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_2handed_run_forward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_2handed_sprint_forward"  	Source = "" Resource = "r_player races" Transition = "0.05" /> 
+	<SFStateTransitionDesc Target = "attackmode_halberd_backward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_halberd_run_forward"  	Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_halberd_sprint_forward"  	Source = "" Resource = "r_player races" Transition = "0.05" /> 
+
+	<SFStateTransitionDesc Target = "normal_idle" Source = "normal_walk_backward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "normal_idle" Source = "normal_run_forward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "normal_idle" Source = "normal_sprint_forward"  Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_idle" Source = "attackmode_walk_backward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_idle" Source = "attackmode_run_forward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_idle" Source = "attackmode_sprint_forward"  Resource = "r_player races" Transition = "0.3" /> 
+	<SFStateTransitionDesc Target = "attackmode_2handed_idle" Source = "attackmode_2handed_walk_backward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_2handed_idle" Source = "attackmode_2handed_run_forward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_2handed_idle" Source = "attackmode_2handed_sprint_forward"  Resource = "r_player races" Transition = "0.3" /> 
+	<SFStateTransitionDesc Target = "attackmode_halberd_idle" Source = "attackmode_halberd_backward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_halberd_idle" Source = "attackmode_halberd_run_forward"  	Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "attackmode_halberd_idle" Source = "attackmode_halberd_sprint_forward"  Resource = "r_player races" Transition = "0.3" /> 
+
+	<SFStateTransitionDesc Target = "chained_jump_start_and_jump" Source = "" Resource = "r_player races" Transition = "0.07" /> 
+	<SFStateTransitionDesc Target = "jump_02"  Source = "" Resource = "r_player races" Transition = "0.001" /> 
+	<SFStateTransitionDesc Target = "falling"  Source = "" Resource = "r_player races" Transition = "0.1" /> 
+	<SFStateTransitionDesc Target = "jump_end"  Source = "" Resource = "r_player races" Transition = "0.1" /> 
+
+	<SFStateTransitionDesc Target = "normal_idle_turn"  Source = "" Resource = "r_player races" Transition = "0.3" /> 
+	<SFStateTransitionDesc Target = ""  Source = "normal_idle_turn" Resource = "r_player races" Transition = "0.3" /> 
+	<SFStateTransitionDesc Target = "attackmode_idle_turn"  Source = "" Resource = "r_player races" Transition = "0.3" /> 
+	<SFStateTransitionDesc Target = ""  Source = "attackmode_idle_turn" Resource = "r_player races" Transition = "0.3" /> 
+
+<!-- 
+	<SFStateTransitionDesc Target = ""  Source = "jump_end" Resource = "r_player races" Transition = "0.01" /> 
+	<SFStateTransitionDesc Target = ""  Source = "jump_02" Resource = "r_player races" Transition = "0.01" /> 
+	<SFStateTransitionDesc Target = "jump_secondary"  Source = "" Resource = "r_player races" Transition = "0.15" /> 
+	-->
+
+</SFStateTransitionDescs>
+
+<!-- the current animation states names 07/09/2011  use this names to specify state transitions:
+(normal_idle_looking_left_right, "normal_idle_looking_left-right", "neutral_idle_looking_left-right"),
+(normal_idle_stretching, "normal_idle_stretching"),
+(normal_idle, "normal_idle", "neutral_idle"),
+(normal_idle2, "normal_idle2"),
+(normal_idle_turn, "normal_idle_turn"),
+(normal_walk_forwards, "normal_walk_forward", "neutral_walk_forward"),
+(normal_walk_forwards_right, "normal_walk_forward_right", "neutral_walk_forward"),
+(normal_walk_right, "normal_walk_right", "neutral_walk_right"),
+(normal_walk_backwards_right, "normal_walk_backward_right", "neutral_walk_backward"),
+(normal_walk_backwards, "normal_walk_backward", "neutral_walk_backward"),
+(normal_walk_backwards_left, "normal_walk_backward_left", "neutral_walk_backward"),
+(normal_walk_left, "normal_walk_left", "neutral_walk_left"),
+(normal_walk_forwards_left, "normal_walk_forward_left", "neutral_walk_forward"),
+
+(normal_run_forwards, "normal_run_forward", "neutral_run_forward"),
+(normal_run_forwards_right, "normal_run_forward_right", "neutral_run_forward"),
+(normal_run_right, "normal_run_right", "neutral_run_right"),
+(normal_run_left, "normal_run_left", "neutral_run_left"),
+(normal_run_forwards_left, "normal_run_forward_left", "neutral_run_forward"),
+
+(crouch_idle, "crouch_idle"),
+(crouch_turn, "crouch_idle_turn"),
+(crouch_forwards, "crouch_forward"),
+(crouch_forwards_right, "crouch_forward_right"),
+(crouch_right, "crouch_right"),
+(crouch_backwards_right, "crouch_backward_right"),
+(crouch_backwards, "crouch_backward"),
+(crouch_backwards_left, "crouch_backward_left"),
+(crouch_left, "crouch_left"),
+(crouch_forwards_left, "crouch_forward_left"),
+
+(unseathe, "unsheathe_singlehand"),
+(attackmode_idle, "attackmode_idle", "neutral_idle"),
+(attackmode_idle_turn, "attackmode_idle_turn", "neutral_idle"),
+(attackmode_walk_forwards, "attackmode_walk_forward", "neutral_walk_forward"),
+(attackmode_walk_forwards_right, "attackmode_walk_forward_right", "neutral_walk_forward"),
+(attackmode_walk_right, "attackmode_walk_right", "neutral_walk_right"),
+(attackmode_walk_backwards_right, "attackmode_walk_backward_right", "neutral_walk_backward"),
+(attackmode_walk_backwards, "attackmode_walk_backward", "neutral_walk_backward"),
+(attackmode_walk_backwards_left, "attackmode_walk_backward_left", "neutral_walk_backward"),
+(attackmode_walk_left, "attackmode_walk_left", "neutral_walk_left"),
+(attackmode_walk_forwards_left, "attackmode_walk_forward_left", "neutral_walk_forward"),
+
+(attackmode_run_forwards, "attackmode_run_forward", "neutral_run_forward"),
+(attackmode_run_forwards_right, "attackmode_run_forward_right", "neutral_run_forward"),
+(attackmode_run_right, "attackmode_run_right", "neutral_run_right"),
+(attackmode_run_left, "attackmode_run_left", "neutral_run_left"),
+(attackmode_run_forwards_left, "attackmode_run_forward_left", "neutral_run_forward"),
+
+(unseathe_2_handed, "unsheathe_2handed"),
+(attackmode_2_handed_idle, "attackmode_2handed_idle", "attackmode_idle"),
+(attackmode_2_handed_idle_turn, "attackmode_2handed_idle_turn", "neutral_idle"),
+(attackmode_2_handed_walk_forwards, "attackmode_2handed_walk_forward", "neutral_walk_forward"),
+(attackmode_2_handed_walk_forwards_right, "attackmode_2handed_walk_forward_right", "neutral_walk_forward"),
+(attackmode_2_handed_walk_right, "attackmode_2handed_walk_right", "neutral_walk_right"),
+(attackmode_2_handed_walk_backwards_right, "attackmode_2handed_walk_backward_right", "neutral_walk_backward"),
+(attackmode_2_handed_walk_backwards, "attackmode_2handed_walk_backward", "neutral_walk_backward"),
+(attackmode_2_handed_walk_backwards_left, "attackmode_2handed_walk_backward_left", "neutral_walk_backward"),
+(attackmode_2_handed_walk_left, "attackmode_2handed_walk_left", "neutral_walk_left"),
+(attackmode_2_handed_walk_forwards_left, "attackmode_2handed_walk_forward_left", "neutral_walk_forward"),
+
+(attackmode_2_handed_run_forwards, "attackmode_2handed_run_forward", "neutral_run_forward"),
+(attackmode_2_handed_run_forwards_right, "attackmode_2handed_run_forward_right", "neutral_run_forward"),
+(attackmode_2_handed_run_right, "attackmode_2handed_run_right", "neutral_run_right"),
+(attackmode_2_handed_run_left, "attackmode_2handed_run_left", "neutral_run_left"),
+(attackmode_2_handed_run_forwards_left, "attackmode_2handed_run_forward_left", "neutral_run_forward"),
+
+(attackmode_halberd_idle, "attackmode_halberd_idle"),
+(attackmode_halberd_idle_turn, "attackmode_halberd_idle_turn"),
+(attackmode_halberd_walk_forwards, "attackmode_halberd_walk_forward", "neutral_walk_forward"),
+(attackmode_halberd_walk_forwards_right, "attackmode_halberd_walk_forward_right", "neutral_walk_forward"),
+(attackmode_halberd_walk_right, "attackmode_halberd_walk_right", "neutral_walk_forward"),
+(attackmode_halberd_walk_backwards_right, "attackmode_halberd_backward_right", "neutral_walk_backward"),
+(attackmode_halberd_walk_backwards, "attackmode_halberd_backward", "neutral_walk_backward"),
+(attackmode_halberd_walk_backwards_left, "attackmode_halberd_backward_left", "neutral_walk_backward"),
+(attackmode_halberd_walk_left, "attackmode_halberd_walk_left", "neutral_walk_forward"),
+(attackmode_halberd_walk_forwards_left, "attackmode_halberd_walk_forward_left", "neutral_walk_forward"),
+
+(attackmode_halberd_run_forwards, "attackmode_halberd_run_forward", "neutral_run_forward"),
+(attackmode_halberd_run_forwards_right, "attackmode_halberd_run_forward_right", "neutral_run_forward"),
+(attackmode_halberd_run_right, "attackmode_halberd_run_right", "neutral_run_forward"),
+(attackmode_halberd_run_left, "attackmode_halberd_run_left", "neutral_run_forward"),
+(attackmode_halberd_run_forwards_left, "attackmode_halberd_run_forward_left", "neutral_run_forward"),
+
+(gank_death, "gank_death"),
+(gank_idle_death, "gank_idle_death"),
+(gank_get_up, "gank_get_up"),
+
+(jump_start, "jump_start"),
+(jump_in_air, "jump_in_air"),
+(falling, "falling"),
+(pushed, "being_pushed"),
+(looting, "looting"),
+(sit_down, "sit_down"),
+(get_up, "get_up"),
+(sitting_on_ground_idle, "sitting_idle"),
+
+(war_cry, "war_cry"),
+(climbing_idle, "climbing_idle"),
+
+(riding_unsheathe, "riding_unsheathe" ),
+(riding_normal, "riding_normal" ),
+(riding_combatmode_1hand, "riding_combatmode_1hand" ),
+(riding_attack, "riding_attack" ),
+(riding_throw, "riding_throw"),
+
+(attack_01_singlehand, "singlehand_attack_01"),
+(attack_02_singlehand, "singlehand_attack_02"),
+(attack_03_singlehand, "singlehand_attack_03"),
+(attack_04_singlehand, "singlehand_attack_04"),
+
+(attack_01_spe, "attack_01_spell"),
+(attack_02_spell, "attack_02_spell"),
+
+(attack_01_twohanded, "2handed_attack_01"),
+(attack_02_twohanded, "2handed_attack_02"),
+(attack_03_twohanded, "2handed_attack_03"),
+
+(attack_throw, "attack_throw"),
+(attack_firing_bow, "attack_firing_bow"),
+(combat_parrying, "combat_parrying"),
+(0, "NOT USED"),
+
+(war_cry_secondary, "war_cry_secondary"),
+(drink, "drink"),
+(fishing, "fishing"),
+(blacksmith, "blacksmith"),
+(make_crap, "make_crap"),
+(use, "use_item/object/door"),
+(Unseath_halberd, "unsheathe_halberd"),
+(0, "NOT USED"),
+
+(Magic_charge, "magic_charge"),
+(Magic_fire, "magic_fire"),
+(Magic_dot, "magic_dot"),
+
+(bow_load, "bow_load"),
+(bow_aiming, "bow_aim"),
+(bow_fire, "bow_fire"),
+
+(halberd_attack_01, "halberd_attack_01"),
+(halberd_attack_02, "halberd_attack_02"),
+(halberd_attack_03, "halberd_attack_03"),
+
+(parrying_singlehand, "singlehand_parrying"),
+(parrying_2handed, "2handed_parrying"),
+(parrying_halberd, "halberd_parrying"),
+
+(FP_Bow_Fade_in, "bow_Fade-in"),
+(FP_Bow_Fade_out, "bow_Fade-out"),
+(FP_Bow_Walk, "bow_Walk"),
+(FP_Bow_Run, "bow_Run"),
+(FP_Bow_Idle, "bow_Idle"),
+(FP_Bow_Extra_Idle, "bow_extra_idle"),
+(FP_magic_buff, "magic_buff"),
+(FP_magic_extra_idle, "magic_extra_idle"),
+
+(FP_Magic_staff, "magic staff"),
+(FP_Magic_Fade_in, "magic_Fade-in"),
+(FP_Magic_Fade_out, "magic_Fade-out"),
+(FP_Magic_Walk, "magic_Walk"),
+(FP_Magic_Run, "magic_Run"),
+(FP_Magic_Idle, "magic_Idle"),
+(FP_Magic_Fire, "magic_Fire"),
+(FP_Magic_Charge, "magic_Charge"),
+(FP_Magic_Dot, "magic_Dot "),
+
+(FP_Grenade, "grenade"),
+(FP_Grenade_Fade_in, "grenade_Fade-in"),
+(FP_Grenade_Fade_out, "grenade_Fade-out"),
+(FP_Grenade_Walk, "grenade_Walk"),
+(FP_Grenade_Run, "grenade_Run"),
+(FP_Grenade_Idle, "grenade_Idle"),
+(FP_Grenade_Throw, "grenade_Throw"),
+(FP_Grenade_Extra_Idle, "grenade_extra_idle"),
+
+(FP_Grenade_Sprint, "FP_Grenade_Sprint"),
+(FP_Magic_Sprint, "FP_Magic_Sprint"),
+(FP_Bow_Sprint, "FP_Bow_Sprint"),
+            
+(0, "emptyhands_fade-in"),
+(0, "emptyhands_fade-out"),
+(0, "emptyhands_walk"),
+(0, "emptyhands_run"),
+(0, "emptyhands_Idle"),
+
+(NPC_hum_m_big_idle, "NPC_hum_m_big_idle"),
+(NPC_hum_m_big_idle_grabpelvis, "NPC_hum_m_big_idle_grabpelvis"),
+(NPC_hum_m_big_idle_hair, "NPC_hum_m_big_idle_hair"),
+(NPC_hum_m_big_idle_lookingdown, "NPC_hum_m_big_idle_lookingdown"),
+(NPC_hum_m_big_idle_lookingleftrigt, "NPC_hum_m_big_idle_lookingleftrigt"),
+(NPC_hum_m_big_idle_showing, "NPC_hum_m_big_idle_showing"),
+(NPC_hum_m_big_long_idle, "NPC_hum_m_big_long-idle"),
+(NPC_hum_m_big_panic, "NPC_hum_m_big_panic"),
+(NPC_hum_m_big_panic_extra, "NPC_hum_m_big_panic_extra"),
+(NPC_hum_m_big_panicmode, "NPC_hum_m_big_panicmode"),
+(laugh, "emote_laugh"),
+(salute, "emote_salute"),
+(greetings, "emote_greetings"),
+(waveing, "emote_waving"),
+(shrug, "emote_shrug"),
+(yawn, "emote_yawn"),
+(mockery, "emote_mockery"),
+(thumb_up, "emote_thumb_up"),
+(thumb_down, "emote_thumb_down"),
+(no_no_no, "emote_no-no-no"),
+(taunt1, "emote_taunt_01"),
+(taunt2, "emote_taunt_02"),
+(taunt3, "emote_taunt_03"),
+(taunt4, "emote_taunt_04"),
+(taunt5, "emote_taunt_05"),
+(show_off, "emote_show_off"),
+(emote_charge, "emote_charge"),
+(thing_about, "emote_think_about"),
+(Singlehand_gank_attack, "singlehand_gank_attack"),
+(twohanded_gank_attack, "2handed_gank_attack"),
+(Halberd_gank_attack, "halberd_gank_attack"),
+(revive, "revive"),
+(jump01, "jump_01"),
+(jump02, "jump_02"),
+(jump03, "jump_03"),
+(jump04, "jump_04"),
+(jump05, "jump_05"),
+(jump06, "jump_06"),
+(jump07, "jump_07"),
+(jump08, "jump_08"),
+(jump09, "jump_09"),
+(jump10, "jump_10"),
+(jump11, "jump_11"),
+(jump12, "jump_12"),
+(up_down_third_anim, "up_down_third_anim"),
+(two_dagger_attack01, "2daggers_attack_01"),
+(two_dagger_attack02, "2daggers_attack_02"),
+(two_dagger_attack03, "2daggers_attack_03"),
+(point_back, "emote_point_back"),
+(point_front, "emote_point_front"),
+(point_left, "emote_point_left"),
+(point_right, "emote_point_right"),
+(play_guitar, "emote_playguitar"),
+(Magic_fire_01, "magic_fire_01"),
+(Magic_fire_02, "magic_fire_02"),
+(Magic_fire_03, "magic_fire_03"),
+
+(doh, "emote_doh"),
+(sneeze, "emote_sneeze"),
+(up_down_third_anim, "up_down_third_anim"),
+(landing_pose, "landing_pose"),
+(Pick_up, "pick_up"),
+(two_daggers_attack_04, "2daggers_attack_04"),
+(two_daggers_parrying, "2daggers_parrying"),
+(two_daggers_stab, "2daggers_stab"),
+(two_daggers_wirlwind, "2daggers_wirlwind"),
+(two_handed_attack_04, "2handed_attack_04"),
+(two_handed_stab, "2handed_stab"),
+(two_handed_wirlwind, "2handed_wirlwind"),
+(Halberd_attack_04, "halberd_attack_04"),
+(Halberd_stab, "halberd_stab"),
+(Halberd_wirlwind, "halberd_wirlwind"),
+(Singlehand_stab, "singlehand_stab"),
+(Singlehand_wirlwind, "singlehand_wirlwind"),
+(unseath_2daggers, "unsheathe_2daggers"),
+(unseath_bow, "unsheathe_bow"),
+(unseath_grenade, "unsheathe_grenade"),
+(unseath_staff, "unsheathe_staff"),
+(Use_item_object_door, "use_item_object_door"),
+
+(char_horse_attack_back, "char_horse_attack_back"),
+(char_horse_attack_front, "char_horse_attack_front"),
+(char_horse_attack_left, "char_horse_attack_left"),
+(char_horse_attack_right, "char_horse_attack_right"),
+(char_horse_break, "char_horse_break"),
+(char_horse_idle, "char_horse_idle" , true ),
+(char_horse_jump, "char_horse_jump"),
+(char_horse_lean_left, "char_horse_lean_left"),
+(char_horse_lean_right, "char_horse_lean_right"),
+(char_horse_run, "char_horse_run" , true ),
+(char_horse_unsheathe, "char_horse_unsheathe"),
+(char_horse_unsheathe_attack_back, "char_horse_unsheathe_attack_back"),
+(char_horse_unsheathe_attack_front, "char_horse_unsheathe_attack_front"),
+(char_horse_unsheathe_break, "char_horse_unsheathe_break"),
+(char_horse_unsheathe_idle, "char_horse_unsheathe_idle"),
+(char_horse_unsheathe_jump, "char_horse_unsheathe_jump"),
+(char_horse_unsheathe_run, "char_horse_unsheathe_run"),
+(char_horse_unsheathe_walk, "char_horse_unsheathe_walk"),
+(char_horse_unsheathe_walk_backward, "char_horse_unsheathe_walk_backward"),
+(char_horse_walk, "char_horse_walk"),
+(char_horse_walk_backward, "char_horse_walk_backward"),
+
+(mount_attack_back, "mount_attack_back"),
+(mount_attack_front, "mount_attack_front"),
+(mount_break, "mount_break"),
+(mount_idle, "mount_idle"),
+(mount_jump, "mount_jump"),
+(mount_jump_start, "mount_jump_start"),
+(mount_jump_end, "mount_jump_end"),
+(mount_run, "mount_run"),
+(mount_walk, "mount_walk"),
+(mount_walk_backward, "mount_walk_backward"),
+(char_horse_attack_left_sec, "char_horse_attack_left(sec)"),
+(char_horse_attack_right_sec, "char_horse_attack_right(sec)"),
+
+(mount_idle_extra_01, "mount_idle_extra_01"),
+(mount_idle_extra_02, "mount_idle_extra_02"),
+(mount_swim, "mount_swim"),
+
+(climbing_up, "climbing_up"),
+(climbing_down, "climbing_down"),
+(climbing_left, "climbing_left"),
+(climbing_right, "climbing_right"),
+
+(unarmed_attack_01, "unarmed_attack_01"),
+(unarmed_attack_02, "unarmed_attack_02"),
+(unarmed_attack_03, "unarmed_attack_03"),
+(unarmed_attack_04, "unarmed_attack_04"),
+(unarmed_attack_05, "unarmed_attack_05"),
+(attack_spear_01, "attack_spear_01"),
+
+(halberd_attack_05, "halberd_attack_05"),
+(singlehand_attack_05, "singlehand_attack_05"),
+(twohanded_attack_04, "2handed_attack_04"),
+(twohanded_attack_05, "2handed_attack_05"),
+
+(swim_backwards, "swim_backward"),
+(swim_forward, "swim_forward"),
+(swim_idle, "swim_idle"),
+(swim_left, "swim_left"),
+(swim_right, "swim_right"),
+(swim_sprint, "swim_sprint"),
+(jump_end, "jump_end"),
+
+(unsheathe_spear, "unsheathe_spear"),
+(gank_death_01, "gank_death_01"),
+(gank_death_02, "gank_death_02"),
+(magic_summon_01, "magic_summon_01"),
+(attack_spit_01, "attack_spit_01"),
+(attack_blow_01, "attack_blow_01"),
+(attack_throw_01, "attack_throw_01"),
+(attack_throw_02, "attack_throw_02"),
+(attack_throw_03, "attack_throw_03"),
+(attack_area_01, "attack_area_01"),
+
+            // Chained anims
+(chained_bow_load_and_aim, "chained_bow_load_and_aim"),
+(chained_bow_fire_andbow_idle, "chained_bow_fire_andbow_idle"),
+(chained_magic_fire_and_magic_idle, "chained_magic_fire_and_magic_idle"),
+(chained_getup_and_normal_idle, "chained_getup_and_normal_idle"),
+(chained_gank_death_and_ganke_idle, "chained_gank_death_and_ganke_idle"),
+
+(chained_jump_start_and_jump, "chained_jump_start_and_jump"),
+(chained_char_horse_unsheathe_to_idle, "chained_char_horse_unsheathe_to_idle"),
+(chained_unsheathe_singlehand_to_attackmode_idle, "unused reserved chained state2"),
+(chained_unsheathe_2handed_to_attackmode_idle, "unused reserved chained state3"),
+(chained_unsheathe_2daggers_hand_to_attackmode_idle, "unused reserved chained state4"),
+(chained_unsheathe_staff_to_attackmode_idle, "unused reserved chained state5"),
+(chained_unsheathe_bow_to_attackmode_idle, "unused reserved chained state6"),
+(chained_unsheathe_grenade_to_attackmode_idle, "unused reserved chained state7"),
+(fall_and_die, "fall_and_die"),
+(chained_state_xx_9, "unused reserved chained state9"),
+(chained_state_xx_10, "unused reserved chained state10"),
+(chained_state_xx_11, "unused reserved chained state11"),
+(chained_state_xx_12, "unused reserved chained state12"),
+(chained_state_xx_13, "unused reserved chained state13"),
+(chained_state_xx_14, "unused reserved chained state14"),
+(chained_state_xx_15, "unused reserved chained state15"),
+(chained_state_xx_16, "unused reserved chained state16"),
+(chained_state_xx_17, "unused reserved chained state17"),
+(chained_state_xx_18, "unused reserved chained state18"),
+(chained_state_xx_19, "unused reserved chained state19"),
+(chained_state_xx_20, "unused reserved chained state20"),
+(attack_bite_01, "attack_bite_01"),
+(attack_summon_01, "attack_summon_01"),
+(attack_aoe_01, "attack_aoe_01"),
+(gank_singlehand_charge, "gank_singlehand_charge"),
+(gank_singlehand_attack, "gank_singlehand_attack"),
+(mount_death, "mount_death"),
+
+(emote_charge, "emote_charge"),
+(gank_twohand_charge, "gank_2handed_charge"),
+(gank_twohand_attack, "gank_2handed_attack"),
+(gank_halberd_charge, "gank_halberd_charge"),
+(gank_halberd_attack, "gank_halberd_attack"),
+(gank_daggers_charge, "gank_2daggers_charge"),
+(gank_daggers_attack, "gank_2daggers_attack"),
+(run_4legs, "run_4legs"),
+(emote_pre_taunt_01, "emote_pre_taunt_01"),
+(neutral_fly, "neutral_fly"),
+(Magic_aoe_01, "magic_aoe_01"),
+(Magic_aoe_02, "magic_aoe_02"),
+(Magic_aoe_03, "magic_aoe_03"),
+
+(Special_attack_01, "special_attack_01"),
+(Special_attack_02, "special_attack_02"),
+(Special_attack_03, "special_attack_03"),
+
+(Natural_ranged_01, "natural_ranged_01"),
+(Natural_ranged_02, "natural_ranged_02"),
+(Natural_ranged_03, "natural_ranged_03"),
+
+(fly_idle, "fly_idle"),
+(fly_forward, "fly_forward"),
+(fly_backward, "fly_backward"),
+(fly_glide, "fly_glide"),
+(idle_to_fly, "idle_to_fly"),
+(fly_to_idle, "fly_to_idle"),
+(fly_death, "fly_death"),
+(fly_death_impact, "fly_death_impact"),
+(fly_attack_loop_01, "fly_attack_loop_01"),
+(fly_attack_fire_01, "fly_attack_fire_01"),
+(mage_blast, "mage_blast"),
+
+(idle_extra_01, "idle_extra_01"),
+(idle_extra_02, "idle_extra_02"),
+(idle_extra_03, "idle_extra_03"),
+
+(repairing, "repairing"),
+(crafting_hammer, "crafting_hammer"),
+(crafting_emtyhand, "crafting_emtyhand"),
+(harvesting_sickle, "harvesting_sickle"),
+(harvesting_pickaxe, "harvesting_pickaxe"),
+(harvesting_axe, "harvesting_axe"),
+(magic_buff, "magic_buff"),
+(unspawn_object, "unspawn_object"),
+(use_runestone, "use_runestone"),
+(setup_camp, "setup_camp"),
+(bind_Runestone, "bind_Runestone"),
+(use_cannon, "use_cannon"),
+
+(fourleg_run, "fourleg_run"),
+(fourleg_walk, "fourleg_walk"),
+(fourleg_idle, "fourleg_idle"),
+(fourleg_in, "fourleg_in"),
+(fourleg_out, "fourleg_out"),
+(fourleg_jump_start, "fourleg_jump_start"),
+(fourleg_jump_01, "fourleg_jump_01"),
+(fourleg_jump_end, "fourleg_jump_end"),
+(eating, "eating"),
+(DISABLE_PARTIAL_STATE, "DISABLE_PARTIAL_STATE"),
+(mount_swim_idle, "mount_swim_idle"),
+(gank_death_dead, "gank_death_dead"),
+            
+(Magic_fire_04, "magic_fire_04"),
+(Magic_fire_05, "magic_fire_05"),
+
+(normal_sprint_forwards, "normal_sprint_forward"),
+(attackmode_sprint_forwards, "attackmode_sprint_forward"),
+(attackmode_2_handed_sprint_forwards, "attackmode_2handed_sprint_forward"),
+(attackmode_halberd_sprint_forwards, "attackmode_halberd_sprint_forward"),
+
+(two_daggers_seize, "2daggers_seize"),
+(two_handed_seize, "2handed_seize"),
+(halberd_seize, "halberd_seize"),
+(singlehand_seize, "singlehand_seize"),
+
+(two_daggers_knockback, "2daggers_knockback"),
+(two_handed_knockback, "2handed_knockback"),
+(halberd_knockback, "halberd_knockback"),
+(singlehand_knockback, "singlehand_knockback"),
+
+(singlehand_vertical_attack_01,  "singlehand_vertical_attack_01"),
+(twohanded_vertical_attack_01,   "2handed_vertical_attack_01"),
+(halberd_vertical_attack_01,     "halberd_vertical_attack_01"),
+(two_daggers_vertical_attack_01, "2daggers_vertical_attack_01"),
+            
+(singlehand_bludgeoning_stab, "singlehand_bludgeoning_stab"),
+(twohanded_bludgeoning_stab, "2handed_bludgeoning_stab"),
+
+            
+(dodge_singlehand_forward, "dodge_singlehand_forward"),
+(dodge_singlehand_backward, "dodge_singlehand_backward"),
+(dodge_singlehand_left, "dodge_singlehand_left"),
+(dodge_singlehand_right, "dodge_singlehand_right"),
+            
+(dodge_2handed_forward, "dodge_2handed_forward"),
+(dodge_2handed_backward, "dodge_2handed_backward"),
+(dodge_2handed_left, "dodge_2handed_left"),
+(dodge_2handed_right, "dodge_2handed_right"),
+            
+(dodge_halberd_forward, "dodge_halberd_forward"),
+(dodge_halberd_backward, "dodge_halberd_backward"),
+(dodge_halberd_left, "dodge_halberd_left"),
+(dodge_halberd_right, "dodge_halberd_right"),
+            
+     
+(jump_secondary, "jump_secondary"),
+                        
+
+(singlehand_buff_01,  "singlehand_buff_01"),
+(twohanded_buff_01,   "2handed_buff_01"),
+(halberd_buff_01,     "halberd_buff_01"),
+(two_daggers_buff_01, "2daggers_buff_01"),
+            
+(melee_disabling_blow_01, "melee_disabling_blow_01"),
+
+(normal_idle_extra_01					, "normal_idle_extra_01"),
+(attackmode_idle_extra_01				, "attackmode_idle_extra_01"),
+(attackmode_2_handed_idle_extra_01	, "attackmode_2handed_idle_extra_01"),
+(attackmode_halberd_idle_extra_01		, "attackmode_halberd_idle_extra_01"),
+
+(disabling_two_daggers				, "disabling_2daggers"),
+(disabling_two_handed					, "disabling_2handed"),
+(disabling_halberd					, "disabling_halberd"),
+(disabling_singlehand					, "disabling_singlehand"),
+(disabling_natural					, "disabling_natural"),
+            
+(combo_two_daggers_attack_01			, "combo_2daggers_attack_01"),
+(combo_two_handed_attack_01			, "combo_2handed_attack_01"),
+(combo_halberd_attack_01				, "combo_halberd_attack_01"),
+(combo_singlehand_attack_01			, "combo_singlehand_attack_01"),
+(combo_natural_attack_01				, "combo_natural_attack_01"),
+            
+(fly_dive								, "fly_dive"),
+(fly_dive_start						, "fly_dive_start"),
+(fly_dive_end 						, "fly_dive_end"),
+            
+(seathe								, "sheathe_singlehand"),
+(seathe_2_handed						, "sheathe_2handed"),
+(seath_halberd						, "sheathe_halberd"),
+(seath_2daggers						, "sheathe_2daggers"),
+(seath_bow							, "sheathe_bow"),
+(seath_grenade						, "sheathe_grenade"),
+(seath_staff							, "sheathe_staff"),
+
+(digging_shovel						, "digging_shovel", true),
+            
+(praying  			       	        , "praying"),
+-->

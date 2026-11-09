@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Outerplanars"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Outerplanars" Value="5"/>
+  <Rewards>
+    <Item Name="pe_kill_outerplanar_30" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

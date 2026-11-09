@@ -1,0 +1,26 @@
+<quest quest_id="30" category="rumor_quest" tag="Mouth of Eanna" published="False" valid="True">
+	<title>Mouth of Eanna</title>
+	<description>A strange chill permeates the air around the river. A mournful voice carried on the breeze whispers:</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="in_area" id="0" value="1" tag="River Eanna" area_id="83" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="">
+			<journal_entry>&quot;Children of my chidren, voiceless they cry, lipless devour, haunting my mouth till a blade breaks their power.&quot;</journal_entry>
+		</node>
+		<node type="end_node" id="4" tag="" />
+		<node type="event_simple" id="3" tag="">
+			<journal_entry>The beseeching tone of this archaic voice surely merits some investigation as to it&apos;s meaning as well as what it seems to yearn.</journal_entry>
+			<tasks>
+				<task type="receive_quest" id="0" value="1" tag="A Receive Quest Task" quest_id="31" />
+			</tasks>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="3" value="0" />
+		<edge id="2" from="3" to="4" value="1" />
+	</edges>
+</quest>

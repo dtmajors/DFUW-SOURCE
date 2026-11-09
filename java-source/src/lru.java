@@ -1,0 +1,160 @@
+/*
+ * Decompiled with CFR.
+ */
+public final class lru
+extends lrp {
+    private static final lru sGg = new lru();
+    @lok(value="Minor Neithal Essence Gatherer")
+    @lpl(value="The hv_harvest_neithal_essence_10 feat display name")
+    public static final lox sGh = sGg.a("hv_harvest_neithal_essence_10_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Neithal Essence.")
+    @lpl(value="The hv_harvest_neithal_essence_10 feat description")
+    public static final lox sGi = sGg.a("hv_harvest_neithal_essence_10_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Average Neithal Essence Gatherer")
+    @lpl(value="The hv_harvest_neithal_essence_150 feat display name")
+    public static final lox sGj = sGg.a("hv_harvest_neithal_essence_150_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 150 pieces of Neithal Essence.")
+    @lpl(value="The hv_harvest_neithal_essence_150 feat description")
+    public static final lox sGk = sGg.a("hv_harvest_neithal_essence_150_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Average Leenspar Essence Gatherer")
+    @lpl(value="The hv_harvest_leenspar_essence_150 feat display name")
+    public static final lox sGl = sGg.a("hv_harvest_leenspar_essence_150_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 150 pieces of Leenspar Essence.")
+    @lpl(value="The hv_harvest_leenspar_essence_150 feat description")
+    public static final lox sGm = sGg.a("hv_harvest_leenspar_essence_150_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Major Leenspar Essence Gatherer")
+    @lpl(value="The hv_harvest_leenspar_essence_1500 feat display name")
+    public static final lox sGn = sGg.a("hv_harvest_leenspar_essence_1500_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 1500 pieces of Leenspar Essence.")
+    @lpl(value="The hv_harvest_leenspar_essence_1500 feat description")
+    public static final lox sGo = sGg.a("hv_harvest_leenspar_essence_1500_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Average Selentine Essence Gatherer")
+    @lpl(value="The hv_harvest_selentine_essence_150 feat display name")
+    public static final lox sGp = sGg.a("hv_harvest_selentine_essence_150_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 150 pieces of Selentine Essence.")
+    @lpl(value="The hv_harvest_selentine_essence_150 feat description")
+    public static final lox sGq = sGg.a("hv_harvest_selentine_essence_150_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Major Selentine Essence Gatherer")
+    @lpl(value="The hv_harvest_selentine_essence_1500 feat display name")
+    public static final lox sGr = sGg.a("hv_harvest_selentine_essence_1500_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 1500 pieces of Selentine Essence.")
+    @lpl(value="The hv_harvest_selentine_essence_1500 feat description")
+    public static final lox sGs = sGg.a("hv_harvest_selentine_essence_1500_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Major Neithal Essence Gatherer")
+    @lpl(value="The hv_harvest_neithal_essence_1500 feat display name")
+    public static final lox sGt = sGg.a("hv_harvest_neithal_essence_1500_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 1500 pieces of Neithal Essence.")
+    @lpl(value="The hv_harvest_neithal_essence_1500 feat description")
+    public static final lox sGu = sGg.a("hv_harvest_neithal_essence_1500_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Minor Selentine Essence Gatherer")
+    @lpl(value="The hv_harvest_selentine_essence_10 feat display name")
+    public static final lox sGv = sGg.a("hv_harvest_selentine_essence_10_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Selentine Essence.")
+    @lpl(value="The hv_harvest_selentine_essence_10 feat description")
+    public static final lox sGw = sGg.a("hv_harvest_selentine_essence_10_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Leenspar Essence Gatherer")
+    @lpl(value="The hv_harvest_leenspar_essence feat display name")
+    public static final lox sGx = sGg.a("hv_harvest_leenspar_essence_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Leenspar Essence.")
+    @lpl(value="The hv_harvest_leenspar_essence feat description")
+    public static final lox sGy = sGg.a("hv_harvest_leenspar_essence_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Neithal Essence Gatherer")
+    @lpl(value="The hv_harvest_neithal_essence feat display name")
+    public static final lox sGz = sGg.a("hv_harvest_neithal_essence_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Neithal Essence.")
+    @lpl(value="The hv_harvest_neithal_essence feat description")
+    public static final lox sGA = sGg.a("hv_harvest_neithal_essence_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Essence Seeker")
+    @lpl(value="The hv_two_rare_resources feat display name")
+    public static final lox sGB = sGg.a("hv_two_rare_resources_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest two Rare Resources.")
+    @lpl(value="The hv_two_rare_resources feat description")
+    public static final lox sGC = sGg.a("hv_two_rare_resources_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Minor Essence Seeker")
+    @lpl(value="The hv_harvest_all_essence feat display name")
+    public static final lox sGD = sGg.a("hv_harvest_all_essence_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest one of each essence.")
+    @lpl(value="The hv_harvest_all_essence feat description")
+    public static final lox sGE = sGg.a("hv_harvest_all_essence_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Veilron Essence Gatherer")
+    @lpl(value="The hv_harvest_veilron_essence feat display name")
+    public static final lox sGF = sGg.a("hv_harvest_veilron_essence_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Veilron Essence.")
+    @lpl(value="The hv_harvest_veilron_essence feat description")
+    public static final lox sGG = sGg.a("hv_harvest_veilron_essence_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Minor Leenspar Essence Gatherer")
+    @lpl(value="The hv_harvest_leenspar_essence_10 feat display name")
+    public static final lox sGH = sGg.a("hv_harvest_leenspar_essence_10_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Leenspar Essence.")
+    @lpl(value="The hv_harvest_leenspar_essence_10 feat description")
+    public static final lox sGI = sGg.a("hv_harvest_leenspar_essence_10_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Selentine Essence Gatherer")
+    @lpl(value="The hv_harvest_selentine_essence feat display name")
+    public static final lox sGJ = sGg.a("hv_harvest_selentine_essence_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Selentine Essence.")
+    @lpl(value="The hv_harvest_selentine_essence feat description")
+    public static final lox sGK = sGg.a("hv_harvest_selentine_essence_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Theyril Essence Gatherer")
+    @lpl(value="The hv_harvest_theyril_essence feat display name")
+    public static final lox sGL = sGg.a("hv_harvest_theyril_essence_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Theyril Essence.")
+    @lpl(value="The hv_harvest_theyril_essence feat description")
+    public static final lox sGM = sGg.a("hv_harvest_theyril_essence_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Average Theyril Essence Gatherer")
+    @lpl(value="The hv_harvest_theyril_essence_150 feat display name")
+    public static final lox sGN = sGg.a("hv_harvest_theyril_essence_150_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 150 pieces of Theyril Essence.")
+    @lpl(value="The hv_harvest_theyril_essence_150 feat description")
+    public static final lox sGO = sGg.a("hv_harvest_theyril_essence_150_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Minor Theyril Essence Gatherer")
+    @lpl(value="The hv_harvest_theyril_essence_10 feat display name")
+    public static final lox sGP = sGg.a("hv_harvest_theyril_essence_10_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Theyril Essence.")
+    @lpl(value="The hv_harvest_theyril_essence_10 feat description")
+    public static final lox sGQ = sGg.a("hv_harvest_theyril_essence_10_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Minor Veilron Essence Gatherer")
+    @lpl(value="The hv_harvest_veilron_essence_10 feat display name")
+    public static final lox sGR = sGg.a("hv_harvest_veilron_essence_10_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest ten pieces of Veilron Essence.")
+    @lpl(value="The hv_harvest_veilron_essence_10 feat description")
+    public static final lox sGS = sGg.a("hv_harvest_veilron_essence_10_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Major Theyril Essence Gatherer")
+    @lpl(value="The hv_harvest_theyril_essence_1500 feat display name")
+    public static final lox sGT = sGg.a("hv_harvest_theyril_essence_1500_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 1500 pieces of Theyril Essence.")
+    @lpl(value="The hv_harvest_theyril_essence_1500 feat description")
+    public static final lox sGU = sGg.a("hv_harvest_theyril_essence_1500_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Major Veilron Essence Gatherer")
+    @lpl(value="The hv_harvest_veilron_essence_1500 feat display name")
+    public static final lox sGV = sGg.a("hv_harvest_veilron_essence_1500_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 1500 pieces of Veilron Essence.")
+    @lpl(value="The hv_harvest_veilron_essence_1500 feat description")
+    public static final lox sGW = sGg.a("hv_harvest_veilron_essence_1500_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Average Veilron Essence Gatherer")
+    @lpl(value="The hv_harvest_veilron_essence_150 feat display name")
+    public static final lox sGX = sGg.a("hv_harvest_veilron_essence_150_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Harvest 150 pieces of Veilron Essence.")
+    @lpl(value="The hv_harvest_veilron_essence_150 feat description")
+    public static final lox sGY = sGg.a("hv_harvest_veilron_essence_150_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Major Essence Seeker")
+    @lpl(value="The hv_rare_essence_major feat display name")
+    public static final lox sGZ = sGg.a("hv_rare_essence_major_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Complete all the tier three Essence Harvesting Feats.")
+    @lpl(value="The hv_rare_essence_major feat description")
+    public static final lox sHa = sGg.a("hv_rare_essence_major_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Average Essence Seeker")
+    @lpl(value="The hv_rare_essence_average feat display name")
+    public static final lox sHb = sGg.a("hv_rare_essence_average_DisplayName", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+    @lok(value="Complete all the tier two Essence Harvesting Feats.")
+    @lpl(value="The hv_rare_essence_average feat description")
+    public static final lox sHc = sGg.a("hv_rare_essence_average_Description", lru.Bl("Resource"), lru.Bl("Weapon"), lru.Bm("Skill"), lru.Bl("NodeResource"), lru.Bl("ContainerResource"), lru.Bh("Counter"), lru.Bk("Booster"), lru.Bk("Tile"), lru.Bk("Area"), lru.Bk("Attribute"));
+
+    public lru() {
+        super("hv_rare_resources");
+    }
+
+    public lru(String string) {
+        super("hv_rare_resources." + string);
+    }
+}
+

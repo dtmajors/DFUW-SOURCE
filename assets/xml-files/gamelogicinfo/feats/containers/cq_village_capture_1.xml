@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="1"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Village Control Point"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Village Control Point" Value="1"/>
+  <Rewards>
+    <Item Name="cq_village_capture_10" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

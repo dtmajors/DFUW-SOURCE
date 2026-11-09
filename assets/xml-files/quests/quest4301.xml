@@ -1,0 +1,157 @@
+<quest quest_id="4301" category="training_quest" tag="Foundry Template" published="False" valid="True">
+	<title>Crafting Catapults</title>
+	<description>What you will need to know, have and do so you can craft a $[Resource.S.r_siegeengine_catapult_NameSingular] at a $[Resource.C.r_clan_foundry_NameSingular].</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="in_area" id="0" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="" />
+		<node type="event_merge" id="2" tag="branch tag" />
+		<node type="event_simple" id="3" tag="close branch tag" />
+		<node type="start_node" id="4" tag="">
+			<conditions>
+				<condition type="in_area" id="1" value="1" tag="An In Quest Area Condition" area_id="17" />
+			</conditions>
+		</node>
+		<node type="start_node" id="5" tag="">
+			<conditions>
+				<condition type="in_area" id="2" value="1" tag="An In Quest Area Condition" area_id="18" />
+			</conditions>
+		</node>
+		<node type="start_node" id="6" tag="">
+			<conditions>
+				<condition type="in_area" id="3" value="1" tag="An In Quest Area Condition" area_id="19" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<instruction>Locate a $[Resource.C.r_clan_foundry_NameSingular]</instruction>
+			<journal_entry>Now that you have located and used the $[Resource.C.r_clan_foundry_NameSingular] it&apos;s time to craft a $[Resource.S.r_siegeengine_catapult_NameSingular]. Locate the $[Skill.E.s_engineering_mastery_NameSingular] icon, and double-click it. Then, locate and double click the Siege Engines and $[Resource.S.r_siegeengine_catapult_NameSingular] icon. Make sure you have the materials that are needed by checking the required materials list. If the list is too long, there will be a scroll bar handle which you&apos;ll need to scroll. If everything checks out, click on the large checkmark to begin crafting. Once the crafting action is complete, the crafted item will be placed in your backpack. Each crafting skill is increased by crafting more items from each particular category and each recipe requires a particular skill level so that you are able to craft each item.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="An Interact With Object Task" resource_name="r_Clan Foundry">
+					<task_instruction>Press the Interact key while looking at the $[Resource.C.r_clan_foundry_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<instruction>Craft a $[Resource.S.r_siegeengine_catapult_NameSingular]</instruction>
+			<journal_entry>That&apos;s it! You have successfully  crafted a $[Resource.S.r_siegeengine_catapult_NameSingular]. Deploy it to see it in action.</journal_entry>
+			<tasks>
+				<task type="craft_item" id="1" value="1" tag="A Craft Item(s) Task" resource_name="r_Figurine SiegeEngine Catapult" quantity="1">
+					<task_instruction>Select and craft a $[Resource.F.r_figurine_siegeengine_catapult_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="">
+			<journal_entry>$[Resource.C.r_clan_foundry_NamePlural] can be built by player Clans in specific clan holdings. They are used to craft specific $[Skill.E.s_engineering_mastery_NameSingular] like $[Resource.S.r_siegeengine_catapult_NamePlural].</journal_entry>
+		</node>
+		<node type="start_node" id="11" tag="">
+			<conditions>
+				<condition type="in_area" id="4" value="1" tag="An In Quest Area Condition" area_id="38" />
+			</conditions>
+		</node>
+		<node type="start_node" id="12" tag="">
+			<conditions>
+				<condition type="in_area" id="5" value="1" tag="An In Quest Area Condition" area_id="67" />
+			</conditions>
+		</node>
+		<node type="start_node" id="13" tag="">
+			<conditions>
+				<condition type="in_area" id="6" value="1" tag="An In Quest Area Condition" area_id="68" />
+			</conditions>
+		</node>
+		<node type="start_node" id="14" tag="">
+			<conditions>
+				<condition type="in_area" id="7" value="1" tag="An In Quest Area Condition" area_id="69" />
+			</conditions>
+		</node>
+		<node type="start_node" id="15" tag="">
+			<conditions>
+				<condition type="in_area" id="15" value="1" tag="An In Quest Area Condition" area_id="77" />
+			</conditions>
+		</node>
+		<node type="start_node" id="16" tag="">
+			<conditions>
+				<condition type="in_area" id="14" value="1" tag="An In Quest Area Condition" area_id="76" />
+			</conditions>
+		</node>
+		<node type="start_node" id="17" tag="">
+			<conditions>
+				<condition type="in_area" id="13" value="1" tag="An In Quest Area Condition" area_id="75" />
+			</conditions>
+		</node>
+		<node type="start_node" id="18" tag="">
+			<conditions>
+				<condition type="in_area" id="12" value="1" tag="An In Quest Area Condition" area_id="74" />
+			</conditions>
+		</node>
+		<node type="start_node" id="19" tag="">
+			<conditions>
+				<condition type="in_area" id="8" value="1" tag="An In Quest Area Condition" area_id="70" />
+			</conditions>
+		</node>
+		<node type="start_node" id="20" tag="">
+			<conditions>
+				<condition type="in_area" id="9" value="1" tag="An In Quest Area Condition" area_id="71" />
+			</conditions>
+		</node>
+		<node type="start_node" id="21" tag="">
+			<conditions>
+				<condition type="in_area" id="10" value="1" tag="An In Quest Area Condition" area_id="72" />
+			</conditions>
+		</node>
+		<node type="start_node" id="22" tag="">
+			<conditions>
+				<condition type="in_area" id="11" value="1" tag="An In Quest Area Condition" area_id="73" />
+			</conditions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="2" value="1" />
+		<edge id="1" from="4" to="2" value="1" />
+		<edge id="2" from="5" to="2" value="1" />
+		<edge id="3" from="6" to="2" value="1" />
+		<edge id="6" from="2" to="9" value="0" />
+		<edge id="5" from="7" to="8" value="1" />
+		<edge id="7" from="9" to="7" value="0" />
+		<edge id="8" from="8" to="3" value="1" />
+		<edge id="9" from="3" to="1" value="0" />
+		<edge id="10" from="18" to="2" value="1" />
+		<edge id="11" from="17" to="2" value="1" />
+		<edge id="12" from="16" to="2" value="1" />
+		<edge id="13" from="15" to="2" value="1" />
+		<edge id="14" from="11" to="2" value="1" />
+		<edge id="15" from="12" to="2" value="1" />
+		<edge id="16" from="13" to="2" value="1" />
+		<edge id="17" from="14" to="2" value="1" />
+		<edge id="18" from="19" to="2" value="1" />
+		<edge id="19" from="20" to="2" value="1" />
+		<edge id="20" from="21" to="2" value="1" />
+		<edge id="21" from="22" to="2" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="36" y="43" />
+		<node_location id="1" x="839" y="177" />
+		<node_location id="2" x="236" y="167" />
+		<node_location id="3" x="751" y="169" />
+		<node_location id="4" x="36" y="109" />
+		<node_location id="5" x="35" y="168" />
+		<node_location id="6" x="39" y="222" />
+		<node_location id="7" x="560" y="171" />
+		<node_location id="8" x="656" y="181" />
+		<node_location id="9" x="430" y="160" />
+		<node_location id="11" x="42" y="281" />
+		<node_location id="12" x="43" y="328" />
+		<node_location id="13" x="43" y="379" />
+		<node_location id="14" x="42" y="427" />
+		<node_location id="15" x="306" y="36" />
+		<node_location id="16" x="256" y="40" />
+		<node_location id="17" x="208" y="35" />
+		<node_location id="18" x="155" y="39" />
+		<node_location id="19" x="159" y="440" />
+		<node_location id="20" x="206" y="444" />
+		<node_location id="21" x="258" y="446" />
+		<node_location id="22" x="311" y="442" />
+	</node_locations>
+</quest>

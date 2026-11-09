@@ -1,0 +1,217 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "object.frag"
+#include "texture.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+#include "combine_illumination.frag"
+
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+#include "dynamic_lights.frag"
+#endif
+
+
+// Matrix Pallette
+static const int MAX_MATRICES = 26;
+float4x3    mWorldMatrixArray[MAX_MATRICES] : REAnimWorldMatrixArray;
+
+//texture Tex0 : REPTextureDirect;
+texture Tex1 : REPTexture1;
+
+float4 AmbMaterial : REPMaterialAmbient = { 0.0f, 0.0f, 0.0f, 0.0f };
+float4 DiffMaterial : REPMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPMaterialPower = 0.0f;
+
+
+#define BLOODFACTOR AmbMaterial.x
+//#define BLOODFACTOR 0.0f
+
+
+
+sampler PainSkinSampler = sampler_state
+{
+    texture = <Tex1>;
+    AddressU = WRAP;
+    AddressV = WRAP;
+    AddressW = WRAP;
+    BorderColor = 0;
+    //MAXANISOTROPY = 1;
+    MaxMipLevel = 0;
+    
+#ifdef SET_SAMPLERSTATE
+    MipFilter = DEFAULT_MIPFILTER;
+    MinFilter = USER_TEXTURE_FILTER;
+    MagFilter = USER_TEXTURE_FILTER;
+#endif	
+};
+
+///////////////////////////////////////////////////////
+
+struct VS_OUTPUT
+{
+    float4  Pos     : POSITION;
+    float2  Tex0    : TEXCOORD0;
+    float2  Tex1    : TEXCOORD1;
+    float3 WorldPos  : TEXCOORD2;
+	float3 WorldNormal	: TEXCOORD3;
+	float3 WorldEyeVec	: TEXCOORD4;
+	float2 ZPos 		 : TEXCOORD5;
+    float3 ViewNormal 		: TEXCOORD6;
+    float3 ViewEyeVec 		: TEXCOORD7;
+	float3 ViewLight		: TEXCOORD8;
+
+    float   Fog	    : FOG;
+};
+
+
+
+VS_OUTPUT VShade_2Weight(STD_VS_SKINNING_INPUT i)
+{
+    VS_OUTPUT   o = (VS_OUTPUT)0;
+    float3      Pos = 0.0f;
+    float3      Normal = 0.0f;    
+    float       LastWeight = 0.0f;
+    
+    // Compensate for lack of UBYTE4 on Geforce3
+    int4 IndexVector = D3DCOLORtoUBYTE4(i.BlendIndices);
+
+    // cast the vectors to arrays for use in the for loop below
+    float BlendWeightsArray[4] = (float[4])i.BlendWeights;
+    int   IndexArray[4]        = (int[4])IndexVector;
+    
+    // calculate the pos/normal using the "normal" weights 
+    //        and accumulate the weights to calculate the last weight
+
+    LastWeight = BlendWeightsArray[0];
+        
+    Pos = mul(i.Pos, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+    Normal = mul(i.Normal, mWorldMatrixArray[IndexArray[0]]) * BlendWeightsArray[0];
+
+    LastWeight = 1.0f - LastWeight; 
+
+    // Now that we have the calculated weight, add in the final influence
+    Pos += (mul(i.Pos, mWorldMatrixArray[IndexArray[1]]) * LastWeight);
+    Normal += (mul(i.Normal, mWorldMatrixArray[IndexArray[1]]) * LastWeight); 
+    
+    
+    // transform position from world space into view and then projection space
+    o.Pos = mul(float4(Pos.xyz, 1.0f), VIEW_PROJECTION_MATRIX);
+	o.WorldPos = Pos;
+	o.WorldNormal = Normal;
+	o.WorldEyeVec = normalize(o.WorldPos - EyePos);
+	
+	o.ZPos.xy = o.Pos.zw;
+
+    float3 PView = mul(float4(Pos,1.0f),VIEW_MATRIX);
+
+    float3 LView = normalize(mul(-PLANET_LIGHTDIR_COMMON, (float3x3)VIEW_MATRIX));
+    // normalize normals
+    Normal = normalize(Normal);
+    
+    float3 NView = mul(Normal , (float3x3)VIEW_MATRIX);
+    NView = normalize(NView);
+
+	
+	o.ViewLight = LView;
+	o.ViewNormal = NView;
+	o.ViewEyeVec = normalize(PView);
+	
+    // copy the input texture coordinate through
+    o.Tex0  = i.Tex0.xy;
+    o.Tex1  = i.Tex0.xy + GUIDRand;
+    
+    o.Fog = CalculateFog_3_0(o.Pos.z);
+
+
+    return o;
+}
+
+STD_PS_OUTPUT_3 PShade(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Output = (STD_PS_OUTPUT_3)0;
+	
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex0);
+	
+	if (BaseTex.a < 0.02f)
+	{
+		clip(-0.5f);
+	}
+	
+	float4 OrigTex = BaseTex;
+	BaseTex *= DiffMaterial;
+	BaseTex = lerp(OrigTex,BaseTex,OrigTex.a);
+	float4 PainTex = tex2D(PainSkinSampler,Input.Tex1);
+	float4 FinalTex = BaseTex * (1.0f - (PainTex * BLOODFACTOR));
+
+	float3 Nn = normalize(Input.ViewNormal);
+	float3 Vn = normalize(Input.ViewEyeVec);
+	float3 Ln = normalize(Input.ViewLight);
+	
+	float ldn = saturate(dot(Ln,Nn));
+	float3 Reflect = reflect(Vn,Nn);
+	float tempdot = saturate(dot(Ln,Reflect));
+	float Specular = pow(tempdot , ORK_SKIN_EXPONENT);
+	
+
+	float4 SunLight;
+	SunLight.xyz = saturate(ldn * PLANET_LIGHTCOLOR_COMMON + 0.1f);
+	float SkinFactor = (1.0f - (BLOODFACTOR*0.5f)) * BaseTex.x * BaseTex.y * BaseTex.z;
+	SunLight.w = Specular * SkinFactor ;
+ 	
+	float4 DynamicLight = float4(0, 0, 0, 0);
+	
+	float3 wNn = normalize(Input.WorldNormal);
+	
+#ifdef SHADER_DYNAMIC_OPAQUE_LIGHTS_ENABLE
+	
+	float3 wVn = normalize(Input.WorldEyeVec);
+	[loop] for (int i=0; i<ActiveLightCount; i++)
+	{
+		DynamicLight += pointLightPixelSpecularRaw(Input.WorldPos, wNn, wVn, ORK_SKIN_EXPONENT, SkinFactor, LightParams[i]);
+	}
+#endif
+
+	Output.Color.xyz = combineIllumination3anim(float4(Input.WorldPos, 1), Input.ZPos, Input.Fog, FinalTex.xyz, SunLight, DynamicLight);
+	Output.Color.w = 0.0f;	
+	//Output.Effect = 0;
+
+
+#ifdef DEPTH_WRITE_ENABLE
+	Output.Depth.xyz = wNn;
+	Output.Depth.w = Input.ZPos.x / Input.ZPos.y;
+#endif
+
+#ifdef MATERIAL_WRITE_ENABLE
+	Output.Material = float4(FinalTex.xyz, SkinFactor);
+#endif
+		Output.Color = 0;
+	return Output;
+}
+
+
+
+//////////////////////////////////////
+// Techniques specs follow
+//////////////////////////////////////
+technique t0
+{
+    pass p0
+    {
+		STD_STATE;
+    	FogEnable = false;
+
+        AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+
+        ZEnable = true;
+		ZWriteEnable = true;
+       	CullMode = CCW;
+        
+    	ColorWriteEnable = ALPHA|RED|BLUE|GREEN; 
+
+    	VertexShader = compile vs_3_0 VShade_2Weight();
+        PixelShader = compile ps_3_0 PShade();
+    }
+}
+

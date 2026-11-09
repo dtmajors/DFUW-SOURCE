@@ -1,0 +1,6 @@
+#include "stdstate.frag"
+#include "time.frag"
+#include "vectorfunctions.frag"
+#define SHADER_CFG_ROTATE
+#define SHADER_CFG_ROTATE_SPEED PROP_ALPHA_METAL_ROTATE_SPEED_CCW
+#include "prop_alphametal_instancing.teq"

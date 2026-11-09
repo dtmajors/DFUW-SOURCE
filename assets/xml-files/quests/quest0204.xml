@@ -1,0 +1,419 @@
+<quest quest_id="204" category="lore_quest" tag="The Clueless Goblin" published="False" valid="True">
+	<title>The Clueless Goblin</title>
+	<description>Goblins, while vile and hostile on the best of days, rarely perpetrated such successful slaughter. On the other hand, they did tend to squeal like stuck pigs under the correct motivations...</description>
+	<nodes>
+		<node type="start_node" id="0" tag="Mercia Start">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="203" />
+				<condition type="in_area" id="21" value="1" tag="A Character Position Condition" area_id="66" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="slay">
+			<journal_entry>...and indeed, squeal it did! True to form, rather than enter a meaningful discourse and provide valuable information, the Goblin Warlord decided to go down the &quot;disembowel the longshanks&quot; approach! I am curious, now, in retrospect, did you actually think the vile little bag of putrid hostility would actually speak to you?</journal_entry>
+		</node>
+		<node type="end_node" id="2" tag="" />
+		<node type="event_simple" id="59" tag="Ork: Rune at Night" optional_tasks="False">
+			<tasks>
+				<task type="interact_with_object" id="59" value="1" tag="Interact with Rune" resource_name="r_qt malaut rune" />
+				<task type="go_to_area" id="143" value="1" tag="A Go To Area Task" area_id="15" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="56" tag="">
+			<journal_entry>By bloody moonlight written, by bloodless moonlight revealed. Bring the Acolytes flesh to the appointed place within the capital. The saturation of the vessel is at hand! For he is dark and born of terror...</journal_entry>
+		</node>
+		<node type="event_simple" id="58" tag="Kill a Salamander, Hivekin and a troll" optional_tasks="True">
+			<tasks>
+				<task type="kill_object" id="56" value="1" tag="Kill Salamander" resource_name="r_Salamanders" quantity="10" />
+				<task type="kill_object" id="57" value="1" tag="Kill Hivekin" resource_name="r_Hivekins" quantity="10" />
+				<task type="kill_object" id="58" value="1" tag="Kill Troll" resource_name="r_Trolls" quantity="5" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="60" tag="rune sfx / clue triggered by moonlight">
+			<journal_entry>You studied the strange and sinister clue you had located at the heart of the &quot;pyramid&quot; that was &quot;made&quot; by the camps of the three monsters mentioned in the Cryptic Note. As the moonlight began to bathe the area, you felt a rustling within your pack. A quick investigation showed the note moving and changing! Before your eyes, the words rearranged themselves to write:</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="21" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_simple" id="13" tag="Tovar Clue Letter">
+			<journal_entry>At first glance, the note seemed to be the poetic ramblings of a blithering idiot...and yet, was there something more? If your chronicle would continue, and believe me, it did, you would have to glean some kind of meaning!</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="14" tag="Unlock Dvergheim Note" item_id="2" />
+			</actions>
+		</node>
+		<node type="event_simple" id="12" tag="Mahirim Clue Letter">
+			<journal_entry>At first glance, the note seemed to be the poetic ramblings of some blithering idiot...and yet, was there something more? If your chronicle would continue, and believe me, it did, you would have to glean some kind of meaning!</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="15" tag="Unlock Tribelands Note" item_id="3" />
+			</actions>
+		</node>
+		<node type="event_simple" id="9" tag="Mercia Clue Letter">
+			<journal_entry>At first glance, the note seemed to be the poetic ramblings of asome blithering idiot...and yet, was there something more? If your chronicle would continue, and believe me, it did, you would have to glean some kind of meaning!</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="7" tag="Give Mercian Note" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="11" tag="Ork Clue Letter">
+			<journal_entry>At first glance, the note seemed to be the poetic ramblings of some blithering idiot...and yet, was there something more? If your chronicle would continue, and believe me, it did, you would have to glean some kind of meaning!</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="16" tag="Unlock Morak Note" item_id="4" />
+			</actions>
+		</node>
+		<node type="event_simple" id="15" tag="Kill a Salamnder, Brownie, and Kobold" optional_tasks="True">
+			<tasks>
+				<task type="kill_object" id="8" value="1" tag="Kill Salamander" resource_name="r_Salamanders" quantity="10" />
+				<task type="kill_object" id="41" value="1" tag="Kill Brownie" resource_name="r_Brownies" quantity="10" />
+				<task type="kill_object" id="42" value="1" tag="Kill Kobold" resource_name="r_Kobolds" quantity="10" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="16" tag="Mercia: Rune at Night" optional_tasks="False">
+			<tasks>
+				<task type="interact_with_object" id="28" value="1" tag="Interact with Rune" resource_name="r_qt malaut rune" />
+				<task type="go_to_area" id="144" value="1" tag="A Go To Area Task" area_id="16" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="54" tag="clue triggered by blood">
+			<journal_entry>And then, suddenly, as the last of the two mentioned monsters blood hit the floor at your feet, you felt a rustling from within your pack. A quick inspection revealed the cryptic note to be changing before your eyes! The words rearranged themselves before your eyes to say:</journal_entry>
+		</node>
+		<node type="event_simple" id="53" tag="rune sfx / clue triggered by moonlight">
+			<journal_entry>You studied the strange and sinister clue you had located at the heart of the &quot;pyramid&quot; that was &quot;made&quot; by the camps of the three monsters mentioned in the Cryptic Note. As the moonlight began to bathe the area, you felt a rustling within your pack. A quick investigation showed the note moving and changing! Before your eyes, the words rearranged themselves to write:</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="23" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_simple" id="52" tag="Mahirim: Rune at Night" optional_tasks="False">
+			<tasks>
+				<task type="interact_with_object" id="53" value="1" tag="Interact with Rune" resource_name="r_qt malaut rune" />
+				<task type="go_to_area" id="145" value="1" tag="A Go To Area Task" area_id="13" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="51" tag="Kill 2 Salamander and a Sarnakh" optional_tasks="True">
+			<tasks>
+				<task type="kill_object" id="51" value="1" tag="Kill Salamander" resource_name="r_Salamanders" quantity="10" />
+				<task type="kill_object" id="52" value="1" tag="Kill Sarnakh" resource_name="r_Sarnakhs" quantity="10" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="49" tag="">
+			<journal_entry>By bloody moonlight written, by bloodless moonlight revealed. Bring the Acolytes flesh to the appointed place within the capital. The saturation of the vessel is at hand! For he is dark and born of terror...</journal_entry>
+		</node>
+		<node type="event_simple" id="48" tag="">
+			<journal_entry>Only in Agon would I require a failsafe clue to take into account a brainless minion! By blood was it written, by blood revealed..in three nights hence, bring the flesh of the Acolytes to the appointed place in the Capital, the saturation of the vessel is at hand. Go fool... NOW!</journal_entry>
+		</node>
+		<node type="event_simple" id="47" tag="clue triggered by blood">
+			<journal_entry>And then, suddenly, as the last of the two mentioned monsters blood hit the floor at your feet, you felt a rustling from within your pack. A quick inspection revealed the cryptic note to be changing before your eyes! The words rearranged themselves before your eyes to say:</journal_entry>
+		</node>
+		<node type="event_simple" id="46" tag="rune sfx / clue triggered by moonlight">
+			<journal_entry>You studied the strange and sinister clue you had located at the heart of the &quot;pyramid&quot; that was &quot;made&quot; by the camps of the three monsters mentioned in the Cryptic Note. As the moonlight began to bathe the area, you felt a rustling within your pack. A quick investigation showed the note moving and changing! Before your eyes, the words rearranged themselves to write:</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="24" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_merge" id="26" tag="Make your way to the capital">
+			<journal_entry>Finally, it seemed you had found a clue! And as far as sinister messages went, this one was sinister indeed! It seemed that it was time to make your way to the capital...</journal_entry>
+		</node>
+		<node type="event_simple" id="55" tag="">
+			<journal_entry>Only in Agon would I require a failsafe clue to take into account a brainless minion! By blood was it written, by blood revealed..in three nights hence, bring the flesh of the Acolytes to the appointed place in the Capital, the saturation of the vessel is at hand. Go fool... NOW!</journal_entry>
+		</node>
+		<node type="event_simple" id="31" tag="rune sfx / clue triggered by moonlight">
+			<journal_entry>You studied the strange and sinister clue you had located at the heart of the &quot;pyramid&quot; that was &quot;made&quot; by the camps of the three monsters mentioned in the Cryptic Note. As the moonlight began to bathe the area, you felt a rustling within your pack. A quick investigation showed the note moving and changing! Before your eyes, the words rearranged themselves to write:</journal_entry>
+			<actions>
+				<action type="start_client_sfx_on_player" id="22" tag="A Start Client SFX on Player Action" sfx_name="audio_2d_quest_item_activated" />
+			</actions>
+		</node>
+		<node type="event_simple" id="32" tag="clue triggered by blood">
+			<journal_entry>And then, suddenly, as the last of the three mentioned monsters blood hit the floor at your feet, you felt a rustling from within your pack. A quick inspection revealed the cryptic note to be changing before your eyes! The words rearranged themselves before your eyes to say:</journal_entry>
+		</node>
+		<node type="event_simple" id="41" tag="">
+			<journal_entry>Only in Agon would I require a failsafe clue to take into account a brainless minion! By blood was it written, by blood revealed..in three nights hence, bring the flesh of the Acolytes to the appointed place in the Capital, the saturation of the vessel is at hand. Go fool... NOW!</journal_entry>
+		</node>
+		<node type="event_simple" id="42" tag="">
+			<journal_entry>By bloody moonlight written, by bloodless moonlight revealed. Bring the Acolytes flesh to the appointed place within the capital. The saturation of the vessel is at hand! For he is dark and born of terror...</journal_entry>
+		</node>
+		<node type="event_simple" id="45" tag="Dvergheim: Rune at Night" optional_tasks="False">
+			<tasks>
+				<task type="interact_with_object" id="47" value="1" tag="Interact with Rune" resource_name="r_qt malaut rune" />
+				<task type="go_to_area" id="146" value="1" tag="A Go To Area Task" area_id="14" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="44" tag="Kill a troll and 2 salamander" optional_tasks="True">
+			<tasks>
+				<task type="kill_object" id="45" value="1" tag="Kill troll" resource_name="r_Trolls" quantity="5" />
+				<task type="kill_object" id="46" value="1" tag="Kill Salamander" resource_name="r_Salamanders" quantity="10" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="39" tag="">
+			<journal_entry>Nevertheless, the battle, as I recall, did yield some points of interest. The little fellows enraged shrieks about you and the other &quot;hoodily hidden tall ones&quot; killing in his domain definitely felt it belonged in the &quot;clue&quot; department. Added to that was a mysterious little note he kept angrily shaking at you that remained clutched in his fist long after he had succumbed to your &quot;gentle ministrations.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="61" tag="clue triggered by blood">
+			<journal_entry>And then, suddenly, as the last of the three mentioned monsters blood hit the floor at your feet, you felt a rustling from within your pack. A quick inspection revealed the cryptic note to be changing before your eyes! The words rearranged themselves before your eyes to say:</journal_entry>
+		</node>
+		<node type="event_simple" id="62" tag="">
+			<journal_entry>Only in Agon would I require a failsafe clue to take into account a brainless minion! By blood was it written, by blood revealed..in three nights hence, bring the flesh of the Acolytes to the appointed place in the Capital, the saturation of the vessel is at hand. Go fool... NOW!</journal_entry>
+		</node>
+		<node type="event_simple" id="63" tag="">
+			<journal_entry>By bloody moonlight written, by bloodless moonlight revealed. Bring the Acolytes flesh to the appointed place within the capital. The saturation of the vessel is at hand! For he is dark and born of terror...</journal_entry>
+		</node>
+		<node type="event_branch" id="64" tag="slay OR loot" optional_tasks="True">
+			<instruction>&apos;Interrogate&apos; a Goblin Warlord.</instruction>
+			<tasks>
+				<task type="kill_object" id="70" value="1" tag="kill goblin warlord" resource_name="r_Goblin Warlord" quantity="1" />
+				<task type="loot_object" id="72" value="2" tag="loot grave of goblin worlord" resource_name="r_Goblin Warlord" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="94" tag="loot">
+			<journal_entry>...and indeed, squeal it must have! But not, as it turns out, by your hand. Twas another&apos;s blade that did the deed, but the Goblin Warlord&apos;s corpse had clues enough to yield. Well, ok it had one, but my rhyme was fairly good no? A single letter written in pagan form:</journal_entry>
+		</node>
+		<node type="event_merge" id="66" tag="" />
+		<node type="event_simple" id="67" tag="">
+			<journal_entry>In the heart of Carpendale bathed in blood and sweat, a salamander, a brownie, and a kobold met, a pyramid they made in the blackest night, where inside there was a Greenroot cave, awash in the moon&apos;s bright light.</journal_entry>
+		</node>
+		<node type="event_simple" id="68" tag="">
+			<journal_entry>In the heart of Idawoll  bathed in blood and sweat, a troll, a salamander, and another troll met, a pyramid they made in the blackest night, where inside there was a volcano, awash in the moon&apos;s bright light.</journal_entry>
+		</node>
+		<node type="event_simple" id="69" tag="">
+			<journal_entry>In the heart of the Moon Plains bathed in blood and sweat, a salamander, a Sarnakh and another Salamander met, a pyramid they made in the blackest night, where inside there was a secluded grotto, awash in the moon&apos;s bright light.</journal_entry>
+		</node>
+		<node type="event_simple" id="70" tag="">
+			<journal_entry>In the heart of Firun bathed in blood and sweat, a salamander, a troll, and another troll met, a pyramid they made in the blackest night, where inside there was a caveclad trollish bust, awash in the moon&apos;s bright light.</journal_entry>
+		</node>
+		<node type="start_node" id="71" tag="Mahirim Start">
+			<conditions>
+				<condition type="quest_completion" id="17" value="1" tag="A Quest Completion Condition" quest_id="203" />
+				<condition type="in_area" id="23" value="1" tag="A Character Position Condition" area_id="63" />
+			</conditions>
+		</node>
+		<node type="start_node" id="72" tag="Ork Start">
+			<conditions>
+				<condition type="quest_completion" id="18" value="1" tag="A Quest Completion Condition" quest_id="203" />
+				<condition type="in_area" id="20" value="1" tag="A Character Position Condition" area_id="65" />
+			</conditions>
+		</node>
+		<node type="start_node" id="73" tag="Tovar Start">
+			<conditions>
+				<condition type="quest_completion" id="19" value="1" tag="A Quest Completion Condition" quest_id="203" />
+				<condition type="in_area" id="24" value="1" tag="A Character Position Condition" area_id="64" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="77" tag="slay">
+			<journal_entry>...and indeed, squeal it did! True to form, rather than enter a meaningful discourse and provide valuable information, the Goblin Warlord decided to go down the &quot;disembowel the longshanks&quot; approach! I am curious, now, in retrospect, did you actually think the vile little bag of putrid hostility would actually speak to you?</journal_entry>
+		</node>
+		<node type="event_simple" id="78" tag="">
+			<journal_entry>Nevertheless, the battle, as I recall, did yield some points of interest. The little fellows enraged shrieks about you and the other &quot;hoodily hidden tall ones&quot; killing in his domain definitely felt it belonged in the &quot;clue&quot; department. Added to that was a mysterious little note he kept angrily shaking at you that remained clutched in his fist long after he had succumbed to your &quot;gentle ministrations.&quot;</journal_entry>
+		</node>
+		<node type="event_branch" id="79" tag="slay OR loot" optional_tasks="True">
+			<instruction>&apos;Interrogate&apos; a Goblin Warlord.</instruction>
+			<tasks>
+				<task type="kill_object" id="73" value="1" tag="kill goblin warlord" resource_name="r_Goblin Warlord" quantity="1" />
+				<task type="loot_object" id="74" value="2" tag="loot grave of goblin worlord" resource_name="r_Goblin Warlord" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="80" tag="loot">
+			<journal_entry>...and indeed, squeal it must have! But not, as it turns out, by your hand. Twas another&apos;s blade that did the deed, but the Goblin Warlord&apos;s corpse had clues enough to yield. Well, ok it had one, but my rhyme was fairly good no? A single letter written in pagan form:</journal_entry>
+		</node>
+		<node type="event_merge" id="81" tag="" />
+		<node type="event_simple" id="82" tag="slay">
+			<journal_entry>...and indeed, squeal it did! True to form, rather than enter a meaningful discourse and provide valuable information, the Goblin Warlord decided to go down the &quot;disembowel the longshanks&quot; approach! I am curious, now, in retrospect, did you actually think the vile little bag of putrid hostility would actually speak to you?</journal_entry>
+		</node>
+		<node type="event_simple" id="83" tag="">
+			<journal_entry>Nevertheless, the battle, as I recall, did yield some points of interest. The little fellows enraged shrieks about you and the other &quot;hoodily hidden tall ones&quot; killing in his domain definitely felt it belonged in the &quot;clue&quot; department. Added to that was a mysterious little note he kept angrily shaking at you that remained clutched in his fist long after he had succumbed to your &quot;gentle ministrations.&quot;</journal_entry>
+		</node>
+		<node type="event_branch" id="84" tag="slay OR loot" optional_tasks="True">
+			<instruction>&apos;Interrogate&apos; a Goblin Warlord.</instruction>
+			<tasks>
+				<task type="kill_object" id="75" value="1" tag="kill goblin warlord" resource_name="r_Goblin Warlord" quantity="1" />
+				<task type="loot_object" id="76" value="2" tag="loot grave of goblin worlord" resource_name="r_Goblin Warlord" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="93" tag="loot">
+			<journal_entry>...and indeed, squeal it must have! But not, as it turns out, by your hand. Twas another&apos;s blade that did the deed, but the Goblin Warlord&apos;s corpse had clues enough to yield. Well, ok it had one, but my rhyme was fairly good no? A single letter written in pagan form:</journal_entry>
+		</node>
+		<node type="event_merge" id="86" tag="" />
+		<node type="event_simple" id="87" tag="slay">
+			<journal_entry>...and indeed, squeal it did! True to form, rather than enter a meaningful discourse and provide valuable information, the Goblin Warlord decided to go down the &quot;disembowel the longshanks&quot; approach! I am curious, now, in retrospect, did you actually think the vile little bag of putrid hostility would actually speak to you?</journal_entry>
+		</node>
+		<node type="event_simple" id="88" tag="">
+			<journal_entry>Nevertheless, the battle, as I recall, did yield some points of interest. The little fellows enraged shrieks about you and the other &quot;hoodily hidden tall ones&quot; killing in his domain definitely felt it belonged in the &quot;clue&quot; department. Added to that was a mysterious little note he kept angrily shaking at you that remained clutched in his fist long after he had succumbed to your &quot;gentle ministrations.&quot;</journal_entry>
+		</node>
+		<node type="event_branch" id="89" tag="slay OR loot" optional_tasks="True">
+			<instruction>&apos;Interrogate&apos; a Goblin Warlord.</instruction>
+			<tasks>
+				<task type="kill_object" id="77" value="1" tag="kill goblin warlord" resource_name="r_Goblin Warlord" quantity="1" />
+				<task type="loot_object" id="78" value="2" tag="loot grave of goblin worlord" resource_name="r_Goblin Warlord" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="92" tag="loot">
+			<journal_entry>...and indeed, squeal it must have! But not, as it turns out, by your hand. Twas another&apos;s blade that did the deed, but the Goblin Warlord&apos;s corpse had clues enough to yield. Well, ok it had one, but my rhyme was fairly good no? A single letter written in pagan form.</journal_entry>
+		</node>
+		<node type="event_merge" id="91" tag="" />
+		<node type="event_branch" id="95" tag="">
+			<journal_entry>Solve the riddle of the poem.</journal_entry>
+		</node>
+		<node type="event_branch" id="96" tag="">
+			<journal_entry>Solve the riddle of the poem.</journal_entry>
+		</node>
+		<node type="event_simple" id="97" tag="">
+			<journal_entry>Solve the riddle of the poem.</journal_entry>
+		</node>
+		<node type="event_simple" id="98" tag="">
+			<journal_entry>Solve the riddle of the poem.</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="137" from="72" to="79" value="1" />
+		<edge id="114" from="63" to="26" value="0" />
+		<edge id="166" from="80" to="81" value="0" />
+		<edge id="72" from="1" to="39" value="0" />
+		<edge id="180" from="96" to="16" value="0" />
+		<edge id="121" from="9" to="67" value="0" />
+		<edge id="110" from="60" to="63" value="0" />
+		<edge id="109" from="59" to="60" value="1" />
+		<edge id="133" from="11" to="70" value="0" />
+		<edge id="177" from="95" to="59" value="0" />
+		<edge id="102" from="56" to="26" value="0" />
+		<edge id="101" from="53" to="56" value="0" />
+		<edge id="185" from="97" to="51" value="0" />
+		<edge id="95" from="54" to="55" value="0" />
+		<edge id="92" from="49" to="26" value="0" />
+		<edge id="94" from="51" to="54" value="1" />
+		<edge id="91" from="46" to="49" value="0" />
+		<edge id="113" from="62" to="26" value="0" />
+		<edge id="50" from="16" to="31" value="1" />
+		<edge id="129" from="12" to="69" value="0" />
+		<edge id="100" from="52" to="53" value="1" />
+		<edge id="96" from="55" to="26" value="0" />
+		<edge id="84" from="47" to="48" value="0" />
+		<edge id="45" from="26" to="2" value="0" />
+		<edge id="78" from="32" to="41" value="0" />
+		<edge id="115" from="0" to="64" value="1" />
+		<edge id="80" from="31" to="42" value="0" />
+		<edge id="81" from="42" to="26" value="0" />
+		<edge id="112" from="61" to="62" value="0" />
+		<edge id="59" from="15" to="32" value="1" />
+		<edge id="79" from="41" to="26" value="0" />
+		<edge id="111" from="58" to="61" value="1" />
+		<edge id="90" from="45" to="46" value="1" />
+		<edge id="83" from="44" to="47" value="1" />
+		<edge id="183" from="69" to="97" value="0" />
+		<edge id="125" from="13" to="68" value="0" />
+		<edge id="85" from="48" to="26" value="0" />
+		<edge id="172" from="94" to="91" value="0" />
+		<edge id="140" from="78" to="81" value="0" />
+		<edge id="171" from="89" to="94" value="2" />
+		<edge id="164" from="77" to="78" value="0" />
+		<edge id="117" from="64" to="1" value="1" />
+		<edge id="119" from="39" to="66" value="0" />
+		<edge id="174" from="66" to="9" value="0" />
+		<edge id="181" from="96" to="15" value="0" />
+		<edge id="184" from="97" to="52" value="0" />
+		<edge id="186" from="68" to="98" value="0" />
+		<edge id="178" from="95" to="58" value="0" />
+		<edge id="165" from="79" to="80" value="2" />
+		<edge id="163" from="79" to="77" value="1" />
+		<edge id="144" from="71" to="84" value="1" />
+		<edge id="145" from="84" to="82" value="1" />
+		<edge id="146" from="82" to="83" value="0" />
+		<edge id="147" from="83" to="86" value="0" />
+		<edge id="170" from="93" to="86" value="0" />
+		<edge id="169" from="84" to="93" value="2" />
+		<edge id="151" from="73" to="89" value="1" />
+		<edge id="152" from="89" to="87" value="1" />
+		<edge id="153" from="87" to="88" value="0" />
+		<edge id="154" from="88" to="91" value="0" />
+		<edge id="168" from="92" to="66" value="0" />
+		<edge id="167" from="64" to="92" value="2" />
+		<edge id="173" from="81" to="11" value="0" />
+		<edge id="175" from="86" to="12" value="0" />
+		<edge id="176" from="91" to="13" value="0" />
+		<edge id="179" from="70" to="95" value="0" />
+		<edge id="182" from="67" to="96" value="0" />
+		<edge id="187" from="98" to="45" value="0" />
+		<edge id="188" from="98" to="44" value="0" />
+	</edges>
+	<quest_item item_id="0" tag="Mercian Note " image_locked="qc_204_note_locked.png" image_unlocked="qc_204_note_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Annoyingly Cryptic Note</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>In the heart of Mercia bathed in blood and sweat, a salamander, a brownie, and a kobold met, a pyramid they made in the blackest night, whose center was a Greenroot cave, awash in the moon&amp;amp;amp;apos;s bright light.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="2" tag="Dvergheim Note" image_locked="qc_204_note_locked.png" image_unlocked="qc_204_note_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Annoyingly Cryptic Note</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>In the heart of Dvergheim bathed in blood and sweat, a troll, a salamander, and another troll met, a pyramid they made in the blackest night, whose center was a volcano, awash in the moon&amp;amp;amp;apos;s bright light.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="3" tag="Tribelands Note" image_locked="qc_204_note_locked.png" image_unlocked="qc_204_note_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Annoyingly Cryptic Note</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>In the heart of the Tribelands bathed in blood and sweat, a salamander, a Sarnakh and another Salamander met, a pyramid they made in the blackest night, whose center was a secluded grotto, awash in the moon&amp;amp;amp;apos;s bright light.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="4" tag="Morak Note" image_locked="qc_204_note_locked.png" image_unlocked="qc_204_note_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Annoyingly Cryptic Note</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>In the heart of Morak bathed in blood and sweat, a salamander, a troll, and another troll met, a pyramid they made in the blackest night, whose center was a caveclad trollish bust, awash in the moon&amp;amp;amp;apos;s bright light.</description_unlocked>
+	</quest_item>
+	<node_locations>
+		<node_location id="0" x="47" y="276" />
+		<node_location id="1" x="225" y="239" />
+		<node_location id="2" x="1553" y="540" />
+		<node_location id="59" x="1048" y="38" />
+		<node_location id="56" x="1319" y="561" />
+		<node_location id="58" x="1020" y="160" />
+		<node_location id="60" x="1199" y="44" />
+		<node_location id="13" x="488" y="743" />
+		<node_location id="12" x="451" y="478" />
+		<node_location id="9" x="481" y="282" />
+		<node_location id="11" x="504" y="103" />
+		<node_location id="15" x="933" y="372" />
+		<node_location id="16" x="948" y="267" />
+		<node_location id="54" x="1131" y="600" />
+		<node_location id="53" x="1182" y="518" />
+		<node_location id="52" x="912" y="478" />
+		<node_location id="51" x="883" y="627" />
+		<node_location id="49" x="1263" y="703" />
+		<node_location id="48" x="1255" y="801" />
+		<node_location id="47" x="1126" y="801" />
+		<node_location id="46" x="1124" y="692" />
+		<node_location id="26" x="1464" y="546" />
+		<node_location id="55" x="1257" y="628" />
+		<node_location id="31" x="1149" y="295" />
+		<node_location id="32" x="1191" y="418" />
+		<node_location id="41" x="1312" y="469" />
+		<node_location id="42" x="1314" y="343" />
+		<node_location id="45" x="988" y="676" />
+		<node_location id="44" x="1014" y="816" />
+		<node_location id="39" x="287" y="241" />
+		<node_location id="61" x="1196" y="203" />
+		<node_location id="62" x="1333" y="227" />
+		<node_location id="63" x="1424" y="143" />
+		<node_location id="64" x="134" y="275" />
+		<node_location id="94" x="210" y="779" />
+		<node_location id="66" x="335" y="282" />
+		<node_location id="67" x="643" y="297" />
+		<node_location id="68" x="634" y="748" />
+		<node_location id="69" x="605" y="491" />
+		<node_location id="70" x="643" y="104" />
+		<node_location id="71" x="37" y="486" />
+		<node_location id="72" x="44" y="76" />
+		<node_location id="73" x="37" y="740" />
+		<node_location id="77" x="194" y="36" />
+		<node_location id="78" x="271" y="38" />
+		<node_location id="79" x="130" y="79" />
+		<node_location id="80" x="229" y="109" />
+		<node_location id="81" x="335" y="102" />
+		<node_location id="82" x="169" y="404" />
+		<node_location id="83" x="258" y="405" />
+		<node_location id="84" x="126" y="484" />
+		<node_location id="93" x="204" y="548" />
+		<node_location id="86" x="306" y="480" />
+		<node_location id="87" x="173" y="682" />
+		<node_location id="88" x="241" y="679" />
+		<node_location id="89" x="108" y="738" />
+		<node_location id="92" x="250" y="322" />
+		<node_location id="91" x="290" y="747" />
+		<node_location id="95" x="778" y="85" />
+		<node_location id="96" x="773" y="299" />
+		<node_location id="97" x="770" y="533" />
+		<node_location id="98" x="800" y="769" />
+	</node_locations>
+</quest>

@@ -1,0 +1,81 @@
+<!-- Client configuration -->
+<SFConfiguration>
+    <EnableQuickstart>
+		<SFBool Value="false"/>
+    </EnableQuickstart>
+    <ResolutionWidth>
+        <SFInteger Value="1600" />
+    </ResolutionWidth>
+    <ResolutionHeight>
+        <SFInteger Value="1200" />
+    </ResolutionHeight>
+    <EnableCharacterCreator>
+		<SFBool Value="true"/>
+    </EnableCharacterCreator>
+    <WorldDataFile>
+        <SFString Value="worlddata_client_eu1.xml" />
+    </WorldDataFile>
+    <WorldDataFileAI>
+        <SFString Value="worlddata_ai.xml" />
+    </WorldDataFileAI>
+    <UserName>
+        <SFString Value="Anonymous" />
+    </UserName>
+	<UseDynamicLoading>
+		<SFBool Value="true"/>
+	</UseDynamicLoading>
+    <ActiveZone>
+        <SFString Value="Agon" />
+    </ActiveZone>
+    <UseGUI>
+        <SFBool Value="TRUE" />
+    </UseGUI>
+    <Standalone>
+        <SFBool Value="FALSE" />
+    </Standalone>
+    <UseSeveralObjectSpaceManagers>
+        <SFBool Value="false" />
+    </UseSeveralObjectSpaceManagers>
+    <CreateAIObjectSpaceManager>
+        <SFBool Value="false" />
+    </CreateAIObjectSpaceManager>
+    <WorldBuilderMode>
+        <SFBool Value="FALSE" />
+    </WorldBuilderMode>
+    <WriteCharacterToFile>
+        <SFBool Value="FALSE" />
+    </WriteCharacterToFile>
+    <CreateClientObjects>
+        <SFBool Value="TRUE" />
+    </CreateClientObjects>
+    <GuiFullDebugSuppress>
+        <SFBool Value="false" />
+    </GuiFullDebugSuppress>
+    <Yield>
+        <SFBool Value="FALSE" />
+    </Yield>
+    <TestPhysicalObjectGUID>
+        <SFString Value="[3, 2001, 10017]" />
+    </TestPhysicalObjectGUID>
+    <TestWorldObjectGUID>
+        <SFString Value="[3, 2001, 10018]" />
+    </TestWorldObjectGUID>
+    <GuiDump2DRequests>
+        <SFBool Value="FALSE" />
+    </GuiDump2DRequests>
+    <UseEnvironmentSystem>
+        <SFBool Value="true" />
+    </UseEnvironmentSystem>
+    <UseEnvironmentConstantTime>
+        <SFBool Value="TRUE" />
+    </UseEnvironmentConstantTime>
+    <EnvironmentConstantTimeValue>
+        <SFDouble Value="9.0" />
+    </EnvironmentConstantTimeValue>
+  <EnvironmentDefaultConfig>
+    <SFString Value="human_test.xml"/>
+  </EnvironmentDefaultConfig>
+  <EnvironmentRealsSecondsInGametimeSeconds>
+    <SFInteger Value="8"/> <!-- 3 hours day -->
+  </EnvironmentRealsSecondsInGametimeSeconds>
+</SFConfiguration>

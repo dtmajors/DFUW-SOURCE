@@ -1,0 +1,33 @@
+<quest quest_id="407" category="lore_quest" tag="Lead 06">
+	<nodes>
+		<node type="start_node" id="0" tag="" />
+		<node type="event_simple" id="1" tag="Loot the Doombringer">
+			<tasks>
+				<task type="loot_object" id="0" value="1" tag="Loot Doombringers Grave" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Receive Lens">
+			<actions>
+				<action type="give_item_to_player" id="0" tag="Add the Lens" resource_name="" quantity="0" inventory_type="None" />
+			</actions>
+		</node>
+		<node type="end_node" id="3" tag="" />
+		<node type="event_simple_conditional" id="4" tag="Interact with Crystals" optional_tasks="True">
+			<conditions>
+				<condition type="item_possession" id="0" value="5" tag="Have Lens" resource_name="" quantity="0" inventory_type="None" />
+			</conditions>
+			<tasks>
+				<task type="interact_with_object" id="1" value="1" tag="An Interact With Object Task" resource_name="" />
+				<task type="interact_with_object" id="2" value="2" tag="An Interact With Object Task" resource_name="" />
+				<task type="interact_with_object" id="3" value="3" tag="An Interact With Object Task" resource_name="" />
+				<task type="interact_with_object" id="4" value="4" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+		<edge id="2" from="2" to="4" value="0" />
+		<edge id="3" from="4" to="3" value="0" />
+	</edges>
+</quest>

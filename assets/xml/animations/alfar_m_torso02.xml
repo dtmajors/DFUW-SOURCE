@@ -1,0 +1,168 @@
+<SFObject>
+    <GameInfo>
+        <ResourceType Value="r_Props" />
+    </GameInfo>
+    <OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+    <RenderInformation>
+        <ObjectType>
+            <SFString Value="ANIMATEDOBJECT" />
+        </ObjectType>
+        <FileName>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+                <MultiSet>
+                    <SFBool Value="true" />
+                </MultiSet>
+            </ActiveVersion>
+            <Low>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.x" />
+            </Low>
+            <Normal>
+                <SFBool Value="FALSE" />
+                <Meshes>
+                    <NumberOfSets>
+                        <SFInteger Value="1" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="alfar_m_torso02.sfam" />
+                    </Set0>
+                </Meshes>
+                <Animations>
+                    <NumberOfSets>
+                        <SFInteger Value="4" />
+                    </NumberOfSets>
+                    <Set0>
+                        <SFString Value="alfar_m_emotes.sfas" />
+                    </Set0>
+                    <Set1>
+                        <SFString Value="alfar_m_mounts.sfas" />
+                    </Set1>
+                    <Set2>
+                        <SFString Value="alfar_m_primary.sfas" />
+                    </Set2>
+                    <Set3>
+                        <SFString Value="alfar_m_secondary.sfas" />
+                    </Set3>
+                </Animations>
+                <SFBool Value="FALSE" />
+                <SFBool Value="FALSE" />
+            </Normal>
+            <High>
+                <SFBool Value="FALSE" />
+                <SFString Value="template.lx" />
+            </High>
+        </FileName>
+        <Shaders>
+            <NumberOfSubsets>
+                <SFInteger Value="0" />
+            </NumberOfSubsets>
+            <DefaultTextures>
+                <Subset0>
+                    <Texture0>
+                        <SFString Value="" />
+                    </Texture0>
+                </Subset0>
+            </DefaultTextures>
+            <ActiveVersion>
+                <SFString Value="Normal" />
+            </ActiveVersion>
+            <Normal>
+                <GlobalShader>
+                    <SFBool Value="TRUE" />
+                    <SFString Value="ShaderAnim.xml" />
+                </GlobalShader>
+                <SubsetShaders>
+                    <Shader1>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader1>
+                    <Shader2>
+                        <SFString Value="DefaultShader.XML" />
+                        <SFInteger Value="1" />
+                    </Shader2>
+                </SubsetShaders>
+            </Normal>
+        </Shaders>
+        <AnimationInformation>
+            <NumberOfSets>
+                <SFInteger Value="1" />
+            </NumberOfSets>
+            <AnimationSet0>
+                <SetName>
+                    <SFString Value="Idle" />
+                </SetName>
+                <SetFile>
+                    <SFString Value="SF_DEFAULT" />
+                </SetFile>
+            </AnimationSet0>
+        </AnimationInformation>
+        <VisibilityInformation>
+            <BoundingInformation>
+                <BoundingBox>
+                    <Min>
+                        <SFVector3 X="-.3257889748" Y=".8576086164" Z="-.3551869392" />
+                    </Min>
+                    <Max>
+                        <SFVector3 X=".3259756267" Y="1.5093733072" Z=".2965776920" />
+                    </Max>
+                </BoundingBox>
+                <BoundingSphere>
+                    <Center>
+                        <SFVector3 X=".933353" Y="1.1834908724" Z="-.293046311" />
+                    </Center>
+                    <Radius>
+                        <SFFloat Value=".3258823156" />
+                    </Radius>
+                </BoundingSphere>
+                <SubsetInformation />
+            </BoundingInformation>
+        </VisibilityInformation>
+    </RenderInformation>
+    <PhysicsInformation>
+        <PhysicsObjectType Value="Character" />
+        <WaterTransition>
+            <Submerged Value="0.26070585248" />
+            <Surface Value="0.13035292624" />
+            <Touching Value="-0.19552938936" />
+        <Floating Value="0.19552938936" /></WaterTransition>
+    </PhysicsInformation>
+    <VersionInformation Major="1" Minor="0" />
+    <MassCenter>
+        <SFVector3 X=".0000000000" Y=".0000000000" Z=".0000000000" />
+    </MassCenter>
+    <CollisionInformation>
+        <CollisionModelInformation>
+            <StaticScheme>
+                <Type Value="SFSPHERECOLLISIONSCHEME" />
+                <FileName Value="alfar_m_torso02.sfamSFSPHERECOLLISIONSCHEME.sfc" />
+            </StaticScheme>
+            <DynamicScheme>
+                <Type Value="SFSPHERECOLLISIONSCHEME" />
+                <FileName Value="alfar_m_torso02.sfamSFSPHERECOLLISIONSCHEME.sfc" />
+            </DynamicScheme>
+            <AnimatedInfluenceScheme>
+                <Type Value="SFDUMMYCOLLISIONSCHEME" />
+                <FileName Value="alfar_m_torso02.sfamSFDUMMYCOLLISIONSCHEME.sfc" />
+            </AnimatedInfluenceScheme>
+        </CollisionModelInformation>
+        <BoundingInformation>
+            <BoundingBox>
+                <Min>
+                    <SFVector3 X="-.3257889748" Y=".8576085567" Z="-.3551869392" />
+                </Min>
+                <Max>
+                    <SFVector3 X=".3259756565" Y="1.5093731880" Z=".2965776920" />
+                </Max>
+            </BoundingBox>
+            <BoundingSphere>
+                <Center>
+                    <SFVector3 X=".933353" Y="1.1834908724" Z="-.293046311" />
+                </Center>
+                <Radius>
+                    <SFFloat Value=".3258823156" />
+                </Radius>
+            </BoundingSphere>
+        </BoundingInformation>
+    </CollisionInformation>
+</SFObject>

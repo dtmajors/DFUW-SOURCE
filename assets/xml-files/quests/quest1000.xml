@@ -1,0 +1,46 @@
+<quest quest_id="1000" category="rumor_quest" tag="Broken Sword" published="False" valid="True">
+	<title>Broken Sword</title>
+	<description>The ancient myth of an Alfari leader, betrayed and cursed forever to roam the land as a creature of undeath. Until one day, his blade was to be forged anew...</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="object_interaction" id="4" value="1" tag="An Object Interaction Condition" resource_name="r_qt book alfar myths" />
+			</conditions>
+		</node>
+		<node type="end_node" id="1" tag="" />
+		<node type="event_simple" id="3" tag="">
+			<journal_entry>The very last man to fall was no other than Eladron himself. As his body fell to the earth he muttered a curse, &quot;Death..... Death to all those who slay my men. Vengeance will reign supreme and I shall be the victor.&quot; As his flickering light began to grow ever so dimm he heard a soft voice that resonated through his head like an earthquake. Was this real? he asked himself, or is this Death&apos;s grasp.</journal_entry>
+		</node>
+		<node type="event_simple" id="4" tag="">
+			<journal_entry>Several hundred years ago there was an exulted leader named Armaur. He lead continuous successful battles on the Alfari nations. He never would have suspected that one of his most trusted squires had been working in the shadows, feeding the enemy intel. When the day came for what would be his last fight he and his men were setting up a small camp to rest off the stress of the long trip behind and the long trip ahead. He and his men set up camp next to a stream. His squire had prior knowledge of this camp and informed the enemy of this. as they lay resting the enemy drew nearer and nearer........ AMBUSH! his men cried, as they perished in droves.</journal_entry>
+		</node>
+		<node type="event_simple" id="5" tag="">
+			<journal_entry>A traveling merchant by the name of $[Vendors.p21_wilderness_merchant_Name] had more information about this tale.</journal_entry>
+			<tasks>
+				<task type="receive_quest" id="1" value="1" tag="A Receive Quest Task" quest_id="1001" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>The voice called again and this time he heard. The voice was saying &quot;Give me your will! Give me your will and the vengeance you seek will be granted. He, without hesitation shouted out. &quot;My will is yours to take!&quot; The voice spoke once more and this time it grew louder. &quot;There is a price,&quot; the voice said. &quot;If you accept this your soul will roam this land until one day someone lays you to rest&quot;. &quot;I accept,&quot; he cried out!.</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>A darkness fell upon him, he felt as if he were gaining strength, but for those who lay witness as his body were lifted off the ground and this cloud of black filled his body that, he was losing his mortality. Everything that once made him a man of honor and respect had been sucked out of him and replaced with a blind rage and vengeance, these powers were so Unholy that when his hand came into contact with his once blessed blade the &quot;Syrdarian the Honourbound&quot; it was instantly corrupted and broke into. His eyes turned from the lightless colors of death to a crimson red as he swept through the Alfari army as if it were a sickle through wheat. The nearby river now ran with blood giving it a gruesome nickname to this day, &quot;The Crimson River&quot;.</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>It is said that his deceptive squire picked up the broken tip of his once holy sword and keeps it as a reminder of his victory, Until one day the weapon can be refused and used as a weapon for evil? Or perhaps a weapon for good..... Only time will tell.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="add character's name here">
+			<journal_entry>Written by Lord Lucifer</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="2" from="0" to="4" value="1" />
+		<edge id="6" from="3" to="6" value="0" />
+		<edge id="3" from="4" to="3" value="0" />
+		<edge id="5" from="5" to="1" value="1" />
+		<edge id="7" from="6" to="7" value="0" />
+		<edge id="8" from="7" to="8" value="0" />
+		<edge id="10" from="8" to="9" value="0" />
+		<edge id="11" from="9" to="5" value="0" />
+	</edges>
+</quest>

@@ -1,0 +1,146 @@
+<SFShader>
+	<Version_Info Minor="2" Major="0"/>
+	<Description>
+		<SFString Value="Shader For Terrain NEW"/>
+	</Description>
+
+	<Shader>
+		<RenderEffect>
+			<SFString Value="terrain_edit.teq"/>
+		</RenderEffect>
+		<Restrictions>
+			<AllowSoftware>
+				<SFBool Value="FALSE"/>
+			</AllowSoftware>
+			<AllowDynamicQuality>
+				<SFBool Value="FALSE"/>
+			</AllowDynamicQuality>
+		</Restrictions>
+		<TechniqueMapping>
+			<MaxTechnique>
+				<SFInteger Value="0"/>
+			</MaxTechnique>
+			<MinTechnique>
+				<SFInteger Value="0"/>
+			</MinTechnique>
+			<DefaultTechnique>
+				<SFInteger Value="0"/>
+			</DefaultTechnique>
+		</TechniqueMapping>
+		<Requirements>
+			<ReqTexture>
+				<SFBool Value="TRUE"/>
+			</ReqTexture>
+			<ReqMesh>
+				<SFBool Value="FALSE"/>
+			</ReqMesh>
+		</Requirements>
+                
+<!--
+                <TextureReqs>
+			<NumberOfTextures>
+				<SFInteger Value="1"/>
+			</NumberOfTextures>
+			<Texture0>
+				<SFString Value="SF_DEFAULT"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture0>
+                </TextureReqs>
+-->
+                  
+
+
+<!--
+
+0: Mud/dirt
+1: Sand
+2: Pebbles
+3: Grass normal
+4: Grass yellow
+5: Burned ground
+6: Rock light
+7: Stone tiles 01
+
+-->
+
+<!-- -->
+		<TextureReqs>
+
+                        <NumberOfTextures>
+				<SFInteger Value="8"/>
+			</NumberOfTextures>
+                        
+			<Texture0>
+				<SFString Value="01_tex_terrain_mud_dry01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture0>
+                        
+			<Texture1>
+				<SFString Value="20_tex_terrain_sand-medium01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture1>
+                        
+                        <Texture2>
+				<SFString Value="15_tex_terrain_pebbles-medium01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture2>
+                        
+                        <Texture3>
+				<SFString Value="08_tex_terrain_grass_green-light01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture3>
+                        
+                        <Texture4>
+				<SFString Value="11_tex_terrain_grass_yellow01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture4>
+                        
+                        <Texture5>
+				<SFString Value="44_tex_terrain_burned-ground01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture5>
+                        
+                        <Texture6>
+				<SFString Value="31_tex_terrain_rock-dark01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture6>
+                        
+                        <Texture7>
+				<SFString Value="50_tex_terrain_stone-tiles01.dds"/>
+				<TextureType>
+					<SFString Value="SF2DTEXTURE"/>
+				</TextureType>
+			</Texture7>
+		</TextureReqs>
+<!-- -->
+                
+		<MeshReqs>
+			<NumberOfMeshes>
+				<SFInteger Value="0"/>
+			</NumberOfMeshes>
+			<GlobalMeshReq>
+				<SFBool Value="TRUE"/>
+			</GlobalMeshReq>
+		</MeshReqs>
+		<ShaderPool>
+			<SFString Value="SF_OUTDOOR_POOL"/>
+			<SFInteger Value="1"/>
+		</ShaderPool>
+	</Shader>
+</SFShader>

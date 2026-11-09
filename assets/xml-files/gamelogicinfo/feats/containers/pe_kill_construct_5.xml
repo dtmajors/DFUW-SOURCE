@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="5"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Constructs"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="true" Key="r_Constructs" Value="5"/>
+  <Rewards>
+    <Item Name="pe_kill_construct_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_black_knight_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_firescourge_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_golem_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_orb_30" Type="UNLOCK_FEAT"/>
+    <Item Name="pe_kill_stone_construct_30" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

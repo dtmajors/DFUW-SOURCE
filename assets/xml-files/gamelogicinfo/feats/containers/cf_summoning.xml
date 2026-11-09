@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="true"/>
+   <ShowOnGUI Value="true"/> 				  
+	  	
+	  <Trigger Type="CRAFTING"> 
+		    <Failure Value="false"/>						
+		    <SkillName Value="s_Crafting Skills"/> 
+      <!-- NOT OPTIONAL -->			
+		<ResourceName Value="r_Mounts"/>  
+      <!-- OPTIONAL   -->
+		<Counter Value="2"/>         
+      <!-- NOT OPTIONAL -->
+	</Trigger>		
+	  <Points Dynamic="true" Value="" Key="r_Mounts"/>	
+	  <Rewards> 					  
+		    <Item Type="UNLOCK_FEAT" Name="cf_summoning_standard"/>
+		    <Item Type="UNLOCK_FEAT" Name="cf_summoning_mastery"/>
+	  </Rewards>			
+</Feat>

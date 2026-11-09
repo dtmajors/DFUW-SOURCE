@@ -1,0 +1,145 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "windswing.frag"
+#include "texture.frag"
+
+#include "instancing.frag"
+#include "ssao.frag"
+#include "lighting.frag"
+
+#include "offscreenfx.frag"
+
+bool InstancingShader : REInfoInstanceShader = true;
+int InstanceVersion : REInfoInstanceType  = INSTANCE_WORLDMAT_DIFFUSE;
+
+//float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float2 Tex  : TEXCOORD0;
+	float4 ClipSpace : TEXCOORD1;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float4 Diff : COLOR0;
+    float2 Tex	: TEXCOORD0;
+	//Instancing data	
+	float4 DiffuseMaterialColor : COLOR1;
+	float4 WMat1 : TEXCOORD5;
+	float4 WMat2 : TEXCOORD6;
+	float4 WMat3 : TEXCOORD7;
+	float4 WMat4 : TEXCOORD8;
+};
+
+bool Transparent : REInfoTransparent = true;
+
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+	SFMatrix WMat;
+	WMat[0] = Input.WMat1;
+	WMat[1] = Input.WMat2;
+	WMat[2] = Input.WMat3;
+	WMat[3] = Input.WMat4;
+	
+	
+	float3 NewPos = Input.Pos.xyz / Input.Pos.w;
+
+#ifdef SHADER_CFG_ROTATE
+	NewPos = SFVectorRotateY(NewPos, TOTAL_TIME * SHADER_CFG_ROTATE_SPEED);
+#endif // SHADER_CFG_ROTATE
+	
+	float4 Pos = float4(NewPos,1.0f);
+
+	float4 DiffMaterial = Input.DiffuseMaterialColor;
+
+    SFMatrix WVP = mul(WMat,VIEW_PROJECTION_MATRIX);
+
+   
+    Out.Pos  = mul(Pos, WVP);             // position (projected)
+
+    
+    Out.Diff = DiffMaterial;
+    Out.Diff.w = (Input.Diff.g)*DiffMaterial.w;
+    
+    //float Scale = 1.0f + Input.Diff.g*SIN_TIME;
+    
+	Out.Tex = Input.Tex;
+    
+#if defined(SHADER_CFG_MESH_EXPLOTION_CCW)
+    Out.Tex.y  = Input.Tex.y + frac(TOTAL_TIME*MESH_EXPLOTION_CYCLE_SPEED_CCW);
+#elif defined(SHADER_CFG_MESH_EXPLOTION_CW)
+	Out.Tex.y  = Input.Tex.y + frac(TOTAL_TIME*MESH_EXPLOTION_CYCLE_SPEED_CW);
+#else
+	Out.Tex.y  = Input.Tex.y + frac(TOTAL_TIME*MESH_EXPLOTION_CYCLE_SPEED);
+#endif
+
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+	Out.ClipSpace = Out.Pos;
+
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+	float4 Color = (float4)0;
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	Color = BaseTex * Input.Diff;
+	Color = lerp(Color,0,Input.Fog);
+	
+	Out.Color = Color;
+	//Out.Effect = 0.0f;
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_NO_EFFECT;
+#endif	
+	
+	// OffscreenFX
+	Out.Color = ProcessOffscreenFXColor(Out.Color, Input.ClipSpace);
+	
+	return Out;
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+   
+    
+    
+		ColorWriteEnable = RED|BLUE|GREEN;
+
+        AlphaBlendEnable = true;
+        AlphaTestEnable = false;
+        SrcBlend = SrcAlpha;
+        DestBlend = One;//InvSrcAlpha;
+        
+        ZEnable = true;
+		ZWriteEnable = false;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+
+    }
+}

@@ -1,0 +1,408 @@
+<quest quest_id="303" category="lore_quest" tag="Physical Trials" published="False" valid="True">
+	<title>Trial of the Body</title>
+	<description>The Orkish peoples possess a wonderfully simple and pure spiritual ideology. Good body, good soul.  Test the body, reveal the soul.  Thus, this set of tests would seek to test your prowess and endurance on the field.  The process was threefold.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="301" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="resist 600 points of dmg">
+			<instruction>Complete the Psysical Trials</instruction>
+			<journal_entry>The dead had surely vented some of their rage now.  You battered and bruised frame was testament enough to that!</journal_entry>
+			<tasks>
+				<task type="take_damage_from" id="8" value="1" tag="A Take Damage from Object Task" magnitude="600" resource_name="r_Skeletons">
+					<task_instruction>Resist 600 point of damage from skeletons</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="2" tag="Checkpoint 01">
+			<instruction>Complete the Flaming Path in time</instruction>
+			<conditions>
+				<condition type="remaining_time" id="1" value="2" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="2" value="1" tag="checkpoint 1" area_id="20">
+					<task_instruction>Reach checkpoint 01 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="0" tag="Race Marker 01" world_x="4995" world_z="4032" />
+				<action type="start_client_sfx_at_location" id="1" tag="Checkpoint Effect 01" sfx_name="se_race_waypoint_01" world_x="4995" world_y="238" world_z="4032" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="3" tag="Checkpoint 02">
+			<conditions>
+				<condition type="remaining_time" id="2" value="2" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="3" value="1" tag="checkpoint 2" area_id="21">
+					<task_instruction>Reach checkpoint 02 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="2" tag="Checkpoint 02" world_x="5470" world_z="3927" />
+				<action type="start_client_sfx_at_location" id="3" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="5470" world_y="217" world_z="3927" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="13" tag="Checkpoint 04">
+			<conditions>
+				<condition type="remaining_time" id="4" value="2" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="6" value="1" tag="checkpoint 2" area_id="23">
+					<task_instruction>Reach checkpoint 04 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="8" tag="Checkpoint 02" world_x="5647" world_z="3355" />
+				<action type="start_client_sfx_at_location" id="9" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="5647" world_y="220" world_z="3355" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="12" tag="Checkpoint 06">
+			<conditions>
+				<condition type="remaining_time" id="6" value="2" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="5" value="1" tag="checkpoint 2" area_id="25">
+					<task_instruction>Reach checkpoint 06 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="6" tag="Checkpoint 02" world_x="5746" world_z="2323" />
+				<action type="start_client_sfx_at_location" id="7" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="5746" world_y="218" world_z="2323" />
+			</actions>
+		</node>
+		<node type="event_simple" id="6" tag="Gather 10 Troll's Heads">
+			<instruction>Complete the Psysical Trials</instruction>
+			<journal_entry>The trollish heads bounced around the sack you had stuffed them in, growling and nipping at each other as they stubbornly held onto their mortal coils.</journal_entry>
+			<tasks>
+				<task type="gather_items" id="1" value="1" tag="Ten Troll's Heads" resource_name="r_Troll Head" quantity="10" inventory_type="Backpack">
+					<task_instruction>Gather 10 Troll Heads</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="11" tag="Checkpoint 03">
+			<conditions>
+				<condition type="remaining_time" id="3" value="2" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="4" value="1" tag="checkpoint 2" area_id="22">
+					<task_instruction>Reach checkpoint 03 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="4" tag="Checkpoint 02" world_x="5062" world_z="3484" />
+				<action type="start_client_sfx_at_location" id="5" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="5062" world_y="221" world_z="3484" />
+			</actions>
+		</node>
+		<node type="event_join" id="8" tag="reward?" />
+		<node type="event_simple" id="9" tag="empty node" />
+		<node type="end_node" id="10" tag="" />
+		<node type="event_simple_conditional" id="14" tag="Checkpoint 05">
+			<conditions>
+				<condition type="remaining_time" id="5" value="2" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="7" value="1" tag="checkpoint 2" area_id="24">
+					<task_instruction>Reach checkpoint 05 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="10" tag="Checkpoint 02" world_x="5700" world_z="2834" />
+				<action type="start_client_sfx_at_location" id="11" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="5700" world_y="247" world_z="2834" />
+			</actions>
+		</node>
+		<node type="event_merge" id="15" tag="start race?">
+			<instruction>Are you ready to tackle the Flaming Path?</instruction>
+			<tasks>
+				<task type="choose" id="9" value="1" tag="ready" reward_node_id="-1">
+					<task_instruction>Yes</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_merge" id="16" tag="time runned out">
+			<instruction>You were not quite swift enough for Orkish Justice.  Try again!</instruction>
+			<tasks>
+				<task type="choose" id="21" value="1" tag="A Choose Option Task" reward_node_id="-1">
+					<task_instruction>Yes</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple_conditional" id="17" tag="Checkpoint 07">
+			<conditions>
+				<condition type="remaining_time" id="7" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="10" value="2" tag="checkpoint 2" area_id="26">
+					<task_instruction>Reach checkpoint 07 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="12" tag="Checkpoint 02" world_x="5550" world_z="2232" />
+				<action type="start_client_sfx_at_location" id="13" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="5550" world_y="240" world_z="2232" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="18" tag="Checkpoint 08">
+			<conditions>
+				<condition type="remaining_time" id="8" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="11" value="2" tag="checkpoint 2" area_id="27">
+					<task_instruction>Reach checkpoint 08 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="14" tag="Checkpoint 02" world_x="4800" world_z="2330" />
+				<action type="start_client_sfx_at_location" id="15" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="4800" world_y="272" world_z="2330" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="19" tag="Checkpoint 09">
+			<conditions>
+				<condition type="remaining_time" id="9" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="12" value="2" tag="checkpoint 2" area_id="28">
+					<task_instruction>Reach checkpoint 09 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="16" tag="Checkpoint 02" world_x="4939" world_z="2940" />
+				<action type="start_client_sfx_at_location" id="17" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="4939" world_y="245" world_z="2940" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="20" tag="Checkpoint 16">
+			<conditions>
+				<condition type="remaining_time" id="10" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="13" value="2" tag="checkpoint 2" area_id="35">
+					<task_instruction>Reach checkpoint 16 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="18" tag="Checkpoint 02" world_x="4229" world_z="3871" />
+				<action type="start_client_sfx_at_location" id="19" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="4229" world_y="377" world_z="3871" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="21" tag="Checkpoint 12">
+			<conditions>
+				<condition type="remaining_time" id="11" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="14" value="2" tag="checkpoint 2" area_id="31">
+					<task_instruction>Reach checkpoint 12 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="20" tag="Checkpoint 02" world_x="3776" world_z="2354" />
+				<action type="start_client_sfx_at_location" id="21" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="3776" world_y="383" world_z="2354" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="22" tag="Checkpoint 14">
+			<conditions>
+				<condition type="remaining_time" id="12" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="15" value="2" tag="checkpoint 2" area_id="33">
+					<task_instruction>Reach checkpoint 14 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="22" tag="Checkpoint 02" world_x="3605" world_z="3547" />
+				<action type="start_client_sfx_at_location" id="23" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="3605" world_y="318" world_z="3547" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="23" tag="Checkpoint 15">
+			<conditions>
+				<condition type="remaining_time" id="13" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="16" value="2" tag="checkpoint 2" area_id="34">
+					<task_instruction>Reach checkpoint 15 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="24" tag="Checkpoint 02" world_x="3361" world_z="3935" />
+				<action type="start_client_sfx_at_location" id="25" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="3361" world_y="298" world_z="3935" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="24" tag="Checkpoint 17">
+			<conditions>
+				<condition type="remaining_time" id="14" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="17" value="2" tag="checkpoint 2" area_id="19">
+					<task_instruction>Reach checkpoint 17 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="26" tag="Checkpoint 02" world_x="4641.239" world_z="3611.956" />
+				<action type="start_client_sfx_at_location" id="27" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="4641.239" world_y="252" world_z="3611.956" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="25" tag="Checkpoint 13">
+			<conditions>
+				<condition type="remaining_time" id="15" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="18" value="2" tag="checkpoint 2" area_id="32">
+					<task_instruction>Reach checkpoint 13 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="28" tag="Checkpoint 02" world_x="3300" world_z="2910" />
+				<action type="start_client_sfx_at_location" id="29" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="3300" world_y="244" world_z="2910" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="26" tag="Checkpoint 11">
+			<conditions>
+				<condition type="remaining_time" id="16" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="19" value="2" tag="checkpoint 2" area_id="30">
+					<task_instruction>Reach checkpoint 11 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="30" tag="Checkpoint 02" world_x="4299" world_z="2337" />
+				<action type="start_client_sfx_at_location" id="31" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="4299" world_y="292" world_z="2337" />
+			</actions>
+		</node>
+		<node type="event_simple_conditional" id="27" tag="Checkpoint 10">
+			<conditions>
+				<condition type="remaining_time" id="17" value="1" tag="A Time Remaining Condition" timer_length="60" />
+			</conditions>
+			<tasks>
+				<task type="go_to_area" id="20" value="2" tag="checkpoint 2" area_id="29">
+					<task_instruction>Reach checkpoint 10 in time</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="show_map_marker" id="32" tag="Checkpoint 02" world_x="4373" world_z="2826" />
+				<action type="start_client_sfx_at_location" id="33" tag="Checkpoint 02" sfx_name="se_race_waypoint_01" world_x="4373" world_y="265" world_z="2826" />
+			</actions>
+		</node>
+		<node type="event_simple" id="28" tag="kill success" />
+		<node type="event_simple" id="29" tag="resist success" />
+		<node type="event_simple" id="30" tag="flamming path success">
+			<journal_entry>The growls and roars of the various denizens who lurked along the flaming path slowly died away as you leapt through the final checkpoint in time.</journal_entry>
+		</node>
+		<node type="event_simple" id="31" tag="">
+			<journal_entry>The trolls that haunted the lands nearby have been responsible for many a crushed Orkish skull.  You would need to collect 10 of their own in return.</journal_entry>
+		</node>
+		<node type="event_simple" id="32" tag="">
+			<journal_entry>The bones of the recently slain did walk the lands, ever restless. You would need to help them gain some measure of peace by allowing them to vent their undead frustrations upon your mortal frame.</journal_entry>
+		</node>
+		<node type="event_simple" id="33" tag="">
+			<journal_entry>Finally, there was the Flaming Path.  A gauntlet of harrowing perseverance that only the hardiest (and thus purest) could survive.</journal_entry>
+		</node>
+		<node type="event_simple" id="34" tag="">
+			<journal_entry>And thus, you completed the last of the Trials of the Body with your own mortal frame battered and bruised.  You hoped this was pain enough to redeem you in the eyes of the Fist!</journal_entry>
+		</node>
+		<node type="event_simple" id="35" tag="empty node" />
+		<node type="event_merge" id="36" tag="skin troll">
+			<tasks>
+				<task type="use_skill_on" id="22" value="1" tag="A Use Skill On Object Task" resource_name="r_Trolls" skill_name="s_Skinning_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="37" tag="give item">
+			<actions>
+				<action type="give_item_to_player" id="34" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Troll Head" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="56" from="0" to="31" value="1" />
+		<edge id="2" from="9" to="1" value="0" />
+		<edge id="13" from="9" to="15" value="0" />
+		<edge id="62" from="9" to="35" value="0" />
+		<edge id="5" from="2" to="3" value="1" />
+		<edge id="17" from="11" to="16" value="2" />
+		<edge id="16" from="3" to="16" value="2" />
+		<edge id="15" from="2" to="16" value="2" />
+		<edge id="14" from="15" to="2" value="1" />
+		<edge id="50" from="6" to="28" value="1" />
+		<edge id="51" from="1" to="29" value="1" />
+		<edge id="60" from="8" to="34" value="0" />
+		<edge id="18" from="13" to="16" value="2" />
+		<edge id="19" from="14" to="16" value="2" />
+		<edge id="20" from="12" to="16" value="2" />
+		<edge id="21" from="16" to="15" value="1" />
+		<edge id="22" from="3" to="11" value="1" />
+		<edge id="23" from="11" to="13" value="1" />
+		<edge id="24" from="13" to="14" value="1" />
+		<edge id="25" from="14" to="12" value="1" />
+		<edge id="27" from="12" to="17" value="1" />
+		<edge id="28" from="17" to="18" value="2" />
+		<edge id="29" from="18" to="19" value="2" />
+		<edge id="30" from="19" to="27" value="2" />
+		<edge id="31" from="27" to="26" value="2" />
+		<edge id="32" from="26" to="21" value="2" />
+		<edge id="33" from="21" to="25" value="2" />
+		<edge id="34" from="25" to="22" value="2" />
+		<edge id="35" from="22" to="23" value="2" />
+		<edge id="36" from="23" to="20" value="2" />
+		<edge id="37" from="20" to="24" value="2" />
+		<edge id="52" from="24" to="30" value="2" />
+		<edge id="39" from="17" to="16" value="1" />
+		<edge id="40" from="18" to="16" value="1" />
+		<edge id="41" from="19" to="16" value="1" />
+		<edge id="42" from="27" to="16" value="1" />
+		<edge id="43" from="21" to="16" value="1" />
+		<edge id="44" from="26" to="16" value="1" />
+		<edge id="45" from="25" to="16" value="1" />
+		<edge id="46" from="22" to="16" value="1" />
+		<edge id="47" from="23" to="16" value="1" />
+		<edge id="48" from="20" to="16" value="1" />
+		<edge id="49" from="24" to="16" value="1" />
+		<edge id="53" from="30" to="8" value="0" />
+		<edge id="54" from="29" to="8" value="0" />
+		<edge id="55" from="28" to="8" value="0" />
+		<edge id="57" from="31" to="32" value="0" />
+		<edge id="58" from="32" to="33" value="0" />
+		<edge id="59" from="33" to="9" value="0" />
+		<edge id="61" from="34" to="10" value="0" />
+		<edge id="63" from="35" to="6" value="0" />
+		<edge id="64" from="35" to="36" value="0" />
+		<edge id="65" from="36" to="37" value="1" />
+		<edge id="66" from="37" to="36" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="30" y="52" />
+		<node_location id="1" x="455" y="234" />
+		<node_location id="2" x="69" y="605" />
+		<node_location id="3" x="91" y="708" />
+		<node_location id="13" x="199" y="821" />
+		<node_location id="12" x="399" y="839" />
+		<node_location id="6" x="431" y="108" />
+		<node_location id="11" x="130" y="782" />
+		<node_location id="8" x="910" y="160" />
+		<node_location id="9" x="122" y="283" />
+		<node_location id="10" x="1020" y="44" />
+		<node_location id="14" x="303" y="837" />
+		<node_location id="15" x="198" y="433" />
+		<node_location id="16" x="550" y="397" />
+		<node_location id="17" x="495" y="838" />
+		<node_location id="18" x="566" y="826" />
+		<node_location id="19" x="620" y="765" />
+		<node_location id="20" x="979" y="574" />
+		<node_location id="21" x="835" y="788" />
+		<node_location id="22" x="970" y="773" />
+		<node_location id="23" x="986" y="681" />
+		<node_location id="24" x="952" y="477" />
+		<node_location id="25" x="903" y="804" />
+		<node_location id="26" x="766" y="808" />
+		<node_location id="27" x="696" y="789" />
+		<node_location id="28" x="641" y="87" />
+		<node_location id="29" x="665" y="228" />
+		<node_location id="30" x="868" y="345" />
+		<node_location id="31" x="102" y="62" />
+		<node_location id="32" x="146" y="128" />
+		<node_location id="33" x="110" y="189" />
+		<node_location id="34" x="964" y="100" />
+		<node_location id="35" x="266" y="166" />
+		<node_location id="36" x="250" y="88" />
+		<node_location id="37" x="313" y="38" />
+	</node_locations>
+</quest>

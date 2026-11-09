@@ -1,0 +1,59 @@
+<quest quest_id="409" category="lore_quest" tag="Lead 08">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="A Quest Completion Condition" quest_id="402" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Ruby (V.Wrath/Vamp Strike/Frostbite)" optional_tasks="False">
+			<tasks>
+				<task type="use_skill_on" id="10" value="1" tag="Virtuous Wrath" resource_name="" skill_name="s_Virtuous Wrath_1" />
+				<task type="use_skill_on" id="11" value="1" tag="Vampiric Strike" resource_name="" skill_name="s_Vampiric Strike_1" />
+				<task type="use_skill_on" id="12" value="1" tag="Frostbite" resource_name="" skill_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="Yssam Golem (Foebringer/ Lacerate / Unburden)" optional_tasks="False">
+			<tasks>
+				<task type="use_skill_on" id="7" value="1" tag="Foebringer on Golem" resource_name="" skill_name="s_Foebringer_1" />
+				<task type="use_skill_on" id="8" value="1" tag="Lacerate on Golem" resource_name="" skill_name="s_Lacerate_1" />
+				<task type="use_skill_on" id="9" value="1" tag="Unburden on Golem" resource_name="" skill_name="s_Unburden_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="" optional_tasks="False">
+			<tasks>
+				<task type="use_skill_on" id="13" value="1" tag="Havoc Blast" resource_name="" skill_name="s_Havoc Blast_1" />
+				<task type="use_skill_on" id="14" value="1" tag="Fireball" resource_name="" skill_name="s_Fireball_Area" />
+				<task type="use_skill_on" id="15" value="1" tag="Heal" resource_name="" skill_name="s_Healing Blast_1" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="4" tag="Nifty Golem (lightning/light/piercing)" optional_tasks="False">
+			<tasks>
+				<task type="use_skill_on" id="4" value="1" tag="Lightning on Golem" resource_name="" skill_name="" />
+				<task type="use_skill_on" id="5" value="1" tag="Light on Golem" resource_name="" skill_name="" />
+				<task type="use_skill_on" id="6" value="1" tag="Piercing Damage on Golem" resource_name="" skill_name="" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="5" tag="Find Ancient Dwarvish Guardians" optional_tasks="True">
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="Interact with Yssam Golem" resource_name="" />
+				<task type="interact_with_object" id="1" value="2" tag="Interact with Ruby Golem" resource_name="" />
+				<task type="interact_with_object" id="2" value="3" tag="Interact with Cairn Golem" resource_name="" />
+				<task type="interact_with_object" id="3" value="4" tag="Interact with Nifty Golem" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_merge" id="6" tag="Return to the Librarian" />
+		<node type="end_node" id="7" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="5" value="0" />
+		<edge id="1" from="5" to="2" value="1" />
+		<edge id="2" from="5" to="1" value="2" />
+		<edge id="3" from="5" to="3" value="3" />
+		<edge id="4" from="5" to="4" value="4" />
+		<edge id="5" from="2" to="6" value="0" />
+		<edge id="6" from="1" to="6" value="0" />
+		<edge id="7" from="3" to="6" value="0" />
+		<edge id="8" from="4" to="6" value="0" />
+		<edge id="9" from="6" to="7" value="0" />
+	</edges>
+</quest>

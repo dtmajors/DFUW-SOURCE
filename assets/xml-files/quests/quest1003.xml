@@ -1,0 +1,151 @@
+<quest quest_id="1003" category="side_quest" tag="Sanguine's Lost Book" published="False" valid="True">
+	<title>Sanguine&apos;s Lost Book</title>
+	<description>This is a quest based on Mad Cow&apos;s submission for our 2014 quest contest!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="talk to spellmaster">
+			<journal_entry>Ever the enterprising adventurer, the Agonian caught wind of a reward offered by Sanguine&apos;s chapter of the Sons of Riada for a misplaced tome. The book was lost during the Spellmaster&apos;s trip to Monkfield less than one moon ago.</journal_entry>
+			<conditions>
+				<condition type="vendor_interaction" id="0" value="1" tag="talk to Spellmaster in Sanguine" vendor_id="u18_sanguine_mage" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="talk to the magic supplier in Monkfield">
+			<journal_entry>$[Vendors.t18_monkfield_arcanist_Name] had a hunch as to where the book might be but he needed time to investigate his log books. In the meantime, and as an &apos;incentive, he requested the Agonian take care of &apos;a tiny matter&apos; for him.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="talk to arcanist" vendor_id="t18_monkfield_arcanist">
+					<task_instruction>Talk to $[Vendors.t18_monkfield_arcanist_Name] the Magic Supplier in Monkfield</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="2" tag="" />
+		<node type="event_simple" id="3" tag="">
+			<journal_entry>He had requested a sword be forged for him to present as a gift at a distant cousin&apos;s wedding but the blacksmiths in Firun never delivered. The blade was supposed to have arrived in Monkfield four nights ago.</journal_entry>
+		</node>
+		<node type="event_simple" id="4" tag="go to Firum and talk to blacksmith">
+			<journal_entry>Once found, $[Vendors.u14_firun_blacksmith_Name] informed the Agonian that the sword was indeed supposed to be delivered with the weekly caravan. The caravan, however, never made it to Mercian lands and was thus believed to have been ambushed by bandits somewhere near Monkfield.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="1" value="1" tag="talk to blacksmith" vendor_id="u14_firun_blacksmith">
+					<task_instruction>Talk to $[Vendors.u14_firun_blacksmith_Name] the battle supplier in Firun</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="5" tag="">
+			<journal_entry>It seemed that the Agonian now had to search for the bandits that stole the goods in order to recover $[Vendors.t18_monkfield_arcanist_Name] wedding blade.</journal_entry>
+		</node>
+		<node type="event_simple" id="6" tag="kill the bandits" optional_tasks="False">
+			<instruction>Locate and interrogate the bandit&apos;s boss that stole the goods.</instruction>
+			<journal_entry>Though the Agonian had perhaps interrogated a little too hard, the bandit leader, before succumbing to his wounds, did reveal that all the goods had been delivered to an outpost at the center of the Brockmoor swamps.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="2" value="1" tag="go to S17 bandit spawn" area_id="4" />
+				<task type="kill_object" id="3" value="1" tag="kill bandits" resource_name="r_bandit alfar boss" quantity="1" />
+			</tasks>
+			<actions>
+				<action type="show_quest_area" id="10" tag="An Add Quest Area to World-Map Action" area_id="4" />
+			</actions>
+		</node>
+		<node type="event_simple" id="7" tag="the swamps of Brockmoor" optional_tasks="False">
+			<journal_entry>Amongst a pile of crates, the Agonian finally managed to recover a broken jumble of goods, however they&apos;d need to be returned to $[Vendors.u14_firun_blacksmith_Name] first to be sorted through correctly.</journal_entry>
+			<tasks>
+				<task type="go_to_area" id="4" value="1" tag="go to spawn point" area_id="5">
+					<task_instruction>Find the location of the stolen goods.</task_instruction>
+				</task>
+				<task type="interact_with_object" id="5" value="1" tag="interact with crates" resource_name="r_Lost Book Full Chest">
+					<task_instruction>Retrieve the stolen goods</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="back to Firum and talk to blacksmith">
+			<journal_entry>Quite excited at the recovery of stolen goods (especially AFTER the insurance had been claimed) the blacksmith happily handed over a hefty reward as well as $[Vendors.t18_monkfield_arcanist_Name] wayward blade.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="6" value="1" tag="talk to blacksmith" vendor_id="u14_firun_blacksmith">
+					<task_instruction>Talk to $[Vendors.u14_firun_blacksmith_Name] the battle supplier in Firun</task_instruction>
+				</task>
+			</tasks>
+			<actions>
+				<action type="unlock_quest_item" id="0" tag="Unlock salvaged goods" item_id="0" />
+			</actions>
+		</node>
+		<node type="event_simple" id="10" tag="Blacksmiths's reward">
+			<actions>
+				<action type="unlock_quest_item" id="1" tag="An Unlock Quest Item Within The Quest Action" item_id="1" />
+				<action type="give_item_to_player" id="2" tag="gold" resource_name="r_Gold" quantity="1000" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="14" tag="bring the book to spellmaster">
+			<journal_entry>All things considered, the Agonian would not have been blamed for feeling that the spellmaster&apos;s rather brusque, &quot;ah good, there it is,&quot; may have come across as a bit underwhelming. Yet that, and a small bag of gold, were all that were offered before the tome was stuffed, rather unceremoniously, back onto a shelf...</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="8" value="1" tag="talk to spellmaster" vendor_id="u18_sanguine_mage">
+					<task_instruction>Return the book to $[Vendors.u18_sanguine_mage_Name] in Sanguine</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="12" tag="go to Alric">
+			<journal_entry>The arcanist gleefully rewarded the Agonian with a jingling pouch for returning the sword to him, he was sure the gift would upstage all the others at the wedding.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_arcanist">
+					<task_instruction>Return the sword to $[Vendors.t18_monkfield_arcanist_Name] in Monkfield</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>It was (finally!) time for the book to be returned to its rightful owner in Sanguine.</journal_entry>
+			<actions>
+				<action type="unlock_quest_item" id="7" tag="Spellmaster's Hanbook" item_id="2" />
+				<action type="give_item_to_player" id="8" tag="gold" resource_name="r_Gold" quantity="500" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<actions>
+				<action type="give_item_to_player" id="9" tag="reward gold" resource_name="r_Gold" quantity="500" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>The Monkfield Magic Supplier, to whom the book was lent, said that he could not locate the book within his library. The Spellmaster thus urged the Agonian to proceed to the Mage&apos;s Guild in Monkfield and investigate.</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>The Agonian, blissfully unaware of the road ahead, set off on this seemingly simple task.</journal_entry>
+		</node>
+		<node type="event_simple" id="18" tag="">
+			<journal_entry>$[Vendors.t18_monkfield_arcanist_Name] therefore asked that the Agonian locate $[Vendors.u14_firun_blacksmith_Name] the battle supplier in Firun and learn what had gone awry.</journal_entry>
+		</node>
+		<node type="event_simple" id="19" tag="">
+			<journal_entry>He also had some good news about the missing tome. He&apos;d located it (in his own words) &apos;quite cunningly&apos; in the cellar. A young night guard interested in joining the Sons of Riada had &quot;borrowed&quot; it intent on studying it and joining the order. Some of the cellars more intoxicating items of storage, however, had evidently been too tempting and the book had been forgotten.</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="15" from="17" to="1" value="0" />
+		<edge id="1" from="1" to="3" value="1" />
+		<edge id="18" from="3" to="18" value="0" />
+		<edge id="3" from="4" to="5" value="1" />
+		<edge id="4" from="5" to="6" value="0" />
+		<edge id="5" from="6" to="7" value="1" />
+		<edge id="7" from="7" to="9" value="1" />
+		<edge id="8" from="9" to="10" value="1" />
+		<edge id="23" from="19" to="13" value="0" />
+		<edge id="10" from="10" to="12" value="0" />
+		<edge id="24" from="13" to="14" value="0" />
+		<edge id="13" from="14" to="15" value="1" />
+		<edge id="14" from="15" to="2" value="0" />
+		<edge id="16" from="16" to="17" value="0" />
+		<edge id="17" from="0" to="16" value="1" />
+		<edge id="19" from="18" to="4" value="0" />
+		<edge id="22" from="12" to="19" value="1" />
+	</edges>
+	<quest_item item_id="0" tag="salvaged goods" image_locked="qc_1003_salvaged_goods_locked.png" image_unlocked="qc_1003_salvaged_goods_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Recovered Goods</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A jumbled assortment of stolen goods, hopefully a blade fit for a wedding gift lies hidden somewhere therein.</description_unlocked>
+	</quest_item>
+	<quest_item item_id="1" tag="Alric's Sword" image_locked="qc_1003_Alrics_sword_locked.png" image_unlocked="qc_1003_Alrics_sword_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>Alric Commissioned Sword</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>A blade fit for a wedding gift!</description_unlocked>
+	</quest_item>
+	<quest_item item_id="2" tag="Spellmaster's Handbook" image_locked="qc_1003_spellmasters_handbook_locked.png" image_unlocked="qc_1003_spellmasters_handbook_unlocked.png">
+		<name_locked>locked</name_locked>
+		<name_unlocked>On the Castings and Rituals of the Arcane: For Dunces.</name_unlocked>
+		<description_locked>locked</description_locked>
+		<description_unlocked>The once wayward tome belonging to the local chapter of the Sons of Riada in Sanguine. Known to have once spent some time in a cellar...</description_unlocked>
+	</quest_item>
+</quest>

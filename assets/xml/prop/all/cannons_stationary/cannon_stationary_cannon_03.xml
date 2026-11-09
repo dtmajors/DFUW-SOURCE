@@ -1,0 +1,170 @@
+<SFObject>
+<GameInfo>
+<ResourceType Value="r_cannon headshot" />
+</GameInfo>
+<OtherInformation Preprocessed="FALSE" Result="SF_OK" />
+<RenderInformation>
+<ObjectType>
+<SFString Value="MESHOBJECT" />
+</ObjectType>
+<FileName>
+<ActiveVersion>
+<SFString Value="Normal" />
+<MultiSet>
+<SFBool Value="false" />
+</MultiSet>
+</ActiveVersion>
+<Low>
+<SFBool Value="FALSE" />
+<SFString Value="template.x" />
+</Low>
+<Normal>
+<SFBool Value="FALSE" />
+<SFString Value="cannon_stationary_cannon_03.sfm" />
+</Normal>
+<High>
+<SFBool Value="FALSE" />
+<SFString Value="template.lx" />
+</High>
+</FileName>
+<Shaders>
+<ActiveVersion>
+<SFString Value="Normal" />
+</ActiveVersion>
+<Normal>
+<GlobalShader>
+<SFBool Value="FALSE" />
+<SFString Value="shaderdefault.xml" />
+</GlobalShader>
+<SubsetShaders>
+<Shader0>
+<SFString Value="shaderarmoursharp.xml" />
+<SFInteger Value="1" />
+</Shader0>
+<Shader1>
+<SFString Value="shaderalphaglowmetal.xml" />
+<SFInteger Value="1" />
+</Shader1>
+</SubsetShaders>
+</Normal>
+<DefaultTextures>
+<Subset0>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.549000" G="0.549000" R="0.549000" SpecPow="14.000000" />
+<Texture0>
+<SFString Value="cannon_headshot_01.bmp" />
+</Texture0>
+</Subset0>
+<Subset1>
+<Diffuse A="1.000000" B="1.000000" G="1.000000" R="1.000000" />
+<Ambient A="1.000000" B="0.000000" G="0.000000" R="0.000000" />
+<Specular A="1.000000" B="0.000000" G="0.000000" R="0.000000" SpecPow="3.000000" />
+<Texture0>
+<SFString Value="cannon_headshot_02.tga" />
+</Texture0>
+</Subset1>
+</DefaultTextures>
+<NumberOfSubsets>
+<SFInteger Value="2" />
+</NumberOfSubsets>
+</Shaders>
+<VisibilityInformation>
+<BoundingInformation>
+<BoundingBox>
+<Min>
+<SFVector3 X="-1.2439" Y="-0.946602" Z="-1.47681" />
+</Min>
+<Max>
+<SFVector3 X="1.49669" Y="1.79399" Z="1.26378" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0.126398" Y="0.423692" Z="-0.106517" />
+</Center>
+<Radius>
+<SFFloat Value="1.37029" />
+</Radius>
+</BoundingSphere>
+<SubsetInformation>
+<Subset0>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.7813923359" Y="-.7832385898" Z="-.9885925651" />
+</Min>
+<Max>
+<SFVector3 X=".7784026861" Y="1.4581320286" Z="1.1924972534" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".119756144" Y=".4084428549" Z="-.973103791" />
+</Center>
+<Radius>
+<SFFloat Value="1.3844521046" />
+</Radius>
+</BoundingSphere>
+</Subset0>
+<Subset1>
+<BoundingBox>
+<Min>
+<SFVector3 X="-.8360751867" Y="-.7832385898" Z="-.9885925651" />
+</Min>
+<Max>
+<SFVector3 X=".8360751271" Y="1.4581320286" Z="1.1924972534" />
+</Max>
+</BoundingBox>
+<BoundingSphere>
+<Center>
+<SFVector3 X=".126397917" Y=".4236918986" Z="-.1065173149" />
+</Center>
+<Radius>
+<SFFloat Value="1.3702934980" />
+</Radius>
+</BoundingSphere>
+</Subset1>
+</SubsetInformation>
+</BoundingInformation>
+</VisibilityInformation>
+</RenderInformation>
+<PhysicsInformation>
+<PhysicsObjectType Value="SpawnableStructure" />
+<WaterTransition>
+<Submerged Value="0.7404" />
+<Surface Value="0.3702" />
+<Touching Value="-0.5553" />
+<Floating Value="0.5553" />
+</WaterTransition>
+</PhysicsInformation>
+<VersionInformation Major="1" Minor="0" />
+<MassCenter>
+<SFVector3 X="0" Y="0" Z="0" />
+</MassCenter>
+<CollisionInformation>
+<CollisionModelInformation>
+<DynamicScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</DynamicScheme>
+<AnimatedInfluenceScheme>
+<Type Value="SFDUMMYCOLLISIONSCHEME" />
+<FileName Value="dummy.sfc" />
+</AnimatedInfluenceScheme>
+<StaticScheme>
+<Type Value="SFSPHERECOLLISIONSCHEME" />
+<FileName Value="cannon_stationary_cannon_03.static.SFSPHERECOLLISIONSCHEME.sfc" />
+</StaticScheme>
+</CollisionModelInformation>
+<BoundingInformation>
+<BoundingSphere>
+<Center>
+<SFVector3 X="0" Y="0" Z="0" />
+</Center>
+<Radius>
+<SFFloat Value="0.9255" />
+</Radius>
+</BoundingSphere>
+</BoundingInformation>
+</CollisionInformation>
+</SFObject>

@@ -1,0 +1,62 @@
+<quest quest_id="109" category="side_quest" tag="Sanctuary Ritual" published="False" valid="True">
+	<title>Sanctuary</title>
+	<description>The end of the trail.</description>
+	<nodes>
+		<node type="end_node" id="13" tag="" />
+		<node type="event_simple" id="12" tag="The Letter's Writtings">
+			<journal_entry>&quot;You must be wondering how I learned about you and the demon. I told you I didn&apos;t want to believe it, but when I saw him... the way he grew up... his eyes and the way he was looking at me... I knew. Our little boy... he wasn&apos;t ours. I gave birth to him, but I&apos;m not his mother. And you are not his father beloved one. The demon played you. Our offspring is dangerous and as I told you before, you are the only one who can stop him. Please, if you&apos;re still alive promise me that you will. In death I shall love you.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="11" tag="forth_blood">
+			<instruction>Perform the ritual</instruction>
+			<tasks>
+				<task type="use_skill_on" id="4" value="1" tag="A Use Skill On Object Task" resource_name="r_qt princess corpse" skill_name="s_Vampiric Strike_1">
+					<task_instruction>Perform the ritual</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="10" tag="third_water">
+			<instruction>Perform the ritual</instruction>
+			<tasks>
+				<task type="use_skill_on" id="3" value="1" tag="A Use Skill On Object Task" resource_name="r_qt princess corpse" skill_name="s_Watery Grave">
+					<task_instruction>Perform the ritual</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="9" tag="second_fire">
+			<instruction>Perform the ritual</instruction>
+			<tasks>
+				<task type="use_skill_on" id="2" value="1" tag="A Use Skill On Object Task" resource_name="r_qt princess corpse" skill_name="s_Fireball">
+					<task_instruction>Perform the ritual</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="first_heal">
+			<instruction>Perform the ritual</instruction>
+			<tasks>
+				<task type="use_skill_on" id="1" value="1" tag="A Use Skill On Object Task" resource_name="r_qt princess corpse" skill_name="s_Healing Blast_1">
+					<task_instruction>Perform the ritual</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="start_node" id="7" tag="perform_the_ritual">
+			<conditions>
+				<condition type="quest_completion" id="4" value="1" tag="A Quest Completion Condition" quest_id="106" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="14" tag="">
+			<instruction>Locate the lover&apos;s sanctuary</instruction>
+			<tasks>
+				<task type="interact_with_object" id="6" value="1" tag="An Interact With Object Task" resource_name="r_qt princess corpse" />
+			</tasks>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="11" from="12" to="13" value="0" />
+		<edge id="9" from="10" to="11" value="1" />
+		<edge id="8" from="9" to="10" value="1" />
+		<edge id="7" from="8" to="9" value="1" />
+		<edge id="12" from="7" to="14" value="1" />
+		<edge id="10" from="11" to="12" value="1" />
+		<edge id="13" from="14" to="8" value="1" />
+	</edges>
+</quest>

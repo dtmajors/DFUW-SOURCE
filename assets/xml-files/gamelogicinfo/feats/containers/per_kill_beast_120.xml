@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Reset Type="WEEKLY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="120"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Monsters"/>
+    <ResourceRank Value="5"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_akathar" Value="265"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="2250" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_improved Selentine Chest Key" Quantity="2" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

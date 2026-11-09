@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+   <ShowInList Value="true"/>
+   <ShowOnGUI Value="true"/>
+	  
+	  <Trigger Type="LIFE_MODE_CHANGES">				
+		    <LifeMode Value="KILL"/>
+		    <Received Value="false"/>
+		    <IsEventSource Value="true"/>
+		    <ResourceName Value="r_player races"/>
+		    <Counter Value="1"/>
+	  </Trigger>	
+	  <Points Dynamic="true" Value="" Key="r_player races"/>	
+	  <Rewards> 					  
+		    <Item Type="UNLOCK_FEAT" Name="pv_knockdown_30"/>
+	  </Rewards>		
+</Feat>

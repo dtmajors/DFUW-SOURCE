@@ -1,0 +1,100 @@
+<GamelogicConstants>
+	<!--
+		float Multiplier       = Math.max( MinMult, MaxMult * (MaxHealth - Health) / MaxHealth);
+		float RegenerationRate = Multiplier * HealthGain;
+	-->
+
+	<!-- Player regeneration values -->
+	<Regeneration AttributeName="Health" MinValue="1.2" MaxValue="1.0"/>
+	<!--	
+	<Regeneration   AttributeName = 'Stamina' MinValue = '1.5' MaxValue = '3.5'/>
+	<Regeneration   AttributeName = 'Mana'    MinValue = '1.5' MaxValue = '4.0'/>
+	-->
+	<Regeneration AttributeName="Stamina" MinValue="2.2" MaxValue="2.2"/>
+	<Regeneration AttributeName="Mana" MinValue="2.2" MaxValue="2.7"/>
+
+	<!-- Stats gain on other player kill -->
+	<StatGain AttributeName="Health" MinValue="25.0" MaxValue="35.0"/>
+	<StatGain AttributeName="Stamina" MinValue="25.0" MaxValue="35.0"/>
+	<StatGain AttributeName="Mana" MinValue="25.0" MaxValue="35.0"/>
+
+	<!-- Following values are in use for player function calculations in SFPlayerFunction.java -->
+	<IntelligenceRegenerationMultiplier Value="2.0"/>
+	<!-- intelligence mana regeneration multiplier -->
+	<HealthBase Value="300.0"/>
+	<ManaBase Value="300.0"/>
+	<StaminaBase Value="300.0"/>
+	<HealthAttributePart Value="150.0"/>
+	<ManaAttributePart Value="150.0"/>
+	<StaminaAttributePart Value="150.0"/>
+	<StrengthBoosterPart Value="50.0"/>
+	<WisdomBoosterPart Value="50.0"/>
+	<DexterityBoosterPart Value="50.0"/>
+	<IntelligenceBaseMultiplier Value="0.35"/>
+	<IntelligenceBoosterMultiplier Value="0.15"/>
+
+	<!-- Spirit Bond config values -->
+	<SpiritBond>
+		<HealOverTime Value="true"/>
+		<PermitConnectionOnConnectedPlayers Value="true"/>
+		<MaxLinks Value="2"/>
+		<HealthCheckDelay Value="1"/>
+		<!-- Seconds -->
+	</SpiritBond>
+
+	<!-- Soul Flay config values -->
+	<SoulFlay>
+		<HealthPercentageReturn Value="0.75"/>
+		<HealthFlatReturn Value="150"/>
+		<ReturnFlatGain Value="false"/>
+		<MaxLinks Value="10"/>
+	</SoulFlay>
+
+	<!-- Parry Skill Blocking List -->
+	<Skills Active="true">
+		<!-- REMEMBER TO CHANGE Time IN sf_Disable Stun Duration. -->
+		<!-- ALSO DENOMINATOR IS 2 * 1.28 / (1 + 1.28) where 1.28 is Greatsword Speed Multiplier -->
+		<!-- IF GSWRD SPEED CHANGES WE NEED TO UPDATE THE FUNCTION -->
+
+		<!-- THIS IS THE SKILL STUN TIME WHEN PARRIED -->
+		<Time Value="1.0"/>
+
+		<!-- THESE ARE THE SKILLS THAT WILL BE STUNNED -->
+		<Skill Value="s_Melee Attack"/>
+
+		<!-- THIS IS THE MAX STAMINA DRAIN WHEN PARRIED -->
+		<!-- DEPENDS ON MAGNITUDE IN CODE: DMG / CAP * MAXSTADRAIN WITH A MIN OF 0.2 * MAXSTADRAIN -->
+		<Stamina Value="7.5"/>
+	</Skills>
+
+	<!-- This is the cooldown percent bonus that Uncanny Focus applies on the secondary school of Duelist. -->
+	<!-- e.g. If it is 0.2 the secondary school cooldowns are reduced upto 20% of their cooldown. -->
+	<Cooldown Value="0.5"/>
+
+	<!-- Stamina Regeneration during sprint -->
+	<!--	5 is for no robes slight emty on low sta -->
+	<!--	6 is for robes  slight emty on low sta -->
+	<!--  this was w 3.5 maxsta regen mult  -->
+<!--	
+	<RegenerationEnabled               Value = "false" Multiplier   = "0.6"/>	<!-\- Sprint stamina cost multiplier to be used in skill function sf_Sprint Stamina Loss -\->      
+	<BlockJumpOnImpact                 Value = "true"  BlockingTime = "0.2"/>	
+	<BlockSprintOnImpact               Value = "true"  BlockingTime = "0.2"/>	
+	<HorizontalFallingDamageEnabled    Value = "false" HorizontalMultiplier = "0.5" HorizontalThreshold="0.1" VerticalMultiplier="1.0" VerticalThreshold="0.1"/>	
+	-->
+		<RegenerationEnabled Value="true" Multiplier="1.0"/>
+	<!-- Sprint stamina cost multiplier to be used in skill function sf_Sprint Stamina Loss -->
+	<BlockJumpOnImpact Value="false" BlockingTime="0.2"/>
+	<BlockSprintOnImpact Value="false" BlockingTime="0.2"/>
+<!--	
+	if speed is linear then vert thresh should be 9.5/25 = 0.38
+	if speed is power 2 then vert thresh should be 9.5/25^2(625) = 0.0152
+	-->
+	<HorizontalFallingDamageEnabled Value="true" 
+		HorizontalMultiplier="0.65" HorizontalThreshold="15.0" 
+		VerticalMultiplier="0.9" VerticalThreshold="12.0"/>
+	<MinTimeBetweenJumpsInWater Value="4.0"/> 
+	<MinTimeOnSurfaceBeforeJump Value="1.0"/>
+	
+	<HeartOfStoneImpactDamageReduction Value="0.5"/>
+	<!-- Is a multiplier -->
+</GamelogicConstants>

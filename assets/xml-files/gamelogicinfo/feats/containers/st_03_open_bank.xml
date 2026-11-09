@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Trigger Type="SKILL">
+    <Counter Value="1"/>
+    <Duration Value="false"/>
+    <Distance Value="false"/>
+    <ResourceName Value="r_Bank"/>
+    <SkillName Value="s_Use Object"/>
+  </Trigger>
+  <Points Dynamic="false" Key="" Value="5"/>
+  <Rewards>
+    <Item InBank="true" Name="r_new leather" Quantity="30" Type="REWARD_ITEM"/>
+    <Item Name="st_04_withdraw_from_bank" Type="UNLOCK_FEAT"/>
+  </Rewards>
+</Feat>

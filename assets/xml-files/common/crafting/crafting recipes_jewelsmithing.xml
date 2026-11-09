@@ -1,0 +1,243 @@
+<XML>
+    <VersionInformation Incremental="0" Major="0" Minor="3"/>
+
+<!--	Necklaces	-->
+
+	<SFRecipe ResourceName="r_heart locket" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="10" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_spiked collar" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0"
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="1" FractionLoss="10.0" />
+		<SFIngredient ResourceName="r_new leather" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_medallion" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="7" FractionLoss="10.0" />
+		<SFIngredient ResourceName="r_new leather" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_silver necklace" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="10" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_choker" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_new leather" Quantity="2" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_beast charm"
+			Quantity="1" Difficulty="-0.01" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<!--<SFIngredient ResourceName="r_tooth" Quantity="4" FractionLoss="10.0" />-->
+		<SFIngredient ResourceName="r_new leather" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="25.0"
+			InheritancePortion="3.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_bone amulet" 
+			Quantity="1" Difficulty="-0.01" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_bone" Quantity="4" FractionLoss="10.0" />
+		<SFIngredient ResourceName="r_new leather" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="25.0"
+			InheritancePortion="2.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_beads" 
+			Quantity="1" Difficulty="-0.02" DurationMultiplier="1.25" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_nacre" Quantity="2" FractionLoss="10.0" />
+		<SFIngredient ResourceName="r_gem garnet" Quantity="1" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="50.0" 
+			InheritancePortion="2.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_gemstone carcanet" 
+			Quantity="1" Difficulty="-0.02" DurationMultiplier="1.5" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gem ruby" Quantity="1" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_new leather" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="50.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_star pendant" 
+			Quantity="1" Difficulty="-0.02" DurationMultiplier="1.25" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="10" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="50.0"
+			InheritancePortion="4.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_wyrd amulet" 
+			Quantity="1" Difficulty="-0.03" DurationMultiplier="1.25" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_new leather" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="75.0"
+			InheritancePortion="7.5" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	
+<!-- 	Rings 	-->
+
+	<SFRecipe ResourceName="r_crystal ring" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.25" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="5" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem crystal" Quantity="1" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.25" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_simple ring" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_iron ring" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="5" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="1" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_band"
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="8" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_ring" 
+			Quantity="1" Difficulty="0.0" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="5" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="1" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="1.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_silver ring" 
+			Quantity="1" Difficulty="-0.01" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="10" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="25.0"
+			InheritancePortion="1.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_gold ring" 
+			Quantity="1" Difficulty="-0.01" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="15" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="25.0"
+			InheritancePortion="1.5" UseInCraftingCheck="TRUE" />
+	</SFRecipe>	
+	<SFRecipe ResourceName="r_serpent ring" 
+			Quantity="1" Difficulty="-0.01" DurationMultiplier="1.25" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="5" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="25.0"
+			InheritancePortion="1.5" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_runic band" 
+			Quantity="1" Difficulty="-0.01" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="10" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="2" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="25.0"
+			InheritancePortion="3.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_signet ring" 
+			Quantity="1" Difficulty="-0.01" DurationMultiplier="1.0" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="15" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="25.0"
+			InheritancePortion="1.5" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_ornated ring" 
+			Quantity="1" Difficulty="-0.02" DurationMultiplier="1.25" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="20" FractionLoss="10.0" />
+		<SFIngredient ResourceName="r_new iron ingot" Quantity="2" FractionLoss="10.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="50.0"
+			InheritancePortion="4.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_ruby ring" 
+			Quantity="1" Difficulty="-0.03" DurationMultiplier="1.5" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="10" FractionLoss="10.0" />
+		<SFIngredient ResourceName="r_gem ruby" Quantity="1" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="75.0"
+			InheritancePortion="2.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_arcane ring" 
+			Quantity="1" Difficulty="-0.04" DurationMultiplier="1.5" 
+			RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="10" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem crystal" Quantity="2" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_Shadowtaint_q03" Quantity="3" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="9.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	
+<!-- Fibulae for sithras -->
+
+	<SFRecipe ResourceName="r_fibula fire" Quantity="1" Difficulty="0.0" 
+		DurationMultiplier="1.0" RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="1000" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem ruby" Quantity="7" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="25.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_fibula ice" Quantity="1" Difficulty="0.0" 
+		DurationMultiplier="1.0" RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="1000" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem crystal" Quantity="7" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="25.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_fibula acid" Quantity="1" Difficulty="0.0" 
+		DurationMultiplier="1.0" RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="1000" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem emerald" Quantity="7" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="25.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_fibula lightning" Quantity="1" Difficulty="0.0" 
+		DurationMultiplier="1.0" RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="1000" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem turquoise" Quantity="7" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="25.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_fibula poison" Quantity="1" Difficulty="0.0" 
+		DurationMultiplier="1.0" RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="1000" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem amethyst" Quantity="7" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="25.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_fibula holy" Quantity="1" Difficulty="0.0" 
+		DurationMultiplier="1.0" RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="1000" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem sapphire" Quantity="7" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="25.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+	<SFRecipe ResourceName="r_fibula unholy" Quantity="1" Difficulty="0.0" 
+		DurationMultiplier="1.0" RequiredResourceName="r_living creatures">
+		<SFIngredient ResourceName="r_gold" Quantity="1000" FractionLoss="1.0" />
+		<SFIngredient ResourceName="r_gem aventurine" Quantity="7" FractionLoss="1.0" />
+		<SFRequiredSkill SkillName="s_jewelsmithing" SkillLevel="100.0"
+			InheritancePortion="25.0" UseInCraftingCheck="TRUE" />
+	</SFRecipe>
+</XML>

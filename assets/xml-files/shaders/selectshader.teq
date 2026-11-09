@@ -1,0 +1,96 @@
+
+//The default technique. No external stuff is needed here
+#include "stdstate.frag"
+#include "matrix.frag"
+#include "objectmatrix.frag"
+#include "mathtypes.frag"
+
+texture Tex0 : REPTextureDirect;
+
+
+float4 Diffuse = { 2.f, 0.3f, 0.3f, 0.01f };
+
+ 
+struct VS_OUTPUT
+{
+    float4 Position  	: POSITION;    // position of the vertex
+    float4 Diffuse   	: COLOR0;      // diffuse color of the vertex
+    float2 Tex  	: TEXCOORD0;   // texcoord of the vertex
+};
+
+struct PS_OUTPUT
+{   
+    float4 RGBColor : COLOR0;  // Pixel color    
+};
+
+
+
+VS_OUTPUT DilleShader( float4 vPos : POSITION, 
+                                     float3 vNormal : NORMAL,
+                                     float2 Tex : TEXCOORD0 )
+{
+    VS_OUTPUT Output = (VS_OUTPUT)0;
+
+    SFMatrix mWorldViewProjection = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+	
+    Output.Position = mul(vPos, mWorldViewProjection);
+    Output.Tex = Tex;
+    Output.Diffuse = Diffuse;
+    return Output;
+}
+
+
+PixelShader DillePSShader = asm
+{
+  ps.1.4 ;
+
+  def c0,1.0f,1.0f,1.0f,1.0f; 
+  def c1,1.0f,0.4f,0.4f,0.1f; 
+
+  texld r0, t0 ; 		    
+  
+  dp4 r0.a , r0 , c0 ;  // incorporate all channels to decide what is transparent
+  mul r0 , r0 , c1  ; 
+} ; 
+
+/*
+
+PS_OUTPUT DillePSShader( VS_OUTPUT In )
+{
+    PS_OUTPUT Output = (PS_OUTPUT)0;
+    float4 BaseTex = tex2D(DEFAULT_SAMPLER, In.Tex);
+    
+    Output.RGBColor = BaseTex * In.Diffuse;
+    Output.RGBColor.a = dp3( Output.RGBColor , Mask ) ; 
+    
+    return Output;
+}
+*/
+
+
+
+
+//
+// Technique 0 - One pass Default and best technique
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		Texture[0] = (Tex0);
+		
+		AlphaTestEnable = false;
+        AlphaBlendEnable = false;
+
+        ZEnable = TRUE;
+		ZWriteEnable = TRUE ;
+		
+		FogEnable 	= FALSE;
+       	CullMode = CCW;
+
+        VertexShader = compile vs_1_1 DilleShader();
+       	PixelShader = (DillePSShader);
+    }
+}

@@ -1,0 +1,29 @@
+<quest quest_id="9990" category="test_quest" tag="Test Quest 01 - Harvest" published="False" valid="True">
+	<title>A name</title>
+	<description>A description</description>
+	<nodes>
+		<node type="start_node" id="0" tag="Automatically Available">
+			<conditions>
+				<condition type="build_mode" id="0" value="1" tag="Test Quests Only In Debug!" build_mode="Debug" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Harvest Timber">
+			<instruction>Harvest some timber</instruction>
+			<tasks>
+				<task type="harvest_resource" id="0" value="1" tag="Harvest Some Timber" resource_name="r_new timber" quantity="3">
+					<task_instruction>Harvest some $[Resource.T.r_timber_NamePlural]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="2" tag="Complete - No Rewards" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="98" y="123" />
+		<node_location id="1" x="261" y="255" />
+		<node_location id="2" x="442" y="129" />
+	</node_locations>
+</quest>

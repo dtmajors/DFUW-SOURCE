@@ -1,0 +1,136 @@
+
+//Moon Planet Shader
+
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "texture.frag"
+#include "ssao.frag"
+
+
+
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float4 Spec : COLOR1;
+    float2 Tex  : TEXCOORD0;
+    float Fog : FOG;
+};
+
+
+
+
+VS_OUTPUT VS(
+    float3 Pos  : POSITION, 
+    float3 Norm : NORMAL, 
+    float2 Tex  : TEXCOORD0)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    
+    float3 WorldPos = mul(float4(Pos,1),(float4x3)WORLD_MATRIX);
+    float3 L = normalize(PlanetPos1 - WorldPos);
+    L = normalize(mul(L,(float3x3)VIEW_MATRIX));
+
+    matrix WView = mul(WORLD_MATRIX,VIEW_MATRIX);
+
+
+
+
+    float3 P = mul( float4(Pos,1), (float4x3)WView );  // position (view space)
+    float3 N = normalize(mul(Norm, (float3x3)WView)); // normal (view space)
+
+    float3 R = normalize(2 * dot(N, L) * N - L);          // reflection vector (view space)
+    float3 V = -normalize(P);                             // view direction (view space)
+    
+    float3 L2 = normalize(-WorldPos);
+    float3 Viewer = -L2;
+    L2 = normalize(mul(L2,(float3x3)VIEW_MATRIX));
+    float3 R2 = normalize(2 * dot(N, L2) * N - L2);          // reflection vector (view space)
+
+
+    Out.Pos  = mul(float4(P, 1), PROJECTION_MATRIX);             // position (projected)
+
+
+    float Diff = max(0,dot(N,L));
+    Diff *= 2.0f;
+    
+    float P1 = max(0,dot(R, V));
+    float P2 = max(0,dot(R2,V));
+    float Pow =  P1 + P2;
+
+	Out.Diff.xyz = Diff;
+    Out.Diff.w = saturate(Diff*Pow);
+    Out.Fog = 1.0f - Out.Diff.w;
+    Out.Spec.xyz  = P1*0.1f;
+
+
+    Out.Tex  = Tex;
+    
+
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+
+	float4 Texture = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	
+	
+	float4 Color;
+	//Color = Input.Diff*Texture;
+	Color = Texture * Input.Diff; 
+	Color.xyz += Input.Spec;
+	Color.w = Input.Diff ;//+ 0.04 ; 
+	//Color.xyz = max( Color.xyz, FOG_COLOR.xyz);
+	//Color.xyz = lerp(Color.xyz,FOG_COLOR.xyz,Input.Fog);
+
+	Out.Color = Color;
+	//Out.Effect = 0;
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_NO_EFFECT;
+#endif
+	
+	
+	return Out;
+}
+
+
+
+
+
+
+technique T0
+{
+
+    pass P0
+    {
+		STD_STATE;
+        AlphaTestEnable = FALSE;
+        AlphaBlendEnable = TRUE;
+
+		ZWriteEnable = TRUE;
+        ZEnable = TRUE;
+        
+		DestBlend = INVSRCALPHA ; 
+		SrcBlend  = SRCALPHA;
+		
+		ColorWriteEnable = RED|BLUE|GREEN; 
+
+		FogEnable = false;
+        CullMode = CCW;
+
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+    }
+
+}
+
+
+
+

@@ -1,0 +1,56 @@
+<quest quest_id="15" category="training_quest" tag="Surprise, land scrubber!" published="False" valid="True">
+	<title>Surprise, land scrubber!</title>
+	<description>Learn about the hidden treasure scattered around Agon and how to acquire it.</description>
+	<nodes>
+		<node type="start_node" id="14" tag="city area">
+			<conditions>
+				<condition type="quest_completion" id="17" value="1" tag="A Quest Completion Condition" quest_id="11" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="2" tag="" optional_tasks="True">
+			<instruction>Talk to any Sage in a safe zone city</instruction>
+			<journal_entry>Agon is filled with treasure, were you aware of that fact? There are $[Resource.T.r_treasure_chest_NamePlural] and chests that require keys to be opened, like a $[Resource.S.r_selentine_chest_key_NameSingular] that opens a $[Resource.S.r_selentine_chest_NameSingular]. There are also big cube-shaped $[Resource.C.r_chaos_chest_NamePlural] that can be found nearly everywhere in the world and can either be empty or filled with fantastic loot depending on how lucky you are each time. And last but not least, the ever present $[Resource.S.r_small_treasure_map_item_NameSingular], $[Resource.T.r_treasure_map_item_NameSingular] and the $[Resource.L.r_large_treasure_map_item_NameSingular].</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="An Interact With Vendor Task" vendor_id="j15_urranyr_councillor" />
+				<task type="interact_with_vendor" id="1" value="1" tag="An Interact With Vendor Task" vendor_id="k13_lyran_councillor" />
+				<task type="interact_with_vendor" id="2" value="1" tag="An Interact With Vendor Task" vendor_id="k14_amurran_councillor" />
+				<task type="interact_with_vendor" id="3" value="1" tag="An Interact With Vendor Task" vendor_id="l14_whiteclaw_councillor" />
+				<task type="interact_with_vendor" id="4" value="1" tag="An Interact With Vendor Task" vendor_id="p09_gulgrumir_councillor" />
+				<task type="interact_with_vendor" id="5" value="1" tag="An Interact With Vendor Task" vendor_id="p10_cor_ymirhal_councillor" />
+				<task type="interact_with_vendor" id="6" value="1" tag="An Interact With Vendor Task" vendor_id="p11_maghnir_councillor" />
+				<task type="interact_with_vendor" id="7" value="1" tag="An Interact With Vendor Task" vendor_id="q11_idawoll_councillor" />
+				<task type="interact_with_vendor" id="8" value="1" tag="An Interact With Vendor Task" vendor_id="t13_okrim_councillor" />
+				<task type="interact_with_vendor" id="9" value="1" tag="An Interact With Vendor Task" vendor_id="t18_monkfield_councillor" />
+				<task type="interact_with_vendor" id="10" value="1" tag="An Interact With Vendor Task" vendor_id="u13_flaming_skull_councillor" />
+				<task type="interact_with_vendor" id="11" value="1" tag="An Interact With Vendor Task" vendor_id="u14_firun_councillor" />
+				<task type="interact_with_vendor" id="12" value="1" tag="An Interact With Vendor Task" vendor_id="u18_sanguine_councillor" />
+				<task type="interact_with_vendor" id="13" value="1" tag="An Interact With Vendor Task" vendor_id="u19_sandbrook_councillor" />
+				<task type="interact_with_vendor" id="14" value="1" tag="An Interact With Vendor Task" vendor_id="v13_nerzok_councillor" />
+				<task type="interact_with_vendor" id="15" value="1" tag="An Interact With Vendor Task" vendor_id="v18_heart_of_eanna_councillor" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="3" tag="">
+			<journal_entry>Take this $[Resource.S.r_selentine_chest_key_NameSingular] and then locate a $[Resource.S.r_selentine_chest_NameSingular] at any of the map markers that were just added to your map. At each of these locations, you should be able to locate a chest - it could be empty which means it was recently opened. You should try one of the others, until you are able to get something of value out of one. The more you search, the more chests you will be able to locate around Agon. The keys are a bit hard to find as they can be found from various sources.</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="0" tag="An Add Item(s) to Player's Inventory Action" resource_name="r_Selentine Chest Key" quantity="1" inventory_type="Backpack" />
+			</actions>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>Congratulations on finding an intact $[Resource.C.r_chaos_chest_NameSingular]. Sometimes they might appear to be unreachable, and indeed they could be. Other times, they might be empty. Hopefully, this wasn&apos;t the case and you got something worth your while.</journal_entry>
+		</node>
+		<node type="event_simple" id="9" tag="chaos chest">
+			<instruction>Interact with a $[Resource.C.r_chaos_chest_NameSingular]</instruction>
+			<tasks>
+				<task type="interact_with_object" id="20" value="1" tag="An Interact With Object Task" resource_name="r_Chaos Chest" />
+			</tasks>
+		</node>
+		<node type="end_node" id="11" tag="" />
+	</nodes>
+	<edges>
+		<edge id="17" from="14" to="2" value="1" />
+		<edge id="1" from="2" to="3" value="1" />
+		<edge id="15" from="3" to="9" value="0" />
+		<edge id="10" from="9" to="6" value="1" />
+		<edge id="33" from="6" to="11" value="0" />
+	</edges>
+</quest>

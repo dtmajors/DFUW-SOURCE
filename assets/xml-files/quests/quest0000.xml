@@ -1,0 +1,138 @@
+<quest quest_id="0" category="training_quest" tag="Vale Exitor" published="False" valid="False">
+	<title>Lifting the Veil</title>
+	<description>There we go. Dear mortal,the time has come for our sweet parting of ways, given that you have come this far and not managed to stab yourself in the face or melt your feet to the ground. It has been a special time for me, I do not doubt I shall forget you mere moments after we part. You may thus consider yourself stamped with my official seal of approval! Go little mortal, go into the world and try not to get maimed too much.</description>
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<journal_entry>That said, I have other fledgling adventurers to &quot;mortal-sit&quot; now, you can find your own way out I trust. Simply move further down the vale and find my specially designed helpers to lead you out.</journal_entry>
+			<conditions>
+				<condition type="tutorial_slide" id="0" value="1" tag="Quest Slide Closes" slide_id="-1" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Interact with Arcane Terminal 1">
+			<instruction>Find and Interact with the Arcane Terminal further down the path.</instruction>
+			<journal_entry>Tangerine Alert! Vale departure nexus has been compromised. Unknown entities have stolen activation rod. Further investigation may be required. Arcane terminals further down the vale will hold further details.</journal_entry>
+			<tasks>
+				<task type="interact_with_object" id="0" value="1" tag="Interact with 1st Arcane Terminal" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="If the player strikes the Golem">
+			<journal_entry>This enemy is beyond your skill Mortal, you had best run to fight another day! Be wary when you leave this Vale. You will encounter many such enemies in the world without, learn when to run and fight another day!</journal_entry>
+			<tasks>
+				<task type="take_damage_from" id="10" value="1" tag="Take damage from Golem" magnitude="1" resource_name="r_Shadow Golem" />
+			</tasks>
+		</node>
+		<node type="event_join" id="3" tag="Recieve Portal Shard - all of node">
+			<actions>
+				<action type="unlock_quest_item" id="0" tag="Portal Shard" item_id="-1" />
+			</actions>
+		</node>
+		<node type="event_merge" id="4" tag="Find the entrance to the exit">
+			<journal_entry>Leylines have been synchronised - knowledge has been imparted. A new shard has been summoned, please proceed to the exit. Thank you for your time in the Vale and have a pleasant reanimation.</journal_entry>
+			<tasks>
+				<task type="go_near_object" id="7" value="1" tag="Go near the golem" resource_name="r_Shadow Golem" distance="30" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="11" tag="">
+			<journal_entry>Initiating ley-line rune ritual alpha phase. Incoming historical reference:</journal_entry>
+		</node>
+		<node type="end_node" id="6" tag="" />
+		<node type="event_simple" id="7" tag="Kill Imps">
+			<tasks>
+				<task type="kill_object" id="6" value="1" tag="Kill imps to find stolen shard" resource_name="r_Imp Shadow" quantity="11">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="8" tag="Receive stolen Portal Shard">
+			<actions>
+				<action type="unlock_quest_item" id="1" tag="Stolen Shard" item_id="-1" />
+			</actions>
+		</node>
+		<node type="event_simple" id="12" tag="">
+			<journal_entry>Initiating ley-line rune ritual beta phase. Incoming historical reference:</journal_entry>
+		</node>
+		<node type="event_simple" id="10" tag="Terminal A">
+			<tasks>
+				<task type="interact_with_object" id="5" value="1" tag="Terminal" resource_name="">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="13" tag="">
+			<journal_entry>Initiating ley-line rune ritual gamma phase. Incoming historical reference:</journal_entry>
+		</node>
+		<node type="event_branch" id="14" tag="">
+			<journal_entry>Alternatively, should the device remain intact, it can be extracted directly from the unknown entities that are permeating the lower portions of the vale.</journal_entry>
+		</node>
+		<node type="event_simple" id="15" tag="">
+			<journal_entry>Initiation of the Vale: The vale came into being as a necessary form of siphoning souls back into the world after a semi-extinction level event of spiritually significant proportions.</journal_entry>
+		</node>
+		<node type="event_simple" id="16" tag="">
+			<journal_entry>The Custodian: Little is known of the enigmatic custodian of the vale. A guide to fledgling souls seeking to re-enter the world of Agon, the Custodian makes sure that those who would fight in the Unholy Wars will re-enter the world with at least a level of competence required to weild blade or spell without slaying their allies by mistake.</journal_entry>
+		</node>
+		<node type="event_simple" id="17" tag="">
+			<journal_entry>Re-entry into Agon: The world without the vale is, from a mortal point of view, one that is re-awakening after a semi-extinction level event. Agon is being repopulated as quickly as the vale releases souls who have found their way back. Further information must be sought in Agon itself.</journal_entry>
+		</node>
+		<node type="event_merge" id="18" tag="Find the Portal">
+			<tasks>
+				<task type="go_near_object" id="11" value="1" tag="Vicinity of Shadow Dragon" resource_name="r_Dragon Shadow" distance="100" />
+			</tasks>
+		</node>
+		<node type="event_branch" id="19" tag="" />
+		<node type="event_simple" id="20" tag="GET OUT!">
+			<tasks>
+				<task type="interact_with_object" id="12" value="1" tag="Use Portal" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_simple" id="21" tag="Terminal B">
+			<tasks>
+				<task type="interact_with_object" id="13" value="1" tag="Terminal" resource_name="">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="22" tag="Terminal C">
+			<tasks>
+				<task type="interact_with_object" id="16" value="1" tag="Terminal" resource_name="">
+					<task_instruction />
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="24" tag="player interacts with portal">
+			<tasks>
+				<task type="interact_with_object" id="17" value="1" tag="An Interact With Object Task" resource_name="" />
+			</tasks>
+		</node>
+		<node type="event_fork" id="25" tag="" />
+		<node type="end_node" id="26" tag="" />
+	</nodes>
+	<edges>
+		<edge id="34" from="0" to="25" value="1" />
+		<edge id="15" from="14" to="10" value="0" />
+		<edge id="16" from="14" to="7" value="0" />
+		<edge id="17" from="11" to="15" value="0" />
+		<edge id="30" from="14" to="21" value="0" />
+		<edge id="31" from="14" to="22" value="0" />
+		<edge id="11" from="10" to="11" value="1" />
+		<edge id="14" from="1" to="14" value="1" />
+		<edge id="8" from="7" to="8" value="0" />
+		<edge id="9" from="8" to="4" value="0" />
+		<edge id="10" from="3" to="4" value="0" />
+		<edge id="18" from="12" to="16" value="0" />
+		<edge id="19" from="13" to="17" value="0" />
+		<edge id="20" from="15" to="3" value="0" />
+		<edge id="21" from="16" to="3" value="0" />
+		<edge id="22" from="17" to="3" value="0" />
+		<edge id="25" from="4" to="19" value="1" />
+		<edge id="24" from="2" to="18" value="1" />
+		<edge id="26" from="19" to="2" value="0" />
+		<edge id="27" from="19" to="18" value="0" />
+		<edge id="28" from="18" to="20" value="1" />
+		<edge id="29" from="20" to="6" value="1" />
+		<edge id="32" from="21" to="12" value="1" />
+		<edge id="33" from="22" to="13" value="1" />
+		<edge id="35" from="25" to="1" value="0" />
+		<edge id="36" from="25" to="24" value="0" />
+		<edge id="38" from="24" to="26" value="1" />
+	</edges>
+</quest>

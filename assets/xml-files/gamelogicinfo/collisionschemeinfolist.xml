@@ -1,0 +1,746 @@
+<XML>
+    <VersionInformation Major="0" Minor="1" Incremental="0" />
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="alfar_f.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="alfar_m.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="dwarf_f.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="dwarf_m.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="hum_f.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="hum_m.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="mahirim_f.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="mahirim_m.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="mirdain_f.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="mirdain_m.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="ork_f.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+
+    <SFCollisionSchemeInfo>
+        <SFMeshFileName>
+            <SFString Value="ork_m.xml" />
+        </SFMeshFileName>
+        <SFCollisionSchemeMapping SchemeID="0" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType LifeMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="LifeMode GankMode" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="aaa_character_collscheme_dead.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="1" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Crouching" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="2" DefaultScheme="true">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Standing" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m.static.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m.dynamic.SFSPHERECOLLECTIONCOLLISIONSCHEME.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+        <SFCollisionSchemeMapping SchemeID="3" DefaultScheme="false">
+            <SFModeName>
+                <SFString Value="ModeType PostureMode" />
+            </SFModeName>
+            <SFModeValueName>
+                <SFString Value="PostureMode Resting" />
+            </SFModeValueName>
+            <SFStaticCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFStaticCollisionSchemeName>
+            <SFDynamicCollisionSchemeName>
+                <SFString Value="hum_m_crouch.static.sfspherecollectioncollisionscheme.sfc" />
+            </SFDynamicCollisionSchemeName>
+        </SFCollisionSchemeMapping>
+    </SFCollisionSchemeInfo>
+</XML>

@@ -1,0 +1,29 @@
+<quest quest_id="411" category="lore_quest" tag="Matter of Materials: Xtractor">
+	<nodes>
+		<node type="start_node" id="0" tag="">
+			<conditions>
+				<condition type="quest_completion" id="0" value="1" tag="Lead 01" quest_id="403" />
+				<condition type="quest_completion" id="1" value="1" tag="Lead 02" quest_id="404" />
+				<condition type="quest_completion" id="2" value="1" tag="Lead 03" quest_id="405" />
+				<condition type="quest_completion" id="3" value="1" tag="Lead 04" quest_id="-1" />
+				<condition type="quest_completion" id="4" value="1" tag="Lead 05" quest_id="406" />
+				<condition type="quest_completion" id="5" value="1" tag="Lead 06" quest_id="407" />
+				<condition type="quest_completion" id="6" value="1" tag="Lead 07" quest_id="408" />
+				<condition type="quest_completion" id="7" value="1" tag="Lead 08" quest_id="-1" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Craft the Extractor">
+			<tasks>
+				<task type="craft_item" id="0" value="1" tag="Craft the Extractor" resource_name="" quantity="0" />
+			</tasks>
+			<actions>
+				<action type="give_item_to_player" id="0" tag="Give Recipe" resource_name="" quantity="0" inventory_type="None" />
+			</actions>
+		</node>
+		<node type="end_node" id="2" tag="" />
+	</nodes>
+	<edges>
+		<edge id="0" from="0" to="1" value="0" />
+		<edge id="1" from="1" to="2" value="0" />
+	</edges>
+</quest>

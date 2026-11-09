@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFAnimationAACTemplate>
+	<MaterialGroup Category="default" Type="0">
+		<Sound Name="Audio/footsteps/monsters/rockbanger_01.xml"/>
+		<Sound Name="Audio/footsteps/monsters/rockbanger_02.xml"/>
+		<Sound Name="Audio/footsteps/monsters/rockbanger_03.xml"/>
+		<Sound Name="Audio/footsteps/monsters/rockbanger_04.xml"/>
+		<Sound Name="Audio/footsteps/monsters/rockbanger_05.xml"/>
+	</MaterialGroup>	
+		
+	<MaterialGroup Category="water" Type="0">
+		<Sound Name="Audio/footsteps/monsters/water_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/monsters/water_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/monsters/water_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/monsters/water_walk_04.xml"/>
+	</MaterialGroup>
+	
+	<MaterialGroup Category="tar" Type="0">
+		<Sound Name="Audio/footsteps/monsters/water_walk_01.xml"/>
+		<Sound Name="Audio/footsteps/monsters/water_walk_02.xml"/>
+		<Sound Name="Audio/footsteps/monsters/water_walk_03.xml"/>
+		<Sound Name="Audio/footsteps/monsters/water_walk_04.xml"/>
+	</MaterialGroup>	
+	
+	
+    <StateGroup Left="0.0" Right="0.5" Probability="100" Type="0">
+		<Set Name="crouch_forward"/>
+		<Set Name="crouch_forward_right"/>
+		<Set Name="crouch_right"/>
+		<Set Name="crouch_backward_right"/>
+		<Set Name="crouch_backward"/>
+		<Set Name="crouch_backward_left"/>
+		<Set Name="crouch_left"/>
+		<Set Name="crouch_forward_left"/>
+	</StateGroup>
+
+    <StateGroup Left="0.0" Right="0.5" Probability="100" Type="0">
+		<Set Name="normal_walk_forward"/>
+		<Set Name="normal_walk_forward_right"/>
+		<Set Name="normal_walk_right"/>
+		<Set Name="normal_walk_backward_right"/>
+		<Set Name="normal_walk_backward"/>
+		<Set Name="normal_walk_backward_left"/>
+		<Set Name="normal_walk_left"/>
+		<Set Name="normal_walk_forward_left"/>
+		<Set Name="attackmode_walk_forward"/>
+		<Set Name="attackmode_walk_forward_right"/>
+		<Set Name="attackmode_walk_right"/>
+		<Set Name="attackmode_walk_backward_right"/>
+		<Set Name="attackmode_walk_backward"/>
+		<Set Name="attackmode_walk_backward_left"/>
+		<Set Name="attackmode_walk_left"/>
+		<Set Name="attackmode_walk_forward_left"/>
+		<Set Name="attackmode_halberd_walk_forward"/>
+		<Set Name="attackmode_halberd_walk_forward_right"/>
+		<Set Name="attackmode_halberd_walk_right"/>
+		<Set Name="attackmode_halberd_backward_right"/>
+		<Set Name="attackmode_halberd_backward"/>
+		<Set Name="attackmode_halberd_backward_left"/>
+		<Set Name="attackmode_halberd_walk_left"/>
+		<Set Name="attackmode_halberd_walk_forward_left"/>
+		<Set Name="attackmode_2handed_walk_forward"/>
+		<Set Name="attackmode_2handed_walk_forward_right"/>
+		<Set Name="attackmode_2handed_walk_right"/>
+		<Set Name="attackmode_2handed_walk_backward_right"/>
+		<Set Name="attackmode_2handed_walk_backward"/>
+		<Set Name="attackmode_2handed_walk_backward_left"/>
+		<Set Name="attackmode_2handed_walk_left"/>
+		<Set Name="attackmode_2handed_walk_forward_left"/>
+	</StateGroup>
+
+    <StateGroup Left="0.3" Right="0.8" Probability="100" Type="0">
+		<Set Name="attackmode_2handed_run_forward"/>
+		<Set Name="attackmode_2handed_run_forward_right"/>
+		<Set Name="attackmode_2handed_run_right"/>
+		<Set Name="attackmode_2handed_run_left"/>
+		<Set Name="attackmode_2handed_run_forward_left"/>
+		<Set Name="attackmode_halberd_run_forward"/>
+		<Set Name="attackmode_halberd_run_forward_right"/>
+		<Set Name="attackmode_halberd_run_right"/>
+		<Set Name="attackmode_halberd_run_left"/>
+		<Set Name="attackmode_halberd_run_forward_left"/>
+		<Set Name="attackmode_run_forward"/>
+		<Set Name="attackmode_run_forward_right"/>
+		<Set Name="attackmode_run_right"/>
+		<Set Name="attackmode_run_left"/>
+		<Set Name="attackmode_run_forward_left"/>
+		<Set Name="normal_run_forward"/>
+		<Set Name="normal_run_forward_right"/>
+		<Set Name="normal_run_right"/>
+		<Set Name="normal_run_left"/>
+		<Set Name="normal_run_forward_left"/>
+	</StateGroup>
+	
+    <StateGroup Left="0.3" Right="0.8" Probability="100" Type="0">
+		<Set Name="normal_sprint_forward"/>
+		<Set Name="attackmode_sprint_forward"/>
+		<Set Name="attackmode_2handed_sprint_forward"/>
+		<Set Name="attackmode_halberd_sprint_forward"/>
+	</StateGroup>
+	
+	
+</SFAnimationAACTemplate>	

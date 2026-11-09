@@ -1,0 +1,85 @@
+<quest quest_id="171" category="side_quest" tag="Bottle Extraordinaire" published="False" valid="True">
+	<title>The Vile Phial</title>
+	<description>An enigmatic tome detailing the instructions on how to craft a fabled bottle that is said to be able to hold any type of liquid!</description>
+	<nodes>
+		<node type="start_node" id="0" tag="Interact with &quot;Magnificent Devices&quot;">
+			<journal_entry>&quot;Glass, such a pretty and petty substance. Who decided it should be the universal agent for the common receptacle is absolutely beyond me.  I, Garlish the Ever Inventive, have devised a far better substance that, I can guarantee, will hold any substance known to man, ork, elf and so forth...&quot;</journal_entry>
+			<conditions>
+				<condition type="object_interaction" id="0" value="1" tag="Interact with Book" resource_name="r_qt book magnificent devices" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="1" tag="Gather mats" optional_tasks="False">
+			<instruction>Gather the required materials</instruction>
+			<journal_entry>&quot;With the materials all carefully gathered, your next task my enterprising protege, is to refine them into their malleable state, ready for the last brilliant step.&quot;</journal_entry>
+			<tasks>
+				<task type="gather_items" id="0" value="1" tag="Acquire Rubaiyat Sand" resource_name="r_Liquified Rubysand" quantity="5" inventory_type="Backpack, Bank">
+					<task_instruction>Gather the $[Resource.R.r_rubysand_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="1" value="1" tag="Acquire Granite from Cairn" resource_name="r_Granite" quantity="3" inventory_type="Backpack, Bank">
+					<task_instruction>Gather the $[Resource.G.r_granite_NameSingular]</task_instruction>
+				</task>
+				<task type="gather_items" id="2" value="1" tag="Acquire Selentine" resource_name="r_new Selentine Ore" quantity="1" inventory_type="Backpack, Bank">
+					<task_instruction>Gather the $[Resource.S.r_selentine_essence_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="2" tag="refine mats" optional_tasks="True">
+			<journal_entry>&quot;Now, and listen carefully now learned minion, comes the final step. This one is, as they say, a doozy and must not be undertaken lightly or without much care. Now, you must craft, using the items above, what I have dubbed the &quot;Vile Phial!&quot;</journal_entry>
+			<tasks>
+				<task type="craft_item" id="3" value="1" tag="sand" resource_name="r_Liquified Rubysand" quantity="1">
+					<task_instruction>Refine the $[Resource.R.r_rubysand_NameSingular] to $[Resource.L.r_liquified_rubysand_NameSingular]</task_instruction>
+				</task>
+				<task type="craft_item" id="4" value="1" tag="grani" resource_name="r_Liquified Granite" quantity="1">
+					<task_instruction>Refine the $[Resource.G.r_granite_NameSingular] to $[Resource.L.r_liquified_granite_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="end_node" id="3" tag="end" />
+		<node type="event_simple" id="4" tag="give recipy scrolls to player">
+			<journal_entry>&quot;What follows is a (very) brief list of the required materials and where one may find them (other than the market that is, but no craftself of any worth would trust second-hand resources says I!)&quot;</journal_entry>
+			<actions>
+				<action type="give_item_to_player" id="1" tag="refine granite" resource_name="r_Recipe Scroll Liquified Granite" quantity="1" inventory_type="Bank" />
+				<action type="give_item_to_player" id="2" tag="refine rubysand" resource_name="r_Recipe Scroll Liquified Rubysand" quantity="1" inventory_type="Bank" />
+				<action type="give_item_to_player" id="3" tag="Exraordinery Bottle" resource_name="r_Recipe Scroll Extraordinary Bottle" quantity="1" inventory_type="Bank" />
+			</actions>
+		</node>
+		<node type="event_simple" id="5" tag="craft one bottle">
+			<journal_entry>&quot;Congratulations worthy follower you are now the proud owner of one Vile Phial! Surely you may now take this new-found knowledge and craft these wondrous items to your, and by proxy my, hearts content!&quot;</journal_entry>
+			<tasks>
+				<task type="craft_item" id="5" value="1" tag="craft bottle" resource_name="r_Extraordinary Bottle" quantity="1">
+					<task_instruction>Craft one $[Resource.E.r_extraordinary_bottle_NameSingular]</task_instruction>
+				</task>
+			</tasks>
+		</node>
+		<node type="event_simple" id="6" tag="">
+			<journal_entry>&quot;a) Exactly a fourth of a kilo of Spellblasted Sand from the cursed sands of the land of Ur-Khamset, Rubaiyat. This sand will require further refinement to convert it to a vitrified form. This can be accomplished at any Laboratory with 3 Selentine essences and a (normal for now) bottle.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="7" tag="">
+			<journal_entry>&quot;b) Exactly three chunks of Spellblasted Granite harvested from the magical battle-worn patches of lava that dot the surface of Cairn.  These will need to be refined into 1 vitrified granite at a Laboratory combined with 3 selentine essences and a simple bottle.&quot;</journal_entry>
+		</node>
+		<node type="event_simple" id="8" tag="">
+			<journal_entry>&quot;c) One further Selentine essence.&quot;</journal_entry>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="3" from="0" to="4" value="1" />
+		<edge id="1" from="1" to="2" value="1" />
+		<edge id="5" from="2" to="5" value="1" />
+		<edge id="7" from="4" to="6" value="0" />
+		<edge id="6" from="5" to="3" value="1" />
+		<edge id="8" from="6" to="7" value="0" />
+		<edge id="9" from="7" to="8" value="0" />
+		<edge id="10" from="8" to="1" value="0" />
+	</edges>
+	<node_locations>
+		<node_location id="0" x="30" y="37" />
+		<node_location id="1" x="583" y="33" />
+		<node_location id="2" x="678" y="36" />
+		<node_location id="3" x="400" y="159" />
+		<node_location id="4" x="211" y="38" />
+		<node_location id="5" x="685" y="158" />
+		<node_location id="6" x="315" y="37" />
+		<node_location id="7" x="382" y="39" />
+		<node_location id="8" x="461" y="39" />
+	</node_locations>
+</quest>

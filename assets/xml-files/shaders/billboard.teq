@@ -1,0 +1,134 @@
+
+
+#include "stdstate.frag"
+#include "fog.frag"
+#include "time.frag"
+#include "mathfunctions.frag"
+#include "matrix.frag"
+
+texture BillboardTexture : REPTextureDirect;
+
+float nearDistance0 = 0.4;
+float nearDistance1 = 2.0;
+float farDistance0 = 140.0;
+float farDistance1 = 150.0;
+
+float nearBillbaordExtent = 0.1;
+float mediumBillboardExtent = 1.0;
+float farBillboardExtent = 0.5;
+
+float nearBillboardAlpha = 0.0;
+float mediumBillboardAlpha = 1.0;
+float farBillboardAlpha = 0.0;
+
+sampler BillboardSampler = sampler_state
+{
+    texture = <BillboardTexture>;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+    BorderColor = 0;
+    //MAXANISOTROPY = 1;
+    MaxMipLevel = 0;
+
+    MipFilter = POINT;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+};
+
+struct BILLBOARD_VS_INPUT
+{
+   float3 Position					: POSITION;
+   float2 ParametricCoord		: TEXCOORD0;
+   float2 TexCoord 					: TEXCOORD1;
+	float4 Color					: COLOR0;
+};
+
+
+struct BILLBOARD_VS_OUTPUT
+{
+   float4 Position 	: POSITION;
+   float4 Color			: COLOR;
+   float2 TexCoord	: TEXCOORD0;
+};
+
+BILLBOARD_VS_OUTPUT VS(BILLBOARD_VS_INPUT Input)
+{
+	BILLBOARD_VS_OUTPUT Output = (BILLBOARD_VS_OUTPUT)0;
+	
+	float4 WorldPos = float4(Input.Position, 1.0);
+	
+	float4 ViewPos = mul(WorldPos, VIEW_MATRIX);
+	
+	// fade the billboard and handle its size in two steps (near-medium-far)
+	float billboardExtent = 1.0;
+	float billboardAlpha = 1.0;
+	if (ViewPos.z < nearDistance1) {
+		// first step
+		float p = smoothstep(nearDistance0, nearDistance1, ViewPos.z);
+		billboardExtent = lerp(nearBillbaordExtent, mediumBillboardExtent, p);
+		billboardAlpha = lerp(nearBillboardAlpha, mediumBillboardAlpha, p);
+	} else {
+		// second step
+		float p = smoothstep(farDistance0, farDistance1, ViewPos.z);
+		billboardExtent = lerp(mediumBillboardExtent, farBillboardExtent, p);
+		billboardAlpha = lerp(mediumBillboardAlpha, farBillboardAlpha, p);
+	}
+	
+	// expand billboard in view space
+	ViewPos.xy += Input.ParametricCoord * billboardExtent * ViewPos.z * 0.25;
+	
+	float4 Projected = mul(ViewPos, PROJECTION_MATRIX);
+	
+	Output.Position = Projected;
+	Output.TexCoord = Input.TexCoord;
+
+	Output.Color = float4( Input.Color.x , Input.Color.y, Input.Color.z,  Input.Color.w * billboardAlpha);
+	
+	return Output;
+}
+
+struct BILLBOARD_PS_OUTPUT
+{
+	float4 Color : COLOR;
+};
+
+BILLBOARD_PS_OUTPUT PS(BILLBOARD_VS_OUTPUT Input)
+{
+	BILLBOARD_PS_OUTPUT Output = (BILLBOARD_PS_OUTPUT)0;
+	
+	
+	Output.Color = tex2D(BillboardSampler, Input.TexCoord) * Input.Color;
+	
+	if (Output.Color.a < 0.01) clip(-1);
+	
+	return Output;
+}
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    
+        AlphaTestEnable = false;
+        ZEnable = false;
+		ZWriteEnable = true;
+
+	   	AlphablendEnable = true;
+	   	SRCBlend = SRCALPHA;
+	   	DestBlend = InvSrcAlpha;
+		
+		SeparateAlphaBlendEnable = true;
+		SrcBlendAlpha = ZERO;
+		DestBlendAlpha = ZERO;
+	
+		FogEnable = false;
+        CullMode = NONE;
+	
+		ColorWriteEnable = RED|BLUE|GREEN|ALPHA;
+        VertexShader = compile vs_3_0 VS();
+        PixelShader  = compile ps_3_0 PS();
+        
+
+    }
+}

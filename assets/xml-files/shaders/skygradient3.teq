@@ -1,0 +1,65 @@
+#include "stdstate.frag"
+#include "stdio.frag"
+#include "matrix.frag"
+#include "environment.frag"
+#include "objectmatrix.frag"
+#include "combine_illumination.frag"
+
+struct InVertex
+{
+   float4 Position 	: POSITION;
+   float3 Normal   	: NORMAL;
+   float2 Tex		: TEXCOORD0;
+};
+
+struct OutVertex
+{
+	float4 Position : POSITION;
+	float3 WorldPos : TEXCOORD0 ; 
+};
+
+OutVertex SkyVertexShader(InVertex IN)
+{
+    OutVertex OUT = (OutVertex)0;
+
+	float4 InPos = IN.Position ; 
+	InPos.xyz *= 12000 ; 
+	//InPos.y -= 0.005;
+    float4x4 WVP = mul( WORLD_MATRIX , VIEW_PROJECTION_MATRIX ); 
+	float4 OutPos = mul( InPos , WVP );  
+	OUT.Position =  OutPos ; 
+	OUT.WorldPos = IN.Position.xyz;
+    return OUT;
+}
+
+STD_PS_OUTPUT_3 SkyPixelShader(OutVertex IN)	
+{    
+	STD_PS_OUTPUT_3	Out = (STD_PS_OUTPUT_3)0;
+	float val = saturate ( IN.WorldPos.y * 60); 
+	Out.Color = float4( lerp( FOG_COLOR , SkyColor.xyz ,  val  ) , 0.f ) ; 
+	//Out.Effect = 0;
+#ifdef SSAO_ENABLE
+	Out.Depth = SSAO_NO_EFFECT;
+#endif
+
+	return Out;
+}
+
+technique T0
+{
+	pass P0
+	{
+		STD_STATE;
+        CullMode = NONE;
+        ZEnable = true;
+        ZWriteEnable = false;
+        AlphaBlendEnable = FALSE ;
+        AlphaTestEnable = FALSE;
+        
+		ColorWriteEnable = RED|BLUE|GREEN|ALPHA;  
+		FogEnable = FALSE ;
+       	
+		VertexShader = compile vs_3_0 SkyVertexShader();	
+		PixelShader = compile ps_3_0 SkyPixelShader();	
+	}
+}

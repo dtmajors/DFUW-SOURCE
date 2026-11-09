@@ -1,0 +1,132 @@
+<quest quest_id="9" category="training_quest" tag="Getting Started" published="False" valid="True">
+	<title>Getting Started!</title>
+	<description>Welcome to the world of Agon! Seek out and interact with an Acolyte of the Watcher to learn the basics and start off your adventures! You can find the Acolyte of the Watcher near the Bindstone at any starting area city. By default, you can press &apos;F&apos; to interact with him.</description>
+	<nodes>
+		<node type="start_node" id="33" tag="">
+			<conditions>
+				<condition type="in_area" id="28" value="1" tag="An In Quest Area Condition" area_id="69" />
+			</conditions>
+		</node>
+		<node type="start_node" id="32" tag="">
+			<conditions>
+				<condition type="in_area" id="27" value="1" tag="An In Quest Area Condition" area_id="68" />
+			</conditions>
+		</node>
+		<node type="start_node" id="31" tag="">
+			<conditions>
+				<condition type="in_area" id="26" value="1" tag="An In Quest Area Condition" area_id="67" />
+			</conditions>
+		</node>
+		<node type="start_node" id="30" tag="">
+			<conditions>
+				<condition type="in_area" id="25" value="1" tag="An In Quest Area Condition" area_id="38" />
+			</conditions>
+		</node>
+		<node type="start_node" id="29" tag="">
+			<conditions>
+				<condition type="in_area" id="24" value="1" tag="An In Quest Area Condition" area_id="19" />
+			</conditions>
+		</node>
+		<node type="start_node" id="28" tag="">
+			<conditions>
+				<condition type="in_area" id="23" value="1" tag="An In Quest Area Condition" area_id="18" />
+			</conditions>
+		</node>
+		<node type="start_node" id="27" tag="">
+			<conditions>
+				<condition type="in_area" id="22" value="1" tag="An In Quest Area Condition" area_id="17" />
+			</conditions>
+		</node>
+		<node type="start_node" id="25" tag="">
+			<conditions>
+				<condition type="in_area" id="20" value="1" tag="An In Quest Area Condition" area_id="74" />
+			</conditions>
+		</node>
+		<node type="start_node" id="24" tag="">
+			<conditions>
+				<condition type="in_area" id="19" value="1" tag="An In Quest Area Condition" area_id="75" />
+			</conditions>
+		</node>
+		<node type="start_node" id="23" tag="">
+			<conditions>
+				<condition type="in_area" id="18" value="1" tag="An In Quest Area Condition" area_id="76" />
+			</conditions>
+		</node>
+		<node type="start_node" id="22" tag="">
+			<conditions>
+				<condition type="in_area" id="17" value="1" tag="An In Quest Area Condition" area_id="77" />
+			</conditions>
+		</node>
+		<node type="start_node" id="26" tag="">
+			<conditions>
+				<condition type="in_area" id="21" value="1" tag="An In Quest Area Condition" area_id="3" />
+			</conditions>
+		</node>
+		<node type="start_node" id="37" tag="">
+			<conditions>
+				<condition type="in_area" id="32" value="1" tag="An In Quest Area Condition" area_id="73" />
+			</conditions>
+		</node>
+		<node type="start_node" id="36" tag="">
+			<conditions>
+				<condition type="in_area" id="31" value="1" tag="An In Quest Area Condition" area_id="72" />
+			</conditions>
+		</node>
+		<node type="start_node" id="35" tag="">
+			<conditions>
+				<condition type="in_area" id="30" value="1" tag="An In Quest Area Condition" area_id="71" />
+			</conditions>
+		</node>
+		<node type="start_node" id="34" tag="">
+			<conditions>
+				<condition type="in_area" id="29" value="1" tag="An In Quest Area Condition" area_id="70" />
+			</conditions>
+		</node>
+		<node type="event_simple" id="20" tag="">
+			<journal_entry>Various quests can be made available by interacting with vendors around the world, as well as objects that can be found out there. Quests can also be made available when wandering by certain areas. Even timing might be important as some quests can only be acquired at specific hours of the day (or night!). Always check your Quests log for information on what quests are available, what tasks need to be completed and what your reward will be!</journal_entry>
+		</node>
+		<node type="event_merge" id="17" tag="Talk to Acolyte" optional_tasks="True">
+			<instruction>Talk to an Acolyte of the Watcher</instruction>
+			<journal_entry>Check your newly available quests and begin learning the basics, via the Training Quests. You can also begin your discovery of the hidden secrets and history of Agon via the Prologue quests.</journal_entry>
+			<tasks>
+				<task type="interact_with_vendor" id="0" value="1" tag="Acolyte Q11" vendor_id="q11_idawoll_acolyte" />
+				<task type="interact_with_vendor" id="1" value="1" tag="Acolyte P09" vendor_id="p09_gulgrumir_acolyte" />
+				<task type="interact_with_vendor" id="2" value="1" tag="Acolyte P10" vendor_id="p10_cor_ymirhal_acolyte" />
+				<task type="interact_with_vendor" id="3" value="1" tag="Acolyte P11" vendor_id="p11_maghnir_acolyte" />
+				<task type="interact_with_vendor" id="4" value="1" tag="Acolyte U19" vendor_id="u19_sandbrook_acolyte" />
+				<task type="interact_with_vendor" id="5" value="1" tag="Acolyte T18" vendor_id="t18_monkfield_acolyte" />
+				<task type="interact_with_vendor" id="6" value="1" tag="Acolyte V18" vendor_id="v18_heart_of_eanna_acolyte" />
+				<task type="interact_with_vendor" id="7" value="1" tag="Acolyte U18" vendor_id="u18_sanguine_acolyte" />
+				<task type="interact_with_vendor" id="8" value="1" tag="Acolyte L14" vendor_id="l14_whiteclaw_acolyte" />
+				<task type="interact_with_vendor" id="9" value="1" tag="Acolyte K14" vendor_id="k14_amurran_acolyte" />
+				<task type="interact_with_vendor" id="10" value="1" tag="Acolyte J15" vendor_id="j15_urranyr_acolyte" />
+				<task type="interact_with_vendor" id="11" value="1" tag="Acolyte K13" vendor_id="k13_lyran_acolyte" />
+				<task type="interact_with_vendor" id="12" value="1" tag="Acolyte U14" vendor_id="u14_firun_acolyte" />
+				<task type="interact_with_vendor" id="13" value="1" tag="Acolyte T13" vendor_id="t13_okrim_acolyte" />
+				<task type="interact_with_vendor" id="14" value="1" tag="Acolyte V13" vendor_id="v13_nerzok_acolyte" />
+				<task type="interact_with_vendor" id="15" value="1" tag="Acolyte U13" vendor_id="u13_flaming_skull_acolyte" />
+			</tasks>
+		</node>
+		<node type="end_node" id="21" tag="" />
+	</nodes>
+	<edges>
+		<edge id="46" from="33" to="17" value="1" />
+		<edge id="45" from="32" to="17" value="1" />
+		<edge id="44" from="31" to="17" value="1" />
+		<edge id="43" from="30" to="17" value="1" />
+		<edge id="42" from="24" to="17" value="1" />
+		<edge id="41" from="25" to="17" value="1" />
+		<edge id="40" from="23" to="17" value="1" />
+		<edge id="39" from="22" to="17" value="1" />
+		<edge id="38" from="29" to="17" value="1" />
+		<edge id="37" from="28" to="17" value="1" />
+		<edge id="36" from="27" to="17" value="1" />
+		<edge id="35" from="26" to="17" value="1" />
+		<edge id="50" from="36" to="17" value="1" />
+		<edge id="49" from="35" to="17" value="1" />
+		<edge id="47" from="37" to="17" value="1" />
+		<edge id="48" from="34" to="17" value="1" />
+		<edge id="33" from="17" to="20" value="1" />
+		<edge id="34" from="20" to="21" value="0" />
+	</edges>
+</quest>

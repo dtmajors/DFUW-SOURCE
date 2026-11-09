@@ -1,0 +1,9 @@
+/*
+ * Decompiled with CFR.
+ */
+package org.apache.commons.collections;
+
+public interface Transformer {
+    public Object transform(Object var1);
+}
+

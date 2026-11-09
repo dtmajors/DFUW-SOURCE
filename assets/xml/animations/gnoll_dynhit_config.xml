@@ -1,0 +1,35 @@
+<SFDynamicHitConfig>
+    <Dt value="0.020000" />
+    <Gravity x="0.000000" y="0.000000" z="0.000000" />
+    <NumRelaxIterations value="10" />
+    <NodeJointCrossSize value="2.000000" />
+    <HitForceMagnitude value="80000.000000" />
+    <HitForceRadius value="20.000000" />
+    <HitAccelerationTime value="0.150000" />
+    <HitDecelerationTime value="0.200000" />
+    <HitCylinder>
+        <Radius x="10" z="5" />
+        <YRange min="15" max="50" />
+    </HitCylinder>
+    <PinnedNodes />
+    <IgnoreAllChildrenNodes>
+        <Node name="CATRigSpine5" />
+        <Node name="CATRigLArmPalm" />
+        <Node name="CATRigRArmPalm" />
+    </IgnoreAllChildrenNodes>
+    <IgnoreSingleNodes>
+        <Node name="CATRigPelvis" />
+        <Node name="CATRigSpine1" />
+        <Node name="CATRigSpine5" />
+        <Node name="CATRigLArmCollarBone" />
+        <Node name="CATRigRArmCollarBone" />
+    </IgnoreSingleNodes>
+    <ExtraJointsBetweenNodes>
+        <Joint from="CATRigLLeg1" to="CATRigRLeg1" />
+        <Joint from="CATRigSpine2" to="CATRigLLeg1" />
+        <Joint from="CATRigSpine2" to="CATRigRLeg1" />
+        <Joint from="CATRigSpine4" to="CATRigLArm1" />
+        <Joint from="CATRigSpine4" to="CATRigRArm1" />
+    </ExtraJointsBetweenNodes>
+    <EqualAndGreaterLengthConstraints />
+</SFDynamicHitConfig>

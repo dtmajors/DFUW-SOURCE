@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feat>
+  <ShowInList Value="true"/>
+  <ShowOnGUI Value="true"/>
+  <Type Value="PARTY"/>
+  <Reset Type="DAILY"/>
+  <Trigger Type="LIFE_MODE_CHANGES">
+    <Counter Value="1"/>
+    <IsEventSource Value="true"/>
+    <ResourceName Value="r_Dragon Ice"/>
+    <LifeMode Value="KILL"/>
+  </Trigger>
+  <Points Dynamic="false" Key="r_Dragon Ice" Value="150"/>
+  <Rewards>
+    <Item InBank="false" Name="r_gold" Quantity="1500" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Leenspar Cloth" Quantity="1" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Leenspar Leather" Quantity="1" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Leenspar Ingot" Quantity="1" Type="REWARD_ITEM"/>
+    <Item InBank="false" Name="r_New Leenspar Wood" Quantity="1" Type="REWARD_ITEM"/>
+  </Rewards>
+</Feat>

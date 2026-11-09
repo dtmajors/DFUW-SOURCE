@@ -1,0 +1,956 @@
+<XML>
+	<VersionInformation Incremental="0" Major="0" Minor="1"/>
+
+	<!-- ########################## -->
+	<!-- #####    APPARELS    ##### -->
+	<!-- ########################## -->
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Accessories"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Salvage"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Apparel"/>		
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Turkey"/>		
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Recipe Scrolls"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Crafting Recipe To Unlock" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Weapons"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Market Tree Nodes"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Selentine Items"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Masks"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Dyes"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Pigments"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+		
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Armors Metal"/>
+		<SFRuleForAttribute Name="Acid Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Bludgeoning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Cold Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Encumbrance" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Fire Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Holy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Impact Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Lightning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Piercing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slashing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Unholy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="ArmorTypeName" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Armor Knockback Resistance Modifier" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Critical Damage Absorb Modifier" SaveAttributeValue="true"/>
+		<!-- <SFRuleForProtection SaveAttributeValue="true"/> -->
+	</SFFilterRuleSingle>
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Armors Leather"/>
+		<SFRuleForAttribute Name="Acid Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Bludgeoning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Cold Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Encumbrance" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Fire Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Holy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Impact Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Lightning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Piercing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slashing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Unholy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="ArmorTypeName" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Armor Attack Speed Modifier" SaveAttributeValue="true"/>
+		<!-- <SFRuleForProtection SaveAttributeValue="true"/> -->
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Armor Monsters"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Encumbrance" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForProtection SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Clothing"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Robes Cleric"/>
+		<SFRuleForAttribute Name="Acid Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Bludgeoning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Cold Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Encumbrance" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Fire Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Holy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Impact Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Lightning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Piercing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slashing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Unholy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="ArmorTypeName" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Armor Regeneration Modifier" SaveAttributeValue="true"/>
+		<!-- <SFRuleForProtection SaveAttributeValue="true"/> -->
+	</SFFilterRuleSingle>
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Robes Magic"/>
+		<SFRuleForAttribute Name="Acid Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Bludgeoning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Cold Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Encumbrance" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Fire Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Holy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Impact Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Lightning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Piercing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slashing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Unholy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="ArmorTypeName" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Armor Magnitude Modifier" SaveAttributeValue="true"/>
+		<!-- <SFRuleForProtection SaveAttributeValue="true"/> -->
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Shields"/>
+		<SFRuleForAttribute Name="Parry Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Acid Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Arrow Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Bludgeoning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Cold Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Encumbrance" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Fire Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Lightning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Piercing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slashing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="false"/>
+		<!-- <SFRuleForProtection SaveAttributeValue="true"/> -->
+	</SFFilterRuleSingle>
+
+	<!-- ####################### -->
+	<!-- #####    FAUNA    ##### -->
+	<!-- ####################### -->
+
+	<SFFilterRuleSingle AttributeConfigName="All_Attributes">
+		<SFResource Name="r_Monsters"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Mounts"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>		
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Object PositionalInfo" SaveAttributeValue="false"/>
+		
+		<!-- Protections 
+		<SFRuleForAttribute Name="Acid Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Arcane Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Arrow Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Bludgeoning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Cold Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Fire Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Holy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Impact Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Lightning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Curse Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Negative Effect Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Infliction Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Piercing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slashing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Unholy Protection" SaveAttributeValue="false"/>
+		-->
+		<SFRuleForAttribute Name="Health Max"             SaveAttributeValue="true"/>		
+		<SFRuleForAttribute Name="Strength"               SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Sprint Modifier"        SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Inventory Total Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Quality"                SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Gankable Player"/>
+		<SFResource Name="r_NPC"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Player Races"/>
+		<SFRuleForAttribute Name="Alignment" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Alignment Suspicious" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Backpack" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Breath" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Clan GUID" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Dummy Effect Target" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Enable Parry" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Invulnerable" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Newbie Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Object PositionalInfo" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Player Access Level" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Player Effect Bits" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Reflect Spells" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Attunement to Earth" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Impact Reflection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Damage Absorb" SaveAttributeValue="false"/>
+		
+		
+		<!-- Primary attributes -->
+		<!--<SFRuleForAttribute Name="Monster Audio"    SaveAttributeValue="false"/>-->
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="false"/>
+		<!-- <SFRuleForAttribute Name="Quickness"    SaveAttributeValue="false"/> -->
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="false"/>
+		<!-- <SFRuleForAttribute Name="Vitality"     SaveAttributeValue="false"/> -->
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="false"/>
+
+		<SFRuleForAttribute Name="Dexterity AdvancementRate" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Intelligence AdvancementRate" SaveAttributeValue="false"/>
+		<!-- <SFRuleForAttribute Name="Quickness AdvancementRate"    SaveAttributeValue="false"/> -->
+		<SFRuleForAttribute Name="Strength AdvancementRate" SaveAttributeValue="false"/>
+		<!-- <SFRuleForAttribute Name="Vitality AdvancementRate"     SaveAttributeValue="false"/> -->
+		<SFRuleForAttribute Name="Wisdom AdvancementRate" SaveAttributeValue="false"/>
+
+		<!-- Vitalstats attributes -->
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Mana" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Stamina" SaveAttributeValue="false"/>
+
+		<SFRuleForAttribute Name="Health Gain" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Mana Gain" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Stamina Gain" SaveAttributeValue="false"/>
+
+		<SFRuleForAttribute Name="Health Waste" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Mana Waste" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Stamina Waste" SaveAttributeValue="false"/>
+
+		<!-- Resistances -->
+		<!-- <SFRuleForAttribute Name="Constitution" SaveAttributeValue="false"/> -->
+		<!-- <SFRuleForAttribute Name="Defense"      SaveAttributeValue="false"/> -->
+		<!-- <SFRuleForAttribute Name="Fortitude"    SaveAttributeValue="false"/> -->
+		<!-- <SFRuleForAttribute Name="Reflex"       SaveAttributeValue="false"/> -->
+		<!-- <SFRuleForAttribute Name="Willpower"    SaveAttributeValue="false"/> -->
+
+		<!-- Protections -->
+		<SFRuleForAttribute Name="Acid Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Arcane Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Arrow Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Bludgeoning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Cold Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Fire Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Holy Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Impact Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Lightning Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Curse Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Negative Effect Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Infliction Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Piercing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slashing Protection" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Unholy Protection" SaveAttributeValue="false"/>
+
+		<!-- Combat modifiers -->
+		<!-- <SFRuleForAttribute Name="Encumbrance"             SaveAttributeValue="false"/> -->
+		<SFRuleForAttribute Name="Melee Speed Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Power Level" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Ranged Speed Modifier" SaveAttributeValue="false"/>
+
+		<!-- Spell modifiers -->
+		<SFRuleForAttribute Name="Casting Time Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Spell Duration Multiplier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Spell Immunity" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Spell Success Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Spell Success Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Critical Magnitude Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Critical Damage Absorb Modifier" SaveAttributeValue="false"/>
+
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Wildlife"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Object PositionalInfo" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<!-- ########################### -->
+	<!-- #####    FIGURINES    ##### -->
+	<!-- ########################### -->
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines Boats"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Figurine Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Boat Number Of Guns" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Boat ResourceType" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines Guns"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Figurine Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Gun Base ResourceType" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Gun ResourceType" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines Mounts"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Figurine Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Inventory Total Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Sprint Modifier" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Mount ResourceType" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Quality"    SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines Warhulks"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Figurine Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Warhulk ResourceType" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines Rafts"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Figurine Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Boat Number Of Guns" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Boat ResourceType" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines Airships"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Figurine Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<!--<SFRuleForAttribute Name="Warhulk ResourceType" SaveAttributeValue="false"/>-->
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Figurines SiegeEngines"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Figurine Health" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<!--<SFRuleForAttribute Name="Warhulk ResourceType" SaveAttributeValue="false"/>-->
+	</SFFilterRuleSingle>
+	
+	<!-- ####################### -->
+	<!-- #####    ITEMS    ##### -->
+	<!-- ####################### -->
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Arrows"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Missile Damage Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Treasure Map Items"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Map Position" SaveAttributeValue="false"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Ammo"/>
+		<SFResource Name="r_Bandages"/>
+		<SFResource Name="r_Clan Shards"/>
+		<SFResource Name="r_Dynamic Clan Bindstone Items"/>
+		<SFResource Name="r_Dynamic World Items"/>
+		<SFResource Name="r_Fish"/>
+		<SFResource Name="r_Gold"/>
+		<SFResource Name="r_House Items"/>
+		<SFResource Name="r_Keys"/>
+		<SFResource Name="r_Lights"/>
+		<SFResource Name="r_Materials"/>
+		<SFResource Name="r_Quest Items"/>
+		<SFResource Name="r_Runestone"/>
+		<SFResource Name="r_Portal Rune"/>
+		<SFResource Name="r_Summon Shard"/>
+		<SFResource Name="r_Skin Rare"/>
+		<SFResource Name="r_Teleporter Items"/>
+		<SFResource Name="r_Test Resources"/>
+		<SFResource Name="r_Traderoute Items"/>
+		<SFResource Name="r_new wood"/>
+		<SFResource Name="r_Fun Flags Items"/>
+		<SFResource Name="r_Player Use Flags Items"/>
+		<SFResource Name="r_relic Items"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Containers"/>
+		<SFRuleForAttribute Name="Container Label Name" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Books"/>
+		<SFResource Name="r_Scrolls"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Manual SkillType" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Food"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Trout Caserole"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Baked Salmon"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Salmon Caserole"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Baked Swordfish"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Swordfish Caserole"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Baked Crab"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Crab Caserole"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Baked Lobster"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Lobster Caserole"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Lighten" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Strength" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Dexterity" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Intelligence" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Wisdom" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Carrot"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Onion"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Nourishment Duration" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="All_Attributes">
+		<SFResource Name="r_Misc Loot"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="All_Attributes">
+		<SFResource Name="r_Drink"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+		<!-- SFRuleForEffect Name="Negative Effect" SaveAttributeValue="true"/ -->
+	</SFFilterRuleSingle>
+
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Skin Regular"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Quality" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Teleport Rune"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Teleport Rune Name" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Teleport Rune Position" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Usage Count" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Telescopes"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Usage Count" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Consumables"/>		
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<!-- ####################### -->
+	<!-- #####    PROPS    ##### -->
+	<!-- ####################### -->
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Bindstones"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Clanstones"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Ganksgiving Feast"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Dynamic Chests"/>
+		<SFResource Name="r_Special Event Chests"/>
+		<SFResource Name="r_Dynamic Loot"/>
+		<SFResource Name="r_House Workstations"/>
+		<SFResource Name="r_Ladders"/>
+		<SFResource Name="r_Portals"/>
+		<SFResource Name="r_Sails"/>
+		<SFResource Name="r_Steering Wheels"/>
+		<SFResource Name="r_Quest Props"/>
+		<SFResource Name="r_Relic Chests"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Dynamic Workstations"/>
+		<SFResource Name="r_Deployable Strongboxes"/>
+		<SFResource Name="r_Shipboxes"/>
+		<SFResource Name="r_GM Locked Chest"/>		
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleMulti>
+	
+	<!-- ############################ -->
+	<!-- #####    STRUCTURES    ##### -->
+	<!-- ############################ -->
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Buildings"/>
+		<SFResource Name="r_Cannons"/>
+		<SFResource Name="r_Clan Bank Storage"/>
+		<SFResource Name="r_Control Points"/>
+		<SFResource Name="r_Monster Structures"/>
+		<SFResource Name="r_Player House Banks"/>
+		<SFResource Name="r_Player House Extensions"/>
+		<SFResource Name="r_Player House Markers"/>
+		<SFResource Name="r_Player House Props"/>
+		<SFResource Name="r_Player House Resource Spawns"/>
+		<SFResource Name="r_Player House Tenant Extensions"/>
+		<SFResource Name="r_Traderoute Structures"/>
+		<SFResource Name="r_Warhulk Cannons"/>
+		<SFResource Name="r_Fun Flags"/>
+		<SFResource Name="r_Player Use Flags"/>
+		<SFResource Name="r_Trap"/>
+		<SFResource Name="r_Hill Fortress"/>
+		<SFResource Name="r_Prowess Monolith"/>
+		<SFResource Name="r_Life Totem"/>
+		<SFResource Name="r_Sanctuary Spheres"/>
+		<SFResource Name="r_Market"/>
+		<SFResource Name="r_Dungeon Gate"/>
+		<SFResource Name="r_Clan Levy Collector"/>
+		<SFResource Name="r_relics"/>
+		<SFResource Name="r_generic harbour"/>		
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Clan Structures"/>
+		<SFRuleForAttribute Name="Active" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_relic church base"/>
+		<SFRuleForAttribute Name="Active" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Protected" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Relic ID" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Test Dummies"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Sea Fortress Main"/>
+		<SFResource Name="r_Fortress Lighthouses"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Fortress Mains"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Player House Buildings"/>
+		<SFRuleForAttribute Name="Structure Accessories" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Gate Closed" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Player House Bases"/>
+		<SFRuleForAttribute Name="Structure Accessories" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Gate Closed" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Player Gambling Structures"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Slot State 1" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slot State 2" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Slot State 3" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Clan Harbor Base Rubble"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Clan Props"/>
+		<SFResource Name="r_Clan Stationary Guns"/>
+		<SFResource Name="r_Village Control Point"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Clan Stations"/>
+		<SFResource Name="r_Fortress Bases"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Object Owner" SaveAttributeValue="false"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Clan Walls"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Clan Wall Entrance Alfar"/>
+		<SFResource Name="r_Clan Wall Entrance Dwarf"/>
+		<SFResource Name="r_Clan Wall Entrance Human"/>
+		<SFResource Name="r_Clan Wall Entrance Mahirim"/>
+		<SFResource Name="r_Clan Wall Entrance Mirdain"/>
+		<SFResource Name="r_Clan Wall Entrance Ork"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Gate Closed" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="All_Attributes">
+		<SFResource Name="r_Clan Wonders"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Land Vehicles"/>
+		<SFResource Name="r_Water Vessels"/>
+		<SFResource Name="r_Airships"/>
+		<SFResource Name="r_SiegeEngines"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Object PositionalInfo" SaveAttributeValue="false"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Stationary Guns"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Maker" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="All_Attributes">
+		<SFResource Name="r_Teleporters"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="false"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="All_Attributes">
+		<SFResource Name="r_Quest Target Props"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_And_Protection_Attributes">
+		<SFResource Name="r_Tectonic Shift"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Health" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<!-- ################################### -->
+	<!-- #####    TOOLS AND WEAPONS    ##### -->
+	<!-- ################################### -->
+
+	<SFFilterRuleMulti AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Bows"/>
+		<SFResource Name="r_Melee Weapons"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Weapon Threat Modifier" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleMulti>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Grenades"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Magic Staffs"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="true"/>
+		<!-- <SFRuleForAttribute Name="Weapon Threat Modifier" SaveAttributeValue="true"/> -->
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Natural Magic Staffs"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Natural Melee Weapons"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weapon Threat Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Natural Ranged Weapons"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weapon Threat Modifier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Throwable Weapons"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Tools"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+	
+	<SFFilterRuleSingle AttributeConfigName="Only_Required_Attributes">
+		<SFResource Name="r_Requisition Gauntlets"/>
+		<SFRuleForAttribute Name="Display Name" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Attack Time Multiplier" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weapon Basic Damage" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Durability" SaveAttributeValue="false"/>
+		<SFRuleForAttribute Name="Durability Max" SaveAttributeValue="true"/>
+		<SFRuleForAttribute Name="Weight" SaveAttributeValue="true"/>
+	</SFFilterRuleSingle>
+</XML>

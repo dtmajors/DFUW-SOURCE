@@ -1,0 +1,40 @@
+// SMAA_EdgeDetect_3.teq
+
+#include "stdstate.frag"
+#include "SMAA.frag"
+
+void DX9_SMAABlendingWeightCalculationVS(inout float4 position : POSITION,
+                                         inout float2 texcoord : TEXCOORD0,
+                                         out float2 pixcoord : TEXCOORD1,
+                                         out float4 offset[3] : TEXCOORD2) {
+    SMAABlendingWeightCalculationVS(position, position, texcoord, pixcoord, offset);
+}
+
+float4 DX9_SMAABlendingWeightCalculationPS(float4 position : SV_POSITION,
+                                           float2 texcoord : TEXCOORD0,
+                                           float2 pixcoord : TEXCOORD1,
+                                           float4 offset[3] : TEXCOORD2,
+                                           uniform SMAATexture2D edgesTex, 
+                                           uniform SMAATexture2D areaTex, 
+                                           uniform SMAATexture2D searchTex) : COLOR {
+    return SMAABlendingWeightCalculationPS(texcoord, pixcoord, offset, edgesTex, areaTex, searchTex, 0);
+}
+ 
+
+technique BlendWeightCalculation {
+    pass BlendWeightCalculation {
+		STD_STATE;
+        VertexShader = compile vs_3_0 DX9_SMAABlendingWeightCalculationVS();
+        PixelShader = compile ps_3_0 DX9_SMAABlendingWeightCalculationPS(edgesTex, areaTex, searchTex);
+        ZEnable = false;
+        SRGBWriteEnable = false;
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+
+        // Here we want to process only marked pixels.
+        StencilEnable = true;
+        StencilPass = KEEP;
+        StencilFunc = EQUAL;
+        StencilRef = 1;
+    }
+}

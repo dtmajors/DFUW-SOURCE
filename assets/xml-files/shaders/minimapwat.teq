@@ -1,0 +1,93 @@
+
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "spenebump.frag"
+#include "atmosphere.frag"
+#include "texture.frag"
+
+
+
+float4 DiffMaterial : REPGlobalMaterialDiffuse = { 1.0f, 1.0f, 1.0f, 1.0f };
+float PowerMaterial : REPGlobalMaterialPower = 0.0f;
+
+
+struct VS_OUTPUT_TERR
+{
+    float4 Pos  : POSITION;
+    float4 Diff : COLOR0;
+    float2 Tex  : TEXCOORD0;
+    float Fog : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float3 Norm : Normal;
+    float2 Tex	: TEXCOORD0;
+};
+
+
+
+VS_OUTPUT_TERR VS(VS_INPUT Input)
+{
+    VS_OUTPUT_TERR Out = (VS_OUTPUT_TERR)0;
+
+
+    SFMatrix WVP = mul(WORLD_MATRIX,VIEW_PROJECTION_MATRIX);
+
+    float3 L = -PLANET_LIGHTDIR_COMMON;
+    
+   
+    Out.Pos  = mul(Input.Pos, WVP);             // position (projected)
+
+    float3 WorldNorm = normalize(mul(Input.Norm,(float3x3)WORLD_MATRIX));
+    float3 WorldPos = mul(Input.Pos,WORLD_MATRIX);
+
+    
+    float Diff = saturate(dot(WorldNorm, L));
+    
+    Out.Diff = saturate((Diff * PLANET_LIGHTCOLOR_COMMON * DiffMaterial)  + ATMOSPHERE_AMBIENT);
+    
+    
+    Out.Tex  = Input.Tex;
+
+    Out.Fog = CalculateFog(Out.Pos.z);
+
+    return Out;
+}
+
+
+float4 PS(VS_OUTPUT_TERR Input) : COLOR
+{
+	return float4(1.0, 0.0, 1.0, 0.0);
+}
+
+
+
+//
+//
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+		ColorWriteEnable = ALPHA|RED|BLUE|GREEN;
+		//ColorWriteEnable = ALPHA; 
+
+        AlphaBlendEnable = false;
+        AlphaTestEnable = false;
+        
+        ZEnable = true;
+		ZWriteEnable = true;
+	
+		FogEnable = true;
+        CullMode = CCW;
+	
+        VertexShader = compile vs_1_1 VS();
+        PixelShader  = compile ps_2_a PS();
+
+    }
+}

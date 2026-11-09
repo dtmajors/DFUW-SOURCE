@@ -1,0 +1,90 @@
+//Box Lines Impact Shader
+
+
+#include "stdstate.frag"
+#include "fog.frag"
+#include "matrix.frag"
+#include "texture.frag"
+
+#include "stdio.frag"
+
+struct VS_OUTPUT
+{
+    float4 Pos  : POSITION;
+    float2 Tex	: TEXCOORD0;
+    float4 Color: COLOR0;
+    float  Fog  : FOG;
+};
+
+
+struct VS_INPUT
+{
+    float4 Pos	: POSITION;
+    float4 Color: COLOR0;
+    float2 Tex	: TEXCOORD0;
+};
+
+
+
+
+VS_OUTPUT VS(VS_INPUT Input)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    Out.Pos = mul(Input.Pos,VIEW_PROJECTION_MATRIX);
+    
+    Out.Tex = Input.Tex;
+    Out.Color = Input.Color;
+    
+    Out.Fog = CalculateFog_3_0(Out.Pos.z);
+    
+    return Out;
+}
+
+
+STD_PS_OUTPUT_3 PS(VS_OUTPUT Input)
+{
+	STD_PS_OUTPUT_3 Out = (STD_PS_OUTPUT_3)0;
+
+	float4 BaseTex = tex2D(DEFAULT_SAMPLER_2,Input.Tex);
+	float4 Color = BaseTex * Input.Color;
+	
+	Color.xyz = lerp(Color.xyz,FOG_COLOR.xyz,Input.Fog);
+
+	Out.Color = Color;
+	float2 MBlur;
+	MBlur.x = Input.Tex.x*Input.Tex.y*BaseTex.r;
+	MBlur.y = Input.Tex.x*Input.Tex.y*BaseTex.g;
+	//Out.Effect = float4(MBlur,0.0f,0.0f);
+#ifdef SSAO_ENABLE
+	Out.Depth = 0.0f;
+#endif
+	return Out;
+}
+
+
+
+technique T0
+{
+    pass P0
+    {
+		STD_STATE;
+    	FogEnable = false;
+
+        
+        ZEnable = true;
+		ZWriteEnable = false;
+       	CullMode = NONE;
+        
+        AlphaBlendEnable = true;
+        SrcBlend = SRCALPHA;
+        DestBlend = INVSRCALPHA;
+		ColorWriteEnable = RED|BLUE|GREEN; 
+        
+    	VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PS();
+    }    
+    
+}
+
+
