@@ -57,8 +57,23 @@ No live account credentials, memory dumps, runtime diagnostic clients, encrypted
 unknown payloads or unrelated Darkfall Eternal files are included. The original
 game installation is not modified by preparing this snapshot.
 
-## Rights
+# Legal Disclaimer & Notice
 
-Game code and assets retain their existing owners' rights. No new license to
-third-party game material is granted by this repository. Preserve embedded
-copyright and license notices.
+## Notice to Copyright Holders
+This repository is dedicated to the historical preservation and educational study of the client-side architecture of **Darkfall: Rise of Agon**. 
+
+If you are a copyright holder—including **Big Picture Games**, **Toxic Rain Studios**, or associated entities—and object to the hosting of these decompiled files or extracted assets, please contact the repository maintainer directly or submit a formal request. The material will be **removed immediately**. This project has no commercial intent and wishes to fully respect your intellectual property rights.
+
+## Source & Scope of Material
+* **Third-Party Provenance:** The repository maintainer is **merely sharing these files** as an archival resource. The maintainer **did not perform the reverse engineering, extraction, or decompilation** of the source code or assets contained herein. 
+* **Client-Side Only:** The files consist strictly of extracted client-side configurations, assets, and decompiled Java source code from the public, end-user client. This repository does **not** contain server-side code or proprietary backend architecture.
+* **Archival Purpose:** This code is shared strictly as a **static snapshot for educational research, archival purposes, and analysis** regarding MMO engine structures.
+
+## No Affiliation or Endorsement
+This project is an independent, third-party archival effort. It is **not** affiliated with, endorsed by, sponsored by, or officially connected to Big Picture Games, Toxic Rain Studios, Aventurine S.A., or any of their past or present affiliates. All trademarks, game titles, logos, and proprietary assets are the sole property of their respective owners.
+
+## Non-Commercial & Educational Fair Use
+All materials here are provided strictly for non-commercial, non-profit educational and research purposes under the principles of historical software preservation. This project does not offer any playable services, monetization, or commercial alternatives to official software. 
+
+## "AS-IS" Warranty & Liability Waiver
+The materials in this repository are provided **"AS IS," WITHOUT WARRANTY OF ANY KIND**, express or implied. In no event shall the authors, contributors, or repository maintainers be liable for any claim, damages, or other liability—whether in an action of contract, tort, or otherwise—arising from, out of, or in connection with the code, assets, or use of this repository. You are solely responsible for compliance with your local laws and the software's original agreements.
