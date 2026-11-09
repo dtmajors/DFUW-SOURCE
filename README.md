@@ -1,5 +1,5 @@
 # DFUW SOURCE
-
+ORIGINAL **DFUW STEAM FILES** Google Drive 7.77gb https://drive.google.com/file/d/1iXpDu7PiSjbrWiWsdKzVC8oNGA8Mmac6/view?usp=sharing
 Recovered **Darkfall Unholy Wars** client files and decompiled Java, from the
 DFUWDeek archive snapshot. This is not an official source-code release, a complete
 server implementation, or a verified buildable game project.
